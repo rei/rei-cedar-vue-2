@@ -6,42 +6,81 @@
 }
 .doc_head-navigation > li > a,
 .doc_head-navigation ul > li > a {
-  align-items: center;
-  background-color: transparent;
-  border: 0;
-  color: #222;
-  cursor: pointer;
-  display: inline-flex;
-  fill: #222;
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
+  align-items: center;
+  background-color: transparent;
+  border: 0;
   margin: 0;
+  color: #406eb5;
+  fill: #406eb5;
+  cursor: pointer;
+  display: inline-flex;
   outline: none;
   padding: 0;
-  text-decoration: none;
+  text-decoration: underline;
   vertical-align: top;
+  /* States
+    ---------- */
+  display: inherit;
+  color: rgba(12, 11, 8, 0.75);
+  text-decoration: none;
+  text-transform: capitalize;
+}
+.doc_head-navigation > li > a:active,
+.doc_head-navigation > li > a:focus,
+.doc_head-navigation ul > li > a:active,
+.doc_head-navigation ul > li > a:focus {
+  color: #0b2d60;
+}
+.doc_head-navigation > li > a:hover,
+.doc_head-navigation ul > li > a:hover {
+  color: #406eb5;
+  text-decoration: none;
+}
+.doc_head-navigation > li > a:focus,
+.doc_head-navigation ul > li > a:focus {
+  outline: 0.2rem solid Highlight;
+  outline-color: -webkit-focus-ring-color;
+  outline-offset: 0;
 }
 .doc_head-navigation > li > a:hover,
 .doc_head-navigation > li > a:active,
 .doc_head-navigation > li > a:focus,
+.doc_head-navigation > li > a:visited,
 .doc_head-navigation ul > li > a:hover,
 .doc_head-navigation ul > li > a:active,
-.doc_head-navigation ul > li > a:focus {
-  color: #222;
+.doc_head-navigation ul > li > a:focus,
+.doc_head-navigation ul > li > a:visited {
+  color: rgba(12, 11, 8, 0.75);
   text-decoration: underline;
 }
-.doc_head-navigation > li > a:focus,
-.doc_head-navigation ul > li > a:focus {
-  outline: thin dotted;
-  outline: 0.5rem auto;
-  outline-color: #4eaaff;
-  outline-offset: -0.2rem;
-}
-.doc_head-navigation > li > a .icon,
-.doc_head-navigation ul > li > a .icon {
-  display: inline-block;
-  text-decoration: none;
+.bs-docs-footer .list-text .nested,
+.bs-docs-footer .footer-inline-list .nested,
+.bs-docs-footer .list-text > li > ul .nested,
+.bs-docs-footer .list-decoration .nested,
+.bs-docs-footer .list-decoration > li > ul .nested,
+.bs-docs-footer .list-decoration > li > ul .nested,
+.bs-docs-footer .list-decoration > li > ul > li > ul .nested {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  align-items: center;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  color: #406eb5;
+  fill: #406eb5;
+  cursor: pointer;
+  display: inline-flex;
+  outline: none;
+  padding: 0;
+  text-decoration: underline;
+  vertical-align: top;
+  /* States
+    ---------- */
+  color: #fff;
 }
 @media (min-width: 768px) {
 }
@@ -59,35 +98,29 @@
 .doc_head-navigation > li > a:focus,
 .doc_head-navigation ul > li > a:hover,
 .doc_head-navigation ul > li > a:focus {
-  background-color: #f0f0f0;
   text-decoration: none;
 }
 .doc_head-navigation > li.disabled > a,
 .doc_head-navigation ul > li.disabled > a {
-  color: #f2f2f2;
+  color: #d1cbbd;
 }
 .doc_head-navigation > li.disabled > a:hover,
 .doc_head-navigation > li.disabled > a:focus,
 .doc_head-navigation ul > li.disabled > a:hover,
 .doc_head-navigation ul > li.disabled > a:focus {
   background-color: transparent;
-  color: #f2f2f2;
+  color: #d1cbbd;
   cursor: not-allowed;
   text-decoration: none;
 }
 .doc_head-navigation > li > ul > li > a,
 .doc_head-navigation ul > li > ul > li > a {
-  font-family: Graphik, "Helvetica Neue", sans-serif 4px;
+  font-family: Graphik, "Helvetica Neue", sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
   letter-spacing: -0.08px;
   line-height: 22px;
-  padding: calc(0.4rem);
-}
-.doc_head-navigation > li > ul > li > a > .icon,
-.doc_head-navigation ul > li > ul > li > a > .icon {
-  font-size: 16px !important;
 }
 .dl-horizontal dd:before,
 .dl-horizontal dd:after {
@@ -127,26 +160,26 @@ h4 code {
 /* Outline button for use within the docs */
 .btn-outline {
   color: #fff;
-  background-color: #a1c900;
-  border-color: #a1c900;
+  background-color: #f4f2ed;
+  border-color: #f4f2ed;
 }
 .btn-outline:hover,
 .btn-outline:focus,
 .btn-outline:active {
   color: #fff;
-  background-color: #789600;
-  border-color: #a1c900;
+  background-color: #e1dbcd;
+  border-color: #f4f2ed;
 }
 /* Inverted outline button (white on dark) */
 .btn-outline-inverse {
   color: #fff;
   background-color: transparent;
-  border-color: #d1ff17;
+  border-color: #ffffff;
 }
 .btn-outline-inverse:hover,
 .btn-outline-inverse:focus,
 .btn-outline-inverse:active {
-  color: #a1c900;
+  color: #f4f2ed;
   text-shadow: none;
   background-color: #fff;
   border-color: #fff;
@@ -283,7 +316,6 @@ h4 code {
 .doc_head-navigation ul > li > a:hover,
 .doc_head-navigation > li > a:focus,
 .doc_head-navigation ul > li > a:focus {
-  background-color: #f0f0f0;
   text-decoration: none;
 }
 .doc_head-navigation.right,
@@ -347,14 +379,14 @@ h4 code {
     position: relative;
   }
   .doc_head-navigation-item a {
-    font-family: Stuart, Georgia, serif;
-    font-size: 16px;
+    font-family: Graphik, "Helvetica Neue", sans-serif;
     font-style: normal;
-    background: #f9f8f6;
-    color: #4e4d49;
     font-weight: 500;
     letter-spacing: -0.08px;
+    font-size: 16px;
     line-height: 22px;
+    background: #f9f8f6;
+    color: #4e4d49;
     padding: 0.8rem 1.6rem !important;
     text-decoration: none;
     transition: all linear 0.1s;
@@ -523,7 +555,7 @@ h4 code {
 }
 .back-to-top:hover,
 .bs-docs-theme-toggle:hover {
-  color: #a1c900;
+  color: #f4f2ed;
   text-decoration: none;
 }
 .bs-docs-theme-toggle {
@@ -579,7 +611,7 @@ h4 code {
 }
 /* Masthead (headings and download button) */
 .bs-docs-masthead .bs-docs-booticon {
-  margin: 0 auto 3rem;
+  margin: 0 auto 2rem;
 }
 .bs-docs-masthead .lead {
   position: relative;
@@ -594,10 +626,7 @@ h4 code {
 }
 @media (min-width: 768px) {
   .bs-docs-masthead {
-    padding: 8rem 0;
-  }
-  .bs-docs-masthead .lead {
-    font-size: 2.4rem;
+    padding: 2rem 0;
   }
 }
 @media (min-width: 992px) {
@@ -627,7 +656,7 @@ h4 code {
 * Content blocks for each component or feature.
 */
 .note {
-  color: #cc0000;
+  color: #811823;
 }
 /* Space things out */
 .bs-docs-section {
@@ -896,7 +925,7 @@ h1[id] {
   content: "\e63b";
 }
 .status-danger:after {
-  color: #cc0000;
+  color: #811823;
   display: inline-block;
   margin-left: 1.2rem;
   position: relative;
@@ -922,7 +951,7 @@ h4.status-danger:after {
   content: "\e748";
 }
 .status-warning:after {
-  color: #e4ac00;
+  color: #854714;
   display: inline-block;
   margin-left: 1.2rem;
   position: relative;
@@ -1037,7 +1066,7 @@ h4.status-info:after {
   content: "\e74c";
 }
 .status-good:after {
-  color: #a1c900;
+  color: #2e6b34;
   display: inline-block;
   margin-left: 1.2rem;
   position: relative;
@@ -1300,7 +1329,7 @@ h4.status-good:after {
 */
 /* Pseudo :focus state for showing how it looks in the docs */
 #focusedInput {
-  border: 0.1rem solid #0066cc;
+  border: 0.1rem solid #406eb5;
   /* Restate unfocused value to make CSSLint happy that there's a pre-CSS3 fallback*/
 }
 dl {
@@ -1355,13 +1384,10 @@ dd {
 /*
 /* Brand colors */
 .core-action-1 {
-  background-color: #4eaaff;
+  background-color: #78B1E8;
 }
 .core-action-2 {
-  background-color: #0066cc;
-}
-.core-action-3 {
-  background-color: #83c4ff;
+  background-color: #406eb5;
 }
 .core-architectural-1 {
   background-color: #000;
@@ -1380,56 +1406,44 @@ dd {
   background-color: #fff;
 }
 .core-architectural-6 {
-  background-color: #efeee2;
+  background-color: #f4f2ed;
 }
 .explore-active-1 {
-  background-color: #a1c900;
-}
-.explore-active-2 {
-  background-color: #004e00;
-}
-.explore-active-3 {
-  background-color: #bdd94d;
-}
-.explore-active-4 {
-  background-color: #4d834d;
-}
-.explore-active-5 {
-  background-color: #004e00;
+  background-color: #406eb5;
 }
 .explore-architectural-1 {
-  background-color: #a1c900;
+  background-color: #f4f2ed;
 }
 .explore-architectural-2 {
-  background-color: #004e00;
+  background-color: #f4f2ed;
 }
 .utility-off-price,
 .outlet-action-1,
 .outlet-architectural-1 {
-  background-color: #cc0000;
+  background-color: #811823;
 }
 .outlet-action-2 {
-  background-color: #db4d4d;
+  background-color: #a75d65;
 }
 .utility-error {
-  background-color: #cc0000;
+  background-color: #811823;
 }
 .utility-warning {
-  background-color: #e4ac00;
+  background-color: #854714;
 }
 .utility-success,
 .utility-available {
-  background-color: #a1c900;
+  background-color: #2e6b34;
 }
 /* Docs colors */
 .color-swatches .bs-purple {
-  background-color: #a1c900;
+  background-color: #f4f2ed;
 }
 .color-swatches .bs-purple-light {
-  background-color: #b5e300;
+  background-color: #fefdfd;
 }
 .color-swatches .bs-purple-lighter {
-  background-color: #cafc00;
+  background-color: #ffffff;
 }
 .color-swatches .bs-gray {
   background-color: #f9f9f9;
@@ -1833,13 +1847,13 @@ dd {
 }
 .bs-icons.rating .icon:nth-child(2) {
   content: "\e72e";
-  color: #a1c900;
+  color: #f4f2ed;
 }
 .bs-icons.rating .icon:first-child,
 .bs-icons.rating .icon:hover:before,
 .bs-icons.rating .icon:hover ~ .bs-icons.rating .icon:before {
   content: "\e731";
-  color: #a1c900;
+  color: #f4f2ed;
 }
 /*
    /$$$$$$$             /$$     /$$                                         /$$       /$$ /$$                                                     /$$$$$$                        /$$                             /$$                       /$$     /$$

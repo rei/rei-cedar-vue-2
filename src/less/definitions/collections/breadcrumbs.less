@@ -11,17 +11,15 @@
 // BREADCRUMBS
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 .list-crumb {
+    .cdr-breadcrumb-base-text-mixin();
     &:extend( .list-inline all );
     > li {
         padding-right: 0;
         &:not(:last-of-type):after {
-            background: transparent url( "//satchel.rei.com/media/img/ico/icon-rei-right-arrow.svg" ) no-repeat 0 0;
             vertical-align: text-bottom;
-            content: "";
+            content: " / ";
             display: inline-block;
-            fill: @text-color;
-            height: ( @breadcrumb-icon-size + 0.2 );
-            width: ( @breadcrumb-icon-size - 0.1 );
+            color: rgba(66, 59, 47, 0.75);
             margin-left: 0.4rem;
         }
     }

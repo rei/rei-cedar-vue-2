@@ -558,125 +558,6 @@
 
     </code></pre></figure>
 
-    <h3 id="less-variables-buttons">Buttons</h3>
-    <figure class="highlight"><pre><code class="language-scss" data-lang="scss">    <span class="c1">/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////</span>
-<span class="c1">// Buttons</span>
-<span class="c1">//</span>
-<span class="c1">// TOC</span>
-<span class="c1">//</span>
-<span class="c1">// :Button Variants</span>
-<span class="c1">// :Button Size</span>
-<span class="c1">//</span>
-<span class="c1">////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////</span>
-<span class="c1">////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////</span>
-<span class="c1">//</span>
-<span class="c1">/// Button Variants</span>
-<span class="c1">//</span>
-<span class="c1">// Easily pump out default styles, as well as :hover, :focus, :active,</span>
-<span class="c1">// and disabled options for all buttons</span>
-<span class="c1">//</span>
-<span class="c1">// accepts six parameters</span>
-<span class="c1">// @color: Used to set the foreground color.</span>
-<span class="c1">// @background: Used to set the button background color.</span>
-<span class="c1">// @border: This defaults to inherit the background color of the button.</span>
-<span class="c1">// @active-background: Active state for button background color, defaults to darken the @background value by 10%.</span>
-<span class="c1">// @active-border: Active border color, defaults to darken the @border value by 12%.</span>
-<span class="c1">// @active-color: Active foreground color.</span>
-<span class="c1">//</span>
-<span class="c1">//----------------------------------------------------------------------------------------------------------------------</span>
-<span class="err">.</span><span class="na">button-variant</span><span class="err">(
-@</span><span class="nl">color</span><span class="p">:</span> <span class="o">@</span><span class="n">btn-primary-color</span><span class="p">;</span>
-<span class="k">@background</span><span class="nd">:</span> <span class="o">@</span><span class="nt">btn-primary-bg</span><span class="p">;</span>
-<span class="k">@border</span><span class="nd">:</span> <span class="o">@</span><span class="nt">btn-primary-border</span><span class="p">;</span>
-<span class="k">@active-background</span><span class="nd">:</span> <span class="o">@</span><span class="nt">btn-primary-active-bg</span><span class="p">;</span>
-<span class="k">@active-border</span><span class="nd">:</span> <span class="o">@</span><span class="nt">btn-primary-active-border</span><span class="p">;</span>
-<span class="k">@active-color</span><span class="nd">:</span> <span class="o">@</span><span class="nt">btn-primary-active-color</span><span class="p">;</span>
-<span class="k">@disabled-text</span><span class="nd">:</span> <span class="o">@</span><span class="nt">btn-disabled-color</span><span class="p">;</span>
-<span class="k">@disabled-background</span><span class="nd">:</span> <span class="o">@</span><span class="nt">btn-disabled-bg</span><span class="p">;</span>
-<span class="k">@disabled-border</span><span class="nd">:</span> <span class="o">@</span><span class="nt">btn-disabled-border</span><span class="p">;</span>
-<span class="k">@focus-text-color</span><span class="nd">:</span> <span class="o">@</span><span class="nt">color</span><span class="p">;</span> <span class="o">)</span> <span class="p">{</span>
-  <span class="nl">color</span><span class="p">:</span> <span class="o">@</span><span class="n">color</span><span class="p">;</span>
-  <span class="nl">background-color</span><span class="p">:</span> <span class="o">@</span><span class="n">background</span><span class="p">;</span>
-  <span class="nl">border-color</span><span class="p">:</span> <span class="o">@</span><span class="n">border</span><span class="p">;</span>
-  <span class="nl">border-width</span><span class="p">:</span> <span class="m">0</span><span class="mi">.1rem</span><span class="p">;</span>
-  <span class="nl">border-style</span><span class="p">:</span> <span class="nb">solid</span><span class="p">;</span>
-  <span class="nl">border-radius</span><span class="p">:</span> <span class="o">@</span><span class="n">cdr-radius-softer</span><span class="p">;</span>
-  <span class="nl">outline</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
-  <span class="k">&amp;</span><span class="nd">:hover</span><span class="o">,</span>
-  <span class="k">&amp;</span><span class="nd">:active</span><span class="o">,</span>
-  <span class="k">&amp;</span><span class="nc">.active</span> <span class="p">{</span>
-    <span class="nl">color</span><span class="p">:</span> <span class="o">@</span><span class="n">active-color</span><span class="p">;</span>
-    <span class="nl">background-color</span><span class="p">:</span> <span class="o">@</span><span class="n">active-background</span><span class="p">;</span>
-    <span class="nl">border-color</span><span class="p">:</span> <span class="o">@</span><span class="n">active-border</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="k">&amp;</span><span class="nd">:focus</span><span class="o">,</span>
-  <span class="k">&amp;</span><span class="nc">.focus</span><span class="p">{</span>
-      <span class="c1">// Default</span>
-      <span class="nl">color</span><span class="p">:</span> <span class="o">@</span><span class="n">focus-text-color</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="k">&amp;</span><span class="nd">:active</span><span class="o">,</span>
-  <span class="k">&amp;</span><span class="nc">.active</span> <span class="p">{</span>
-      <span class="nl">background-image</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
-      <span class="nl">outline</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="k">&amp;</span><span class="nc">.disabled</span><span class="o">,</span>
-  <span class="k">&amp;</span><span class="o">[</span><span class="nt">disabled</span><span class="o">],</span>
-  <span class="nt">fieldset</span><span class="o">[</span><span class="nt">disabled</span><span class="o">]</span> <span class="k">&amp;</span> <span class="p">{</span>
-    <span class="k">&amp;</span><span class="o">,</span>
-    <span class="k">&amp;</span><span class="nd">:hover</span><span class="o">,</span>
-    <span class="k">&amp;</span><span class="nd">:focus</span><span class="o">,</span>
-    <span class="k">&amp;</span><span class="nd">:active</span><span class="o">,</span>
-    <span class="k">&amp;</span><span class="nc">.active</span> <span class="p">{</span>
-      <span class="nl">cursor</span><span class="p">:</span> <span class="o">@</span><span class="n">cursor-disabled</span><span class="p">;</span>
-      <span class="nl">pointer-events</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
-      <span class="c1">// Future-proof disabling of clicks</span>
-      <span class="nl">color</span><span class="p">:</span> <span class="o">@</span><span class="n">disabled-text</span><span class="p">;</span>
-      <span class="nl">background-color</span><span class="p">:</span> <span class="o">@</span><span class="n">disabled-background</span><span class="p">;</span>
-      <span class="nl">border-color</span><span class="p">:</span> <span class="o">@</span><span class="n">disabled-border</span><span class="p">;</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-
- <span class="c1">// TODO: assess if we want to remove this -</span>
-<span class="k">@alpha-ruleset</span><span class="nd">:</span> <span class="p">{</span>
-    <span class="nl">background-color</span><span class="p">:</span> <span class="nf">rgb</span><span class="p">(</span><span class="m">255</span><span class="o">,</span> <span class="m">255</span><span class="o">,</span> <span class="m">255</span><span class="p">);</span>
-    <span class="nl">background-color</span><span class="p">:</span> <span class="nf">rgba</span><span class="p">(</span><span class="m">255</span><span class="o">,</span> <span class="m">255</span><span class="o">,</span> <span class="m">255</span><span class="o">,</span> <span class="m">0</span><span class="mi">.2</span><span class="p">);</span>
-<span class="p">};</span>
-<span class="c1">////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////</span>
-<span class="c1">//</span>
-<span class="c1">// Button Size</span>
-<span class="c1">//</span>
-<span class="c1">// extend past btn-xs, btn-sm, and btn-lg</span>
-<span class="c1">//</span>
-<span class="c1">// accepts five parameters</span>
-<span class="c1">// @padding-y.</span>
-<span class="c1">// @padding-x.</span>
-<span class="c1">// @font-size.</span>
-<span class="c1">// @line-height.</span>
-<span class="c1">// @font-family: defaults to @headings-font-family-secondary;.</span>
-<span class="c1">//</span>
-<span class="c1">//----------------------------------------------------------------------------------------------------------------------</span>
-<span class="err">.</span><span class="na">button-size</span><span class="err">(
-    @</span><span class="nl">padding</span><span class="p">:</span> <span class="o">@</span><span class="n">btn-inset</span><span class="p">;</span>
-    <span class="k">@font-size</span><span class="nd">:</span> <span class="o">@</span><span class="nt">btn-font-size</span><span class="p">;</span>
-    <span class="k">@line-height</span><span class="nd">:</span> <span class="o">@</span><span class="nt">btn-line-height</span><span class="p">;</span>
-    <span class="k">@font-family</span><span class="nd">:</span> <span class="o">@</span><span class="nt">btn-type</span><span class="p">;</span>
-    <span class="k">@font-style</span><span class="nd">:</span> <span class="o">@</span><span class="nt">btn-font-style</span><span class="p">;</span><span class="o">)</span> <span class="p">{</span>
-      <span class="nl">font-family</span><span class="p">:</span> <span class="o">@</span><span class="n">font-family</span><span class="p">;</span>
-      <span class="nl">font-size</span><span class="p">:</span> <span class="o">@</span><span class="n">font-size</span><span class="p">;</span>
-      <span class="nl">font-style</span><span class="p">:</span> <span class="o">@</span><span class="n">font-style</span><span class="p">;</span>
-      <span class="nl">font-weight</span><span class="p">:</span> <span class="m">500</span><span class="p">;</span>
-      <span class="nl">letter-spacing</span><span class="p">:</span> <span class="mi">-.08px</span><span class="p">;</span>
-      <span class="nl">line-height</span><span class="p">:</span> <span class="o">@</span><span class="n">line-height</span><span class="p">;</span>
-      
-      <span class="nl">padding</span><span class="p">:</span> <span class="o">@</span><span class="n">padding</span><span class="p">;</span>
-     <span class="o">&gt;</span> <span class="nc">.icon</span> <span class="p">{</span>
-      <span class="nl">font-size</span><span class="p">:</span> <span class="o">@</span><span class="n">font-size</span> <span class="o">!</span><span class="n">important</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-    </code></pre></figure>
-
     <h3 id="less-variables-center-block">Center Block</h3>
     <figure class="highlight"><pre><code class="language-scss" data-lang="scss">    <span class="c1">// Center-align a block level element</span>
 
@@ -848,7 +729,6 @@
         <span class="nl">outline</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="k">&amp;</span><span class="nd">:focus</span><span class="p">{</span>
-        <span class="nc">.utility-focus-state</span><span class="o">()</span><span class="p">;</span>
         <span class="nl">border</span><span class="p">:</span> <span class="m">0</span><span class="mi">.1rem</span> <span class="nb">solid</span> <span class="o">@</span><span class="n">color</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
@@ -1445,52 +1325,6 @@
             <span class="nl">border-width</span><span class="p">:</span> <span class="o">@</span><span class="n">second-sm-mountain-size</span><span class="p">;</span>
             <span class="nl">transform</span><span class="p">:</span> <span class="nf">translate</span><span class="p">(</span> <span class="m">3</span><span class="mi">.6rem</span><span class="o">,</span> <span class="m">1rem</span> <span class="p">);</span>
         <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-    </code></pre></figure>
-
-    <h3 id="less-variables-links">Links</h3>
-    <p>Primarily used within <code>less/rei-overlays/anchors.less</code>.</p>
-    <figure class="highlight"><pre><code class="language-scss" data-lang="scss">    <span class="c1">////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////</span>
-<span class="c1">// Link</span>
-<span class="c1">////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////</span>
-<span class="c1">////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////</span>
-<span class="c1">//</span>
-<span class="c1">// link-variant</span>
-<span class="c1">//</span>
-<span class="c1">// Quickly create a new link style.</span>
-<span class="c1">// TODO: add additional parameters for focus and active, allowing to defenestrate from hover.</span>
-<span class="c1">//</span>
-<span class="c1">//----------------------------------------------------------------------------------------------------------------------</span>
-<span class="err">.</span><span class="na">link-variant</span><span class="err">( @</span><span class="nl">color</span><span class="p">:</span> <span class="o">@</span><span class="n">link-color</span><span class="p">;</span> <span class="k">@decoration</span><span class="nd">:</span> <span class="o">@</span><span class="nt">link-hover-decoration</span><span class="p">;</span> <span class="k">@hover-decoration</span><span class="nd">:</span> <span class="o">@</span><span class="nt">link-hover-decoration-alt</span><span class="p">;</span> <span class="k">@hover-color</span><span class="nd">:</span> <span class="o">@</span><span class="nt">color</span> <span class="o">)</span> <span class="p">{</span>
-    <span class="nl">align-items</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
-    <span class="nl">background-color</span><span class="p">:</span> <span class="nb">transparent</span><span class="p">;</span>
-    <span class="nl">border</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
-    <span class="nl">color</span><span class="p">:</span> <span class="o">@</span><span class="n">color</span><span class="p">;</span>
-    <span class="nl">cursor</span><span class="p">:</span> <span class="nb">pointer</span><span class="p">;</span>
-    <span class="nl">display</span><span class="p">:</span> <span class="n">inline-flex</span><span class="p">;</span>
-    <span class="na">fill</span><span class="p">:</span> <span class="o">@</span><span class="n">color</span><span class="p">;</span>
-    <span class="nl">font-family</span><span class="p">:</span> <span class="nb">inherit</span><span class="p">;</span>
-    <span class="nl">font-size</span><span class="p">:</span> <span class="nb">inherit</span><span class="p">;</span>
-    <span class="nl">line-height</span><span class="p">:</span> <span class="nb">inherit</span><span class="p">;</span>
-    <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
-    <span class="nl">outline</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
-    <span class="nl">padding</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
-    <span class="nl">text-decoration</span><span class="p">:</span> <span class="o">@</span><span class="n">decoration</span><span class="p">;</span>
-    <span class="nl">vertical-align</span><span class="p">:</span> <span class="nb">top</span><span class="p">;</span>
-    <span class="k">&amp;</span><span class="nd">:hover</span><span class="o">,</span>
-    <span class="k">&amp;</span><span class="nd">:active</span><span class="o">,</span>
-    <span class="k">&amp;</span><span class="nd">:focus</span> <span class="p">{</span>
-        <span class="nl">color</span><span class="p">:</span> <span class="o">@</span><span class="n">hover-color</span><span class="p">;</span>
-        <span class="nl">text-decoration</span><span class="p">:</span> <span class="o">@</span><span class="n">hover-decoration</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">&amp;</span><span class="nd">:focus</span><span class="p">{</span>
-        <span class="nc">.utility-focus-state</span><span class="o">()</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="nc">.icon</span> <span class="p">{</span>
-        <span class="nl">display</span><span class="p">:</span> <span class="n">inline-block</span><span class="p">;</span>
-        <span class="nl">text-decoration</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
 

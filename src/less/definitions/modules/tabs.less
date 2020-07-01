@@ -25,16 +25,15 @@
             &:extend( .link_navigation );
             &:hover,
             &:focus {
-                background-color: @nav-link-hover-bg;
                 text-decoration: none;
             }
         }
         // Disabled state sets text to gray and nukes hover/tab effects
         &.disabled > a {
-            color: @nav-disabled-link-color;
+            color: @cdr-color-text-link-disabled;
             &:hover, &:focus {
                 background-color: transparent;
-                color: @nav-disabled-link-hover-color;
+                color: @cdr-color-text-link-disabled;
                 cursor: @cursor-disabled;
                 text-decoration: none;
             }
@@ -45,13 +44,13 @@
     &:extend( .list-nav all );
     > li {
         > a {
-            .button-size(
-                @tab-padding; 
-                @tab-font-size; 
-                @tab-line-height;
-                @tab-font-family
-                @border-radius-base);
-            &:extend( .link_navigation );
+        font-family:  @tab-font-family;
+        font-size: @tab-font-size; 
+        font-style: normal;
+        font-weight: 500;
+        letter-spacing: -.08px;
+        line-height: @tab-line-height;
+        &:extend( .text-capitalize );
         }
     }
 }
@@ -78,12 +77,7 @@
             display: block;
             position: relative;
             bottom: -2px;
-            .button-size(
-                @tab-padding;
-                @tab-font-size;
-                @tab-line-height;
-                @tab-font-family;
-                @tab-font-style; );
+            padding: @cdr-space-inset-one-x-squish;
             &:extend( .link_navigation );
             font-weight: 500;
             letter-spacing: -.08px;
@@ -99,7 +93,7 @@
               outline: thin dotted;
               // WebKit
               outline: 0.2rem auto;
-              outline-color: @btn-focus-stroke-color;
+              outline-color: #8DD1ED;
               outline-offset: -0.1rem;
               box-shadow: 0 0 5px rgba(81, 203, 238, 1);
               border: 1px solid rgba(81, 203, 238, 1);
@@ -137,24 +131,6 @@
     }
     > .active {
         display: block;
-    }
-}
-
-.list-menu {
-    &:extend( .list-nav all );
-    > li {
-        > a {
-            &:extend( .link_navigation-subtitle all );
-            border-bottom: 0.1rem solid @list-group-border;
-            line-height: @line-height-open;
-            &:hover, &:focus {
-                background-color: @nav-link-hover-bg;
-                text-decoration: none;
-            }
-        }
-    }
-    &.right {
-        text-align: right;
     }
 }
 

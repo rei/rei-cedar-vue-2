@@ -41,13 +41,13 @@
 // These variables define the current brand scheme, these are not intended for implementation outside of this file.
 //
 //----------------------------------------------------------------------------------------------------------------------
-@old-growth:                             #004e00;
-@new-growth:                             #a1c900;
-@dusty-white:                            #efeee2;
-@brand-success:                          @new-growth;
-@brand-info:                             @core-architectural-2;
-@brand-warning:                          #e4ac00;
-@brand-danger:                           #cc0000;
+@old-growth:                             @cdr-color-background-secondary;
+@new-growth:                             @cdr-color-background-secondary;
+@dusty-white:                            @cdr-color-background-secondary;
+@brand-success:                          @cdr-color-text-success;
+@brand-info:                             @cdr-color-text-info;
+@brand-warning:                          @cdr-color-text-warning;
+@brand-danger:                           @cdr-color-text-error;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
@@ -57,9 +57,8 @@
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //action -- these variables are intended for actionable elements such as links and buttons
-@core-action-1:                          #4eaaff;
-@core-action-2:                          #0066cc;
-@core-action-3:                          mix(@core-action-1, @core-architectural-5, 70%);
+@core-action-1:                          #78B1E8;
+@core-action-2:                          #406eb5;
 
 //core architecture  - dark to light -- used for page scaffolding
 @core-architectural-1:                   #000;
@@ -80,11 +79,8 @@
 //
 //----------------------------------------------------------------------------------------------------------------------
 // Explore action, like Core, the action vars are for elements that have action such as links and buttons
-@explore-action-1:                          @new-growth;
-@explore-action-2:                          @old-growth;
-@explore-action-3:                          mix(@new-growth, @core-architectural-5, 70%);
-@explore-action-4:                          mix(@old-growth, @core-architectural-5, 70%);
-@explore-action-5:                          @old-growth;
+@explore-action-1:                          @cdr-color-text-link-rest;
+
 
 // Explore architectural, used to create scaffolding
 @explore-architectural-1:                    @new-growth;
