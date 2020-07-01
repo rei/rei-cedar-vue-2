@@ -79,11 +79,8 @@
 //
 //----------------------------------------------------------------------------------------------------------------------
 // Explore action, like Core, the action vars are for elements that have action such as links and buttons
-@explore-action-1:                          @new-growth;
-@explore-action-2:                          @old-growth;
-@explore-action-3:                          mix(@new-growth, @core-architectural-5, 70%);
-@explore-action-4:                          mix(@old-growth, @core-architectural-5, 70%);
-@explore-action-5:                          @old-growth;
+@explore-action-1:                          @cdr-color-text-link-rest;
+
 
 // Explore architectural, used to create scaffolding
 @explore-architectural-1:                    @new-growth;

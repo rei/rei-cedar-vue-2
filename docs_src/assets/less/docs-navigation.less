@@ -48,6 +48,22 @@
 }
 
 /*NAV*/
+.list-menu() {
+    &:extend( .list-nav all );
+    > li {
+        > a {
+            &:extend( .link_navigation-subtitle all );
+            border-bottom: 0.1rem solid #ccc;
+            line-height: 1.5;
+            &:hover, &:focus {
+                text-decoration: none;
+            }
+        }
+    }
+    &.right {
+        text-align: right;
+    }
+}
 
 .doc_head-navigation,
 .doc_head-navigation ul {
@@ -119,14 +135,9 @@
         padding: 0;
         position: relative;
         a {
-            font-family: @headings-font-family;
-            font-size: @btn-font-size;
-            font-style: @btn-font-style;
+           .cdr-button-base-text-mixin-medium();
             background: @cdr-color-background-button-secondary-rest;
             color: @cdr-color-text-button-secondary;
-            font-weight: 500;
-            letter-spacing: -.08px;
-            line-height: @btn-line-height;
             padding: @cdr-space-inset-one-x-squish !important;
             text-decoration: none;
             transition: all linear 0.1s;

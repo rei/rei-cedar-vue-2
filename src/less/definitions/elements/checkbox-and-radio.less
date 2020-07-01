@@ -35,7 +35,7 @@
         display: inline-block;
     }
     &.disabled {
-        color: @disabled-color;
+        color: #ccc;
     }
     .has-error & {
         margin-left: 0;
@@ -55,10 +55,10 @@
     width: 0.1rem;
     &[ disabled ] {
         + label {
-            color: @disabled-color;
+            color: #ccc;
             cursor: @cursor-disabled;
             &:before {
-                box-shadow: 0 0 0 0.1rem @disabled-color;
+                box-shadow: 0 0 0 0.1rem #ccc;
             }
         }
     }
@@ -105,7 +105,7 @@
     }
     .disabled&,
     fieldset[disabled] & {
-        box-shadow: 0 0 0 0.1rem @disabled-color;
+        box-shadow: 0 0 0 0.1rem #ccc;
     }
 };
 @control-standard-element-and-label-empty-before: {
@@ -120,7 +120,7 @@
     }
     &.disabled,
     fieldset[disabled] & {
-        color: @disabled-color;
+        color: #ccc;
     }
 }
 
@@ -238,6 +238,8 @@
 > [ type="checkbox" ] + label:before,
 > [ type="radio" ] + label:before {
     content:"\e739";
+    color: #928b80 !important;
+     
 }
 > [ type="checkbox" ]:checked + label:before,
 > [ type="radio" ]:checked + label:before {
@@ -254,6 +256,7 @@
 > [ type="checkbox" ] + label:before,
 > [ type="radio" ] + label:before {
     content:"\e602";
+    color: #928b80 !important;
 }
 > [ type="checkbox" ]:checked + label:before,
 > [ type="radio" ]:checked + label:before {

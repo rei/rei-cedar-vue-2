@@ -5,7 +5,7 @@
 @type    : 'element';
 @element : 'buttons';
 
-@import (multiple) '../../theme.config';
+
 // Cedar tokens 
 @import "./node_modules/@rei/cdr-tokens/dist/less/cdr-tokens.less";
 @import './node_modules/@rei/cdr-component-variables/dist/less/index.less';
@@ -55,9 +55,18 @@
 
 }
 
-.btn-default {
+.btn-default,
+.btn-play {
     .cdr-button-secondary-mixin();
-    
+}
+
+.btn-play {
+    & .icon {
+  
+        font-size: 1.8rem;
+        padding-right: 1.6rem;
+        vertical-align: text-bottom;
+    } 
 }
 
 
@@ -66,7 +75,8 @@
 // Make a button look and behave like a link
 // ---------------------------------------------------------------------------------------------------------------------
 // TODO: refactor, move into base and theme selectors above
-.btn-link {
+.btn-link,
+.btn__link-inline-play {
   background-color: transparent;
   box-shadow: none;
   color: @cdr-color-text-link-rest;
@@ -81,7 +91,7 @@
     fill: @cdr-color-text-link-hover;
     background-color: transparent;
     box-shadow: none;
-    text-decoration: underline !important;
+    text-decoration: underline;
   }
 
   &:active {
@@ -91,99 +101,17 @@
     box-shadow: none;
   }
 
-  &[disabled] {
-    background-color: transparent;
-    box-shadow: none;
-    color: @cdr-color-text-link-disabled;
-    fill: @cdr-color-text-link-disabled;
-  }
 }
 
 .btn__link-inline-play {
-    font-family: inherit;
-    font-size: inherit;
-    background-color: transparent;
     padding: 0;
-
-    span.icon {
-        font-size: 1.8rem;
-        padding-right: 1.6rem;
-        vertical-align: text-bottom;
-    }
-
-    &:extend( .link_stag all);
-    .overlay-dark & {
-        &:extend( .link_stag-overlay all);
-    }
-
-    &,
-    &:hover,
-    &:focus,
-    &:active {
-        border-color: transparent;
-        .link-variant( @link-color; @link-hover-decoration; @link-hover-decoration-alt; );
-    }
-
     &:hover,
     &:focus {
-        background-color: transparent;
+        text-decoration: none;
     }
-
-    &.disabled,
-    &[disabled],
-    fieldset[disabled] & {
-        &,
-        &:hover,
-        &:focus,
-        &.focus,
-        &:active,
-        &.active {
-            cursor: @cursor-disabled;
-            pointer-events: none;
-            // Future-proof disabling of clicks
-            color: @btn-disabled-color;
-            @alpha-ruleset();
-        }
-    }
-}
-
-.btn-play {
-    font-family: inherit;
-    font-size: inherit;
-    border-radius: .5rem;
-    color: @btn-high-contrast-color;
-    background-color: rgba(0,0,0,.9);
-
-    span.icon {
-        font-size: 1.8rem;
-        padding-right: 1.6rem;
-        vertical-align: text-bottom;
-    }
-
-    &:hover,
-    &:active,
-    &:focus {
-        color: @btn-high-contrast-color;
-        background-color: rgba(0,0,0,.8);
-    }
-
-    &.disabled,
-    &[disabled],
-    fieldset[disabled] & {
-        &,
-        &:hover,
-        &:focus,
-        &.focus,
-        &:active,
-        &.active {
-            cursor: @cursor-disabled;
-            pointer-events: none;
-            // Future-proof disabling of clicks
-            color: @btn-disabled-color;
-            border-color: @btn-disabled-border;
-            @alpha-ruleset();
-        }
-    }
+    & .icon {
+    padding-right: 0;
+   }
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -204,15 +132,15 @@
 }
 
 .btn-xs {
-      font-family: @btn-type;
-      font-size:  @btn-xs-font-size;
-      font-style: @btn-xs-font-style;
+      font-family: @cdr-font-family-sans;
+      font-size:  14px;
+      font-style: normal;
       font-weight: 500;
       letter-spacing: -.08px;
-      line-height: @btn-xs-line-height;
-      padding: @btn-xs-inset;
+      line-height: 14px;
+      padding: @cdr-space-inset-three-quarter-x-squish;
      > .icon {
-      font-size:  @btn-xs-font-size !important;
+      font-size:  @cdr-font-family-sans !important;
     }
 }
 
@@ -272,7 +200,7 @@
 
     &.remove-right {
         & .icon-rei-close-small {
-            &:extend( .btn-contrast.btn-primary );
+            &:extend( .btn-primary );
             border-radius: 0 0.3rem 0.3rem 0;
             height: 100%;
             left: auto;
@@ -298,8 +226,3 @@ input[type="button"] {
     }
 }
 
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//            OVERRIDES
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-.loadUIOverrides();

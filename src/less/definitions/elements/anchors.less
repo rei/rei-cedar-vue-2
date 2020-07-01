@@ -11,7 +11,13 @@
 // UI Framework Anchors
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 a {
-    .link-variant( @link-color; @link-hover-decoration; @link-hover-decoration-alt; );
+    .cdr-link-base-mixin();
+    display: inherit;
+    vertical-align: inherit;
+    .icon {
+        display: inline-block;
+        text-decoration: none;
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -19,14 +25,25 @@ a {
 
 .link_stag,
 .link-off-price-standalone{
-    .link-variant( @link-color; @link-hover-decoration-alt; @link-hover-decoration; );
+ .cdr-link-standalone-mixin();
 }
 
 .link_navigation,
 .link_navigation-title,
 .link_navigation-subtitle {
-    &:extend( .text-capitalize );
-    .link-variant( @link-contrast-color; @link-hover-decoration-alt; @link-hover-decoration );
+    .cdr-link-base-mixin();
+    display: inherit;
+    color: @cdr-color-text-primary;
+    text-decoration: none;
+    text-transform: capitalize;
+    &:hover,
+    &:active,
+    &:focus,
+    &:visited {
+        color: @cdr-color-text-primary;
+        text-decoration: underline;
+
+    }
 }
 
 // legacy overlay merged into one style
@@ -48,7 +65,14 @@ a {
 .link-utility-overlay,
 .link_navigation-title-overlay,
 .link_stag-title-overlay {
-    .link-variant( @link-color-overlay; @link-hover-decoration; );
+  .cdr-link-base-mixin();
+  color: #fff;
+  &:hover,
+  &:active,
+  &:focus,
+  &:visited {
+      color: #fff;
+  }
 }
 
 .link_navigation-title,
@@ -92,15 +116,8 @@ a {
 
 // Crumb
 .link-crumb {
-    font: normal normal @font-size-smaller @font-family-sans-serif;
-    .link-variant( @link-color; @link-hover-decoration-alt; @link-hover-decoration;);
-}
-
-
-.link_navigation-subtitle {
-    &:extend( .text-capitalize );
-    &:extend( .text-sub-heading );	
-    .link-variant( @link-contrast-color; @link-hover-decoration-alt; @link-hover-decoration );
+    .cdr-breadcrumb-item-linked-mixin();
+    color: rgba(66, 59, 47, 0.75);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
