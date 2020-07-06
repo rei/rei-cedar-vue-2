@@ -131,28 +131,6 @@
     fill: $cdr-color-text-button-secondary-disabled;
   }
 }
-//
-// @mixin cdr-button-brand-mixin() {
-//   background-color: $cdr-color-background-cta-brand-rest;
-//   box-shadow: inset 0 0 0 1px $cdr-color-border-cta-brand-rest;
-//   color: $cdr-color-text-cta-brand;
-//   fill: $cdr-color-text-cta-brand;
-//
-//   &:hover,
-//   &:focus {
-//     color: $cdr-color-text-cta-brand-hover;
-//     fill: $cdr-color-text-cta-brand-hover;
-//     background-color: $cdr-color-background-cta-brand-hover;
-//     box-shadow: inset 0 0 0 3px $cdr-color-border-cta-brand-hover, $cdr-prominence-raised;
-//   }
-//
-//   &:active {
-//     color: $cdr-color-text-cta-brand-active;
-//     fill: $cdr-color-text-cta-brand-active;
-//     background-color: $cdr-color-background-cta-brand-active;
-//     box-shadow: inset 0 0 0 3px $cdr-color-border-cta-brand-active,  inset 0 0 0 5px $cdr-color-border-cta-brand-active-inset;
-//   }
-// }
 
 @mixin cdr-button-dark-mixin() {
   background-color: $cdr-color-background-cta-dark-rest;
@@ -215,30 +193,7 @@
   }
 }
 
-//
-// @mixin cdr-button-light-mixin() {
-//   background-color: $cdr-color-background-cta-light-rest;
-//   box-shadow: inset 0 0 0 1px $cdr-color-border-cta-light-rest;
-//   color: $cdr-color-text-cta-light;
-//   fill: $cdr-color-text-cta-light;
-//
-//   &:hover,
-//   &:focus {
-//     color: $cdr-color-text-cta-light-hover;
-//     fill: $cdr-color-text-cta-light-hover;
-//     background-color: $cdr-color-background-cta-light-hover;
-//     box-shadow: inset 0 0 0 3px $cdr-color-border-cta-light-hover, $cdr-prominence-raised;
-//   }
-//
-//   &:active {
-//     color: $cdr-color-text-cta-light-active;
-//     fill: $cdr-color-text-cta-light-active;
-//     background-color: $cdr-color-background-cta-light-active;
-//     box-shadow: inset 0 0 0 3px $cdr-color-border-cta-light-active, inset 0 0 0 5px $cdr-color-border-cta-light-active-inset;
-//   }
-// }
-
-@mixin cdr-button-light-elevated-mixin() {
+@mixin cdr-button-secondary-elevated-mixin() {
   box-shadow: inset 0 0 0 1px $cdr-color-border-cta-light-rest, $cdr-prominence-elevated;
 
   &:hover,
@@ -251,7 +206,7 @@
   }
 }
 
-@mixin cdr-button-brand-elevated-mixin() {
+@mixin cdr-button-primary-elevated-mixin() {
   box-shadow: inset 0 0 0 1px $cdr-color-border-cta-brand-rest, $cdr-prominence-elevated;
 
   &:hover,

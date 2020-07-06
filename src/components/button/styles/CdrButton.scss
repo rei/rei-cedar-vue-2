@@ -9,31 +9,21 @@
 
   /* Modifier style variants
     ========================================================================== */
-  &--primary, &--brand {
+  &--primary {
     @include cdr-button-primary-mixin;
 
     &.cdr-button--elevated {
-      @include cdr-button-brand-elevated-mixin;
+      @include cdr-button-primary-elevated-mixin;
     }
   }
 
-  /* Secondary
-     ========== */
-  &--secondary, &--light {
+  &--secondary {
     @include cdr-button-secondary-mixin;
 
     &.cdr-button--elevated {
-      @include cdr-button-light-elevated-mixin;
+      @include cdr-button-secondary-elevated-mixin;
     }
   }
-
-  // &--brand {
-  //   @include cdr-button-brand-mixin;
-  //
-  //   &.cdr-button--elevated {
-  //     @include cdr-button-brand-elevated-mixin;
-  //   }
-  // }
 
   &--dark {
     @include cdr-button-dark-mixin;
@@ -42,14 +32,6 @@
       @include cdr-button-dark-elevated-mixin;
     }
   }
-
-  // &--light {
-  //   @include cdr-button-light-mixin;
-  //
-  //   &.cdr-button--elevated {
-  //     @include cdr-button-light-elevated-mixin;
-  //   }
-  // }
 
   &--sale {
     @include cdr-button-sale-mixin;
