@@ -9,14 +9,54 @@
 
   /* Modifier style variants
     ========================================================================== */
-  &--primary {
+  &--primary, &--brand {
     @include cdr-button-primary-mixin;
+
+    &.cdr-button--elevated {
+      @include cdr-button-brand-elevated-mixin;
+    }
   }
 
   /* Secondary
      ========== */
-  &--secondary {
+  &--secondary, &--light {
     @include cdr-button-secondary-mixin;
+
+    &.cdr-button--elevated {
+      @include cdr-button-light-elevated-mixin;
+    }
+  }
+
+  // &--brand {
+  //   @include cdr-button-brand-mixin;
+  //
+  //   &.cdr-button--elevated {
+  //     @include cdr-button-brand-elevated-mixin;
+  //   }
+  // }
+
+  &--dark {
+    @include cdr-button-dark-mixin;
+
+    &.cdr-button--elevated {
+      @include cdr-button-dark-elevated-mixin;
+    }
+  }
+
+  // &--light {
+  //   @include cdr-button-light-mixin;
+  //
+  //   &.cdr-button--elevated {
+  //     @include cdr-button-light-elevated-mixin;
+  //   }
+  // }
+
+  &--sale {
+    @include cdr-button-sale-mixin;
+
+    &.cdr-button--elevated {
+      @include cdr-button-sale-elevated-mixin;
+    }
   }
 
   /* Size variants

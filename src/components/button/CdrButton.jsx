@@ -26,6 +26,13 @@ export default {
       validator: (value) => (['button', 'submit', 'reset'].indexOf(value) >= 0) || false,
     },
     /**
+     * Increases box-shadow around button to enhance contrast against background
+     */
+    elevated: {
+      type: Boolean,
+      default: false,
+    },
+    /**
      * Renders an icon-only button. Default slot is disabled. Overrides size and responsiveSize props.
      */
     iconOnly: {
@@ -61,6 +68,10 @@ export default {
       if (this.$slots.icon && this.$slots.default) {
         /* only add class for buttons with text + icon */
         classes.push(this.modifyClassName(this.baseClass, 'has-icon'));
+      }
+
+      if (this.elevated) {
+        classes.push(this.modifyClassName(this.baseClass, 'elevated'));
       }
 
       if (this.iconOnly) {
