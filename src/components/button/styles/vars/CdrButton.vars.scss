@@ -132,6 +132,7 @@
   }
 }
 
+// TODO: update to use button vars once remapped
 @mixin cdr-button-dark-mixin() {
   background-color: $cdr-color-background-cta-dark-rest;
   box-shadow: inset 0 0 0 1px $cdr-color-border-cta-dark-rest;
@@ -153,15 +154,15 @@
     box-shadow: inset 0 0 0 3px $cdr-color-border-cta-dark-active,  inset 0 0 0 5px $cdr-color-border-cta-dark-active-inset;
   }
 
-// TODO: CTA disabled styling?
   &[disabled] {
-    background-color: $cdr-color-background-button-default-disabled;
-    box-shadow: inset 0 0 0 1px $cdr-color-border-button-default-disabled;
-    color: $cdr-color-text-button-primary-disabled;
-    fill: $cdr-color-text-button-primary-disabled;
+    background-color: $cdr-color-background-cta-default-disabled;
+    box-shadow: inset 0 0 0 1px $cdr-color-border-cta-default-disabled;
+    color: $cdr-color-text-cta-dark-disabled;
+    fill: $cdr-color-text-cta-dark-disabled;
   }
 }
 
+// TODO: update to use button vars once remapped
 @mixin cdr-button-sale-mixin() {
   background-color: $cdr-color-background-cta-sale-rest;
   box-shadow: inset 0 0 0 1px $cdr-color-border-cta-sale-rest;
@@ -184,12 +185,11 @@
     box-shadow: inset 0 0 0 3px $cdr-color-border-cta-sale-active,  inset 0 0 0 5px $cdr-color-border-cta-sale-active-inset;
   }
 
-// TODO: CTA disabled styling?
   &[disabled] {
-    background-color: $cdr-color-background-button-secondary-disabled;
-    box-shadow: inset 0 0 0 1px $cdr-color-border-button-default-disabled;
-    color: $cdr-color-text-button-secondary-disabled;
-    fill: $cdr-color-text-button-secondary-disabled;
+    background-color: $cdr-color-background-cta-default-disabled;
+    box-shadow: inset 0 0 0 1px $cdr-color-border-cta-default-disabled;
+    color: $cdr-color-text-cta-sale-disabled;
+    fill: $cdr-color-text-cta-sale-disabled;
   }
 }
 
