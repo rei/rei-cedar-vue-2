@@ -20,6 +20,7 @@
         :full-width="button.fullWidth"
         :disabled="button.disabled"
         :modifier="button.modifier"
+        :elevated="button.elevated"
         tag="a"
       >
         {{ button.label }} <icon-caret-right class="cdr-button__icon"/>
@@ -83,6 +84,14 @@ export default {
               fullWidth: true,
               modifier: 'dark',
             },
+            {
+              label: 'Elevated Dark',
+              disabled: false,
+              size: 'medium',
+              space: 'cdr-mt-space-one-x',
+              elevated: true,
+              modifier: 'dark',
+            },
           ],
         },
 
@@ -128,6 +137,14 @@ export default {
               size: 'medium',
               space: 'cdr-mt-space-one-x',
               fullWidth: true,
+              modifier: 'sale',
+            },
+            {
+              label: 'Elevated Sale',
+              disabled: false,
+              size: 'medium',
+              space: 'cdr-mt-space-one-x',
+              elevated: true,
               modifier: 'sale',
             },
           ],
@@ -177,6 +194,14 @@ export default {
               fullWidth: true,
               modifier: 'primary',
             },
+            {
+              label: 'Elevated Primary',
+              disabled: false,
+              size: 'medium',
+              space: 'cdr-mt-space-one-x',
+              elevated: true,
+              modifier: 'primary',
+            },
           ],
         },
 
@@ -223,6 +248,14 @@ export default {
               size: 'medium',
               space: 'cdr-mt-space-one-x',
               fullWidth: true,
+              modifier: 'secondary',
+            },
+            {
+              label: 'Elevated Secondary',
+              disabled: false,
+              size: 'medium',
+              space: 'cdr-mt-space-one-x',
+              elevated: true,
               modifier: 'secondary',
             },
           ],
