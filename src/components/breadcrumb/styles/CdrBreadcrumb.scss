@@ -41,7 +41,6 @@
   /* Delimiter
   ========== */
   &__delimiter {
-    @include cdr-breadcrumb-xs-text-mixin;
     color: inherit;
     padding: 0 $cdr-space-half-x;
   }
@@ -77,6 +76,13 @@
       }
     }
   }
+
+  &__link,
+  &__delimiter,
+  &__ellipses {
+    @include cdr-breadcrumb-xs-text-mixin;
+  }
+
 // TODO: make this a size prop? or a responsive compact?
   @include cdr-md-mq {
     &__link,
