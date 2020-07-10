@@ -64,7 +64,6 @@
 
 @mixin cdr-button-base-icon-mixin() {
   align-self: center;
-  margin-right: $cdr-space-quarter-x;
   fill: inherit;
 }
 
@@ -320,10 +319,26 @@
   @include cdr-button-base-text-mixin-small;
   padding: $cdr-space-inset-three-quarter-x-squish;
   width: auto;
+
+  &.cdr-button--has-icon-left {
+    @include cdr-button-has-icon-left-small-mixin;
+  }
+
+  &.cdr-button--has-icon-right {
+    @include cdr-button-has-icon-right-small-mixin;
+  }
+
+  & svg {
+    @include cdr-button-icon-small-mixin;
+  }
 }
 
-@mixin cdr-button-has-icon-small-mixin {
+@mixin cdr-button-has-icon-left-small-mixin {
   padding-left: calc(#{$cdr-space-three-quarter-x} - #{$cdr-space-quarter-x});
+}
+
+@mixin cdr-button-has-icon-right-small-mixin {
+  padding-right: calc(#{$cdr-space-three-quarter-x} - #{$cdr-space-quarter-x});
 }
 
 @mixin cdr-button-icon-small-mixin {
@@ -336,10 +351,26 @@
   @include cdr-button-base-text-mixin-medium;
   padding: $cdr-space-inset-one-x-squish;
   width: auto;
+
+  &.cdr-button--has-icon-left {
+    @include cdr-button-has-icon-left-medium-mixin;
+  }
+
+  &.cdr-button--has-icon-right {
+    @include cdr-button-has-icon-right-medium-mixin;
+  }
+
+  & svg {
+    @include cdr-button-icon-medium-mixin;
+  }
 }
 
-@mixin cdr-button-has-icon-medium-mixin {
+@mixin cdr-button-has-icon-left-medium-mixin {
   padding-left: calc(#{$cdr-space-one-x} - #{$cdr-space-quarter-x});
+}
+
+@mixin cdr-button-has-icon-right-medium-mixin {
+  padding-right: calc(#{$cdr-space-one-x} - #{$cdr-space-quarter-x});
 }
 
 @mixin cdr-button-icon-medium-mixin {
@@ -352,10 +383,26 @@
   @include cdr-button-base-text-mixin-large;
   padding: $cdr-space-inset-one-and-a-half-x-squish;
   width: auto;
+
+  &.cdr-button--has-icon-left {
+    @include cdr-button-has-icon-left-large-mixin;
+  }
+
+  &.cdr-button--has-icon-right {
+    @include cdr-button-has-icon-right-large-mixin;
+  }
+
+  & svg {
+    @include cdr-button-icon-large-mixin;
+  }
 }
 
-@mixin cdr-button-has-icon-large-mixin {
+@mixin cdr-button-has-icon-left-large-mixin {
   padding-left: calc(#{$cdr-space-one-and-a-half-x} - #{$cdr-space-quarter-x});
+}
+
+@mixin cdr-button-has-icon-right-large-mixin {
+  padding-right: calc(#{$cdr-space-one-and-a-half-x} - #{$cdr-space-quarter-x});
 }
 
 @mixin cdr-button-icon-large-mixin {

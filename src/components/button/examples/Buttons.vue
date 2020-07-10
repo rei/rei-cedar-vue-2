@@ -9,7 +9,7 @@
 
     <default-buttons />
     <secondary-buttons />
-    <cta-buttons />
+    <!-- <cta-buttons /> -->
     <full-width />
     <icon-buttons />
   </div>

@@ -3,8 +3,14 @@
 .cdr-button {
   @include cdr-button-base-mixin;
 
-  & > :global(.cdr-button__icon) {
+  &.cdr-button--has-icon-left svg {
     @include cdr-button-base-icon-mixin;
+    margin-right: $cdr-space-quarter-x;
+  }
+
+  &.cdr-button--has-icon-right svg {
+    @include cdr-button-base-icon-mixin;
+    margin-left: $cdr-space-quarter-x;
   }
 
   /* Modifier style variants
@@ -48,28 +54,12 @@
      ========== */
   &--large {
     @include cdr-button-large-mixin;
-
-    &.cdr-button--has-icon {
-      @include cdr-button-has-icon-large-mixin;
-    }
-
-    & > :global(.cdr-button__icon) {
-      @include cdr-button-icon-large-mixin;
-    }
   }
 
   /* Medium
      ========== */
   &--medium {
     @include cdr-button-medium-mixin;
-
-    &.cdr-button--has-icon {
-      @include cdr-button-has-icon-medium-mixin;
-    }
-
-    & > :global(.cdr-button__icon) {
-      @include cdr-button-icon-medium-mixin;
-    }
   }
 
   /* Small
@@ -77,14 +67,6 @@
 
   &--small {
     @include cdr-button-small-mixin;
-
-    &.cdr-button--has-icon {
-      @include cdr-button-has-icon-small-mixin;
-    }
-
-    & > :global(.cdr-button__icon) {
-      @include cdr-button-icon-small-mixin;
-    }
   }
 
   /* Icon Only
@@ -93,7 +75,7 @@
   &--icon-only {
     @include cdr-button-icon-only-mixin;
 
-    & > :global(.cdr-button__icon) {
+    & > svg {
       margin: 0;
     }
   }
@@ -117,38 +99,14 @@
   @include cdr-xs-mq-only {
     &--small\@xs {
       @include cdr-button-small-mixin;
-
-      &.cdr-button--has-icon {
-        @include cdr-button-has-icon-small-mixin;
-      }
-
-      & > :global(.cdr-button__icon) {
-        @include cdr-button-icon-small-mixin;
-      }
     }
 
     &--medium\@xs {
       @include cdr-button-medium-mixin;
-
-      &.cdr-button--has-icon {
-        @include cdr-button-has-icon-medium-mixin;
-      }
-
-      & > :global(.cdr-button__icon) {
-        @include cdr-button-icon-medium-mixin;
-      }
     }
 
     &--large\@xs {
       @include cdr-button-large-mixin;
-
-      &.cdr-button--has-icon {
-        @include cdr-button-has-icon-large-mixin;
-      }
-
-      & > :global(.cdr-button__icon) {
-        @include cdr-button-icon-large-mixin;
-      }
     }
 
     &--fullWidth\@xs {
@@ -162,38 +120,14 @@
   @include cdr-sm-mq-only {
     &--small\@sm {
       @include cdr-button-small-mixin;
-
-      &.cdr-button--has-icon {
-        @include cdr-button-has-icon-small-mixin;
-      }
-
-      & > :global(.cdr-button__icon) {
-        @include cdr-button-icon-small-mixin;
-      }
     }
 
     &--medium\@sm {
       @include cdr-button-medium-mixin;
-
-      &.cdr-button--has-icon {
-        @include cdr-button-has-icon-medium-mixin;
-      }
-
-      & > :global(.cdr-button__icon) {
-        @include cdr-button-icon-medium-mixin;
-      }
     }
 
     &--large\@sm {
       @include cdr-button-large-mixin;
-
-      &.cdr-button--has-icon {
-        @include cdr-button-has-icon-large-mixin;
-      }
-
-      & > :global(.cdr-button__icon) {
-        @include cdr-button-icon-large-mixin;
-      }
     }
 
     &--fullWidth\@sm {
@@ -207,38 +141,14 @@
   @include cdr-md-mq-only {
     &--small\@md {
       @include cdr-button-small-mixin;
-
-      &.cdr-button--has-icon {
-        @include cdr-button-has-icon-small-mixin;
-      }
-
-      & > :global(.cdr-button__icon) {
-        @include cdr-button-icon-small-mixin;
-      }
     }
 
     &--medium\@md {
       @include cdr-button-medium-mixin;
-
-      &.cdr-button--has-icon {
-        @include cdr-button-has-icon-medium-mixin;
-      }
-
-      & > :global(.cdr-button__icon) {
-        @include cdr-button-icon-medium-mixin;
-      }
     }
 
     &--large\@md {
       @include cdr-button-large-mixin;
-
-      &.cdr-button--has-icon {
-        @include cdr-button-has-icon-large-mixin;
-      }
-
-      & > :global(.cdr-button__icon) {
-        @include cdr-button-icon-large-mixin;
-      }
     }
 
     &--fullWidth\@md {
@@ -253,38 +163,14 @@
   @include cdr-lg-mq-only {
     &--small\@lg {
       @include cdr-button-small-mixin;
-
-      &.cdr-button--has-icon {
-        @include cdr-button-has-icon-small-mixin;
-      }
-
-      & > :global(.cdr-button__icon) {
-        @include cdr-button-icon-small-mixin;
-      }
     }
 
     &--medium\@lg {
       @include cdr-button-medium-mixin;
-
-      &.cdr-button--has-icon {
-        @include cdr-button-has-icon-medium-mixin;
-      }
-
-      & > :global(.cdr-button__icon) {
-        @include cdr-button-icon-medium-mixin;
-      }
     }
 
     &--large\@lg {
       @include cdr-button-large-mixin;
-
-      &.cdr-button--has-icon {
-        @include cdr-button-has-icon-large-mixin;
-      }
-
-      & > :global(.cdr-button__icon) {
-        @include cdr-button-icon-large-mixin;
-      }
     }
 
     &--fullWidth\@lg {

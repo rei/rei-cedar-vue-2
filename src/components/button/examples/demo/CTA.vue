@@ -23,7 +23,7 @@
         :elevated="button.elevated"
         tag="a"
       >
-        {{ button.label }} <icon-caret-right class="cdr-button__icon"/>
+        {{ button.label }} <icon-caret-right slot="icon-right"/>
       </cdr-button>
     </div>
   </div>

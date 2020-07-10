@@ -65,9 +65,14 @@ export default {
     iconClass() {
       const classes = [];
 
-      if (this.$slots.icon && this.$slots.default) {
-        /* only add class for buttons with text + icon */
-        classes.push(this.modifyClassName(this.baseClass, 'has-icon'));
+      if ((this.$slots['icon-left'] || this.$slots.icon) && this.$slots.default) {
+        /* only add class for buttons with text + icon on left */
+        classes.push(this.modifyClassName(this.baseClass, 'has-icon-left'));
+      }
+
+      if (this.$slots['icon-right'] && this.$slots.default) {
+        /* only add class for buttons with text + icon on right */
+        classes.push(this.modifyClassName(this.baseClass, 'has-icon-right'));
       }
 
       if (this.elevated) {
@@ -98,8 +103,9 @@ export default {
       type={this.tag === 'button' ? this.type : null}
       {...{ on: this.$listeners }}
     >
-      {this.$slots.icon}
+      {this.$slots['icon-left'] || this.$slots.icon}
       {this.$slots.default}
+      {this.$slots['icon-right']}
     </Component>);
   },
 };
