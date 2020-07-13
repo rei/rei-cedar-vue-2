@@ -121,6 +121,32 @@
         />
         Small (different) Icon
       </cdr-button>
+
+      <br />
+
+
+      <cdr-button
+        size="large"
+        space="cdr-mr-space-one-x cdr-mb-space-one-x"
+      >
+        <icon-check-lg
+          inherit-color
+          slot="icon-left"
+        />
+        Large and left Icon
+      </cdr-button>
+
+
+      <cdr-button
+        size="large"
+        space="cdr-mr-space-one-x cdr-mb-space-one-x"
+      >
+        <icon-check-lg
+          inherit-color
+          slot="icon-right"
+        />
+        Large and right Icon
+      </cdr-button>
     </div>
     <div class="button-example cdr-space-inset-one-x">
       <cdr-text
