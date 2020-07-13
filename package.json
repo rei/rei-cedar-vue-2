@@ -1,6 +1,6 @@
 {
   "name": "@rei/cedar",
-  "version": "5.2.0",
+  "version": "6.0.0-alpha.0",
   "description": "REI Cedar Component Library",
   "homepage": "https://rei.github.io/rei-cedar/",
   "license": "MIT",
@@ -59,7 +59,7 @@
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
     "@rei/cedar-icons": "^1.6.1",
-    "@rei/cdr-tokens": "^4.1.0",
+    "@rei/cdr-tokens": "^5.0.0-alpha.0",
     "@rollup/plugin-alias": "^3.1.0",
     "@vue/babel-preset-jsx": "^1.1.2",
     "@vue/test-utils": "^1.0.0",

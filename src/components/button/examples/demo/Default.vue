@@ -94,7 +94,6 @@ export default {
               size: 'large',
               space: 'cdr-mr-space-one-x',
               fullWidth: false,
-              backstop: 'cdr-button--size',
             },
             {
               label: 'Medium',
@@ -122,7 +121,6 @@ export default {
               size: 'large',
               space: 'cdr-mr-space-one-x',
               fullWidth: false,
-              backstop: 'cdr-button--disabled',
             },
             {
               label: 'Medium',

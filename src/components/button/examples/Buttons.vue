@@ -9,6 +9,7 @@
 
     <default-buttons />
     <secondary-buttons />
+    <cta-buttons />
     <full-width />
     <icon-buttons />
   </div>
@@ -18,6 +19,7 @@
 import { CdrText } from 'srcdir/index';
 import defaultButtons from 'componentsdir/button/examples/demo/Default';
 import secondaryButtons from 'componentsdir/button/examples/demo/Secondary';
+import ctaButtons from 'componentsdir/button/examples/demo/CTA';
 import iconButtons from 'componentsdir/button/examples/demo/Icons';
 import fullWidth from 'componentsdir/button/examples/demo/FullWidth';
 
@@ -27,6 +29,7 @@ export default {
     CdrText,
     defaultButtons,
     secondaryButtons,
+    ctaButtons,
     iconButtons,
     fullWidth,
   },

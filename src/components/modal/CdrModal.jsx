@@ -326,7 +326,6 @@ export default {
                     >
                       <IconXLg
                         slot="icon"
-                        class="cdr-button__icon"
                         inherit-color
                       />
                     </cdr-button>
