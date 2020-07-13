@@ -215,7 +215,7 @@
         />
         Responsive Left
       </cdr-button>
-      <!-- WHAT THE HELL IS GOING ON HERE -->
+
       <cdr-button
         size="large large@xs medium@sm small@lg"
       >

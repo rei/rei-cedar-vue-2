@@ -69,7 +69,7 @@ describe('CdrButton', () => {
     expect(wrapper.classes()).toContain('cdr-button--with-background');
   });
 
-  it('adds icon-left class when deprecated icon slot is used', () => {
+  it('adds icon-left class when icon slot is used', () => {
     const wrapper = shallowMount(CdrButton, {
       slots: {
         default: [ 'default slot for text' ],
