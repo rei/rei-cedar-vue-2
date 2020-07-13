@@ -493,312 +493,13 @@
             </div>
             
           <div class="col-md-9 " role="main">
-            <section class ="vertical-push-3" data-ui="nav-list">
-  <h2 id="nav" class="page-header">Navigation Lists</h2>
-  <div class="bs-callout bs-callout-warning" id="callout-navs-accessibility">
-    <h3>Make navs used as navigation accessible</h3>
-    <p>If you are using navs to provide a navigation bar, be sure to add a <code>role="navigation"</code> to the most logical parent container of the <code>&lt;ul&gt;</code>, or wrap a <code>&lt;nav&gt;</code> element around the whole navigation. Do not add the role to the <code>&lt;ul&gt;</code> itself, as this would prevent it from being announced as an actual list by assistive technologies.</p>
-  </div>
-  <h3 id="list-navs" class="status status-chat">Navigation list</h3>
-  <p>Base class for navigation lists</p>
-  <div class="well" data-example-id="" role="navigation">
-    
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <ul class="list-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Profile</a></li>
-        <li><a href="#">Messages</a></li>
-    </ul>
-    
-
-    
-
-    
-
-    
-
-
-  </div>
-  <figure class="highlight"><pre><code class="language-html" data-lang="html">      
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"list-nav"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"active"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Home<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-        <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Profile<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-        <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Messages<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-    <span class="nt">&lt;/ul&gt;</span>
-    
-
-    
-
-    
-
-    
-
-
-  </code></pre></figure>
-  <div class="well" data-example-id="" role="navigation">
-    
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <ul class="list-menu">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Profile</a></li>
-        <li><a href="#">Messages</a></li>
-    </ul>
-    
-
-
-  </div>
-  <figure class="highlight"><pre><code class="language-html" data-lang="html">      
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"list-menu"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"active"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Home<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-        <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Profile<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-        <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Messages<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-    <span class="nt">&lt;/ul&gt;</span>
-    
-
-
-  </code></pre></figure>
-</section>
-
-<section class ="vertical-push-3" data-ui="list-group">
-
-  <h3 id="list-group-basic" class="status status-base-class">Simple List Group</h3>
-  <p>The most basic list group is simply an unordered list with list items, and the proper classes. Build upon it with the options that follow, or your own CSS as needed.</p>
-  <p>Notice that this example is nothing more that an unordered list</p>
-  <div class="well" data-example-id="simple-list-group">
-  <ul class="list-group">
-    <li class="list-group-item radio toggle-sort">
-      <a href="#list-group-basic">
-        <span>list-group-item 1</span>
-      </a>
-    </li>
-    <li class="list-group-item radio toggle-sort">
-      <a href="#list-group-basic">
-        <span>list-group-item 2</span>
-      </a>
-    </li>
-    <li class="list-group-item radio toggle-sort">
-      <a href="#list-group-basic">
-        <span>list-group-item 3</span>
-      </a>
-    </li>
-    <li class="list-group-item radio toggle-sort">
-      <a href="#list-group-basic">
-        <span>list-group-item 4</span>
-      </a>
-    </li>
-</ul>
-
-  </div>
-  <figure class="highlight"><pre><code class="language-html" data-lang="html">  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"list-group"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"list-group-item radio toggle-sort"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#list-group-basic"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;span&gt;</span>list-group-item 1<span class="nt">&lt;/span&gt;</span>
-      <span class="nt">&lt;/a&gt;</span>
-    <span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"list-group-item radio toggle-sort"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#list-group-basic"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;span&gt;</span>list-group-item 2<span class="nt">&lt;/span&gt;</span>
-      <span class="nt">&lt;/a&gt;</span>
-    <span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"list-group-item radio toggle-sort"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#list-group-basic"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;span&gt;</span>list-group-item 3<span class="nt">&lt;/span&gt;</span>
-      <span class="nt">&lt;/a&gt;</span>
-    <span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"list-group-item radio toggle-sort"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#list-group-basic"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;span&gt;</span>list-group-item 4<span class="nt">&lt;/span&gt;</span>
-      <span class="nt">&lt;/a&gt;</span>
-    <span class="nt">&lt;/li&gt;</span>
-<span class="nt">&lt;/ul&gt;</span>
-
-  </code></pre></figure>
-
-  <h3 id="list-group-sort" class="status status-warning">Sorting example</h3>
-  <p>
-    This example demonstrates a sort list using radio buttons.
-    To accomplish this we add a few more atomic parts to our list-group items.
-    We change the markup within the parent list items to match that of the radio markup from our radio example and add the <strong>radio</strong> class to the list-group-item.
-    Then, to style the radio as a sort checkmark we add the appropriate <strong>toggle</strong> class of <code>toggle-sort</code>.
-  </p>
-  <div class="well" data-example-id="sorting-list-group">
-      <ul class="list-group">
-  <li class="list-group-item radio toggle-sort">
-    <input type="radio" name="optionsRadios" id="sort-group-item-1" value="1">
-    <label for="sort-group-item-1">sort-group-item 1</label>
-  </li>
-  <li class="list-group-item radio toggle-sort">
-    <input type="radio" name="optionsRadios" id="sort-group-item-2" value="2">
-    <label for="sort-group-item-2">sort-group-item 2</label>
-  </li>
-  <li class="list-group-item radio toggle-sort">
-    <input type="radio" name="optionsRadios" id="sort-group-item-3" value="3">
-    <label for="sort-group-item-3">sort-group-item 3</label>
-  </li>
-  <li class="list-group-item radio toggle-sort">
-    <input type="radio" name="optionsRadios" id="sort-group-item-4" value="4">
-    <label for="sort-group-item-4">sort-group-item 4</label>
-  </li>
-</ul>
-
-  </div>
-<figure class="highlight"><pre><code class="language-html" data-lang="html">   <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"list-group"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"list-group-item radio toggle-sort"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"optionsRadios"</span> <span class="na">id=</span><span class="s">"sort-group-item-1"</span> <span class="na">value=</span><span class="s">"1"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"sort-group-item-1"</span><span class="nt">&gt;</span>sort-group-item 1<span class="nt">&lt;/label&gt;</span>
-  <span class="nt">&lt;/li&gt;</span>
-  <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"list-group-item radio toggle-sort"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"optionsRadios"</span> <span class="na">id=</span><span class="s">"sort-group-item-2"</span> <span class="na">value=</span><span class="s">"2"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"sort-group-item-2"</span><span class="nt">&gt;</span>sort-group-item 2<span class="nt">&lt;/label&gt;</span>
-  <span class="nt">&lt;/li&gt;</span>
-  <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"list-group-item radio toggle-sort"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"optionsRadios"</span> <span class="na">id=</span><span class="s">"sort-group-item-3"</span> <span class="na">value=</span><span class="s">"3"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"sort-group-item-3"</span><span class="nt">&gt;</span>sort-group-item 3<span class="nt">&lt;/label&gt;</span>
-  <span class="nt">&lt;/li&gt;</span>
-  <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"list-group-item radio toggle-sort"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"optionsRadios"</span> <span class="na">id=</span><span class="s">"sort-group-item-4"</span> <span class="na">value=</span><span class="s">"4"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"sort-group-item-4"</span><span class="nt">&gt;</span>sort-group-item 4<span class="nt">&lt;/label&gt;</span>
-  <span class="nt">&lt;/li&gt;</span>
-<span class="nt">&lt;/ul&gt;</span></code></pre></figure>
-
-<h3 id="list-group-filter" class="status status-warning">Filter Menu</h3>
-<p>Taking what we have built in the sort example we can add one more class: <code>collapsibleList</code>
-  to have our <strong>radio</strong> or <strong>checkbox</strong> work as a control to expand and collapse our list groups. for this example we have used checkboxes and have changed the <code>toggle-sort</code> to <code>toggle-expand-collapse</code>. </p>
-  <div class="well" data-example-id="filter-list-group">
+            <section class ="vertical-push-3" data-ui="list-group">
+
+<cdr-well-docs example-title="Filter Menu" element-id="list-group-filter">
+  <yield to="example-description">
+ 
+  </yield>
+  <yield to="example">
       <ul class="list-group-filter">
   <li class="list-group-item collapsibleList checkbox toggle-expand-collapse" data-ui="nav-level-1">
     <input type="checkbox" value="" id="list-group-item-1">
@@ -877,8 +578,9 @@
   </li>
 </ul>
 
-  </div>
-<figure class="highlight"><pre><code class="language-html" data-lang="html">   <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"list-group-filter"</span><span class="nt">&gt;</span>
+  </yield>
+  <yield to="codeblock">
+    <figure class="highlight"><pre><code class="language-html" data-lang="html">    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"list-group-filter"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"list-group-item collapsibleList checkbox toggle-expand-collapse"</span> <span class="na">data-ui=</span><span class="s">"nav-level-1"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">value=</span><span class="s">""</span> <span class="na">id=</span><span class="s">"list-group-item-1"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"list-group-item-1"</span><span class="nt">&gt;</span>list-group-filter-item 1<span class="nt">&lt;/label&gt;</span>
@@ -954,11 +656,18 @@
       <span class="nt">&lt;span&gt;</span>list-group-item 4<span class="nt">&lt;/span&gt;</span>
     <span class="nt">&lt;/a&gt;</span>
   <span class="nt">&lt;/li&gt;</span>
-<span class="nt">&lt;/ul&gt;</span></code></pre></figure>
+<span class="nt">&lt;/ul&gt;</span>
 
-<h3 id="list-group-menu" class="status status-warning">Menu</h3>
-  <div class="well" data-example-id="menu-list-group">
-      <ul class="list-group-menu">
+    </code></pre></figure>
+  </yield>
+</cdr-well-docs>
+
+<cdr-well-docs example-title="Menu" element-id="list-group-menu">
+  <yield to="example-description">
+
+  </yield>
+  <yield to="example">
+    <ul class="list-group-menu">
     <li class="list-group-item collapsibleList checkbox toggle-expand-collapse" data-ui="nav-level-1">
       <input type="checkbox" value="" id="menu-list-group-item-1">
       <label for="menu-list-group-item-1">menu-list-group-item 1</label>
@@ -1045,8 +754,9 @@
     </li>
 </ul>
 
-  </div>
-<figure class="highlight"><pre><code class="language-html" data-lang="html">   <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"list-group-menu"</span><span class="nt">&gt;</span>
+  </yield>
+  <yield to="codeblock">
+    <figure class="highlight"><pre><code class="language-html" data-lang="html">    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"list-group-menu"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"list-group-item collapsibleList checkbox toggle-expand-collapse"</span> <span class="na">data-ui=</span><span class="s">"nav-level-1"</span><span class="nt">&gt;</span>
       <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">value=</span><span class="s">""</span> <span class="na">id=</span><span class="s">"menu-list-group-item-1"</span><span class="nt">&gt;</span>
       <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"menu-list-group-item-1"</span><span class="nt">&gt;</span>menu-list-group-item 1<span class="nt">&lt;/label&gt;</span>
@@ -1131,7 +841,11 @@
         <span class="nt">&lt;span&gt;</span>list-group-item 4<span class="nt">&lt;/span&gt;</span>
       <span class="nt">&lt;/a&gt;</span>
     <span class="nt">&lt;/li&gt;</span>
-<span class="nt">&lt;/ul&gt;</span></code></pre></figure>
+<span class="nt">&lt;/ul&gt;</span>
+
+    </code></pre></figure>
+  </yield>
+</cdr-well-docs>
 
 </section>
 

@@ -496,11 +496,12 @@
             <section class="vertical-push-3" data-ui="list">
     <!-- Lists -->
 
-    <h2 id="list-text" class="status status-good">Text List - Unstyled (Unordered)</h2>
-    <p>For lists of standard text and/or standard text links.</p>
-
-    <div class="well" data-example-id="text-list">
-        
+<cdr-well-docs example-title="Text List - Unstyled (Unordered)" element-id="list1">
+    <yield to="example-description">
+        <p>For lists of standard text and/or standard text links.</p>
+    </yield>
+    <yield to="example">
+    
     
 
     
@@ -510,19 +511,12 @@
     
         <ul class="list-text">
             <li>Lorem ipsum dolor sit amet</li>
-            <li><a href="#">Consectetur adipiscing elit</a></li>
-            <li>Integer molestie <a href="#" class="link-body">lorem</a> at massa</li>
-            <li>Facilisis in pretium nisl aliquet</li>
             <li>Nulla volutpat aliquam velit
                 <ul>
                     <li><a href="#">Phasellus iaculis neque</a></li>
-                    <li><a href="#">Purus sodales ultricies</a></li>
-                    <li><a href="#">Vestibulum laoreet porttitor sem</a></li>
                     <li><a href="#">Ac tristique libero volutpat at</a></li>
                 </ul>
             </li>
-            <li>Faucibus porta lacus fringilla vel</li>
-            <li>Aenean sit amet erat nunc</li>
             <li><a href="#">Eget porttitor lorem</a></li>
         </ul>
     
@@ -557,53 +551,22 @@
 
     
 
-    </div>
-    <figure class="highlight"><pre><code class="language-html" data-lang="html">    
-    
+    </yield>
+    <yield to="codeblock">
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"list-text"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;li&gt;</span>Lorem ipsum dolor sit amet<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Consectetur adipiscing elit<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Eget porttitor lorem<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span></code></pre></figure>
+    </yield>
+</cdr-well-docs>
 
-    
+<cdr-well-docs example-title="Text List - With Bullets (Unordered)" element-id="list2">
+    <yield to="example-description">
+<p>For lists of standard text and/or standard text links with bullets.</p>
+    </yield>
+    <yield to="example">
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    </code></pre></figure>
-
-    <h2 id="list-decoration" class="status status-good">Text List - With Bullets (Unordered)</h2>
-    <p>For lists of standard text and/or standard text links with bullets.</p>
-
-    <div class="well" data-example-id="text-list-decoration">
-        
     
 
     
@@ -627,19 +590,12 @@
     
         <ul class="list-decoration">
             <li>Lorem ipsum dolor sit amet</li>
-            <li><a href="#">Consectetur adipiscing elit</a></li>
-            <li>Integer molestie <a href="#" class="link-body">lorem</a> at massa</li>
-            <li>Facilisis in pretium nisl aliquet</li>
             <li>Nulla volutpat aliquam velit
                 <ul>
                     <li><a href="#">Phasellus iaculis neque</a></li>
-                    <li><a href="#">Purus sodales ultricies</a></li>
-                    <li><a href="#">Vestibulum laoreet porttitor sem</a></li>
                     <li><a href="#">Ac tristique libero volutpat at</a></li>
                 </ul>
             </li>
-            <li>Faucibus porta lacus fringilla vel</li>
-            <li>Aenean sit amet erat nunc</li>
             <li><a href="#">Eget porttitor lorem</a></li>
         </ul>
     
@@ -660,121 +616,44 @@
 
     
 
-    </div>
-    <figure class="highlight"><pre><code class="language-html" data-lang="html">    
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"list-decoration"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;li&gt;</span>Lorem ipsum dolor sit amet<span class="nt">&lt;/li&gt;</span>
-            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Consectetur adipiscing elit<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-            <span class="nt">&lt;li&gt;</span>Integer molestie <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"link-body"</span><span class="nt">&gt;</span>lorem<span class="nt">&lt;/a&gt;</span> at massa<span class="nt">&lt;/li&gt;</span>
-            <span class="nt">&lt;li&gt;</span>Facilisis in pretium nisl aliquet<span class="nt">&lt;/li&gt;</span>
-            <span class="nt">&lt;li&gt;</span>Nulla volutpat aliquam velit
-                <span class="nt">&lt;ul&gt;</span>
-                    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Phasellus iaculis neque<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-                    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Purus sodales ultricies<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-                    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Vestibulum laoreet porttitor sem<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-                    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Ac tristique libero volutpat at<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-                <span class="nt">&lt;/ul&gt;</span>
-            <span class="nt">&lt;/li&gt;</span>
-            <span class="nt">&lt;li&gt;</span>Faucibus porta lacus fringilla vel<span class="nt">&lt;/li&gt;</span>
-            <span class="nt">&lt;li&gt;</span>Aenean sit amet erat nunc<span class="nt">&lt;/li&gt;</span>
-            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Eget porttitor lorem<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    </yield>
+    <yield to="codeblock">
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"list-decoration"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;li&gt;</span>Lorem ipsum dolor sit amet<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>Nulla volutpat aliquam velit
+        <span class="nt">&lt;ul&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Phasellus iaculis neque<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Purus sodales ultricies<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Vestibulum laoreet porttitor sem<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Ac tristique libero volutpat at<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
         <span class="nt">&lt;/ul&gt;</span>
-    
+    <span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span></code></pre></figure>
+    </yield>
+</cdr-well-docs>
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    </code></pre></figure>
-
-    <h2 id="list-ordered" class="status status-good">Text List - Ordered</h2>
-
+<cdr-well-docs example-title="Text List - Ordered" element-id="listOrdered">
+    <yield to="example-description">
     <p>A list of items in which the order <em>does</em> explicitly matter.</p>
-
-    <div class="well" data-example-id="simple-ol">
-        
-    
-
-    
-
-    
-
-    
-
-    
-        <ol class="list-text-ordered">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Library</a></li>
-            <li class="active">Data</li>
-        </ol>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    </div>
+    </yield>
+    <yield to="example">
+    <ol>
+        <li><a href="">Home</a></li>
+        <li>Data</li>
+    </ol>
+    </yield>
+    <yield to="codeblock">
+      
     <figure class="highlight"><pre><code class="language-html" data-lang="html">    <span class="nt">&lt;ol&gt;</span>
-        <span class="nt">&lt;li&gt;</span>...<span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>Home<span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>Data<span class="nt">&lt;/li&gt;</span>
     <span class="nt">&lt;/ol&gt;</span>
     </code></pre></figure>
+    </yield>
+</cdr-well-docs>
+
+
+   
 
     <h2 id="list-inline" class="status status-base-class">Inline</h2>
 
@@ -1459,6 +1338,36 @@
             <span class="nt">&lt;/li&gt;</span>
         <span class="nt">&lt;/ul&gt;</span>
     </code></pre></figure>
+
+
+
+
+
+
+<cdr-well-docs example-title="Filters" element-id="list3">
+    <yield to="example-description">
+
+    </yield>
+    <yield to="example">
+
+    </yield>
+    <yield to="codeblock">
+
+    </yield>
+</cdr-well-docs>
+
+<cdr-well-docs example-title="Filters" element-id="list4">
+    <yield to="example-description">
+
+    </yield>
+    <yield to="example">
+
+    </yield>
+    <yield to="codeblock">
+
+    </yield>
+</cdr-well-docs>
+
 
 </section>
 

@@ -1355,39 +1355,7 @@
 
     <h3 id="less-variables-list-groups">List Groups</h3>
     <p>Primarily used within <code>less/rei-overlays/list-group.less</code>.</p>
-    <figure class="highlight"><pre><code class="language-scss" data-lang="scss">    <span class="c1">////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////</span>
-<span class="c1">//</span>
-<span class="c1">// List Groups</span>
-<span class="c1">//</span>
-<span class="c1">////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////</span>
-
-<span class="err">.</span><span class="na">list-group-variant</span><span class="err">
-(
-    @</span><span class="na">list-group-scaffolding</span><span class="p">:</span>                <span class="o">@</span><span class="n">list-group-default-wrapper-ruleset</span><span class="p">;</span>
-    <span class="k">@list-group-item-scaffolding</span><span class="nd">:</span>           <span class="o">@</span><span class="nt">default-item-ruleset</span><span class="p">;</span>
-    <span class="k">@list-group-item-secondary-scaffolding</span><span class="nd">:</span> <span class="o">@</span><span class="nt">default-item-secondary-ruleset</span><span class="p">;</span>
-<span class="o">)</span> <span class="p">{</span>
-    <span class="nc">.list-unstyled</span><span class="o">()</span><span class="p">;</span>
-    <span class="k">@list-group-scaffolding</span><span class="o">()</span><span class="p">;</span>
-    <span class="nt">li</span> <span class="p">{</span>
-        <span class="nl">list-style</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
-        <span class="c1">// Nested List Items</span>
-        <span class="c1">// -----------------</span>
-        <span class="k">&amp;</span><span class="nc">.item-secondary</span> <span class="p">{</span>
-            <span class="k">@list-group-item-secondary-scaffolding</span><span class="o">()</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="k">&amp;</span><span class="nc">.list-group-item</span> <span class="p">{</span>
-            <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
-            <span class="k">@list-group-item-scaffolding</span><span class="o">()</span><span class="p">;</span>
-
-            <span class="nt">input</span><span class="nd">:focus</span> <span class="o">+</span> <span class="nt">label</span><span class="o">,</span> <span class="nt">a</span><span class="nd">:focus</span> <span class="p">{</span>
-                <span class="nl">outline</span><span class="p">:</span> <span class="mi">.5rem</span> <span class="nb">auto</span><span class="p">;</span>
-                <span class="nl">outline-color</span><span class="p">:</span> <span class="mh">#4eaaff</span><span class="p">;</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
+    <figure class="highlight"><pre><code class="language-scss" data-lang="scss">    
     </code></pre></figure>
 
     <h3 id="less-variables-text-hide">Hiding Text</h3>

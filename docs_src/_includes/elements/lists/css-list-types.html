@@ -1,38 +1,71 @@
 <section class="vertical-push-3" data-ui="list">
     <!-- Lists -->
 
-    <h2 id="list-text" class="status status-good">Text List - Unstyled (Unordered)</h2>
-    <p>For lists of standard text and/or standard text links.</p>
+<cdr-well-docs example-title="Text List - Unstyled (Unordered)" element-id="list1">
+    <yield to="example-description">
+        <p>For lists of standard text and/or standard text links.</p>
+    </yield>
+    <yield to="example">
+    {% include /markup-templates/lists/unordered.html param="text-unstyled" %}
+    </yield>
+    <yield to="codeblock">
+{% highlight html %}
+<ul class="list-text">
+    <li>Lorem ipsum dolor sit amet</li>
+    <li><a href="#">Consectetur adipiscing elit</a></li>
+    <li><a href="#">Eget porttitor lorem</a></li>
+</ul>
+{% endhighlight %}
+    </yield>
+</cdr-well-docs>
 
-    <div class="well" data-example-id="text-list">
-        {% include /markup-templates/lists/unordered.html param="text-unstyled" %}
-    </div>
-    {% highlight html %}
-    {% include /markup-templates/lists/unordered.html param="text" %}
-    {% endhighlight %}
+<cdr-well-docs example-title="Text List - With Bullets (Unordered)" element-id="list2">
+    <yield to="example-description">
+<p>For lists of standard text and/or standard text links with bullets.</p>
+    </yield>
+    <yield to="example">
+{% include /markup-templates/lists/unordered.html param="bullet" %}
+    </yield>
+    <yield to="codeblock">
+{% highlight html %}
+<ul class="list-decoration">
+    <li>Lorem ipsum dolor sit amet</li>
+    <li>Nulla volutpat aliquam velit
+        <ul>
+            <li><a href="#">Phasellus iaculis neque</a></li>
+            <li><a href="#">Purus sodales ultricies</a></li>
+            <li><a href="#">Vestibulum laoreet porttitor sem</a></li>
+            <li><a href="#">Ac tristique libero volutpat at</a></li>
+        </ul>
+    </li>
+</ul>
+{% endhighlight %}
+    </yield>
+</cdr-well-docs>
 
-    <h2 id="list-decoration" class="status status-good">Text List - With Bullets (Unordered)</h2>
-    <p>For lists of standard text and/or standard text links with bullets.</p>
-
-    <div class="well" data-example-id="text-list-decoration">
-        {% include /markup-templates/lists/unordered.html param="bullet" %}
-    </div>
-    {% highlight html %}
-    {% include /markup-templates/lists/unordered.html param="bullet" %}
-    {% endhighlight %}
-
-    <h2 id="list-ordered" class="status status-good">Text List - Ordered</h2>
-
+<cdr-well-docs example-title="Text List - Ordered" element-id="listOrdered">
+    <yield to="example-description">
     <p>A list of items in which the order <em>does</em> explicitly matter.</p>
-
-    <div class="well" data-example-id="simple-ol">
-        {% include /markup-templates/lists/ordered.html param="text-ordered" %}
-    </div>
+    </yield>
+    <yield to="example">
+    <ol>
+        <li><a href="">Home</a></li>
+        <li>Data</li>
+    </ol>
+    </yield>
+    <yield to="codeblock">
+      
     {% highlight html %}
     <ol>
-        <li>...</li>
+        <li>Home</li>
+        <li>Data</li>
     </ol>
     {% endhighlight %}
+    </yield>
+</cdr-well-docs>
+
+
+   
 
     <h2 id="list-inline" class="status status-base-class">Inline</h2>
 
@@ -278,5 +311,35 @@
             </li>
         </ul>
     {% endhighlight %}
+
+
+
+
+
+
+<cdr-well-docs example-title="Filters" element-id="list3">
+    <yield to="example-description">
+
+    </yield>
+    <yield to="example">
+
+    </yield>
+    <yield to="codeblock">
+
+    </yield>
+</cdr-well-docs>
+
+<cdr-well-docs example-title="Filters" element-id="list4">
+    <yield to="example-description">
+
+    </yield>
+    <yield to="example">
+
+    </yield>
+    <yield to="codeblock">
+
+    </yield>
+</cdr-well-docs>
+
 
 </section>
