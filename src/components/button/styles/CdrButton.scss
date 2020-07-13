@@ -3,13 +3,15 @@
 .cdr-button {
   @include cdr-button-base-mixin;
 
-  &.cdr-button--has-icon-left svg {
+  svg {
     @include cdr-button-base-icon-mixin;
+  }
+
+  &.cdr-button--has-icon-left svg {
     margin-right: $cdr-space-quarter-x;
   }
 
   &.cdr-button--has-icon-right svg {
-    @include cdr-button-base-icon-mixin;
     margin-left: $cdr-space-quarter-x;
   }
 
