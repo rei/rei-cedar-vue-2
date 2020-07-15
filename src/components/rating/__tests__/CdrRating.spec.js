@@ -7,6 +7,7 @@ describe('CdrRating', () => {
       propsData: {
         rating: 3.2323,
         count: 100,
+        href: 'rei.com'
       }
     });
     expect(wrapper.element).toMatchSnapshot();
@@ -22,6 +23,7 @@ describe('CdrRating', () => {
     expect(wrapper.vm.whole).toBe(3);
     expect(wrapper.vm.remainder).toBe('50');
     expect(wrapper.vm.rounded).toBe(3.5);
+    expect(wrapper.vm.displayRating).toBe('3.4');
     expect(wrapper.vm.empties).toBe(1);
 
     wrapper.setProps({rating: 3.122227});
@@ -29,6 +31,7 @@ describe('CdrRating', () => {
     expect(wrapper.vm.whole).toBe(3);
     expect(wrapper.vm.remainder).toBe('00');
     expect(wrapper.vm.rounded).toBe(3);
+    expect(wrapper.vm.displayRating).toBe('3.1');
     expect(wrapper.vm.empties).toBe(2);
 
     wrapper.setProps({rating: 3.222227});
@@ -36,6 +39,7 @@ describe('CdrRating', () => {
     expect(wrapper.vm.whole).toBe(3);
     expect(wrapper.vm.remainder).toBe('25');
     expect(wrapper.vm.rounded).toBe(3.25);
+    expect(wrapper.vm.displayRating).toBe('3.2');
     expect(wrapper.vm.empties).toBe(1);
 
     wrapper.setProps({rating: 3.673323});
@@ -43,7 +47,17 @@ describe('CdrRating', () => {
     expect(wrapper.vm.whole).toBe(3);
     expect(wrapper.vm.remainder).toBe('75');
     expect(wrapper.vm.rounded).toBe(3.75);
+    expect(wrapper.vm.displayRating).toBe('3.7');
     expect(wrapper.vm.empties).toBe(1);
+
+
+    wrapper.setProps({rating: 3});
+    await wrapper.vm.$nextTick();
+    expect(wrapper.vm.whole).toBe(3);
+    expect(wrapper.vm.remainder).toBe('00');
+    expect(wrapper.vm.rounded).toBe(3);
+    expect(wrapper.vm.displayRating).toBe('3.0');
+    expect(wrapper.vm.empties).toBe(2);
   });
 
   it('computes and rounds rating stars correctly with string input', () => {
@@ -56,6 +70,7 @@ describe('CdrRating', () => {
     expect(wrapper.vm.whole).toBe(3);
     expect(wrapper.vm.remainder).toBe('50');
     expect(wrapper.vm.rounded).toBe(3.5);
+    expect(wrapper.vm.displayRating).toBe('3.4');
   });
 
   it('renders an anchor when given an href', () => {
@@ -76,7 +91,7 @@ describe('CdrRating', () => {
       }
     });
     // no count
-    expect(wrapper.vm.srText).toBe('View the reviews with an average rating of 3 out of 5 stars');
+    expect(wrapper.vm.srText).toBe('View the reviews with an average rating of 3.0 out of 5 stars');
     // 0 count
     wrapper.setProps({count: 0});
     await wrapper.vm.$nextTick();
@@ -87,10 +102,10 @@ describe('CdrRating', () => {
     // normal count
     wrapper.setProps({count: '100'});
     await wrapper.vm.$nextTick();
-    expect(wrapper.vm.srText).toBe('View the 100 reviews with an average rating of 3 out of 5 stars');
+    expect(wrapper.vm.srText).toBe('View the 100 reviews with an average rating of 3.0 out of 5 stars');
     wrapper.setProps({count: 100});
     await wrapper.vm.$nextTick();
-    expect(wrapper.vm.srText).toBe('View the 100 reviews with an average rating of 3 out of 5 stars');
+    expect(wrapper.vm.srText).toBe('View the 100 reviews with an average rating of 3.0 out of 5 stars');
   });
 
   it('has correct screen reader text', async () => {
@@ -100,7 +115,7 @@ describe('CdrRating', () => {
       }
     });
     // no count
-    expect(wrapper.vm.srText).toBe('Rated 3 out of 5 stars');
+    expect(wrapper.vm.srText).toBe('Rated 3.0 out of 5 stars');
     // 0 count
     wrapper.setProps({count: 0});
     await wrapper.vm.$nextTick();
@@ -111,9 +126,9 @@ describe('CdrRating', () => {
     // normal count
     wrapper.setProps({count: '100'});
     await wrapper.vm.$nextTick();
-    expect(wrapper.vm.srText).toBe('100 reviews with an average rating of 3 out of 5 stars');
+    expect(wrapper.vm.srText).toBe('100 reviews with an average rating of 3.0 out of 5 stars');
     wrapper.setProps({count: 100});
     await wrapper.vm.$nextTick();
-    expect(wrapper.vm.srText).toBe('100 reviews with an average rating of 3 out of 5 stars');
+    expect(wrapper.vm.srText).toBe('100 reviews with an average rating of 3.0 out of 5 stars');
   });
 });
