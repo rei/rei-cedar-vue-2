@@ -52,7 +52,7 @@ export default {
       return 'cdr-rating';
     },
     displayRating() {
-      return Math.round(this.rating * 10) / 10;
+      return (Math.round(this.rating * 10) / 10).toFixed(1);
     },
     rounded() {
       return Math.round(this.rating * 4) / 4;
