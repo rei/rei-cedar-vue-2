@@ -28830,6 +28830,10 @@ var cedar = (function () {
         return 'cdr-rating';
       },
 
+      displayRating() {
+        return (Math.round(this.rating * 10) / 10).toFixed(1);
+      },
+
       rounded() {
         return Math.round(this.rating * 4) / 4;
       },
@@ -28894,11 +28898,11 @@ var cedar = (function () {
 
 
           if (this.count === null) {
-            return "View the reviews with an average rating of ".concat(this.rounded, " out of 5 stars");
+            return "View the reviews with an average rating of ".concat(this.displayRating, " out of 5 stars");
           } // default
 
 
-          return concat$3(_context = "View the ".concat(this.count, " reviews with an average rating of ")).call(_context, this.rounded, " out of 5 stars"); // eslint-disable-line max-len
+          return concat$3(_context = "View the ".concat(this.count, " reviews with an average rating of ")).call(_context, this.displayRating, " out of 5 stars"); // eslint-disable-line max-len
         } // non-linked
         // no reviews
 
@@ -28909,11 +28913,11 @@ var cedar = (function () {
 
 
         if (this.count === null) {
-          return "Rated ".concat(this.rounded, " out of 5 stars");
+          return "Rated ".concat(this.displayRating, " out of 5 stars");
         } // default
 
 
-        return concat$3(_context2 = "".concat(this.count, " reviews with an average rating of ")).call(_context2, this.rounded, " out of 5 stars");
+        return concat$3(_context2 = "".concat(this.count, " reviews with an average rating of ")).call(_context2, this.displayRating, " out of 5 stars");
       }
 
     },
@@ -28961,7 +28965,7 @@ var cedar = (function () {
         "class": this.style['cdr-rating__count']
       }, [this.href && h("span", {
         "class": this.style['cdr-rating__number']
-      }, [this.rounded]), h("span", [this.formattedCount]), !this.compact && h("span", ["\xA0Reviews"])]) : '', h("span", {
+      }, [this.displayRating]), h("span", [this.formattedCount]), !this.compact && h("span", ["\xA0Reviews"])]) : '', h("span", {
         "class": this.style['cdr-rating__caption-sr']
       }, [this.srText])]);
     }
@@ -44237,6 +44241,26 @@ var cedar = (function () {
         _vm._v(" "),
         _c("cdr-rating", {
           attrs: {
+            rating: "3.9",
+            count: "16",
+            "content-priority": "secondary",
+            href: "https://www.rei.com",
+            "data-backstop": "rating-secondary-linked"
+          }
+        }),
+        _vm._v(" "),
+        _c("cdr-rating", {
+          attrs: {
+            rating: "3.1",
+            count: "16",
+            "content-priority": "secondary",
+            href: "https://www.rei.com",
+            "data-backstop": "rating-secondary-linked"
+          }
+        }),
+        _vm._v(" "),
+        _c("cdr-rating", {
+          attrs: {
             rating: "0",
             count: "0",
             href: "https://www.rei.com",
@@ -44273,7 +44297,7 @@ var cedar = (function () {
           [
             _c("cdr-rating", {
               attrs: {
-                rating: "3.66",
+                rating: "3.63",
                 count: "1000",
                 href: "https://www.rei.com",
                 size: "large",
@@ -44355,7 +44379,7 @@ var cedar = (function () {
     /* style */
     const __vue_inject_styles__$M = function (inject) {
       if (!inject) return
-      inject("data-v-e9086162_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/** resets to protect example stylings unrelated to the component for consistent testing */\n.rating-reset {\n  font-size: 0;\n}\n.line-height-reset {\n  line-height: 1;\n}\n", map: {"version":3,"sources":["/home/travis/build/rei/rei-cedar/src/components/rating/examples/Ratings.vue"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AA6JA,0FAAA;AACA;EACA,YAAA;AACA;AAEA;EACA,cAAA;AACA","file":"Ratings.vue","sourcesContent":["<template>\n  <div\n    class=\"rating-reset\"\n  >\n    <cdr-text\n      tag=\"h2\"\n      modifier=\"heading-serif-600 heading-serif-700@md heading-serif-700@lg\"\n    >\n      Ratings\n    </cdr-text>\n    <cdr-rating\n      rating=\"3.3\"\n      count=\"16\"\n      content-priority=\"secondary\"\n      href=\"https://www.rei.com\"\n      data-backstop=\"rating-secondary-linked\"\n    />\n    <cdr-rating\n      rating=\"0\"\n      count=\"0\"\n      href=\"https://www.rei.com\"\n      data-backstop=\"rating-primary-linked\"\n    />\n\n    <cdr-rating\n      rating=\"0\"\n      count=\"0\"\n    />\n    <cdr-rating\n      :rating=\"0\"\n      :count=\"0\"\n    />\n    <cdr-rating\n      :rating=\"0\"\n      :count=\"10\"\n    />\n\n    <cdr-rating\n      rating=\"3.3\"\n      count=\"48\"\n    />\n    <cdr-rating\n      :rating=\"3.3\"\n      :count=\"48\"\n    />\n    <!-- Large Size -->\n\n\n    <cdr-rating\n      rating=\"3\"\n      count=\"100\"\n      size=\"large\"\n      compact\n    />\n    <cdr-rating\n      rating=\"3.66\"\n      count=\"1000\"\n      href=\"https://www.rei.com\"\n      size=\"large\"\n    />\n    <div class=\"line-height-reset\">\n      <cdr-rating\n        rating=\"3.66\"\n        count=\"1000\"\n        href=\"https://www.rei.com\"\n        size=\"large\"\n        compact\n      />\n    </div>\n\n    <cdr-text>\n      0 String Count\n    </cdr-text>\n    <cdr-rating\n      rating=\"1.2\"\n      count=\"0\"\n    />\n    <cdr-text>\n      0 Num Count\n    </cdr-text>\n    <cdr-rating\n      rating=\"1.2\"\n      :count=\"0\"\n    />\n    <cdr-text>\n      no Count\n    </cdr-text>\n    <cdr-rating\n      rating=\"1.2\"\n    />\n    <!-- Default Size -->\n    <cdr-rating\n      rating=\"1.2\"\n      count=\"77\"\n    />\n    <cdr-rating\n      rating=\"4.8\"\n      count=\"4561\"\n      compact\n    />\n    <cdr-rating\n      rating=\"1.9\"\n      count=\"100\"\n      href=\"https://www.rei.com\"\n    />\n\n    <!-- Small Size -->\n    <cdr-rating\n      rating=\"2\"\n      count=\"9\"\n      size=\"small\"\n    />\n    <cdr-rating\n      rating=\"3.444412321\"\n      count=\"615\"\n      size=\"small\"\n      compact\n    />\n    <cdr-rating\n      rating=\"3\"\n      count=\"100\"\n      href=\"https://www.rei.com\"\n      size=\"small\"\n    />\n\n    <!-- Responsive Size -->\n    <cdr-text tag=\"h3\">\n      Responsive Growing\n    </cdr-text>\n    <cdr-rating\n      rating=\"2\"\n      count=\"9\"\n      size=\"small@xs medium@md large@lg\"\n    />\n    <cdr-text tag=\"h3\">\n      Responsive Inverse\n    </cdr-text>\n    <cdr-rating\n      rating=\"3\"\n      count=\"100\"\n      size=\"large@xs medium@md small@lg\"\n    />\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\nexport default {\n  name: 'Rating',\n  components: {\n    ...Components,\n  },\n};\n</script>\n\n<style>\n/** resets to protect example stylings unrelated to the component for consistent testing */\n.rating-reset {\n  font-size: 0;\n}\n\n.line-height-reset {\n  line-height: 1;\n}\n</style>\n"]}, media: undefined });
+      inject("data-v-7770ac58_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/** resets to protect example stylings unrelated to the component for consistent testing */\n.rating-reset {\n  font-size: 0;\n}\n.line-height-reset {\n  line-height: 1;\n}\n", map: {"version":3,"sources":["/home/travis/build/rei/rei-cedar/src/components/rating/examples/Ratings.vue"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AA2KA,0FAAA;AACA;EACA,YAAA;AACA;AAEA;EACA,cAAA;AACA","file":"Ratings.vue","sourcesContent":["<template>\n  <div\n    class=\"rating-reset\"\n  >\n    <cdr-text\n      tag=\"h2\"\n      modifier=\"heading-serif-600 heading-serif-700@md heading-serif-700@lg\"\n    >\n      Ratings\n    </cdr-text>\n    <cdr-rating\n      rating=\"3.3\"\n      count=\"16\"\n      content-priority=\"secondary\"\n      href=\"https://www.rei.com\"\n      data-backstop=\"rating-secondary-linked\"\n    />\n    <cdr-rating\n      rating=\"3.9\"\n      count=\"16\"\n      content-priority=\"secondary\"\n      href=\"https://www.rei.com\"\n      data-backstop=\"rating-secondary-linked\"\n    />\n    <cdr-rating\n      rating=\"3.1\"\n      count=\"16\"\n      content-priority=\"secondary\"\n      href=\"https://www.rei.com\"\n      data-backstop=\"rating-secondary-linked\"\n    />\n    <cdr-rating\n      rating=\"0\"\n      count=\"0\"\n      href=\"https://www.rei.com\"\n      data-backstop=\"rating-primary-linked\"\n    />\n\n    <cdr-rating\n      rating=\"0\"\n      count=\"0\"\n    />\n    <cdr-rating\n      :rating=\"0\"\n      :count=\"0\"\n    />\n    <cdr-rating\n      :rating=\"0\"\n      :count=\"10\"\n    />\n\n    <cdr-rating\n      rating=\"3.3\"\n      count=\"48\"\n    />\n    <cdr-rating\n      :rating=\"3.3\"\n      :count=\"48\"\n    />\n    <!-- Large Size -->\n\n\n    <cdr-rating\n      rating=\"3\"\n      count=\"100\"\n      size=\"large\"\n      compact\n    />\n    <cdr-rating\n      rating=\"3.66\"\n      count=\"1000\"\n      href=\"https://www.rei.com\"\n      size=\"large\"\n    />\n    <div class=\"line-height-reset\">\n      <cdr-rating\n        rating=\"3.63\"\n        count=\"1000\"\n        href=\"https://www.rei.com\"\n        size=\"large\"\n        compact\n      />\n    </div>\n\n    <cdr-text>\n      0 String Count\n    </cdr-text>\n    <cdr-rating\n      rating=\"1.2\"\n      count=\"0\"\n    />\n    <cdr-text>\n      0 Num Count\n    </cdr-text>\n    <cdr-rating\n      rating=\"1.2\"\n      :count=\"0\"\n    />\n    <cdr-text>\n      no Count\n    </cdr-text>\n    <cdr-rating\n      rating=\"1.2\"\n    />\n    <!-- Default Size -->\n    <cdr-rating\n      rating=\"1.2\"\n      count=\"77\"\n    />\n    <cdr-rating\n      rating=\"4.8\"\n      count=\"4561\"\n      compact\n    />\n    <cdr-rating\n      rating=\"1.9\"\n      count=\"100\"\n      href=\"https://www.rei.com\"\n    />\n\n    <!-- Small Size -->\n    <cdr-rating\n      rating=\"2\"\n      count=\"9\"\n      size=\"small\"\n    />\n    <cdr-rating\n      rating=\"3.444412321\"\n      count=\"615\"\n      size=\"small\"\n      compact\n    />\n    <cdr-rating\n      rating=\"3\"\n      count=\"100\"\n      href=\"https://www.rei.com\"\n      size=\"small\"\n    />\n\n    <!-- Responsive Size -->\n    <cdr-text tag=\"h3\">\n      Responsive Growing\n    </cdr-text>\n    <cdr-rating\n      rating=\"2\"\n      count=\"9\"\n      size=\"small@xs medium@md large@lg\"\n    />\n    <cdr-text tag=\"h3\">\n      Responsive Inverse\n    </cdr-text>\n    <cdr-rating\n      rating=\"3\"\n      count=\"100\"\n      size=\"large@xs medium@md small@lg\"\n    />\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\nexport default {\n  name: 'Rating',\n  components: {\n    ...Components,\n  },\n};\n</script>\n\n<style>\n/** resets to protect example stylings unrelated to the component for consistent testing */\n.rating-reset {\n  font-size: 0;\n}\n\n.line-height-reset {\n  line-height: 1;\n}\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
