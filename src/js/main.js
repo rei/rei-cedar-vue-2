@@ -1,7 +1,7 @@
 require( './affix' );
-require( './alert' );
+//require( './alert' );
 require( './button' );
-require( './carousel' );
+//require( './carousel' );
 require( './collapse' );
 require( './modal' );
 require( './popover' );

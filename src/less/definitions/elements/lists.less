@@ -5,90 +5,53 @@
 @type    : 'element';
 @element : 'lists';
 
-@import (multiple) '../../theme.config';
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Lists
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Unordered and Ordered lists
 ul,
-ol {
-    margin-top: 0;
-    margin-bottom: ( @line-height-computed / 2 );
+ol,
+.list-unstyled {
+    .cdr-list-base-mixin();
     ul,
     ol {
-        margin-bottom: 0;
+        .cdr-list-base-nested-mixin();
     }
 }
 
 // List options
 ol {
-    margin-left:0;
-    padding-left:0;
-    list-style-position: inside;
-    > li {
-        padding-bottom: @vertical-push;
-        &:last-of-type {
-            padding-bottom: 0;
-        }
-    }
+   .cdr-list-ordered-mixin();
+    & li > ul,
+    & li > ol {
+       .cdr-list-ordered-nested-mixin();
+   }
 }
 
-// Unstyled keeps list items block level, just removes default browser padding and list-style
-.list-unstyled {
-    padding-left: 0;
-    list-style: none;
-}
-
-.list-text {
-    &:extend( .list-unstyled all );
-    > li {
-        padding-bottom: @vertical-push;
-        &:last-of-type {
-            padding-bottom: 0;
-        }
-    }
-}
-.list-text > li > ul {
-    padding-top:  @vertical-push;
-    &:extend( .list-text all );
-}
-
+.list-text,
 .list-decoration {
-    &:extend( .list-text all );
-    padding-left: 1.2rem;
-    > li {
-        &:before {
-            background: #222;
-            border-radius: 100%;
-            content: "";
-            height: 0.4rem;
-            display: block;
-            position: relative;
-            top: 0.4rem;
-            left: -1.2rem;
-            margin: 0 0.6rem 0 0;
-            .translate(0,245%);
-            width: 0.4rem;
-        }
-    }
-}
-.list-decoration > li > ul {
-    &:extend( .list-decoration all );
+  .cdr-list-unordered-mixin();
+  & li > ol,
+  & li > ul {
+      .cdr-list-unordered-nested-mixin();
+  }
 }
 
 // Inline turns list items into inline-block
-.list-inline {
-     &:extend( .list-unstyled all );
-    > li {
-        display: inline-block;
-        padding: 0;
-        &:first-of-type {
-            padding-left: 0;
-        }
-        &:last-of-type {
-            padding-right: 0;
-        }
+.list-inline,
+.list-flex-row  {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding-left: 0;
+
+    & > li {
+      display: block;
+
+      & + li {
+        margin-top: 0;
+        padding-left: 1em;
+      }
     }
     &.list-inline-md {
         > li {
@@ -124,9 +87,6 @@ ol {
     padding: 0;
 }
 
-// List that is block @ xs, inline @ specificied mins
-.make-list-responsive( sm );
-.make-list-responsive( md );
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //            OVERRIDES
