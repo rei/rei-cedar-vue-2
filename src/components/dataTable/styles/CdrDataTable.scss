@@ -81,7 +81,7 @@
     td {
       border: 1px solid;
       min-height: 48px;
-      color: $cdr-color-text-primary-lightmode;
+      color: $cdr-color-text-primary;
       padding: $cdr-space-inset-one-x;
       text-align: left;
       min-width: 127px;
@@ -105,7 +105,7 @@
     thead {
       th {
         border-bottom: 2px solid $cdr-color-border-table-head;
-        
+
         /* empty column header, row header column */
         &[class^=empty] {
           border-right: 2px solid $cdr-color-border-table-head;
@@ -124,7 +124,7 @@
         // striping rows
         &:nth-child(even) {
           background-color: $cdr-color-background-table-row-alt;
-          
+
           & > th {
             background-color: $cdr-color-background-table-row-alt;
           }
@@ -133,7 +133,7 @@
         // disabled default
         &:nth-child(odd) {
           background-color: $cdr-color-background-table-row;
-          
+
           & > th {
             background-color: $cdr-color-background-table-row;
           }
@@ -147,17 +147,17 @@
           min-width: 150px;
           border-right: 2px solid $cdr-color-border-table-head;
         }
-        
+
         // striping rows
         &:nth-child(odd) {
           background-color: $cdr-color-background-table-row-alt;
-          
+
           & > th {
             background-color: $cdr-color-background-table-row-alt;
           }
         }
       }
-      
+
       .align-row-header-content {
         display: flex;
         justify-content: center;

@@ -61,8 +61,8 @@
       background:
         linear-gradient(
           to left,
-          rgba($cdr-color-background-lightest, 0),
-          $cdr-color-background-lightest
+          rgba($cdr-color-background-primary, 0),
+          $cdr-color-background-primary
         );
       pointer-events: none;
       opacity: 0;
@@ -80,8 +80,8 @@
       background:
         linear-gradient(
           to right,
-          rgba($cdr-color-background-lightest, 0),
-          $cdr-color-background-lightest
+          rgba($cdr-color-background-primary, 0),
+          $cdr-color-background-primary
         );
       pointer-events: none;
       opacity: 0;
