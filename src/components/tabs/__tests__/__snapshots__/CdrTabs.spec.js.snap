@@ -8,6 +8,9 @@ exports[`CdrTabs mounted mounts tabs 1`] = `
   <div
     class="cdr-tabs__gradient-container"
   >
+    <div
+      class="cdr-tabs__gradient cdr-tabs__gradient--left"
+    />
     <nav
       class="cdr-tabs__header-container"
     >
@@ -16,6 +19,9 @@ exports[`CdrTabs mounted mounts tabs 1`] = `
         role="tablist"
       />
     </nav>
+    <div
+      class="cdr-tabs__gradient cdr-tabs__gradient--right"
+    />
     <div
       class="cdr-tabs__underline"
       style="transform: translateX(0px); width: 0px;"
@@ -35,6 +41,9 @@ exports[`CdrTabs mounted mounts with cdr-tab-panel children 1`] = `
   <div
     class="cdr-tabs__gradient-container"
   >
+    <div
+      class="cdr-tabs__gradient cdr-tabs__gradient--left"
+    />
     <nav
       class="cdr-tabs__header-container"
     >
@@ -75,6 +84,9 @@ exports[`CdrTabs mounted mounts with cdr-tab-panel children 1`] = `
         </li>
       </ol>
     </nav>
+    <div
+      class="cdr-tabs__gradient cdr-tabs__gradient--right"
+    />
     <div
       class="cdr-tabs__underline"
       style="transform: translateX(0px); width: 0px;"

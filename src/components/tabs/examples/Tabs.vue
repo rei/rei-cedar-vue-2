@@ -9,7 +9,7 @@
       Tabs
     </cdr-text>
 
-    <tabs-default :backgroundColor="backgroundColor"/>
+    <tabs-default :background-color="backgroundColor" />
 
     <!-- small -->
     <div class="tab-demo-secton">
@@ -23,7 +23,7 @@
       <cdr-tabs
         height="100px"
         size="small"
-        :backgroundColor="backgroundColor"
+        :background-color="backgroundColor"
       >
         <cdr-tab-panel
           v-for="tab in tabs.slice(0, 5)"
@@ -53,7 +53,7 @@
       <cdr-tabs
         height="100px"
         modifier="full-width"
-        :backgroundColor="backgroundColor"
+        :background-color="backgroundColor"
       >
         <cdr-tab-panel
           v-for="tab in tabs"
@@ -83,7 +83,7 @@
       <cdr-tabs
         height="100px"
         modifier="no-border"
-        :backgroundColor="backgroundColor"
+        :background-color="backgroundColor"
       >
         <cdr-tab-panel
           v-for="tab in tabs"
@@ -113,7 +113,7 @@
       <cdr-tabs
         height="100px"
         modifier="centered"
-        :backgroundColor="backgroundColor"
+        :background-color="backgroundColor"
       >
         <cdr-tab-panel
           v-for="tab in tabs"
@@ -191,12 +191,17 @@ export default {
       backgroundColor: CdrColorBackgroundPrimary,
     };
   },
+  watch: {
+    $route(to) {
+      this.setBackground(to.query.background);
+    },
+  },
   mounted() {
     this.setBackground(this.$router.currentRoute.query.background);
   },
   methods: {
     setBackground(background) {
-      switch(background) {
+      switch (background) {
         case 'primary':
           this.backgroundColor = CdrColorBackgroundPrimary;
           break;
@@ -218,13 +223,8 @@ export default {
         default:
           this.backgroundColor = CdrColorBackgroundPrimary;
       }
-    }
+    },
   },
-  watch: {
-    $route(to, from) {
-      this.setBackground(to.query.background)
-    }
-  }
 };
 </script>
 

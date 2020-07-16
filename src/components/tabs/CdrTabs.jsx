@@ -21,8 +21,8 @@ export default {
     },
     backgroundColor: {
       type: String,
-      default: CdrColorBackgroundPrimary
-    }
+      default: CdrColorBackgroundPrimary,
+    },
   },
   data() {
     return {
@@ -201,7 +201,9 @@ export default {
       let totalWidth = 0;
       headerElements.forEach((element, i) => {
         // account for margin-left on header elements
-        if (i > 0) totalWidth += this.size === 'small' ? Number(CdrSpaceHalfX) : Number(CdrSpaceOneX);
+        if (i > 0) {
+          totalWidth += this.size === 'small' ? Number(CdrSpaceHalfX) : Number(CdrSpaceOneX);
+        }
         totalWidth += element.offsetWidth || 0;
       });
       return totalWidth;
@@ -254,8 +256,11 @@ export default {
             this.style['cdr-tabs__gradient'],
             this.style['cdr-tabs__gradient--left'],
             this.overflowLeft ? this.style['cdr-tabs__gradient--active'] : '',
-          )} style={ { background: `linear-gradient(to left, transparent, ${this.backgroundColor})`} }>
-          </div>
+          )}
+            style={
+              { background: `linear-gradient(to left, transparent, ${this.backgroundColor})` }
+            }
+          ></div>
           <nav
             class={this.style['cdr-tabs__header-container']}
           >
@@ -286,8 +291,11 @@ export default {
             this.style['cdr-tabs__gradient'],
             this.style['cdr-tabs__gradient--right'],
             this.overflowRight ? this.style['cdr-tabs__gradient--active'] : '',
-          )} style={ { background: `linear-gradient(to right, transparent, ${this.backgroundColor})`} }>
-          </div>
+          )}
+            style={
+              { background: `linear-gradient(to right, transparent, ${this.backgroundColor})` }
+            }
+          ></div>
           <div
             class={this.style['cdr-tabs__underline']}
             style={this.underlineStyle}

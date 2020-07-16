@@ -157,8 +157,8 @@ export default {
   props: {
     backgroundColor: {
       type: String,
-      default: "#ffffff"
-    }
+      default: '#ffffff',
+    },
   },
   data() {
     return {
