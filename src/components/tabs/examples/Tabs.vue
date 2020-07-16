@@ -9,7 +9,7 @@
       Tabs
     </cdr-text>
 
-    <tabs-default />
+    <tabs-default :backgroundColor="backgroundColor"/>
 
     <!-- small -->
     <div class="tab-demo-secton">
@@ -23,6 +23,7 @@
       <cdr-tabs
         height="100px"
         size="small"
+        :backgroundColor="backgroundColor"
       >
         <cdr-tab-panel
           v-for="tab in tabs.slice(0, 5)"
@@ -52,9 +53,10 @@
       <cdr-tabs
         height="100px"
         modifier="full-width"
+        :backgroundColor="backgroundColor"
       >
         <cdr-tab-panel
-          v-for="tab in tabs.slice(0, 5)"
+          v-for="tab in tabs"
           :key="tab"
           :name="tab"
           :id="'tab-panel-full-width-' + tab"
@@ -81,9 +83,10 @@
       <cdr-tabs
         height="100px"
         modifier="no-border"
+        :backgroundColor="backgroundColor"
       >
         <cdr-tab-panel
-          v-for="tab in tabs.slice(0, 5)"
+          v-for="tab in tabs"
           :key="tab"
           :name="tab"
           :id="'tab-panel-no-border-' + tab"
@@ -110,6 +113,7 @@
       <cdr-tabs
         height="100px"
         modifier="centered"
+        :backgroundColor="backgroundColor"
       >
         <cdr-tab-panel
           v-for="tab in tabs"
@@ -166,8 +170,17 @@
 </template>
 
 <script>
+import {
+  CdrColorBackgroundPrimary,
+  CdrColorBackgroundSecondary,
+  CdrColorBackgroundSuccess,
+  CdrColorBackgroundInfo,
+  CdrColorBackgroundWarning,
+  CdrColorBackgroundError,
+} from '@rei/cdr-tokens';
 import * as Components from 'srcdir/index';
 import tabsDefault from 'componentsdir/tabs/examples/demo/TabsDefault';
+
 
 export default {
   name: 'TabsExample',
@@ -175,8 +188,43 @@ export default {
   data() {
     return {
       tabs: ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight'],
+      backgroundColor: CdrColorBackgroundPrimary,
     };
   },
+  mounted() {
+    this.setBackground(this.$router.currentRoute.query.background);
+  },
+  methods: {
+    setBackground(background) {
+      switch(background) {
+        case 'primary':
+          this.backgroundColor = CdrColorBackgroundPrimary;
+          break;
+        case 'secondary':
+          this.backgroundColor = CdrColorBackgroundSecondary;
+          break;
+        case 'success':
+          this.backgroundColor = CdrColorBackgroundSuccess;
+          break;
+        case 'info':
+          this.backgroundColor = CdrColorBackgroundInfo;
+          break;
+        case 'warning':
+          this.backgroundColor = CdrColorBackgroundWarning;
+          break;
+        case 'error':
+          this.backgroundColor = CdrColorBackgroundError;
+          break;
+        default:
+          this.backgroundColor = CdrColorBackgroundPrimary;
+      }
+    }
+  },
+  watch: {
+    $route(to, from) {
+      this.setBackground(to.query.background)
+    }
+  }
 };
 </script>
 

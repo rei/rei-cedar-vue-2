@@ -4,6 +4,7 @@
     <cdr-tabs
       height="500px"
       data-backstop="tab-default"
+      :background-color="backgroundColor"
     >
       <cdr-tab-panel
         name="Details"
@@ -153,6 +154,12 @@ import * as Components from 'srcdir/index';
 export default {
   name: 'TabsDefault',
   components: { ...Components },
+  props: {
+    backgroundColor: {
+      type: String,
+      default: "#ffffff"
+    }
+  },
   data() {
     return {
       accordion1: false,

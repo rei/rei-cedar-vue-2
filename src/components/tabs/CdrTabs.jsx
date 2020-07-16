@@ -19,6 +19,10 @@ export default {
       type: Number,
       default: 0,
     },
+    backgroundColor: {
+      type: String,
+      default: CdrColorBackgroundPrimary
+    }
   },
   data() {
     return {
@@ -241,21 +245,19 @@ export default {
         style={{ height: this.height }}
       >
         <div
-          class={clsx(
-            this.overflowLeft ? this.style['cdr-tabs__header-gradient-left'] : '',
-            this.overflowRight ? this.style['cdr-tabs__header-gradient-right'] : '',
-            this.style['cdr-tabs__gradient-container'],
-          )}
+          class={this.style['cdr-tabs__gradient-container']}
           vOn:keyup_right={this.rightArrowNav}
           vOn:keyup_left={this.leftArrowNav}
           vOn:keydown_down_prevent={this.handleDownArrowNav}
         >
+          <div class={clsx(
+            this.style['cdr-tabs__gradient'],
+            this.style['cdr-tabs__gradient--left'],
+            this.overflowLeft ? this.style['cdr-tabs__gradient--active'] : '',
+          )} style={ { background: `linear-gradient(to left, transparent, ${this.backgroundColor})`} }>
+          </div>
           <nav
-            class={clsx(
-              this.overflowLeft ? this.style['cdr-tabs__header-gradient-left'] : '',
-              this.overflowRight ? this.style['cdr-tabs__header-gradient-right'] : '',
-              this.style['cdr-tabs__header-container'],
-            )}
+            class={this.style['cdr-tabs__header-container']}
           >
             <ol
               class={this.style['cdr-tabs__header']}
@@ -280,7 +282,12 @@ export default {
               ))}
             </ol>
           </nav>
-
+          <div class={clsx(
+            this.style['cdr-tabs__gradient'],
+            this.style['cdr-tabs__gradient--right'],
+            this.overflowRight ? this.style['cdr-tabs__gradient--active'] : '',
+          )} style={ { background: `linear-gradient(to right, transparent, ${this.backgroundColor})`} }>
+          </div>
           <div
             class={this.style['cdr-tabs__underline']}
             style={this.underlineStyle}
