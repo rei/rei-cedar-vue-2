@@ -11,49 +11,6 @@
 // Tabs
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// Base class TODO: refactor into tab
-// --------------------------------------------------
-.list-nav {
-    &:extend( .list-unstyled all );
-    &:extend( .clearfix all );
-    > li {
-        > a {
-            display: block;
-            // looking for a problem with fonts? it's in the button-size mixin as a default parameter
-            .btn-lg();
-            &:extend( .text-title );
-            &:extend( .link_navigation );
-            &:hover,
-            &:focus {
-                text-decoration: none;
-            }
-        }
-        // Disabled state sets text to gray and nukes hover/tab effects
-        &.disabled > a {
-            color: @cdr-color-text-link-disabled;
-            &:hover, &:focus {
-                background-color: transparent;
-                color: @cdr-color-text-link-disabled;
-                cursor: @cursor-disabled;
-                text-decoration: none;
-            }
-        }
-    }
-}
-.list-nav > li > ul {
-    &:extend( .list-nav all );
-    > li {
-        > a {
-        font-family:  @tab-font-family;
-        font-size: @tab-font-size; 
-        font-style: normal;
-        font-weight: 500;
-        letter-spacing: -.08px;
-        line-height: @tab-line-height;
-        &:extend( .text-capitalize );
-        }
-    }
-}
 
 // Tabs
 // -------------------------

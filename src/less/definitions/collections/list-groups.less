@@ -46,38 +46,34 @@
   box-shadow: none;
 }
 };
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// list-group: default rulesets
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//list-group-item
-@default-item-ruleset: {
-    margin: 0;
-    @toggle-sort-ruleset();
-    .place-toggle-variant( @icon-size-md; 2.1rem; 0.2rem; );
-    @list-group-toggle-ruleset();
-    border-bottom: 0.1rem solid @list-group-border;
-    //sort option
-    > a {
-        .link_navigation-subtitle();
-        padding: 1.1rem @padding-base-horizontal;
-        &:hover, &:focus, &.active  {
-            text-decoration: none;
-            background-color: @list-group-bg;
+
+.list-group-variant
+(
+    @list-group-scaffolding:                @list-group-default-wrapper-ruleset;
+    @list-group-item-scaffolding:           @default-item-ruleset;
+    @list-group-item-secondary-scaffolding: @default-item-secondary-ruleset;
+) {
+    .list-unstyled();
+    @list-group-scaffolding();
+    li {
+        list-style: none;
+        // Nested List Items
+        // -----------------
+        &.item-secondary {
+            @list-group-item-secondary-scaffolding();
+        }
+        &.list-group-item {
+            position: relative;
+            @list-group-item-scaffolding();
+
+            input:focus + label, a:focus {
+                outline: .5rem auto;
+                outline-color: #4eaaff;
+            }
         }
     }
-};
+}
 
-//list-group-item-secondary
-@default-item-secondary-ruleset: {
-    border-top: 0.1rem solid @list-group-border;
-    padding: 0.1rem @padding-base-horizontal 0.7rem  ( @padding-base-horizontal + 0.8 );
-    > a {
-        .link_navigation();
-    }
-    &:last-of-type{
-        padding-bottom: @padding-large-horizontal;
-    }
-};
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // list-group: Filter menu rulesets
@@ -115,6 +111,7 @@
 //list-group-item-secondary
 @menu-filter-item-secondary-ruleset: {
   padding: 0 @padding-large-horizontal @padding-xs-horizontal;
+  margin: 0;
   &:last-of-type {
       padding-bottom: 0;
   }
@@ -151,6 +148,7 @@
 @menu-navigation-item-secondary-ruleset: {
     border-top: 0.1rem solid @list-group-border;
     background-color: @navigation-menu-2;
+    margin: 0;
     > a {
         color: @cdr-color-text-primary;
         background-color: @navigation-menu-2;
@@ -171,10 +169,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // list-group: rulesets defined within list-group-variant mixin
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// list-group
-.list-group {
-    .list-group-variant();
-}
+
 // Filter menu
 .list-group-filter {
     .list-group-variant (

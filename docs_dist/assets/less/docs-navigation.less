@@ -23,9 +23,7 @@
 @docs-logo-height: auto;
 
 .bs-navbar-collapse,
-.bs-list-nav {
-    width: 100%;
-}
+
 
 .rei-logo {
     background: #f4f2ed;
@@ -49,7 +47,7 @@
 
 /*NAV*/
 .list-menu() {
-    &:extend( .list-nav all );
+   
     > li {
         > a {
             &:extend( .link_navigation-subtitle all );
@@ -81,6 +79,7 @@
     }
     &.active .nested-item,
     .nested-item {
+        margin-top: 0;
 
         a {
             font-size: 1.4rem;
@@ -119,6 +118,7 @@
         left: 0;
         display: none;
         width: 20rem;
+        margin-top: 0;
 
         &.js-show-menu {
             display: block;

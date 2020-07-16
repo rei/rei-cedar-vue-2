@@ -53,15 +53,12 @@ legend {
 }
 
 label {
-    display: inline-block;
-    margin-bottom: 0.4rem;
+    .cdr-input-base-label-mixin();
     .form-inline & {
         display: block;
     }
     .required & {
-        &:after {
-            content: '*';
-        }
+       .cdr-input-required-label-mixin();
     }
 }
 
@@ -74,13 +71,6 @@ label {
 //
 //----------------------------------------------------------------------------------------------------------------------
 .form-control {
-    background-color: @input-bg;
-    background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
-    border: 0.1rem solid @input-border;
-    border-radius: @border-radius;
-    color: @input-color;
-    display: block;
-    width: 100%;
     &:extend( .input-md all );
 
     // Placeholder
@@ -98,15 +88,9 @@ label {
     &[disabled],
     &[readonly],
     fieldset[disabled] & {
-        background-color: @input-bg-disabled;
-        opacity: 1; // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655
-    }
-
-    &[disabled],
-    fieldset[disabled] & {
+        color:  @cdr-color-text-input-disabled;
         cursor: @cursor-disabled;
     }
-
     // Reset height for `textarea`s
     textarea& {
         height: auto;

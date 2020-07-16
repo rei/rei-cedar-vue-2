@@ -12,8 +12,6 @@
 - type:  inline
   class: list-inline
 - type:  inline-md
-  class: list-inline list-inline-md
-- type:  inline-lg
   class: list-inline list-inline-lg
 - type:  inline-pipe
   class: list-inline list-inline-md list-inline-pipe
@@ -21,8 +19,6 @@
   class: list-inline list-inline-lg use_link-stag-explore
 - type:  bullet
   class: list-decoration
-- type:  crumb
-  class: list-crumb
 - type:  breadcrumbs
   class: breadcrumb
 - type:  breadcrumbs-explore

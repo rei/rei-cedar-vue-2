@@ -1,4 +1,4 @@
-I"Ca<p>A <strong>card</strong> is a flexible and extensible content container. It includes options for headers and footers, a wide variety of content, theme colors, and powerful display options.</p>
+I"?a<p>A <strong>card</strong> is a flexible and extensible content container. It includes options for headers and footers, a wide variety of content, theme colors, and powerful display options.</p>
 <p>Cards require a small amount of markup and classes to provide you with as much control as possible. These classes and markup are flexible though and can typically be remixed and extended with ease.</p>
 <p>Cards support a wide variety of content, including images, text, list groups, links, and more. Mix and match multiple content types to create the card you need.</p>
 <h2>Examples</h2>
@@ -110,15 +110,11 @@
 
 
 
-
-
 <ol class="list-inline list-inline-lg use_link-stag-explore">
     <li><a href="#">Item 1</a></li>
     <li><a href="#">Item 2</a></li>
     <li><a href="#">Item 3</a></li>
 </ol>
-
-
 
 
 

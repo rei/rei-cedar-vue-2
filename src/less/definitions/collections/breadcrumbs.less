@@ -1,40 +1,24 @@
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//            THEME
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-@type    : 'collection';
-@element : 'breadcrumbs';
-
-@import (reference, multiple) '../../theme.config';
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// BREADCRUMBS
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-.list-crumb {
-    .cdr-breadcrumb-base-text-mixin();
+.breadcrumb {
+.cdr-breadcrumb-base-text-mixin();
     &:extend( .list-inline all );
+    .cdr-text-utility-sans-200;
     > li {
+        color: @cdr-color-text-secondary;
         padding-right: 0;
         &:not(:last-of-type):after {
-            vertical-align: text-bottom;
+            color: @cdr-color-text-secondary;
             content: " / ";
             display: inline-block;
-            color: rgba(66, 59, 47, 0.75);
             margin-left: 0.4rem;
+        }
+        > a {
+            .cdr-breadcrumb-item-linked-mixin();
+           &:hover,
+           &:active,
+           &:focus {
+               text-decoration: underline;
+           }
         }
     }
 }
 
-//
-// Breadcrumbs
-// --------------------------------------------------
-.breadcrumb {
-    &:extend( .list-crumb all );
-    font-size: @font-size-smaller;
-    > li a {
-        &:extend( .link-crumb all);
-    }
-    > .active {
-        color: @breadcrumb-active-color;
-    }
-}
