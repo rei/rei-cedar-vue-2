@@ -41950,6 +41950,46 @@ var cedar = (function () {
                 "heading-serif-500 heading-serif-600@md heading-serif-600@lg"
             }
           },
+          [_vm._v("\n    List in small container\n  ")]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticStyle: { width: "50px" } },
+          [
+            _c("cdr-list", { attrs: { modifier: "unordered" } }, [
+              _c("li", [_vm._v("foofofofofofofofofofofofofo")]),
+              _vm._v(" "),
+              _c(
+                "li",
+                [
+                  _vm._v("\n        bar\n        "),
+                  _c("cdr-list", { attrs: { modifier: "unordered" } }, [
+                    _c("li", [
+                      _vm._v("lala lalalalal alalalalalal alalalala lalala")
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [_vm._v("wa")])
+                  ])
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c("li", [_vm._v("zoo")])
+            ])
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "cdr-text",
+          {
+            attrs: {
+              tag: "h4",
+              modifier:
+                "heading-serif-500 heading-serif-600@md heading-serif-600@lg"
+            }
+          },
           [_vm._v("\n    Typography validation - text wrapping lists\n  ")]
         ),
         _vm._v(" "),
@@ -42231,7 +42271,7 @@ var cedar = (function () {
     /* style */
     const __vue_inject_styles__$E = function (inject) {
       if (!inject) return
-      inject("data-v-4ae174b4_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"Resilience.vue"}, media: undefined });
+      inject("data-v-511de12c_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"Resilience.vue"}, media: undefined });
 
     };
     /* scoped */
