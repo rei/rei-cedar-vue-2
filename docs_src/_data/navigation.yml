@@ -195,11 +195,11 @@ items:
                 - label: Text List Ordered
                   href: list-ordered
 
-                - label: Featured
-                  href: list-inline-featured
+                - label: Text List Inline
+                  href: list-inline
 
                 - label: Flex
-                  href: list-flex-featured
+                  href: list-flex
 
             - label: Inputs
               slug: inputs
@@ -210,9 +210,6 @@ items:
 
                 - label: Hidden Label
                   href: nav-hiddenLabel
-
-                - label: Validation
-                  href: nav-inputValidation
 
                 - label: Selects
                   href: nav-select-form-control
@@ -280,15 +277,6 @@ items:
               nav:
                 - label: Alerts
                   href: alerts
-
-                - label: Dismissible Alerts
-                  href: alerts-dismissible
-
-                - label: Alert JS
-                  href: js-alerts
-
-                - label: Validation
-                  href: forms-control-validation
 
             - label: List Groups
               slug: list-groups
