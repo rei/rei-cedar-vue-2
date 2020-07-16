@@ -49,6 +49,18 @@ export default {
         width: `${this.underlineWidth}px`,
       };
     },
+    gradientLeftStyle() {
+      const gradient = `linear-gradient(to left, rgba(255, 255, 255, 0), ${this.backgroundColor})`;
+      return {
+        background: gradient,
+      };
+    },
+    gradientRightStyle() {
+      const gradient = `linear-gradient(to right, rgba(255, 255, 255, 0), ${this.backgroundColor})`;
+      return {
+        background: gradient,
+      };
+    },
   },
   mounted() {
     this.tabs = (this.$slots.default || [])
@@ -257,9 +269,7 @@ export default {
             this.style['cdr-tabs__gradient--left'],
             this.overflowLeft ? this.style['cdr-tabs__gradient--active'] : '',
           )}
-            style={
-              { background: `linear-gradient(to left, transparent, ${this.backgroundColor})` }
-            }
+            style={this.gradientLeftStyle}
           ></div>
           <nav
             class={this.style['cdr-tabs__header-container']}
@@ -292,9 +302,7 @@ export default {
             this.style['cdr-tabs__gradient--right'],
             this.overflowRight ? this.style['cdr-tabs__gradient--active'] : '',
           )}
-            style={
-              { background: `linear-gradient(to right, transparent, ${this.backgroundColor})` }
-            }
+            style={this.gradientRightStyle}
           ></div>
           <div
             class={this.style['cdr-tabs__underline']}
