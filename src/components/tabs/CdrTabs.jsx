@@ -1,5 +1,8 @@
 import debounce from 'lodash-es/debounce';
 import clsx from 'clsx';
+import {
+  CdrColorBackgroundPrimary, CdrSpaceOneX, CdrSpaceHalfX,
+} from '@rei/cdr-tokens/dist/js/cdr-tokens.esm';
 import modifier from '../../mixins/modifier';
 import size from '../../mixins/size';
 import style from './styles/CdrTabs.scss';
@@ -192,7 +195,9 @@ export default {
         headerElements = Array.from(this.$refs.cdrTabsHeader.children);
       }
       let totalWidth = 0;
-      headerElements.forEach((element) => {
+      headerElements.forEach((element, i) => {
+        // account for margin-left on header elements
+        if (i > 0) totalWidth += this.size === 'small' ? Number(CdrSpaceHalfX) : Number(CdrSpaceOneX);
         totalWidth += element.offsetWidth || 0;
       });
       return totalWidth;
