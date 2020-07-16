@@ -57,7 +57,12 @@
   text-decoration: underline;
 }
 .bs-docs-footer .list-text .nested,
-.bs-docs-footer .footer-inline-list .nested {
+.bs-docs-footer .footer-inline-list .nested,
+.bs-docs-footer .list-text > li > ul .nested,
+.bs-docs-footer .list-decoration .nested,
+.bs-docs-footer .list-decoration > li > ul .nested,
+.bs-docs-footer .list-decoration > li > ul .nested,
+.bs-docs-footer .list-decoration > li > ul > li > ul .nested {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
@@ -400,18 +405,15 @@ h4 code {
   width: 10rem;
 }
 @media (min-width: 768px) {
-  .bs-docs-footer .footer-inline-list {
-    display: flex;
-    flex-wrap: wrap;
-    list-style-type: none;
+  .bs-docs-footer .footer-inline-list > li {
+    display: inline-block;
+    padding: 0;
+  }
+  .bs-docs-footer .footer-inline-list > li:first-of-type {
     padding-left: 0;
   }
-  .bs-docs-footer .footer-inline-list > li {
-    display: block;
-  }
-  .bs-docs-footer .footer-inline-list > li + li {
-    margin-top: 0;
-    padding-left: 1em;
+  .bs-docs-footer .footer-inline-list > li:last-of-type {
+    padding-right: 0;
   }
   .bs-docs-footer .footer-inline-list.list-inline-md > li {
     padding: 0 1.6rem;

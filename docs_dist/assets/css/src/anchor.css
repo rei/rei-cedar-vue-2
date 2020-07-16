@@ -67,6 +67,7 @@
             bottom: 0;
             position: relative;
             > a {
+              display: inline;
                 &, &:hover, &:focus {
                     border-top-color: transparent;
                     border-top-style: initial;

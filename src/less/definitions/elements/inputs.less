@@ -83,29 +83,13 @@ input[type="search"] {
 //----------------------------------------------------------------------------------------------------------------------
 
 
-.input-md {
-    .input-size();
+.input-md,
+.input-sm {
+    .cdr-input-base-mixin();
 }
 
-.input-sm {
-    .input-size(
-        @input-sm-padding;
-        @input-sm-font-size;
-        @input-sm-line-height;
-        @input-sm-font-family;
-        @input-sm-font-spacing
-        @input-sm-font-style;
-        @input-height-small );
-}
 .input-lg {
-    .input-size(
-        @input-lg-padding;
-        @input-lg-font-size;
-        @input-lg-line-height;
-        @input-lg-font-family;
-        @input-lg-font-spacing
-        @input-lg-font-style;
-        @input-height-large );
+    .cdr-input-large-mixin();
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

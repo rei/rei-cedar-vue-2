@@ -38,7 +38,7 @@
             display: block;
             font-size: @input-font-size;
             line-height: @input-line-height;
-            padding: 1.2rem 1.2rem;
+            padding: 0.8rem;
         }
         .input-group-addon > .icon {
             font-size: @input-font-size !important;
@@ -53,23 +53,6 @@
                 }
             }
         }
-        &.input-group-sm {
-            .form-control {
-                &:extend(.input-sm);
-
-            }
-            .input-group-addon {
-                font-size: @input-sm-font-size;
-                line-height: @input-sm-line-height;
-                padding: 1.2rem;
-            }
-            .input-group-addon > .icon {
-                font-size: @input-sm-font-size !important;
-            }
-            .input-group-btn > .btn {
-                &:extend(.btn-xs);
-            }
-        }
         &.input-group-lg {
             .form-control {
                 &:extend(.input-lg);
@@ -77,7 +60,6 @@
             .input-group-addon {
                 font-size: @input-lg-font-size;
                 line-height: @input-lg-line-height;
-                padding: 1.6rem 1.2rem;
             }
             .input-group-addon > .icon {
                 font-size: @input-lg-font-size !important;
