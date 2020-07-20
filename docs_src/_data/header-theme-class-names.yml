@@ -3,8 +3,6 @@
 
 - theme: core
   headerClass: header
-- theme: explore
-  headerClass: heading-editorial
 - theme: hero
   headerClass: heading-hero
 - theme: announce

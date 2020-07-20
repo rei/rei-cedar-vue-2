@@ -11,7 +11,7 @@
                 </div>
             </div>
         </div>
-        <div class="collapse code-toggle--document" id="{ opts.elementId }" >
+        <div class="collapse code-toggle--document vertical-push" id="{ opts.elementId }" >
             <yield from="codeblock" />
         </div>
         <section>

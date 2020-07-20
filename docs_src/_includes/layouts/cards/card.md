@@ -167,7 +167,7 @@
             </section>
             <section class="card-block">
                 <h4 class="h3">Heading</h4>
-                <div class="cdr-review-rating link_stag-explore-overlay vertical-push" alt="4.5 out of 5 stars" title="4.5 out of 5 stars">
+                <div class="cdr-review-rating vertical-push" alt="4.5 out of 5 stars" title="4.5 out of 5 stars">
                     <span class="icon icon-rei-star-100" aria-hidden="true"></span>
                     <span class="icon icon-rei-star-100" aria-hidden="true"></span>
                     <span class="icon icon-rei-star-100" aria-hidden="true"></span>

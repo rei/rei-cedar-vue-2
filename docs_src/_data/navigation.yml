@@ -14,9 +14,6 @@ items:
                 - label: Core
                   href: color-swatches-core
 
-                - label: Explore
-                  href: color-swatches-explore
-
                 - label: Utility Palette
                   href: color-swatches-utility
 
@@ -379,14 +376,6 @@ items:
 
                 - label: Popovers
                   href: popovers
-
-            - label: Accordion
-              slug: accordion
-              href: /modules/accordion/
-
-            - label: Modals
-              slug: modals
-              href: /modules/modals/
 
     - label: Style and Behavior
       slug: style-and-behavior

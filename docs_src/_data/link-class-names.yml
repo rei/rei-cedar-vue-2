@@ -13,12 +13,6 @@
   family: core
 
 # modifier
-- type:  explore-inline
-  class: link-explore
-  family: core
-- type:  explore-inline-overlay
-  class: link-explore-overlay
-  family: overlay
 - type:  overlay
   class: link-overlay
   family: overlay
@@ -30,12 +24,6 @@
   family: core
 
   #BEM
-- type:  explore-singleton
-  class: link_stag-explore
-  family: core
-- type:  explore-singleton-overlay
-  class: link_stag-explore-overlay
-  family: overlay
 - type:  overlay-singleton
   class: link_stag-overlay
   family: overlay
@@ -93,9 +81,6 @@
 - type:   overlay-header
   class:  link_header-overlay
   family: overlay
-- type:   explore-header
-  class:  link_header-explore
-  family: explore
 - type:   outlet-header
   class:  link_header-outlet
 - type:   off-price-header
