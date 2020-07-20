@@ -1,5 +1,8 @@
 import debounce from 'lodash-es/debounce';
 import clsx from 'clsx';
+import {
+  CdrColorBackgroundPrimary, CdrSpaceOneX, CdrSpaceHalfX,
+} from '@rei/cdr-tokens/dist/js/cdr-tokens.esm';
 import modifier from '../../mixins/modifier';
 import size from '../../mixins/size';
 import style from './styles/CdrTabs.scss';
@@ -15,6 +18,10 @@ export default {
     activeTab: {
       type: Number,
       default: 0,
+    },
+    backgroundColor: {
+      type: String,
+      default: CdrColorBackgroundPrimary,
     },
   },
   data() {
@@ -40,6 +47,18 @@ export default {
       return {
         transform: `translateX(${this.underlineOffsetX}px)`,
         width: `${this.underlineWidth}px`,
+      };
+    },
+    gradientLeftStyle() {
+      const gradient = `linear-gradient(to left, rgba(255, 255, 255, 0), ${this.backgroundColor})`;
+      return {
+        background: gradient,
+      };
+    },
+    gradientRightStyle() {
+      const gradient = `linear-gradient(to right, rgba(255, 255, 255, 0), ${this.backgroundColor})`;
+      return {
+        background: gradient,
       };
     },
   },
@@ -192,7 +211,11 @@ export default {
         headerElements = Array.from(this.$refs.cdrTabsHeader.children);
       }
       let totalWidth = 0;
-      headerElements.forEach((element) => {
+      headerElements.forEach((element, i) => {
+        // account for margin-left on header elements
+        if (i > 0) {
+          totalWidth += this.size === 'small' ? Number(CdrSpaceHalfX) : Number(CdrSpaceOneX);
+        }
         totalWidth += element.offsetWidth || 0;
       });
       return totalWidth;
@@ -236,21 +259,20 @@ export default {
         style={{ height: this.height }}
       >
         <div
-          class={clsx(
-            this.overflowLeft ? this.style['cdr-tabs__header-gradient-left'] : '',
-            this.overflowRight ? this.style['cdr-tabs__header-gradient-right'] : '',
-            this.style['cdr-tabs__gradient-container'],
-          )}
+          class={this.style['cdr-tabs__gradient-container']}
           vOn:keyup_right={this.rightArrowNav}
           vOn:keyup_left={this.leftArrowNav}
           vOn:keydown_down_prevent={this.handleDownArrowNav}
         >
+          <div class={clsx(
+            this.style['cdr-tabs__gradient'],
+            this.style['cdr-tabs__gradient--left'],
+            this.overflowLeft ? this.style['cdr-tabs__gradient--active'] : '',
+          )}
+            style={this.gradientLeftStyle}
+          ></div>
           <nav
-            class={clsx(
-              this.overflowLeft ? this.style['cdr-tabs__header-gradient-left'] : '',
-              this.overflowRight ? this.style['cdr-tabs__header-gradient-right'] : '',
-              this.style['cdr-tabs__header-container'],
-            )}
+            class={this.style['cdr-tabs__header-container']}
           >
             <ol
               class={this.style['cdr-tabs__header']}
@@ -275,7 +297,13 @@ export default {
               ))}
             </ol>
           </nav>
-
+          <div class={clsx(
+            this.style['cdr-tabs__gradient'],
+            this.style['cdr-tabs__gradient--right'],
+            this.overflowRight ? this.style['cdr-tabs__gradient--active'] : '',
+          )}
+            style={this.gradientRightStyle}
+          ></div>
           <div
             class={this.style['cdr-tabs__underline']}
             style={this.underlineStyle}

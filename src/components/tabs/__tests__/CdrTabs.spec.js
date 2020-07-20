@@ -251,7 +251,7 @@ describe('CdrTabs', () => {
       await wrapper.vm.$nextTick();
       wrapper.setData({ overflowLeft: true });
       await wrapper.vm.$nextTick();
-      expect(wrapper.find('.cdr-tabs__header-gradient-left').exists()).toBe(true);
+      expect(wrapper.find('.cdr-tabs__gradient--left.cdr-tabs__gradient--active').exists()).toBe(true);
       wrapper.destroy();
     });
 
@@ -276,7 +276,7 @@ describe('CdrTabs', () => {
       await wrapper.vm.$nextTick();
       wrapper.setData({ overflowRight: true });
       await wrapper.vm.$nextTick();
-      expect(wrapper.find('.cdr-tabs__header-gradient-right').exists()).toBe(true);
+      expect(wrapper.find('.cdr-tabs__gradient--right.cdr-tabs__gradient--active').exists()).toBe(true);
       wrapper.destroy();
     });
   });
