@@ -42,6 +42,7 @@ const routes = [
   { path: '/quotes', name: 'Quotes', component: Examples.quote },
   { path: '/radios', name: 'Radios', component: Examples.radio },
   { path: '/ratings', name: 'Ratings', component: Examples.rating },
+  { path: '/scroll-gradient', name: 'Scroll Gradient', component: Examples.scrollGradient },
   { path: '/selects', name: 'Selects', component: Examples.select },
   { path: '/tables', name: 'Tables', component: Examples.table },
   { path: '/tabs', name: 'Tabs', component: Examples.tabs },

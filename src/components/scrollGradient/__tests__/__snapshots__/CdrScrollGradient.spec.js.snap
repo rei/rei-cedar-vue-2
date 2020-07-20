@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CdrScrollGradient matches snapshot 1`] = `
+<div
+  class="cdr-scroll-gradient"
+>
+  <div
+    class="cdr-scroll-gradient--container"
+  />
+</div>
+`;

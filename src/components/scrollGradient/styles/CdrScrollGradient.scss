@@ -1,0 +1,71 @@
+@import '../../../css/settings/index.scss';
+
+.cdr-scroll-gradient {
+  position: relative;
+  height: inherit;
+  width: inherit;
+
+
+  &--content {
+    height: inherit;
+    width: inherit;
+  }
+
+  &--overlay {
+    transition: opacity $cdr-duration-2-x ease;
+    -webkit-transition: opacity $cdr-duration-2-x ease;
+    position: absolute;
+    z-index: 100;
+
+    pointer-events: none;
+    opacity: 0;
+// TODO: DE-DUPE styles into vert/horiz
+    &-left {
+      top: 0;
+      bottom: 0;
+      left: 0;
+
+      width: $cdr-space-three-x;
+    }
+
+    &-right {
+      top: 0;
+      bottom: 0;
+      right: 0;
+
+      width: $cdr-space-three-x;
+    }
+
+    &-top {
+      top: 0;
+      left: 0;
+      right: 0;
+
+      height: $cdr-space-three-x;
+    }
+
+    &-bottom {
+      left: 0;
+      bottom: 0;
+      right: 0;
+
+      height: $cdr-space-three-x;
+    }
+
+    &-active {
+      opacity: 1;
+    }
+  }
+
+  &--horizontal {
+    overflow-x: auto;
+    // overflow-y: hidden;
+    // white-space: nowrap;
+  }
+
+  &--vertical {
+    overflow-y: auto;
+    // overflow-x: hidden
+  }
+
+}

@@ -20,6 +20,7 @@ import quote from 'componentsdir/quote/examples/Quote';
 import radio from 'componentsdir/radio/examples/Radios';
 import rating from 'componentsdir/rating/examples/Ratings';
 import select from 'componentsdir/select/examples/Selects';
+import scrollGradient from 'componentsdir/scrollGradient/examples/ScrollGradient';
 import table from 'componentsdir/table/examples/Table';
 import tabs from 'componentsdir/tabs/examples/Tabs';
 import text from 'componentsdir/text/examples/Text';
@@ -47,6 +48,7 @@ export default {
   quote,
   radio,
   rating,
+  scrollGradient,
   select,
   table,
   tabs,
