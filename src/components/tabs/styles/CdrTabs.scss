@@ -26,6 +26,7 @@
   height: 500px;
   overflow-x: hidden;
 
+// TODO: is this vertical scrolling logic?!?
   // https://davidwalsh.name/osx-overflow
   ::-webkit-scrollbar {
     -webkit-appearance: none;
@@ -38,39 +39,8 @@
   }
 
   &__header-container {
-    overflow-x: auto;
+    width: max-content;
     border-bottom: 1px solid $cdr-color-border-tab-keyline-rest;
-    -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
-    &::-webkit-scrollbar { width: 0 !important; height: 0 !important; }
-  }
-
-  &__gradient-container {
-    position: relative;
-  }
-
-  &__gradient {
-    transition: opacity $cdr-duration-2-x ease;
-    -webkit-transition: opacity $cdr-duration-2-x ease;
-    position: absolute;
-    z-index: 100;
-    top: 0;
-    bottom: 0;
-    width: $cdr-space-three-x;
-    pointer-events: none;
-    opacity: 0;
-
-    &--left {
-      left: 0;
-    }
-
-    &--right {
-      right: 0;
-    }
-
-    &--active {
-      opacity: 1;
-    }
   }
 
   &__header {

@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import {
   CdrColorBackgroundPrimary, CdrSpaceOneX, CdrSpaceHalfX,
 } from '@rei/cdr-tokens/dist/js/cdr-tokens.esm';
+import CdrScrollGradient from '../scrollGradient/CdrScrollGradient';
 import modifier from '../../mixins/modifier';
 import size from '../../mixins/size';
 import style from './styles/CdrTabs.scss';
@@ -10,6 +11,9 @@ import style from './styles/CdrTabs.scss';
 export default {
   name: 'CdrTabs',
   mixins: [modifier, size],
+  components: {
+    CdrScrollGradient
+  },
   props: {
     height: {
       type: String,
@@ -31,10 +35,6 @@ export default {
       underlineWidth: 0,
       underlineScrollX: 0,
       activeTabIndex: 0,
-      headerWidth: 0,
-      headerOverflow: false,
-      overflowLeft: false,
-      overflowRight: false,
       animationInProgress: false,
       style,
     };
@@ -47,18 +47,6 @@ export default {
       return {
         transform: `translateX(${this.underlineOffsetX}px)`,
         width: `${this.underlineWidth}px`,
-      };
-    },
-    gradientLeftStyle() {
-      const gradient = `linear-gradient(to left, rgba(255, 255, 255, 0), ${this.backgroundColor})`;
-      return {
-        background: gradient,
-      };
-    },
-    gradientRightStyle() {
-      const gradient = `linear-gradient(to right, rgba(255, 255, 255, 0), ${this.backgroundColor})`;
-      return {
-        background: gradient,
       };
     },
   },
@@ -74,21 +62,16 @@ export default {
     }
 
     this.$nextTick(() => {
-      this.headerWidth = this.getHeaderWidth();
-      this.calculateOverflow();
       setTimeout(() => {
         this.updateUnderline();
       }, 250);
     });
     // Check for header overflow on window resize for gradient behavior.
     window.addEventListener('resize', debounce(() => {
-      this.headerWidth = this.getHeaderWidth();
-      this.calculateOverflow();
       this.updateUnderline();
     }, 500));
     // Check for header overflow on widow resize for gradient behavior.
-    this.$refs.cdrTabsHeader.parentElement.addEventListener('scroll', debounce(() => {
-      this.calculateOverflow();
+    this.$refs.cdrTabsNav.parentElement.addEventListener('scroll', debounce(() => {
       this.updateUnderline();
     }, 50));
   },
@@ -166,20 +149,9 @@ export default {
         this.changeTab(previousTab);
       }
     }, 300, { leading: true, trailing: false }),
-    calculateOverflow() {
-      let containerWidth = 0;
-      if (this.$refs.cdrTabsContainer) {
-        containerWidth = this.$refs.cdrTabsContainer.offsetWidth;
-      }
-      this.headerOverflow = this.headerWidth > containerWidth;
-      if (this.headerOverflow) {
-        // Get Scroll Position
-        const scrollX = this.$refs.cdrTabsHeader.parentElement.scrollLeft;
-        this.overflowLeft = scrollX > 1;
-        this.overflowRight = (scrollX + 1) < (this.headerWidth - containerWidth);
-      } else {
-        this.overflowLeft = false;
-        this.overflowRight = false;
+    handleDownArrowNav() {
+      if (!this.animationInProgress) {
+        this.$el.lastElementChild.children[this.activeTabIndex].focus();
       }
     },
     updateUnderline() {
@@ -187,7 +159,7 @@ export default {
       if (elements.length > 0) {
         const activeTab = elements[this.activeTabIndex];
         this.underlineOffsetX = activeTab.offsetLeft
-          - this.$refs.cdrTabsHeader.parentElement.scrollLeft;
+          - this.$refs.cdrTabsNav.parentElement.scrollLeft;
         this.underlineWidth = activeTab.firstChild.offsetWidth;
 
         // mobile fix, hide the underline if it scrolls outside the container
@@ -196,29 +168,6 @@ export default {
           this.underlineWidth = 0;
         }
       }
-    },
-    handleDownArrowNav() {
-      if (!this.animationInProgress) {
-        this.$el.lastElementChild.children[this.activeTabIndex].focus();
-      }
-    },
-    setFocusToActiveTabHeader() {
-      this.$refs.cdrTabsHeader.children[this.activeTabIndex].children[0].focus();
-    },
-    getHeaderWidth() {
-      let headerElements = [];
-      if (this.$refs.cdrTabsHeader) {
-        headerElements = Array.from(this.$refs.cdrTabsHeader.children);
-      }
-      let totalWidth = 0;
-      headerElements.forEach((element, i) => {
-        // account for margin-left on header elements
-        if (i > 0) {
-          totalWidth += this.size === 'small' ? Number(CdrSpaceHalfX) : Number(CdrSpaceOneX);
-        }
-        totalWidth += element.offsetWidth || 0;
-      });
-      return totalWidth;
     },
     hideScrollBar() {
       const styleRef = this.$refs.cdrTabsContainer.style;
@@ -258,21 +207,16 @@ export default {
         ref="cdrTabsContainer"
         style={{ height: this.height }}
       >
-        <div
-          class={this.style['cdr-tabs__gradient-container']}
-          vOn:keyup_right={this.rightArrowNav}
-          vOn:keyup_left={this.leftArrowNav}
-          vOn:keydown_down_prevent={this.handleDownArrowNav}
+        <cdr-scroll-gradient
+          horizontal={true}
+          background-color={this.backgroundColor}
         >
-          <div class={clsx(
-            this.style['cdr-tabs__gradient'],
-            this.style['cdr-tabs__gradient--left'],
-            this.overflowLeft ? this.style['cdr-tabs__gradient--active'] : '',
-          )}
-            style={this.gradientLeftStyle}
-          ></div>
           <nav
             class={this.style['cdr-tabs__header-container']}
+            vOn:keyup_right={this.rightArrowNav}
+            vOn:keyup_left={this.leftArrowNav}
+            vOn:keydown_down_prevent={this.handleDownArrowNav}
+            ref="cdrTabsNav"
           >
             <ol
               class={this.style['cdr-tabs__header']}
@@ -297,18 +241,11 @@ export default {
               ))}
             </ol>
           </nav>
-          <div class={clsx(
-            this.style['cdr-tabs__gradient'],
-            this.style['cdr-tabs__gradient--right'],
-            this.overflowRight ? this.style['cdr-tabs__gradient--active'] : '',
-          )}
-            style={this.gradientRightStyle}
-          ></div>
           <div
             class={this.style['cdr-tabs__underline']}
             style={this.underlineStyle}
           />
-        </div>
+        </cdr-scroll-gradient>
         <div
           class={this.style['cdr-tabs__content-container']}
           ref="slotWrapper"

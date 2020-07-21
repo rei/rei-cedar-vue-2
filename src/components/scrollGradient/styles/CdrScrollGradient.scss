@@ -2,13 +2,12 @@
 
 .cdr-scroll-gradient {
   position: relative;
-  height: inherit;
-  width: inherit;
 
 
   &--content {
-    height: inherit;
-    width: inherit;
+    &::-webkit-scrollbar { width: 0 !important; height: 0 !important; }
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
   }
 
   &--overlay {
