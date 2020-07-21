@@ -265,7 +265,6 @@ export default {
           },
         )}
         ref="wrapper"
-        role="presentation"
       >
         <div class={clsx(this.style['cdr-modal__outerWrap'], wrapperClass)}>
           <div

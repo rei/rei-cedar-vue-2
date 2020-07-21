@@ -3,7 +3,6 @@
 exports[`CdrModal.vue default open, scrolling 1`] = `
 <div
   class="cdr-modal"
-  role="presentation"
 >
   <div
     class="cdr-modal__outerWrap"
@@ -90,7 +89,6 @@ exports[`CdrModal.vue default open, scrolling 1`] = `
 exports[`CdrModal.vue leaves optional slots empty, handleOpened 1`] = `
 <div
   class="cdr-modal"
-  role="presentation"
 >
   <div
     class="cdr-modal__outerWrap"
@@ -175,7 +173,6 @@ exports[`CdrModal.vue leaves optional slots empty, handleOpened 1`] = `
 exports[`CdrModal.vue scrolling and fullscreen snapshot 1`] = `
 <div
   class="cdr-modal"
-  role="presentation"
 >
   <div
     class="cdr-modal__outerWrap"
