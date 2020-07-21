@@ -26511,10 +26511,7 @@ var cedar = (function () {
         "class": clsx(this.style['cdr-modal'], {
           [this.style.closed]: !opened
         }),
-        "ref": "wrapper",
-        "attrs": {
-          "role": "presentation"
-        }
+        "ref": "wrapper"
       }, [h("div", {
         "class": clsx(this.style['cdr-modal__outerWrap'], wrapperClass)
       }, [h("div", {
