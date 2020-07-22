@@ -5,10 +5,10 @@
 @type    : 'element';
 @element : 'buttons';
 
-
-// Cedar tokens 
-@import "./node_modules/@rei/cdr-tokens/dist/less/cdr-tokens.less";
-@import './node_modules/@rei/cdr-component-variables/dist/less/index.less';
+@import (multiple) '../../theme.config';
+// gulp path to Node
+//@import "./node_modules/@rei/cdr-tokens/dist/less/cdr-tokens.less";
+//@import './node_modules/@rei/cdr-component-variables/dist/less/index.less';
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // UI FRAMEWORK BUTTON
@@ -226,3 +226,7 @@ input[type="button"] {
     }
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//            OVERRIDES
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+.loadUIOverrides();

@@ -20,6 +20,8 @@ var gulp = require( 'gulp' );
 var less = require( 'gulp-less' );
 var download = require('gulp-downloader');
 var brandAiURL = 'https://assets.brand.ai/rei-digital-experience-team/digital-rei-brand/style-params.less?key=rJf4Z1nS7Z';
+var cdrTokens = 'https://raw.githubusercontent.com/rei/rei-cedar-tokens/next/dist/less/cdr-tokens.less';
+var cdrComponentVars = 'https://raw.githubusercontent.com/rei/rei-cedar-component-variables/next/dist/less/cedar-component-variables.less';
 var rename = require( 'gulp-rename' );
 var minifyCss = require( 'gulp-cssnano' );
 var pa11y = require( 'gulp-pa11y' );
@@ -257,12 +259,21 @@ gulp.task( 'css:build', [ 'css:clean' ], () => {
         .pipe( gulp.dest( PATHS.DIST ) );
 } );
 
-gulp.task('get-tokens', function(){
-  return download(brandAiURL)
-    .pipe(rename('brandai.variables'))
-    .pipe(gulp.dest('src/less/themes/default/settings/'));
+//gulp.task('get-tokens', function(){
+//  return download(brandAiURL)
+//    .pipe(rename('brandai.variables'))
+//   .pipe(gulp.dest('src/less/themes/default/settings/'));
+//});
+gulp.task('get-tokens', function () {
+    return download(cdrTokens)
+        .pipe(rename('cdr.tokens'))
+        .pipe(gulp.dest('src/less/themes/default/settings/'));
 });
-
+gulp.task('get-components', function () {
+    return download(cdrComponentVars)
+        .pipe(rename('cdr.variables'))
+        .pipe(gulp.dest('src/less/themes/default/settings/'));
+});
 // minify the css
 gulp.task( 'css:minify', [ 'css:build' ], () =>
     gulp.src( path.join( PATHS.DIST, '/rei-cedar.css' ) )
