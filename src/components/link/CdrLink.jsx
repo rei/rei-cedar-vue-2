@@ -10,6 +10,10 @@ export default {
     space,
   ],
   props: {
+    inset: {
+      type: Boolean,
+      default: false,
+    },
     tag: {
       type: String,
       default: 'a',
@@ -45,6 +49,9 @@ export default {
     inheritColorClass() {
       return this.inheritColor ? this.style['cdr-link--inherit-color'] : '';
     },
+    insetClass() {
+      return this.tag === 'button' && this.inset ? this.style['cdr-link--inset'] : '';
+    },
   },
   render() {
     const Component = this.tag;
@@ -52,6 +59,7 @@ export default {
       class={clsx(
         this.style[this.baseClass],
         this.modifierClass,
+        this.insetClass,
         this.space,
         this.inheritColorClass,
       )}

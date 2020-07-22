@@ -18,6 +18,10 @@
 /* Style variants
   ========================================================================== */
 
+.cdr-link--inset {
+  @include cdr-link-inset-mixin;
+}
+
 /* Standalone
     ========== */
 .cdr-link--standalone {

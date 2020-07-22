@@ -36,6 +36,10 @@
 
 }
 
+@mixin cdr-link-inset-mixin() {
+  padding: $cdr-space-inset-one-x-squish;
+}
+
 @mixin cdr-link-inherit-color-mixin() {
   fill: inherit;
   color: inherit;

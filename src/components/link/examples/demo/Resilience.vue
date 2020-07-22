@@ -51,11 +51,23 @@
     <cdr-text
       tag="h3"
       modifier="subheading"
-    >Link using a &lt;button&gt; element</cdr-text>
+    >Link using a &lt;button&gt; element inline</cdr-text>
+    <div class="anchor-example">
+      hey there <cdr-link
+        tag="button"
+        data-backstop="cdr-link--button"
+        @click="clicked"
+      >I'm a button!</cdr-link> wow!
+    </div>
+
+    <cdr-text
+      tag="h3"
+      modifier="subheading"
+    >Link using a &lt;button&gt; element and inset prop</cdr-text>
     <div class="anchor-example">
       <cdr-link
         tag="button"
-        space="cdr-space-inset-one-x"
+        :inset="true"
         data-backstop="cdr-link--button"
         @click="clicked"
       >I'm a button!</cdr-link>
