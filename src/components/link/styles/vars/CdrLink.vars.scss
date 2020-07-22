@@ -36,6 +36,18 @@
 
 }
 
+@mixin cdr-link-inherit-color-mixin() {
+  fill: inherit;
+  color: inherit;
+
+  &:active,
+  &:hover,
+  &:focus {
+    color: inherit;
+    fill: inherit;
+  }
+}
+
 @mixin cdr-link-standalone-mixin() {
   text-decoration: none;
 

@@ -25,13 +25,5 @@
 }
 
 .cdr-link--inherit-color {
-  fill: inherit;
-  color: inherit;
-
-  &:active,
-  &:hover,
-  &:focus {
-    color: inherit;
-    fill: inherit;
-  }
+  @include cdr-link-inherit-color-mixin;
 }
