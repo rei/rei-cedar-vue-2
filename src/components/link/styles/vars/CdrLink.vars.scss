@@ -36,6 +36,18 @@
 
 }
 
+@mixin cdr-link-inherit-color-mixin() {
+  fill: inherit;
+  color: inherit;
+
+  &:active,
+  &:hover,
+  &:focus {
+    color: inherit;
+    fill: inherit;
+  }
+}
+
 @mixin cdr-link-standalone-mixin() {
   text-decoration: none;
 
@@ -45,4 +57,31 @@
   &:visited {
     text-decoration: underline;
   }
+}
+
+@mixin cdr-link-inset-small-mixin() {
+  padding: $cdr-space-inset-three-quarter-x-squish;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+@mixin cdr-link-inset-medium-mixin() {
+  padding: $cdr-space-inset-one-x-squish;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+@mixin cdr-link-inset-large-mixin() {
+  padding: $cdr-space-inset-one-and-a-half-x-squish;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@mixin cdr-link-inset-base-text-mixin() {
+  font-family: $cdr-font-family-sans;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -.08px;
+  vertical-align: middle;
+  display: inline-flex;
 }
