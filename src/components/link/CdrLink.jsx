@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import modifier from '../../mixins/modifier';
 import space from '../../mixins/space';
+import size from '../../mixins/size';
 import style from './styles/CdrLink.scss';
 
 export default {
@@ -8,6 +9,7 @@ export default {
   mixins: [
     modifier,
     space,
+    size,
   ],
   props: {
     inset: {
@@ -50,7 +52,10 @@ export default {
       return this.inheritColor ? this.style['cdr-link--inherit-color'] : '';
     },
     insetClass() {
-      return this.tag === 'button' && this.inset ? this.style['cdr-link--inset'] : '';
+      return this.size && this.inset ? this.style['cdr-link--inset'] : '';
+    },
+    insetSizeClass() {
+      return this.size && this.inset ? this.sizeClass : '';
     },
   },
   render() {
@@ -60,6 +65,7 @@ export default {
         this.style[this.baseClass],
         this.modifierClass,
         this.insetClass,
+        this.insetSizeClass,
         this.space,
         this.inheritColorClass,
       )}

@@ -15,13 +15,6 @@
   @include cdr-link-base-mixin;
 }
 
-/* Style variants
-  ========================================================================== */
-
-.cdr-link--inset {
-  @include cdr-link-inset-mixin;
-}
-
 /* Standalone
     ========== */
 .cdr-link--standalone {
@@ -30,4 +23,94 @@
 
 .cdr-link--inherit-color {
   @include cdr-link-inherit-color-mixin;
+}
+
+
+/* Inset/Sizing
+  ========================================================================== */
+.cdr-link--inset {
+  @include cdr-link-inset-base-text-mixin;
+}
+
+.cdr-link--small {
+  @include cdr-link-inset-small-mixin;
+}
+
+.cdr-link--medium {
+  @include cdr-link-inset-medium-mixin;
+}
+
+.cdr-link--large {
+  @include cdr-link-inset-large-mixin;
+}
+
+/* Breakpoint variants
+
+/* @xs
+  0px - 767px
+  ========== */
+@include cdr-xs-mq-only {
+  .cdr-link--small\@xs {
+    @include cdr-link-inset-small-mixin;
+  }
+
+  .cdr-link--medium\@xs {
+    @include cdr-link-inset-medium-mixin;
+  }
+
+  .cdr-link--large\@xs {
+    @include cdr-link-inset-large-mixin;
+  }
+}
+
+/* @sm
+  768px - 991px
+  ========== */
+@include cdr-sm-mq-only {
+  .cdr-link--small\@sm {
+    @include cdr-link-inset-small-mixin;
+  }
+
+  .cdr-link--medium\@sm {
+    @include cdr-link-inset-medium-mixin;
+  }
+
+  .cdr-link--large\@sm {
+    @include cdr-link-inset-large-mixin;
+  }
+}
+
+/* @md
+  992px - 1199px
+  ========== */
+@include cdr-md-mq-only {
+  .cdr-link--small\@md {
+    @include cdr-link-inset-small-mixin;
+  }
+
+  .cdr-link--medium\@md {
+    @include cdr-link-inset-medium-mixin;
+  }
+
+  .cdr-link--large\@md {
+    @include cdr-link-inset-large-mixin;
+  }
+}
+
+/* @lg
+  1200px and up
+  ========== */
+
+@include cdr-lg-mq-only {
+  .cdr-link--small\@lg {
+    @include cdr-link-inset-small-mixin;
+  }
+
+  .cdr-link--medium\@lg {
+    @include cdr-link-inset-medium-mixin;
+  }
+
+  .cdr-link--large\@lg {
+    @include cdr-link-inset-large-mixin;
+  }
 }
