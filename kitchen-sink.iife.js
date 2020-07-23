@@ -24160,8 +24160,8 @@ var cedar = (function () {
 
   };
 
-  var css_248z$g = "/* ==========================================================================\n  # CdrLink\n\n  TOC:\n\n    :Base Styles\n      :States\n    :Modifiers\n      :Style variants\n        :Standalone\n========================================================================== */\n/* ==========================================================================/*\n* Token option variables\n*\n* these are temporary variables, providing\n* cedar components mappings to previously available tokens.\n* These varables should be removed as tokens are available\n*\n=============================================================== */\n/* ---------------------\n* Outline\n* ------------------- */\n.cdr-link_6\\.0\\.0-alpha\\.0 {\n  font-family: inherit;\n  font-size: inherit;\n  line-height: inherit;\n  align-items: center;\n  background-color: transparent;\n  border: 0;\n  margin: 0;\n  color: #406eb5;\n  fill: #406eb5;\n  cursor: pointer;\n  display: inline-flex;\n  outline: none;\n  padding: 0;\n  text-decoration: underline;\n  vertical-align: top;\n  /* States\n    ---------- */ }\n.cdr-link_6\\.0\\.0-alpha\\.0:active, .cdr-link_6\\.0\\.0-alpha\\.0:focus {\n    color: #0b2d60; }\n.cdr-link_6\\.0\\.0-alpha\\.0:hover {\n    color: #406eb5;\n    text-decoration: none; }\n.cdr-link_6\\.0\\.0-alpha\\.0:focus {\n    outline: 0.2rem solid Highlight;\n    outline-color: -webkit-focus-ring-color;\n    outline-offset: 0; }\n/* Style variants\n  ========================================================================== */\n/* Standalone\n    ========== */\n.cdr-link--standalone_6\\.0\\.0-alpha\\.0 {\n  text-decoration: none; }\n.cdr-link--standalone_6\\.0\\.0-alpha\\.0:hover, .cdr-link--standalone_6\\.0\\.0-alpha\\.0:active, .cdr-link--standalone_6\\.0\\.0-alpha\\.0:focus, .cdr-link--standalone_6\\.0\\.0-alpha\\.0:visited {\n    text-decoration: underline; }\n.cdr-link--inherit-color_6\\.0\\.0-alpha\\.0 {\n  fill: inherit;\n  color: inherit; }\n.cdr-link--inherit-color_6\\.0\\.0-alpha\\.0:active, .cdr-link--inherit-color_6\\.0\\.0-alpha\\.0:hover, .cdr-link--inherit-color_6\\.0\\.0-alpha\\.0:focus {\n    color: inherit;\n    fill: inherit; }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9jb21wb25lbnRzL2xpbmsvc3R5bGVzL0Nkckxpbmsuc2NzcyIsIkNkckxpbmsuc2NzcyIsInNyYy9jc3Mvc2V0dGluZ3MvX29wdGlvbnMudmFycy5zY3NzIiwic3JjL2NvbXBvbmVudHMvbGluay9zdHlsZXMvdmFycy9DZHJMaW5rLnZhcnMuc2NzcyIsIm5vZGVfbW9kdWxlcy9AcmVpL2Nkci10b2tlbnMvZGlzdC9zY3NzL2Nkci10b2tlbnMuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7Ozs7Ozs0RUNVNEU7QUNWNUU7Ozs7Ozs7aUVEa0JpRTtBQ1RqRTs7dUJEWXVCO0FEUnZCO0VHWkUsb0JBQW9CO0VBQ3BCLGtCQUFrQjtFQUNsQixvQkFBb0I7RUFDcEIsbUJBQW1CO0VBQ25CLDZCQUE2QjtFQUM3QixTQUFTO0VBQ1QsU0FBUztFQUNULGNDdXdCZ0M7RUR0d0JoQyxhQ3N3QmdDO0VEcndCaEMsZUFBZTtFQUNmLG9CQUFvQjtFQUNwQixhQUFhO0VBQ2IsVUFBVTtFQUNWLDBCQUEwQjtFQUMxQixtQkFBbUI7RUFFbkI7Z0JGc0JjLEVFckJDO0FITGpCO0lHU0ksY0MydkJnQyxFQUFBO0FKcHdCcEM7SUdhSSxjQ3N2QitCO0lEcnZCL0IscUJBQXFCLEVBQUE7QUhkekI7SUdrQkksK0JEbkJvQztJQ29CcEMsdUNBQXVDO0lBQ3ZDLGlCQUFpQixFQUFBO0FIaEJyQjs4RUNrQzhFO0FEL0I5RTtnQkNpQ2dCO0FEL0JoQjtFR2lCRSxxQkFBcUIsRUFBQTtBSGpCdkI7SUd1QkksMEJBQTBCLEVBQUE7QUhuQjlCO0VBQ0UsYUFBYTtFQUNiLGNBQWMsRUFBQTtBQUZoQjtJQU9JLGNBQWM7SUFDZCxhQUFhLEVBQUEiLCJmaWxlIjoiQ2RyTGluay5zY3NzIn0= */";
-  var style$i = {"cdr-link":"cdr-link_6.0.0-alpha.0","cdr-link--standalone":"cdr-link--standalone_6.0.0-alpha.0","cdr-link--inherit-color":"cdr-link--inherit-color_6.0.0-alpha.0"};
+  var css_248z$g = "/* ==========================================================================\n  # CdrLink\n\n  TOC:\n\n    :Base Styles\n      :States\n    :Modifiers\n      :Style variants\n        :Standalone\n========================================================================== */\n/* ==========================================================================/*\n* Token option variables\n*\n* these are temporary variables, providing\n* cedar components mappings to previously available tokens.\n* These varables should be removed as tokens are available\n*\n=============================================================== */\n/* ---------------------\n* Outline\n* ------------------- */\n.cdr-link_6\\.0\\.0-alpha\\.0 {\n  font-family: inherit;\n  font-size: inherit;\n  line-height: inherit;\n  align-items: center;\n  background-color: transparent;\n  border: 0;\n  margin: 0;\n  color: #406eb5;\n  fill: #406eb5;\n  cursor: pointer;\n  display: inline-flex;\n  outline: none;\n  padding: 0;\n  text-decoration: underline;\n  vertical-align: top;\n  /* States\n    ---------- */ }\n.cdr-link_6\\.0\\.0-alpha\\.0:active, .cdr-link_6\\.0\\.0-alpha\\.0:focus {\n    color: #0b2d60; }\n.cdr-link_6\\.0\\.0-alpha\\.0:hover {\n    color: #406eb5;\n    text-decoration: none; }\n.cdr-link_6\\.0\\.0-alpha\\.0:focus {\n    outline: 0.2rem solid Highlight;\n    outline-color: -webkit-focus-ring-color;\n    outline-offset: 0; }\n/* Standalone\n    ========== */\n.cdr-link--standalone_6\\.0\\.0-alpha\\.0 {\n  text-decoration: none; }\n.cdr-link--standalone_6\\.0\\.0-alpha\\.0:hover, .cdr-link--standalone_6\\.0\\.0-alpha\\.0:active, .cdr-link--standalone_6\\.0\\.0-alpha\\.0:focus, .cdr-link--standalone_6\\.0\\.0-alpha\\.0:visited {\n    text-decoration: underline; }\n.cdr-link--inherit-color_6\\.0\\.0-alpha\\.0 {\n  fill: inherit;\n  color: inherit; }\n.cdr-link--inherit-color_6\\.0\\.0-alpha\\.0:active, .cdr-link--inherit-color_6\\.0\\.0-alpha\\.0:hover, .cdr-link--inherit-color_6\\.0\\.0-alpha\\.0:focus {\n    color: inherit;\n    fill: inherit; }\n/* Inset/Sizing\n  ========================================================================== */\n.cdr-link--inset_6\\.0\\.0-alpha\\.0 {\n  font-family: Graphik, \"Helvetica Neue\", sans-serif;\n  font-style: normal;\n  font-weight: 500;\n  letter-spacing: -0.008rem;\n  vertical-align: middle;\n  display: inline-flex; }\n.cdr-link--small_6\\.0\\.0-alpha\\.0 {\n  padding: 0.6rem 1.2rem;\n  font-size: 1.4rem;\n  line-height: 1.8rem; }\n.cdr-link--medium_6\\.0\\.0-alpha\\.0 {\n  padding: 0.8rem 1.6rem;\n  font-size: 1.6rem;\n  line-height: 2.2rem; }\n.cdr-link--large_6\\.0\\.0-alpha\\.0 {\n  padding: 1.2rem 2.4rem;\n  font-size: 1.8rem;\n  line-height: 2.4rem; }\n/* Breakpoint variants\n\n/* @xs\n  0px - 767px\n  ========== */\n@media (min-width: 0) and (max-width: 767px) {\n  .cdr-link--small\\@xs_6\\.0\\.0-alpha\\.0 {\n    padding: 0.6rem 1.2rem;\n    font-size: 1.4rem;\n    line-height: 1.8rem; }\n  .cdr-link--medium\\@xs_6\\.0\\.0-alpha\\.0 {\n    padding: 0.8rem 1.6rem;\n    font-size: 1.6rem;\n    line-height: 2.2rem; }\n  .cdr-link--large\\@xs_6\\.0\\.0-alpha\\.0 {\n    padding: 1.2rem 2.4rem;\n    font-size: 1.8rem;\n    line-height: 2.4rem; } }\n/* @sm\n  768px - 991px\n  ========== */\n@media (min-width: 768px) and (max-width: 991px) {\n  .cdr-link--small\\@sm_6\\.0\\.0-alpha\\.0 {\n    padding: 0.6rem 1.2rem;\n    font-size: 1.4rem;\n    line-height: 1.8rem; }\n  .cdr-link--medium\\@sm_6\\.0\\.0-alpha\\.0 {\n    padding: 0.8rem 1.6rem;\n    font-size: 1.6rem;\n    line-height: 2.2rem; }\n  .cdr-link--large\\@sm_6\\.0\\.0-alpha\\.0 {\n    padding: 1.2rem 2.4rem;\n    font-size: 1.8rem;\n    line-height: 2.4rem; } }\n/* @md\n  992px - 1199px\n  ========== */\n@media (min-width: 992px) and (max-width: 1231px) {\n  .cdr-link--small\\@md_6\\.0\\.0-alpha\\.0 {\n    padding: 0.6rem 1.2rem;\n    font-size: 1.4rem;\n    line-height: 1.8rem; }\n  .cdr-link--medium\\@md_6\\.0\\.0-alpha\\.0 {\n    padding: 0.8rem 1.6rem;\n    font-size: 1.6rem;\n    line-height: 2.2rem; }\n  .cdr-link--large\\@md_6\\.0\\.0-alpha\\.0 {\n    padding: 1.2rem 2.4rem;\n    font-size: 1.8rem;\n    line-height: 2.4rem; } }\n/* @lg\n  1200px and up\n  ========== */\n@media (min-width: 1232px) {\n  .cdr-link--small\\@lg_6\\.0\\.0-alpha\\.0 {\n    padding: 0.6rem 1.2rem;\n    font-size: 1.4rem;\n    line-height: 1.8rem; }\n  .cdr-link--medium\\@lg_6\\.0\\.0-alpha\\.0 {\n    padding: 0.8rem 1.6rem;\n    font-size: 1.6rem;\n    line-height: 2.2rem; }\n  .cdr-link--large\\@lg_6\\.0\\.0-alpha\\.0 {\n    padding: 1.2rem 2.4rem;\n    font-size: 1.8rem;\n    line-height: 2.4rem; } }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9jb21wb25lbnRzL2xpbmsvc3R5bGVzL0Nkckxpbmsuc2NzcyIsIkNkckxpbmsuc2NzcyIsInNyYy9jc3Mvc2V0dGluZ3MvX29wdGlvbnMudmFycy5zY3NzIiwic3JjL2NvbXBvbmVudHMvbGluay9zdHlsZXMvdmFycy9DZHJMaW5rLnZhcnMuc2NzcyIsIm5vZGVfbW9kdWxlcy9AcmVpL2Nkci10b2tlbnMvZGlzdC9zY3NzL2Nkci10b2tlbnMuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7Ozs7Ozs0RUNVNEU7QUNWNUU7Ozs7Ozs7aUVEa0JpRTtBQ1RqRTs7dUJEWXVCO0FEUnZCO0VHWkUsb0JBQW9CO0VBQ3BCLGtCQUFrQjtFQUNsQixvQkFBb0I7RUFDcEIsbUJBQW1CO0VBQ25CLDZCQUE2QjtFQUM3QixTQUFTO0VBQ1QsU0FBUztFQUNULGNDdXdCZ0M7RUR0d0JoQyxhQ3N3QmdDO0VEcndCaEMsZUFBZTtFQUNmLG9CQUFvQjtFQUNwQixhQUFhO0VBQ2IsVUFBVTtFQUNWLDBCQUEwQjtFQUMxQixtQkFBbUI7RUFFbkI7Z0JGc0JjLEVFckJDO0FITGpCO0lHU0ksY0MydkJnQyxFQUFBO0FKcHdCcEM7SUdhSSxjQ3N2QitCO0lEcnZCL0IscUJBQXFCLEVBQUE7QUhkekI7SUdrQkksK0JEbkJvQztJQ29CcEMsdUNBQXVDO0lBQ3ZDLGlCQUFpQixFQUFBO0FIaEJyQjtnQkNrQ2dCO0FEaENoQjtFR2dDRSxxQkFBcUIsRUFBQTtBSGhDdkI7SUdzQ0ksMEJBQTBCLEVBQUE7QUhsQzlCO0VHZ0JFLGFBQWE7RUFDYixjQUFjLEVBQUE7QUhqQmhCO0lHc0JJLGNBQWM7SUFDZCxhQUFhLEVBQUE7QUhsQmpCOzhFQ3FDOEU7QURuQzlFO0VHa0RFLGtEQ21tQzBEO0VEbG1DMUQsa0JBQWtCO0VBQ2xCLGdCQUFnQjtFQUNoQix5QkFBc0I7RUFDdEIsc0JBQXNCO0VBQ3RCLG9CQUFvQixFQUFBO0FIbkR0QjtFRzRCRSxzQkNrbUNvRDtFRGptQ3BELGlCQUFlO0VBQ2YsbUJBQWlCLEVBQUE7QUgxQm5CO0VHOEJFLHNCQzhsQzBDO0VEN2xDMUMsaUJBQWU7RUFDZixtQkFBaUIsRUFBQTtBSDVCbkI7RUdnQ0Usc0JDMGxDcUQ7RUR6bENyRCxpQkFBZTtFQUNmLG1CQUFpQixFQUFBO0FIOUJuQjs7OztjQytDYztBR3krQ1o7RUpsaERBO0lHVUEsc0JDa21Db0Q7SURqbUNwRCxpQkFBZTtJQUNmLG1CQUFpQixFQUFBO0VIUmpCO0lHWUEsc0JDOGxDMEM7SUQ3bEMxQyxpQkFBZTtJQUNmLG1CQUFpQixFQUFBO0VIVmpCO0lHY0Esc0JDMGxDcUQ7SUR6bENyRCxpQkFBZTtJQUNmLG1CQUFpQixFQUFBLEVIZGhCO0FBR0g7O2NDNkNjO0FHcStDWjtFSjlnREE7SUdQQSxzQkNrbUNvRDtJRGptQ3BELGlCQUFlO0lBQ2YsbUJBQWlCLEVBQUE7RUhTakI7SUdMQSxzQkM4bEMwQztJRDdsQzFDLGlCQUFlO0lBQ2YsbUJBQWlCLEVBQUE7RUhPakI7SUdIQSxzQkMwbENxRDtJRHpsQ3JELGlCQUFlO0lBQ2YsbUJBQWlCLEVBQUEsRUhHaEI7QUFHSDs7Y0M2Q2M7QUdpK0NaO0VKMWdEQTtJR3hCQSxzQkNrbUNvRDtJRGptQ3BELGlCQUFlO0lBQ2YsbUJBQWlCLEVBQUE7RUgwQmpCO0lHdEJBLHNCQzhsQzBDO0lEN2xDMUMsaUJBQWU7SUFDZixtQkFBaUIsRUFBQTtFSHdCakI7SUdwQkEsc0JDMGxDcUQ7SUR6bENyRCxpQkFBZTtJQUNmLG1CQUFpQixFQUFBLEVIb0JoQjtBQUdIOztjQzZDYztBRzY5Q1o7RUpyZ0RBO0lHMUNBLHNCQ2ttQ29EO0lEam1DcEQsaUJBQWU7SUFDZixtQkFBaUIsRUFBQTtFSDRDakI7SUd4Q0Esc0JDOGxDMEM7SUQ3bEMxQyxpQkFBZTtJQUNmLG1CQUFpQixFQUFBO0VIMENqQjtJR3RDQSxzQkMwbENxRDtJRHpsQ3JELGlCQUFlO0lBQ2YsbUJBQWlCLEVBQUEsRUhzQ2hCIiwiZmlsZSI6IkNkckxpbmsuc2NzcyJ9 */";
+  var style$i = {"cdr-link":"cdr-link_6.0.0-alpha.0","cdr-link--standalone":"cdr-link--standalone_6.0.0-alpha.0","cdr-link--inherit-color":"cdr-link--inherit-color_6.0.0-alpha.0","cdr-link--inset":"cdr-link--inset_6.0.0-alpha.0","cdr-link--small":"cdr-link--small_6.0.0-alpha.0","cdr-link--medium":"cdr-link--medium_6.0.0-alpha.0","cdr-link--large":"cdr-link--large_6.0.0-alpha.0","cdr-link--small@xs":"cdr-link--small@xs_6.0.0-alpha.0","cdr-link--medium@xs":"cdr-link--medium@xs_6.0.0-alpha.0","cdr-link--large@xs":"cdr-link--large@xs_6.0.0-alpha.0","cdr-link--small@sm":"cdr-link--small@sm_6.0.0-alpha.0","cdr-link--medium@sm":"cdr-link--medium@sm_6.0.0-alpha.0","cdr-link--large@sm":"cdr-link--large@sm_6.0.0-alpha.0","cdr-link--small@md":"cdr-link--small@md_6.0.0-alpha.0","cdr-link--medium@md":"cdr-link--medium@md_6.0.0-alpha.0","cdr-link--large@md":"cdr-link--large@md_6.0.0-alpha.0","cdr-link--small@lg":"cdr-link--small@lg_6.0.0-alpha.0","cdr-link--medium@lg":"cdr-link--medium@lg_6.0.0-alpha.0","cdr-link--large@lg":"cdr-link--large@lg_6.0.0-alpha.0"};
   styleInject(css_248z$g);
 
   function ownKeys$2S(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -24169,8 +24169,12 @@ var cedar = (function () {
   function _objectSpread$2R(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$2S(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$2S(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
   var CdrLink = {
     name: 'CdrLink',
-    mixins: [modifier, space],
+    mixins: [modifier, space, size],
     props: {
+      inset: {
+        type: Boolean,
+        default: false
+      },
       tag: {
         type: String,
         default: 'a'
@@ -24212,6 +24216,14 @@ var cedar = (function () {
 
       inheritColorClass() {
         return this.inheritColor ? this.style['cdr-link--inherit-color'] : '';
+      },
+
+      insetClass() {
+        return this.size && this.inset ? this.style['cdr-link--inset'] : '';
+      },
+
+      insetSizeClass() {
+        return this.size && this.inset ? this.sizeClass : '';
       }
 
     },
@@ -24220,7 +24232,7 @@ var cedar = (function () {
       var h = arguments[0];
       var Component = this.tag;
       return h(Component, {
-        "class": clsx(this.style[this.baseClass], this.modifierClass, this.space, this.inheritColorClass),
+        "class": clsx(this.style[this.baseClass], this.modifierClass, this.insetClass, this.insetSizeClass, this.space, this.inheritColorClass),
         "attrs": {
           "target": this.target,
           "rel": this.computedRel,
@@ -40681,9 +40693,11 @@ var cedar = (function () {
           _vm._v("\n    example.com\n  ")
         ]),
         _vm._v(" "),
-        _c("cdr-text", { attrs: { tag: "h3", modifier: "subheading" } }, [
-          _vm._v("Standalone Link (No underline)")
-        ]),
+        _c(
+          "cdr-text",
+          { attrs: { tag: "h3", modifier: "subheading-sans-300" } },
+          [_vm._v("Standalone Link (No underline)")]
+        ),
         _vm._v(" "),
         _c(
           "cdr-link",
@@ -40813,6 +40827,213 @@ var cedar = (function () {
             )
           ],
           1
+        ),
+        _vm._v(" "),
+        _c("br"),
+        _c("br"),
+        _vm._v(" "),
+        _c(
+          "cdr-text",
+          { attrs: { tag: "h3", modifier: "subheading-sans-500" } },
+          [_vm._v("Button Links")]
+        ),
+        _vm._v(" "),
+        _c(
+          "cdr-text",
+          { attrs: { tag: "h4", modifier: "subheading-sans-300" } },
+          [_vm._v("Link using a <button> element inline")]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "anchor-example cdr-py-space-one-x" },
+          [
+            _vm._v("\n    hey there "),
+            _c(
+              "cdr-link",
+              {
+                attrs: { tag: "button", "data-backstop": "cdr-link--button" },
+                on: { click: _vm.clicked }
+              },
+              [_vm._v("I'm a button!")]
+            ),
+            _vm._v(" wow!\n  ")
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "cdr-text",
+          { attrs: { tag: "h4", modifier: "subheading-sans-300" } },
+          [_vm._v("Link using a <button> element and size prop")]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "anchor-example" },
+          [
+            _c(
+              "cdr-link",
+              {
+                attrs: {
+                  tag: "button",
+                  size: "large@xs medium@sm small@md large@lg",
+                  inset: true
+                },
+                on: { click: _vm.clicked }
+              },
+              [_vm._v("I'm a responsive button!")]
+            ),
+            _vm._v(" "),
+            _c("br"),
+            _vm._v(" "),
+            _c(
+              "cdr-link",
+              {
+                attrs: { tag: "button", size: "small", inset: true },
+                on: { click: _vm.clicked }
+              },
+              [_vm._v("I'm a small button!")]
+            ),
+            _vm._v(" "),
+            _c(
+              "cdr-link",
+              {
+                attrs: { tag: "button", size: "medium", inset: true },
+                on: { click: _vm.clicked }
+              },
+              [_vm._v("I'm a medium button!")]
+            ),
+            _vm._v(" "),
+            _c(
+              "cdr-link",
+              {
+                attrs: { tag: "button", size: "large", inset: true },
+                on: { click: _vm.clicked }
+              },
+              [_vm._v("I'm a large button!")]
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "cdr-text",
+          { attrs: { tag: "h4", modifier: "subheading-sans-300" } },
+          [
+            _vm._v(
+              "Link using a <button> element and size prop with left/right padding removed"
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "anchor-example" },
+          [
+            _c(
+              "cdr-link",
+              {
+                staticClass: "button-padding-override",
+                attrs: {
+                  tag: "button",
+                  size: "large@xs medium@sm small@md large@lg",
+                  inset: true
+                },
+                on: { click: _vm.clicked }
+              },
+              [_vm._v("I'm a responsive button!")]
+            ),
+            _vm._v(" "),
+            _c("br"),
+            _vm._v(" "),
+            _c(
+              "cdr-link",
+              {
+                staticClass: "button-padding-override",
+                attrs: { tag: "button", size: "small", inset: true },
+                on: { click: _vm.clicked }
+              },
+              [_vm._v("I'm a small button!")]
+            ),
+            _vm._v(" "),
+            _c("br"),
+            _vm._v(" "),
+            _c(
+              "cdr-link",
+              {
+                staticClass: "button-padding-override",
+                attrs: { tag: "button", size: "medium", inset: true },
+                on: { click: _vm.clicked }
+              },
+              [_vm._v("I'm a medium button!")]
+            ),
+            _vm._v(" "),
+            _c("br"),
+            _vm._v(" "),
+            _c(
+              "cdr-link",
+              {
+                staticClass: "button-padding-override",
+                attrs: { tag: "button", size: "large", inset: true },
+                on: { click: _vm.clicked }
+              },
+              [_vm._v("I'm a large button!")]
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "cdr-text",
+          { attrs: { tag: "h4", modifier: "subheading-sans-300" } },
+          [_vm._v("Link using a <button> element and size prop w/ buttons")]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "anchor-example" },
+          [
+            _c(
+              "cdr-link",
+              {
+                attrs: { tag: "button", size: "small", inset: true },
+                on: { click: _vm.clicked }
+              },
+              [_vm._v("I'm a small button!")]
+            ),
+            _vm._v(" "),
+            _c("cdr-button", { attrs: { size: "small" } }, [
+              _vm._v("I'm a small button!")
+            ]),
+            _vm._v(" "),
+            _c(
+              "cdr-link",
+              {
+                attrs: { tag: "button", size: "medium", inset: true },
+                on: { click: _vm.clicked }
+              },
+              [_vm._v("I'm a medium button!")]
+            ),
+            _vm._v(" "),
+            _c("cdr-button", { attrs: { size: "medium" } }, [
+              _vm._v("I'm a medium button!")
+            ]),
+            _vm._v(" "),
+            _c(
+              "cdr-link",
+              {
+                attrs: { tag: "button", size: "large", inset: true },
+                on: { click: _vm.clicked }
+              },
+              [_vm._v("I'm a large button!")]
+            ),
+            _vm._v(" "),
+            _c("cdr-button", { attrs: { size: "large" } }, [
+              _vm._v("I'm a large button!")
+            ])
+          ],
+          1
         )
       ],
       1
@@ -40824,7 +41045,7 @@ var cedar = (function () {
     /* style */
     const __vue_inject_styles__$y = function (inject) {
       if (!inject) return
-      inject("data-v-dfbf9a8e_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/** normalize line-height for consistent testing because links inherit it */\n.link-examples {\n  line-height: 1;\n}\n\n", map: {"version":3,"sources":["/home/travis/build/rei/rei-cedar/src/components/link/examples/demo/Standard.vue"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AA4JA,2EAAA;AAEA;EACA,cAAA;AACA","file":"Standard.vue","sourcesContent":["<template>\n  <!-- eslint-disable max-len -->\n  <div\n    class=\"link-examples\"\n    data-backstop=\"all-links\"\n  >\n    <cdr-text\n      tag=\"h2\"\n      modifier=\"heading-sans-400 heading-sans-500@md heading-sans-500@lg\"\n    >\n      Links\n    </cdr-text>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-300\"\n    >\n      Default Link, No props\n    </cdr-text>\n    <div class=\"anchor-example\">\n      <cdr-link data-backstop=\"cdr-link\">\n        REI.com\n      </cdr-link>\n    </div>\n    <div class=\"anchor-example\">\n      <cdr-link />\n    </div>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-300\"\n    >Link, href set, spacing class applied</cdr-text>\n    <cdr-link\n      href=\"https://www.rei.com/\"\n      space=\"cdr-space-inset-one-x\"\n    >\n      REI.com\n    </cdr-link>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-300\"\n    >Link, href set</cdr-text>\n    <cdr-link\n      href=\"https://www.example.com/\"\n    >\n      example.com\n    </cdr-link>\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading\"\n    >Standalone Link (No underline)</cdr-text>\n    <cdr-link\n      modifier=\"standalone\"\n      space=\"cdr-space-inset-one-x\"\n      data-backstop=\"cdr-link--standalone\"\n    >\n      REI.com\n    </cdr-link>\n\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-300\"\n    >Links, with icon</cdr-text>\n\n    <cdr-list\n      space=\"cdr-space-inset-one-x\"\n    >\n      <li>\n        <cdr-link>\n          <cdr-icon\n            inherit-color\n            use=\"#mail\"\n            modifier=\"inherit-color\"\n            space=\"cdr-mr-space-half-x\"\n          />\n          Icon on the left\n        </cdr-link>\n      </li>\n      <li>\n        <cdr-link>\n          Icon on the right\n          <cdr-icon\n            inherit-color\n            use=\"#download\"\n            modifier=\"inherit-color\"\n            space=\"cdr-ml-space-half-x\"\n          />\n        </cdr-link>\n      </li>\n      <li>\n        <cdr-link>\n          <cdr-icon\n            inherit-color\n            use=\"#twitter\"\n            modifier=\"inherit-color\"\n            space=\"cdr-mr-space-half-x\"\n          />\n          Icons on both sides\n          <cdr-icon\n            inherit-color\n            use=\"#external-link\"\n            modifier=\"inherit-color\"\n            space=\"cdr-ml-space-half-x\"\n          />\n        </cdr-link>\n      </li>\n    </cdr-list>\n\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-300\"\n    >Links, with inherited color</cdr-text>\n    <div style=\"color: darkgreen; fill: darkgreen;\">\n      <cdr-link\n        inherit-color\n        href=\"rei.com\"\n      >\n        inherit-color plain example\n      </cdr-link>\n      <br>\n      <cdr-link inherit-color>\n        <cdr-icon\n          inherit-color\n          use=\"#mail\"\n          modifier=\"inherit-color\"\n          space=\"cdr-mr-space-half-x\"\n        />\n        cdr-link icon inherit\n      </cdr-link>\n    </div>\n\n\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\nexport default {\n  name: 'StandardLinks',\n  components: {\n    ...Components,\n  },\n  methods: {\n    clicked() {\n      // eslint-disable-next-line no-console\n      console.log('link clicked!');\n    },\n  },\n};\n</script>\n\n<style>\n/** normalize line-height for consistent testing because links inherit it */\n\n.link-examples {\n  line-height: 1;\n}\n\n</style>\n"]}, media: undefined });
+      inject("data-v-350ba426_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/** normalize line-height for consistent testing because links inherit it */\n.link-examples {\n  line-height: 1;\n}\n.button-padding-override {\n  padding-left: 0;\n  padding-right: 0;\n}\n\n", map: {"version":3,"sources":["/home/travis/build/rei/rei-cedar/src/components/link/examples/demo/Standard.vue"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAoRA,2EAAA;AAEA;EACA,cAAA;AACA;AAEA;EACA,eAAA;EACA,gBAAA;AACA","file":"Standard.vue","sourcesContent":["<template>\n  <!-- eslint-disable max-len -->\n  <div\n    class=\"link-examples\"\n    data-backstop=\"all-links\"\n  >\n    <cdr-text\n      tag=\"h2\"\n      modifier=\"heading-sans-400 heading-sans-500@md heading-sans-500@lg\"\n    >\n      Links\n    </cdr-text>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-300\"\n    >\n      Default Link, No props\n    </cdr-text>\n    <div class=\"anchor-example\">\n      <cdr-link data-backstop=\"cdr-link\">\n        REI.com\n      </cdr-link>\n    </div>\n    <div class=\"anchor-example\">\n      <cdr-link />\n    </div>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-300\"\n    >Link, href set, spacing class applied</cdr-text>\n    <cdr-link\n      href=\"https://www.rei.com/\"\n      space=\"cdr-space-inset-one-x\"\n    >\n      REI.com\n    </cdr-link>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-300\"\n    >Link, href set</cdr-text>\n    <cdr-link\n      href=\"https://www.example.com/\"\n    >\n      example.com\n    </cdr-link>\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-300\"\n    >Standalone Link (No underline)</cdr-text>\n    <cdr-link\n      modifier=\"standalone\"\n      space=\"cdr-space-inset-one-x\"\n      data-backstop=\"cdr-link--standalone\"\n    >\n      REI.com\n    </cdr-link>\n\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-300\"\n    >Links, with icon</cdr-text>\n\n    <cdr-list\n      space=\"cdr-space-inset-one-x\"\n    >\n      <li>\n        <cdr-link>\n          <cdr-icon\n            inherit-color\n            use=\"#mail\"\n            modifier=\"inherit-color\"\n            space=\"cdr-mr-space-half-x\"\n          />\n          Icon on the left\n        </cdr-link>\n      </li>\n      <li>\n        <cdr-link>\n          Icon on the right\n          <cdr-icon\n            inherit-color\n            use=\"#download\"\n            modifier=\"inherit-color\"\n            space=\"cdr-ml-space-half-x\"\n          />\n        </cdr-link>\n      </li>\n      <li>\n        <cdr-link>\n          <cdr-icon\n            inherit-color\n            use=\"#twitter\"\n            modifier=\"inherit-color\"\n            space=\"cdr-mr-space-half-x\"\n          />\n          Icons on both sides\n          <cdr-icon\n            inherit-color\n            use=\"#external-link\"\n            modifier=\"inherit-color\"\n            space=\"cdr-ml-space-half-x\"\n          />\n        </cdr-link>\n      </li>\n    </cdr-list>\n\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-300\"\n    >Links, with inherited color</cdr-text>\n    <div style=\"color: darkgreen; fill: darkgreen;\">\n      <cdr-link\n        inherit-color\n        href=\"rei.com\"\n      >\n        inherit-color plain example\n      </cdr-link>\n      <br>\n      <cdr-link inherit-color>\n        <cdr-icon\n          inherit-color\n          use=\"#mail\"\n          modifier=\"inherit-color\"\n          space=\"cdr-mr-space-half-x\"\n        />\n        cdr-link icon inherit\n      </cdr-link>\n    </div>\n    <br><br>\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-500\"\n    >Button Links</cdr-text>\n\n    <cdr-text\n      tag=\"h4\"\n      modifier=\"subheading-sans-300\"\n    >Link using a &lt;button&gt; element inline</cdr-text>\n    <div class=\"anchor-example cdr-py-space-one-x\">\n      hey there <cdr-link\n        tag=\"button\"\n        data-backstop=\"cdr-link--button\"\n        @click=\"clicked\"\n      >I'm a button!</cdr-link> wow!\n    </div>\n\n    <cdr-text\n      tag=\"h4\"\n      modifier=\"subheading-sans-300\"\n    >Link using a &lt;button&gt; element and size prop</cdr-text>\n    <div class=\"anchor-example\">\n\n      <cdr-link\n        tag=\"button\"\n        size=\"large@xs medium@sm small@md large@lg\"\n        :inset=\"true\"\n        @click=\"clicked\"\n      >I'm a responsive button!</cdr-link>\n      <br>\n      <cdr-link\n        tag=\"button\"\n        size=\"small\"\n        :inset=\"true\"\n        @click=\"clicked\"\n      >I'm a small button!</cdr-link>\n\n      <cdr-link\n        tag=\"button\"\n        size=\"medium\"\n        :inset=\"true\"\n        @click=\"clicked\"\n      >I'm a medium button!</cdr-link>\n\n      <cdr-link\n        tag=\"button\"\n        size=\"large\"\n        :inset=\"true\"\n        @click=\"clicked\"\n      >I'm a large button!</cdr-link>\n    </div>\n\n    <cdr-text\n      tag=\"h4\"\n      modifier=\"subheading-sans-300\"\n    >Link using a &lt;button&gt; element and size prop with left/right padding removed</cdr-text>\n    <div class=\"anchor-example\">\n\n      <cdr-link\n        tag=\"button\"\n        size=\"large@xs medium@sm small@md large@lg\"\n        :inset=\"true\"\n        class=\"button-padding-override\"\n        @click=\"clicked\"\n      >I'm a responsive button!</cdr-link>\n      <br>\n      <cdr-link\n        tag=\"button\"\n        size=\"small\"\n        :inset=\"true\"\n        class=\"button-padding-override\"\n        @click=\"clicked\"\n      >I'm a small button!</cdr-link>\n      <br>\n      <cdr-link\n        tag=\"button\"\n        size=\"medium\"\n        :inset=\"true\"\n        class=\"button-padding-override\"\n        @click=\"clicked\"\n      >I'm a medium button!</cdr-link>\n      <br>\n      <cdr-link\n        tag=\"button\"\n        size=\"large\"\n        :inset=\"true\"\n        class=\"button-padding-override\"\n        @click=\"clicked\"\n      >I'm a large button!</cdr-link>\n    </div>\n\n    <cdr-text\n      tag=\"h4\"\n      modifier=\"subheading-sans-300\"\n    >Link using a &lt;button&gt; element and size prop w/ buttons</cdr-text>\n    <div class=\"anchor-example\">\n\n      <cdr-link\n        tag=\"button\"\n        size=\"small\"\n        :inset=\"true\"\n        @click=\"clicked\"\n      >I'm a small button!</cdr-link>\n      <cdr-button size=\"small\">I'm a small button!</cdr-button>\n\n      <cdr-link\n        tag=\"button\"\n        size=\"medium\"\n        :inset=\"true\"\n        @click=\"clicked\"\n      >I'm a medium button!</cdr-link>\n      <cdr-button size=\"medium\">I'm a medium button!</cdr-button>\n\n      <cdr-link\n        tag=\"button\"\n        size=\"large\"\n        :inset=\"true\"\n        @click=\"clicked\"\n      >I'm a large button!</cdr-link>\n      <cdr-button size=\"large\">I'm a large button!</cdr-button>\n    </div>\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\nexport default {\n  name: 'StandardLinks',\n  components: {\n    ...Components,\n  },\n  methods: {\n    clicked() {\n      // eslint-disable-next-line no-console\n      console.log('link clicked!');\n    },\n  },\n};\n</script>\n\n<style>\n/** normalize line-height for consistent testing because links inherit it */\n\n.link-examples {\n  line-height: 1;\n}\n\n.button-padding-override {\n  padding-left: 0;\n  padding-right: 0;\n}\n\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
@@ -40924,30 +41145,6 @@ var cedar = (function () {
             _c("cdr-link", { attrs: { space: "cdr-space-inset-one-x" } }, [
               _vm._v("\n      K\n    ")
             ])
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c("cdr-text", { attrs: { tag: "h3", modifier: "subheading" } }, [
-          _vm._v("Link using a <button> element")
-        ]),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "anchor-example" },
-          [
-            _c(
-              "cdr-link",
-              {
-                attrs: {
-                  tag: "button",
-                  space: "cdr-space-inset-one-x",
-                  "data-backstop": "cdr-link--button"
-                },
-                on: { click: _vm.clicked }
-              },
-              [_vm._v("I'm a button!")]
-            )
           ],
           1
         ),
@@ -41183,7 +41380,7 @@ var cedar = (function () {
     /* style */
     const __vue_inject_styles__$z = function (inject) {
       if (!inject) return
-      inject("data-v-5eaece32_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"Resilience.vue"}, media: undefined });
+      inject("data-v-740e6007_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"Resilience.vue"}, media: undefined });
 
     };
     /* scoped */
