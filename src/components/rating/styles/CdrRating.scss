@@ -107,7 +107,7 @@ $filled-star: '\2605';
   }
 
   &__caption-sr {
-    @include cdr-display-sr-only-mixin;
+    @include cdr-display-sr-only;
   }
 
   /* Placeholder
