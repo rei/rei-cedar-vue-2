@@ -65,12 +65,12 @@
 /// Text for screen reader only.
 /// @group utility.visibility
 */
-.cdr-display-sr-only { @include cdr-display-sr-only-mixin; }
+.cdr-display-sr-only { @include cdr-display-sr-only; }
 /*
 /// Text for screen reader only, focusable for navigation landmarks, etc.
 /// @group utility.visibility
 */
-.cdr-display-sr-focusable { @include cdr-display-sr-focusable-mixin; }
+.cdr-display-sr-focusable { @include cdr-display-sr-focusable; }
 
 /*..............................................
 Screen Breakpoints

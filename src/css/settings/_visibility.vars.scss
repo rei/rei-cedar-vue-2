@@ -1,7 +1,7 @@
 
 
 @mixin cdr-display-none-mixin() {
-  display: none !important; 
+  display: none !important;
   visibility: hidden !important;
 }
 
@@ -32,28 +32,4 @@
 @mixin cdr-display-inline-flex-mixin() {
   visibility: visible !important;
   display: inline-flex !important;
-}
-
-@mixin cdr-display-sr-only-mixin() {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-}
-
-@mixin cdr-display-sr-focusable-mixin () {
-  @include cdr-display-sr-only-mixin;
-  &:hover,
-  &:focus {
-    position: static;
-    width: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    clip: auto;
-  }
 }

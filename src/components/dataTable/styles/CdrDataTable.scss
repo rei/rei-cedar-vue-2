@@ -25,7 +25,7 @@
   }
 
   &__caption-sr {
-    @include cdr-display-sr-only-mixin;
+    @include cdr-display-sr-only;
   }
 
   &__scroll-container {
