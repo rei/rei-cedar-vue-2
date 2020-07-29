@@ -15,8 +15,8 @@ exports[`CdrPagination renders correctly 1`] = `
         class="cdr-pagination__link cdr-pagination__prev cdr-pagination__link--disabled"
       >
         <svg
+          aria-hidden="true"
           class="cdr-icon cdr-icon--inherit-color cdr-pagination__caret--prev"
-          role="presentation"
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -155,8 +155,8 @@ exports[`CdrPagination renders correctly 1`] = `
             </option>
           </select>
           <svg
+            aria-hidden="true"
             class="cdr-icon cdr-select__caret"
-            role="presentation"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -176,8 +176,8 @@ exports[`CdrPagination renders correctly 1`] = `
       >
         Next
         <svg
+          aria-hidden="true"
           class="cdr-icon cdr-pagination__caret--next"
-          role="presentation"
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -205,8 +205,8 @@ exports[`CdrPagination renders scoped slot correctly 1`] = `
         ref="prev-link-test2"
       >
         <svg
+          aria-hidden="true"
           class="cdr-icon cdr-pagination__caret--prev"
-          role="presentation"
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -339,8 +339,8 @@ exports[`CdrPagination renders scoped slot correctly 1`] = `
             </option>
           </select>
           <svg
+            aria-hidden="true"
             class="cdr-icon cdr-select__caret"
-            role="presentation"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -359,8 +359,8 @@ exports[`CdrPagination renders scoped slot correctly 1`] = `
       >
         Next
         <svg
+          aria-hidden="true"
           class="cdr-icon cdr-pagination__caret--next"
-          role="presentation"
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
         >

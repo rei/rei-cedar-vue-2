@@ -2,9 +2,9 @@
 
 exports[`CdrIcon accepts full SVG in slot 1`] = `
 <svg
+  aria-hidden="true"
   class="my-custom-class cdr-icon"
   data-test="testing"
-  role="presentation"
   viewBox="0 0 24 24"
   xmlns="http://www.w3.org/2000/svg"
 >
@@ -16,8 +16,8 @@ exports[`CdrIcon accepts full SVG in slot 1`] = `
 
 exports[`CdrIcon renders correctly 1`] = `
 <svg
+  aria-hidden="true"
   class="cdr-icon"
-  role="presentation"
   viewBox="0 0 24 24"
   xmlns="http://www.w3.org/2000/svg"
 />

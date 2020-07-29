@@ -36,6 +36,11 @@ export default {
         viewBox: '0 0 24 24',
       },
     };
+
+    if (!this.$attrs['aria-label'] && !this.$attrs['aria-labelledby']) {
+      defaultDataObj.attrs['aria-hidden'] = true;
+    }
+
     let slotDataObj = {};
 
     if (this.$slots.default) {
