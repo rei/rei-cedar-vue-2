@@ -8,6 +8,11 @@ describe('CdrIcon', () => {
     expect(wrapper.element).toMatchSnapshot();
   });
 
+  test('renders correctly for single icon component', () => {
+    const wrapper = mount(IconCaretDown);
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
   it('adds inherit color class correctly', () => {
     const wrapper = shallowMount(CdrIcon, {
       propsData: {
@@ -46,7 +51,6 @@ describe('CdrIcon', () => {
         'aria-labelledby': 'foo'
       }
     });
-    console.log(wrapper.html());
     expect(wrapper.attributes()['aria-hidden']).toBe(undefined);
     expect(wrapper.attributes()['aria-labelledby']).toBe('foo');
   });
