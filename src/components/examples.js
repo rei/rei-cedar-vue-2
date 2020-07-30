@@ -16,6 +16,7 @@ import link from 'componentsdir/link/examples/Links';
 import list from 'componentsdir/list/examples/Lists';
 import modal from 'componentsdir/modal/examples/Modal';
 import pagination from 'componentsdir/pagination/examples/Pagination';
+import popover from 'componentsdir/popover/examples/Popover';
 import quote from 'componentsdir/quote/examples/Quote';
 import radio from 'componentsdir/radio/examples/Radios';
 import rating from 'componentsdir/rating/examples/Ratings';
@@ -44,6 +45,7 @@ export default {
   list,
   modal,
   pagination,
+  popover,
   quote,
   radio,
   rating,

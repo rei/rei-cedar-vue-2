@@ -1,0 +1,82 @@
+@import '../../../css/settings/index.scss';
+
+@mixin arrow($borderSide) {
+  &::before,
+  &::after {
+    border-style: solid;
+    border-color: transparent;
+    #{$borderSide}: 100%;
+  }
+
+  &::before {
+    border-#{$borderSide}-color: $cdr-color-border-secondary;
+    border-width: 10px;
+  }
+
+  &::after {
+    border-#{$borderSide}-color: $cdr-color-background-primary;
+    border-width: 9px;
+  }
+}
+
+.cdr-popover{
+  padding: $cdr-space-inset-one-x-squish;
+  background: $cdr-color-background-primary;
+  border: 1px solid $cdr-color-border-secondary;
+  box-shadow: $cdr-prominence-elevated;
+  min-width: 286px;
+  position: absolute;
+  z-index: 100;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    margin: auto;
+    width: 0;
+    height: 0;
+  }
+
+  // Up and down arrows
+  &__arrow--up,
+  &__arrow--down {
+    &,
+    &::before,
+    &::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__arrow--up {
+    @include arrow(bottom);
+    top: calc(100% + 2rem);
+  }
+
+  &__arrow--down {
+    @include arrow(top);
+    bottom: calc(100% + 2rem);
+  }
+
+
+  // Left and right arrows
+  &__arrow--left,
+  &__arrow--right {
+    &,
+    &::before,
+    &::after {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__arrow--left {
+    @include arrow(right);
+    left: calc(100% + 2rem);
+  }
+
+  &__arrow--right {
+    @include arrow(left);
+    right: calc(100% + 2rem);
+  }
+}

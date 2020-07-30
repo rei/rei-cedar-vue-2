@@ -20,6 +20,7 @@ export { default as CdrLink } from './components/link/CdrLink';
 export { default as CdrList } from './components/list/CdrList';
 export { default as CdrModal } from './components/modal/CdrModal';
 export { default as CdrPagination } from './components/pagination/CdrPagination';
+export { default as CdrPopover } from './components/popover/CdrPopover';
 export { default as CdrQuote } from './components/quote/CdrQuote';
 export { default as CdrRadio } from './components/radio/CdrRadio';
 export { default as CdrRating } from './components/rating/CdrRating';

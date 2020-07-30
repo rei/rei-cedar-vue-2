@@ -39,6 +39,7 @@ const routes = [
   { path: '/lists', name: 'Lists', component: Examples.list },
   { path: '/modals', name: 'Modals', component: Examples.modal },
   { path: '/pagination', name: 'Pagination', component: Examples.pagination },
+  { path: '/popover', name: 'Popover', component: Examples.popover },
   { path: '/quotes', name: 'Quotes', component: Examples.quote },
   { path: '/radios', name: 'Radios', component: Examples.radio },
   { path: '/ratings', name: 'Ratings', component: Examples.rating },
