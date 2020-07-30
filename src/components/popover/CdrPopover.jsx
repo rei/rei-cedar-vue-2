@@ -2,14 +2,17 @@ import clsx from 'clsx';
 import tabbable from 'tabbable';
 import style from './styles/CdrPopover.scss';
 import propValidator from '../../utils/propValidator';
-import IconXSm from  '../icon/comps/x-sm';
-import CdrText from '../text/CdrText';
+import IconXSm from '../icon/comps/x-sm';
 import CdrButton from '../button/CdrButton';
 
 export default {
   name: 'CdrPopover',
+  components: {
+    IconXSm,
+    CdrButton,
+  },
   props: {
-    open: {
+    opened: {
       type: Boolean,
       default: false,
     },
@@ -22,15 +25,10 @@ export default {
         ['up', 'down', 'left', 'right'],
       ),
     },
-    title: {
+    label: {
       type: String,
-      default: ''
-    }
-  },
-  components: {
-    IconXSm,
-    CdrText,
-    CdrButton,
+      default: '',
+    },
   },
   data() {
     return {
@@ -43,6 +41,16 @@ export default {
   computed: {
     arrowDirectionClass() {
       return this.arrowDirection ? this.style[`cdr-popover__arrow--${this.arrowDirection}`] : '';
+    },
+  },
+  watch: {
+    opened(newValue, oldValue) {
+      if (!!newValue === !!oldValue) return;
+      if (newValue) {
+        this.handleOpened();
+      } else {
+        this.handleClosed();
+      }
     },
   },
   methods: {
@@ -86,20 +94,8 @@ export default {
       if (this.lastActive) this.lastActive.focus();
     },
   },
-  watch: {
-    open(newValue, oldValue) {
-      if (!!newValue === !!oldValue) return;
-      if (newValue) {
-        this.handleOpened();
-      } else {
-        this.handleClosed();
-      }
-    }
-  },
   render() {
-    // TODO: make props/events match whatever modal does?
-    // TODO: what h level should title tag be???? should it have one?
-    return this.open ? (
+    return this.opened ? (
       <div
         class={clsx(this.style['cdr-popover'], this.arrowDirectionClass)}
         role="dialog"
@@ -112,12 +108,9 @@ export default {
             }
             {
               !this.$slots.title && (
-                <cdr-text
-                  tag="h1"
-                  modifier="heading-serif-400"
-                >
-                  {this.title}
-                </cdr-text>
+                <span>
+                  {this.label}
+                </span>
               )
             }
           </div>
@@ -137,5 +130,5 @@ export default {
         {this.$slots.default}
       </div>
     ) : undefined;
-  }
+  },
 };

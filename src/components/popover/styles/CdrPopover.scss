@@ -1,4 +1,3 @@
-@import url('@rei/cedar/dist/style/cdr-text.css');
 @import url('@rei/cedar/dist/style/cdr-button.css');
 @import url('@rei/cedar/dist/style/cdr-icon.css');
 @import '../../../css/settings/index.scss';
@@ -38,6 +37,7 @@
 
   &__title {
     flex: auto;
+    @include cdr-text-heading-serif-400;
   }
 
   &__close-button {
