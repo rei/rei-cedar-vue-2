@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import tabbable from 'tabbable';
 import style from './styles/CdrPopover.scss';
 import propValidator from '../../utils/propValidator';
 import IconXSm from  '../icon/comps/x-sm';
@@ -74,6 +75,9 @@ export default {
       this.lastActive = activeElement;
       setTimeout(() => {
         this.addHandlers();
+
+        const tabbables = tabbable(this.$refs.popover);
+        if (tabbables[0]) tabbables[0].focus();
       }, 1);
     },
     handleClosed() {
