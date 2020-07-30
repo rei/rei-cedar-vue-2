@@ -13,7 +13,7 @@
 
   &::before {
     border-#{$borderSide}-color: $cdr-color-border-secondary;
-    border-width: 10px;
+    border-width: 10px; // arrow is 10px tall, 1px border
   }
 
   &::after {
@@ -68,12 +68,12 @@
 
   &__arrow--up {
     @include arrow(bottom);
-    top: calc(100% + 2rem);
+    top: calc(100% + 1rem + #{$cdr-space-quarter-x}); // TODO: 1rem arrow size here, variable?
   }
 
   &__arrow--down {
     @include arrow(top);
-    bottom: calc(100% + 2rem);
+    bottom: calc(100% + 1rem + #{$cdr-space-quarter-x}); // TODO: 1rem arrow size here, variable?
   }
 
 
@@ -90,11 +90,11 @@
 
   &__arrow--left {
     @include arrow(right);
-    left: calc(100% + 2rem);
+    left: calc(100% + 1rem + #{$cdr-space-quarter-x}); // TODO: 1rem arrow size here, variable?
   }
 
   &__arrow--right {
     @include arrow(left);
-    right: calc(100% + 2rem);
+    right: calc(100% + 1rem + #{$cdr-space-quarter-x}); // TODO: 1rem arrow size here, variable?
   }
 }
