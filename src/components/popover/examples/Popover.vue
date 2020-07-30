@@ -26,12 +26,11 @@
 
 
     <div class="popover-container">
-      <cdr-popover :open="open" :arrow-direction="direction">
-        <h4>Welcome to my amazing popover</h4>
-        <p>Thanks for stopping by.</p>
+      <cdr-popover :open="open" :arrow-direction="direction" @closed="togglePopover" title="im a popover wow how cool is that what happens when this text wraps huh wow">
+        <cdr-text>Thanks for stopping by.</cdr-text>
       </cdr-popover>
 
-      <cdr-button @click="openPopover">open popover</cdr-button>
+      <cdr-button @click="togglePopover" :icon-only="true"><icon-information-fill/></cdr-button>
     </div>
   </div>
 </template>
@@ -51,7 +50,7 @@ export default {
     }
   },
   methods: {
-    openPopover() {
+    togglePopover() {
       this.open = !this.open;
     }
   }

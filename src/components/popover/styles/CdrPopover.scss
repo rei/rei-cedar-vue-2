@@ -1,3 +1,6 @@
+@import url('@rei/cedar/dist/style/cdr-text.css');
+@import url('@rei/cedar/dist/style/cdr-button.css');
+@import url('@rei/cedar/dist/style/cdr-icon.css');
 @import '../../../css/settings/index.scss';
 
 @mixin arrow($borderSide) {
@@ -27,6 +30,21 @@
   min-width: 286px;
   position: absolute;
   z-index: 100;
+
+  &__header {
+    display: flex;
+    padding-bottom: $cdr-space-one-x;
+  }
+
+  &__title {
+    flex: auto;
+  }
+
+  &__close-button {
+    align-self: flex-start;
+    flex: none;
+    padding: 0;
+  }
 
   &::before,
   &::after {
