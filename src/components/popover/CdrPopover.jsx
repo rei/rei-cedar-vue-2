@@ -36,6 +36,7 @@ export default {
       style,
       lastActive: undefined,
       keyHandler: undefined,
+      clickHandler: undefined,
     };
   },
   computed: {
@@ -56,21 +57,28 @@ export default {
         default: break;
       }
     },
+    handleClick({ target }) {
+      if (target !== this.$refs.popover && !this.$refs.popover.contains(target)) {
+        this.closePopover();
+      }
+    },
     addHandlers() {
       this.keyHandler = this.handleKeyDown.bind(this);
       document.addEventListener('keydown', this.keyHandler);
+      this.clickHandler = this.handleClick.bind(this);
+      document.addEventListener('click', this.clickHandler);
     },
     handleOpened() {
       const { activeElement } = document;
 
       this.lastActive = activeElement;
-      this.$nextTick(() => {
-        if (this.$refs.popover) this.$refs.popover.focus(); // wrapped in if so testing error isn't thrown
+      setTimeout(() => {
         this.addHandlers();
-      });
+      }, 1);
     },
     handleClosed() {
       document.removeEventListener('keydown', this.keyHandler);
+      document.removeEventListener('click', this.clickHandler);
       if (this.lastActive) this.lastActive.focus();
     },
   },
@@ -92,7 +100,6 @@ export default {
         class={clsx(this.style['cdr-popover'], this.arrowDirectionClass)}
         role="dialog"
         ref="popover"
-        tabIndex="0"
       >
         <div class={this.style['cdr-popover__header']}>
           <div class={this.style['cdr-popover__title']}>
