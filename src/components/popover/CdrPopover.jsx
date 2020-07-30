@@ -34,6 +34,8 @@ export default {
   data() {
     return {
       style,
+      lastActive: undefined,
+      keyHandler: undefined,
     };
   },
   computed: {
@@ -54,16 +56,43 @@ export default {
         default: break;
       }
     },
+    addHandlers() {
+      this.keyHandler = this.handleKeyDown.bind(this);
+      document.addEventListener('keydown', this.keyHandler);
+    },
+    handleOpened() {
+      const { activeElement } = document;
+
+      this.lastActive = activeElement;
+      this.$nextTick(() => {
+        if (this.$refs.popover) this.$refs.popover.focus(); // wrapped in if so testing error isn't thrown
+        this.addHandlers();
+      });
+    },
+    handleClosed() {
+      document.removeEventListener('keydown', this.keyHandler);
+      if (this.lastActive) this.lastActive.focus();
+    },
   },
-  // TODO: add watcher for opened, focus the popover?
-  // TODO: esc key closes popover (emits closed? i guess?)
+  watch: {
+    open(newValue, oldValue) {
+      if (!!newValue === !!oldValue) return;
+      if (newValue) {
+        this.handleOpened();
+      } else {
+        this.handleClosed();
+      }
+    }
+  },
   render() {
     // TODO: make props/events match whatever modal does?
-    // TODO: what should title tag be????
+    // TODO: what h level should title tag be???? should it have one?
     return this.open ? (
       <div
         class={clsx(this.style['cdr-popover'], this.arrowDirectionClass)}
         role="dialog"
+        ref="popover"
+        tabIndex="0"
       >
         <div class={this.style['cdr-popover__header']}>
           <div class={this.style['cdr-popover__title']}>
