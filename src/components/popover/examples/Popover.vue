@@ -24,9 +24,27 @@
       >right</cdr-radio>
     </cdr-form-group>
 
+    <cdr-form-group label="title">
+      <cdr-radio
+        name="title"
+        custom-value="Hello my name is popover"
+        v-model="title"
+      >short title</cdr-radio>
+      <cdr-radio
+        name="title"
+        custom-value=""
+        v-model="title"
+      >no title</cdr-radio>
+      <cdr-radio
+        name="title"
+        custom-value="Hello my name is Popover, Look on my Works, ye Mighty, and despair!"
+        v-model="title"
+      >long title</cdr-radio>
+    </cdr-form-group>
+
 
     <div class="popover-container">
-      <cdr-popover :opened="open" :arrow-direction="direction" @closed="togglePopover" label="im a popover wow how cool is that what happens when this text wraps huh wow">
+      <cdr-popover :opened="open" :arrow-direction="direction" @closed="togglePopover" :label="title">
         <cdr-text>Thanks for stopping by.</cdr-text>
       </cdr-popover>
 
@@ -46,7 +64,8 @@ export default {
   data() {
     return {
       open: false,
-      direction: 'up'
+      direction: 'up',
+      title: 'Hello my name is popover',
     }
   },
   methods: {

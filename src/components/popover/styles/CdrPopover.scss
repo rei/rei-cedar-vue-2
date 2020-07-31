@@ -22,7 +22,8 @@
 }
 
 .cdr-popover{
-  padding: $cdr-space-inset-one-x-squish;
+  padding: $cdr-space-half-x;
+  padding-left: $cdr-space-one-x;
   background: $cdr-color-background-primary;
   border: 1px solid $cdr-color-border-secondary;
   box-shadow: $cdr-prominence-elevated;
@@ -30,14 +31,16 @@
   position: absolute;
   z-index: 100;
 
-  &__header {
+  &__container {
     display: flex;
-    padding-bottom: $cdr-space-one-x;
   }
-
-  &__title {
+  &__content {
     flex: auto;
+  }
+  &__title {
     @include cdr-text-heading-serif-400;
+    margin-bottom: $cdr-space-one-x;
+    margin-right: $cdr-space-half-x;
   }
 
   &__close-button {

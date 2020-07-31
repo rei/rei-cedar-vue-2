@@ -101,18 +101,28 @@ export default {
         role="dialog"
         ref="popover"
       >
-        <div class={this.style['cdr-popover__header']}>
-          <div class={this.style['cdr-popover__title']}>
+        <div class={this.style['cdr-popover__container']}>
+          <div class={this.style['cdr-popover__content']}>
             {
-              this.$slots.title
-            }
-            {
-              !this.$slots.title && (
-                <span>
-                  {this.label}
-                </span>
+              (this.$slots.title || this.label) && (
+                <div class={this.style['cdr-popover__title']}>
+                  {
+                    this.$slots.title
+                  }
+                  {
+                    !this.$slots.title && this.label && (
+                      <span>
+                        {this.label}
+                      </span>
+                    )
+                  }
+                </div>
               )
             }
+
+            <div class={this.style['cdr-popover__slot']}>
+              {this.$slots.default}
+            </div>
           </div>
           <cdr-button
             class={this.style['cdr-popover__close-button']}
@@ -127,7 +137,6 @@ export default {
             />
           </cdr-button>
         </div>
-        {this.$slots.default}
       </div>
     ) : undefined;
   },
