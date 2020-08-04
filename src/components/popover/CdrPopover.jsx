@@ -16,14 +16,17 @@ export default {
       type: Boolean,
       default: false,
     },
-    arrowDirection: {
+    position: {
       type: String,
       required: false,
-      default: 'up',
       validator: (value) => propValidator(
         value,
         ['up', 'down', 'left', 'right'],
       ),
+    },
+    autoPosition: {
+      type: Boolean,
+      default: false,
     },
     label: {
       type: String,
@@ -36,14 +39,22 @@ export default {
       lastActive: undefined,
       keyHandler: undefined,
       clickHandler: undefined,
+      pos: this.position,
+      corner: undefined,
     };
   },
   computed: {
-    arrowDirectionClass() {
-      return this.arrowDirection ? this.style[`cdr-popover__arrow--${this.arrowDirection}`] : '';
+    positionClass() {
+      return this.style[`cdr-popover__${this.pos}`];
     },
+    cornerClass() {
+      if (this.corner) return this.style[`cdr-popover__corner--${this.corner}`];
+    }
   },
   watch: {
+    position() {
+      this.pos = this.position;
+    },
     opened(newValue, oldValue) {
       if (!!newValue === !!oldValue) return;
       if (newValue) {
@@ -77,16 +88,56 @@ export default {
       this.clickHandler = this.handleClick.bind(this);
       document.addEventListener('click', this.clickHandler);
     },
+    calculatePlacement() {
+      // Reset pos so size/position is calculated correctly
+      this.pos = this.position;
+
+      const rect = this.$el.getBoundingClientRect()
+      if (this.pos === 'down' && rect.bottom >= window.innerHeight) {
+        this.pos = 'up';
+      } else if (this.pos === 'up' && rect.top <= 0) {
+        this.pos = 'down';
+      } else if (this.pos === 'left' && rect.left <= 0) {
+        this.pos = 'right';
+      } else if (this.pos === 'right' && rect.right >= window.innerWidth) {
+        this.pos = 'left';
+      }
+
+      const orientation = this.pos === 'down' || this.pos === 'up' ? 'vertical' : 'horizontal';
+
+      if (orientation === 'vertical' && rect.left <= 0) {
+        this.corner = 'left'
+        console.log('left corner')
+      } else if (orientation === 'vertical' && rect.right >= window.innerWidth) {
+        this.corner = 'right'
+        console.log('right corner')
+      } else if (orientation === 'horizontal' && rect.top <= 0) {
+        this.corner = 'top'
+        console.log('top corner')
+      } else if (orientation === 'horizontal' && rect.bottom >= window.innerHeight) {
+        this.corner = 'bottom'
+        console.log('bottom corner')
+      }
+
+    },
     handleOpened() {
       const { activeElement } = document;
 
       this.lastActive = activeElement;
+      // need setTimeout, otherwise the initial click on the trigger element gets handled by the clickHandler?!?!?!?
+      this.$nextTick(() => {
+        if (this.autoPosition) {
+          this.calculatePlacement();
+        }
+      })
+
       setTimeout(() => {
         this.addHandlers();
 
         const tabbables = tabbable(this.$refs.popover);
         if (tabbables[0]) tabbables[0].focus();
       }, 1);
+
     },
     handleClosed() {
       document.removeEventListener('keydown', this.keyHandler);
@@ -97,7 +148,7 @@ export default {
   render() {
     return this.opened ? (
       <div
-        class={clsx(this.style['cdr-popover'], this.arrowDirectionClass)}
+        class={clsx(this.style['cdr-popover'], this.positionClass, this.cornerClass)}
         role="dialog"
         ref="popover"
       >

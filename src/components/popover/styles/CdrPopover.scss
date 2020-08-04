@@ -3,13 +3,12 @@
 @import '../../../css/settings/index.scss';
 
 @mixin arrow($borderSide) {
-  &::before,
-  &::after {
+
+  &::before, &::after {
     border-style: solid;
     border-color: transparent;
     #{$borderSide}: 100%;
   }
-
   &::before {
     border-#{$borderSide}-color: $cdr-color-border-secondary;
     border-width: 10px; // arrow is 10px tall, 1px border
@@ -26,7 +25,7 @@
   padding-left: $cdr-space-one-x;
   background: $cdr-color-background-primary;
   border: 1px solid $cdr-color-border-secondary;
-  box-shadow: $cdr-prominence-elevated;
+  // box-shadow: $cdr-prominence-elevated; // TODO: box-shadow doesn't work on arrow
   min-width: 286px;
   position: absolute;
   z-index: 100;
@@ -49,7 +48,6 @@
     padding: 0;
   }
 
-// Arrow Logic Below
   &::before,
   &::after {
     content: '';
@@ -60,8 +58,8 @@
   }
 
   // Up and down arrows
-  &__arrow--up,
-  &__arrow--down {
+  &__up,
+  &__down {
     &,
     &::before,
     &::after {
@@ -70,20 +68,43 @@
     }
   }
 
-  &__arrow--up {
+  // &__corner--left {
+  //   left: 0;
+  //   transform: unset;
+  //   &::before,
+  //   &::after {
+  //     // magic number?
+  //     left: 2rem;
+  //     transform: unset;
+  //   }
+  // }
+  //
+  // &__corner--right {
+  //   left: unset;
+  //   right: 0;
+  //   transform: unset;
+  //   &::before,
+  //   &::after {
+  //     left: unset;
+  //     right: 0;
+  //     // transform: unset;
+  //   }
+  // }
+
+  &__down {
     @include arrow(bottom);
     top: calc(100% + 1rem + #{$cdr-space-quarter-x}); // TODO: 1rem arrow size here, variable?
   }
 
-  &__arrow--down {
+  &__up {
     @include arrow(top);
     bottom: calc(100% + 1rem + #{$cdr-space-quarter-x}); // TODO: 1rem arrow size here, variable?
   }
 
 
   // Left and right arrows
-  &__arrow--left,
-  &__arrow--right {
+  &__left,
+  &__right {
     &,
     &::before,
     &::after {
@@ -92,12 +113,12 @@
     }
   }
 
-  &__arrow--left {
+  &__right {
     @include arrow(right);
     left: calc(100% + 1rem + #{$cdr-space-quarter-x}); // TODO: 1rem arrow size here, variable?
   }
 
-  &__arrow--right {
+  &__left {
     @include arrow(left);
     right: calc(100% + 1rem + #{$cdr-space-quarter-x}); // TODO: 1rem arrow size here, variable?
   }

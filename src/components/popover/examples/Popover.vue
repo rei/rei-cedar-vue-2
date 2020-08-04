@@ -1,27 +1,40 @@
 <template>
   <div>
     <h2>popover</h2>
-    <cdr-form-group label="arrow direction">
+    <cdr-form-group label="popover position">
       <cdr-radio
-        name="direction"
+        name="position"
         custom-value="up"
-        v-model="direction"
+        v-model="position"
       >up</cdr-radio>
       <cdr-radio
-        name="direction"
+        name="position"
         custom-value="down"
-        v-model="direction"
+        v-model="position"
       >down</cdr-radio>
       <cdr-radio
-        name="direction"
+        name="position"
         custom-value="left"
-        v-model="direction"
+        v-model="position"
       >left</cdr-radio>
       <cdr-radio
-        name="direction"
+        name="position"
         custom-value="right"
-        v-model="direction"
+        v-model="position"
       >right</cdr-radio>
+    </cdr-form-group>
+
+    <cdr-form-group label="auto position">
+      <cdr-radio
+        name="autoPos"
+        :custom-value="true"
+        v-model="autoPos"
+      >true</cdr-radio>
+      <cdr-radio
+        name="autoPos"
+        :custom-value="false"
+        v-model="autoPos"
+      >false</cdr-radio>
     </cdr-form-group>
 
     <cdr-form-group label="title">
@@ -44,7 +57,7 @@
 
 
     <div class="popover-container">
-      <cdr-popover :opened="open" :arrow-direction="direction" @closed="togglePopover" :label="title">
+      <cdr-popover :opened="open" :position="position" :auto-position="autoPos" @closed="togglePopover" :label="title">
         <cdr-text>Thanks for stopping by.</cdr-text>
       </cdr-popover>
 
@@ -64,12 +77,13 @@ export default {
   data() {
     return {
       open: false,
-      direction: 'up',
+      position: 'up',
       title: 'Hello my name is popover',
+      autoPos: true,
     }
   },
   methods: {
-    togglePopover() {
+    togglePopover(e) {
       this.open = !this.open;
     }
   }
