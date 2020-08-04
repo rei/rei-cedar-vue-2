@@ -85,19 +85,19 @@ export default {
           </cdr-link>
         </router-link>
       </li>
-      <ul />
-      <hr>
-      <h1
-        id="content"
-        ref="focusTarget"
-      >
-        REI Cedar
-      </h1>
+    </ul>
+    <hr>
+    <h1
+      id="content"
+      ref="focusTarget"
+    >
+      REI Cedar
+    </h1>
 
-      <sink-wrapper>
-        <div class="cdr-mt-space-two-x">
-          <router-view />
-        </div>
-      </sink-wrapper>
-    </ul></div>
+    <sink-wrapper>
+      <div class="cdr-mt-space-two-x">
+        <router-view />
+      </div>
+    </sink-wrapper>
+  </div>
 </template>
