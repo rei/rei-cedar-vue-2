@@ -53526,84 +53526,75 @@ var cedar = (function () {
         _c(
           "ul",
           { staticStyle: { padding: "0" } },
-          [
-            _vm._l(_vm.routes, function(r) {
-              return _c(
-                "li",
-                {
-                  key: r.name,
-                  staticClass: "cdr-space-inset-quarter-x",
-                  staticStyle: { display: "inline-flex" }
-                },
-                [
-                  r.name
-                    ? _c("router-link", {
-                        key: r.path,
-                        attrs: { to: r.path },
-                        scopedSlots: _vm._u(
-                          [
-                            {
-                              key: "default",
-                              fn: function(ref) {
-                                var href = ref.href;
-                                var route = ref.route;
-                                var navigate = ref.navigate;
-                                var isActive = ref.isActive;
-                                return [
-                                  _c(
-                                    "cdr-link",
-                                    {
-                                      attrs: {
-                                        href: href,
-                                        "aria-current": isActive ? "page" : false
-                                      },
-                                      on: { click: navigate }
+          _vm._l(_vm.routes, function(r) {
+            return _c(
+              "li",
+              {
+                key: r.name,
+                staticClass: "cdr-space-inset-quarter-x",
+                staticStyle: { display: "inline-flex" }
+              },
+              [
+                r.name
+                  ? _c("router-link", {
+                      key: r.path,
+                      attrs: { to: r.path },
+                      scopedSlots: _vm._u(
+                        [
+                          {
+                            key: "default",
+                            fn: function(ref) {
+                              var href = ref.href;
+                              var route = ref.route;
+                              var navigate = ref.navigate;
+                              var isActive = ref.isActive;
+                              return [
+                                _c(
+                                  "cdr-link",
+                                  {
+                                    attrs: {
+                                      href: href,
+                                      "aria-current": isActive ? "page" : false
                                     },
-                                    [
-                                      _vm._v(
-                                        "\n          " +
-                                          _vm._s(
-                                            isActive && route.name !== " "
-                                              ? "" + route.name
-                                              : route.name
-                                          ) +
-                                          "\n        "
-                                      )
-                                    ]
-                                  )
-                                ]
-                              }
+                                    on: { click: navigate }
+                                  },
+                                  [
+                                    _vm._v(
+                                      "\n          " +
+                                        _vm._s(
+                                          isActive && route.name !== " "
+                                            ? "" + route.name
+                                            : route.name
+                                        ) +
+                                        "\n        "
+                                    )
+                                  ]
+                                )
+                              ]
                             }
-                          ],
-                          null,
-                          true
-                        )
-                      })
-                    : _vm._e()
-                ],
-                1
-              )
-            }),
-            _vm._v(" "),
-            _c("ul"),
-            _vm._v(" "),
-            _c("hr"),
-            _vm._v(" "),
-            _c("h1", { ref: "focusTarget", attrs: { id: "content" } }, [
-              _vm._v("\n      REI Cedar\n    ")
-            ]),
-            _vm._v(" "),
-            _c("sink-wrapper", [
-              _c(
-                "div",
-                { staticClass: "cdr-mt-space-two-x" },
-                [_c("router-view")],
-                1
-              )
-            ])
-          ],
-          2
-        )
+                          }
+                        ],
+                        null,
+                        true
+                      )
+                    })
+                  : _vm._e()
+              ],
+              1
+            )
+          }),
+          0
+        ),
+        _vm._v(" "),
+        _c("hr"),
+        _vm._v(" "),
+        _c("h1", { ref: "focusTarget", attrs: { id: "content" } }, [
+          _vm._v("\n    REI Cedar\n  ")
+        ]),
+        _vm._v(" "),
+        _c("sink-wrapper", [
+          _c("div", { staticClass: "cdr-mt-space-two-x" }, [_c("router-view")], 1)
+        ])
       ],
       1
     )
