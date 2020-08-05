@@ -5,7 +5,7 @@
                 <h2 id="{opts.exampleId}">{ opts.exampleTitle }</h2>
             </div>
              <div class="col-xs-12 col-sm-4">
-                <div class="code-toggle--control checkbox toggle-show-hide text-sm-right">
+                <div class="code-toggle--control checkbox toggle-expand-collapse  text-sm-right">
                     <input type="checkbox" value="" id="{ 'checkbox-' + opts.elementId }" data-toggle="collapse" data-target="{ '#' + opts.elementId }" />
                     <label for="{ 'checkbox-' + opts.elementId }">View code</label>
                 </div>

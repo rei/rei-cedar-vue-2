@@ -99,7 +99,7 @@
     left: -( @padding-base-horizontal + 0.425rem );
     margin-right: @padding-large-horizontal/ 2 ;
     position: absolute;
-    top: 0.4rem;
+    top: 0.1rem;
     width: 1.6rem;
     .has-error & {
         box-shadow: 0 0 0 0.1rem @utility-error;
@@ -143,8 +143,10 @@
         @control-standard-element-and-label();
         &:before {
             @control-standard-element-and-label-before();
+            width: 13px;
+            height: 13px;
             border-radius: 1.6rem;
-            box-shadow: 0 0 0 0.125rem @text-color;
+            box-shadow: 0 0 0 0.125rem @cdr-color-border-input-default;
             vertical-align: -0.2rem;
         }
         &:empty:before {
@@ -152,21 +154,29 @@
         }
     }
     > [type="radio"]:checked + label:before {
-        box-shadow: inset 0 0 0 1px @cdr-color-border-input-default-selected;
+        box-shadow: 0 0 0 1px @cdr-color-background-input-default-selected;
+        border: 3px solid #fff;
         // border-color: ;
         background-color: @cdr-color-background-input-default-selected;
         outline: none;
     }
-    > [type="radio"]:hover + label:before,
-    > [type="radio"]:focus + label:before {
-        cursor: pointer;
-        box-shadow: 0 0 0 3px @cdr-color-border-input-default-hover;
-        background-color: @cdr-color-background-input-default-hover;
-    }
-    [type="radio"]:active + label:before {
-        outline: none;
-        border: 0.1rem solid @core-action-2;
-    }
+        > [type="radio"]:hover + label:before,
+        > [type="radio"]:focus + label:before {
+            cursor: pointer;
+            box-shadow: 0 0 0 3px @cdr-color-background-input-default-selected;
+            border: 3px solid #fff;
+            background-color: @cdr-color-background-input-default-hover;
+            outline: none;
+        }
+        > [type="radio"]:checked:hover + label:before,
+        > [type="radio"]:checked:focus + label:before,
+        > [type="radio"]:active + label:before {
+            cursor: pointer;
+            box-shadow: 0 0 0 3px @cdr-color-background-input-default-selected;
+            border: 3px solid #fff;
+            background-color: @cdr-color-background-input-default-selected;
+            outline: none;
+        }
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -185,27 +195,42 @@
         @control-standard-element-and-label();
         &:before {
             @control-standard-element-and-label-before();
-            box-shadow: 0 0 0 0.1rem @text-color;
+            box-shadow: 0 0 0 0.1rem @cdr-color-border-input-default;
         }
         &:empty:before {
             @control-standard-element-and-label-empty-before();
         }
     }
     > [type="checkbox"]:checked + label:before {
-       box-shadow: inset 0 0 0 1px @cdr-color-border-input-default-selected;
-        // border-color: ;
+        font-family: 'rei-icons';
+        font-size: 11px;
+        box-shadow: inset 0 0 0 1px @cdr-color-border-input-default-selected;
         background-color: @cdr-color-background-input-default-selected;
+        content: @icon-var-rei-check;
+        color: #fff;
         outline: none;
+        padding-left: 3px !important;
     }
     > [type="checkbox"]:hover + label:before,
     > [type="checkbox"]:focus + label:before {
         cursor: pointer;
         box-shadow: 0 0 0 3px @cdr-color-border-input-default-hover;
-        background-color: @cdr-color-background-input-default-hover;
     }
+     /* Hover + Checked
+      ========== */
+      > [type="checkbox"]:checked:hover + label:before{
+        box-shadow: 0 0 0 3px @cdr-color-border-input-default-selected-hover;
+        background-color: @cdr-color-background-input-default-selected-hover;
+        content: @icon-var-rei-check;
+        color: @cdr-color-background-input-default-selected;
+      }
+
     [type="checkbox"]:active + label:before {
         outline: none;
         border: 0.1rem solid @core-action-2;
+        box-shadow: inset 0 0 0 1px @cdr-color-border-input-default-active;
+        background-color: @cdr-color-background-input-default-selected;
+        content: @icon-var-rei-check;
     }
 }
 
@@ -222,14 +247,12 @@
         height: 1.8rem;
         width: 1.8rem;
         font-family: 'rei-icons';
-        speak: none;
-        font-style: normal;
-        font-weight: normal;
-        font-variant: normal;
-        text-transform: none;
+        font-size: 14px !important;
         line-height: 1;
         background: none;
+        padding-left: 0 !important;
     }
+    
      > [type="checkbox"]:hover + label:before,
     > [type="radio"]:hover + label:before,
     > [type="checkbox"]:focus + label:before,
@@ -237,7 +260,7 @@
         outline: none;
         cursor: pointer;
         box-shadow: none;
-        background-color: none;
+        background: none !important;
     }
     > [type="checkbox"]:active + label:before,
     > [type="radio"]:active + label:before {
@@ -247,6 +270,7 @@
     > [ type="radio" ]:checked + label:before {
         background: none;
         box-shadow: none;
+        padding-left: 0 !important;
     }
 };
 
@@ -254,82 +278,43 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 @toggle-expand-collapse-ruleset: {
 > [ type="checkbox" ] + label:before,
-> [ type="radio" ] + label:before {
-    content:"\e739";
+> [ type="radio" ] + label:before,
+> [type="checkbox"]:hover + label:before,
+> [type="checkbox"]:focus + label:before,
+> [type="radio"]:hover + label:before,
+> [type="radio"]:focus + label:before,
+> [type="checkbox"]:active + label:before,
+> [type="radio"]:active + label:before  {
+    outline: none;
+    cursor: pointer;
+    box-shadow: none;
+    background: none !important;
+    border: none;
+    content: @icon-var-rei-expand;
     color: #928b80 !important;
      
 }
+
 > [ type="checkbox" ]:checked + label:before,
-> [ type="radio" ]:checked + label:before {
-    content:"\e738";
+> [ type="radio" ]:checked + label:before,
+> [type="radio"]:checked:hover + label:before,
+> [type="checkbox"]:checked:hover + label:before,
+> [ type="checkbox" ]:checked:focus + label:before,
+> [ type="radio" ]:checked:focus + label:before,
+> [type="checkbox"]:checked:active + label:before,
+> [type="radio"]:checked:active + label:before  {
+    content: @icon-var-rei-collapse;
+    color: #928b80 !important;
+    outline: none;
+    cursor: pointer;
+    box-shadow: none;
+    background: none !important;
+    border: none;
 }
+
 };.toggle-expand-collapse {
       @toggle-ruleset();
       @toggle-expand-collapse-ruleset();
-  }
-
-// expand collapse 2
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-@toggle-show-hide-ruleset: {
-> [ type="checkbox" ] + label:before,
-> [ type="radio" ] + label:before {
-    content:"\e602";
-    color: #928b80 !important;
-}
-> [ type="checkbox" ]:checked + label:before,
-> [ type="radio" ]:checked + label:before {
-    content:"\e746";
-}
-};.toggle-show-hide {
-      @toggle-ruleset();
-      @toggle-show-hide-ruleset();
-  }
-
-
-// rating
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-@toggle-rating-ruleset: {
-    > [ type="checkbox" ] + label:before,
-    > [ type="radio" ] + label:before {
-        content:"\e731";
-        color: @star-rating-empty;
-    }
-    > [ type="checkbox" ]:checked + label:before,
-    > [ type="radio" ]:checked + label:before {
-        content:"\e731";
-        color: @star-rating-filled;
-    }
-};.toggle-rating {
-    @toggle-ruleset();
-    @toggle-rating-ruleset();
-  }
-
-// remove
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-@toggle-remove-ruleset: {
-> [ type="checkbox" ]+ label:before,
-> [ type="radio" ]+ label:before {
-    content:"\e600";
-}
-> [type="checkbox"]:checked + label:before,
-> [type="radio"]:checked + label:before {
-    content:"";
-}
-};.toggle-remove {
-      @toggle-ruleset();
-      @toggle-remove-ruleset();
-  }
-
-// sort
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-@toggle-sort-ruleset: {
-    > [ type="checkbox" ]:checked + label:before,
-    > [ type="radio" ]:checked + label:before {
-        content:"\e688";
-    }
-};.toggle-sort {
-    @toggle-ruleset();
-    @toggle-sort-ruleset();
   }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

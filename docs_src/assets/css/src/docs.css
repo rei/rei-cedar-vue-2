@@ -1115,7 +1115,7 @@ h1[id] {
   left: auto;
   position: absolute;
   right: -4rem;
-  top: 0.5rem;
+  top: 0;
 }
 .code-toggle--control.checkbox {
   margin: 0;

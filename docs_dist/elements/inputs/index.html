@@ -669,45 +669,58 @@
         <yield to="example">
           <div class="well well-lg">
             <section>
-  <div class="checkbox">
-  <input type="checkbox" value="" id="checkbox1">
-  <label for="checkbox1">Option one is this and that&mdash;be sure to include why it's great</label>
-</div>
-</section>
-  <div class="group group-display-fixed group-gutter-xs-open-10">
+
+  <fieldset>
+    <div class="checkbox">
+        <input type="checkbox" value="" id="checkbox1">
+        <label for="checkbox1">Option one is this and that&mdash;be sure to include why it's great</label>
+    </div>
+    <div class="checkbox">
+        <input type="checkbox" value="" id="checkbox2">
+        <label for="checkbox2">Option two is this and that&mdash;be sure to include why it's great</label>
+    </div>
+    <div class="checkbox">
+        <input type="checkbox" value="" id="checkbox3">
+        <label for="checkbox3">Option three is this and that&mdash;be sure to include why it's great</label>
+    </div>
+</fieldset>
+
+<div class="group group-display-fixed group-gutter-xs-open-10">
     <div class="col-xs-12 col-sm-6">
-        <section>
-            <div class="checkbox disabled">
-              <input type="checkbox" id="checkbox3" value="" disabled>
-              <label for="checkbox3">
-                Option disabled
-              </label>
-            </div>
-        </section>
+        <div class="checkbox disabled">
+          <input type="checkbox" id="checkbox4" value="" disabled>
+          <label for="checkbox4">
+            Option disabled
+          </label>
+        </div>
     </div>
     <div class="col-xs-12 col-sm-6">
-         <section>
-            <form>
-                <div class="form-group row required has-error">
-                    <div class="col-xs-12">
-                        <div class="checkbox">
-                            <input type="checkbox" name="checkbox-error1" id="checkbox-error1" required="">
-                            <label class="control-label" for="checkbox-error1">Sign up for email updates</label>
-                        </div>
+        <form>
+            <div class="form-group row required has-error">
+                <div class="col-xs-12">
+                    <div class="checkbox">
+                        <input type="checkbox" name="checkbox-error1" id="checkbox-error1" required="">
+                        <label class="control-label" for="checkbox-error1">Sign up for email updates</label>
                     </div>
                 </div>
-            </form>
-        </section>
+            </div>
+        </form>
     </div>
 </div>
+</section>
 
 
-
-
-            <div class="radio">
-  <input type="radio" id="optionsRadios1" value="" checked>
-  <label for="optionsRadios1">Option one is this and that&mdash;be sure to include why it's great</label>
-</div>
+            <section>
+    <fieldset>
+        <div class="radio">
+            <input type="radio" name="radio" id="optionsRadios1" value="radio1">
+            <label for="optionsRadios1">Option one is this and that&mdash;be sure to include why it's great</label>
+        </div>
+        <div class="radio">
+            <input type="radio" name="radio" id="optionsRadios2" value="radio2">
+            <label for="optionsRadios2">Option one is this and that&mdash;be sure to include why it's great</label>
+        </div>
+    </fieldset>
 
   <div class="group group-display-fixed group-gutter-xs-open-10">
     <div class="col-xs-12 col-sm-6">
@@ -722,15 +735,22 @@
          <section>
             <form>
                 <div class="form-group row required has-error">
-                    <div class="radio">
+                    <fieldset>
+                        <div class="radio">
                         <input type="radio" name="radio-errors" id="radio-error1" value="radio-error1" required />
                         <label class="control-label" for="radio-error1">pick me</label>
-                    </div>
+                        </div>
+                        <div class="radio">
+                        <input type="radio" name="radio-errors" id="radio-error2" value="radio-error2" required />
+                        <label class="control-label" for="radio-error2">or pick me</label>
+                        </div>
+                    </fieldset> 
                 </div>
             </form>
         </section>
     </div>
 </div>
+</section>
 
           </div>
         </yield>
@@ -748,88 +768,33 @@
         </yield>
     </cdr-well-docs>
 
-
     <cdr-well-docs example-title="Checkbox and Radio as toggle controls" element-id="control-toggles">
-        <yield to="example-description">
-           <p>Checkboxes are for selecting one or several options in a list, while radios are for selecting one option from many.</p>
-<p>A checkbox or radio with the <code>disabled</code> attribute will be styled appropriately. To have the <code>&lt;label&gt;</code> for the checkbox or radio also display a "not-allowed" cursor when the user hovers over the label, add the <code>.disabled</code> class to your <code>.radio</code>, <code>.radio-inline</code>, <code>.checkbox</code>, <code>.checkbox-inline</code>, or <code>&lt;fieldset&gt;</code>.</p>
-        </yield>
-        <yield to="example">
-          <div class="well well-lg">
-            <div class="checkbox toggle-rating">
-  <input type="checkbox" value="" id="check-rating">
-  <label for="check-rating"> Option one is this and that&mdash;be sure to include why it's great</label>
-</div>
-<div class="radio toggle-rating">
-  <input type="radio" value="" id="radio-rating">
-  <label for="radio-rating">Option one is this and that&mdash;be sure to include why it's great</label>
-</div>
-
-<div class="checkbox toggle-sort">
-  <input type="checkbox" value="" id="check-sort">
-  <label for="check-sort">Option one is this and that&mdash;be sure to include why it's great</label>
-</div>
-<div class="radio toggle-sort">
-  <input type="radio" value="" id="radio-sort">
-  <label for="radio-sort">Option one is this and that&mdash;be sure to include why it's great </label>
-</div>
-<div class="checkbox toggle-remove">
-  <input type="checkbox" value="" id="check-remove">
-  <label for="check-remove">Option one is this and that&mdash;be sure to include why it's great</label>
-</div>
-<div class="radio toggle-remove">
-  <input type="radio" value="" id="radio-remove">
-  <label for="radio-remove">Option one is this and that&mdash;be sure to include why it's great </label>
-</div>
-<div class="checkbox toggle-expand-collapse">
-  <input type="checkbox" value="" id="check-expand-collapse">
-  <label for="check-expand-collapse">Option one is this and that&mdash;be sure to include why it's great</label>
-</div>
-<div class="radio toggle-expand-collapse">
-  <input type="radio" value="" id="radio-expand-collapse">
-  <label for="radio-expand-collapse">Option one is this and that&mdash;be sure to include why it's great</label>
-</div>
-
+      <yield to="example-description">
+        <p>Checkboxes are for selecting one or several options in a list, while radios are for selecting one option from
+          many.</p>
+        <p>A checkbox or radio with the <code>disabled</code> attribute will be styled appropriately. To have the
+          <code>&lt;label&gt;</code> for the checkbox or radio also display a "not-allowed" cursor when the user hovers over
+          the label, add the <code>.disabled</code> class to your <code>.radio</code>, <code>.radio-inline</code>,
+          <code>.checkbox</code>, <code>.checkbox-inline</code>, or <code>&lt;fieldset&gt;</code>.</p>
+      </yield>
+      <yield to="example">
+        <div class="well well-lg">
+          <div class="checkbox toggle-expand-collapse">
+            <input type="checkbox" value="" id="check-expand-collapse">
+            <label for="check-expand-collapse">Option one is this and that&mdash;be sure to include why it's great</label>
           </div>
-        </yield>
-        <yield to="codeblock">
-        <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"checkbox toggle-rating"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">value=</span><span class="s">""</span> <span class="na">id=</span><span class="s">"check-rating"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"check-rating"</span><span class="nt">&gt;</span> Option one is this and that<span class="ni">&amp;mdash;</span>be sure to include why it's great<span class="nt">&lt;/label&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"radio toggle-rating"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">value=</span><span class="s">""</span> <span class="na">id=</span><span class="s">"radio-rating"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"radio-rating"</span><span class="nt">&gt;</span>Option one is this and that<span class="ni">&amp;mdash;</span>be sure to include why it's great<span class="nt">&lt;/label&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"checkbox toggle-sort"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">value=</span><span class="s">""</span> <span class="na">id=</span><span class="s">"check-sort"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"check-sort"</span><span class="nt">&gt;</span>Option one is this and that<span class="ni">&amp;mdash;</span>be sure to include why it's great<span class="nt">&lt;/label&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"radio toggle-sort"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">value=</span><span class="s">""</span> <span class="na">id=</span><span class="s">"radio-sort"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"radio-sort"</span><span class="nt">&gt;</span>Option one is this and that<span class="ni">&amp;mdash;</span>be sure to include why it's great <span class="nt">&lt;/label&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"checkbox toggle-remove"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">value=</span><span class="s">""</span> <span class="na">id=</span><span class="s">"check-remove"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"check-remove"</span><span class="nt">&gt;</span>Option one is this and that<span class="ni">&amp;mdash;</span>be sure to include why it's great<span class="nt">&lt;/label&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"radio toggle-remove"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">value=</span><span class="s">""</span> <span class="na">id=</span><span class="s">"radio-remove"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"radio-remove"</span><span class="nt">&gt;</span>Option one is this and that<span class="ni">&amp;mdash;</span>be sure to include why it's great <span class="nt">&lt;/label&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"checkbox toggle-expand-collapse"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">value=</span><span class="s">""</span> <span class="na">id=</span><span class="s">"check-expand-collapse"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"check-expand-collapse"</span><span class="nt">&gt;</span>Option one is this and that<span class="ni">&amp;mdash;</span>be sure to include why it's great<span class="nt">&lt;/label&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"radio toggle-expand-collapse"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">value=</span><span class="s">""</span> <span class="na">id=</span><span class="s">"radio-expand-collapse"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"radio-expand-collapse"</span><span class="nt">&gt;</span>Option one is this and that<span class="ni">&amp;mdash;</span>be sure to include why it's great<span class="nt">&lt;/label&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-
+        </div>
+      </yield>
+      <yield to="codeblock">
+        <figure class="highlight"><pre><code class="language-html" data-lang="html">        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"checkbox toggle-expand-collapse"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">value=</span><span class="s">""</span> <span class="na">id=</span><span class="s">"expand-collapse-sample"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"expand-collapse-sample"</span><span class="nt">&gt;</span>Option one is this and that<span class="ni">&amp;mdash;</span>be sure to include why it's great<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
         </code></pre></figure>
-        </yield>
+      </yield>
     </cdr-well-docs>
+
+  </section>
 
 
                 <section class="vertical-push-3">

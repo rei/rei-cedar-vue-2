@@ -11,7 +11,7 @@
         <section data-theme="{ opts.exampleTheme }" if="{ opts.exampleStyle }" class="{ opts.exampleStyle + ' cedar-example'}" data-example-id="{ opts.elementId }">
             <yield from="example" />
         </section>
-        <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="medium-10">
+        <div class="code-toggle--control checkbox toggle-expand-collapse text-xs-right" data-theme="medium-10">
             <input type="checkbox" value="" id="{ 'checkbox-' + opts.elementId }" data-toggle="collapse" data-target="{ '#' + opts.elementId }" />
             <label for="{ 'checkbox-' + opts.elementId }">View code</label>
         </div>
