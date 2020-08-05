@@ -2,6 +2,14 @@
 @import url('@rei/cedar/dist/style/cdr-icon.css');
 @import '../../../css/settings/index.scss';
 
+.cdr-popover--tooltip {
+  .cdr-popover {
+    background: $cdr-color-background-cta-dark-rest; // TODO: need token/value here
+    color: $cdr-color-text-inverse;
+    border: none;
+  }
+}
+
 .cdr-popover{
   padding: $cdr-space-half-x;
   padding-left: $cdr-space-one-x;
@@ -65,6 +73,16 @@
     }
   }
 
+  &__bottom.cdr-popover--tooltip .cdr-popover__arrow {
+    &::before {
+      border-bottom-color: $cdr-color-background-cta-dark-rest; // TODO: need token/value here
+    }
+
+    &::after {
+      border-bottom-color: $cdr-color-background-cta-dark-rest; // TODO: need token/value here
+    }
+  }
+
   &__up {
     .cdr-popover {
       bottom: calc(100% + 1rem + #{$cdr-space-quarter-x}); // TODO: 1rem arrow size here, variable?
@@ -72,6 +90,16 @@
 
     .cdr-popover__arrow {
       @include arrow(top, left, translateX(-50%));
+    }
+  }
+
+  &__up.cdr-popover--tooltip .cdr-popover__arrow {
+    &::before {
+      border-top-color: $cdr-color-background-cta-dark-rest; // TODO: need token/value here
+    }
+
+    &::after {
+      border-top-color: $cdr-color-background-cta-dark-rest; // TODO: need token/value here
     }
   }
 
@@ -104,6 +132,16 @@
     }
   }
 
+  &__left.cdr-popover--tooltip .cdr-popover__arrow {
+    &::before {
+      border-left-color: $cdr-color-background-cta-dark-rest; // TODO: need token/value here
+    }
+
+    &::after {
+      border-left-color: $cdr-color-background-cta-dark-rest; // TODO: need token/value here
+    }
+  }
+
   &__right {
     .cdr-popover {
       left: calc(100% + 1rem + #{$cdr-space-quarter-x}); // TODO: 1rem arrow size here, variable?
@@ -111,6 +149,16 @@
 
     .cdr-popover__arrow {
       @include arrow(right, top, translateY(-50%));
+    }
+  }
+
+  &__right.cdr-popover--tooltip .cdr-popover__arrow {
+    &::before {
+      border-right-color: $cdr-color-background-cta-dark-rest; // TODO: need token/value here
+    }
+
+    &::after {
+      border-right-color: $cdr-color-background-cta-dark-rest; // TODO: need token/value here
     }
   }
 

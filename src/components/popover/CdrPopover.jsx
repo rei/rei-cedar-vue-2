@@ -54,6 +54,9 @@ export default {
     },
     cornerClass() {
       if (this.corner) return this.style[`cdr-popover__corner--${this.corner}`];
+    },
+    triggerClass() {
+      return this.style[`cdr-popover--${this.trigger}`]
     }
   },
   watch: {
@@ -154,7 +157,7 @@ export default {
   },
   render() {
     return this.opened ? (
-      <div class={clsx(this.positionClass, this.cornerClass)}>
+      <div class={clsx(this.positionClass, this.cornerClass, this.triggerClass)}>
         <div
           class={this.style['cdr-popover']}
           role="dialog"
