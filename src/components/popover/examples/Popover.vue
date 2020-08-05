@@ -87,14 +87,22 @@
       >long title</cdr-radio>
     </cdr-form-group>
 
-
+    <div style="clear: both"/>
     <div :class="containerClass">
-      <cdr-popover :opened="open" :position="position" :auto-position="autoPos" @closed="togglePopover" :label="title">
+      <cdr-popover
+        @closed="togglePopover"
+        :opened="open"
+        :position="position"
+        :auto-position="autoPos"
+        :label="title"
+        :trigger="this.type === 'button' ? 'tooltip' : 'popover'"
+      >
         <cdr-text>Thanks for stopping by.</cdr-text>
       </cdr-popover>
 
       <cdr-button v-if="type === 'icon'" @click="togglePopover" :icon-only="true"><icon-information-fill/></cdr-button>
-      <cdr-button v-else @click="togglePopover">lol wow huh</cdr-button>
+      <!-- TODO: export directive to handle this? -->
+      <cdr-button v-else @mouseover="open = true" @mouseleave="open = false" @focus="open = true" @blur="open = false">lol wow huh</cdr-button>
     </div>
   </div>
 </template>
@@ -146,5 +154,10 @@ export default {
 .popover-example {
   /* lots of bottom space to allow scrolling*/
   margin-bottom: 1000px;
+}
+
+fieldset {
+  width: 20%;
+  float: left;
 }
 </style>

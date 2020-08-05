@@ -32,6 +32,11 @@ export default {
       type: String,
       default: '',
     },
+    // TODO: fix spacing/layout if tooltip
+    trigger: {
+      type: String,
+      default: 'popover'
+    },
   },
   data() {
     return {
@@ -78,9 +83,11 @@ export default {
       }
     },
     handleClick({ target }) {
-      if (target !== this.$refs.popover && !this.$refs.popover.contains(target)) {
-        this.closePopover();
-      }
+      this.$nextTick(() => {
+        if (target !== this.$refs.popover && !this.$refs.popover.contains(target)) {
+          this.closePopover();
+        }
+      });
     },
     addHandlers() {
       this.keyHandler = this.handleKeyDown.bind(this);
@@ -128,17 +135,22 @@ export default {
 
       setTimeout(() => {
         this.addHandlers();
-
-        const tabbables = tabbable(this.$refs.popover);
-        if (tabbables[0]) tabbables[0].focus();
+        if (this.trigger === 'popover') {
+          const tabbables = tabbable(this.$refs.popover);
+          if (tabbables[0]) tabbables[0].focus();
+        }
       }, 1);
 
     },
     handleClosed() {
       document.removeEventListener('keydown', this.keyHandler);
       document.removeEventListener('click', this.clickHandler);
-      if (this.lastActive) this.lastActive.focus();
+      if (this.lastActive && this.trigger === 'popover') this.lastActive.focus();
     },
+  },
+  destroyed() {
+    document.removeEventListener('keydown', this.keyHandler);
+    document.removeEventListener('click', this.clickHandler);
   },
   render() {
     return this.opened ? (
@@ -171,18 +183,20 @@ export default {
                 {this.$slots.default}
               </div>
             </div>
-            <cdr-button
-              class={this.style['cdr-popover__close-button']}
-              icon-only
-              on-click={this.closePopover}
-              aria-label="Close"
-              size="small"
-            >
-              <icon-x-sm
-                slot="icon"
-                inherit-color
-              />
-            </cdr-button>
+            {
+              this.trigger === 'popover' && (<cdr-button
+                class={this.style['cdr-popover__close-button']}
+                icon-only
+                on-click={this.closePopover}
+                aria-label="Close"
+                size="small"
+              >
+                <icon-x-sm
+                  slot="icon"
+                  inherit-color
+                />
+              </cdr-button>)
+            }
           </div>
         </div>
         <div class={this.style['cdr-popover__arrow']}/>
