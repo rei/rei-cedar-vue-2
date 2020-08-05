@@ -2,30 +2,11 @@
 @import url('@rei/cedar/dist/style/cdr-icon.css');
 @import '../../../css/settings/index.scss';
 
-@mixin arrow($borderSide) {
-
-  &::before, &::after {
-    border-style: solid;
-    border-color: transparent;
-    #{$borderSide}: 100%;
-  }
-  &::before {
-    border-#{$borderSide}-color: $cdr-color-border-secondary;
-    border-width: 10px; // arrow is 10px tall, 1px border
-  }
-
-  &::after {
-    border-#{$borderSide}-color: $cdr-color-background-primary;
-    border-width: 9px;
-  }
-}
-
 .cdr-popover{
   padding: $cdr-space-half-x;
   padding-left: $cdr-space-one-x;
   background: $cdr-color-background-primary;
   border: 1px solid $cdr-color-border-secondary;
-  // box-shadow: $cdr-prominence-elevated; // TODO: box-shadow doesn't work on arrow
   min-width: 286px;
   position: absolute;
   z-index: 100;
@@ -48,78 +29,119 @@
     padding: 0;
   }
 
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    margin: auto;
-    width: 0;
-    height: 0;
+
+  @mixin arrow($borderSide, $position, $translate) {
+    &::before, &::after {
+      // TODO: variable, MATCHES padding on cdr-popover, 1rem + space-quarter-x + 0.1rem for overlap
+      #{$borderSide}: -1.5rem;
+      #{$position}: 50%;
+      transform: #{$translate};
+      z-index: 100;
+    }
+    &::before {
+      border-#{$borderSide}-color: $cdr-color-border-secondary;
+    }
+
+    &::after {
+      border-#{$borderSide}-color: $cdr-color-background-primary;
+    }
   }
 
-  // Up and down arrows
   &__up,
   &__down {
-    &,
-    &::before,
-    &::after {
+    .cdr-popover {
       left: 50%;
       transform: translateX(-50%);
     }
   }
 
-  // &__corner--left {
-  //   left: 0;
-  //   transform: unset;
-  //   &::before,
-  //   &::after {
-  //     // magic number?
-  //     left: 2rem;
-  //     transform: unset;
-  //   }
-  // }
-  //
-  // &__corner--right {
-  //   left: unset;
-  //   right: 0;
-  //   transform: unset;
-  //   &::before,
-  //   &::after {
-  //     left: unset;
-  //     right: 0;
-  //     // transform: unset;
-  //   }
-  // }
-
   &__down {
-    @include arrow(bottom);
-    top: calc(100% + 1rem + #{$cdr-space-quarter-x}); // TODO: 1rem arrow size here, variable?
+    .cdr-popover {
+      top: calc(100% + 1rem + #{$cdr-space-quarter-x}); // TODO: 1rem arrow size here, variable?
+    }
+
+    .cdr-popover__arrow {
+      @include arrow(bottom, left, translateX(-50%));
+    }
   }
 
   &__up {
-    @include arrow(top);
-    bottom: calc(100% + 1rem + #{$cdr-space-quarter-x}); // TODO: 1rem arrow size here, variable?
+    .cdr-popover {
+      bottom: calc(100% + 1rem + #{$cdr-space-quarter-x}); // TODO: 1rem arrow size here, variable?
+    }
+
+    .cdr-popover__arrow {
+      @include arrow(top, left, translateX(-50%));
+    }
   }
 
+  &__corner--left .cdr-popover {
+    left: 0;
+    transform: unset;
+  }
 
-  // Left and right arrows
+  &__corner--right .cdr-popover {
+    left: unset;
+    right: 0;
+    transform: unset;
+  }
+
   &__left,
   &__right {
-    &,
-    &::before,
-    &::after {
+    .cdr-popover {
       top: 50%;
       transform: translateY(-50%);
     }
   }
 
-  &__right {
-    @include arrow(right);
-    left: calc(100% + 1rem + #{$cdr-space-quarter-x}); // TODO: 1rem arrow size here, variable?
+  &__left {
+    .cdr-popover {
+      right: calc(100% + 1rem + #{$cdr-space-quarter-x}); // TODO: 1rem arrow size here, variable?
+    }
+
+    .cdr-popover__arrow {
+      @include arrow(left, top, translateY(-50%));
+    }
   }
 
-  &__left {
-    @include arrow(left);
-    right: calc(100% + 1rem + #{$cdr-space-quarter-x}); // TODO: 1rem arrow size here, variable?
+  &__right {
+    .cdr-popover {
+      left: calc(100% + 1rem + #{$cdr-space-quarter-x}); // TODO: 1rem arrow size here, variable?
+    }
+
+    .cdr-popover__arrow {
+      @include arrow(right, top, translateY(-50%));
+    }
+  }
+
+  &__corner--top .cdr-popover {
+    top: 0;
+    transform: unset;
+  }
+
+  &__corner--bottom .cdr-popover {
+    top: unset;
+    bottom: 0;
+    transform: unset;
+  }
+
+  &__arrow {
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      margin: auto;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-color: transparent;
+    }
+
+    &::before {
+      border-width: 10px; // arrow is 10px tall, 1px border (1rem/0.1rem)
+    }
+
+    &::after {
+      border-width: 9px;
+    }
   }
 }

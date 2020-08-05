@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="popover-example">
     <h2>popover</h2>
     <cdr-form-group label="popover position">
       <cdr-radio
@@ -37,6 +37,38 @@
       >false</cdr-radio>
     </cdr-form-group>
 
+    <cdr-form-group label="trigger position">
+      <cdr-radio
+        name="trigger"
+        custom-value="left"
+        v-model="trigger"
+      >left</cdr-radio>
+      <cdr-radio
+        name="trigger"
+        custom-value="center"
+        v-model="trigger"
+      >center</cdr-radio>
+      <cdr-radio
+        name="trigger"
+        custom-value="right"
+        v-model="trigger"
+      >right</cdr-radio>
+    </cdr-form-group>
+
+
+    <cdr-form-group label="trigger type">
+      <cdr-radio
+        name="type"
+        custom-value="button"
+        v-model="type"
+      >button</cdr-radio>
+      <cdr-radio
+        name="type"
+        custom-value="icon"
+        v-model="type"
+      >icon</cdr-radio>
+    </cdr-form-group>
+
     <cdr-form-group label="title">
       <cdr-radio
         name="title"
@@ -56,12 +88,13 @@
     </cdr-form-group>
 
 
-    <div class="popover-container">
+    <div :class="containerClass">
       <cdr-popover :opened="open" :position="position" :auto-position="autoPos" @closed="togglePopover" :label="title">
         <cdr-text>Thanks for stopping by.</cdr-text>
       </cdr-popover>
 
-      <cdr-button @click="togglePopover" :icon-only="true"><icon-information-fill/></cdr-button>
+      <cdr-button v-if="type === 'icon'" @click="togglePopover" :icon-only="true"><icon-information-fill/></cdr-button>
+      <cdr-button v-else @click="togglePopover">lol wow huh</cdr-button>
     </div>
   </div>
 </template>
@@ -80,11 +113,18 @@ export default {
       position: 'up',
       title: 'Hello my name is popover',
       autoPos: true,
+      trigger: 'center',
+      type: 'icon'
     }
   },
   methods: {
     togglePopover(e) {
       this.open = !this.open;
+    }
+  },
+  computed: {
+    containerClass() {
+      return `popover-container popover-container--${this.trigger}`;
     }
   }
 };
@@ -94,6 +134,17 @@ export default {
 .popover-container {
   position: relative;
   width: max-content;
+}
+
+.popover-container--center {
   margin: 0 auto;
+}
+.popover-container--right {
+  margin-left: 95%;
+}
+
+.popover-example {
+  /* lots of bottom space to allow scrolling*/
+  margin-bottom: 1000px;
 }
 </style>

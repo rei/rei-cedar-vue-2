@@ -89,42 +89,37 @@ export default {
       document.addEventListener('click', this.clickHandler);
     },
     calculatePlacement() {
-      // Reset pos so size/position is calculated correctly
       this.pos = this.position;
+      this.corner = undefined;
+      this.$nextTick(() => {
+        const rect = this.$refs.popover.getBoundingClientRect();
+        if (this.pos === 'down' && rect.bottom >= window.innerHeight) {
+          this.pos = 'up';
+        } else if (this.pos === 'up' && rect.top <= 0) {
+          this.pos = 'down';
+        } else if (this.pos === 'left' && rect.left <= 0) {
+          this.pos = 'right';
+        } else if (this.pos === 'right' && rect.right >= window.innerWidth) {
+          this.pos = 'left';
+        }
 
-      const rect = this.$el.getBoundingClientRect()
-      if (this.pos === 'down' && rect.bottom >= window.innerHeight) {
-        this.pos = 'up';
-      } else if (this.pos === 'up' && rect.top <= 0) {
-        this.pos = 'down';
-      } else if (this.pos === 'left' && rect.left <= 0) {
-        this.pos = 'right';
-      } else if (this.pos === 'right' && rect.right >= window.innerWidth) {
-        this.pos = 'left';
-      }
+        const orientation = this.pos === 'down' || this.pos === 'up' ? 'vertical' : 'horizontal';
 
-      const orientation = this.pos === 'down' || this.pos === 'up' ? 'vertical' : 'horizontal';
-
-      if (orientation === 'vertical' && rect.left <= 0) {
-        this.corner = 'left'
-        console.log('left corner')
-      } else if (orientation === 'vertical' && rect.right >= window.innerWidth) {
-        this.corner = 'right'
-        console.log('right corner')
-      } else if (orientation === 'horizontal' && rect.top <= 0) {
-        this.corner = 'top'
-        console.log('top corner')
-      } else if (orientation === 'horizontal' && rect.bottom >= window.innerHeight) {
-        this.corner = 'bottom'
-        console.log('bottom corner')
-      }
-
+        if (orientation === 'vertical' && rect.left <= 0) {
+          this.corner = 'left'
+        } else if (orientation === 'vertical' && rect.right >= window.innerWidth) {
+          this.corner = 'right'
+        } else if (orientation === 'horizontal' && rect.top <= 0) {
+          this.corner = 'top'
+        } else if (orientation === 'horizontal' && rect.bottom >= window.innerHeight) {
+          this.corner = 'bottom'
+        }
+      })
     },
     handleOpened() {
       const { activeElement } = document;
 
       this.lastActive = activeElement;
-      // need setTimeout, otherwise the initial click on the trigger element gets handled by the clickHandler?!?!?!?
       this.$nextTick(() => {
         if (this.autoPosition) {
           this.calculatePlacement();
@@ -147,47 +142,50 @@ export default {
   },
   render() {
     return this.opened ? (
-      <div
-        class={clsx(this.style['cdr-popover'], this.positionClass, this.cornerClass)}
-        role="dialog"
-        ref="popover"
-      >
-        <div class={this.style['cdr-popover__container']}>
-          <div class={this.style['cdr-popover__content']}>
-            {
-              (this.$slots.title || this.label) && (
-                <div class={this.style['cdr-popover__title']}>
-                  {
-                    this.$slots.title
-                  }
-                  {
-                    !this.$slots.title && this.label && (
-                      <span>
-                        {this.label}
-                      </span>
-                    )
-                  }
-                </div>
-              )
-            }
+      <div class={clsx(this.positionClass, this.cornerClass)}>
+        <div
+          class={this.style['cdr-popover']}
+          role="dialog"
+          ref="popover"
+        >
+          <div class={this.style['cdr-popover__container']}>
+            <div class={this.style['cdr-popover__content']}>
+              {
+                (this.$slots.title || this.label) && (
+                  <div class={this.style['cdr-popover__title']}>
+                    {
+                      this.$slots.title
+                    }
+                    {
+                      !this.$slots.title && this.label && (
+                        <span>
+                          {this.label}
+                        </span>
+                      )
+                    }
+                  </div>
+                )
+              }
 
-            <div class={this.style['cdr-popover__slot']}>
-              {this.$slots.default}
+              <div class={this.style['cdr-popover__slot']}>
+                {this.$slots.default}
+              </div>
             </div>
+            <cdr-button
+              class={this.style['cdr-popover__close-button']}
+              icon-only
+              on-click={this.closePopover}
+              aria-label="Close"
+              size="small"
+            >
+              <icon-x-sm
+                slot="icon"
+                inherit-color
+              />
+            </cdr-button>
           </div>
-          <cdr-button
-            class={this.style['cdr-popover__close-button']}
-            icon-only
-            on-click={this.closePopover}
-            aria-label="Close"
-            size="small"
-          >
-            <icon-x-sm
-              slot="icon"
-              inherit-color
-            />
-          </cdr-button>
         </div>
+        <div class={this.style['cdr-popover__arrow']}/>
       </div>
     ) : undefined;
   },
