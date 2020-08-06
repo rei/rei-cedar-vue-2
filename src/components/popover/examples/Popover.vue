@@ -106,6 +106,7 @@
         v-if="type === 'icon'"
         @click="togglePopover"
         :icon-only="true"
+        aria-label="information"
       >
         <icon-information-fill />
       </cdr-button>
