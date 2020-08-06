@@ -15,10 +15,21 @@ describe('CdrPopover', () => {
   it('applies correct arrow class', () => {
     const wrapper = shallowMount(CdrPopover, {
       propsData: {
-        arrowDirection: 'left',
-        open: true
+        position: 'left',
+        opened: true
       },
     });
-    expect(wrapper.classes()).toContain('cdr-popover__arrow--left');
+    expect(wrapper.classes()).toContain('cdr-popover__wrapper--left');
+  });
+
+  it('applies tooltip class if trigger prop is set', () => {
+    const wrapper = shallowMount(CdrPopover, {
+      propsData: {
+        position: 'left',
+        opened: true,
+        trigger: 'tooltip'
+      },
+    });
+    expect(wrapper.classes()).toContain('cdr-popover--tooltip');
   });
 });

@@ -82,7 +82,7 @@
       >no title</cdr-radio>
       <cdr-radio
         name="title"
-        custom-value="Hello my name is Popover, Look on my Works, ye Mighty, and despair!"
+        custom-value="Hi i am a popover, i can also be a tooltip sometimes, wow"
         v-model="title"
       >long title</cdr-radio>
     </cdr-form-group>
@@ -97,11 +97,11 @@
         :label="title"
         :trigger="this.type === 'button' ? 'tooltip' : 'popover'"
       >
-        <cdr-text>Thanks for stopping by.</cdr-text>
+        <cdr-text>Thanks for stopping by. What a lovely day it is today. Please come back again soon.</cdr-text>
       </cdr-popover>
 
       <cdr-button v-if="type === 'icon'" @click="togglePopover" :icon-only="true"><icon-information-fill/></cdr-button>
-      <!-- TODO: export directive to handle this? -->
+      <!-- TODO: export directive to handle hover/focus bindings? -->
       <cdr-button v-else @mouseover="open = true" @mouseleave="open = false" @focus="open = true" @blur="open = false">lol wow huh</cdr-button>
     </div>
   </div>
