@@ -55,15 +55,15 @@
     }
   }
 
-  &__up,
-  &__down {
+  &__wrapper--up,
+  &__wrapper--down {
     .cdr-popover {
       left: 50%;
       transform: translateX(-50%);
     }
   }
 
-  &__down {
+  &__wrapper--down {
     .cdr-popover {
       top: calc(100% + 1rem + #{$cdr-space-quarter-x}); // TODO: 1rem arrow size here, variable?
     }
@@ -73,7 +73,7 @@
     }
   }
 
-  &__bottom.cdr-popover--tooltip .cdr-popover__arrow {
+  &__wrapper--down.cdr-popover--tooltip .cdr-popover__arrow {
     &::before {
       border-bottom-color: $cdr-color-background-cta-dark-rest; // TODO: need token/value here
     }
@@ -83,7 +83,7 @@
     }
   }
 
-  &__up {
+  &__wrapper--up {
     .cdr-popover {
       bottom: calc(100% + 1rem + #{$cdr-space-quarter-x}); // TODO: 1rem arrow size here, variable?
     }
@@ -93,7 +93,7 @@
     }
   }
 
-  &__up.cdr-popover--tooltip .cdr-popover__arrow {
+  &__wrapper--up.cdr-popover--tooltip .cdr-popover__arrow {
     &::before {
       border-top-color: $cdr-color-background-cta-dark-rest; // TODO: need token/value here
     }
@@ -114,15 +114,15 @@
     transform: unset;
   }
 
-  &__left,
-  &__right {
+  &__wrapper--left,
+  &__wrapper--right {
     .cdr-popover {
       top: 50%;
       transform: translateY(-50%);
     }
   }
 
-  &__left {
+  &__wrapper--left {
     .cdr-popover {
       right: calc(100% + 1rem + #{$cdr-space-quarter-x}); // TODO: 1rem arrow size here, variable?
     }
@@ -132,7 +132,7 @@
     }
   }
 
-  &__left.cdr-popover--tooltip .cdr-popover__arrow {
+  &__wrapper--left.cdr-popover--tooltip .cdr-popover__arrow {
     &::before {
       border-left-color: $cdr-color-background-cta-dark-rest; // TODO: need token/value here
     }
@@ -142,7 +142,7 @@
     }
   }
 
-  &__right {
+  &__wrapper--right {
     .cdr-popover {
       left: calc(100% + 1rem + #{$cdr-space-quarter-x}); // TODO: 1rem arrow size here, variable?
     }
@@ -152,7 +152,7 @@
     }
   }
 
-  &__right.cdr-popover--tooltip .cdr-popover__arrow {
+  &__wrapper--right.cdr-popover--tooltip .cdr-popover__arrow {
     &::before {
       border-right-color: $cdr-color-background-cta-dark-rest; // TODO: need token/value here
     }

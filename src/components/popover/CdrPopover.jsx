@@ -50,7 +50,7 @@ export default {
   },
   computed: {
     positionClass() {
-      return this.style[`cdr-popover__${this.pos}`];
+      return this.style[`cdr-popover__wrapper--${this.pos}`];
     },
     cornerClass() {
       if (this.corner) return this.style[`cdr-popover__corner--${this.corner}`];
@@ -157,7 +157,12 @@ export default {
   },
   render() {
     return this.opened ? (
-      <div class={clsx(this.positionClass, this.cornerClass, this.triggerClass)}>
+      <div class={clsx(
+        this.style['cdr-popover__wrapper'],
+        this.positionClass,
+        this.cornerClass,
+        this.triggerClass)}
+      >
         <div
           class={this.style['cdr-popover']}
           role="dialog"
