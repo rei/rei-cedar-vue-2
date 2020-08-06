@@ -8,6 +8,7 @@ import CdrButton from '../button/CdrButton';
 
 export default {
   name: 'CdrPopover',
+  inheritAttrs: false,
   components: {
     IconXSm,
     CdrButton,
