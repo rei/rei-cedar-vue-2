@@ -5,6 +5,19 @@ import propValidator from '../../utils/propValidator';
 import IconXSm from '../icon/comps/x-sm';
 import CdrButton from '../button/CdrButton';
 
+// for corner cases, im centering the arrow and aligning the popup to the container edge.
+// - Can offset pretty easily if desired
+
+// do we need to handle hovering over an opened tooltip? c1 popover doesn't do that http://patterns.rei.com/modules/tool-tips/
+
+// CSS arrows don't get box-shadow
+// - could theoretically drop in a double arrow SVG instead of the CSS arrows
+
+// need to create a token or value for "tooltip" background,
+// - currently using cta/button-dark for background, text-inverse for color
+
+// binding a tooltip is funky. vue directive?
+
 export default {
   name: 'CdrPopover',
   components: {
@@ -35,7 +48,7 @@ export default {
     // TODO: fix spacing/layout if tooltip
     trigger: {
       type: String,
-      default: 'popover'
+      default: 'popover',
     },
   },
   data() {
@@ -53,11 +66,11 @@ export default {
       return this.style[`cdr-popover__wrapper--${this.pos}`];
     },
     cornerClass() {
-      if (this.corner) return this.style[`cdr-popover__corner--${this.corner}`];
+      return this.corner ? this.style[`cdr-popover__corner--${this.corner}`] : undefined;
     },
     triggerClass() {
-      return this.style[`cdr-popover--${this.trigger}`]
-    }
+      return this.style[`cdr-popover--${this.trigger}`];
+    },
   },
   watch: {
     position() {
@@ -71,6 +84,10 @@ export default {
         this.handleClosed();
       }
     },
+  },
+  destroyed() {
+    document.removeEventListener('keydown', this.keyHandler);
+    document.removeEventListener('click', this.clickHandler);
   },
   methods: {
     closePopover(e) {
@@ -113,13 +130,13 @@ export default {
       const orientation = this.pos === 'down' || this.pos === 'up' ? 'vertical' : 'horizontal';
 
       if (orientation === 'vertical' && rect.left <= 0) {
-        this.corner = 'left'
+        this.corner = 'left';
       } else if (orientation === 'vertical' && rect.right >= window.innerWidth) {
-        this.corner = 'right'
+        this.corner = 'right';
       } else if (orientation === 'horizontal' && rect.top <= 0) {
-        this.corner = 'top'
+        this.corner = 'top';
       } else if (orientation === 'horizontal' && rect.bottom >= window.innerHeight) {
-        this.corner = 'bottom'
+        this.corner = 'bottom';
       }
     },
     handleOpened() {
@@ -142,7 +159,6 @@ export default {
           if (tabbables[0]) tabbables[0].focus();
         }
       }, 1);
-
     },
     handleClosed() {
       document.removeEventListener('keydown', this.keyHandler);
@@ -150,17 +166,14 @@ export default {
       if (this.lastActive && this.trigger === 'popover') this.lastActive.focus();
     },
   },
-  destroyed() {
-    document.removeEventListener('keydown', this.keyHandler);
-    document.removeEventListener('click', this.clickHandler);
-  },
   render() {
     return this.opened ? (
       <div class={clsx(
         this.style['cdr-popover__wrapper'],
         this.positionClass,
         this.cornerClass,
-        this.triggerClass)}
+        this.triggerClass,
+      )}
       >
         <div
           class={this.style['cdr-popover']}

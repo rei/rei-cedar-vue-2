@@ -87,7 +87,7 @@
       >long title</cdr-radio>
     </cdr-form-group>
 
-    <div style="clear: both"/>
+    <div style="clear: both" />
     <div :class="containerClass">
       <cdr-popover
         @closed="togglePopover"
@@ -97,12 +97,28 @@
         :label="title"
         :trigger="this.type === 'button' ? 'tooltip' : 'popover'"
       >
-        <cdr-text>Thanks for stopping by. What a lovely day it is today. Please come back again soon.</cdr-text>
+        <cdr-text>
+          Thanks for stopping by. What a lovely day it is today. Please come back again soon.
+        </cdr-text>
       </cdr-popover>
 
-      <cdr-button v-if="type === 'icon'" @click="togglePopover" :icon-only="true"><icon-information-fill/></cdr-button>
+      <cdr-button
+        v-if="type === 'icon'"
+        @click="togglePopover"
+        :icon-only="true"
+      >
+        <icon-information-fill />
+      </cdr-button>
       <!-- TODO: export directive to handle hover/focus bindings? -->
-      <cdr-button v-else @mouseover="open = true" @mouseleave="open = false" @focus="open = true" @blur="open = false">lol wow huh</cdr-button>
+      <cdr-button
+        v-else
+        @mouseover="open = true"
+        @mouseleave="open = false"
+        @focus="open = true"
+        @blur="open = false"
+      >
+        lol wow huh
+      </cdr-button>
     </div>
   </div>
 </template>
@@ -122,19 +138,19 @@ export default {
       title: 'Hello my name is popover',
       autoPos: true,
       trigger: 'center',
-      type: 'icon'
-    }
-  },
-  methods: {
-    togglePopover(e) {
-      this.open = !this.open;
-    }
+      type: 'icon',
+    };
   },
   computed: {
     containerClass() {
       return `popover-container popover-container--${this.trigger}`;
-    }
-  }
+    },
+  },
+  methods: {
+    togglePopover() {
+      this.open = !this.open;
+    },
+  },
 };
 </script>
 
