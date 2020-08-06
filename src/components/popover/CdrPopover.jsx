@@ -5,18 +5,6 @@ import propValidator from '../../utils/propValidator';
 import IconXSm from '../icon/comps/x-sm';
 import CdrButton from '../button/CdrButton';
 
-// for corner cases, im centering the arrow and aligning the popup to the container edge.
-// - Can offset pretty easily if desired
-
-// do we need to handle hovering over an opened tooltip? c1 popover doesn't do that http://patterns.rei.com/modules/tool-tips/
-
-// CSS arrows don't get box-shadow
-// - could theoretically drop in a double arrow SVG instead of the CSS arrows
-
-// need to create a token or value for "tooltip" background,
-// - currently using cta/button-dark for background, text-inverse for color
-
-// binding a tooltip is funky. vue directive?
 
 export default {
   name: 'CdrPopover',
@@ -177,7 +165,7 @@ export default {
       >
         <div
           class={this.style['cdr-popover']}
-          role="dialog"
+          role={this.trigger === 'tooltip' ? 'tooltip' : 'dialog'}
           ref="popover"
           {... { attrs: this.$attrs } }
         >

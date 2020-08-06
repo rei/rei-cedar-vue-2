@@ -22,7 +22,7 @@ describe('CdrPopover', () => {
     expect(wrapper.classes()).toContain('cdr-popover__wrapper--left');
   });
 
-  it('applies tooltip class if trigger prop is set', () => {
+  it('applies tooltip class and role if trigger prop is set', () => {
     const wrapper = shallowMount(CdrPopover, {
       propsData: {
         position: 'left',
@@ -31,5 +31,18 @@ describe('CdrPopover', () => {
       },
     });
     expect(wrapper.classes()).toContain('cdr-popover--tooltip');
+    expect(wrapper.find('.cdr-popover').attributes('role')).toBe('tooltip')
+  });
+
+
+  it('does not apply tooltip class and role if trigger prop is set', () => {
+    const wrapper = shallowMount(CdrPopover, {
+      propsData: {
+        position: 'left',
+        opened: true,
+      },
+    });
+    expect(wrapper.classes()).not.toContain('cdr-popover--tooltip');
+    expect(wrapper.find('.cdr-popover').attributes('role')).toBe('dialog')
   });
 });
