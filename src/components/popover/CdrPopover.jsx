@@ -166,6 +166,7 @@ export default {
           class={this.style['cdr-popover']}
           role="dialog"
           ref="popover"
+          {... { attrs: this.$attrs } }
         >
           <div class={this.style['cdr-popover__container']}>
             <div class={this.style['cdr-popover__content']}>
