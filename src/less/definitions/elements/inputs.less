@@ -70,8 +70,8 @@ output {
 //----------------------------------------------------------------------------------------------------------------------
 input[type="search"] {
     -webkit-appearance: none;
+    -moz-appearance: none;
 }
-
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
@@ -86,10 +86,16 @@ input[type="search"] {
 .input-md,
 .input-sm {
     .cdr-input-base-mixin();
+    /* Prevent iOS from altering border and box-shadow */
+    -webkit-appearance: none;
+    -moz-appearance: none;
 }
 
 .input-lg {
     .cdr-input-large-mixin();
+    /* Prevent iOS from altering border and box-shadow */
+    -webkit-appearance: none;
+    -moz-appearance: none;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
