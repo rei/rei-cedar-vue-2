@@ -25,7 +25,6 @@
       <mods />
     </div>
 
-
     <div data-backstop="image-error">
       <cdr-text
         tag="h3"

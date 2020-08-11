@@ -21,7 +21,6 @@ import { CdrText } from 'srcdir/index';
 import standardLinks from 'componentsdir/link/examples/demo/Standard';
 import resilienceTest from 'componentsdir/link/examples/demo/Resilience';
 
-
 export default {
   name: 'Lists',
   components: {

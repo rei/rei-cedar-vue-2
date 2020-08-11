@@ -229,7 +229,6 @@
     <cdr-text>Selected Values: {{ multiple }}</cdr-text>
     <hr class="icon-hr">
 
-
     <cdr-text class="cdr-my-space-two-x">
       Multiple Select
     </cdr-text>

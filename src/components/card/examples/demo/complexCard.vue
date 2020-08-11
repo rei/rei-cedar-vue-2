@@ -38,7 +38,6 @@
 <script>
 import * as Components from 'srcdir/index';
 
-
 export default {
   name: 'ComplexCard',
   components: Components,

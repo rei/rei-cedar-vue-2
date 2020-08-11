@@ -181,7 +181,6 @@ import {
 import * as Components from 'srcdir/index';
 import tabsDefault from 'componentsdir/tabs/examples/demo/TabsDefault';
 
-
 export default {
   name: 'TabsExample',
   components: { ...Components, tabsDefault },

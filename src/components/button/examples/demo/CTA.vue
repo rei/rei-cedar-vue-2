@@ -23,7 +23,7 @@
         :elevated="button.elevated"
         tag="a"
       >
-        {{ button.label }} <icon-caret-right slot="icon-right"/>
+        {{ button.label }} <icon-caret-right slot="icon-right" />
       </cdr-button>
     </div>
   </div>
@@ -180,7 +180,6 @@ export default {
             },
           ],
         },
-
 
         {
           title: 'Secondary CTA',

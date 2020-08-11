@@ -18,7 +18,9 @@
     <cdr-form-group>
 
       <template slot="label">
-        <cdr-text modifier="heading-sans-600">Optional Label Override Example</cdr-text>
+        <cdr-text modifier="heading-sans-600">
+          Optional Label Override Example
+        </cdr-text>
       </template>
       <cdr-checkbox
         custom-value="A"

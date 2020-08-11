@@ -58,7 +58,6 @@
       REI.com
     </cdr-link>
 
-
     <cdr-text
       tag="h3"
       modifier="subheading-sans-300"
@@ -107,7 +106,6 @@
         </cdr-link>
       </li>
     </cdr-list>
-
 
     <cdr-text
       tag="h3"
@@ -235,7 +233,9 @@
         :inset="true"
         @click="clicked"
       >I'm a small button!</cdr-link>
-      <cdr-button size="small">I'm a small button!</cdr-button>
+      <cdr-button size="small">
+        I'm a small button!
+      </cdr-button>
 
       <cdr-link
         tag="button"
@@ -243,7 +243,9 @@
         :inset="true"
         @click="clicked"
       >I'm a medium button!</cdr-link>
-      <cdr-button size="medium">I'm a medium button!</cdr-button>
+      <cdr-button size="medium">
+        I'm a medium button!
+      </cdr-button>
 
       <cdr-link
         tag="button"
@@ -251,7 +253,9 @@
         :inset="true"
         @click="clicked"
       >I'm a large button!</cdr-link>
-      <cdr-button size="large">I'm a large button!</cdr-button>
+      <cdr-button size="large">
+        I'm a large button!
+      </cdr-button>
     </div>
   </div>
 </template>

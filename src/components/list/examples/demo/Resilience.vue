@@ -19,7 +19,7 @@
         <li>foofofofofofofofofofofofofo</li>
         <li>
           bar
-          <cdr-list modifier="unordered" >
+          <cdr-list modifier="unordered">
             <li>lala lalalalal alalalalalal alalalala lalala</li>
             <li>wa</li>
           </cdr-list>
@@ -57,7 +57,6 @@
         <li>List item text</li>
       </cdr-list>
     </cdr-text>
-
 
     <cdr-text
       v-for="utility in utilities"

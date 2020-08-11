@@ -59,7 +59,6 @@
     />
     <!-- Large Size -->
 
-
     <cdr-rating
       rating="3"
       count="100"
