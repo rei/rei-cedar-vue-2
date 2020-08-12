@@ -3,6 +3,7 @@ module.exports = async (page, scenario) => {
     const hoverSelector = scenario.hoverSelector;
     await page.waitFor(hoverSelector);
     await page.hover(hoverSelector);
+    await page.waitFor(100);
     if (scenario.wait) {
       await page.waitFor(scenario.wait);
     }
