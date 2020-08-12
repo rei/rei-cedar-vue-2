@@ -99,7 +99,6 @@ module.exports = {
   },
   asyncCaptureLimit: 4,
   asyncCompareLimit: 8,
-  puppeteerOffscreenCaptureFix: true,
   engine: 'puppeteer',
   report: ['browser'],
   debug: false,

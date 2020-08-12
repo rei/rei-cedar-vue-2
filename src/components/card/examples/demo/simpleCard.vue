@@ -16,7 +16,6 @@
 <script>
 import * as Components from 'srcdir/index';
 
-
 export default {
   name: 'SimpleCard',
   components: Components,

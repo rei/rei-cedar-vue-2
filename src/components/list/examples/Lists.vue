@@ -25,7 +25,6 @@ import orderedList from 'componentsdir/list/examples/demo/Ordered';
 import bareList from 'componentsdir/list/examples/demo/Bare';
 import resilienceTest from 'componentsdir/list/examples/demo/Resilience';
 
-
 export default {
   name: 'Lists',
   components: {

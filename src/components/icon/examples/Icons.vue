@@ -114,7 +114,6 @@
 import * as Components from 'srcdir/index';
 import * as Icons from 'componentsdir/icon/index';
 
-
 export default {
   name: 'Icons',
   components: {

@@ -65,7 +65,7 @@
         Small (different) Icon
       </cdr-button>
 
-      <br/>
+      <br>
 
       <cdr-button
         size="large"
@@ -122,8 +122,7 @@
         Small (different) Icon
       </cdr-button>
 
-      <br />
-
+      <br>
 
       <cdr-button
         size="large"
@@ -135,7 +134,6 @@
         />
         Large and left Icon
       </cdr-button>
-
 
       <cdr-button
         size="large"

@@ -12,7 +12,6 @@
 
     <marginSpacing />
 
-
   </div>
 </template>
 
