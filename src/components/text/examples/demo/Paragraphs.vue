@@ -76,9 +76,9 @@
       <cdr-text
         v-for="utilityserif in utilities"
         :key="utilityserif"
-        :modifier="`utility--serif-${utilityserif}`"
+        :modifier="`utility-serif-${utilityserif}`"
       >
-        utility--serif-{{ utilityserif }}: <br> Lorem ipsum dolor sit amet, orci tristique enim condimentum pellentesque amet
+        utility-serif-{{ utilityserif }}: <br> Lorem ipsum dolor sit amet, orci tristique enim condimentum pellentesque amet
         congue. Suspendisse pulvinar. Consectetuer curabitur id, laoreet dolor sapien libero,
         donec risus magna erat pede massa montes, lacinia pede venenatis luctus, fringilla nulla
         mollis praesent viverra. Ligula ipsum. Integer sed, sem nullam nibh sed suscipit quisque
@@ -91,9 +91,9 @@
       <cdr-text
         v-for="utilityserifstrong in utilities"
         :key="utilityserifstrong"
-        :modifier="`utility--serif-strong-${utilityserifstrong}`"
+        :modifier="`utility-serif-strong-${utilityserifstrong}`"
       >
-        utility--serif-strong-{{ utilityserifstrong }}: <br> Lorem ipsum dolor sit amet, orci tristique enim condimentum pellentesque amet
+        utility-serif-strong-{{ utilityserifstrong }}: <br> Lorem ipsum dolor sit amet, orci tristique enim condimentum pellentesque amet
         congue. Suspendisse pulvinar. Consectetuer curabitur id, laoreet dolor sapien libero,
         donec risus magna erat pede massa montes, lacinia pede venenatis luctus, fringilla nulla
         mollis praesent viverra. Ligula ipsum. Integer sed, sem nullam nibh sed suscipit quisque
@@ -107,13 +107,13 @@
       <cdr-text
         v-for="utilityserifstrong in utilities"
         :key="utilityserifstrong"
-        :modifier="`utility--serif-strong-${utilityserifstrong}`"
+        :modifier="`utility-serif-strong-${utilityserifstrong}`"
       >
         <cdr-text
           modifier="italic"
           tag="em"
         >
-          cdr-text--italic wrapping utility--serif-strong-{{ utilityserifstrong }}: <br> Lorem ipsum dolor sit amet, orci tristique enim condimentum pellentesque amet
+          cdr-text--italic wrapping utility-serif-strong-{{ utilityserifstrong }}: <br> Lorem ipsum dolor sit amet, orci tristique enim condimentum pellentesque amet
           congue. Suspendisse pulvinar. Consectetuer curabitur id, laoreet dolor sapien libero,
           donec risus magna erat pede massa montes, lacinia pede venenatis luctus, fringilla nulla
           mollis praesent viverra. Ligula ipsum. Integer sed, sem nullam nibh sed suscipit quisque
@@ -153,7 +153,7 @@
         >
           also a combo
         </cdr-text>
-        in body--{{ paragraph }} copy.
+        in body-{{ paragraph }} copy.
       </cdr-text>
 
       <cdr-text modifier="eyebrow-100">
@@ -188,7 +188,7 @@
         >
           also a combo
         </cdr-text>
-        in utility--{{ putility }} copy.
+        in utility-{{ putility }} copy.
       </cdr-text>
     </div>
 
