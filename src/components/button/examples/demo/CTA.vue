@@ -23,7 +23,7 @@
         :elevated="button.elevated"
         tag="a"
       >
-        {{ button.label }} <icon-caret-right slot="icon-right" />
+        {{ button.label }}
       </cdr-button>
     </div>
   </div>
@@ -40,6 +40,44 @@ export default {
   data: function data() {
     return {
       data: [
+        {
+          title: 'Link modifier',
+          backstop: 'cdr-button--link',
+          buttons: [
+            {
+              label: 'Large Link',
+              disabled: false,
+              size: 'large',
+              space: 'cdr-mr-space-one-x',
+              fullWidth: false,
+              modifier: 'link',
+            },
+            {
+              label: 'Medium Link',
+              disabled: false,
+              size: 'medium',
+              space: 'cdr-mr-space-one-x',
+              fullWidth: false,
+              modifier: 'link',
+            },
+            {
+              label: 'Small Link',
+              disabled: false,
+              size: 'small',
+              space: 'cdr-mr-space-one-x',
+              fullWidth: false,
+              modifier: 'link',
+            },
+            {
+              label: 'Full-Width Link',
+              disabled: false,
+              size: 'medium',
+              space: 'cdr-mt-space-one-x',
+              fullWidth: true,
+              modifier: 'link',
+            },
+          ],
+        },
         {
           title: 'Dark CTA',
           backstop: 'cdr-button--cta-dark',

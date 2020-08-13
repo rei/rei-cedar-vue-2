@@ -85,37 +85,4 @@ describe('CdrLink', () => {
     wrapper.trigger('click');
     expect(spy.called).toBeTruthy();
   });
-
-  it('renders inset with default medium size', () => {
-    const wrapper = shallowMount(CdrLink, {
-      propsData: {
-        inset: true,
-      },
-    });
-    expect(wrapper.classes()).toContain('cdr-link--inset');
-    expect(wrapper.classes()).toContain('cdr-link--medium');
-  });
-
-  it('renders inset with size prop passed', () => {
-    const wrapper = shallowMount(CdrLink, {
-      propsData: {
-        inset: true,
-        size: 'large'
-      },
-    });
-    expect(wrapper.classes()).toContain('cdr-link--inset');
-    expect(wrapper.classes()).toContain('cdr-link--large');
-  });
-
-
-  it('does not add size class if inset is not present', () => {
-    const wrapper = shallowMount(CdrLink, {
-      propsData: {
-        inset: false,
-        size: 'large'
-      },
-    });
-    expect(wrapper.classes()).not.toContain('cdr-link--inset');
-    expect(wrapper.classes()).not.toContain('cdr-link--large');
-  });
 });
