@@ -27,23 +27,7 @@
 // Standard Shared Controls
 //
 //----------------------------------------------------------------------------------------------------------------------
-.radio,
-.checkbox {
-    &:extend( .label-narrow all );
-    margin: 0 0 @vertical-push ( @padding-base-horizontal + 0.425rem );
-    .form-inline & {
-        display: inline-block;
-    }
-    &.disabled {
-        color: #ccc;
-    }
-    .has-error & {
-        margin-left: 0;
-        .control-label {
-            color: @input-border-error;
-        }
-    }
-}
+
 @control-standard: {
     border: none;
     clip: rect( 0 0 0 0 );
@@ -108,7 +92,7 @@
         box-shadow: 0 0 0 0.1rem @utility-error;
         background: @alert-danger-bg;
     }
-    .disabled&,
+    &.disabled,
     fieldset[disabled] & {
         box-shadow: 0 0 0 0.1rem #ccc;
     }
@@ -119,17 +103,21 @@
 
 .radio,
 .checkbox {
+    &:extend( .label-narrow all );
     margin: 0 0 @vertical-push ( @padding-base-horizontal + 0.7rem );
     .form-inline & {
         display: inline-block;
     }
-    &.disabled,
-    fieldset[disabled] & {
-        color: #ccc;
+    .has-error & {
+        margin-left: 0;
+        .control-label {
+            color: @input-border-error;
+        }
     }
-   
+    .form-inline & {
+        display: inline-block;
+    }
 }
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
 // Standard Radio Control
@@ -171,6 +159,7 @@
             background-color: @cdr-color-background-input-default-hover;
             outline: none;
         }
+   
         > [type="radio"]:checked:hover + label:before,
         > [type="radio"]:checked:focus + label:before,
         > [type="radio"]:active + label:before {
@@ -179,6 +168,22 @@
             border: 3px solid #fff;
             background-color: @cdr-color-background-input-default-selected;
             outline: none;
+        }
+        > [type="radio"]:disabled + label:before,
+        > [type="radio"]:disabled:hover + label:before,
+        > [type="radio"]:disabled:focus + label:before,
+        > [type="radio"]:disabled:active + label:before,
+        > [type="radio"]:disabled:checked:active + label:before,
+        > [type="radio"]:disabled:checked + label:before,
+        > [type="radio"]:disabled:checked:hover + label:before,
+        > [type="radio"]:disabled:checked:focus + label:before {
+                box-shadow: 0 0 0 1px #dcd6cb !important;
+                background-color: #f9f8f6 !important;
+                cursor: not-allowed;
+        }
+
+        .has-error > [type="radio"] + label:before {
+            background-color: palevioletred;
         }
 }
 
@@ -218,6 +223,21 @@
     > [type="checkbox"]:focus + label:before {
         cursor: pointer;
         box-shadow: 0 0 0 3px @cdr-color-border-input-default-hover;
+    }
+     
+    > [type="checkbox"]:disabled + label:before,
+    > [type="checkbox"]:disabled:hover + label:before,
+    > [type="checkbox"]:disabled:focus + label:before,
+    > [type="checkbox"]:disabled:active + label:before,
+    > [type="checkbox"]:disabled:checked:active + label:before,
+    > [type="checkbox"]:disabled:checked + label:before,
+    > [type="checkbox"]:disabled:checked:hover + label:before,
+    > [type="checkbox"]:disabled:checked:focus + label:before {
+        box-shadow: inset 0 0 0 0.1rem #dcd6cb !important;
+        background-color: #f9f8f6 !important;
+        cursor: not-allowed;
+        border: none;
+        content: "";
     }
      /* Hover + Checked
       ========== */

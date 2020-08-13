@@ -40,6 +40,8 @@
     ---------- */
   /* States
     ---------- */
+  /* States
+    ---------- */
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
@@ -368,6 +370,23 @@
   outline-color: -webkit-focus-ring-color;
   outline-offset: 0;
 }
+.doc_head-navigation > li > a:active,
+.doc_head-navigation > li > a:focus,
+.doc_head-navigation ul > li > a:active,
+.doc_head-navigation ul > li > a:focus {
+  color: #0b2d60;
+}
+.doc_head-navigation > li > a:hover,
+.doc_head-navigation ul > li > a:hover {
+  color: #406eb5;
+  text-decoration: none;
+}
+.doc_head-navigation > li > a:focus,
+.doc_head-navigation ul > li > a:focus {
+  outline: 0.2rem solid Highlight;
+  outline-color: -webkit-focus-ring-color;
+  outline-offset: 0;
+}
 .doc_head-navigation > li > a:hover,
 .doc_head-navigation > li > a:active,
 .doc_head-navigation > li > a:focus,
@@ -386,6 +405,8 @@
 .bs-docs-footer .list-decoration > li > ul .nested,
 .bs-docs-footer .list-decoration > li > ul .nested,
 .bs-docs-footer .list-decoration > li > ul > li > ul .nested {
+  /* States
+    ---------- */
   /* States
     ---------- */
   /* States
