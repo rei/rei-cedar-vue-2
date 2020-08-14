@@ -40,12 +40,6 @@
     display: none;
   }
 
-  /* Prevent iOS from altering border and box-shadow */
-  @supports (-webkit-overflow-scrolling: touch) {
-    /* CSS specific to iOS devices */
-    -webkit-appearance: none;
-  }
-
   &[disabled] {
     background-color: $cdr-color-background-input-default-disabled;
     color: $cdr-color-text-input-disabled;
