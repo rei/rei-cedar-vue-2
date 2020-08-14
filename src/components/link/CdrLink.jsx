@@ -1,7 +1,6 @@
 import clsx from 'clsx';
 import modifier from '../../mixins/modifier';
 import space from '../../mixins/space';
-import size from '../../mixins/size';
 import style from './styles/CdrLink.scss';
 
 export default {
@@ -9,13 +8,8 @@ export default {
   mixins: [
     modifier,
     space,
-    size,
   ],
   props: {
-    inset: {
-      type: Boolean,
-      default: false,
-    },
     tag: {
       type: String,
       default: 'a',
@@ -51,12 +45,6 @@ export default {
     inheritColorClass() {
       return this.inheritColor ? this.style['cdr-link--inherit-color'] : '';
     },
-    insetClass() {
-      return this.size && this.inset ? this.style['cdr-link--inset'] : '';
-    },
-    insetSizeClass() {
-      return this.size && this.inset ? this.sizeClass : '';
-    },
   },
   render() {
     const Component = this.tag;
@@ -64,8 +52,6 @@ export default {
       class={clsx(
         this.style[this.baseClass],
         this.modifierClass,
-        this.insetClass,
-        this.insetSizeClass,
         this.space,
         this.inheritColorClass,
       )}

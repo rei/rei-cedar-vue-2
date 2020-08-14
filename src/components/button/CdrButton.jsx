@@ -57,7 +57,7 @@ export default {
       return 'cdr-button';
     },
     defaultClass() {
-      return this.modifyClassName(this.baseClass, 'primary');
+      return this.modifier ? undefined : this.modifyClassName(this.baseClass, 'primary');
     },
     buttonSizeClass() {
       return !this.iconOnly ? this.sizeClass : null;
@@ -93,13 +93,15 @@ export default {
   render() {
     const Component = this.tag;
     return (<Component
-      class={clsx(this.defaultClass,
+      class={clsx(
         this.style[this.baseClass],
+        this.defaultClass,
         this.modifierClass,
         this.buttonSizeClass,
         this.fullWidthClass,
         this.iconClass,
-        this.space)}
+        this.space,
+      )}
       type={this.tag === 'button' ? this.type : null}
       {...{ on: this.$listeners }}
     >
