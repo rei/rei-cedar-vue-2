@@ -126,7 +126,6 @@
           </cdr-text>
         </cdr-tab-panel>
 
-
         <cdr-tab-panel
           name="tall tab"
           id="tab-panel-auto-tall"
