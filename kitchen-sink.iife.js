@@ -17694,10 +17694,7 @@ var cedar = (function () {
     render() {
       var h = arguments[0];
       return h("div", {
-        "class": clsx(this.style[this.baseClass], this.iconClass),
-        "attrs": {
-          "role": "alert"
-        }
+        "class": clsx(this.style[this.baseClass], this.iconClass)
       }, [this.$slots.default]);
     }
 
