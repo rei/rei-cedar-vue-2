@@ -3,7 +3,6 @@
 exports[`CdrAlert matches snapshot 1`] = `
 <div
   class="cdr-alert cdr-alert--info"
-  role="alert"
 >
   <svg
     aria-hidden="true"
