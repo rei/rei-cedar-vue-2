@@ -101,6 +101,51 @@
       </cdr-tabs>
     </div>
 
+    <!-- auto -->
+    <div class="tab-demo-secton">
+      <cdr-text
+        tag="h3"
+        modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
+        class="cdr-align-text-center"
+      >
+        Auto Height Tabs
+      </cdr-text>
+      <cdr-tabs
+        height="auto"
+        :background-color="backgroundColor"
+      >
+        <cdr-tab-panel
+          name="short tab"
+          id="tab-panel-auto-short"
+          aria-labelledby="tab-auto-short"
+        >
+          <cdr-text
+            modifier="body-300"
+          >
+            short tab content
+          </cdr-text>
+        </cdr-tab-panel>
+
+        <cdr-tab-panel
+          name="tall tab"
+          id="tab-panel-auto-tall"
+          aria-labelledby="tab-auto-tall"
+        >
+          <cdr-text
+            modifier="body-300"
+          >
+            tall tab content. look at it go. wow, so much content.
+            letters, punctuation, spaces, all together in one tab.
+            what more could you ask for. in awe at this tab.
+            look at how the height of it's container adjusts to fit all of the content within it.
+            Magical, truly magical. The things you can do with CSS these days i tell ya.
+            Just imagine all the hyper text markup that can be styled with sheets that cascade!
+            The possibilities for displaying content to users of the world wide web are boundless!
+          </cdr-text>
+        </cdr-tab-panel>
+      </cdr-tabs>
+    </div>
+
     <!-- Centered -->
     <div class="tab-demo-secton">
       <cdr-text
