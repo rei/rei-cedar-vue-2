@@ -176,6 +176,7 @@ export default {
       });
     },
     handleClosed() {
+      const { documentElement } = document;
       document.removeEventListener('keydown', this.keyHandler);
 
       this.unsubscribe = onTransitionEnd(
@@ -186,8 +187,11 @@ export default {
           this.unsubscribe = null;
           this.reallyClosed = true;
 
+          // handle scroll-behavior: smooth
+          if (documentElement) documentElement.style.scrollBehavior = 'auto';
           // restore previous scroll position
           window.scrollTo(this.offset.x, this.offset.y);
+          if (documentElement) documentElement.style.scrollBehavior = '';
 
           document.removeEventListener('focusin', this.focusHandler, true);
 
