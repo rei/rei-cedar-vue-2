@@ -26951,6 +26951,8 @@ var cedar = (function () {
       handleClosed() {
         var _this4 = this;
 
+        var _document3 = document,
+            documentElement = _document3.documentElement;
         document.removeEventListener('keydown', this.keyHandler);
         this.unsubscribe = onTransitionEnd(this.$refs.wrapper, function () {
           _this4.unsubscribe();
@@ -26958,18 +26960,21 @@ var cedar = (function () {
           _this4.removeNoScroll();
 
           _this4.unsubscribe = null;
-          _this4.reallyClosed = true; // restore previous scroll position
+          _this4.reallyClosed = true; // handle scroll-behavior: smooth
+
+          if (documentElement) documentElement.style.scrollBehavior = 'auto'; // restore previous scroll position
 
           window.scrollTo(_this4.offset.x, _this4.offset.y);
+          if (documentElement) documentElement.style.scrollBehavior = '';
           document.removeEventListener('focusin', _this4.focusHandler, true);
           if (_this4.lastActive) _this4.lastActive.focus();
         }, this.animationDuration + 16);
       },
 
       addNoScroll() {
-        var _document3 = document,
-            documentElement = _document3.documentElement,
-            body = _document3.body;
+        var _document4 = document,
+            documentElement = _document4.documentElement,
+            body = _document4.body;
         var offset = {
           x: window.scrollX || (documentElement || {}).scrollLeft || (body || {}).scrollLeft || 0,
           y: window.scrollY || (documentElement || {}).scrollTop || (body || {}).scrollTop || 0
@@ -26989,9 +26994,9 @@ var cedar = (function () {
       },
 
       removeNoScroll() {
-        var _document4 = document,
-            documentElement = _document4.documentElement,
-            body = _document4.body;
+        var _document5 = document,
+            documentElement = _document5.documentElement,
+            body = _document5.body;
 
         if (body) {
           body.classList.remove(style$k['cdr-modal__noscroll']);
