@@ -32214,6 +32214,7 @@ var cedar = (function () {
                     disabled: button.disabled,
                     modifier: button.modifier,
                     elevated: button.elevated,
+                    href: "rei.com",
                     tag: "a"
                   }
                 },
