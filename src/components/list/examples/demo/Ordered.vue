@@ -60,7 +60,6 @@
       <li>List item text</li>
     </cdr-list>
 
-
     <cdr-text
       tag="h4"
       modifier="eyebrow-100"

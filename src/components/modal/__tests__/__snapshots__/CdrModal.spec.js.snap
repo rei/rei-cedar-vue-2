@@ -3,7 +3,6 @@
 exports[`CdrModal.vue default open, scrolling 1`] = `
 <div
   class="cdr-modal"
-  role="presentation"
 >
   <div
     class="cdr-modal__outerWrap"
@@ -55,7 +54,6 @@ exports[`CdrModal.vue default open, scrolling 1`] = `
                 withbackground="true"
               >
                 <iconxlg-stub
-                  class="cdr-button__icon"
                   inheritcolor="true"
                   size="medium"
                   space=""
@@ -91,7 +89,6 @@ exports[`CdrModal.vue default open, scrolling 1`] = `
 exports[`CdrModal.vue leaves optional slots empty, handleOpened 1`] = `
 <div
   class="cdr-modal"
-  role="presentation"
 >
   <div
     class="cdr-modal__outerWrap"
@@ -144,7 +141,6 @@ exports[`CdrModal.vue leaves optional slots empty, handleOpened 1`] = `
                 withbackground="true"
               >
                 <iconxlg-stub
-                  class="cdr-button__icon"
                   inheritcolor="true"
                   size="medium"
                   space=""
@@ -177,7 +173,6 @@ exports[`CdrModal.vue leaves optional slots empty, handleOpened 1`] = `
 exports[`CdrModal.vue scrolling and fullscreen snapshot 1`] = `
 <div
   class="cdr-modal"
-  role="presentation"
 >
   <div
     class="cdr-modal__outerWrap"
@@ -229,7 +224,6 @@ exports[`CdrModal.vue scrolling and fullscreen snapshot 1`] = `
                 withbackground="true"
               >
                 <iconxlg-stub
-                  class="cdr-button__icon"
                   inheritcolor="true"
                   size="medium"
                   space=""

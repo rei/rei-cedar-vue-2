@@ -98,7 +98,7 @@ describe('CdrPagination', () => {
         value: 1,
       },
     });
-    expect(wrapper.is('nav')).toBe(true);
+    expect(wrapper.element.tagName).toBe('NAV');
   });
 
   it('sorts 20 pages correctly', async () => {
@@ -108,8 +108,8 @@ describe('CdrPagination', () => {
         value: 1,
       },
     });
-    let prev = wrapper.find({ref: `prev-link-${wrapper.vm.componentID}`});
-    let next = wrapper.find({ref: `next-link-${wrapper.vm.componentID}`});
+    let prev = wrapper.findComponent({ref: `prev-link-${wrapper.vm.componentID}`});
+    let next = wrapper.findComponent({ref: `next-link-${wrapper.vm.componentID}`});
 
     expect(getPageNumArray(wrapper.vm.paginationData)).toEqual([1,2,3,4,5,'...',20]);
     expect(prev.exists()).toBeFalsy();
@@ -118,24 +118,24 @@ describe('CdrPagination', () => {
     wrapper.setProps({ value: 4 });
     await wrapper.vm.$nextTick();
     expect(getPageNumArray(wrapper.vm.paginationData)).toEqual([1,2,3,4,5,'...',20]);
-    prev = wrapper.find({ ref: `prev-link-${wrapper.vm.componentID}` });
-    next = wrapper.find({ ref: `next-link-${wrapper.vm.componentID}` });
+    prev = wrapper.findComponent({ ref: `prev-link-${wrapper.vm.componentID}` });
+    next = wrapper.findComponent({ ref: `next-link-${wrapper.vm.componentID}` });
     expect(prev.exists()).toBeTruthy();
     expect(next.exists()).toBeTruthy();
 
     wrapper.setProps({ value: 20 });
     await wrapper.vm.$nextTick();
     expect(getPageNumArray(wrapper.vm.paginationData)).toEqual([1,'...',16,17,18,19,20]);
-    prev = wrapper.find({ ref: `prev-link-${wrapper.vm.componentID}` });
-    next = wrapper.find({ ref: `next-link-${wrapper.vm.componentID}` });
+    prev = wrapper.findComponent({ ref: `prev-link-${wrapper.vm.componentID}` });
+    next = wrapper.findComponent({ ref: `next-link-${wrapper.vm.componentID}` });
     expect(prev.exists()).toBeTruthy();
     expect(next.exists()).toBeFalsy();
 
     wrapper.setProps({ value: 17 });
     await wrapper.vm.$nextTick();
     expect(getPageNumArray(wrapper.vm.paginationData)).toEqual([1,'...',16,17,18,19,20]);
-    prev = wrapper.find({ ref: `prev-link-${wrapper.vm.componentID}` });
-    next = wrapper.find({ ref: `next-link-${wrapper.vm.componentID}` });
+    prev = wrapper.findComponent({ ref: `prev-link-${wrapper.vm.componentID}` });
+    next = wrapper.findComponent({ ref: `next-link-${wrapper.vm.componentID}` });
     expect(prev.exists()).toBeTruthy();
     expect(next.exists()).toBeTruthy();
   });
@@ -147,8 +147,8 @@ describe('CdrPagination', () => {
         value: 1,
       },
     });
-    let prev = wrapper.find({ref: `prev-link-${wrapper.vm.componentID}`});
-    let next = wrapper.find({ref: `next-link-${wrapper.vm.componentID}`});
+    let prev = wrapper.findComponent({ref: `prev-link-${wrapper.vm.componentID}`});
+    let next = wrapper.findComponent({ref: `next-link-${wrapper.vm.componentID}`});
     expect(getPageNumArray(wrapper.vm.paginationData)).toEqual([1,2,3,4,5]);
     expect(prev.exists()).toBeFalsy();
     expect(next.exists()).toBeTruthy();
@@ -156,16 +156,16 @@ describe('CdrPagination', () => {
     wrapper.setProps({ value: 4 });
     await wrapper.vm.$nextTick();
     expect(getPageNumArray(wrapper.vm.paginationData)).toEqual([1,2,3,4,5]);
-    prev = wrapper.find({ ref: `prev-link-${wrapper.vm.componentID}` });
-    next = wrapper.find({ ref: `next-link-${wrapper.vm.componentID}` });
+    prev = wrapper.findComponent({ ref: `prev-link-${wrapper.vm.componentID}` });
+    next = wrapper.findComponent({ ref: `next-link-${wrapper.vm.componentID}` });
     expect(prev.exists()).toBeTruthy();
     expect(next.exists()).toBeTruthy();
 
     wrapper.setProps({ value: 5 });
     await wrapper.vm.$nextTick();
     expect(getPageNumArray(wrapper.vm.paginationData)).toEqual([1,2,3,4,5]);
-    prev = wrapper.find({ ref: `prev-link-${wrapper.vm.componentID}` });
-    next = wrapper.find({ ref: `next-link-${wrapper.vm.componentID}` });
+    prev = wrapper.findComponent({ ref: `prev-link-${wrapper.vm.componentID}` });
+    next = wrapper.findComponent({ ref: `next-link-${wrapper.vm.componentID}` });
     expect(prev.exists()).toBeTruthy();
     expect(next.exists()).toBeFalsy();
   });
@@ -179,8 +179,8 @@ describe('CdrPagination', () => {
     });
 
     expect(getPageNumArray(wrapper.vm.paginationData)).toEqual([4, 5, 6]);
-    let prev = wrapper.find({ ref: `prev-link-${wrapper.vm.componentID}` });
-    let next = wrapper.find({ ref: `next-link-${wrapper.vm.componentID}` });
+    let prev = wrapper.findComponent({ ref: `prev-link-${wrapper.vm.componentID}` });
+    let next = wrapper.findComponent({ ref: `next-link-${wrapper.vm.componentID}` });
     expect(prev.exists()).toBeTruthy();
     expect(next.exists()).toBeTruthy();
   });
@@ -194,8 +194,8 @@ describe('CdrPagination', () => {
     });
 
     expect(getPageNumArray(wrapper.vm.paginationData)).toEqual([1, 2]);
-    const prev = wrapper.find({ ref: `prev-link-${wrapper.vm.componentID}` });
-    const next = wrapper.find({ ref: `next-link-${wrapper.vm.componentID}` });
+    const prev = wrapper.findComponent({ ref: `prev-link-${wrapper.vm.componentID}` });
+    const next = wrapper.findComponent({ ref: `next-link-${wrapper.vm.componentID}` });
     const disabledPrev = wrapper.find('li');
     expect(disabledPrev.text()).toBe('Prev');
     expect(prev.exists()).toBeFalsy();
@@ -211,8 +211,8 @@ describe('CdrPagination', () => {
     });
 
     expect(getPageNumArray(wrapper.vm.paginationData)).toEqual([9, 10]);
-    const prev = wrapper.find({ ref: `prev-link-${wrapper.vm.componentID}` });
-    const next = wrapper.find({ ref: `next-link-${wrapper.vm.componentID}` });
+    const prev = wrapper.findComponent({ ref: `prev-link-${wrapper.vm.componentID}` });
+    const next = wrapper.findComponent({ ref: `next-link-${wrapper.vm.componentID}` });
     const allLinks = wrapper.findAll('li');
     const disabledNext = allLinks.at(allLinks.length-1);
     expect(disabledNext.text()).toBe('Next');
@@ -233,8 +233,8 @@ describe('CdrPagination', () => {
         }
       }
     });
-    let next = wrapper.find({ ref: `next-link-${wrapper.vm.componentID}` });
-    let prev = wrapper.find({ ref: `prev-link-${wrapper.vm.componentID}` });
+    let next = wrapper.findComponent({ ref: `next-link-${wrapper.vm.componentID}` });
+    let prev = wrapper.findComponent({ ref: `prev-link-${wrapper.vm.componentID}` });
 
     // next clicks
     next.trigger('click'); // 5 -> 6
@@ -247,7 +247,7 @@ describe('CdrPagination', () => {
     expect(wrapper.emitted().navigate[1][0]).toBe(7);
     expect(wrapper.emitted().navigate[1][1]).toBe('?page=7');
     expect(wrapper.emitted().navigate[1][2] instanceof Event).toBeTruthy();
-    
+
     // previous clicks
     prev.trigger('click'); // 7 -> 6
     await wrapper.vm.$nextTick();
@@ -259,7 +259,7 @@ describe('CdrPagination', () => {
     expect(wrapper.emitted().navigate[3][0]).toBe(5);
     expect(wrapper.emitted().navigate[3][1]).toBe('?page=5');
     expect(wrapper.emitted().navigate[3][2] instanceof Event).toBeTruthy();
-    
+
     // individual links
     let link = wrapper.findAll('ol > li > a').at(1);
     link.trigger('click'); // 5 -> 1
@@ -277,9 +277,9 @@ describe('CdrPagination', () => {
     link2.trigger('click'); // 2 -> 2
     await wrapper.vm.$nextTick();
     expect(wrapper.emitted().navigate[6]).toBeUndefined();
-    
+
     // use select
-    let options = wrapper.find({ ref: `select-${wrapper.vm.componentID}` }).findAll('option')
+    let options = wrapper.findComponent({ ref: `select-${wrapper.vm.componentID}` }).findAll('option')
     options.at(2).setSelected(); // 2 -> 3
     await wrapper.vm.$nextTick();
     expect(wrapper.emitted().navigate[6][0]).toBe(3);
@@ -319,7 +319,7 @@ describe('CdrPagination', () => {
     expect(wrapper.emitted().navigate[1][0]).toBe(7);
     expect(wrapper.emitted().navigate[1][1]).toBe('?page=7');
     expect(wrapper.emitted().navigate[1][2] instanceof Event).toBeTruthy();
-    
+
     // previous clicks
     prev.click(); // 7 -> 6
     await wrapper.vm.$nextTick();
@@ -351,7 +351,7 @@ describe('CdrPagination', () => {
     expect(wrapper.emitted().navigate[6]).toBeUndefined();
 
     // use select
-    let select = wrapper.find({ ref: `select-${wrapper.vm.componentID}` })
+    let select = wrapper.findComponent({ ref: `select-${wrapper.vm.componentID}` })
     let options = select.findAll('option')
     options.at(2).setSelected();
     await wrapper.vm.$nextTick();
@@ -396,7 +396,7 @@ describe('CdrPagination', () => {
     expect(wrapper.emitted().navigate[1][0]).toBe(7);
     expect(wrapper.emitted().navigate[1][1]).toBe('?page=7');
     expect(wrapper.emitted().navigate[1][2] instanceof Event).toBeTruthy();
-    
+
     // previous clicks
     prev.click(); // 7 -> 6
     await wrapper.vm.$nextTick();
@@ -428,7 +428,7 @@ describe('CdrPagination', () => {
     expect(wrapper.emitted().navigate[6]).toBeUndefined();
 
     // use select
-    let options = wrapper.find({ ref: `select-${wrapper.vm.componentID}` }).findAll('option')
+    let options = wrapper.findComponent({ ref: `select-${wrapper.vm.componentID}` }).findAll('option')
     options.at(2).setSelected();
     await wrapper.vm.$nextTick();
     expect(wrapper.emitted().navigate[6][0]).toBe(3);
@@ -444,12 +444,12 @@ describe('CdrPagination', () => {
       },
     });
 
-    let option = wrapper.find({ ref: `select-${wrapper.vm.componentID}` }).findAll('option').at(0);
+    let option = wrapper.findComponent({ ref: `select-${wrapper.vm.componentID}` }).findAll('option').at(0);
     expect(option.text()).toBe('Page 1');
 
     wrapper.setProps({ totalPages: 20 });
     await wrapper.vm.$nextTick();
-    option = wrapper.find({ ref: `select-${wrapper.vm.componentID}` }).findAll('option').at(0);
+    option = wrapper.findComponent({ ref: `select-${wrapper.vm.componentID}` }).findAll('option').at(0);
     expect(option.text()).toBe('Page 1 of 20');
   });
 

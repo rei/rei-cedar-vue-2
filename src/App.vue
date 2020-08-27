@@ -7,7 +7,6 @@
 </template>
 
 <script>
-// import examples from 'componentsdir/examples';
 
 export default {
   name: 'App',

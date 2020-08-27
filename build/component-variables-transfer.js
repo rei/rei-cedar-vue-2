@@ -10,9 +10,11 @@ const SUPPORTED_COMPONENTS = [
   /* global vars */
   'options.vars.scss',
   /* component vars */
+  'CdrAlert.vars.scss',
   'CdrButton.vars.scss',
   'CdrCard.vars.scss',
   'CdrBreadcrumb.vars.scss',
+  'CdrFormGroup.vars.scss',
   'CdrLink.vars.scss',
   'form-label.vars.scss',
   'CdrInput.vars.scss',

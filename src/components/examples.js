@@ -1,54 +1,55 @@
 import accordion from 'componentsdir/accordion/examples/Accordion';
+import alert from 'componentsdir/alert/examples/Alert';
 import breadcrumb from 'componentsdir/breadcrumb/examples/Breadcrumb';
-import buttons from 'componentsdir/button/examples/Buttons';
-import captionExample from 'componentsdir/caption/examples/Caption';
-import cards from 'componentsdir/card/examples/Cards';
-import checkboxes from 'componentsdir/checkbox/examples/checkboxes';
+import button from 'componentsdir/button/examples/Buttons';
+import caption from 'componentsdir/caption/examples/Caption';
+import card from 'componentsdir/card/examples/Cards';
+import checkbox from 'componentsdir/checkbox/examples/checkboxes';
 import cta from 'componentsdir/cta/examples/Cta';
 import dataTable from 'componentsdir/dataTable/examples/DataTable';
+import formGroup from 'componentsdir/formGroup/examples/FormGroup';
 import grid from 'componentsdir/grid/examples/Grid';
-import icons from 'componentsdir/icon/examples/Icons';
-import images from 'componentsdir/image/examples/Images';
-import inputs from 'componentsdir/input/examples/Inputs';
-import links from 'componentsdir/link/examples/Links';
-import lists from 'componentsdir/list/examples/Lists';
-import modals from 'componentsdir/modal/examples/Modal';
+import icon from 'componentsdir/icon/examples/Icons';
+import image from 'componentsdir/image/examples/Images';
+import input from 'componentsdir/input/examples/Inputs';
+import link from 'componentsdir/link/examples/Links';
+import list from 'componentsdir/list/examples/Lists';
+import modal from 'componentsdir/modal/examples/Modal';
 import pagination from 'componentsdir/pagination/examples/Pagination';
-import quoteExample from 'componentsdir/quote/examples/Quote';
-import radios from 'componentsdir/radio/examples/Radios';
-import ratings from 'componentsdir/rating/examples/Ratings';
-import selects from 'componentsdir/select/examples/Selects';
-import tables from 'componentsdir/table/examples/Table';
+import quote from 'componentsdir/quote/examples/Quote';
+import radio from 'componentsdir/radio/examples/Radios';
+import rating from 'componentsdir/rating/examples/Ratings';
+import select from 'componentsdir/select/examples/Selects';
+import table from 'componentsdir/table/examples/Table';
 import tabs from 'componentsdir/tabs/examples/Tabs';
-import texts from 'componentsdir/text/examples/Text';
+import text from 'componentsdir/text/examples/Text';
 import utilities from 'componentsdir/Utilities/Utilities';
 
-// TODO: are we keeping this?
-// import searchbox from 'compositionsdir/search/examples/searchbox';
-
 export default {
+  alert,
   accordion,
   breadcrumb,
-  buttons,
-  captionExample,
-  cards,
-  checkboxes,
+  button,
+  caption,
+  card,
+  checkbox,
   cta,
   dataTable,
+  formGroup,
   grid,
-  icons,
-  images,
-  inputs,
-  links,
-  lists,
-  modals,
+  icon,
+  image,
+  input,
+  link,
+  list,
+  modal,
   pagination,
-  quoteExample,
-  radios,
-  ratings,
-  selects,
-  tables,
+  quote,
+  radio,
+  rating,
+  select,
+  table,
   tabs,
-  texts,
+  text,
   utilities,
 };

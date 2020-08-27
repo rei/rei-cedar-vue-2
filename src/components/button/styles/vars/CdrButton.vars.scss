@@ -40,6 +40,7 @@
   text-align: left;
   text-decoration: none;
   text-transform: none;
+  vertical-align: middle;
 
   transition: box-shadow $cdr-duration-2-x $cdr-timing-function-ease, background-color $cdr-duration-2-x $cdr-timing-function-ease, color $cdr-duration-2-x $cdr-timing-function-ease;
 
@@ -64,7 +65,6 @@
 
 @mixin cdr-button-base-icon-mixin() {
   align-self: center;
-  margin-right: $cdr-space-quarter-x;
   fill: inherit;
 }
 
@@ -129,6 +129,140 @@
     box-shadow: inset 0 0 0 1px $cdr-color-border-button-default-disabled;
     color: $cdr-color-text-button-secondary-disabled;
     fill: $cdr-color-text-button-secondary-disabled;
+  }
+}
+
+@mixin cdr-button-dark-mixin() {
+  background-color: $cdr-color-background-button-dark-rest;
+  box-shadow: inset 0 0 0 1px $cdr-color-border-button-dark-rest;
+  color: $cdr-color-text-button-dark;
+  fill: $cdr-color-text-button-dark;
+
+  &:hover,
+  &:focus {
+    color: $cdr-color-text-button-dark-hover;
+    fill: $cdr-color-text-button-dark-hover;
+    background-color: $cdr-color-background-button-dark-hover;
+    box-shadow: inset 0 0 0 3px $cdr-color-border-button-dark-hover, $cdr-prominence-raised;
+  }
+
+  &:active {
+    color: $cdr-color-text-button-dark-active;
+    fill: $cdr-color-text-button-dark-active;
+    background-color: $cdr-color-background-button-dark-active;
+    box-shadow: inset 0 0 0 3px $cdr-color-border-button-dark-active,  inset 0 0 0 5px $cdr-color-border-button-dark-active-inset;
+  }
+
+  &[disabled] {
+    background-color: $cdr-color-background-button-default-disabled;
+    box-shadow: inset 0 0 0 1px $cdr-color-border-button-default-disabled;
+    color: $cdr-color-text-button-dark-disabled;
+    fill: $cdr-color-text-button-dark-disabled;
+  }
+}
+
+@mixin cdr-button-sale-mixin() {
+  background-color: $cdr-color-background-button-sale-rest;
+  box-shadow: inset 0 0 0 1px $cdr-color-border-button-sale-rest;
+  color: $cdr-color-text-button-sale;
+  fill: $cdr-color-text-button-sale;
+
+
+  &:hover,
+  &:focus {
+    color: $cdr-color-text-button-sale-hover;
+    fill: $cdr-color-text-button-sale-hover;
+    background-color: $cdr-color-background-button-sale-hover;
+    box-shadow: inset 0 0 0 3px $cdr-color-border-button-sale-hover, $cdr-prominence-raised;
+  }
+
+  &:active {
+    color: $cdr-color-text-button-sale-active;
+    fill: $cdr-color-text-button-sale-active;
+    background-color: $cdr-color-background-button-sale-active;
+    box-shadow: inset 0 0 0 3px $cdr-color-border-button-sale-active,  inset 0 0 0 5px $cdr-color-border-button-sale-active-inset;
+  }
+
+  &[disabled] {
+    background-color: $cdr-color-background-button-default-disabled;
+    box-shadow: inset 0 0 0 1px $cdr-color-border-button-default-disabled;
+    color: $cdr-color-text-button-sale-disabled;
+    fill: $cdr-color-text-button-sale-disabled;
+  }
+}
+
+@mixin cdr-button-link-mixin() {
+  color: $cdr-color-text-link-rest;
+  fill: $cdr-color-text-link-rest;
+  background-color: transparent;
+  text-decoration: underline;
+
+  &:active,
+  &:focus {
+    color: $cdr-color-text-link-active;
+  }
+
+  &:hover {
+    color: $cdr-color-text-link-hover;
+    text-decoration: none;
+  }
+
+  &:focus {
+    outline: $default-outline;
+    outline-color: -webkit-focus-ring-color;
+    outline-offset: 0;
+  }
+}
+
+@mixin cdr-button-secondary-elevated-mixin() {
+  box-shadow: inset 0 0 0 1px $cdr-color-border-button-secondary-rest, $cdr-prominence-elevated;
+
+  &:hover,
+  &:focus {
+    box-shadow: inset 0 0 0 3px $cdr-color-border-button-secondary-hover, $cdr-prominence-floating;
+  }
+
+  &:active {
+    box-shadow: inset 0 0 0 3px $cdr-color-border-button-secondary-active, inset 0 0 0 5px $cdr-color-border-button-secondary-active-inset, $cdr-prominence-raised;
+  }
+}
+
+@mixin cdr-button-primary-elevated-mixin() {
+  box-shadow: inset 0 0 0 1px $cdr-color-border-button-primary-rest, $cdr-prominence-elevated;
+
+  &:hover,
+  &:focus {
+    box-shadow: inset 0 0 0 3px $cdr-color-border-button-primary-hover, $cdr-prominence-floating;
+  }
+
+  &:active {
+    box-shadow: inset 0 0 0 3px $cdr-color-border-button-primary-active, inset 0 0 0 5px $cdr-color-border-button-primary-active-inset, $cdr-prominence-raised;
+  }
+}
+
+@mixin cdr-button-dark-elevated-mixin() {
+  box-shadow: inset 0 0 0 1px $cdr-color-border-button-dark-rest, $cdr-prominence-elevated;
+
+  &:hover,
+  &:focus {
+    box-shadow: inset 0 0 0 3px $cdr-color-border-button-dark-hover, $cdr-prominence-floating;
+  }
+
+  &:active {
+    box-shadow: inset 0 0 0 3px $cdr-color-border-button-dark-active, inset 0 0 0 5px $cdr-color-border-button-dark-active-inset, $cdr-prominence-raised;
+  }
+}
+
+@mixin cdr-button-sale-elevated-mixin() {
+  box-shadow: inset 0 0 0 1px $cdr-color-border-button-sale-rest, $cdr-prominence-elevated;
+
+  &:hover,
+  &:focus {
+    box-shadow: inset 0 0 0 3px $cdr-color-border-button-sale-hover, $cdr-prominence-floating;
+  }
+
+  &:active {
+    box-shadow: inset 0 0 0 3px $cdr-color-border-button-sale-active, inset 0 0 0 5px $cdr-color-border-button-sale-active-inset, $cdr-prominence-raised;
   }
 }
 
@@ -209,10 +343,26 @@
   @include cdr-button-base-text-mixin-small;
   padding: $cdr-space-inset-three-quarter-x-squish;
   width: auto;
+
+  &.cdr-button--has-icon-left {
+    @include cdr-button-has-icon-left-small-mixin;
+  }
+
+  &.cdr-button--has-icon-right {
+    @include cdr-button-has-icon-right-small-mixin;
+  }
+
+  & svg {
+    @include cdr-button-icon-small-mixin;
+  }
 }
 
-@mixin cdr-button-has-icon-small-mixin {
+@mixin cdr-button-has-icon-left-small-mixin {
   padding-left: calc(#{$cdr-space-three-quarter-x} - #{$cdr-space-quarter-x});
+}
+
+@mixin cdr-button-has-icon-right-small-mixin {
+  padding-right: calc(#{$cdr-space-three-quarter-x} - #{$cdr-space-quarter-x});
 }
 
 @mixin cdr-button-icon-small-mixin {
@@ -225,10 +375,26 @@
   @include cdr-button-base-text-mixin-medium;
   padding: $cdr-space-inset-one-x-squish;
   width: auto;
+
+  &.cdr-button--has-icon-left {
+    @include cdr-button-has-icon-left-medium-mixin;
+  }
+
+  &.cdr-button--has-icon-right {
+    @include cdr-button-has-icon-right-medium-mixin;
+  }
+
+  & svg {
+    @include cdr-button-icon-medium-mixin;
+  }
 }
 
-@mixin cdr-button-has-icon-medium-mixin {
+@mixin cdr-button-has-icon-left-medium-mixin {
   padding-left: calc(#{$cdr-space-one-x} - #{$cdr-space-quarter-x});
+}
+
+@mixin cdr-button-has-icon-right-medium-mixin {
+  padding-right: calc(#{$cdr-space-one-x} - #{$cdr-space-quarter-x});
 }
 
 @mixin cdr-button-icon-medium-mixin {
@@ -241,10 +407,26 @@
   @include cdr-button-base-text-mixin-large;
   padding: $cdr-space-inset-one-and-a-half-x-squish;
   width: auto;
+
+  &.cdr-button--has-icon-left {
+    @include cdr-button-has-icon-left-large-mixin;
+  }
+
+  &.cdr-button--has-icon-right {
+    @include cdr-button-has-icon-right-large-mixin;
+  }
+
+  & svg {
+    @include cdr-button-icon-large-mixin;
+  }
 }
 
-@mixin cdr-button-has-icon-large-mixin {
+@mixin cdr-button-has-icon-left-large-mixin {
   padding-left: calc(#{$cdr-space-one-and-a-half-x} - #{$cdr-space-quarter-x});
+}
+
+@mixin cdr-button-has-icon-right-large-mixin {
+  padding-right: calc(#{$cdr-space-one-and-a-half-x} - #{$cdr-space-quarter-x});
 }
 
 @mixin cdr-button-icon-large-mixin {

@@ -194,7 +194,7 @@
     <hr class="icon-hr">
 
     <cdr-text class="cdr-my-space-two-x">
-       Multiple Select with size
+      Multiple Select with size
     </cdr-text>
 
     <cdr-select
@@ -228,7 +228,6 @@
     </cdr-select>
     <cdr-text>Selected Values: {{ multiple }}</cdr-text>
     <hr class="icon-hr">
-
 
     <cdr-text class="cdr-my-space-two-x">
       Multiple Select

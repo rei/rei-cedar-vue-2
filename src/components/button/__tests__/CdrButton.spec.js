@@ -69,7 +69,7 @@ describe('CdrButton', () => {
     expect(wrapper.classes()).toContain('cdr-button--with-background');
   });
 
-  it('adds icon class when slot is used', () => {
+  it('adds icon-left class when icon slot is used', () => {
     const wrapper = shallowMount(CdrButton, {
       slots: {
         default: [ 'default slot for text' ],
@@ -77,7 +77,31 @@ describe('CdrButton', () => {
       },
     });
 
-    expect(wrapper.classes()).toContain('cdr-button--has-icon');
+    expect(wrapper.classes()).toContain('cdr-button--has-icon-left');
+  });
+
+
+  it('adds icon left class when slot is used', () => {
+    const wrapper = shallowMount(CdrButton, {
+      slots: {
+        default: [ 'default slot for text' ],
+        'icon-left': '<div />',
+      },
+    });
+
+    expect(wrapper.classes()).toContain('cdr-button--has-icon-left');
+  });
+
+
+  it('adds icon right class when slot is used', () => {
+    const wrapper = shallowMount(CdrButton, {
+      slots: {
+        default: [ 'default slot for text' ],
+        'icon-right': '<div />',
+      },
+    });
+
+    expect(wrapper.classes()).toContain('cdr-button--has-icon-right');
   });
 
   it('renders a link', () => {
@@ -86,6 +110,6 @@ describe('CdrButton', () => {
         tag: 'a',
       },
     });
-    expect(wrapper.is('a')).toBe(true);
+    expect(wrapper.element.tagName).toBe('A');
   });
 });

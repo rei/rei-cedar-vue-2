@@ -1,7 +1,6 @@
 @import '../../../css/settings/index.scss';
 
 .cdr-tab-panel {
-  position: absolute;
   width: 100%;
   height: 100%;
   padding-top: $cdr-space-eighth-x;
@@ -12,7 +11,7 @@
     transform: translateX(0);
     opacity: 1;
   }
-  
+
   to {
     transform: translateX(-10px);
     opacity: 0;
@@ -87,4 +86,3 @@
   }
   @include cdr-tab-panel-animation;
 }
-

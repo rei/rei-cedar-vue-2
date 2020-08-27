@@ -1,33 +1,15 @@
 import App from 'srcdir/App';
-import Accordions from 'componentsdir/accordion/examples/Accordion';
-import Breadcrumb from 'componentsdir/breadcrumb/examples/Breadcrumb';
-import Buttons from 'componentsdir/button/examples/Buttons';
+import Examples from 'componentsdir/examples';
+
+import KitchenSink from 'srcdir/dev/KitchenSink';
+
+// Extra paths for backstop.
+//  These are smaller sections of larger demo pages to make screenshotting more reliable
 import DefaultButtons from 'componentsdir/button/examples/demo/Default';
 import FullWidthButtons from 'componentsdir/button/examples/demo/FullWidth';
 import IconButtons from 'componentsdir/button/examples/demo/Icons';
 import SecondaryButtons from 'componentsdir/button/examples/demo/Secondary';
-import Captions from 'componentsdir/caption/examples/Caption';
-import Cards from 'componentsdir/card/examples/Cards';
-import CheckBoxes from 'componentsdir/checkbox/examples/checkboxes';
-import Cta from 'componentsdir/cta/examples/Cta';
-import DataTables from 'componentsdir/dataTable/examples/DataTable';
-import Grids from 'componentsdir/grid/examples/Grid';
-import Icons from 'componentsdir/icon/examples/Icons';
-import Images from 'componentsdir/image/examples/Images';
-import Input from 'componentsdir/input/examples/Inputs';
-import KitchenSink from 'srcdir/dev/KitchenSink';
-import Links from 'componentsdir/link/examples/Links';
-import Lists from 'componentsdir/list/examples/Lists';
-import Modals from 'componentsdir/modal/examples/Modal';
-import Pagination from 'componentsdir/pagination/examples/Pagination';
-import Quotes from 'componentsdir/quote/examples/Quote';
-import Radios from 'componentsdir/radio/examples/Radios';
-import Ratings from 'componentsdir/rating/examples/Ratings';
-import Selects from 'componentsdir/select/examples/Selects';
-import Tables from 'componentsdir/table/examples/Table';
-import Tabs from 'componentsdir/tabs/examples/Tabs';
-import Texts from 'componentsdir/text/examples/Text';
-import Utilities from 'componentsdir/Utilities/Utilities';
+
 import InsetUtilities from 'componentsdir/Utilities/demos/inset';
 import PaddingSpacingUtilities from 'componentsdir/Utilities/demos/paddingSpacing';
 import MarginSpacingUtilities from 'componentsdir/Utilities/demos/marginSpacing';
@@ -38,30 +20,33 @@ import VisibilityUtilities from 'componentsdir/Utilities/demos/visibility';
 const routes = [
   { path: '/', name: ' ', component: App },
   { path: '/kitchen-sink', name: 'KitchenSink', component: KitchenSink },
-  { path: '/utilities', name: 'Utilities', component: Utilities },
-  { path: '/accordion', name: 'Accordion', component: Accordions },
-  { path: '/breadcrumbs', name: 'Breadcrumb', component: Breadcrumb },
-  { path: '/buttons', name: 'Buttons', component: Buttons },
-  { path: '/captions', name: 'Captions', component: Captions },
-  { path: '/cards', name: 'Cards', component: Cards },
-  { path: '/checkboxes', name: 'CheckBoxes', component: CheckBoxes },
-  { path: '/cta', name: 'CTA', component: Cta },
-  { path: '/dataTables', name: 'Data Tables', component: DataTables },
-  { path: '/grids', name: 'Grids', component: Grids },
-  { path: '/icons', name: 'Icons', component: Icons },
-  { path: '/images', name: 'Images', component: Images },
-  { path: '/inputs', name: 'Input', component: Input },
-  { path: '/links', name: 'Links', component: Links },
-  { path: '/lists', name: 'Lists', component: Lists },
-  { path: '/modals', name: 'Modals', component: Modals },
-  { path: '/pagination', name: 'Pagination', component: Pagination },
-  { path: '/quotes', name: 'Quotes', component: Quotes },
-  { path: '/radios', name: 'Radios', component: Radios },
-  { path: '/ratings', name: 'Ratings', component: Ratings },
-  { path: '/selects', name: 'Selects', component: Selects },
-  { path: '/tables', name: 'Tables', component: Tables },
-  { path: '/tabs', name: 'Tabs', component: Tabs },
-  { path: '/texts', name: 'Texts', component: Texts },
+  { path: '/utilities', name: 'Utilities', component: Examples.utilities },
+  { path: '/accordion', name: 'Accordion', component: Examples.accordion },
+  { path: '/alert', name: 'Alert', component: Examples.alert },
+  { path: '/breadcrumbs', name: 'Breadcrumb', component: Examples.breadcrumb },
+  { path: '/buttons', name: 'Buttons', component: Examples.button },
+  { path: '/captions', name: 'Captions', component: Examples.caption },
+  { path: '/cards', name: 'Cards', component: Examples.card },
+  { path: '/checkboxes', name: 'CheckBoxes', component: Examples.checkbox },
+  { path: '/cta', name: 'CTA', component: Examples.cta },
+  { path: '/dataTables', name: 'Data Tables', component: Examples.dataTable },
+  { path: '/formGroups', name: 'Form Groups', component: Examples.formGroup },
+  { path: '/grids', name: 'Grids', component: Examples.grid },
+  { path: '/icons', name: 'Icons', component: Examples.icon },
+  { path: '/images', name: 'Images', component: Examples.image },
+  { path: '/inputs', name: 'Input', component: Examples.input },
+  { path: '/links', name: 'Links', component: Examples.link },
+  { path: '/lists', name: 'Lists', component: Examples.list },
+  { path: '/modals', name: 'Modals', component: Examples.modal },
+  { path: '/pagination', name: 'Pagination', component: Examples.pagination },
+  { path: '/quotes', name: 'Quotes', component: Examples.quote },
+  { path: '/radios', name: 'Radios', component: Examples.radio },
+  { path: '/ratings', name: 'Ratings', component: Examples.rating },
+  { path: '/selects', name: 'Selects', component: Examples.select },
+  { path: '/tables', name: 'Tables', component: Examples.table },
+  { path: '/tabs', name: 'Tabs', component: Examples.tabs },
+  { path: '/texts', name: 'Texts', component: Examples.text },
+
   { path: '/default-buttons', component: DefaultButtons },
   { path: '/secondary-buttons', component: SecondaryButtons },
   { path: '/full-width-buttons', component: FullWidthButtons },

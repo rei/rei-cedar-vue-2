@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CdrFormGroup renders correctly 1`] = `
+<fieldset
+  class="cdr-form-group"
+>
+  <legend />
+</fieldset>
+`;

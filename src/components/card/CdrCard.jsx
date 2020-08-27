@@ -2,16 +2,16 @@ import style from './styles/CdrCard.scss';
 
 export default {
   name: 'CdrCard',
-  data() {
-    return {
-      style,
-    };
-  },
   props: {
     tag: {
       type: String,
       default: 'article',
     },
+  },
+  data() {
+    return {
+      style,
+    };
   },
   computed: {
     baseClass() {

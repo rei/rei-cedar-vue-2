@@ -26,6 +26,13 @@ export default {
       validator: (value) => (['button', 'submit', 'reset'].indexOf(value) >= 0) || false,
     },
     /**
+     * Increases box-shadow around button to enhance contrast against background
+     */
+    elevated: {
+      type: Boolean,
+      default: false,
+    },
+    /**
      * Renders an icon-only button. Default slot is disabled. Overrides size and responsiveSize props.
      */
     iconOnly: {
@@ -50,7 +57,7 @@ export default {
       return 'cdr-button';
     },
     defaultClass() {
-      return this.modifyClassName(this.baseClass, 'primary');
+      return this.modifier ? undefined : this.modifyClassName(this.baseClass, 'primary');
     },
     buttonSizeClass() {
       return !this.iconOnly ? this.sizeClass : null;
@@ -58,9 +65,18 @@ export default {
     iconClass() {
       const classes = [];
 
-      if (this.$slots.icon && this.$slots.default) {
-        /* only add class for buttons with text + icon */
-        classes.push(this.modifyClassName(this.baseClass, 'has-icon'));
+      if ((this.$slots['icon-left'] || this.$slots.icon) && this.$slots.default) {
+        /* only add class for buttons with text + icon on left */
+        classes.push(this.modifyClassName(this.baseClass, 'has-icon-left'));
+      }
+
+      if (this.$slots['icon-right'] && this.$slots.default) {
+        /* only add class for buttons with text + icon on right */
+        classes.push(this.modifyClassName(this.baseClass, 'has-icon-right'));
+      }
+
+      if (this.elevated) {
+        classes.push(this.modifyClassName(this.baseClass, 'elevated'));
       }
 
       if (this.iconOnly) {
@@ -77,18 +93,21 @@ export default {
   render() {
     const Component = this.tag;
     return (<Component
-      class={clsx(this.defaultClass,
+      class={clsx(
         this.style[this.baseClass],
+        this.defaultClass,
         this.modifierClass,
         this.buttonSizeClass,
         this.fullWidthClass,
         this.iconClass,
-        this.space)}
+        this.space,
+      )}
       type={this.tag === 'button' ? this.type : null}
       {...{ on: this.$listeners }}
     >
-      {this.$slots.icon}
+      {this.$slots['icon-left'] || this.$slots.icon}
       {this.$slots.default}
+      {this.$slots['icon-right']}
     </Component>);
   },
 };

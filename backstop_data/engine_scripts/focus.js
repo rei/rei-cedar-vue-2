@@ -3,6 +3,7 @@ module.exports = async (page, scenario) => {
     const focusSelector = scenario.focusSelector;
     await page.waitFor(focusSelector);
     await page.focus(focusSelector);
+    await page.waitFor(100);
     if (scenario.wait) {
       await page.waitFor(scenario.wait);
     }

@@ -1,0 +1,18 @@
+@mixin cdr-form-group-base-mixin() {
+  @include cdr-text-heading-sans-300;
+  border: none;
+
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-block-start: 0;
+  padding-inline-start: 0;
+  padding-inline-end: 0;
+  padding-block-end: 0;
+
+  margin-bottom: $cdr-space-two-x;
+
+  legend {
+    padding-inline-start: 0;
+    margin-bottom: $cdr-space-one-x;
+  }
+}

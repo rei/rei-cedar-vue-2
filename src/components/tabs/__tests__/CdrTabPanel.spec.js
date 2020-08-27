@@ -92,9 +92,11 @@ describe('CdrTabPanel', () => {
     expect(wrapper.vm.animationDirection).toBe(null);
   });
 
-  it('handleUpArrowNav', async () => {
-    const spyUpdateUnderline = jest.fn();
-    const spySetFocusToActiveTabHeader = jest.fn();
+  it('handleUpArrowNav', async (done) => {
+    const elem = document.createElement('div')
+    if (document.body) {
+      document.body.appendChild(elem)
+    }
     const wrapper = mount(CdrTabs, {
       stubs: {
         'cdr-tab-panel': CdrTabPanel,
@@ -102,15 +104,19 @@ describe('CdrTabPanel', () => {
       slots: {
         default: ['<cdr-tab-panel name="tab1" id="tab1" aria-labelledby="tab1" />', '<cdr-tab-panel name="tab2" id="tab2" aria-labelledby="tab2" />']
       },
-      methods: {
-        updateUnderline: spyUpdateUnderline,
-        setFocusToActiveTabHeader: spySetFocusToActiveTabHeader,
-      },
-      attachToDocument: true,
+      attachTo: elem,
     });
+
+    const spyUpdateUnderline = spyOn(wrapper.vm, 'updateUnderline');
+    const spySetFocusToActiveTabHeader = spyOn(wrapper.vm, 'setFocusToActiveTabHeader');
     await wrapper.vm.$nextTick();
 
-    wrapper.find(CdrTabPanel).trigger('keydown.up');
+    wrapper.findComponent(CdrTabPanel).trigger('keydown.up');
     expect(spySetFocusToActiveTabHeader).toHaveBeenCalled();
+    setTimeout(() => {
+      expect(spyUpdateUnderline).toHaveBeenCalled();
+      wrapper.destroy();
+      done();
+    }, 550)
   })
 });

@@ -75,7 +75,6 @@
           </td>
         </tr>
 
-
         <tr>
           <td>.cdr-display-hidden</td>
           <td>
@@ -120,7 +119,6 @@
             </div>
           </td>
         </tr>
-
 
         <tr>
           <td>.cdr-display-block</td>
@@ -302,7 +300,6 @@
           </td>
         </tr>
 
-
         <tr>
           <td>.cdr-display-inline-flex</td>
           <td>
@@ -347,7 +344,6 @@
             </div>
           </td>
         </tr>
-
 
         <tr>
           <td>.cdr-display-sr-only</td>
