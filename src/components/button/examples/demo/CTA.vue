@@ -21,6 +21,7 @@
         :disabled="button.disabled"
         :modifier="button.modifier"
         :elevated="button.elevated"
+        href="rei.com"
         tag="a"
       >
         {{ button.label }}
