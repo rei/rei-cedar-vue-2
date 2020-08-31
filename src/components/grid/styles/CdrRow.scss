@@ -247,10 +247,208 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
     }
   }
 
+
+  /* ROW EXTRA SMALL
+  ========================================================================== */
+
+  @include cdr-xs-mq-up {
+    /* Row small elements
+    ========================================================================== */
+    &_row1\@xs {
+      & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
+        flex-basis: $rowPct1;
+        width: $rowPct1;
+        max-width: $rowPct1;
+      }
+    }
+
+    &_row2\@xs {
+      & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
+        flex-basis: $rowPct2;
+        width: $rowPct2;
+        max-width: $rowPct2;
+      }
+    }
+
+    &_row3\@xs {
+      & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
+        flex-basis: $rowPct3;
+        width: $rowPct3;
+        max-width: $rowPct3;
+      }
+    }
+
+    &_row4\@xs {
+      & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
+        flex-basis: $rowPct4;
+        width: $rowPct4;
+        max-width: $rowPct4;
+      }
+    }
+
+    &_row5\@xs {
+      & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
+        flex-basis: $rowPct5;
+        width: $rowPct5;
+        max-width: $rowPct5;
+      }
+    }
+
+    &_row6\@xs {
+      & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
+        flex-basis: $rowPct6;
+        width: $rowPct6;
+        max-width: $rowPct6;
+      }
+    }
+
+    &_row7\@xs {
+      & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
+        flex-basis: $rowPct7;
+        width: $rowPct7;
+        max-width: $rowPct7;
+      }
+    }
+
+    &_row8\@xs {
+      & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
+        flex-basis: $rowPct8;
+        width: $rowPct8;
+        max-width: $rowPct8;
+      }
+    }
+
+    &_row9\@xs {
+      & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
+        flex-basis: $rowPct9;
+        width: $rowPct9;
+        max-width: $rowPct9;
+      }
+    }
+
+    &_row10\@xs {
+      & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
+        flex-basis: $rowPct10;
+        width: $rowPct10;
+        max-width: $rowPct10;
+      }
+    }
+
+    &_row11\@xs {
+      & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
+        flex-basis: $rowPct11;
+        width: $rowPct11;
+        max-width: $rowPct11;
+      }
+    }
+
+    &_row12\@xs {
+      & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
+        flex-basis: $rowPct12;
+        width: $rowPct12;
+        max-width: $rowPct12;
+      }
+    }
+
+    &_rowauto\@xs {
+      & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
+        flex: 0 0 auto;
+        width: auto;
+        max-width: none;
+      }
+    }
+
+    /* Row small modifiers
+    ========================================================================== */
+    &--gutter-none\@xs {
+      margin: 0 !important;
+
+      & > .cdr-col {
+        padding: 0 !important;
+      }
+    }
+
+    &--gutter-xxs\@xs {
+      margin-top: calc(#{$cdr-space-eighth-x} * -1) !important;
+      margin-left: calc(#{$cdr-space-eighth-x} * -1) !important;
+
+      & > .cdr-col {
+        padding-top: $cdr-space-eighth-x !important;
+        padding-left: $cdr-space-eighth-x !important;
+      }
+    }
+
+    &--nowrap\@xs {
+      flex-wrap: nowrap;
+      overflow: auto;
+
+      & > .cdr-col {
+        flex-shrink: 0;
+        flex-grow: 0;
+      }
+    }
+
+    &--wrap\@xs {
+      flex-wrap: wrap;
+
+      & > .cdr-col {
+        flex-shrink: 1;
+        flex-grow: 1;
+      }
+    }
+
+    &--left\@xs {
+      justify-content: flex-start;
+      align-self: flex-start;
+    }
+
+    &--center\@xs {
+      justify-content: center;
+    }
+
+    &--right\@xs {
+      justify-content: flex-end;
+      align-self: flex-end;
+    }
+
+    &--stretch\@xs {
+      align-items: stretch;
+    }
+
+    &--top\@xs {
+      align-items: flex-start;
+    }
+
+    &--middle\@xs {
+      align-items: center;
+    }
+
+    &--bottom\@xs {
+      align-items: flex-end;
+    }
+
+    &--vertical\@xs {
+      flex-direction: column;
+
+      & > .cdr-col,
+      & > .cdr-col[class*="cdr-col_span"] {
+        flex-basis: auto !important;
+      }
+    }
+
+    &--between\@xs {
+      justify-content: space-between;
+    }
+
+    &--around\@xs {
+      justify-content: space-around;
+    }
+  }
+
   /* ROW SMALL
   ========================================================================== */
 
-  @include cdr-sm-mq {
+  @include cdr-sm-mq-up {
     margin-top: calc(#{$rowGutter-sm} * -1);
     margin-left: calc(#{$rowGutter-sm} * -1);
 
@@ -450,7 +648,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
   /* ROW MEDIUM
   ========================================================================== */
 
-  @include cdr-md-mq {
+  @include cdr-md-mq-up {
     margin-top: calc(#{$rowGutter-md} * -1);
     margin-left: calc(#{$rowGutter-md} * -1);
 
@@ -652,7 +850,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
   /* ROW LARGE
   ========================================================================== */
 
-  @include cdr-lg-mq {
+  @include cdr-lg-mq-up {
     margin-top: calc(#{$rowGutter-lg} * -1);
     margin-left: calc(#{$rowGutter-lg} * -1);
 
