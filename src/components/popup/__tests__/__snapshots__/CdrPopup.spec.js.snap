@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CdrPopup matches snapshot 1`] = `
+<div
+  class="cdr-popup cdr-popup--up"
+>
+  <div
+    class="cdr-popup__content"
+  />
+  <div
+    class="cdr-popup__arrow"
+  />
+</div>
+`;

@@ -118,7 +118,7 @@ export default {
     handleOpened() {
       this.pos = this.position;
       this.corner = undefined;
-      
+
       if (this.autoPosition) {
         this.$nextTick(() => {
           this.calculatePlacement();

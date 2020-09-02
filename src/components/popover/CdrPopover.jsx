@@ -5,14 +5,13 @@ import propValidator from '../../utils/propValidator';
 import IconXSm from '../icon/comps/x-sm';
 import CdrButton from '../button/CdrButton';
 
-
 export default {
   name: 'CdrPopover',
-  inheritAttrs: false,
   components: {
     IconXSm,
     CdrButton,
   },
+  inheritAttrs: false,
   props: {
     opened: {
       type: Boolean,

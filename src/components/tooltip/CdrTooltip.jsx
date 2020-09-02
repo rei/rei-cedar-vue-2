@@ -28,28 +28,8 @@ export default {
       open: false,
       openHandler: undefined,
       closeHandler: undefined,
+      timeout: undefined,
     };
-  },
-  methods: {
-    openTooltip() {
-      this.open = true
-    },
-    closeTooltip() {
-      this.open = false
-    },
-    addHandlers() {
-      this.openHandler = this.openTooltip.bind(this);
-      this.closeHandler = this.closeTooltip.bind(this);
-
-      const triggerElement = this.$refs.trigger.children[0];
-      if (triggerElement) {
-        triggerElement.addEventListener('mouseover', this.openHandler);
-        triggerElement.addEventListener('focus', this.openHandler);
-
-        triggerElement.addEventListener('mouseleave', this.closeHandler);
-        triggerElement.addEventListener('blur', this.closeHandler);
-      }
-    },
   },
   mounted() {
     this.addHandlers();
@@ -66,8 +46,37 @@ export default {
     //   triggerElement.removeEventListener('blur', this.closeHandler);
     // }
   },
+  methods: {
+    openTooltip() {
+      if (this.timeout) clearTimeout(this.timeout);
+      this.open = true;
+    },
+    closeTooltip() {
+      this.timeout = setTimeout(() => {
+        this.open = false;
+      }, 250);
+    },
+    addHandlers() {
+      this.openHandler = this.openTooltip.bind(this);
+      this.closeHandler = this.closeTooltip.bind(this);
+
+      const triggerElement = this.$refs.trigger.children[0];
+      const popupElement = this.$refs.popup.$el;
+      if (triggerElement) {
+        triggerElement.addEventListener('mouseover', this.openHandler);
+        triggerElement.addEventListener('focus', this.openHandler);
+
+        triggerElement.addEventListener('mouseleave', this.closeHandler);
+        triggerElement.addEventListener('blur', this.closeHandler);
+
+        popupElement.addEventListener('mouseover', this.openHandler);
+        popupElement.addEventListener('mouseleave', this.closeHandler);
+      }
+    },
+  },
   render() {
-    // TODO: aria-opened/expanded logic for tooltip?
+    // TODO: aria-hidden/opened/expanded logic for tooltip?
+    // aria-live when content gets displayed?
     return (
       <div
         class={this.style['cdr-tooltip--wrapper']}
@@ -78,6 +87,7 @@ export default {
         <cdr-popup
           class={this.style['cdr-tooltip']}
           role="tooltip"
+          ref="popup"
           position={ this.position }
           autoPosition={ this.autoPosition }
           opened={ this.open }

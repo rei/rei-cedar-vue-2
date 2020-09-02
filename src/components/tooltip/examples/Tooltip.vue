@@ -57,8 +57,14 @@
 
     <div style="clear: both" />
 
-    <cdr-tooltip :position="position" :autoPosition="autoPos" :class="containerClass">
-      <cdr-button slot="trigger">tooltip</cdr-button>
+    <cdr-tooltip
+      :position="position"
+      :auto-position="autoPos"
+      :class="containerClass"
+    >
+      <cdr-button slot="trigger">
+        tooltip
+      </cdr-button>
       <div>
         oh hey
       </div>

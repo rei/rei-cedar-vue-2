@@ -55,7 +55,6 @@
       >right</cdr-radio>
     </cdr-form-group>
 
-
     <cdr-form-group label="trigger type">
       <cdr-radio
         name="type"
