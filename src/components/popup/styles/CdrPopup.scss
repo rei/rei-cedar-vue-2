@@ -1,72 +1,110 @@
 @import '../../../css/settings/index.scss';
 
+$animation-transform: 10px;
 
-//
-// @keyframes :global(exit-left) {
-//   from {
-//     transform: translateX(0);
-//     opacity: 1;
-//   }
-//
-//   to {
-//     transform: translateX(-10px);
-//     opacity: 0;
-//   }
-// }
-//
-// @keyframes :global(exit-right) {
-//   from {
-//     transform: translateX(0);
-//     opacity: 1;
-//   }
-//
-//   to {
-//     transform: translateX(10px);
-//     opacity: 0;
-//   }
-// }
-//
-// @keyframes :global(enter-left) {
-//   from {
-//     transform: translateX(-10px);
-//     opacity: 0;
-//   }
-//
-//   to {
-//     transform: translateX(0);
-//     opacity: 1;
-//   }
-// }
-//
-// @keyframes :global(enter-right) {
-//   from {
-//     transform: translateX(10px);
-//     opacity: 0;
-//   }
-//
-//   to {
-//     transform: translateX(0);
-//     opacity: 1;
-//   }
-// }
-//
-// @mixin cdr-popup-animation {
-//   animation-duration: $cdr-duration-2-x;
-//   animation-timing-function: $cdr-timing-function-ease-out;
-// }
+@keyframes :global(popup-exit-down) {
+  from {
+    // transform: translateY(0);
+    opacity: 1;
+  }
+
+  to {
+    // transform: translateY(-#{$animation-transform});
+    opacity: 0;
+  }
+}
+@keyframes :global(popup-enter-down) {
+  from {
+    // transform: translateY(-#{$animation-transform});
+    opacity: 0;
+  }
+
+  to {
+    // transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes :global(popup-exit-up) {
+  from {
+    // transform: translateY(0);
+    opacity: 1;
+  }
+
+  to {
+    // transform: translateY($animation-transform);
+    opacity: 0;
+  }
+}
+@keyframes :global(popup-enter-up) {
+  from {
+    // transform: translateY($animation-transform);
+    opacity: 0;
+  }
+
+  to {
+    // transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes :global(popup-exit-left) {
+  from {
+    // transform: translateX(0);
+    opacity: 1;
+  }
+
+  to {
+    // transform: translateX(-#{$animation-transform});
+    opacity: 0;
+  }
+}
+@keyframes :global(popup-enter-left) {
+  from {
+    // transform: translateX(-#{$animation-transform});
+    opacity: 0;
+  }
+
+  to {
+    // transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes :global(popup-exit-right) {
+  from {
+    // transform: translateX(0);
+    opacity: 1;
+  }
+
+  to {
+    // transform: translateX($animation-transform);
+    opacity: 0;
+  }
+}
+@keyframes :global(popup-enter-right) {
+  from {
+    // transform: translateX($animation-transform);
+    opacity: 0;
+  }
+
+  to {
+    // transform: translateX(0);
+    opacity: 1;
+  }
+}
 
 $arrow-size: 1rem;
 $arrow-spacing: #{$arrow-size + $cdr-space-quarter-x + 0.1rem};
 $content-spacing: calc(100% + #{$arrow-size} + #{$cdr-space-quarter-x});
 
 .cdr-popup {
-
   display: none;
   opacity: 0;
-  transition: opacity 5s;
-  // TODO: keyframes
+  animation-duration: $cdr-duration-2-x;
+  animation-timing-function: $cdr-timing-function-ease-out;
 
-  &--open {
+  &--open, &--exit {
     opacity: 1;
     display: block;
   }
@@ -104,6 +142,18 @@ $content-spacing: calc(100% + #{$arrow-size} + #{$cdr-space-quarter-x});
   }
 
   &--down {
+    &.cdr-popup--open.cdr-popup {
+      :global {
+        animation-name: popup-enter-down;
+      }
+    }
+
+    &.cdr-popup--exit.cdr-popup {
+      :global {
+        animation-name: popup-exit-down;
+      }
+    }
+
     .cdr-popup__content {
       top: $content-spacing;
     }
@@ -114,6 +164,18 @@ $content-spacing: calc(100% + #{$arrow-size} + #{$cdr-space-quarter-x});
   }
 
   &--up {
+    &.cdr-popup--open.cdr-popup {
+      :global {
+        animation-name: popup-enter-up;
+      }
+    }
+
+    &.cdr-popup--exit.cdr-popup {
+      :global {
+        animation-name: popup-exit-up;
+      }
+    }
+
     .cdr-popup__content {
       bottom: $content-spacing;
     }
@@ -143,6 +205,18 @@ $content-spacing: calc(100% + #{$arrow-size} + #{$cdr-space-quarter-x});
   }
 
   &--left {
+    &.cdr-popup--open.cdr-popup {
+      :global {
+        animation-name: popup-enter-left;
+      }
+    }
+
+    &.cdr-popup--exit.cdr-popup {
+      :global {
+        animation-name: popup-exit-left;
+      }
+    }
+
     .cdr-popup__content {
       right: $content-spacing;
     }
@@ -153,6 +227,18 @@ $content-spacing: calc(100% + #{$arrow-size} + #{$cdr-space-quarter-x});
   }
 
   &--right {
+    &.cdr-popup--open.cdr-popup {
+      :global {
+        animation-name: popup-enter-right;
+      }
+    }
+
+    &.cdr-popup--exit.cdr-popup {
+      :global {
+        animation-name: popup-exit-right;
+      }
+    }
+
     .cdr-popup__content {
       left: $content-spacing;
     }

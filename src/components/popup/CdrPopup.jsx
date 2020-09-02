@@ -31,6 +31,7 @@ export default {
       clickHandler: undefined,
       pos: this.position,
       corner: undefined,
+      exiting: false,
     };
   },
   computed: {
@@ -42,6 +43,9 @@ export default {
     },
     openClass() {
       return this.opened ? this.style['cdr-popup--open'] : undefined;
+    },
+    exitingClass() {
+      return this.exiting ? this.style['cdr-popup--exit'] : undefined;
     },
   },
   watch: {
@@ -128,6 +132,13 @@ export default {
     handleClosed() {
       document.removeEventListener('keydown', this.keyHandler);
       document.removeEventListener('click', this.clickHandler);
+      this.exiting = true;
+      // onTransitionEnd?
+      setTimeout(() => {
+        this.exiting = false;
+      }, 200); // $cdr-duration-2;
+      // add animation exit class
+      // remove it after animation
     },
   },
   render() {
@@ -135,6 +146,7 @@ export default {
       <div class={clsx(
         this.style['cdr-popup'],
         this.openClass,
+        this.exitingClass,
         this.positionClass,
         this.cornerClass,
       )}

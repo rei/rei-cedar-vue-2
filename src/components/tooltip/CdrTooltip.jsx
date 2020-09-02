@@ -8,7 +8,6 @@ export default {
     CdrPopup,
   },
   props: {
-    // TODO: popup mixin?
     position: {
       type: String,
       required: false,
