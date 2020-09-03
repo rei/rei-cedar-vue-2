@@ -1,0 +1,25 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// REI-CEDAR TABS VARIABLES
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// COLOR PALETTES
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+@tab-padding:                                    @cdr-space-inset-one-x-squish;
+@tab-font-size:                                  16px;
+@tab-line-height:                                22px;
+@tab-font-family:                                @cdr-font-family-sans;
+@tab-font-style:                                 normal;
+
+@tab-active-link-hover-bg:                   @body-bg;
+@tab-active-text:                            #426c90;
+@tab-active-link-hover-border-color:         @core-architectural-2;
+@tab-border-color:                           #c5c5c5;
+@tab-link-hover-border-color:                #000;
+@tab-active-stroke:                          #426c90;
+// justified
+@nav-tabs-justified-link-border-color:            @core-architectural-2;
+@nav-tabs-justified-active-link-border-color:     @body-bg;

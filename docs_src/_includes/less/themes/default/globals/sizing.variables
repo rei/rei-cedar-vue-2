@@ -1,0 +1,49 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Sizing
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/**
+  * REI Cedar inset variables:
+  * This file provides a contract between
+  * design tokens and cedar non-changing variables.
+  *
+  * Insets are used to add spacing to all of our elements,
+  * it is critical that all elements use these variables for
+  * their internal spacing values.
+  *
+  * TOC:
+  * Inset options
+  ** extra extra small
+  ** extra small
+  ** small
+  ** medium
+  ** large
+  ** extra large
+*/
+
+/* spacing modifiers */
+@size-modifier--stretch: 1.5;
+@size-modifier--squish: 0.5;
+
+/**
+  * inset options in input
+*/
+
+/* small */
+@sizing-size-sm-squish: calc(@sizing-size-sm * @size-modifier--squish);
+@sizing-size-sm-stretch: calc(@sizing-size-sm * @size-modifier--stretch);
+
+@inset-sm: @sizing-size-sm;
+@inset-sm--squish: @sizing-size-sm-squish @sizing-size-sm;
+@inset-sm--stretch: @sizing-size-sm-stretch @sizing-size-sm;
+
+/* medium@ */
+@sizing-size-md-squish: calc(@sizing-size-md * @size-modifier--squish);
+@sizing-size-md-stretch: calc(@sizing-size-md * @size-modifier--stretch);
+
+@inset-md: @sizing-size-md;
+@inset-md--squish: @sizing-size-md-squish @sizing-size-md;
+@inset-md--stretch: @sizing-size-md-stretch @sizing-size-md;
+
+
+
+

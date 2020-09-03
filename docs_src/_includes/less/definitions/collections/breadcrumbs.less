@@ -1,0 +1,24 @@
+.breadcrumb {
+.cdr-breadcrumb-base-text-mixin();
+    &:extend( .list-inline all );
+    .cdr-text-utility-sans-200;
+    > li {
+        color: @cdr-color-text-secondary;
+        padding-right: 0;
+        &:not(:last-of-type):after {
+            color: @cdr-color-text-secondary;
+            content: " / ";
+            display: inline-block;
+            margin-left: 0.4rem;
+        }
+        > a {
+            .cdr-breadcrumb-item-linked-mixin();
+           &:hover,
+           &:active,
+           &:focus {
+               text-decoration: underline;
+           }
+        }
+    }
+}
+

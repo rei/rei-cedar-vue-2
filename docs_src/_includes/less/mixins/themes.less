@@ -1,0 +1,71 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Themes
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//  Overlay Combinations
+//
+// accepts three parameters
+// @background-color: used to set the background and border color.
+// @border: Setting the border color here is done to allow child elements which use the border property to inherit the
+// parent value. Defaults to @background-color.
+// @color: used to set foreground color.
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+.bg-variant( @background-color; @color: @text-color; @border-color: @background-color; ) {
+    background-color: @background-color;
+    border-color: @border-color;
+    color: @color;
+}
+// Core background fill and color helpers
+
+//Light
+//----------------------------------------------------------------------------------------------------------------------
+@background-white-ruleset: {
+  .bg-variant( @cdr-color-background-primary );
+};//#fff
+
+@background-dusty-white-ruleset: {
+  .bg-variant( @cdr-color-background-secondary);
+};// @dusty-white;
+
+
+//Dark
+//----------------------------------------------------------------------------------------------------------------------
+@background-grey-4-ruleset: {
+  .bg-variant( @core-architectural-2; #f9f8f6; );
+};//#222
+@background-black-ruleset: {
+    .bg-variant( @core-architectural-1; @core-architectural-5; );
+};
+
+
+// Explore background fill and color helpers
+@bg-explore-1-ruleset: {
+  .bg-variant( @explore-architectural-1; );
+};
+@bg-explore-2-ruleset: {
+  .bg-variant( @explore-architectural-2; @core-architectural-5 );
+};
+
+// outlet background fill and color helpers
+// Off Price background fill and color helpers
+@bg-brand-danger-background-dark-ruleset: {
+  .bg-variant( @brand-danger; @core-architectural-5; );
+};
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//  Color variations
+//----------------------------------------------------------------------------------------------------------------------
+[data-theme="light-10"]{
+   @background-white-ruleset();
+}
+[data-theme="medium-10"]{
+    @background-dusty-white-ruleset();
+}
+[data-theme="dark-10"]{
+    @background-grey-4-ruleset();
+}
+[data-theme="dark-20"]{
+    @background-black-ruleset();
+}

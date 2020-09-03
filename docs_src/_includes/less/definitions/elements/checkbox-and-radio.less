@@ -1,0 +1,346 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//            THEME
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+@type    : 'element';
+@element : 'checkbox-and-radio';
+
+@import (multiple) '../../theme.config';
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Checkbox and Radio
+//
+// TOC:
+//
+// :Standard Shared Controls
+// :Standard Radio Control
+// :Standard Checkbox Control
+// :Toggle Controls
+// :Toggle Controls --expand collapse
+// :Toggle Controls --rating
+// :Toggle Controls --remove
+// :Toggle Controls --sort
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Standard Shared Controls
+//
+//----------------------------------------------------------------------------------------------------------------------
+
+@control-standard: {
+    border: none;
+    clip: rect( 0 0 0 0 );
+    height: 0.1rem;
+    margin: -0.1rem;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 0.1rem;
+    &[ disabled ] {
+        + label {
+            color: #ccc;
+            cursor: @cursor-disabled;
+            &:before {
+                box-shadow: 0 0 0 0.1rem #ccc;
+            }
+        }
+    }
+};
+@control-standard-label: {
+    cursor: pointer;
+    display: block;
+    margin-bottom: 0;
+    min-height: 1.6rem;
+    padding-left: 0;
+};
+@control-standard-element-and-label: {
+    display: block;
+    color: inherit;
+    position: relative;
+    .required & {
+        left: 3.5rem;
+        position: relative;
+        &:after {
+            left: -1.4rem;
+            position: absolute;
+        }
+        &:before {
+            left: -3.5rem;
+            position: absolute;
+            top: 0.5rem
+        }
+    }
+};
+@control-standard-element-and-label-before: {
+    content: '';
+    border-radius: @cdr-radius-softer;
+    background-color: @cdr-color-background-input-default;
+    box-shadow: inset 0 0 0 1px @cdr-color-border-input-default;
+    transition: box-shadow @cdr-duration-2-x @cdr-timing-function-ease;
+    display: inline-block;
+    height: 1.6rem;
+    left: -( @padding-base-horizontal + 0.425rem );
+    margin-right: @padding-large-horizontal/ 2 ;
+    position: absolute;
+    top: 0.1rem;
+    width: 1.6rem;
+    /* Prevent iOS from altering border and box-shadow */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    .has-error & {
+        box-shadow: 0 0 0 0.1rem @utility-error;
+        background: @alert-danger-bg;
+    }
+    &.disabled,
+    fieldset[disabled] & {
+        box-shadow: 0 0 0 0.1rem #ccc;
+    }
+};
+@control-standard-element-and-label-empty-before: {
+    margin-right: 0;
+};
+
+.radio,
+.checkbox {
+    &:extend( .label-narrow all );
+    margin: 0 0 @vertical-push ( @padding-base-horizontal + 0.7rem );
+    .form-inline & {
+        display: inline-block;
+    }
+    .has-error & {
+        margin-left: 0;
+        .control-label {
+            color: @input-border-error;
+        }
+    }
+    .form-inline & {
+        display: inline-block;
+    }
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Standard Radio Control
+//
+//----------------------------------------------------------------------------------------------------------------------
+.radio {
+    > [type="radio"] {
+        @control-standard();
+    }
+    > label {
+        @control-standard-label();
+    }
+    > [type="radio"] + label {
+        @control-standard-element-and-label();
+        &:before {
+            @control-standard-element-and-label-before();
+            width: 13px;
+            height: 13px;
+            border-radius: 1.6rem;
+            box-shadow: 0 0 0 0.125rem @cdr-color-border-input-default;
+            vertical-align: -0.2rem;
+        }
+        &:empty:before {
+            @control-standard-element-and-label-empty-before();
+        }
+    }
+    > [type="radio"]:checked + label:before {
+        box-shadow: 0 0 0 1px @cdr-color-background-input-default-selected;
+        border: 3px solid #fff;
+        // border-color: ;
+        background-color: @cdr-color-background-input-default-selected;
+        outline: none;
+    }
+        > [type="radio"]:hover + label:before,
+        > [type="radio"]:focus + label:before {
+            cursor: pointer;
+            box-shadow: 0 0 0 3px @cdr-color-background-input-default-selected;
+            border: 3px solid #fff;
+            background-color: @cdr-color-background-input-default-hover;
+            outline: none;
+        }
+   
+        > [type="radio"]:checked:hover + label:before,
+        > [type="radio"]:checked:focus + label:before,
+        > [type="radio"]:active + label:before {
+            cursor: pointer;
+            box-shadow: 0 0 0 3px @cdr-color-background-input-default-selected;
+            border: 3px solid #fff;
+            background-color: @cdr-color-background-input-default-selected;
+            outline: none;
+        }
+        > [type="radio"]:disabled + label:before,
+        > [type="radio"]:disabled:hover + label:before,
+        > [type="radio"]:disabled:focus + label:before,
+        > [type="radio"]:disabled:active + label:before,
+        > [type="radio"]:disabled:checked:active + label:before,
+        > [type="radio"]:disabled:checked + label:before,
+        > [type="radio"]:disabled:checked:hover + label:before,
+        > [type="radio"]:disabled:checked:focus + label:before {
+                box-shadow: 0 0 0 1px #dcd6cb !important;
+                background-color: #f9f8f6 !important;
+                cursor: not-allowed;
+        }
+
+        .has-error > [type="radio"] + label:before {
+            background-color: palevioletred;
+        }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Standard Checkbox Control
+//
+//----------------------------------------------------------------------------------------------------------------------
+.checkbox {
+    > [type="checkbox"] {
+        @control-standard();
+    }
+    > label {
+        @control-standard-label();
+    }
+    > [type="checkbox"] + label {
+        @control-standard-element-and-label();
+        &:before {
+            @control-standard-element-and-label-before();
+            box-shadow: 0 0 0 0.1rem @cdr-color-border-input-default;
+        }
+        &:empty:before {
+            @control-standard-element-and-label-empty-before();
+        }
+    }
+    > [type="checkbox"]:checked + label:before {
+        font-family: 'rei-icons';
+        font-size: 11px;
+        box-shadow: inset 0 0 0 1px @cdr-color-border-input-default-selected;
+        background-color: @cdr-color-background-input-default-selected;
+        content: @icon-var-rei-check;
+        color: #fff;
+        outline: none;
+        padding-left: 3px !important;
+    }
+    > [type="checkbox"]:hover + label:before,
+    > [type="checkbox"]:focus + label:before {
+        cursor: pointer;
+        box-shadow: 0 0 0 3px @cdr-color-border-input-default-hover;
+    }
+     
+    > [type="checkbox"]:disabled + label:before,
+    > [type="checkbox"]:disabled:hover + label:before,
+    > [type="checkbox"]:disabled:focus + label:before,
+    > [type="checkbox"]:disabled:active + label:before,
+    > [type="checkbox"]:disabled:checked:active + label:before,
+    > [type="checkbox"]:disabled:checked + label:before,
+    > [type="checkbox"]:disabled:checked:hover + label:before,
+    > [type="checkbox"]:disabled:checked:focus + label:before {
+        box-shadow: inset 0 0 0 0.1rem #dcd6cb !important;
+        background-color: #f9f8f6 !important;
+        cursor: not-allowed;
+        border: none;
+        content: "";
+    }
+     /* Hover + Checked
+      ========== */
+      > [type="checkbox"]:checked:hover + label:before{
+        box-shadow: 0 0 0 3px @cdr-color-border-input-default-selected-hover;
+        background-color: @cdr-color-background-input-default-selected-hover;
+        content: @icon-var-rei-check;
+        color: @cdr-color-background-input-default-selected;
+      }
+
+    [type="checkbox"]:active + label:before {
+        outline: none;
+        border: 0.1rem solid @core-action-2;
+        box-shadow: inset 0 0 0 1px @cdr-color-border-input-default-active;
+        background-color: @cdr-color-background-input-default-selected;
+        content: @icon-var-rei-check;
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Toggle Controls
+//
+//----------------------------------------------------------------------------------------------------------------------
+@toggle-ruleset: {
+    > [ type="checkbox" ] + label:before,
+    > [ type="radio" ] + label:before {
+        border: none;
+        box-shadow: none;
+        height: 1.8rem;
+        width: 1.8rem;
+        font-family: 'rei-icons';
+        font-size: 14px !important;
+        line-height: 1;
+        background: none;
+        padding-left: 0 !important;
+    }
+    
+     > [type="checkbox"]:hover + label:before,
+    > [type="radio"]:hover + label:before,
+    > [type="checkbox"]:focus + label:before,
+    > [type="radio"]:focus + label:before {
+        outline: none;
+        cursor: pointer;
+        box-shadow: none;
+        background: none !important;
+    }
+    > [type="checkbox"]:active + label:before,
+    > [type="radio"]:active + label:before {
+        border: none;
+    }
+    > [ type="checkbox" ]:checked + label:before,
+    > [ type="radio" ]:checked + label:before {
+        background: none;
+        box-shadow: none;
+        padding-left: 0 !important;
+    }
+};
+
+// expand collapse
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+@toggle-expand-collapse-ruleset: {
+> [ type="checkbox" ] + label:before,
+> [ type="radio" ] + label:before,
+> [type="checkbox"]:hover + label:before,
+> [type="checkbox"]:focus + label:before,
+> [type="radio"]:hover + label:before,
+> [type="radio"]:focus + label:before,
+> [type="checkbox"]:active + label:before,
+> [type="radio"]:active + label:before  {
+    outline: none;
+    cursor: pointer;
+    box-shadow: none;
+    background: none !important;
+    border: none;
+    content: @icon-var-rei-expand;
+    color: #928b80 !important;
+     
+}
+
+> [ type="checkbox" ]:checked + label:before,
+> [ type="radio" ]:checked + label:before,
+> [type="radio"]:checked:hover + label:before,
+> [type="checkbox"]:checked:hover + label:before,
+> [ type="checkbox" ]:checked:focus + label:before,
+> [ type="radio" ]:checked:focus + label:before,
+> [type="checkbox"]:checked:active + label:before,
+> [type="radio"]:checked:active + label:before  {
+    content: @icon-var-rei-collapse;
+    color: #928b80 !important;
+    outline: none;
+    cursor: pointer;
+    box-shadow: none;
+    background: none !important;
+    border: none;
+}
+
+};.toggle-expand-collapse {
+      @toggle-ruleset();
+      @toggle-expand-collapse-ruleset();
+  }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//            OVERRIDES
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+.loadUIOverrides();

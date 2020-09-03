@@ -1,0 +1,1704 @@
+.cdr-text-utility-100() {
+  font-family: Graphik, "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -0.08px;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+}
+
+.cdr-text-utility-200() {
+  font-family: Graphik, "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -0.16px;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+}
+
+.cdr-text-utility-300() {
+  font-family: Graphik, "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -0.16px;
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+}
+
+.cdr-text-utility-400() {
+  font-family: Graphik, "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -0.16px;
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+}
+
+.cdr-text-utility-500() {
+  font-family: Graphik, "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -0.32px;
+  font-size: 2rem;
+  line-height: 2.6rem;
+}
+
+.cdr-text-utility-600() {
+  font-family: Graphik, "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -0.32px;
+  font-size: 2.4rem;
+  line-height: 3rem;
+}
+
+.cdr-text-utility-700() {
+  font-family: Graphik, "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -0.32px;
+  font-size: 2.8rem;
+  line-height: 3.6rem;
+}
+
+.cdr-text-utility-800() {
+  font-family: Graphik, "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -0.64px;
+  font-size: 3.2rem;
+  line-height: 4rem;
+}
+
+.cdr-text-utility-strong-100() {
+  font-family: Graphik, "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -0.08px;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+}
+
+.cdr-text-utility-strong-200() {
+  font-family: Graphik, "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -0.08px;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+}
+
+.cdr-text-utility-strong-300() {
+  font-family: Graphik, "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -0.08px;
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+}
+
+.cdr-text-utility-strong-400() {
+  font-family: Graphik, "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -0.08px;
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+}
+
+.cdr-text-utility-strong-500() {
+  font-family: Graphik, "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -0.16px;
+  font-size: 2rem;
+  line-height: 2.6rem;
+}
+
+.cdr-text-utility-strong-600() {
+  font-family: Graphik, "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -0.16px;
+  font-size: 2.4rem;
+  line-height: 3rem;
+}
+
+.cdr-text-utility-strong-700() {
+  font-family: Graphik, "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -0.16px;
+  font-size: 2.8rem;
+  line-height: 3.6rem;
+}
+
+.cdr-text-utility-strong-800() {
+  font-family: Graphik, "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -0.32px;
+  font-size: 3.2rem;
+  line-height: 4rem;
+}
+
+.cdr-text-body-300() {
+  font-family: Graphik, "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.08px;
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+}
+
+.cdr-text-body-400() {
+  font-family: Graphik, "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0px;
+  font-size: 1.8rem;
+  line-height: 3rem;
+}
+
+.cdr-text-body-500() {
+  font-family: Graphik, "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -0.16px;
+  font-size: 2rem;
+  line-height: 3.6rem;
+}
+
+.cdr-text-body-strong-300() {
+  font-family: Graphik, "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 0.08px;
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+}
+
+.cdr-text-body-strong-400() {
+  font-family: Graphik, "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 0px;
+  font-size: 1.8rem;
+  line-height: 3rem;
+}
+
+.cdr-text-body-strong-500() {
+  font-family: Graphik, "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -0.08px;
+  font-size: 2rem;
+  line-height: 3.6rem;
+}
+
+.cdr-text-default() {
+  font-family: Graphik, "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -0.16px;
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+}
+
+.cdr-text-eyebrow-100() {
+  font-family: Graphik, "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0.32px;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  text-transform: uppercase;
+}
+
+.cdr-text-heading-sans-200() {
+  font-family: Graphik, "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0px;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+}
+
+.cdr-text-heading-sans-300() {
+  font-family: Graphik, "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0px;
+  font-size: 1.6rem;
+  line-height: 2rem;
+}
+
+.cdr-text-heading-sans-400() {
+  font-family: Graphik, "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0px;
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+}
+
+.cdr-text-heading-sans-500() {
+  font-family: Graphik, "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -0.16px;
+  font-size: 2rem;
+  line-height: 2.6rem;
+}
+
+.cdr-text-heading-sans-600() {
+  font-family: Graphik, "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -0.16px;
+  font-size: 2.4rem;
+  line-height: 3rem;
+}
+
+.cdr-text-heading-serif-200() {
+  font-family: Stuart, Georgia, serif;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0px;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+}
+
+.cdr-text-heading-serif-300() {
+  font-family: Stuart, Georgia, serif;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0px;
+  font-size: 1.6rem;
+  line-height: 2rem;
+}
+
+.cdr-text-heading-serif-400() {
+  font-family: Stuart, Georgia, serif;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0px;
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+}
+
+.cdr-text-heading-serif-500() {
+  font-family: Stuart, Georgia, serif;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -0.16px;
+  font-size: 2rem;
+  line-height: 2.6rem;
+}
+
+.cdr-text-heading-serif-600() {
+  font-family: Stuart, Georgia, serif;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -0.16px;
+  font-size: 2.4rem;
+  line-height: 3rem;
+}
+
+.cdr-text-heading-serif-700() {
+  font-family: Stuart, Georgia, serif;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -0.16px;
+  font-size: 2.8rem;
+  line-height: 3.2rem;
+}
+
+.cdr-text-heading-serif-800() {
+  font-family: Stuart, Georgia, serif;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -0.16px;
+  font-size: 3.2rem;
+  line-height: 3.6rem;
+}
+
+.cdr-text-heading-serif-900() {
+  font-family: Stuart, Georgia, serif;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -0.32px;
+  font-size: 3.6rem;
+  line-height: 4.4rem;
+}
+
+.cdr-text-heading-serif-1000() {
+  font-family: Stuart, Georgia, serif;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -0.32px;
+  font-size: 4.2rem;
+  line-height: 5rem;
+}
+
+.cdr-text-heading-serif-1100() {
+  font-family: Stuart, Georgia, serif;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -0.32px;
+  font-size: 4.8rem;
+  line-height: 5.6rem;
+}
+
+.cdr-text-heading-serif-1200() {
+  font-family: Stuart, Georgia, serif;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -0.32px;
+  font-size: 5.4rem;
+  line-height: 6.4rem;
+}
+
+.cdr-text-heading-serif-strong-600() {
+  font-family: Stuart, Georgia, serif;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -0.16px;
+  font-size: 2.4rem;
+  line-height: 3rem;
+}
+
+.cdr-text-heading-serif-strong-700() {
+  font-family: Stuart, Georgia, serif;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -0.16px;
+  font-size: 2.8rem;
+  line-height: 3.2rem;
+}
+
+.cdr-text-heading-serif-strong-800() {
+  font-family: Stuart, Georgia, serif;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -0.16px;
+  font-size: 3.2rem;
+  line-height: 3.6rem;
+}
+
+.cdr-text-heading-serif-strong-900() {
+  font-family: Stuart, Georgia, serif;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -0.32px;
+  font-size: 3.6rem;
+  line-height: 4.4rem;
+}
+
+.cdr-text-heading-serif-strong-1000() {
+  font-family: Stuart, Georgia, serif;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -0.32px;
+  font-size: 4.2rem;
+  line-height: 5rem;
+}
+
+.cdr-text-heading-serif-strong-1100() {
+  font-family: Stuart, Georgia, serif;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -0.32px;
+  font-size: 4.8rem;
+  line-height: 5.6rem;
+}
+
+.cdr-text-heading-serif-strong-1200() {
+  font-family: Stuart, Georgia, serif;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -0.32px;
+  font-size: 5.4rem;
+  line-height: 6.4rem;
+}
+
+.cdr-text-subheading-sans-300() {
+  font-family: Graphik, "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0px;
+  font-size: 1.6rem;
+  line-height: 2rem;
+}
+
+.cdr-text-subheading-sans-400() {
+  font-family: Graphik, "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0px;
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+}
+
+.cdr-text-subheading-sans-500() {
+  font-family: Graphik, "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -0.16px;
+  font-size: 2rem;
+  line-height: 2.6rem;
+}
+
+.cdr-text-subheading-sans-600() {
+  font-family: Graphik, "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -0.16px;
+  font-size: 2.4rem;
+  line-height: 3rem;
+}
+
+.cdr-text-utility-sans-100() {
+  font-family: Graphik, "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -0.08px;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+}
+
+.cdr-text-utility-sans-200() {
+  font-family: Graphik, "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -0.16px;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+}
+
+.cdr-text-utility-sans-300() {
+  font-family: Graphik, "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -0.16px;
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+}
+
+.cdr-text-utility-sans-400() {
+  font-family: Graphik, "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -0.16px;
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+}
+
+.cdr-text-utility-sans-500() {
+  font-family: Graphik, "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -0.32px;
+  font-size: 2rem;
+  line-height: 2.6rem;
+}
+
+.cdr-text-utility-sans-600() {
+  font-family: Graphik, "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -0.32px;
+  font-size: 2.4rem;
+  line-height: 3rem;
+}
+
+.cdr-text-utility-sans-700() {
+  font-family: Graphik, "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -0.32px;
+  font-size: 2.8rem;
+  line-height: 3.6rem;
+}
+
+.cdr-text-utility-sans-800() {
+  font-family: Graphik, "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -0.64px;
+  font-size: 3.2rem;
+  line-height: 4rem;
+}
+
+.cdr-text-utility-sans-strong-100() {
+  font-family: Graphik, "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -0.08px;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+}
+
+.cdr-text-utility-sans-strong-200() {
+  font-family: Graphik, "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -0.08px;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+}
+
+.cdr-text-utility-sans-strong-300() {
+  font-family: Graphik, "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -0.08px;
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+}
+
+.cdr-text-utility-sans-strong-400() {
+  font-family: Graphik, "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -0.08px;
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+}
+
+.cdr-text-utility-sans-strong-500() {
+  font-family: Graphik, "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -0.16px;
+  font-size: 2rem;
+  line-height: 2.6rem;
+}
+
+.cdr-text-utility-sans-strong-600() {
+  font-family: Graphik, "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -0.16px;
+  font-size: 2.4rem;
+  line-height: 3rem;
+}
+
+.cdr-text-utility-sans-strong-700() {
+  font-family: Graphik, "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -0.16px;
+  font-size: 2.8rem;
+  line-height: 3.6rem;
+}
+
+.cdr-text-utility-sans-strong-800() {
+  font-family: Graphik, "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -0.32px;
+  font-size: 3.2rem;
+  line-height: 4rem;
+}
+
+.cdr-text-utility-serif-200() {
+  font-family: Stuart, Georgia, serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -0.08px;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+}
+
+.cdr-text-utility-serif-300() {
+  font-family: Stuart, Georgia, serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -0.08px;
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+}
+
+.cdr-text-utility-serif-400() {
+  font-family: Stuart, Georgia, serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -0.16px;
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+}
+
+.cdr-text-utility-serif-500() {
+  font-family: Stuart, Georgia, serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -0.32px;
+  font-size: 2rem;
+  line-height: 2.6rem;
+}
+
+.cdr-text-utility-serif-600() {
+  font-family: Stuart, Georgia, serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -0.32px;
+  font-size: 2.4rem;
+  line-height: 3rem;
+}
+
+.cdr-text-utility-serif-700() {
+  font-family: Stuart, Georgia, serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -0.32px;
+  font-size: 2.8rem;
+  line-height: 3.6rem;
+}
+
+.cdr-text-utility-serif-800() {
+  font-family: Stuart, Georgia, serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -0.32px;
+  font-size: 3.2rem;
+  line-height: 4rem;
+}
+
+.cdr-text-utility-serif-strong-200() {
+  font-family: Stuart, Georgia, serif;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -0.08px;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+}
+
+.cdr-text-utility-serif-strong-300() {
+  font-family: Stuart, Georgia, serif;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -0.08px;
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+}
+
+.cdr-text-utility-serif-strong-400() {
+  font-family: Stuart, Georgia, serif;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -0.08px;
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+}
+
+.cdr-text-utility-serif-strong-500() {
+  font-family: Stuart, Georgia, serif;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -0.08px;
+  font-size: 2rem;
+  line-height: 2.6rem;
+}
+
+.cdr-text-utility-serif-strong-600() {
+  font-family: Stuart, Georgia, serif;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -0.16px;
+  font-size: 2.4rem;
+  line-height: 3rem;
+}
+
+.cdr-text-utility-serif-strong-700() {
+  font-family: Stuart, Georgia, serif;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -0.16px;
+  font-size: 2.8rem;
+  line-height: 3.6rem;
+}
+
+.cdr-text-utility-serif-strong-800() {
+  font-family: Stuart, Georgia, serif;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -0.16px;
+  font-size: 3.2rem;
+  line-height: 4rem;
+}
+
+@cdr-color-text-primary: rgba(12, 11, 8, 0.75);
+@cdr-color-text-secondary: rgba(66, 59, 47, 0.75);
+@cdr-color-text-brand: #113731;
+@cdr-color-text-sale: #cc0000;
+@cdr-color-text-inverse: #f9f8f6;
+@cdr-color-text-disabled: #d1cbbd;
+@cdr-color-text-success: #2e6b34;
+@cdr-color-text-warning: #854714;
+@cdr-color-text-error: #811823;
+@cdr-color-text-info: #1b437e;
+@cdr-color-text-input-default: rgba(12, 11, 8, 0.75);
+@cdr-color-text-input-label: rgba(12, 11, 8, 0.75);
+@cdr-color-text-input-placeholder: rgba(66, 59, 47, 0.75);
+@cdr-color-text-input-required: rgba(66, 59, 47, 0.75);
+@cdr-color-text-input-disabled: #d1cbbd;
+@cdr-color-text-input-filled: rgba(12, 11, 8, 0.75);
+@cdr-color-text-input-help: rgba(12, 11, 8, 0.75);
+@cdr-color-text-link-rest: #406eb5;
+@cdr-color-text-link-hover: #406eb5;
+@cdr-color-text-link-active: #0b2d60;
+@cdr-color-text-link-disabled: #d1cbbd;
+@cdr-color-text-link-visited: #406eb5;
+@cdr-color-text-button-primary: #f9f8f6;
+@cdr-color-text-button-primary-hover: #225c4e;
+@cdr-color-text-button-primary-active: #f9f8f6;
+@cdr-color-text-button-primary-disabled: #ffffff;
+@cdr-color-text-button-secondary: #4e4d49;
+@cdr-color-text-button-secondary-hover: #4e4d49;
+@cdr-color-text-button-secondary-active: #f9f8f6;
+@cdr-color-text-button-secondary-disabled: #d1cbbd;
+@cdr-color-text-button-dark: #f9f8f6;
+@cdr-color-text-button-dark-hover: #4e4d49;
+@cdr-color-text-button-dark-active: #f9f8f6;
+@cdr-color-text-button-dark-disabled: #ffffff;
+@cdr-color-text-button-sale: #ffffff;
+@cdr-color-text-button-sale-hover: #cc0000;
+@cdr-color-text-button-sale-active: #ffffff;
+@cdr-color-text-button-sale-disabled: #ffffff;
+@cdr-color-text-tab-rest: rgba(66, 59, 47, 0.75);
+@cdr-color-text-tab-active: rgba(12, 11, 8, 0.75);
+@cdr-color-text-tab-hover: #406eb5;
+@cdr-color-text-tab-disabled: #d1cbbd;
+@cdr-color-text-rating-default: rgba(12, 11, 8, 0.75);
+@cdr-color-text-rating-hover: #406eb5;
+@cdr-color-text-rating-separator: #b2ab9f;
+@cdr-color-icon-default: #928b80;
+@cdr-color-icon-emphasis: #4e4d49;
+@cdr-color-icon-link: #406eb5;
+@cdr-color-icon-disabled: #dcd6cb;
+@cdr-color-icon-checkbox-default-selected: #ffffff;
+@cdr-color-icon-checkbox-default-selected-hover: #406eb5;
+@cdr-color-background-primary: #ffffff;
+@cdr-color-background-secondary: #f4f2ed;
+@cdr-color-background-success: #ecf9e6;
+@cdr-color-background-warning: #fdf6e2;
+@cdr-color-background-error: #fcefe8;
+@cdr-color-background-info: #e2f4fe;
+@cdr-color-background-table-header: #f4f2ed;
+@cdr-color-background-table-row: #ffffff;
+@cdr-color-background-table-row-alt: #f9f8f6;
+@cdr-color-background-input-default: rgba(255, 255, 255, 0.75);
+@cdr-color-background-input-default-hover: #f9f8f6;
+@cdr-color-background-input-default-selected: #406eb5;
+@cdr-color-background-input-default-selected-hover: #b7e0fa;
+@cdr-color-background-input-default-disabled: #f9f8f6;
+@cdr-color-background-button-primary-rest: #225c4e;
+@cdr-color-background-button-primary-active: #225c4e;
+@cdr-color-background-button-primary-hover: #c7dfd1;
+@cdr-color-background-button-secondary-rest: #f9f8f6;
+@cdr-color-background-button-secondary-active: #928b80;
+@cdr-color-background-button-secondary-hover: #f4f2ed;
+@cdr-color-background-button-secondary-disabled: #f9f8f6;
+@cdr-color-background-button-dark-rest: #4e4d49;
+@cdr-color-background-button-dark-active: #4e4d49;
+@cdr-color-background-button-dark-hover: #edeae3;
+@cdr-color-background-button-sale-rest: #cc0000;
+@cdr-color-background-button-sale-active: #cc0000;
+@cdr-color-background-button-sale-hover: #fde2e2;
+@cdr-color-background-button-default-disabled: #dcd6cb;
+@cdr-color-background-button-icon-only-active: #f4f2ed;
+@cdr-color-background-accordion-hover: #f9f8f6;
+@cdr-color-background-pagination-hover: #f9f8f6;
+@cdr-color-background-pagination-keyline: #406eb5;
+@cdr-color-background-button-icon-alt-hover: #f9f8f6;
+@cdr-color-background-rating-star-default: #f9f8f6;
+@cdr-color-background-rating-star-highlighted: #ffd280;
+@cdr-color-background-modal-overlay: rgba(244, 242, 237, 0.85);
+@cdr-color-border-primary: #dcd6cb;
+@cdr-color-border-secondary: #928b80;
+@cdr-color-border-success: #4b8b50;
+@cdr-color-border-warning: #c77523;
+@cdr-color-border-error: #b5292b;
+@cdr-color-border-info: #406eb5;
+@cdr-color-border-input-default: #928b80;
+@cdr-color-border-input-default-active: #406eb5;
+@cdr-color-border-input-default-selected: #406eb5;
+@cdr-color-border-input-default-selected-hover: #406eb5;
+@cdr-color-border-input-default-hover: #928b80;
+@cdr-color-border-input-default-disabled: #dcd6cb;
+@cdr-color-border-button-primary-rest: #225c4e;
+@cdr-color-border-button-primary-active: #225c4e;
+@cdr-color-border-button-primary-active-inset: #c7dfd1;
+@cdr-color-border-button-primary-hover: #225c4e;
+@cdr-color-border-button-secondary-rest: #928b80;
+@cdr-color-border-button-secondary-active: #928b80;
+@cdr-color-border-button-secondary-active-inset: #f4f2ed;
+@cdr-color-border-button-secondary-hover: #4e4d49;
+@cdr-color-border-button-dark-rest: #4e4d49;
+@cdr-color-border-button-dark-active: #4e4d49;
+@cdr-color-border-button-dark-active-inset: #edeae3;
+@cdr-color-border-button-dark-hover: #4e4d49;
+@cdr-color-border-button-sale-rest: #cc0000;
+@cdr-color-border-button-sale-active: #cc0000;
+@cdr-color-border-button-sale-active-inset: #fde2e2;
+@cdr-color-border-button-sale-hover: #cc0000;
+@cdr-color-border-button-default-disabled: #dcd6cb;
+@cdr-color-border-button-icon-only-active: #928b80;
+@cdr-color-border-rating-star-default: #928b80;
+@cdr-color-border-rating-star-highlighted: #bd7b2d;
+@cdr-color-border-link-rest: #406eb5;
+@cdr-color-border-link-hover: #406eb5;
+@cdr-color-border-link-active: #0b2d60;
+@cdr-color-border-link-disabled: #dcd6cb;
+@cdr-color-border-link-visited: #406eb5;
+@cdr-color-border-table-default: #dcd6cb;
+@cdr-color-border-table-head: #928b80;
+@cdr-color-border-tab-keyline-rest: #928b80;
+@cdr-color-border-tab-keyline-active: #406eb5;
+@cdr-color-border-tab-keyline-active-alt: #78b1e8;
+@cdr-color-border-tab-keyline-hover: #406eb5;
+@cdr-color-border-tab-keyline-hover-alt: #78b1e8;
+@cdr-color-border-tab-keyline-disabled: #d1cbbd;
+@cdr-color-text-primary-lightmode: #292929;
+@cdr-color-text-primary-darkmode: #fafafa;
+@cdr-color-text-secondary-lightmode: #616161;
+@cdr-color-text-secondary-darkmode: #999999;
+@cdr-color-text-disabled-lightmode: #b8b8b8;
+@cdr-color-text-disabled-darkmode: #616161;
+@cdr-color-text-link-lightmode: #3278ae;
+@cdr-color-text-link-darkmode: #5197cd;
+@cdr-color-text-error-lightmode: #b5292b;
+@cdr-color-text-error-darkmode: #e86868;
+@cdr-color-text-form-label-lightmode: #292929;
+@cdr-color-text-form-label-darkmode: #fafafa;
+@cdr-color-text-form-placeholder-lightmode: #616161;
+@cdr-color-text-form-placeholder-darkmode: #999999;
+@cdr-color-text-form-disabled-lightmode: #b8b8b8;
+@cdr-color-text-form-disabled-darkmode: #616161;
+@cdr-color-icon-primary-lightmode: #616161;
+@cdr-color-icon-primary-darkmode: #999999;
+@cdr-color-icon-emphasis-lightmode: #292929;
+@cdr-color-icon-emphasis-darkmode: #fafafa;
+@cdr-color-background-dark: #292929;
+@cdr-color-background-darker: #1a1a1a;
+@cdr-color-background-light: #f7f7f7;
+@cdr-color-background-lighter: #fafafa;
+@cdr-color-background-lightest: #ffffff;
+@cdr-color-background-form-lightmode: #ffffff;
+@cdr-color-background-form-darkmode: #292929;
+@cdr-color-background-form-input-lightmode: #ffffff;
+@cdr-color-background-form-input-darkmode: #292929;
+@cdr-color-border-primary-lightmode: #616161;
+@cdr-color-border-primary-darkmode: #fafafa;
+@cdr-color-border-secondary-lightmode: #b8b8b8;
+@cdr-color-border-secondary-darkmode: #999999;
+@cdr-color-border-disabled-lightmode: #dadada;
+@cdr-color-border-disabled-darkmode: #dadada;
+@cdr-color-border-error-lightmode: #e86868;
+@cdr-color-border-selected-lightmode: #2b6692;
+@cdr-text-utility-100-family: Graphik, "Helvetica Neue", sans-serif;
+@cdr-text-utility-100-style: normal;
+@cdr-text-utility-100-weight: 400;
+@cdr-text-utility-100-spacing: -0.08px;
+@cdr-text-utility-100-size: 1.2rem;
+@cdr-text-utility-100-height: 1.6rem;
+@cdr-text-utility-200-family: Graphik, "Helvetica Neue", sans-serif;
+@cdr-text-utility-200-style: normal;
+@cdr-text-utility-200-weight: 400;
+@cdr-text-utility-200-spacing: -0.16px;
+@cdr-text-utility-200-size: 1.4rem;
+@cdr-text-utility-200-height: 1.8rem;
+@cdr-text-utility-300-family: Graphik, "Helvetica Neue", sans-serif;
+@cdr-text-utility-300-style: normal;
+@cdr-text-utility-300-weight: 400;
+@cdr-text-utility-300-spacing: -0.16px;
+@cdr-text-utility-300-size: 1.6rem;
+@cdr-text-utility-300-height: 2.2rem;
+@cdr-text-utility-400-family: Graphik, "Helvetica Neue", sans-serif;
+@cdr-text-utility-400-style: normal;
+@cdr-text-utility-400-weight: 400;
+@cdr-text-utility-400-spacing: -0.16px;
+@cdr-text-utility-400-size: 1.8rem;
+@cdr-text-utility-400-height: 2.4rem;
+@cdr-text-utility-500-family: Graphik, "Helvetica Neue", sans-serif;
+@cdr-text-utility-500-style: normal;
+@cdr-text-utility-500-weight: 400;
+@cdr-text-utility-500-spacing: -0.32px;
+@cdr-text-utility-500-size: 2rem;
+@cdr-text-utility-500-height: 2.6rem;
+@cdr-text-utility-600-family: Graphik, "Helvetica Neue", sans-serif;
+@cdr-text-utility-600-style: normal;
+@cdr-text-utility-600-weight: 400;
+@cdr-text-utility-600-spacing: -0.32px;
+@cdr-text-utility-600-size: 2.4rem;
+@cdr-text-utility-600-height: 3rem;
+@cdr-text-utility-700-family: Graphik, "Helvetica Neue", sans-serif;
+@cdr-text-utility-700-style: normal;
+@cdr-text-utility-700-weight: 400;
+@cdr-text-utility-700-spacing: -0.32px;
+@cdr-text-utility-700-size: 2.8rem;
+@cdr-text-utility-700-height: 3.6rem;
+@cdr-text-utility-800-family: Graphik, "Helvetica Neue", sans-serif;
+@cdr-text-utility-800-style: normal;
+@cdr-text-utility-800-weight: 400;
+@cdr-text-utility-800-spacing: -0.64px;
+@cdr-text-utility-800-size: 3.2rem;
+@cdr-text-utility-800-height: 4rem;
+@cdr-text-utility-strong-100-family: Graphik, "Helvetica Neue", sans-serif;
+@cdr-text-utility-strong-100-style: normal;
+@cdr-text-utility-strong-100-weight: 600;
+@cdr-text-utility-strong-100-spacing: -0.08px;
+@cdr-text-utility-strong-100-size: 1.2rem;
+@cdr-text-utility-strong-100-height: 1.6rem;
+@cdr-text-utility-strong-200-family: Graphik, "Helvetica Neue", sans-serif;
+@cdr-text-utility-strong-200-style: normal;
+@cdr-text-utility-strong-200-weight: 600;
+@cdr-text-utility-strong-200-spacing: -0.08px;
+@cdr-text-utility-strong-200-size: 1.4rem;
+@cdr-text-utility-strong-200-height: 1.8rem;
+@cdr-text-utility-strong-300-family: Graphik, "Helvetica Neue", sans-serif;
+@cdr-text-utility-strong-300-style: normal;
+@cdr-text-utility-strong-300-weight: 600;
+@cdr-text-utility-strong-300-spacing: -0.08px;
+@cdr-text-utility-strong-300-size: 1.6rem;
+@cdr-text-utility-strong-300-height: 2.2rem;
+@cdr-text-utility-strong-400-family: Graphik, "Helvetica Neue", sans-serif;
+@cdr-text-utility-strong-400-style: normal;
+@cdr-text-utility-strong-400-weight: 600;
+@cdr-text-utility-strong-400-spacing: -0.08px;
+@cdr-text-utility-strong-400-size: 1.8rem;
+@cdr-text-utility-strong-400-height: 2.4rem;
+@cdr-text-utility-strong-500-family: Graphik, "Helvetica Neue", sans-serif;
+@cdr-text-utility-strong-500-style: normal;
+@cdr-text-utility-strong-500-weight: 600;
+@cdr-text-utility-strong-500-spacing: -0.16px;
+@cdr-text-utility-strong-500-size: 2rem;
+@cdr-text-utility-strong-500-height: 2.6rem;
+@cdr-text-utility-strong-600-family: Graphik, "Helvetica Neue", sans-serif;
+@cdr-text-utility-strong-600-style: normal;
+@cdr-text-utility-strong-600-weight: 600;
+@cdr-text-utility-strong-600-spacing: -0.16px;
+@cdr-text-utility-strong-600-size: 2.4rem;
+@cdr-text-utility-strong-600-height: 3rem;
+@cdr-text-utility-strong-700-family: Graphik, "Helvetica Neue", sans-serif;
+@cdr-text-utility-strong-700-style: normal;
+@cdr-text-utility-strong-700-weight: 600;
+@cdr-text-utility-strong-700-spacing: -0.16px;
+@cdr-text-utility-strong-700-size: 2.8rem;
+@cdr-text-utility-strong-700-height: 3.6rem;
+@cdr-text-utility-strong-800-family: Graphik, "Helvetica Neue", sans-serif;
+@cdr-text-utility-strong-800-style: normal;
+@cdr-text-utility-strong-800-weight: 600;
+@cdr-text-utility-strong-800-spacing: -0.32px;
+@cdr-text-utility-strong-800-size: 3.2rem;
+@cdr-text-utility-strong-800-height: 4rem;
+@cdr-color-text-cta-dark: #f9f8f6;
+@cdr-color-text-cta-dark-hover: #4e4d49;
+@cdr-color-text-cta-dark-active: #f9f8f6;
+@cdr-color-text-cta-dark-disabled: #ffffff;
+@cdr-color-text-cta-light: #4e4d49;
+@cdr-color-text-cta-light-hover: #4e4d49;
+@cdr-color-text-cta-light-active: #f9f8f6;
+@cdr-color-text-cta-light-disabled: #d1cbbd;
+@cdr-color-text-cta-brand: #f9f8f6;
+@cdr-color-text-cta-brand-hover: #225c4e;
+@cdr-color-text-cta-brand-active: #f9f8f6;
+@cdr-color-text-cta-brand-disabled: #ffffff;
+@cdr-color-text-cta-sale: #ffffff;
+@cdr-color-text-cta-sale-hover: #cc0000;
+@cdr-color-text-cta-sale-active: #ffffff;
+@cdr-color-text-cta-sale-disabled: #ffffff;
+@cdr-color-border-cta-dark-rest: #4e4d49;
+@cdr-color-border-cta-dark-active: #4e4d49;
+@cdr-color-border-cta-dark-active-inset: #edeae3;
+@cdr-color-border-cta-dark-hover: #4e4d49;
+@cdr-color-border-cta-light-rest: #928b80;
+@cdr-color-border-cta-light-active: #928b80;
+@cdr-color-border-cta-light-active-inset: #f4f2ed;
+@cdr-color-border-cta-light-hover: #4e4d49;
+@cdr-color-border-cta-sale-rest: #cc0000;
+@cdr-color-border-cta-sale-active: #cc0000;
+@cdr-color-border-cta-sale-active-inset: #fde2e2;
+@cdr-color-border-cta-sale-hover: #cc0000;
+@cdr-color-border-cta-brand-rest: #225c4e;
+@cdr-color-border-cta-brand-active: #225c4e;
+@cdr-color-border-cta-brand-active-inset: #c7dfd1;
+@cdr-color-border-cta-brand-hover: #225c4e;
+@cdr-color-border-cta-default-disabled: #dcd6cb;
+@cdr-color-background-cta-dark-rest: #4e4d49;
+@cdr-color-background-cta-dark-active: #4e4d49;
+@cdr-color-background-cta-dark-hover: #edeae3;
+@cdr-color-background-cta-light-rest: #f9f8f6;
+@cdr-color-background-cta-light-active: #928b80;
+@cdr-color-background-cta-light-hover: #f4f2ed;
+@cdr-color-background-cta-light-disabled: #f9f8f6;
+@cdr-color-background-cta-sale-rest: #cc0000;
+@cdr-color-background-cta-sale-active: #cc0000;
+@cdr-color-background-cta-sale-hover: #fde2e2;
+@cdr-color-background-cta-brand-rest: #225c4e;
+@cdr-color-background-cta-brand-active: #225c4e;
+@cdr-color-background-cta-brand-hover: #c7dfd1;
+@cdr-color-background-cta-default-disabled: #dcd6cb;
+@cdr-icon-size-sm: 1.6rem;
+@cdr-icon-size: 2.4rem;
+@cdr-icon-size-lg: 3.2rem;
+@cdr-duration-1-x: 0.10s;
+@cdr-duration-2-x: 0.20s;
+@cdr-duration-3-x: 0.30s;
+@cdr-duration-4-x: 0.40s;
+@cdr-duration-5-x: 0.50s;
+@cdr-duration-6-x: 0.60s;
+@cdr-timing-function-ease-out: cubic-bezier(0.32, 0.94, 0.60, 1);
+@cdr-timing-function-ease: cubic-bezier(0.15, 0, 0.15, 0);
+@cdr-timing-function-linear: cubic-bezier(0, 0, 1, 1);
+@cdr-prominence-flat-x: 0;
+@cdr-prominence-flat-y: 0;
+@cdr-prominence-flat-blur: 0;
+@cdr-prominence-flat-spread: 0;
+@cdr-prominence-flat-color: rgba(12, 11, 8, 0.2);
+@cdr-prominence-raised-x: 0;
+@cdr-prominence-raised-y: 0.2rem;
+@cdr-prominence-raised-blur: 0.2rem;
+@cdr-prominence-raised-spread: 0;
+@cdr-prominence-raised-color: rgba(12, 11, 8, 0.2);
+@cdr-prominence-elevated-x: 0;
+@cdr-prominence-elevated-y: 0.4rem;
+@cdr-prominence-elevated-blur: 0.4rem;
+@cdr-prominence-elevated-spread: 0;
+@cdr-prominence-elevated-color: rgba(12, 11, 8, 0.2);
+@cdr-prominence-floating-x: 0;
+@cdr-prominence-floating-y: 0.8rem;
+@cdr-prominence-floating-blur: 0.8rem;
+@cdr-prominence-floating-spread: 0;
+@cdr-prominence-floating-color: rgba(12, 11, 8, 0.2);
+@cdr-prominence-lifted-x: 0;
+@cdr-prominence-lifted-y: 1.6rem;
+@cdr-prominence-lifted-blur: 1.6rem;
+@cdr-prominence-lifted-spread: 0;
+@cdr-prominence-lifted-color: rgba(12, 11, 8, 0.2);
+@cdr-prominence-flat: 0 0 0 0 rgba(12, 11, 8, 0.2);
+@cdr-prominence-raised: 0 0.2rem 0.2rem 0 rgba(12, 11, 8, 0.2);
+@cdr-prominence-elevated: 0 0.4rem 0.4rem 0 rgba(12, 11, 8, 0.2);
+@cdr-prominence-floating: 0 0.8rem 0.8rem 0 rgba(12, 11, 8, 0.2);
+@cdr-prominence-lifted: 0 1.6rem 1.6rem 0 rgba(12, 11, 8, 0.2);
+@cdr-radius-sharp: 0;
+@cdr-radius-soft: 0.2rem;
+@cdr-radius-softer: 0.4rem;
+@cdr-radius-round: 999.9rem;
+@cdr-space-eighth-x: 0.2rem;
+@cdr-space-quarter-x: 0.4rem;
+@cdr-space-half-x: 0.8rem;
+@cdr-space-three-quarter-x: 1.2rem;
+@cdr-space-one-x: 1.6rem;
+@cdr-space-one-and-a-half-x: 2.4rem;
+@cdr-space-two-x: 3.2rem;
+@cdr-space-three-x: 4.8rem;
+@cdr-space-four-x: 6.4rem;
+@cdr-space-inset-eighth-x: 0.2rem;
+@cdr-space-inset-eighth-x-squish-top-bottom: 0;
+@cdr-space-inset-eighth-x-squish-left-right: 0.2rem;
+@cdr-space-inset-eighth-x-stretch-top-bottom: 0.4rem;
+@cdr-space-inset-eighth-x-stretch-left-right: 0.2rem;
+@cdr-space-inset-quarter-x: 0.4rem;
+@cdr-space-inset-quarter-x-squish-top-bottom: 0.2rem;
+@cdr-space-inset-quarter-x-squish-left-right: 0.4rem;
+@cdr-space-inset-quarter-x-stretch-top-bottom: 0.6rem;
+@cdr-space-inset-quarter-x-stretch-left-right: 0.4rem;
+@cdr-space-inset-half-x: 0.8rem;
+@cdr-space-inset-half-x-squish-top-bottom: 0.4rem;
+@cdr-space-inset-half-x-squish-left-right: 0.8rem;
+@cdr-space-inset-half-x-stretch-top-bottom: 1.2rem;
+@cdr-space-inset-half-x-stretch-left-right: 0.8rem;
+@cdr-space-inset-three-quarter-x: 1.2rem;
+@cdr-space-inset-three-quarter-x-squish-top-bottom: 0.6rem;
+@cdr-space-inset-three-quarter-x-squish-left-right: 1.2rem;
+@cdr-space-inset-three-quarter-x-stretch-top-bottom: 1.8rem;
+@cdr-space-inset-three-quarter-x-stretch-left-right: 1.2rem;
+@cdr-space-inset-one-x: 1.6rem;
+@cdr-space-inset-one-x-squish-top-bottom: 0.8rem;
+@cdr-space-inset-one-x-squish-left-right: 1.6rem;
+@cdr-space-inset-one-x-stretch-top-bottom: 2.4rem;
+@cdr-space-inset-one-x-stretch-left-right: 1.6rem;
+@cdr-space-inset-one-and-a-half-x: 2.4rem;
+@cdr-space-inset-one-and-a-half-x-squish-top-bottom: 1.2rem;
+@cdr-space-inset-one-and-a-half-x-squish-left-right: 2.4rem;
+@cdr-space-inset-one-and-a-half-x-stretch-top-bottom: 3.6rem;
+@cdr-space-inset-one-and-a-half-x-stretch-left-right: 2.4rem;
+@cdr-space-inset-two-x: 3.2rem;
+@cdr-space-inset-two-x-squish-top-bottom: 1.6rem;
+@cdr-space-inset-two-x-squish-left-right: 3.2rem;
+@cdr-space-inset-two-x-stretch-top-bottom: 4.8rem;
+@cdr-space-inset-two-x-stretch-left-right: 3.2rem;
+@cdr-space-inset-three-x: 4.8rem;
+@cdr-space-inset-three-x-squish-top-bottom: 2.4rem;
+@cdr-space-inset-three-x-squish-left-right: 4.8rem;
+@cdr-space-inset-three-x-stretch-top-bottom: 7.2rem;
+@cdr-space-inset-three-x-stretch-left-right: 4.8rem;
+@cdr-space-inset-four-x: 6.4rem;
+@cdr-space-inset-four-x-squish-top-bottom: 3.2rem;
+@cdr-space-inset-four-x-squish-left-right: 6.4rem;
+@cdr-space-inset-four-x-stretch-top-bottom: 9.6rem;
+@cdr-space-inset-four-x-stretch-left-right: 6.4rem;
+@cdr-space-inset-eighth-x-squish: 0 0.2rem;
+@cdr-space-inset-eighth-x-stretch: 0.4rem 0.2rem;
+@cdr-space-inset-quarter-x-squish: 0.2rem 0.4rem;
+@cdr-space-inset-quarter-x-stretch: 0.6rem 0.4rem;
+@cdr-space-inset-half-x-squish: 0.4rem 0.8rem;
+@cdr-space-inset-half-x-stretch: 1.2rem 0.8rem;
+@cdr-space-inset-three-quarter-x-squish: 0.6rem 1.2rem;
+@cdr-space-inset-three-quarter-x-stretch: 1.8rem 1.2rem;
+@cdr-space-inset-one-x-squish: 0.8rem 1.6rem;
+@cdr-space-inset-one-x-stretch: 2.4rem 1.6rem;
+@cdr-space-inset-one-and-a-half-x-squish: 1.2rem 2.4rem;
+@cdr-space-inset-one-and-a-half-x-stretch: 3.6rem 2.4rem;
+@cdr-space-inset-two-x-squish: 1.6rem 3.2rem;
+@cdr-space-inset-two-x-stretch: 4.8rem 3.2rem;
+@cdr-space-inset-three-x-squish: 2.4rem 4.8rem;
+@cdr-space-inset-three-x-stretch: 7.2rem 4.8rem;
+@cdr-space-inset-four-x-squish: 3.2rem 6.4rem;
+@cdr-space-inset-four-x-stretch: 9.6rem 6.4rem;
+@cdr-breakpoint-xs: 0;
+@cdr-breakpoint-sm: 768px;
+@cdr-breakpoint-md: 992px;
+@cdr-breakpoint-lg: 1232px;
+@cdr-font-family-serif-brand-font: Stuart;
+@cdr-font-family-serif: Stuart, Georgia, serif;
+@cdr-font-family-sans-brand-font: Graphik;
+@cdr-font-family-sans: Graphik, "Helvetica Neue", sans-serif;
+@cdr-text-body-300-family: Graphik, "Helvetica Neue", sans-serif;
+@cdr-text-body-300-style: normal;
+@cdr-text-body-300-weight: 400;
+@cdr-text-body-300-spacing: 0.08px;
+@cdr-text-body-300-size: 1.6rem;
+@cdr-text-body-300-height: 2.6rem;
+@cdr-text-body-400-family: Graphik, "Helvetica Neue", sans-serif;
+@cdr-text-body-400-style: normal;
+@cdr-text-body-400-weight: 400;
+@cdr-text-body-400-spacing: 0px;
+@cdr-text-body-400-size: 1.8rem;
+@cdr-text-body-400-height: 3rem;
+@cdr-text-body-500-family: Graphik, "Helvetica Neue", sans-serif;
+@cdr-text-body-500-style: normal;
+@cdr-text-body-500-weight: 400;
+@cdr-text-body-500-spacing: -0.16px;
+@cdr-text-body-500-size: 2rem;
+@cdr-text-body-500-height: 3.6rem;
+@cdr-text-body-strong-300-family: Graphik, "Helvetica Neue", sans-serif;
+@cdr-text-body-strong-300-style: normal;
+@cdr-text-body-strong-300-weight: 600;
+@cdr-text-body-strong-300-spacing: 0.08px;
+@cdr-text-body-strong-300-size: 1.6rem;
+@cdr-text-body-strong-300-height: 2.6rem;
+@cdr-text-body-strong-400-family: Graphik, "Helvetica Neue", sans-serif;
+@cdr-text-body-strong-400-style: normal;
+@cdr-text-body-strong-400-weight: 600;
+@cdr-text-body-strong-400-spacing: 0px;
+@cdr-text-body-strong-400-size: 1.8rem;
+@cdr-text-body-strong-400-height: 3rem;
+@cdr-text-body-strong-500-family: Graphik, "Helvetica Neue", sans-serif;
+@cdr-text-body-strong-500-style: normal;
+@cdr-text-body-strong-500-weight: 600;
+@cdr-text-body-strong-500-spacing: -0.08px;
+@cdr-text-body-strong-500-size: 2rem;
+@cdr-text-body-strong-500-height: 3.6rem;
+@cdr-text-default-family: Graphik, "Helvetica Neue", sans-serif;
+@cdr-text-default-style: normal;
+@cdr-text-default-weight: 400;
+@cdr-text-default-spacing: -0.16px;
+@cdr-text-default-size: 1.6rem;
+@cdr-text-default-height: 2.2rem;
+@cdr-text-eyebrow-100-family: Graphik, "Helvetica Neue", sans-serif;
+@cdr-text-eyebrow-100-style: normal;
+@cdr-text-eyebrow-100-weight: 500;
+@cdr-text-eyebrow-100-spacing: 0.32px;
+@cdr-text-eyebrow-100-size: 1.2rem;
+@cdr-text-eyebrow-100-height: 1.8rem;
+@cdr-text-eyebrow-100-transform: uppercase;
+@cdr-text-heading-sans-200-family: Graphik, "Helvetica Neue", sans-serif;
+@cdr-text-heading-sans-200-style: normal;
+@cdr-text-heading-sans-200-weight: 500;
+@cdr-text-heading-sans-200-spacing: 0px;
+@cdr-text-heading-sans-200-size: 1.4rem;
+@cdr-text-heading-sans-200-height: 1.8rem;
+@cdr-text-heading-sans-300-family: Graphik, "Helvetica Neue", sans-serif;
+@cdr-text-heading-sans-300-style: normal;
+@cdr-text-heading-sans-300-weight: 500;
+@cdr-text-heading-sans-300-spacing: 0px;
+@cdr-text-heading-sans-300-size: 1.6rem;
+@cdr-text-heading-sans-300-height: 2rem;
+@cdr-text-heading-sans-400-family: Graphik, "Helvetica Neue", sans-serif;
+@cdr-text-heading-sans-400-style: normal;
+@cdr-text-heading-sans-400-weight: 500;
+@cdr-text-heading-sans-400-spacing: 0px;
+@cdr-text-heading-sans-400-size: 1.8rem;
+@cdr-text-heading-sans-400-height: 2.4rem;
+@cdr-text-heading-sans-500-family: Graphik, "Helvetica Neue", sans-serif;
+@cdr-text-heading-sans-500-style: normal;
+@cdr-text-heading-sans-500-weight: 500;
+@cdr-text-heading-sans-500-spacing: -0.16px;
+@cdr-text-heading-sans-500-size: 2rem;
+@cdr-text-heading-sans-500-height: 2.6rem;
+@cdr-text-heading-sans-600-family: Graphik, "Helvetica Neue", sans-serif;
+@cdr-text-heading-sans-600-style: normal;
+@cdr-text-heading-sans-600-weight: 500;
+@cdr-text-heading-sans-600-spacing: -0.16px;
+@cdr-text-heading-sans-600-size: 2.4rem;
+@cdr-text-heading-sans-600-height: 3rem;
+@cdr-text-heading-serif-200-family: Stuart, Georgia, serif;
+@cdr-text-heading-serif-200-style: normal;
+@cdr-text-heading-serif-200-weight: 500;
+@cdr-text-heading-serif-200-spacing: 0px;
+@cdr-text-heading-serif-200-size: 1.4rem;
+@cdr-text-heading-serif-200-height: 1.8rem;
+@cdr-text-heading-serif-300-family: Stuart, Georgia, serif;
+@cdr-text-heading-serif-300-style: normal;
+@cdr-text-heading-serif-300-weight: 500;
+@cdr-text-heading-serif-300-spacing: 0px;
+@cdr-text-heading-serif-300-size: 1.6rem;
+@cdr-text-heading-serif-300-height: 2rem;
+@cdr-text-heading-serif-400-family: Stuart, Georgia, serif;
+@cdr-text-heading-serif-400-style: normal;
+@cdr-text-heading-serif-400-weight: 500;
+@cdr-text-heading-serif-400-spacing: 0px;
+@cdr-text-heading-serif-400-size: 1.8rem;
+@cdr-text-heading-serif-400-height: 2.4rem;
+@cdr-text-heading-serif-500-family: Stuart, Georgia, serif;
+@cdr-text-heading-serif-500-style: normal;
+@cdr-text-heading-serif-500-weight: 500;
+@cdr-text-heading-serif-500-spacing: -0.16px;
+@cdr-text-heading-serif-500-size: 2rem;
+@cdr-text-heading-serif-500-height: 2.6rem;
+@cdr-text-heading-serif-600-family: Stuart, Georgia, serif;
+@cdr-text-heading-serif-600-style: normal;
+@cdr-text-heading-serif-600-weight: 500;
+@cdr-text-heading-serif-600-spacing: -0.16px;
+@cdr-text-heading-serif-600-size: 2.4rem;
+@cdr-text-heading-serif-600-height: 3rem;
+@cdr-text-heading-serif-700-family: Stuart, Georgia, serif;
+@cdr-text-heading-serif-700-style: normal;
+@cdr-text-heading-serif-700-weight: 500;
+@cdr-text-heading-serif-700-spacing: -0.16px;
+@cdr-text-heading-serif-700-size: 2.8rem;
+@cdr-text-heading-serif-700-height: 3.2rem;
+@cdr-text-heading-serif-800-family: Stuart, Georgia, serif;
+@cdr-text-heading-serif-800-style: normal;
+@cdr-text-heading-serif-800-weight: 500;
+@cdr-text-heading-serif-800-spacing: -0.16px;
+@cdr-text-heading-serif-800-size: 3.2rem;
+@cdr-text-heading-serif-800-height: 3.6rem;
+@cdr-text-heading-serif-900-family: Stuart, Georgia, serif;
+@cdr-text-heading-serif-900-style: normal;
+@cdr-text-heading-serif-900-weight: 500;
+@cdr-text-heading-serif-900-spacing: -0.32px;
+@cdr-text-heading-serif-900-size: 3.6rem;
+@cdr-text-heading-serif-900-height: 4.4rem;
+@cdr-text-heading-serif-1000-family: Stuart, Georgia, serif;
+@cdr-text-heading-serif-1000-style: normal;
+@cdr-text-heading-serif-1000-weight: 500;
+@cdr-text-heading-serif-1000-spacing: -0.32px;
+@cdr-text-heading-serif-1000-size: 4.2rem;
+@cdr-text-heading-serif-1000-height: 5rem;
+@cdr-text-heading-serif-1100-family: Stuart, Georgia, serif;
+@cdr-text-heading-serif-1100-style: normal;
+@cdr-text-heading-serif-1100-weight: 500;
+@cdr-text-heading-serif-1100-spacing: -0.32px;
+@cdr-text-heading-serif-1100-size: 4.8rem;
+@cdr-text-heading-serif-1100-height: 5.6rem;
+@cdr-text-heading-serif-1200-family: Stuart, Georgia, serif;
+@cdr-text-heading-serif-1200-style: normal;
+@cdr-text-heading-serif-1200-weight: 500;
+@cdr-text-heading-serif-1200-spacing: -0.32px;
+@cdr-text-heading-serif-1200-size: 5.4rem;
+@cdr-text-heading-serif-1200-height: 6.4rem;
+@cdr-text-heading-serif-strong-600-family: Stuart, Georgia, serif;
+@cdr-text-heading-serif-strong-600-style: normal;
+@cdr-text-heading-serif-strong-600-weight: 600;
+@cdr-text-heading-serif-strong-600-spacing: -0.16px;
+@cdr-text-heading-serif-strong-600-size: 2.4rem;
+@cdr-text-heading-serif-strong-600-height: 3rem;
+@cdr-text-heading-serif-strong-700-family: Stuart, Georgia, serif;
+@cdr-text-heading-serif-strong-700-style: normal;
+@cdr-text-heading-serif-strong-700-weight: 600;
+@cdr-text-heading-serif-strong-700-spacing: -0.16px;
+@cdr-text-heading-serif-strong-700-size: 2.8rem;
+@cdr-text-heading-serif-strong-700-height: 3.2rem;
+@cdr-text-heading-serif-strong-800-family: Stuart, Georgia, serif;
+@cdr-text-heading-serif-strong-800-style: normal;
+@cdr-text-heading-serif-strong-800-weight: 600;
+@cdr-text-heading-serif-strong-800-spacing: -0.16px;
+@cdr-text-heading-serif-strong-800-size: 3.2rem;
+@cdr-text-heading-serif-strong-800-height: 3.6rem;
+@cdr-text-heading-serif-strong-900-family: Stuart, Georgia, serif;
+@cdr-text-heading-serif-strong-900-style: normal;
+@cdr-text-heading-serif-strong-900-weight: 600;
+@cdr-text-heading-serif-strong-900-spacing: -0.32px;
+@cdr-text-heading-serif-strong-900-size: 3.6rem;
+@cdr-text-heading-serif-strong-900-height: 4.4rem;
+@cdr-text-heading-serif-strong-1000-family: Stuart, Georgia, serif;
+@cdr-text-heading-serif-strong-1000-style: normal;
+@cdr-text-heading-serif-strong-1000-weight: 600;
+@cdr-text-heading-serif-strong-1000-spacing: -0.32px;
+@cdr-text-heading-serif-strong-1000-size: 4.2rem;
+@cdr-text-heading-serif-strong-1000-height: 5rem;
+@cdr-text-heading-serif-strong-1100-family: Stuart, Georgia, serif;
+@cdr-text-heading-serif-strong-1100-style: normal;
+@cdr-text-heading-serif-strong-1100-weight: 600;
+@cdr-text-heading-serif-strong-1100-spacing: -0.32px;
+@cdr-text-heading-serif-strong-1100-size: 4.8rem;
+@cdr-text-heading-serif-strong-1100-height: 5.6rem;
+@cdr-text-heading-serif-strong-1200-family: Stuart, Georgia, serif;
+@cdr-text-heading-serif-strong-1200-style: normal;
+@cdr-text-heading-serif-strong-1200-weight: 600;
+@cdr-text-heading-serif-strong-1200-spacing: -0.32px;
+@cdr-text-heading-serif-strong-1200-size: 5.4rem;
+@cdr-text-heading-serif-strong-1200-height: 6.4rem;
+@cdr-text-subheading-sans-300-family: Graphik, "Helvetica Neue", sans-serif;
+@cdr-text-subheading-sans-300-style: normal;
+@cdr-text-subheading-sans-300-weight: 500;
+@cdr-text-subheading-sans-300-spacing: 0px;
+@cdr-text-subheading-sans-300-size: 1.6rem;
+@cdr-text-subheading-sans-300-height: 2rem;
+@cdr-text-subheading-sans-400-family: Graphik, "Helvetica Neue", sans-serif;
+@cdr-text-subheading-sans-400-style: normal;
+@cdr-text-subheading-sans-400-weight: 500;
+@cdr-text-subheading-sans-400-spacing: 0px;
+@cdr-text-subheading-sans-400-size: 1.8rem;
+@cdr-text-subheading-sans-400-height: 2.4rem;
+@cdr-text-subheading-sans-500-family: Graphik, "Helvetica Neue", sans-serif;
+@cdr-text-subheading-sans-500-style: normal;
+@cdr-text-subheading-sans-500-weight: 500;
+@cdr-text-subheading-sans-500-spacing: -0.16px;
+@cdr-text-subheading-sans-500-size: 2rem;
+@cdr-text-subheading-sans-500-height: 2.6rem;
+@cdr-text-subheading-sans-600-family: Graphik, "Helvetica Neue", sans-serif;
+@cdr-text-subheading-sans-600-style: normal;
+@cdr-text-subheading-sans-600-weight: 500;
+@cdr-text-subheading-sans-600-spacing: -0.16px;
+@cdr-text-subheading-sans-600-size: 2.4rem;
+@cdr-text-subheading-sans-600-height: 3rem;
+@cdr-text-utility-sans-100-family: Graphik, "Helvetica Neue", sans-serif;
+@cdr-text-utility-sans-100-style: normal;
+@cdr-text-utility-sans-100-weight: 400;
+@cdr-text-utility-sans-100-spacing: -0.08px;
+@cdr-text-utility-sans-100-size: 1.2rem;
+@cdr-text-utility-sans-100-height: 1.6rem;
+@cdr-text-utility-sans-200-family: Graphik, "Helvetica Neue", sans-serif;
+@cdr-text-utility-sans-200-style: normal;
+@cdr-text-utility-sans-200-weight: 400;
+@cdr-text-utility-sans-200-spacing: -0.16px;
+@cdr-text-utility-sans-200-size: 1.4rem;
+@cdr-text-utility-sans-200-height: 1.8rem;
+@cdr-text-utility-sans-300-family: Graphik, "Helvetica Neue", sans-serif;
+@cdr-text-utility-sans-300-style: normal;
+@cdr-text-utility-sans-300-weight: 400;
+@cdr-text-utility-sans-300-spacing: -0.16px;
+@cdr-text-utility-sans-300-size: 1.6rem;
+@cdr-text-utility-sans-300-height: 2.2rem;
+@cdr-text-utility-sans-400-family: Graphik, "Helvetica Neue", sans-serif;
+@cdr-text-utility-sans-400-style: normal;
+@cdr-text-utility-sans-400-weight: 400;
+@cdr-text-utility-sans-400-spacing: -0.16px;
+@cdr-text-utility-sans-400-size: 1.8rem;
+@cdr-text-utility-sans-400-height: 2.4rem;
+@cdr-text-utility-sans-500-family: Graphik, "Helvetica Neue", sans-serif;
+@cdr-text-utility-sans-500-style: normal;
+@cdr-text-utility-sans-500-weight: 400;
+@cdr-text-utility-sans-500-spacing: -0.32px;
+@cdr-text-utility-sans-500-size: 2rem;
+@cdr-text-utility-sans-500-height: 2.6rem;
+@cdr-text-utility-sans-600-family: Graphik, "Helvetica Neue", sans-serif;
+@cdr-text-utility-sans-600-style: normal;
+@cdr-text-utility-sans-600-weight: 400;
+@cdr-text-utility-sans-600-spacing: -0.32px;
+@cdr-text-utility-sans-600-size: 2.4rem;
+@cdr-text-utility-sans-600-height: 3rem;
+@cdr-text-utility-sans-700-family: Graphik, "Helvetica Neue", sans-serif;
+@cdr-text-utility-sans-700-style: normal;
+@cdr-text-utility-sans-700-weight: 400;
+@cdr-text-utility-sans-700-spacing: -0.32px;
+@cdr-text-utility-sans-700-size: 2.8rem;
+@cdr-text-utility-sans-700-height: 3.6rem;
+@cdr-text-utility-sans-800-family: Graphik, "Helvetica Neue", sans-serif;
+@cdr-text-utility-sans-800-style: normal;
+@cdr-text-utility-sans-800-weight: 400;
+@cdr-text-utility-sans-800-spacing: -0.64px;
+@cdr-text-utility-sans-800-size: 3.2rem;
+@cdr-text-utility-sans-800-height: 4rem;
+@cdr-text-utility-sans-strong-100-family: Graphik, "Helvetica Neue", sans-serif;
+@cdr-text-utility-sans-strong-100-style: normal;
+@cdr-text-utility-sans-strong-100-weight: 600;
+@cdr-text-utility-sans-strong-100-spacing: -0.08px;
+@cdr-text-utility-sans-strong-100-size: 1.2rem;
+@cdr-text-utility-sans-strong-100-height: 1.6rem;
+@cdr-text-utility-sans-strong-200-family: Graphik, "Helvetica Neue", sans-serif;
+@cdr-text-utility-sans-strong-200-style: normal;
+@cdr-text-utility-sans-strong-200-weight: 600;
+@cdr-text-utility-sans-strong-200-spacing: -0.08px;
+@cdr-text-utility-sans-strong-200-size: 1.4rem;
+@cdr-text-utility-sans-strong-200-height: 1.8rem;
+@cdr-text-utility-sans-strong-300-family: Graphik, "Helvetica Neue", sans-serif;
+@cdr-text-utility-sans-strong-300-style: normal;
+@cdr-text-utility-sans-strong-300-weight: 600;
+@cdr-text-utility-sans-strong-300-spacing: -0.08px;
+@cdr-text-utility-sans-strong-300-size: 1.6rem;
+@cdr-text-utility-sans-strong-300-height: 2.2rem;
+@cdr-text-utility-sans-strong-400-family: Graphik, "Helvetica Neue", sans-serif;
+@cdr-text-utility-sans-strong-400-style: normal;
+@cdr-text-utility-sans-strong-400-weight: 600;
+@cdr-text-utility-sans-strong-400-spacing: -0.08px;
+@cdr-text-utility-sans-strong-400-size: 1.8rem;
+@cdr-text-utility-sans-strong-400-height: 2.4rem;
+@cdr-text-utility-sans-strong-500-family: Graphik, "Helvetica Neue", sans-serif;
+@cdr-text-utility-sans-strong-500-style: normal;
+@cdr-text-utility-sans-strong-500-weight: 600;
+@cdr-text-utility-sans-strong-500-spacing: -0.16px;
+@cdr-text-utility-sans-strong-500-size: 2rem;
+@cdr-text-utility-sans-strong-500-height: 2.6rem;
+@cdr-text-utility-sans-strong-600-family: Graphik, "Helvetica Neue", sans-serif;
+@cdr-text-utility-sans-strong-600-style: normal;
+@cdr-text-utility-sans-strong-600-weight: 600;
+@cdr-text-utility-sans-strong-600-spacing: -0.16px;
+@cdr-text-utility-sans-strong-600-size: 2.4rem;
+@cdr-text-utility-sans-strong-600-height: 3rem;
+@cdr-text-utility-sans-strong-700-family: Graphik, "Helvetica Neue", sans-serif;
+@cdr-text-utility-sans-strong-700-style: normal;
+@cdr-text-utility-sans-strong-700-weight: 600;
+@cdr-text-utility-sans-strong-700-spacing: -0.16px;
+@cdr-text-utility-sans-strong-700-size: 2.8rem;
+@cdr-text-utility-sans-strong-700-height: 3.6rem;
+@cdr-text-utility-sans-strong-800-family: Graphik, "Helvetica Neue", sans-serif;
+@cdr-text-utility-sans-strong-800-style: normal;
+@cdr-text-utility-sans-strong-800-weight: 600;
+@cdr-text-utility-sans-strong-800-spacing: -0.32px;
+@cdr-text-utility-sans-strong-800-size: 3.2rem;
+@cdr-text-utility-sans-strong-800-height: 4rem;
+@cdr-text-utility-serif-200-family: Stuart, Georgia, serif;
+@cdr-text-utility-serif-200-style: normal;
+@cdr-text-utility-serif-200-weight: 400;
+@cdr-text-utility-serif-200-spacing: -0.08px;
+@cdr-text-utility-serif-200-size: 1.4rem;
+@cdr-text-utility-serif-200-height: 1.8rem;
+@cdr-text-utility-serif-300-family: Stuart, Georgia, serif;
+@cdr-text-utility-serif-300-style: normal;
+@cdr-text-utility-serif-300-weight: 400;
+@cdr-text-utility-serif-300-spacing: -0.08px;
+@cdr-text-utility-serif-300-size: 1.6rem;
+@cdr-text-utility-serif-300-height: 2.2rem;
+@cdr-text-utility-serif-400-family: Stuart, Georgia, serif;
+@cdr-text-utility-serif-400-style: normal;
+@cdr-text-utility-serif-400-weight: 400;
+@cdr-text-utility-serif-400-spacing: -0.16px;
+@cdr-text-utility-serif-400-size: 1.8rem;
+@cdr-text-utility-serif-400-height: 2.4rem;
+@cdr-text-utility-serif-500-family: Stuart, Georgia, serif;
+@cdr-text-utility-serif-500-style: normal;
+@cdr-text-utility-serif-500-weight: 400;
+@cdr-text-utility-serif-500-spacing: -0.32px;
+@cdr-text-utility-serif-500-size: 2rem;
+@cdr-text-utility-serif-500-height: 2.6rem;
+@cdr-text-utility-serif-600-family: Stuart, Georgia, serif;
+@cdr-text-utility-serif-600-style: normal;
+@cdr-text-utility-serif-600-weight: 400;
+@cdr-text-utility-serif-600-spacing: -0.32px;
+@cdr-text-utility-serif-600-size: 2.4rem;
+@cdr-text-utility-serif-600-height: 3rem;
+@cdr-text-utility-serif-700-family: Stuart, Georgia, serif;
+@cdr-text-utility-serif-700-style: normal;
+@cdr-text-utility-serif-700-weight: 400;
+@cdr-text-utility-serif-700-spacing: -0.32px;
+@cdr-text-utility-serif-700-size: 2.8rem;
+@cdr-text-utility-serif-700-height: 3.6rem;
+@cdr-text-utility-serif-800-family: Stuart, Georgia, serif;
+@cdr-text-utility-serif-800-style: normal;
+@cdr-text-utility-serif-800-weight: 400;
+@cdr-text-utility-serif-800-spacing: -0.32px;
+@cdr-text-utility-serif-800-size: 3.2rem;
+@cdr-text-utility-serif-800-height: 4rem;
+@cdr-text-utility-serif-strong-200-family: Stuart, Georgia, serif;
+@cdr-text-utility-serif-strong-200-style: normal;
+@cdr-text-utility-serif-strong-200-weight: 600;
+@cdr-text-utility-serif-strong-200-spacing: -0.08px;
+@cdr-text-utility-serif-strong-200-size: 1.4rem;
+@cdr-text-utility-serif-strong-200-height: 1.8rem;
+@cdr-text-utility-serif-strong-300-family: Stuart, Georgia, serif;
+@cdr-text-utility-serif-strong-300-style: normal;
+@cdr-text-utility-serif-strong-300-weight: 600;
+@cdr-text-utility-serif-strong-300-spacing: -0.08px;
+@cdr-text-utility-serif-strong-300-size: 1.6rem;
+@cdr-text-utility-serif-strong-300-height: 2.2rem;
+@cdr-text-utility-serif-strong-400-family: Stuart, Georgia, serif;
+@cdr-text-utility-serif-strong-400-style: normal;
+@cdr-text-utility-serif-strong-400-weight: 600;
+@cdr-text-utility-serif-strong-400-spacing: -0.08px;
+@cdr-text-utility-serif-strong-400-size: 1.8rem;
+@cdr-text-utility-serif-strong-400-height: 2.4rem;
+@cdr-text-utility-serif-strong-500-family: Stuart, Georgia, serif;
+@cdr-text-utility-serif-strong-500-style: normal;
+@cdr-text-utility-serif-strong-500-weight: 600;
+@cdr-text-utility-serif-strong-500-spacing: -0.08px;
+@cdr-text-utility-serif-strong-500-size: 2rem;
+@cdr-text-utility-serif-strong-500-height: 2.6rem;
+@cdr-text-utility-serif-strong-600-family: Stuart, Georgia, serif;
+@cdr-text-utility-serif-strong-600-style: normal;
+@cdr-text-utility-serif-strong-600-weight: 600;
+@cdr-text-utility-serif-strong-600-spacing: -0.16px;
+@cdr-text-utility-serif-strong-600-size: 2.4rem;
+@cdr-text-utility-serif-strong-600-height: 3rem;
+@cdr-text-utility-serif-strong-700-family: Stuart, Georgia, serif;
+@cdr-text-utility-serif-strong-700-style: normal;
+@cdr-text-utility-serif-strong-700-weight: 600;
+@cdr-text-utility-serif-strong-700-spacing: -0.16px;
+@cdr-text-utility-serif-strong-700-size: 2.8rem;
+@cdr-text-utility-serif-strong-700-height: 3.6rem;
+@cdr-text-utility-serif-strong-800-family: Stuart, Georgia, serif;
+@cdr-text-utility-serif-strong-800-style: normal;
+@cdr-text-utility-serif-strong-800-weight: 600;
+@cdr-text-utility-serif-strong-800-spacing: -0.16px;
+@cdr-text-utility-serif-strong-800-size: 3.2rem;
+@cdr-text-utility-serif-strong-800-height: 4rem;
+.cdr-display-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.cdr-display-sr-focusable {
+  .cdr-display-sr-only();
+
+  &:hover,
+  &:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+  }
+}
+
+.cdr-container-fluid-base-mixin {
+  padding-left: @cdr-space-one-x;
+  padding-right: @cdr-space-one-x;
+  width: 100%;
+}
+
+.cdr-container-fluid-medium-mixin {
+  padding-left: @cdr-space-two-x;
+  padding-right: @cdr-space-two-x;
+}
+
+.cdr-container-base-mixin {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: @cdr-space-one-x;
+  padding-right: @cdr-space-one-x;
+  width: 100%;
+  max-width: @cdr-breakpoint-lg;
+}
+
+.cdr-container-medium-mixin {
+  padding-left: @cdr-space-two-x;
+  padding-right: @cdr-space-two-x;
+}
+
+// XS
+.cdr-xs-mq-up(@rules) {
+  @media (min-width: @cdr-breakpoint-xs) {
+    @rules();
+  }
+}
+
+.cdr-xs-mq-only(@rules) {
+  @media (min-width: @cdr-breakpoint-xs) and (max-width: calc(@cdr-breakpoint-sm - 1px)) {
+    @rules();
+  }
+}
+
+// SM
+.cdr-sm-mq-down(@rules) {
+  @media (max-width: calc(@cdr-breakpoint-sm - 1px)) {
+    @rules();
+  }
+}
+
+.cdr-sm-mq-up(@rules) {
+  @media (min-width: @cdr-breakpoint-sm) {
+    @rules();
+  }
+}
+
+.cdr-sm-mq-only(@rules) {
+  @media (min-width: @cdr-breakpoint-sm) and (max-width: calc(@cdr-breakpoint-md - 1px)) {
+    @rules();
+  }
+}
+
+// MD
+.cdr-md-mq-down(@rules) {
+  @media (max-width: calc(@cdr-breakpoint-md - 1px)) {
+    @rules();
+  }
+}
+
+.cdr-md-mq-up(@rules) {
+  @media (min-width: @cdr-breakpoint-md) {
+    @rules();
+  }
+}
+
+.cdr-md-mq-only(@rules) {
+  @media (min-width: @cdr-breakpoint-md) and (max-width: calc(@cdr-breakpoint-lg - 1px)) {
+    @rules();
+  }
+}
+
+// LG
+.cdr-lg-mq-down(@rules) {
+  @media (max-width: calc(@cdr-breakpoint-lg - 1px)) {
+    @rules();
+  }
+}
+
+.cdr-lg-mq-up(@rules) {
+  @media (min-width: @cdr-breakpoint-lg) {
+    @rules();
+  }
+}
+
+.cdr-lg-mq-only(@rules) {
+  @media (min-width: @cdr-breakpoint-lg) {
+    @rules();
+  }
+}
+
+
+// DEPRECATED summer 2020
+.cdr-xs-mq(@rules) {
+  @media (min-width: @cdr-breakpoint-xs) {
+    @rules();
+  }
+}
+
+.cdr-sm-mq(@rules) {
+  @media (min-width: @cdr-breakpoint-sm) {
+    @rules();
+  }
+}
+
+.cdr-md-mq(@rules) {
+  @media (min-width: @cdr-breakpoint-md) {
+    @rules();
+  }
+}
+
+.cdr-lg-mq(@rules) {
+  @media (min-width: @cdr-breakpoint-lg) {
+    @rules();
+  }
+}

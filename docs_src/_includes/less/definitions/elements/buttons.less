@@ -1,0 +1,232 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//            THEME
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+@type    : 'element';
+@element : 'buttons';
+
+@import (multiple) '../../theme.config';
+// gulp path to Node
+//@import "./node_modules/@rei/cdr-tokens/dist/less/cdr-tokens.less";
+//@import './node_modules/@rei/cdr-component-variables/dist/less/index.less';
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// UI FRAMEWORK BUTTON
+//
+// TOC:
+//
+// :Base Styles
+// :Theme
+// :Theme --Core
+// :Theme --Explore
+// :Theme --High Contrast
+// :Theme --Button Link
+// :Size and Font
+// :Controls
+// :Specificity Overrides
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Base Styles
+//
+// define generic, non-sized, non-themed button experience
+//
+
+.btn {
+    .cdr-button-base-mixin();
+    display: inline-block !important;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Theme
+//
+// define primary and default color for in-active, active, hover, and focus
+//
+//----------------------------------------------------------------------------------------------------------------------
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Core
+// ---------------------------------------------------------------------------------------------------------------------
+.btn-primary,
+.btn-explore {
+    .cdr-button-primary-mixin();
+
+}
+
+.btn-default,
+.btn-play {
+    .cdr-button-secondary-mixin();
+}
+
+.btn-play {
+    & .icon {
+  
+        font-size: 1.8rem;
+        padding-right: 1.6rem;
+        vertical-align: text-bottom;
+    } 
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Button Link
+// Make a button look and behave like a link
+// ---------------------------------------------------------------------------------------------------------------------
+// TODO: refactor, move into base and theme selectors above
+.btn-link,
+.btn__link-inline-play {
+  background-color: transparent;
+  box-shadow: none;
+  color: @cdr-color-text-link-rest;
+  fill: @cdr-color-text-link-rest;
+
+  /* States
+    ---------- */
+
+  &:hover,
+  &:focus {
+    color: @cdr-color-text-link-hover;
+    fill: @cdr-color-text-link-hover;
+    background-color: transparent;
+    box-shadow: none;
+    text-decoration: underline;
+  }
+
+  &:active {
+    color: @cdr-color-text-link-active;
+    fill:  @cdr-color-text-link-active;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+}
+
+.btn__link-inline-play {
+    padding: 0;
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+    & .icon {
+    padding-right: 0;
+   }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Size and Font
+//
+// define btn-lg, btn-sm, btn-xs, Block button, btn-cta
+//
+//----------------------------------------------------------------------------------------------------------------------
+.btn-lg {
+   .cdr-button-base-text-mixin-large();
+}
+.btn-md {
+    .cdr-button-base-text-mixin-medium();
+}
+.btn-sm {
+    .cdr-button-base-text-mixin-small();
+}
+
+.btn-xs {
+      font-family: @cdr-font-family-sans;
+      font-size:  14px;
+      font-style: normal;
+      font-weight: 500;
+      letter-spacing: -.08px;
+      line-height: 14px;
+      padding: @cdr-space-inset-three-quarter-x-squish;
+     > .icon {
+      font-size:  @cdr-font-family-sans !important;
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Block button
+// ---------------------------------------------------------------------------------------------------------------------
+.btn-block {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+    & + & {
+        margin-left: 0;
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Close button
+// ---------------------------------------------------------------------------------------------------------------------
+
+
+.btn-bare,
+.btn-icon,
+.close {
+    .cdr-button-icon-only-mixin();
+}
+
+.btn-icon,
+.close  {
+    .cdr-button-with-background-mixin();
+    color: @cdr-color-icon-default;
+    display: inline-flex;
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Controls
+//
+// define .remove-toggle (filter)
+//
+//----------------------------------------------------------------------------------------------------------------------
+.remove-toggle {
+    position: relative;
+    & .icon-rei-close-small {
+        border-right: solid 0.1rem @core-architectural-5;
+        height: 108%;
+        left: 0;
+        padding: 0.7rem 0.8rem 0 0.7rem;
+        position: absolute;
+        overflow-y: hidden;
+        top: -0.1rem;
+
+    }
+
+    & span:last-of-type {
+        margin-left: 2.7rem; // for text
+    }
+
+    &.remove-right {
+        & .icon-rei-close-small {
+            &:extend( .btn-primary );
+            border-radius: 0 0.3rem 0.3rem 0;
+            height: 100%;
+            left: auto;
+            right: -0.1rem;
+            padding: 0.6rem 0.6rem 0 0.7rem;
+            top: 0;
+        }
+        & span:last-of-type {
+            margin-left: 0;
+            margin-right: 2rem;
+        }
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Specificity Overrides
+// ---------------------------------------------------------------------------------------------------------------------
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+    &.btn-block {
+        width: 100%;
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//            OVERRIDES
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+.loadUIOverrides();

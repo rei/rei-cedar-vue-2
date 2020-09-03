@@ -1,0 +1,193 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//            THEME
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+@type    : 'collection';
+@element : 'list-groups';
+
+@import (multiple) '../../theme.config';
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// List groups
+//
+//  list groups are designed to work as menus, css is included for toggleable navigation
+//  of parent list items
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+//scaffolding
+@list-group-default-wrapper-ruleset: {
+    ul{
+        margin: 0;
+        padding: 0;
+    }
+    li {
+        a {
+            display: block;
+        }
+    }
+};
+
+@list-group-toggle-ruleset: {
+& > label {
+    .text-capitalize();
+    .text-sub-heading();
+    padding: 1.4rem 1.6rem;
+    &:hover,
+    &:focus,
+    &.active {
+    text-decoration: none;
+    background-color: @list-group-bg;
+  }
+}
+& > [type="checkbox"]:focus + label:before,
+& > [type="radio"]:focus + label:before {
+  box-shadow: none;
+}
+};
+
+.list-group-variant
+(
+    @list-group-scaffolding:                @list-group-default-wrapper-ruleset;
+    @list-group-item-scaffolding:           @default-item-ruleset;
+    @list-group-item-secondary-scaffolding: @default-item-secondary-ruleset;
+) {
+    .list-unstyled();
+    @list-group-scaffolding();
+    li {
+        list-style: none;
+        // Nested List Items
+        // -----------------
+        &.item-secondary {
+            @list-group-item-secondary-scaffolding();
+        }
+        &.list-group-item {
+            position: relative;
+            @list-group-item-scaffolding();
+
+            input:focus + label, a:focus {
+                outline: .5rem auto;
+                outline-color: #4eaaff;
+            }
+        }
+    }
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// list-group: Filter menu rulesets
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+@menu-filter-list-group-wrapper-ruleset: {
+    ul{
+        margin: 0;
+        padding: 0;
+    }
+    li {
+        a {
+            display: table;
+            position: relative;
+            width: 100%;
+        }
+    }
+};
+//list-group-item
+@menu-filter-item-ruleset: {
+    border-bottom: 0.1rem solid @list-group-border;
+    .place-toggle-variant( @icon-size-sm; 2.1rem; 0.2rem; );
+    @list-group-toggle-ruleset();
+    & > a,
+    & > label {
+        &:extend( .link_navigation-subtitle );
+        padding: 1.5rem 1.6rem;
+        &.active,
+        &:hover,
+        &:focus {
+            text-decoration: none;
+            background-color: @list-group-bg;
+        }
+    }
+};
+//list-group-item-secondary
+@menu-filter-item-secondary-ruleset: {
+  padding: 0 @padding-large-horizontal @padding-xs-horizontal;
+  margin: 0;
+  &:last-of-type {
+      padding-bottom: 0;
+  }
+};
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// list-group: menu rulesets
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+@menu-navigation-list-group-wrapper-ruleset: {
+    @menu-filter-list-group-wrapper-ruleset();
+};
+//list-group-item
+@menu-navigation-item-ruleset: {
+    .place-toggle-variant( @icon-size-sm; 2.1rem; 0.2rem; );
+    border-bottom: 0.1rem solid @list-group-border;
+    background-color: @navigation-menu-1;
+    > a,
+    & label {
+        color: @cdr-color-text-primary;
+        text-decoration: none;
+        .cdr-text-utility-sans-strong-300();
+        //
+        padding: @padding-base-horizontal;
+        width: 100%;
+        margin-bottom: 0;
+        &:hover, &:focus, &.active {
+          color: @cdr-color-text-primary;
+          text-decoration: none;
+          background-color: @list-group-bg-2;
+        }
+    }
+};
+//list-group-item-secondary
+@menu-navigation-item-secondary-ruleset: {
+    border-top: 0.1rem solid @list-group-border;
+    background-color: @navigation-menu-2;
+    margin: 0;
+    > a {
+        color: @cdr-color-text-primary;
+        background-color: @navigation-menu-2;
+        border-bottom-color: #dcd6cb;
+        margin: 0;
+        outline: none;
+        padding: 1.1rem @padding-base-horizontal;
+        text-decoration: @link-hover-decoration;
+        vertical-align: top;
+        &:hover, &:focus, &.active  {
+          color: @cdr-color-text-primary;
+            text-decoration: none;
+            background-color: @list-group-bg-2;
+        }
+    }
+};
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// list-group: rulesets defined within list-group-variant mixin
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Filter menu
+.list-group-filter {
+    .list-group-variant (
+        @menu-filter-list-group-wrapper-ruleset;
+        @menu-filter-item-ruleset;
+        @menu-filter-item-secondary-ruleset;
+    );
+}
+// Navigation menu
+.list-group-menu {
+    .list-group-variant (
+        @menu-navigation-list-group-wrapper-ruleset;
+        @menu-navigation-item-ruleset;
+        @menu-navigation-item-secondary-ruleset;
+    );
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//            OVERRIDES
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+.loadUIOverrides();

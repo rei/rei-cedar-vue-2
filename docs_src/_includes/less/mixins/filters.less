@@ -1,0 +1,29 @@
+.hw-acceleration( ) {
+    .translate3d( 0, 0, 0 );
+}
+
+.filter-transition( @duration; @easing: linear ) {
+
+    -webkit-transition: @duration -webkit-filter @easing;
+       -moz-transition: @duration    -moz-filter @easing;
+       -moz-transition: @duration         filter @easing;
+        -ms-transition: @duration     -ms-filter @easing;
+         -o-transition: @duration      -o-filter @easing;
+            transition: @duration         filter @easing;
+}
+
+// Blur
+.blur( @blur ) {
+    .hw-acceleration( );
+
+    -webkit-filter: blur( @blur );
+       -moz-filter: blur( @blur );
+        -ms-filter: blur( @blur );
+         -o-filter: blur( @blur );
+            filter: blur( @blur );
+
+    @radius : unit( @blur );
+
+    filter: url( ~"data:image/svg+xml; utf8,<svg><filter id='blur'><feGaussianBlur stdDeviation='@{radius}' /></filter></svg>#blur" );
+    filter: progid:DXImageTransform.Microsoft.Blur( PixelRadius=@radius );
+}

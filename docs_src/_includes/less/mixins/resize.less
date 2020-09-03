@@ -1,0 +1,12 @@
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Resize anything
+//
+// The resize property controls if and how an element can be resided by the user by clicking and dragging the bottom
+// right corner of the element. Resize does nothing unless the overflow property is set to something other than visible.
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+.resizable(@direction) {
+  resize: @direction; // Options: horizontal, vertical, both
+  overflow: auto; // Per CSS3 UI, `resize` only applies when `overflow` isn't `visible`
+}

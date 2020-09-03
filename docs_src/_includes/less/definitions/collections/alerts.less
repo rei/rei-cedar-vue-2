@@ -1,0 +1,88 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//            THEME
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+@type    : 'collection';
+@element : 'alerts';
+
+@import (multiple) '../../theme.config';
+
+
+  
+.cdr-alert-base-mixin() {
+  position: relative;
+  padding: @cdr-space-half-x;
+  .cdr-text-default();
+}
+
+.cdr-alert-info-mixin() {
+  background-color: @cdr-color-background-info;
+  border: 1px solid @cdr-color-border-info;
+  svg {
+    fill: @cdr-color-text-info;
+  }
+}
+
+.cdr-alert-success-mixin() {
+  background-color: @cdr-color-background-success;
+  border: 1px solid @cdr-color-border-success;
+  svg {
+    fill: @cdr-color-text-success;
+  }
+}
+
+.cdr-alert-warning-mixin() {
+  background-color: @cdr-color-background-warning;
+  border: 1px solid @cdr-color-border-warning;
+  svg {
+    fill: @cdr-color-text-warning;
+  }
+}
+
+.cdr-alert-error-mixin() {
+  background-color: @cdr-color-background-error;
+  border: 1px solid @cdr-color-border-error;
+  svg {
+    fill: @cdr-color-text-error;
+  }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Alerts and messages
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+.alert {
+    &:extend( .media all );
+    margin: 0 0 @vertical-push 0;
+    padding: @cdr-space-half-x;
+    .cdr-text-default();
+      >.icon:first-of-type {
+          &:extend( .media-left all );
+      }
+    .alert-text {
+        &:extend( .media-body all );
+        .form-inline & {
+            width: auto;
+        }
+    }
+}
+
+.alert-danger {
+  background-color: @cdr-color-background-error;
+  border: 1px solid @cdr-color-border-error;
+}
+.alert-warning {
+  background-color: @cdr-color-background-warning;
+  border: 1px solid @cdr-color-border-warning;
+}
+.alert-success {
+  background-color: @cdr-color-background-success;
+  border: 1px solid @cdr-color-border-success;
+}
+.alert-info {
+  background-color: @cdr-color-background-info;
+  border: 1px solid @cdr-color-border-info;
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//            OVERRIDES
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+.loadUIOverrides();

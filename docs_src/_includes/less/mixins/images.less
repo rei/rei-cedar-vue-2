@@ -1,0 +1,278 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Image Mixins
+//
+// TOC:
+//
+// :Responsive Image
+// :Retina Image
+// :Twin Mountain Peaks Shape
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Responsive image
+//
+// Allow browsers to determine video or slideshow dimensions based on the width of
+// their containing block by creating an intrinsic ratio that will properly scale
+// on any device.
+// Rules are directly applied to <iframe>, <embed>, <video>, and <object> elements;
+// optionally use anexplicit descendant class .embed-responsive-item when you want
+// to match the styling for other attributes.
+//
+// Pro-Tip! You don't need to include frameborder="0" in your <iframe>s as we override
+// that for you.
+//
+//----------------------------------------------------------------------------------------------------------------------
+.img-responsive(@display: block) {
+  display: @display;
+  max-width: 100%; // Part 1: Set a maximum relative to the parent
+  height: auto; // Part 2: Scale the height according to the width, otherwise you get stretching
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Retina image
+//
+// Specify two image paths and the @1x image dimensions, this mixin will provide an
+// @2x media query. If you have many
+// images to serve, consider writing your retina image CSS manually in a single media query.
+//----------------------------------------------------------------------------------------------------------------------
+.img-retina(@file-1x; @file-2x; @width-1x; @height-1x) {
+  background-image: url("@{file-1x}");
+
+  @media
+    only screen and ( min-resolution: 192dpi ),
+    only screen and ( min-resolution: 2dppx ) {
+    background-image: url("@{file-2x}");
+    background-size: @width-1x @height-1x;
+  }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Media sharpening
+//
+// Improves sharpness of images and media when scaled down
+//
+//----------------------------------------------------------------------------------------------------------------------
+.img-sharpen,
+.media-sharpen {
+  image-rendering: pixelated;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Media frame
+//
+// Highly configurable and efficient media scale, crop, and anchor media in a container
+//
+//----------------------------------------------------------------------------------------------------------------------
+
+
+.media-anchor ( @aspect; @anchor: center )
+  when ( @anchor = center ) {
+  &:extend( .position.center );
+}
+
+.media-anchor ( @aspect; @anchor )
+  when ( @aspect = portrait )
+  and  ( @anchor = start ) {
+  &:extend( .position.top );
+}
+
+.media-anchor ( @aspect: landscape; @anchor )
+  when ( @aspect = landscape )
+  and  ( @anchor = start ) {
+  &:extend( .position.left );
+}
+
+.media-anchor ( @aspect; @anchor )
+  when ( @aspect = portrait )
+  and  ( @anchor = end ) {
+  &:extend( .position.bottom );
+}
+
+.media-anchor ( @aspect: landscape; @anchor )
+  when ( @aspect = landscape )
+  and  ( @anchor = end ) {
+  &:extend( .position.right );
+}
+
+
+.media-scale ( @crop: true; @aspect )
+  when ( @crop ) {
+  min-height: 100%;
+  min-width: 100%;
+
+  object-fit: cover;
+}
+
+.media-scale ( @crop; @aspect )
+  when ( @crop = false ){
+  height: auto;
+  width: auto;
+
+  top: 50%;
+  left: 50%;
+
+  max-height: 100%;
+  max-width: 100%;
+
+  object-fit: contain;
+}
+
+.media-scale ( @crop: true; @aspect: landscape )
+  when ( @crop )
+  and ( @aspect = landscape ){
+  max-height: 100%;
+  max-width: none;
+}
+
+.media-scale ( @crop: true; @aspect )
+  when ( @crop )
+  and ( @aspect = portrait ){
+  max-height: none;
+  max-width: 100%;
+}
+
+.media-frame ( @aspect; @crop; @anchor ) {
+    position: relative;
+    overflow: hidden;
+}
+
+.media-frame ( @aspect; @crop: true; @anchor )
+  when ( ispixel( @crop ) ) {
+    > img,
+    > video,
+    > iframe,
+    > embed,
+    > object {
+      padding: @crop;
+    }
+}
+
+.media-frame ( @aspect: landscape; @crop: true; @anchor ){
+  > img,
+  > video,
+  > iframe,
+  > embed,
+  > object {
+    .media-scale( @crop; @aspect );
+  }
+
+  > video {
+    &::-webkit-media-controls {
+      max-width: 100%;
+    }
+
+    &:not( [ controls ] )::-webkit-media-controls {
+      display: none;
+    }
+  }
+}
+
+.media-frame ( @aspect: landscape; @crop; @anchor: center ) {
+  > img,
+  > video {
+    .media-anchor( @aspect; @anchor );
+  }
+}
+
+
+// Application Classes
+.media-frame,
+.responsive-embed,
+.img-frame {
+    &:before {
+       content: '';
+       display: block;
+       height: 0;
+    }
+  // Default as non-cropping
+  & {
+    .media-frame( landscape; false; center );
+  }
+
+  &.center {
+    .media-frame( landscape; true; center );
+
+    &.portrait {
+      .media-frame( portrait; true; center );
+    }
+  }
+
+  &.left {
+    .media-frame( landscape; true; start );
+  }
+
+  &.right {
+    .media-frame( landscape; true; end );
+  }
+
+  &.top {
+    .media-frame( portrait; true; start );
+  }
+
+  &.bottom {
+    .media-frame( portrait; true; end );
+  }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Twin Mountain Peaks Shape
+//
+// @mountain-color: by default this is set to inherit; when placed within a well with an overlay class applied it will
+// inert the container color. If this is not desired specify the necessary color.
+// @first-mountain-size: default is 20px. This is the mobile view of the left shape.
+// @second-mountain-size: default is 15px. This is the mobile view of the right shape.
+// @first-sm-mountain-size: default is 30px. This is the non-mobile view of the right shape.
+// @second-sm-mountain-size: default is 20px. This is the non-mobile view of the right shape.
+//----------------------------------------------------------------------------------------------------------------------
+.twin-mountain-peaks(
+  @mountain-color:          inherit;
+  @first-mountain-size:     2rem;
+  @second-mountain-size:    1.5rem;
+  @first-sm-mountain-size:  3rem;
+  @second-sm-mountain-size: 2rem; ) {
+    // if @mountain-color is inherit it will inherit it's color from an overlay class defined in the parent container.
+    border-color: inherit;
+    display:      inline-block;
+    height:       @first-mountain-size;
+
+    &:before,
+    &:after {
+        content:  "";
+        position: absolute;
+
+        border-top-width:    0 !important;
+        border-style:        solid;
+        border-color:        transparent;
+        border-bottom-color: @mountain-color;
+    }
+
+    /* Primary Mountain Peak */
+    &:before {
+        border-width: @first-mountain-size;
+    }
+
+    /* Secondary Mountain Peak */
+    &:after {
+        border-width: @second-mountain-size;
+        transform: translate( 2.2rem, 0.5rem );
+    }
+
+    @media ( min-width: @screen-sm-min ) {
+        height: @first-sm-mountain-size;
+
+        &:before {
+            border-width: @first-sm-mountain-size;
+        }
+
+        &:after {
+            border-width: @second-sm-mountain-size;
+            transform: translate( 3.6rem, 1rem );
+        }
+    }
+}

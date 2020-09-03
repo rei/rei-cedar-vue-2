@@ -1,0 +1,22 @@
+
+// Form Inputs
+@cdr-color-input: #ffffff;
+@cdr-color-input-disabled: #e9e9e9;
+@cdr-color-input-warning: #fcf6e5;
+@cdr-color-input-error: #f9e5e5;
+@cdr-color-input-stroke: #c5c5c5;
+@cdr-color-input-warning-stroke: #e4ac00;
+@cdr-color-input-error-stroke: #cc0000;
+@cdr-color-input-placeholder-text: #767676;
+@cdr-color-input-text: #2e2e2e;
+@cdr-color-input-disabled-text: #c5c5c5;
+@cdr-color-input-label: #2e2e2e;
+@cdr-color-input-disabled-label: #c5c5c5;
+@cdr-color-input-error-label: #cc0000;
+
+// Sizing
+
+@sizing-size-xxs: 0.2rem;
+@sizing-size-xs: 0.4rem;
+@sizing-size-sm: 0.8rem;
+@sizing-size-md: 1.6rem;

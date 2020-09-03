@@ -1,0 +1,97 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//          THEME
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+@type    : 'module';
+@element : 'tabs';
+
+@import (multiple) '../../theme.config';
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Tabs
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// Tabs
+// -------------------------
+
+// Give the tabs something to sit on
+// Tabs
+// -------------------------
+// Give the tabs something to sit on
+.nav-tabs {
+   &:extend( .list-unstyled all );
+   &:extend( .clearfix all );
+   border-bottom: 1px solid @tab-border-color;
+    > li {
+        display: inline-block;
+        padding-left: @padding-base-horizontal;
+        position: relative;
+        &:first-of-type {
+            padding-left: 0;
+        }
+        > a {
+            display: block;
+            position: relative;
+            bottom: -2px;
+            padding: @cdr-space-inset-one-x-squish;
+            &:extend( .link_navigation );
+            font-weight: 500;
+            letter-spacing: -.08px;
+
+            &:hover,
+            &:focus {
+                 background-color: @tab-active-link-hover-bg;
+                 color: @tab-active-text;
+                 cursor: default;
+                 text-decoration: none;
+            }
+            &:focus {
+              outline: thin dotted;
+              // WebKit
+              outline: 0.2rem auto;
+              outline-color: #8DD1ED;
+              outline-offset: -0.1rem;
+              box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+              border: 1px solid rgba(81, 203, 238, 1);
+            }
+        }
+        &.active {
+            > a {
+                &:focus {
+                  outline: none;
+                  // WebKit
+                  outline: none;
+                  outline-color: transparent;
+                  border: none;
+                  box-shadow: none;
+                }
+                &, &:hover, &:focus {
+                    background-color: @tab-active-link-hover-bg;
+                    border-bottom: 4px solid @tab-active-stroke;
+                    bottom: -2px;
+                    color: @tab-active-text;
+                    cursor: default;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+// Tabbable tabs
+// -------------------------
+
+// Hide tabbable panes to start, show them when `.active`
+.tab-content {
+    > .tab-pane {
+        display: none;
+    }
+    > .active {
+        display: block;
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//            OVERRIDES
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+.loadUIOverrides();
