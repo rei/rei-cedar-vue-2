@@ -16,6 +16,7 @@ import link from 'componentsdir/link/examples/Links';
 import list from 'componentsdir/list/examples/Lists';
 import modal from 'componentsdir/modal/examples/Modal';
 import pagination from 'componentsdir/pagination/examples/Pagination';
+import popover from 'componentsdir/popover/examples/Popover';
 import quote from 'componentsdir/quote/examples/Quote';
 import radio from 'componentsdir/radio/examples/Radios';
 import rating from 'componentsdir/rating/examples/Ratings';
@@ -23,6 +24,7 @@ import select from 'componentsdir/select/examples/Selects';
 import table from 'componentsdir/table/examples/Table';
 import tabs from 'componentsdir/tabs/examples/Tabs';
 import text from 'componentsdir/text/examples/Text';
+import tooltip from 'componentsdir/tooltip/examples/Tooltip';
 import utilities from 'componentsdir/Utilities/Utilities';
 
 export default {
@@ -44,6 +46,7 @@ export default {
   list,
   modal,
   pagination,
+  popover,
   quote,
   radio,
   rating,
@@ -51,5 +54,6 @@ export default {
   table,
   tabs,
   text,
+  tooltip,
   utilities,
 };

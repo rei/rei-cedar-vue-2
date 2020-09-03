@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CdrTooltip matches snapshot 1`] = `
+<div
+  class="cdr-tooltip--wrapper"
+>
+  <div />
+  <cdr-popup-stub
+    autoposition="true"
+    position="up"
+    role="tooltip"
+  />
+</div>
+`;

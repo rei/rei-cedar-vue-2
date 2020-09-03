@@ -1,0 +1,282 @@
+@import '../../../css/settings/index.scss';
+
+$animation-transform: 10px;
+
+@keyframes :global(popup-exit-down) {
+  from {
+    // transform: translateY(0);
+    opacity: 1;
+  }
+
+  to {
+    // transform: translateY(-#{$animation-transform});
+    opacity: 0;
+  }
+}
+@keyframes :global(popup-enter-down) {
+  from {
+    // transform: translateY(-#{$animation-transform});
+    opacity: 0;
+  }
+
+  to {
+    // transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes :global(popup-exit-up) {
+  from {
+    // transform: translateY(0);
+    opacity: 1;
+  }
+
+  to {
+    // transform: translateY($animation-transform);
+    opacity: 0;
+  }
+}
+@keyframes :global(popup-enter-up) {
+  from {
+    // transform: translateY($animation-transform);
+    opacity: 0;
+  }
+
+  to {
+    // transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes :global(popup-exit-left) {
+  from {
+    // transform: translateX(0);
+    opacity: 1;
+  }
+
+  to {
+    // transform: translateX(-#{$animation-transform});
+    opacity: 0;
+  }
+}
+@keyframes :global(popup-enter-left) {
+  from {
+    // transform: translateX(-#{$animation-transform});
+    opacity: 0;
+  }
+
+  to {
+    // transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes :global(popup-exit-right) {
+  from {
+    // transform: translateX(0);
+    opacity: 1;
+  }
+
+  to {
+    // transform: translateX($animation-transform);
+    opacity: 0;
+  }
+}
+@keyframes :global(popup-enter-right) {
+  from {
+    // transform: translateX($animation-transform);
+    opacity: 0;
+  }
+
+  to {
+    // transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+$arrow-size: 1rem;
+$arrow-spacing: #{$arrow-size + $cdr-space-quarter-x + 0.1rem};
+$content-spacing: calc(100% + #{$arrow-size} + #{$cdr-space-quarter-x});
+
+.cdr-popup {
+  display: none;
+  opacity: 0;
+  animation-duration: $cdr-duration-2-x;
+  animation-timing-function: $cdr-timing-function-ease-out;
+
+  &--open, &--exit {
+    opacity: 1;
+    display: block;
+  }
+
+  &__content {
+    background: $cdr-color-background-primary;
+    border: 1px solid $cdr-color-border-secondary;
+    min-width: 286px; // TODO: max-width???...
+    position: absolute;
+    z-index: 100;
+  }
+
+  @mixin arrow($borderSide, $position, $translate) {
+    &::before, &::after {
+      #{$borderSide}: -#{$arrow-spacing};
+      #{$position}: 50%;
+      transform: #{$translate};
+      z-index: 100;
+    }
+    &::before {
+      border-#{$borderSide}-color: $cdr-color-border-secondary;
+    }
+
+    &::after {
+      border-#{$borderSide}-color: $cdr-color-background-primary;
+    }
+  }
+
+  &--up,
+  &--down {
+    .cdr-popup__content {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &--down {
+    &.cdr-popup--open.cdr-popup {
+      :global {
+        animation-name: popup-enter-down;
+      }
+    }
+
+    &.cdr-popup--exit.cdr-popup {
+      :global {
+        animation-name: popup-exit-down;
+      }
+    }
+
+    .cdr-popup__content {
+      top: $content-spacing;
+    }
+
+    .cdr-popup__arrow {
+      @include arrow(bottom, left, translateX(-50%));
+    }
+  }
+
+  &--up {
+    &.cdr-popup--open.cdr-popup {
+      :global {
+        animation-name: popup-enter-up;
+      }
+    }
+
+    &.cdr-popup--exit.cdr-popup {
+      :global {
+        animation-name: popup-exit-up;
+      }
+    }
+
+    .cdr-popup__content {
+      bottom: $content-spacing;
+    }
+
+    .cdr-popup__arrow {
+      @include arrow(top, left, translateX(-50%));
+    }
+  }
+
+  &--corner-left .cdr-popup__content {
+    left: 0;
+    transform: unset;
+  }
+
+  &--corner-right .cdr-popup__content {
+    left: unset;
+    right: 0;
+    transform: unset;
+  }
+
+  &--left,
+  &--right {
+    .cdr-popup__content {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  &--left {
+    &.cdr-popup--open.cdr-popup {
+      :global {
+        animation-name: popup-enter-left;
+      }
+    }
+
+    &.cdr-popup--exit.cdr-popup {
+      :global {
+        animation-name: popup-exit-left;
+      }
+    }
+
+    .cdr-popup__content {
+      right: $content-spacing;
+    }
+
+    .cdr-popup__arrow {
+      @include arrow(left, top, translateY(-50%));
+    }
+  }
+
+  &--right {
+    &.cdr-popup--open.cdr-popup {
+      :global {
+        animation-name: popup-enter-right;
+      }
+    }
+
+    &.cdr-popup--exit.cdr-popup {
+      :global {
+        animation-name: popup-exit-right;
+      }
+    }
+
+    .cdr-popup__content {
+      left: $content-spacing;
+    }
+
+    .cdr-popup__arrow {
+      @include arrow(right, top, translateY(-50%));
+    }
+  }
+
+
+  &--corner-top .cdr-popup__content {
+    top: 0;
+    transform: unset;
+  }
+
+  &--corner-bottom .cdr-popup__content {
+    top: unset;
+    bottom: 0;
+    transform: unset;
+  }
+
+  &__arrow {
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      margin: auto;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-color: transparent;
+    }
+
+    &::before {
+      border-width: $arrow-size;
+    }
+
+    &::after {
+      border-width: #{$arrow-size - 0.1rem};
+    }
+  }
+}
