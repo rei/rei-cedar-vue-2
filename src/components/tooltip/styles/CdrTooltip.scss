@@ -6,10 +6,6 @@ $cdr-color-border-tooltip-default: #f9f8f6;
 $cdr-color-background-tooltip-default: #373734;
 $cdr-color-text-tooltip-default: #f9f8f6;
 
-// TODO: enable hover logic
-// add hover handlers to popup content?
-// special logic in close to wait before actually closing?
-
 .cdr-tooltip--wrapper {
   position: relative;
   width: max-content;

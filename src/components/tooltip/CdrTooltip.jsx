@@ -34,18 +34,6 @@ export default {
   mounted() {
     this.addHandlers();
   },
-  destroyed() {
-    // TODO: no need to do this since the element listened to gets destroyted with this too?
-    // const triggerElement = this.$refs.trigger.children[0];
-    // if (triggerElement) {
-    //   triggerElement.removeEventListener('mouseover', this.openHandler);
-    //   triggerElement.removeEventListener('focus', this.openHandler);
-    //
-    //
-    //   triggerElement.removeEventListener('mouseleave', this.closeHandler);
-    //   triggerElement.removeEventListener('blur', this.closeHandler);
-    // }
-  },
   methods: {
     openTooltip() {
       if (this.timeout) clearTimeout(this.timeout);
@@ -75,8 +63,6 @@ export default {
     },
   },
   render() {
-    // TODO: aria-hidden/opened/expanded logic for tooltip?
-    // aria-live when content gets displayed?
     return (
       <div
         class={this.style['cdr-tooltip--wrapper']}

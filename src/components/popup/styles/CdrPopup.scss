@@ -112,7 +112,7 @@ $content-spacing: calc(100% + #{$arrow-size} + #{$cdr-space-quarter-x});
   &__content {
     background: $cdr-color-background-primary;
     border: 1px solid $cdr-color-border-secondary;
-    min-width: 286px; // TODO: max-width???...
+    min-width: 286px;
     position: absolute;
     z-index: 100;
   }
