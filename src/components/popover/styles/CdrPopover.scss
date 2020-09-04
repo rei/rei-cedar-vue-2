@@ -1,195 +1,33 @@
+@import url('@rei/cedar/dist/style/cdr-popup.css');
 @import url('@rei/cedar/dist/style/cdr-button.css');
 @import url('@rei/cedar/dist/style/cdr-icon.css');
 @import '../../../css/settings/index.scss';
 
-.cdr-popover--tooltip {
-  .cdr-popover {
-    background: $cdr-color-background-cta-dark-rest; // TODO: need token/value here
-    color: $cdr-color-text-inverse;
-    border: none;
-  }
-}
-
 .cdr-popover{
-  padding: $cdr-space-half-x;
-  padding-left: $cdr-space-one-x;
-  background: $cdr-color-background-primary;
-  border: 1px solid $cdr-color-border-secondary;
-  min-width: 286px;
-  position: absolute;
-  z-index: 100;
+
+  &--wrapper {
+    position: relative;
+    width: max-content;
+    height: max-content;
+  }
+  &__title {
+    @include cdr-text-heading-serif-400;
+    margin-bottom: $cdr-space-half-x;
+    margin-right: $cdr-space-half-x;
+  }
 
   &__container {
+    padding: $cdr-space-half-x;
+    padding-left: $cdr-space-one-x;
     display: flex;
   }
   &__content {
     flex: auto;
-  }
-  &__title {
-    @include cdr-text-heading-serif-400;
-    margin-bottom: $cdr-space-one-x;
-    margin-right: $cdr-space-half-x;
   }
 
   &__close-button {
     align-self: flex-start;
     flex: none;
     padding: 0;
-  }
-
-
-  @mixin arrow($borderSide, $position, $translate) {
-    &::before, &::after {
-      // TODO: variable, MATCHES padding on cdr-popover, 1rem + space-quarter-x + 0.1rem for overlap
-      #{$borderSide}: -1.5rem;
-      #{$position}: 50%;
-      transform: #{$translate};
-      z-index: 100;
-    }
-    &::before {
-      border-#{$borderSide}-color: $cdr-color-border-secondary;
-    }
-
-    &::after {
-      border-#{$borderSide}-color: $cdr-color-background-primary;
-    }
-  }
-
-  &__wrapper--up,
-  &__wrapper--down {
-    .cdr-popover {
-      left: 50%;
-      transform: translateX(-50%);
-    }
-  }
-
-  &__wrapper--down {
-    .cdr-popover {
-      top: calc(100% + 1rem + #{$cdr-space-quarter-x}); // TODO: 1rem arrow size here, variable?
-    }
-
-    .cdr-popover__arrow {
-      @include arrow(bottom, left, translateX(-50%));
-    }
-  }
-
-  &__wrapper--down.cdr-popover--tooltip .cdr-popover__arrow {
-    &::before {
-      border-bottom-color: $cdr-color-background-cta-dark-rest; // TODO: need token/value here
-    }
-
-    &::after {
-      border-bottom-color: $cdr-color-background-cta-dark-rest; // TODO: need token/value here
-    }
-  }
-
-  &__wrapper--up {
-    .cdr-popover {
-      bottom: calc(100% + 1rem + #{$cdr-space-quarter-x}); // TODO: 1rem arrow size here, variable?
-    }
-
-    .cdr-popover__arrow {
-      @include arrow(top, left, translateX(-50%));
-    }
-  }
-
-  &__wrapper--up.cdr-popover--tooltip .cdr-popover__arrow {
-    &::before {
-      border-top-color: $cdr-color-background-cta-dark-rest; // TODO: need token/value here
-    }
-
-    &::after {
-      border-top-color: $cdr-color-background-cta-dark-rest; // TODO: need token/value here
-    }
-  }
-
-  &__corner--left .cdr-popover {
-    left: 0;
-    transform: unset;
-  }
-
-  &__corner--right .cdr-popover {
-    left: unset;
-    right: 0;
-    transform: unset;
-  }
-
-  &__wrapper--left,
-  &__wrapper--right {
-    .cdr-popover {
-      top: 50%;
-      transform: translateY(-50%);
-    }
-  }
-
-  &__wrapper--left {
-    .cdr-popover {
-      right: calc(100% + 1rem + #{$cdr-space-quarter-x}); // TODO: 1rem arrow size here, variable?
-    }
-
-    .cdr-popover__arrow {
-      @include arrow(left, top, translateY(-50%));
-    }
-  }
-
-  &__wrapper--left.cdr-popover--tooltip .cdr-popover__arrow {
-    &::before {
-      border-left-color: $cdr-color-background-cta-dark-rest; // TODO: need token/value here
-    }
-
-    &::after {
-      border-left-color: $cdr-color-background-cta-dark-rest; // TODO: need token/value here
-    }
-  }
-
-  &__wrapper--right {
-    .cdr-popover {
-      left: calc(100% + 1rem + #{$cdr-space-quarter-x}); // TODO: 1rem arrow size here, variable?
-    }
-
-    .cdr-popover__arrow {
-      @include arrow(right, top, translateY(-50%));
-    }
-  }
-
-  &__wrapper--right.cdr-popover--tooltip .cdr-popover__arrow {
-    &::before {
-      border-right-color: $cdr-color-background-cta-dark-rest; // TODO: need token/value here
-    }
-
-    &::after {
-      border-right-color: $cdr-color-background-cta-dark-rest; // TODO: need token/value here
-    }
-  }
-
-  &__corner--top .cdr-popover {
-    top: 0;
-    transform: unset;
-  }
-
-  &__corner--bottom .cdr-popover {
-    top: unset;
-    bottom: 0;
-    transform: unset;
-  }
-
-  &__arrow {
-    &::before, &::after {
-      content: '';
-      position: absolute;
-      margin: auto;
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-color: transparent;
-    }
-
-    &::before {
-      border-width: 10px; // arrow is 10px tall, 1px border (1rem/0.1rem)
-    }
-
-    &::after {
-      border-width: 9px;
-    }
   }
 }
