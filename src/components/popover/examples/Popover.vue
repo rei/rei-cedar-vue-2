@@ -55,19 +55,6 @@
       >right</cdr-radio>
     </cdr-form-group>
 
-    <cdr-form-group label="trigger type">
-      <cdr-radio
-        name="type"
-        custom-value="button"
-        v-model="type"
-      >button</cdr-radio>
-      <cdr-radio
-        name="type"
-        custom-value="icon"
-        v-model="type"
-      >icon</cdr-radio>
-    </cdr-form-group>
-
     <cdr-form-group label="title">
       <cdr-radio
         name="title"
@@ -81,45 +68,29 @@
       >no title</cdr-radio>
       <cdr-radio
         name="title"
-        custom-value="Hi i am a popover, i can also be a tooltip sometimes, wow"
+        custom-value="Hi i am a popover. Hello. Hows it going. Doing well i hope."
         v-model="title"
       >long title</cdr-radio>
     </cdr-form-group>
 
     <div style="clear: both" />
-    <div :class="containerClass">
-      <cdr-popover
-        @closed="togglePopover"
-        :opened="open"
-        :position="position"
-        :auto-position="autoPos"
-        :label="title"
-        :trigger="this.type === 'button' ? 'tooltip' : 'popover'"
-      >
-        <cdr-text>
-          Thanks for stopping by. What a lovely day it is today. Please come back again soon.
-        </cdr-text>
-      </cdr-popover>
-
+    <cdr-popover
+      :position="position"
+      :auto-position="autoPos"
+      :label="title"
+      :class="containerClass"
+    >
       <cdr-button
-        v-if="type === 'icon'"
-        @click="togglePopover"
         :icon-only="true"
         aria-label="information"
+        slot="trigger"
       >
         <icon-information-fill />
       </cdr-button>
-      <!-- TODO: export directive to handle hover/focus bindings? -->
-      <cdr-button
-        v-else
-        @mouseover="open = true"
-        @mouseleave="open = false"
-        @focus="open = true"
-        @blur="open = false"
-      >
-        lol wow huh
-      </cdr-button>
-    </div>
+      <cdr-text>
+        Thanks for stopping by. What a lovely day it is today. Please come back again soon.
+      </cdr-text>
+    </cdr-popover>
   </div>
 </template>
 
@@ -143,23 +114,13 @@ export default {
   },
   computed: {
     containerClass() {
-      return `popover-container popover-container--${this.trigger}`;
-    },
-  },
-  methods: {
-    togglePopover() {
-      this.open = !this.open;
+      return `popover-container--${this.trigger}`;
     },
   },
 };
 </script>
 
 <style>
-.popover-container {
-  position: relative;
-  width: max-content;
-}
-
 .popover-container--center {
   margin: 0 auto;
 }

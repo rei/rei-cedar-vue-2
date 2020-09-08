@@ -66,7 +66,8 @@
         tooltip
       </cdr-button>
       <div>
-        oh hey
+        Hello! This tooltip contains important information about the web site you are visiting!
+        We're using the internet right now!
       </div>
     </cdr-tooltip>
   </div>

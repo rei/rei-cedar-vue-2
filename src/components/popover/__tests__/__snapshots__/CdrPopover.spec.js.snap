@@ -1,3 +1,37 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CdrPopover matches snapshot 1`] = `<!---->`;
+exports[`CdrPopover matches snapshot 1`] = `
+<div
+  class="cdr-popover--wrapper"
+>
+  <div />
+  <cdr-popup-stub
+    autoposition="true"
+    position="up"
+    role="dialog"
+  >
+    <div
+      class="cdr-popover__container"
+    >
+      <div
+        class="cdr-popover__content"
+      />
+      <cdr-button-stub
+        aria-label="Close"
+        class="cdr-popover__close-button"
+        icononly="true"
+        size="small"
+        space=""
+        tag="button"
+        type="button"
+      >
+        <icon-x-sm-stub
+          inheritcolor="true"
+          size="medium"
+          space=""
+        />
+      </cdr-button-stub>
+    </div>
+  </cdr-popup-stub>
+</div>
+`;
