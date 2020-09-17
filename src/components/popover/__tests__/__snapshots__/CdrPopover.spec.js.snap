@@ -4,34 +4,52 @@ exports[`CdrPopover matches snapshot 1`] = `
 <div
   class="cdr-popover--wrapper"
 >
-  <div />
-  <cdr-popup-stub
-    autoposition="true"
-    position="up"
-    role="dialog"
+  <div>
+    <button
+      aria-controls="popover-test"
+      aria-haspopup="dialog"
+      id="popover-trigger"
+    />
+  </div>
+  <div
+    class="cdr-popup cdr-popup--closed"
   >
     <div
-      class="cdr-popover__container"
+      aria-expanded="false"
+      class="cdr-popup__content"
+      id="popover-test"
+      role="dialog"
     >
       <div
-        class="cdr-popover__content"
-      />
-      <cdr-button-stub
-        aria-label="Close"
-        class="cdr-popover__close-button"
-        icononly="true"
-        size="small"
-        space=""
-        tag="button"
-        type="button"
+        class="cdr-popover__container"
       >
-        <icon-x-sm-stub
-          inheritcolor="true"
-          size="medium"
-          space=""
-        />
-      </cdr-button-stub>
+        <div
+          class="cdr-popover__content"
+        >
+          popover content
+        </div>
+        <button
+          aria-label="Close"
+          class="cdr-button cdr-button--primary cdr-button--icon-only cdr-popover__close-button"
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            class="cdr-icon cdr-icon--inherit-color"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M13.406 12.006l3.297-3.296a1 1 0 10-1.414-1.414l-3.297 3.295-3.285-3.295A1 1 0 107.293 8.71l3.285 3.295-3.285 3.288a1 1 0 001.414 1.415l3.285-3.289 3.297 3.289a1 1 0 001.414-1.415l-3.297-3.287z"
+              role="presentation"
+            />
+          </svg>
+        </button>
+      </div>
     </div>
-  </cdr-popup-stub>
+    <div
+      class="cdr-popup__arrow"
+    />
+  </div>
 </div>
 `;

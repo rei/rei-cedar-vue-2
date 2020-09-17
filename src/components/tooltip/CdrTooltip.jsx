@@ -21,6 +21,10 @@ export default {
       type: Boolean,
       default: true,
     },
+    id: {
+      type: String,
+      required: true,
+    },
   },
   data() {
     return {
@@ -33,6 +37,8 @@ export default {
   },
   mounted() {
     this.addHandlers();
+    const trigger = this.$refs.trigger.children[0];
+    if (trigger) this.$refs.trigger.children[0].setAttribute('aria-describedby', this.id);
   },
   methods: {
     openTooltip() {
@@ -77,6 +83,7 @@ export default {
           position={ this.position }
           autoPosition={ this.autoPosition }
           opened={ this.open }
+          id={this.id}
         >
           { this.$slots.default }
         </cdr-popup>

@@ -61,6 +61,7 @@
       :position="position"
       :auto-position="autoPos"
       :class="containerClass"
+      id="tooltip-test"
     >
       <cdr-button slot="trigger">
         tooltip
