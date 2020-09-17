@@ -17067,7 +17067,8 @@ var cedar = (function () {
        * @param {String} prop -- the prop to build classes from
        */
       buildClass(prop) {
-        var _this = this;
+        var _context,
+            _this = this;
 
         var propNamePrefix = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
         var checkBase = 'cdr';
@@ -17077,7 +17078,9 @@ var cedar = (function () {
         }
 
         var base = checkBase;
-        var propArgsArr = this[prop] ? this[prop].split(' ') : [];
+        var propArgsArr = this[prop] ? filter$2(_context = this[prop].split(' ')).call(_context, function (x) {
+          return x;
+        }) : [];
         var builtClasses = [];
 
         if (propNamePrefix) {
@@ -17085,22 +17088,15 @@ var cedar = (function () {
             prefix class names with prop name
           */
           propArgsArr = map$2(propArgsArr).call(propArgsArr, function (mod) {
-            var _context;
+            var _context2;
 
-            return concat$3(_context = "".concat(prop)).call(_context, mod);
+            return concat$3(_context2 = "".concat(prop)).call(_context2, mod);
           });
         }
 
-        if (!this.style) {
-          builtClasses = concat$3(builtClasses).call(builtClasses, map$2(propArgsArr).call(propArgsArr, function (mod) {
-            return _this.modifyClassName(base, mod);
-          }));
-        } else {
-          builtClasses = concat$3(builtClasses).call(builtClasses, map$2(propArgsArr).call(propArgsArr, function (mod) {
-            return _this.modifyClassName(base, mod);
-          }));
-        }
-
+        builtClasses = concat$3(builtClasses).call(builtClasses, map$2(propArgsArr).call(propArgsArr, function (mod) {
+          return _this.modifyClassName(base, mod);
+        }));
         return builtClasses.join(' ');
       },
 
@@ -17115,9 +17111,9 @@ var cedar = (function () {
        * Returns a modified base class
        */
       modifyClassName(base, modifier) {
-        var _context2, _context3;
+        var _context3, _context4;
 
-        return this.style ? this.moduleClass(concat$3(_context2 = "".concat(base, "--")).call(_context2, modifier)) : concat$3(_context3 = "".concat(base, "--")).call(_context3, modifier);
+        return this.style ? this.moduleClass(concat$3(_context3 = "".concat(base, "--")).call(_context3, modifier)) : concat$3(_context4 = "".concat(base, "--")).call(_context4, modifier);
       },
 
       /**
@@ -17138,12 +17134,12 @@ var cedar = (function () {
         var _this2 = this;
 
         if (typeof propVal === 'string') {
-          var _context4;
+          var _context5;
 
-          return map$2(_context4 = propVal.split(' ')).call(_context4, function (bp) {
-            var _context5;
+          return map$2(_context5 = propVal.split(' ')).call(_context5, function (bp) {
+            var _context6;
 
-            return _this2.modifyClassName(base, concat$3(_context5 = "".concat(modifier)).call(_context5, bp));
+            return _this2.modifyClassName(base, concat$3(_context6 = "".concat(modifier)).call(_context6, bp));
           }).join(' ');
         }
 
