@@ -13,7 +13,7 @@ export default {
         checkBase = this.baseClass;
       }
       const base = checkBase;
-      let propArgsArr = this[prop] ? this[prop].split(' ') : [];
+      let propArgsArr = this[prop] ? this[prop].split(' ').filter((x) => x) : [];
       let builtClasses = [];
 
       if (propNamePrefix) {
@@ -23,13 +23,8 @@ export default {
         propArgsArr = propArgsArr.map((mod) => `${prop}${mod}`);
       }
 
-      if (!this.style) {
-        builtClasses = builtClasses
-          .concat(propArgsArr.map((mod) => this.modifyClassName(base, mod)));
-      } else {
-        builtClasses = builtClasses
-          .concat(propArgsArr.map((mod) => this.modifyClassName(base, mod)));
-      }
+      builtClasses = builtClasses
+        .concat(propArgsArr.map((mod) => this.modifyClassName(base, mod)));
 
       return builtClasses.join(' ');
     },
