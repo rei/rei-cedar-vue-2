@@ -102,7 +102,7 @@ export default {
     handleResize() {
       debounce(() => {
         this.measurePopup();
-      }, 300)
+      }, 300);
     },
     addHandlers() {
       this.keyHandler = this.handleKeyDown.bind(this);
@@ -115,7 +115,7 @@ export default {
       this.$nextTick(() => {
         this.popupRect = this.$refs.popup.getBoundingClientRect();
         this.closed = true;
-      })
+      });
     },
     calculatePlacement(triggerRect, popupRect, screenWidth, screenHeight) {
       const offset = 15; // 10px for arrow 5px for spacing
@@ -127,46 +127,57 @@ export default {
         down: screenHeight - triggerRect.bottom - popupRect.height - offset,
         left: triggerRect.left - popupRect.width - offset,
         right: screenWidth - triggerRect.right - popupRect.width - offset,
-      }
+      };
 
       const corners = {
         left: triggerCenterX - (popupRect.width / 2) < 0,
         right: triggerCenterX + (popupRect.width / 2) > screenWidth,
         top: triggerCenterY - (popupRect.height / 2) < 0,
         bottom: triggerCenterY + (popupRect.height / 2) > screenHeight,
-      }
+      };
 
       const invert = {
         up: 'down',
         down: 'up',
         left: 'right',
         right: 'left',
-      }
+      };
 
       const inverse = invert[this.position];
-      const validDirs = Object.keys(dirs).filter(dir => dirs[dir] > 0);
+      const validDirs = Object.keys(dirs).filter((dir) => dirs[dir] > 0);
       const sortedDirs = Object.keys(dirs).sort((a, b) => {
-        return dirs[a] > dirs[b] ? -1 : dirs[a] < dirs[b] ? 1 : 0;
+        if (dirs[a] > dirs[b]) {
+          return -1;
+        } if (dirs[a] < dirs[b]) {
+          return 1;
+        }
+        return 0;
       });
 
       if (dirs[this.position] > 0) {
         // selected position is valid, or no positions are valid
         this.pos = this.position;
-      } else if (dirs[inverse] > 0){
+      } else if (dirs[inverse] > 0) {
         // inverted position is valid
         this.pos = inverse;
-      } else if (validDirs.length){
+      } else if (validDirs.length) {
         // try the angles
-        this.pos = validDirs[0];
+        [this.pos] = validDirs;
       } else {
         // use whichever direction has the most space
-        this.pos = sortedDirs[0];
+        [this.pos] = sortedDirs;
       }
 
-      if (this.pos === 'down' || this.pos === 'up' ) {
-        this.corner = corners['left'] ? 'left' : corners['right'] ? 'right' : undefined;
-      } else {
-        this.corner = corners['top'] ? 'top' : corners['bottom'] ? 'bottom' : undefined;
+      if (this.pos === 'down' || this.pos === 'up') {
+        if (corners.left) {
+          this.corner = 'left';
+        } else if (corners.right) {
+          this.corner = 'right';
+        }
+      } else if (corners.top) {
+        this.corner = 'top';
+      } else if (corners.bottom) {
+        this.corner = 'bottom';
       }
     },
     handleOpened() {

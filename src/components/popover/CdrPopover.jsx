@@ -49,8 +49,8 @@ export default {
 
     const trigger = this.$refs.trigger.children[0];
     if (trigger) {
-      this.$refs.trigger.children[0].setAttribute('aria-controls', this.id);
-      this.$refs.trigger.children[0].setAttribute('aria-haspopup', 'dialog');
+      trigger.setAttribute('aria-controls', this.id);
+      trigger.setAttribute('aria-haspopup', 'dialog');
     }
   },
   methods: {

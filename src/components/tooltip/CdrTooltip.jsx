@@ -38,7 +38,7 @@ export default {
   mounted() {
     this.addHandlers();
     const trigger = this.$refs.trigger.children[0];
-    if (trigger) this.$refs.trigger.children[0].setAttribute('aria-describedby', this.id);
+    if (trigger) trigger.setAttribute('aria-describedby', this.id);
   },
   methods: {
     openTooltip() {
