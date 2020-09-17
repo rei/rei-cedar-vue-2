@@ -13,7 +13,7 @@ export default {
         checkBase = this.baseClass;
       }
       const base = checkBase;
-      let propArgsArr = this[prop] ? this[prop].split(' ') : [];
+      let propArgsArr = this[prop] ? this[prop].split(' ').filter(x => x) : [];
       let builtClasses = [];
 
       if (propNamePrefix) {
