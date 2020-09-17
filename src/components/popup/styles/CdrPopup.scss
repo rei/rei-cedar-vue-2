@@ -1,7 +1,7 @@
 @import '../../../css/settings/index.scss';
 
 $animation-transform: 10px;
-
+// TODO: if animating opacity only, replace keyframes with regular transition
 @keyframes :global(popup-exit-down) {
   from {
     // transform: translateY(0);
@@ -99,14 +99,16 @@ $arrow-spacing: #{$arrow-size + $cdr-space-quarter-x + 0.1rem};
 $content-spacing: calc(100% + #{$arrow-size} + #{$cdr-space-quarter-x});
 
 .cdr-popup {
-  display: none;
   opacity: 0;
   animation-duration: $cdr-duration-2-x;
   animation-timing-function: $cdr-timing-function-ease-out;
 
   &--open, &--exit {
     opacity: 1;
-    display: block;
+  }
+  
+  &--closed {
+    opacity: 0;
   }
 
   &__content {

@@ -9,6 +9,11 @@
     position: relative;
     width: max-content;
     height: max-content;
+
+    // Override CdrPopup closed state for a11y
+    .cdr-popup--closed {
+      display: none;
+    }
   }
   &__title {
     @include cdr-text-heading-serif-400;
