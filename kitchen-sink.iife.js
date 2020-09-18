@@ -28810,17 +28810,359 @@ var cedar = (function () {
 
   };
 
-  var css_248z$l = "/* intentionally empty */\n/* ==========================================================================/*\n* Token option variables\n*\n* these are temporary variables, providing\n* cedar components mappings to previously available tokens.\n* These varables should be removed as tokens are available\n*\n=============================================================== */\n/* ---------------------\n* Outline\n* ------------------- */\n.cdr-popover--wrapper_6\\.0\\.0 {\n  position: relative;\n  width: -webkit-max-content;\n  width: max-content;\n  height: -webkit-max-content;\n  height: max-content; }\n.cdr-popover__title_6\\.0\\.0 {\n  font-family: Stuart, Georgia, serif;\n  font-style: normal;\n  font-weight: 500;\n  letter-spacing: 0;\n  font-size: 1.8rem;\n  line-height: 2.4rem;\n  margin-bottom: 0.8rem;\n  margin-right: 0.8rem; }\n.cdr-popover__container_6\\.0\\.0 {\n  padding: 0.8rem;\n  padding-left: 1.6rem;\n  display: flex; }\n.cdr-popover__content_6\\.0\\.0 {\n  flex: auto; }\n.cdr-popover__close-button_6\\.0\\.0 {\n  align-self: flex-start;\n  flex: none;\n  padding: 0; }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uL2J1aWxkL25vb3AuY3NzIiwic3JjL2Nzcy9zZXR0aW5ncy9fb3B0aW9ucy52YXJzLnNjc3MiLCJDZHJQb3BvdmVyLnNjc3MiLCJzcmMvY29tcG9uZW50cy9wb3BvdmVyL3N0eWxlcy9DZHJQb3BvdmVyLnNjc3MiLCJub2RlX21vZHVsZXMvQHJlaS9jZHItdG9rZW5zL2Rpc3Qvc2Nzcy9jZHItdG9rZW5zLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsd0JBQXdCO0FDQXhCOzs7Ozs7O2lFQ1VpRTtBRERqRTs7dUJDSXVCO0FDTnJCO0VBQ0Usa0JBQWtCO0VBQ2xCLDBCQUFrQjtFQUFsQixrQkFBa0I7RUFDbEIsMkJBQW1CO0VBQW5CLG1CQUFtQixFQUFBO0FBRXJCO0VDeWJBLG1DQUFtQztFQUNuQyxrQkFBa0I7RUFDbEIsZ0JBQWdCO0VBQ2hCLGlCQUFtQjtFQUNuQixpQkFBaUI7RUFDakIsbUJBQW1CO0VENWJqQixxQkNvckRxQjtFRG5yRHJCLG9CQ21yRHFCLEVBQUE7QURockR2QjtFQUNFLGVDK3FEcUI7RUQ5cURyQixvQkNnckRvQjtFRC9xRHBCLGFBQWEsRUFBQTtBQUVmO0VBQ0UsVUFBVSxFQUFBO0FBR1o7RUFDRSxzQkFBc0I7RUFDdEIsVUFBVTtFQUNWLFVBQVUsRUFBQSIsImZpbGUiOiJDZHJQb3BvdmVyLnNjc3MifQ== */";
-  var style$o = {"cdr-popover--wrapper":"cdr-popover--wrapper_6.0.0","cdr-popover__title":"cdr-popover__title_6.0.0","cdr-popover__container":"cdr-popover__container_6.0.0","cdr-popover__content":"cdr-popover__content_6.0.0","cdr-popover__close-button":"cdr-popover__close-button_6.0.0"};
+  var css_248z$l = "/* intentionally empty */\n/* ==========================================================================/*\n* Token option variables\n*\n* these are temporary variables, providing\n* cedar components mappings to previously available tokens.\n* These varables should be removed as tokens are available\n*\n=============================================================== */\n/* ---------------------\n* Outline\n* ------------------- */\n.cdr-popover--wrapper_6\\.0\\.0 {\n  position: relative;\n  width: -webkit-max-content;\n  width: max-content;\n  height: -webkit-max-content;\n  height: max-content; }\n.cdr-popover--wrapper_6\\.0\\.0 .cdr-popup--closed_6\\.0\\.0 {\n    display: none; }\n.cdr-popover__title_6\\.0\\.0 {\n  font-family: Stuart, Georgia, serif;\n  font-style: normal;\n  font-weight: 500;\n  letter-spacing: 0;\n  font-size: 1.8rem;\n  line-height: 2.4rem;\n  margin-bottom: 0.8rem;\n  margin-right: 0.8rem; }\n.cdr-popover__container_6\\.0\\.0 {\n  padding: 0.8rem;\n  padding-left: 1.6rem;\n  display: flex; }\n.cdr-popover__content_6\\.0\\.0 {\n  flex: auto; }\n.cdr-popover__close-button_6\\.0\\.0 {\n  align-self: flex-start;\n  flex: none;\n  padding: 0; }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uL2J1aWxkL25vb3AuY3NzIiwic3JjL2Nzcy9zZXR0aW5ncy9fb3B0aW9ucy52YXJzLnNjc3MiLCJDZHJQb3BvdmVyLnNjc3MiLCJzcmMvY29tcG9uZW50cy9wb3BvdmVyL3N0eWxlcy9DZHJQb3BvdmVyLnNjc3MiLCJub2RlX21vZHVsZXMvQHJlaS9jZHItdG9rZW5zL2Rpc3Qvc2Nzcy9jZHItdG9rZW5zLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsd0JBQXdCO0FDQXhCOzs7Ozs7O2lFQ1VpRTtBRERqRTs7dUJDSXVCO0FDTnJCO0VBQ0Usa0JBQWtCO0VBQ2xCLDBCQUFrQjtFQUFsQixrQkFBa0I7RUFDbEIsMkJBQW1CO0VBQW5CLG1CQUFtQixFQUFBO0FBSHBCO0lBT0csYUFBYSxFQUFBO0FBR2pCO0VDb2JBLG1DQUFtQztFQUNuQyxrQkFBa0I7RUFDbEIsZ0JBQWdCO0VBQ2hCLGlCQUFtQjtFQUNuQixpQkFBaUI7RUFDakIsbUJBQW1CO0VEdmJqQixxQkMrcURxQjtFRDlxRHJCLG9CQzhxRHFCLEVBQUE7QUQzcUR2QjtFQUNFLGVDMHFEcUI7RUR6cURyQixvQkMycURvQjtFRDFxRHBCLGFBQWEsRUFBQTtBQUVmO0VBQ0UsVUFBVSxFQUFBO0FBR1o7RUFDRSxzQkFBc0I7RUFDdEIsVUFBVTtFQUNWLFVBQVUsRUFBQSIsImZpbGUiOiJDZHJQb3BvdmVyLnNjc3MifQ== */";
+  var style$o = {"cdr-popover--wrapper":"cdr-popover--wrapper_6.0.0","cdr-popup--closed":"cdr-popup--closed_6.0.0","cdr-popover__title":"cdr-popover__title_6.0.0","cdr-popover__container":"cdr-popover__container_6.0.0","cdr-popover__content":"cdr-popover__content_6.0.0","cdr-popover__close-button":"cdr-popover__close-button_6.0.0"};
   styleInject(css_248z$l);
 
-  var css_248z$m = "/* ==========================================================================/*\n* Token option variables\n*\n* these are temporary variables, providing\n* cedar components mappings to previously available tokens.\n* These varables should be removed as tokens are available\n*\n=============================================================== */\n/* ---------------------\n* Outline\n* ------------------- */\n@keyframes popup-exit-down {\n  from {\n    opacity: 1; }\n  to {\n    opacity: 0; } }\n@keyframes popup-enter-down {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n@keyframes popup-exit-up {\n  from {\n    opacity: 1; }\n  to {\n    opacity: 0; } }\n@keyframes popup-enter-up {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n@keyframes popup-exit-left {\n  from {\n    opacity: 1; }\n  to {\n    opacity: 0; } }\n@keyframes popup-enter-left {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n@keyframes popup-exit-right {\n  from {\n    opacity: 1; }\n  to {\n    opacity: 0; } }\n@keyframes popup-enter-right {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n.cdr-popup_6\\.0\\.0 {\n  display: none;\n  opacity: 0;\n  animation-duration: 0.2s;\n  animation-timing-function: cubic-bezier(0.32, 0.94, 0.6, 1); }\n.cdr-popup--open_6\\.0\\.0, .cdr-popup--exit_6\\.0\\.0 {\n    opacity: 1;\n    display: block; }\n.cdr-popup__content_6\\.0\\.0 {\n    background: #ffffff;\n    border: 0.1rem solid #928b80;\n    min-width: 28.6rem;\n    position: absolute;\n    z-index: 100; }\n.cdr-popup--up_6\\.0\\.0 .cdr-popup__content_6\\.0\\.0, .cdr-popup--down_6\\.0\\.0 .cdr-popup__content_6\\.0\\.0 {\n    left: 50%;\n    transform: translateX(-50%); }\n.cdr-popup--down_6\\.0\\.0.cdr-popup--open_6\\.0\\.0.cdr-popup_6\\.0\\.0 {\n    animation-name: popup-enter-down; }\n.cdr-popup--down_6\\.0\\.0.cdr-popup--exit_6\\.0\\.0.cdr-popup_6\\.0\\.0 {\n    animation-name: popup-exit-down; }\n.cdr-popup--down_6\\.0\\.0 .cdr-popup__content_6\\.0\\.0 {\n    top: calc(100% + 1.4rem); }\n.cdr-popup--down_6\\.0\\.0 .cdr-popup__arrow_6\\.0\\.0::before, .cdr-popup--down_6\\.0\\.0 .cdr-popup__arrow_6\\.0\\.0::after {\n    bottom: -1.5rem;\n    left: 50%;\n    transform: translateX(-50%);\n    z-index: 100; }\n.cdr-popup--down_6\\.0\\.0 .cdr-popup__arrow_6\\.0\\.0::before {\n    border-bottom-color: #928b80; }\n.cdr-popup--down_6\\.0\\.0 .cdr-popup__arrow_6\\.0\\.0::after {\n    border-bottom-color: #ffffff; }\n.cdr-popup--up_6\\.0\\.0.cdr-popup--open_6\\.0\\.0.cdr-popup_6\\.0\\.0 {\n    animation-name: popup-enter-up; }\n.cdr-popup--up_6\\.0\\.0.cdr-popup--exit_6\\.0\\.0.cdr-popup_6\\.0\\.0 {\n    animation-name: popup-exit-up; }\n.cdr-popup--up_6\\.0\\.0 .cdr-popup__content_6\\.0\\.0 {\n    bottom: calc(100% + 1.4rem); }\n.cdr-popup--up_6\\.0\\.0 .cdr-popup__arrow_6\\.0\\.0::before, .cdr-popup--up_6\\.0\\.0 .cdr-popup__arrow_6\\.0\\.0::after {\n    top: -1.5rem;\n    left: 50%;\n    transform: translateX(-50%);\n    z-index: 100; }\n.cdr-popup--up_6\\.0\\.0 .cdr-popup__arrow_6\\.0\\.0::before {\n    border-top-color: #928b80; }\n.cdr-popup--up_6\\.0\\.0 .cdr-popup__arrow_6\\.0\\.0::after {\n    border-top-color: #ffffff; }\n.cdr-popup--corner-left_6\\.0\\.0 .cdr-popup__content_6\\.0\\.0 {\n    left: 0;\n    transform: unset; }\n.cdr-popup--corner-right_6\\.0\\.0 .cdr-popup__content_6\\.0\\.0 {\n    left: unset;\n    right: 0;\n    transform: unset; }\n.cdr-popup--left_6\\.0\\.0 .cdr-popup__content_6\\.0\\.0, .cdr-popup--right_6\\.0\\.0 .cdr-popup__content_6\\.0\\.0 {\n    top: 50%;\n    transform: translateY(-50%); }\n.cdr-popup--left_6\\.0\\.0.cdr-popup--open_6\\.0\\.0.cdr-popup_6\\.0\\.0 {\n    animation-name: popup-enter-left; }\n.cdr-popup--left_6\\.0\\.0.cdr-popup--exit_6\\.0\\.0.cdr-popup_6\\.0\\.0 {\n    animation-name: popup-exit-left; }\n.cdr-popup--left_6\\.0\\.0 .cdr-popup__content_6\\.0\\.0 {\n    right: calc(100% + 1.4rem); }\n.cdr-popup--left_6\\.0\\.0 .cdr-popup__arrow_6\\.0\\.0::before, .cdr-popup--left_6\\.0\\.0 .cdr-popup__arrow_6\\.0\\.0::after {\n    left: -1.5rem;\n    top: 50%;\n    transform: translateY(-50%);\n    z-index: 100; }\n.cdr-popup--left_6\\.0\\.0 .cdr-popup__arrow_6\\.0\\.0::before {\n    border-left-color: #928b80; }\n.cdr-popup--left_6\\.0\\.0 .cdr-popup__arrow_6\\.0\\.0::after {\n    border-left-color: #ffffff; }\n.cdr-popup--right_6\\.0\\.0.cdr-popup--open_6\\.0\\.0.cdr-popup_6\\.0\\.0 {\n    animation-name: popup-enter-right; }\n.cdr-popup--right_6\\.0\\.0.cdr-popup--exit_6\\.0\\.0.cdr-popup_6\\.0\\.0 {\n    animation-name: popup-exit-right; }\n.cdr-popup--right_6\\.0\\.0 .cdr-popup__content_6\\.0\\.0 {\n    left: calc(100% + 1.4rem); }\n.cdr-popup--right_6\\.0\\.0 .cdr-popup__arrow_6\\.0\\.0::before, .cdr-popup--right_6\\.0\\.0 .cdr-popup__arrow_6\\.0\\.0::after {\n    right: -1.5rem;\n    top: 50%;\n    transform: translateY(-50%);\n    z-index: 100; }\n.cdr-popup--right_6\\.0\\.0 .cdr-popup__arrow_6\\.0\\.0::before {\n    border-right-color: #928b80; }\n.cdr-popup--right_6\\.0\\.0 .cdr-popup__arrow_6\\.0\\.0::after {\n    border-right-color: #ffffff; }\n.cdr-popup--corner-top_6\\.0\\.0 .cdr-popup__content_6\\.0\\.0 {\n    top: 0;\n    transform: unset; }\n.cdr-popup--corner-bottom_6\\.0\\.0 .cdr-popup__content_6\\.0\\.0 {\n    top: unset;\n    bottom: 0;\n    transform: unset; }\n.cdr-popup__arrow_6\\.0\\.0::before, .cdr-popup__arrow_6\\.0\\.0::after {\n    content: '';\n    position: absolute;\n    margin: auto;\n    width: 0;\n    height: 0;\n    border-style: solid;\n    border-color: transparent; }\n.cdr-popup__arrow_6\\.0\\.0::before {\n    border-width: 1rem; }\n.cdr-popup__arrow_6\\.0\\.0::after {\n    border-width: 0.9rem; }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9jc3Mvc2V0dGluZ3MvX29wdGlvbnMudmFycy5zY3NzIiwiQ2RyUG9wdXAuc2NzcyIsInNyYy9jb21wb25lbnRzL3BvcHVwL3N0eWxlcy9DZHJQb3B1cC5zY3NzIiwibm9kZV9tb2R1bGVzL0ByZWkvY2RyLXRva2Vucy9kaXN0L3Njc3MvY2RyLXRva2Vucy5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOzs7Ozs7O2lFQ09pRTtBREVqRTs7dUJDQ3VCO0FDTnZCO0VBQ0U7SUFFRSxVQUFVLEVBQUE7RUFHWjtJQUVFLFVBQVUsRUFBQSxFQUFBO0FBR2Q7RUFDRTtJQUVFLFVBQVUsRUFBQTtFQUdaO0lBRUUsVUFBVSxFQUFBLEVBQUE7QUFJZDtFQUNFO0lBRUUsVUFBVSxFQUFBO0VBR1o7SUFFRSxVQUFVLEVBQUEsRUFBQTtBQUdkO0VBQ0U7SUFFRSxVQUFVLEVBQUE7RUFHWjtJQUVFLFVBQVUsRUFBQSxFQUFBO0FBSWQ7RUFDRTtJQUVFLFVBQVUsRUFBQTtFQUdaO0lBRUUsVUFBVSxFQUFBLEVBQUE7QUFHZDtFQUNFO0lBRUUsVUFBVSxFQUFBO0VBR1o7SUFFRSxVQUFVLEVBQUEsRUFBQTtBQUlkO0VBQ0U7SUFFRSxVQUFVLEVBQUE7RUFHWjtJQUVFLFVBQVUsRUFBQSxFQUFBO0FBR2Q7RUFDRTtJQUVFLFVBQVUsRUFBQTtFQUdaO0lBRUUsVUFBVSxFQUFBLEVBQUE7QUFRZDtFQUNFLGFBQWE7RUFDYixVQUFVO0VBQ1Ysd0JDK2lEc0I7RUQ5aUR0QiwyRENtakQ4RCxFQUFBO0FEampEOUQ7SUFDRSxVQUFVO0lBQ1YsY0FBYyxFQUFBO0FBR2hCO0lBQ0UsbUJDNnhDa0M7SUQ1eENsQyw0QkNpMENnQztJRGgwQ2hDLGtCQUFnQjtJQUNoQixrQkFBa0I7SUFDbEIsWUFBWSxFQUFBO0FBbUJiO0lBR0csU0FBUztJQUNULDJCQUEyQixFQUFBO0FBSTlCO0lBR0ssZ0NBQWdDLEVBQUE7QUFIckM7SUFTSywrQkFBK0IsRUFBQTtBQVRwQztJQWNHLHdCQTNEaUUsRUFBQTtBQXNCbkU7SUFDRSxlQUFtQztJQUNuQyxTQUFpQjtJQUNqQiwyQkFBVztJQUNYLFlBQVksRUFBQTtBQUVkO0lBQ0UsNEJDbXpDOEIsRUFBQTtBRGh6Q2hDO0lBQ0UsNEJDMHdDZ0MsRUFBQTtBRHh1Q25DO0lBR0ssOEJBQThCLEVBQUE7QUFIbkM7SUFTSyw2QkFBNkIsRUFBQTtBQVRsQztJQWNHLDJCQWpGaUUsRUFBQTtBQXNCbkU7SUFDRSxZQUFtQztJQUNuQyxTQUFpQjtJQUNqQiwyQkFBVztJQUNYLFlBQVksRUFBQTtBQUVkO0lBQ0UseUJDbXpDOEIsRUFBQTtBRGh6Q2hDO0lBQ0UseUJDMHdDZ0MsRUFBQTtBRGx0Q3BDO0lBQ0UsT0FBTztJQUNQLGdCQUFnQixFQUFBO0FBR2xCO0lBQ0UsV0FBVztJQUNYLFFBQVE7SUFDUixnQkFBZ0IsRUFBQTtBQUdqQjtJQUdHLFFBQVE7SUFDUiwyQkFBMkIsRUFBQTtBQUk5QjtJQUdLLGdDQUFnQyxFQUFBO0FBSHJDO0lBU0ssK0JBQStCLEVBQUE7QUFUcEM7SUFjRywwQkExSGlFLEVBQUE7QUFzQm5FO0lBQ0UsYUFBbUM7SUFDbkMsUUFBaUI7SUFDakIsMkJBQVc7SUFDWCxZQUFZLEVBQUE7QUFFZDtJQUNFLDBCQ216QzhCLEVBQUE7QURoekNoQztJQUNFLDBCQzB3Q2dDLEVBQUE7QUR6cUNuQztJQUdLLGlDQUFpQyxFQUFBO0FBSHRDO0lBU0ssZ0NBQWdDLEVBQUE7QUFUckM7SUFjRyx5QkFoSmlFLEVBQUE7QUFzQm5FO0lBQ0UsY0FBbUM7SUFDbkMsUUFBaUI7SUFDakIsMkJBQVc7SUFDWCxZQUFZLEVBQUE7QUFFZDtJQUNFLDJCQ216QzhCLEVBQUE7QURoekNoQztJQUNFLDJCQzB3Q2dDLEVBQUE7QURscENwQztJQUNFLE1BQU07SUFDTixnQkFBZ0IsRUFBQTtBQUdsQjtJQUNFLFVBQVU7SUFDVixTQUFTO0lBQ1QsZ0JBQWdCLEVBQUE7QUFHakI7SUFFRyxXQUFXO0lBQ1gsa0JBQWtCO0lBQ2xCLFlBQVk7SUFDWixRQUFRO0lBQ1IsU0FBUztJQUNULG1CQUFtQjtJQUNuQix5QkFBeUIsRUFBQTtBQVI1QjtJQVlHLGtCQWxMVyxFQUFBO0FBc0tkO0lBZ0JHLG9CQUFjLEVBQUEiLCJmaWxlIjoiQ2RyUG9wdXAuc2NzcyJ9 */";
-  var style$p = {"cdr-popup":"cdr-popup_6.0.0","cdr-popup--open":"cdr-popup--open_6.0.0","cdr-popup--exit":"cdr-popup--exit_6.0.0","cdr-popup__content":"cdr-popup__content_6.0.0","cdr-popup--up":"cdr-popup--up_6.0.0","cdr-popup--down":"cdr-popup--down_6.0.0","cdr-popup__arrow":"cdr-popup__arrow_6.0.0","cdr-popup--corner-left":"cdr-popup--corner-left_6.0.0","cdr-popup--corner-right":"cdr-popup--corner-right_6.0.0","cdr-popup--left":"cdr-popup--left_6.0.0","cdr-popup--right":"cdr-popup--right_6.0.0","cdr-popup--corner-top":"cdr-popup--corner-top_6.0.0","cdr-popup--corner-bottom":"cdr-popup--corner-bottom_6.0.0"};
+  var isArray$5 = isArray$1;
+
+  var isArray$6 = isArray$5;
+
+  function _arrayWithHoles(arr) {
+    if (isArray$6(arr)) return arr;
+  }
+
+  var arrayWithHoles = _arrayWithHoles;
+
+  // `String.prototype.{ codePointAt, at }` methods implementation
+  var createMethod$2 = function (CONVERT_TO_STRING) {
+    return function ($this, pos) {
+      var S = String(requireObjectCoercible($this));
+      var position = toInteger(pos);
+      var size = S.length;
+      var first, second;
+      if (position < 0 || position >= size) return CONVERT_TO_STRING ? '' : undefined;
+      first = S.charCodeAt(position);
+      return first < 0xD800 || first > 0xDBFF || position + 1 === size
+        || (second = S.charCodeAt(position + 1)) < 0xDC00 || second > 0xDFFF
+          ? CONVERT_TO_STRING ? S.charAt(position) : first
+          : CONVERT_TO_STRING ? S.slice(position, position + 2) : (first - 0xD800 << 10) + (second - 0xDC00) + 0x10000;
+    };
+  };
+
+  var stringMultibyte = {
+    // `String.prototype.codePointAt` method
+    // https://tc39.github.io/ecma262/#sec-string.prototype.codepointat
+    codeAt: createMethod$2(false),
+    // `String.prototype.at` method
+    // https://github.com/mathiasbynens/String.prototype.at
+    charAt: createMethod$2(true)
+  };
+
+  var charAt = stringMultibyte.charAt;
+
+
+
+  var STRING_ITERATOR = 'String Iterator';
+  var setInternalState$2 = internalState.set;
+  var getInternalState$2 = internalState.getterFor(STRING_ITERATOR);
+
+  // `String.prototype[@@iterator]` method
+  // https://tc39.github.io/ecma262/#sec-string.prototype-@@iterator
+  defineIterator(String, 'String', function (iterated) {
+    setInternalState$2(this, {
+      type: STRING_ITERATOR,
+      string: String(iterated),
+      index: 0
+    });
+  // `%StringIteratorPrototype%.next` method
+  // https://tc39.github.io/ecma262/#sec-%stringiteratorprototype%.next
+  }, function next() {
+    var state = getInternalState$2(this);
+    var string = state.string;
+    var index = state.index;
+    var point;
+    if (index >= string.length) return { value: undefined, done: true };
+    point = charAt(string, index);
+    state.index += point.length;
+    return { value: point, done: false };
+  });
+
+  var ITERATOR$2 = wellKnownSymbol('iterator');
+
+  var getIteratorMethod = function (it) {
+    if (it != undefined) return it[ITERATOR$2]
+      || it['@@iterator']
+      || iterators[classof(it)];
+  };
+
+  var getIterator = function (it) {
+    var iteratorMethod = getIteratorMethod(it);
+    if (typeof iteratorMethod != 'function') {
+      throw TypeError(String(it) + ' is not iterable');
+    } return anObject(iteratorMethod.call(it));
+  };
+
+  var getIterator_1 = getIterator;
+
+  var getIterator$1 = getIterator_1;
+
+  var ITERATOR$3 = wellKnownSymbol('iterator');
+
+  var isIterable = function (it) {
+    var O = Object(it);
+    return O[ITERATOR$3] !== undefined
+      || '@@iterator' in O
+      // eslint-disable-next-line no-prototype-builtins
+      || iterators.hasOwnProperty(classof(O));
+  };
+
+  var isIterable_1 = isIterable;
+
+  var isIterable$1 = isIterable_1;
+
+  // `Symbol.asyncDispose` well-known symbol
+  // https://github.com/tc39/proposal-using-statement
+  defineWellKnownSymbol('asyncDispose');
+
+  // `Symbol.dispose` well-known symbol
+  // https://github.com/tc39/proposal-using-statement
+  defineWellKnownSymbol('dispose');
+
+  // `Symbol.observable` well-known symbol
+  // https://github.com/tc39/proposal-observable
+  defineWellKnownSymbol('observable');
+
+  // `Symbol.patternMatch` well-known symbol
+  // https://github.com/tc39/proposal-pattern-matching
+  defineWellKnownSymbol('patternMatch');
+
+  // TODO: remove from `core-js@4`
+
+
+  defineWellKnownSymbol('replaceAll');
+
+  // TODO: Remove from `core-js@4`
+
+
+  var symbol$3 = symbol;
+
+  var symbol$4 = symbol$3;
+
+  function _iterableToArrayLimit(arr, i) {
+    if (typeof symbol$4 === "undefined" || !isIterable$1(Object(arr))) return;
+    var _arr = [];
+    var _n = true;
+    var _d = false;
+    var _e = undefined;
+
+    try {
+      for (var _i = getIterator$1(arr), _s; !(_n = (_s = _i.next()).done); _n = true) {
+        _arr.push(_s.value);
+
+        if (i && _arr.length === i) break;
+      }
+    } catch (err) {
+      _d = true;
+      _e = err;
+    } finally {
+      try {
+        if (!_n && _i["return"] != null) _i["return"]();
+      } finally {
+        if (_d) throw _e;
+      }
+    }
+
+    return _arr;
+  }
+
+  var iterableToArrayLimit = _iterableToArrayLimit;
+
+  // call something on iterator step with safe closing on error
+  var callWithSafeIterationClosing = function (iterator, fn, value, ENTRIES) {
+    try {
+      return ENTRIES ? fn(anObject(value)[0], value[1]) : fn(value);
+    // 7.4.6 IteratorClose(iterator, completion)
+    } catch (error) {
+      var returnMethod = iterator['return'];
+      if (returnMethod !== undefined) anObject(returnMethod.call(iterator));
+      throw error;
+    }
+  };
+
+  var ITERATOR$4 = wellKnownSymbol('iterator');
+  var ArrayPrototype$8 = Array.prototype;
+
+  // check on default Array iterator
+  var isArrayIteratorMethod = function (it) {
+    return it !== undefined && (iterators.Array === it || ArrayPrototype$8[ITERATOR$4] === it);
+  };
+
+  // `Array.from` method implementation
+  // https://tc39.github.io/ecma262/#sec-array.from
+  var arrayFrom = function from(arrayLike /* , mapfn = undefined, thisArg = undefined */) {
+    var O = toObject$1(arrayLike);
+    var C = typeof this == 'function' ? this : Array;
+    var argumentsLength = arguments.length;
+    var mapfn = argumentsLength > 1 ? arguments[1] : undefined;
+    var mapping = mapfn !== undefined;
+    var iteratorMethod = getIteratorMethod(O);
+    var index = 0;
+    var length, result, step, iterator, next, value;
+    if (mapping) mapfn = functionBindContext(mapfn, argumentsLength > 2 ? arguments[2] : undefined, 2);
+    // if the target is not iterable or it's an array with the default iterator - use a simple case
+    if (iteratorMethod != undefined && !(C == Array && isArrayIteratorMethod(iteratorMethod))) {
+      iterator = iteratorMethod.call(O);
+      next = iterator.next;
+      result = new C();
+      for (;!(step = next.call(iterator)).done; index++) {
+        value = mapping ? callWithSafeIterationClosing(iterator, mapfn, [step.value, index], true) : step.value;
+        createProperty(result, index, value);
+      }
+    } else {
+      length = toLength(O.length);
+      result = new C(length);
+      for (;length > index; index++) {
+        value = mapping ? mapfn(O[index], index) : O[index];
+        createProperty(result, index, value);
+      }
+    }
+    result.length = index;
+    return result;
+  };
+
+  var ITERATOR$5 = wellKnownSymbol('iterator');
+  var SAFE_CLOSING = false;
+
+  try {
+    var called = 0;
+    var iteratorWithReturn = {
+      next: function () {
+        return { done: !!called++ };
+      },
+      'return': function () {
+        SAFE_CLOSING = true;
+      }
+    };
+    iteratorWithReturn[ITERATOR$5] = function () {
+      return this;
+    };
+    // eslint-disable-next-line no-throw-literal
+    Array.from(iteratorWithReturn, function () { throw 2; });
+  } catch (error) { /* empty */ }
+
+  var checkCorrectnessOfIteration = function (exec, SKIP_CLOSING) {
+    if (!SKIP_CLOSING && !SAFE_CLOSING) return false;
+    var ITERATION_SUPPORT = false;
+    try {
+      var object = {};
+      object[ITERATOR$5] = function () {
+        return {
+          next: function () {
+            return { done: ITERATION_SUPPORT = true };
+          }
+        };
+      };
+      exec(object);
+    } catch (error) { /* empty */ }
+    return ITERATION_SUPPORT;
+  };
+
+  var INCORRECT_ITERATION = !checkCorrectnessOfIteration(function (iterable) {
+    Array.from(iterable);
+  });
+
+  // `Array.from` method
+  // https://tc39.github.io/ecma262/#sec-array.from
+  _export({ target: 'Array', stat: true, forced: INCORRECT_ITERATION }, {
+    from: arrayFrom
+  });
+
+  var from_1 = path.Array.from;
+
+  var from_1$1 = from_1;
+
+  var from_1$2 = from_1$1;
+
+  var slice$5 = slice_1;
+
+  var slice$6 = slice$5;
+
+  function _arrayLikeToArray(arr, len) {
+    if (len == null || len > arr.length) len = arr.length;
+
+    for (var i = 0, arr2 = new Array(len); i < len; i++) {
+      arr2[i] = arr[i];
+    }
+
+    return arr2;
+  }
+
+  var arrayLikeToArray = _arrayLikeToArray;
+
+  function _unsupportedIterableToArray(o, minLen) {
+    var _context;
+
+    if (!o) return;
+    if (typeof o === "string") return arrayLikeToArray(o, minLen);
+
+    var n = slice$6(_context = Object.prototype.toString.call(o)).call(_context, 8, -1);
+
+    if (n === "Object" && o.constructor) n = o.constructor.name;
+    if (n === "Map" || n === "Set") return from_1$2(o);
+    if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return arrayLikeToArray(o, minLen);
+  }
+
+  var unsupportedIterableToArray = _unsupportedIterableToArray;
+
+  function _nonIterableRest() {
+    throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+  }
+
+  var nonIterableRest = _nonIterableRest;
+
+  function _slicedToArray(arr, i) {
+    return arrayWithHoles(arr) || iterableToArrayLimit(arr, i) || unsupportedIterableToArray(arr, i) || nonIterableRest();
+  }
+
+  var slicedToArray = _slicedToArray;
+
+  var test$1 = [];
+  var nativeSort = test$1.sort;
+
+  // IE8-
+  var FAILS_ON_UNDEFINED = fails(function () {
+    test$1.sort(undefined);
+  });
+  // V8 bug
+  var FAILS_ON_NULL = fails(function () {
+    test$1.sort(null);
+  });
+  // Old WebKit
+  var STRICT_METHOD$4 = arrayMethodIsStrict('sort');
+
+  var FORCED$2 = FAILS_ON_UNDEFINED || !FAILS_ON_NULL || !STRICT_METHOD$4;
+
+  // `Array.prototype.sort` method
+  // https://tc39.github.io/ecma262/#sec-array.prototype.sort
+  _export({ target: 'Array', proto: true, forced: FORCED$2 }, {
+    sort: function sort(comparefn) {
+      return comparefn === undefined
+        ? nativeSort.call(toObject$1(this))
+        : nativeSort.call(toObject$1(this), aFunction(comparefn));
+    }
+  });
+
+  var sort$1 = entryVirtual('Array').sort;
+
+  var ArrayPrototype$9 = Array.prototype;
+
+  var sort_1 = function (it) {
+    var own = it.sort;
+    return it === ArrayPrototype$9 || (it instanceof Array && own === ArrayPrototype$9.sort) ? sort$1 : own;
+  };
+
+  var sort$2 = sort_1;
+
+  var sort$3 = sort$2;
+
+  var css_248z$m = "/* ==========================================================================/*\n* Token option variables\n*\n* these are temporary variables, providing\n* cedar components mappings to previously available tokens.\n* These varables should be removed as tokens are available\n*\n=============================================================== */\n/* ---------------------\n* Outline\n* ------------------- */\n@keyframes popup-exit-down {\n  from {\n    opacity: 1; }\n  to {\n    opacity: 0; } }\n@keyframes popup-enter-down {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n@keyframes popup-exit-up {\n  from {\n    opacity: 1; }\n  to {\n    opacity: 0; } }\n@keyframes popup-enter-up {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n@keyframes popup-exit-left {\n  from {\n    opacity: 1; }\n  to {\n    opacity: 0; } }\n@keyframes popup-enter-left {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n@keyframes popup-exit-right {\n  from {\n    opacity: 1; }\n  to {\n    opacity: 0; } }\n@keyframes popup-enter-right {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n.cdr-popup_6\\.0\\.0 {\n  opacity: 0;\n  animation-duration: 0.2s;\n  animation-timing-function: cubic-bezier(0.32, 0.94, 0.6, 1); }\n.cdr-popup--open_6\\.0\\.0, .cdr-popup--exit_6\\.0\\.0 {\n    opacity: 1; }\n.cdr-popup--closed_6\\.0\\.0 {\n    opacity: 0; }\n.cdr-popup__content_6\\.0\\.0 {\n    background: #ffffff;\n    border: 0.1rem solid #928b80;\n    min-width: 28.6rem;\n    position: absolute;\n    z-index: 100; }\n.cdr-popup--up_6\\.0\\.0 .cdr-popup__content_6\\.0\\.0, .cdr-popup--down_6\\.0\\.0 .cdr-popup__content_6\\.0\\.0 {\n    left: 50%;\n    transform: translateX(-50%); }\n.cdr-popup--down_6\\.0\\.0.cdr-popup--open_6\\.0\\.0.cdr-popup_6\\.0\\.0 {\n    animation-name: popup-enter-down; }\n.cdr-popup--down_6\\.0\\.0.cdr-popup--exit_6\\.0\\.0.cdr-popup_6\\.0\\.0 {\n    animation-name: popup-exit-down; }\n.cdr-popup--down_6\\.0\\.0 .cdr-popup__content_6\\.0\\.0 {\n    top: calc(100% + 1.4rem); }\n.cdr-popup--down_6\\.0\\.0 .cdr-popup__arrow_6\\.0\\.0::before, .cdr-popup--down_6\\.0\\.0 .cdr-popup__arrow_6\\.0\\.0::after {\n    bottom: -1.5rem;\n    left: 50%;\n    transform: translateX(-50%);\n    z-index: 100; }\n.cdr-popup--down_6\\.0\\.0 .cdr-popup__arrow_6\\.0\\.0::before {\n    border-bottom-color: #928b80; }\n.cdr-popup--down_6\\.0\\.0 .cdr-popup__arrow_6\\.0\\.0::after {\n    border-bottom-color: #ffffff; }\n.cdr-popup--up_6\\.0\\.0.cdr-popup--open_6\\.0\\.0.cdr-popup_6\\.0\\.0 {\n    animation-name: popup-enter-up; }\n.cdr-popup--up_6\\.0\\.0.cdr-popup--exit_6\\.0\\.0.cdr-popup_6\\.0\\.0 {\n    animation-name: popup-exit-up; }\n.cdr-popup--up_6\\.0\\.0 .cdr-popup__content_6\\.0\\.0 {\n    bottom: calc(100% + 1.4rem); }\n.cdr-popup--up_6\\.0\\.0 .cdr-popup__arrow_6\\.0\\.0::before, .cdr-popup--up_6\\.0\\.0 .cdr-popup__arrow_6\\.0\\.0::after {\n    top: -1.5rem;\n    left: 50%;\n    transform: translateX(-50%);\n    z-index: 100; }\n.cdr-popup--up_6\\.0\\.0 .cdr-popup__arrow_6\\.0\\.0::before {\n    border-top-color: #928b80; }\n.cdr-popup--up_6\\.0\\.0 .cdr-popup__arrow_6\\.0\\.0::after {\n    border-top-color: #ffffff; }\n.cdr-popup--corner-left_6\\.0\\.0 .cdr-popup__content_6\\.0\\.0 {\n    left: 0;\n    transform: unset; }\n.cdr-popup--corner-right_6\\.0\\.0 .cdr-popup__content_6\\.0\\.0 {\n    left: unset;\n    right: 0;\n    transform: unset; }\n.cdr-popup--left_6\\.0\\.0 .cdr-popup__content_6\\.0\\.0, .cdr-popup--right_6\\.0\\.0 .cdr-popup__content_6\\.0\\.0 {\n    top: 50%;\n    transform: translateY(-50%); }\n.cdr-popup--left_6\\.0\\.0.cdr-popup--open_6\\.0\\.0.cdr-popup_6\\.0\\.0 {\n    animation-name: popup-enter-left; }\n.cdr-popup--left_6\\.0\\.0.cdr-popup--exit_6\\.0\\.0.cdr-popup_6\\.0\\.0 {\n    animation-name: popup-exit-left; }\n.cdr-popup--left_6\\.0\\.0 .cdr-popup__content_6\\.0\\.0 {\n    right: calc(100% + 1.4rem); }\n.cdr-popup--left_6\\.0\\.0 .cdr-popup__arrow_6\\.0\\.0::before, .cdr-popup--left_6\\.0\\.0 .cdr-popup__arrow_6\\.0\\.0::after {\n    left: -1.5rem;\n    top: 50%;\n    transform: translateY(-50%);\n    z-index: 100; }\n.cdr-popup--left_6\\.0\\.0 .cdr-popup__arrow_6\\.0\\.0::before {\n    border-left-color: #928b80; }\n.cdr-popup--left_6\\.0\\.0 .cdr-popup__arrow_6\\.0\\.0::after {\n    border-left-color: #ffffff; }\n.cdr-popup--right_6\\.0\\.0.cdr-popup--open_6\\.0\\.0.cdr-popup_6\\.0\\.0 {\n    animation-name: popup-enter-right; }\n.cdr-popup--right_6\\.0\\.0.cdr-popup--exit_6\\.0\\.0.cdr-popup_6\\.0\\.0 {\n    animation-name: popup-exit-right; }\n.cdr-popup--right_6\\.0\\.0 .cdr-popup__content_6\\.0\\.0 {\n    left: calc(100% + 1.4rem); }\n.cdr-popup--right_6\\.0\\.0 .cdr-popup__arrow_6\\.0\\.0::before, .cdr-popup--right_6\\.0\\.0 .cdr-popup__arrow_6\\.0\\.0::after {\n    right: -1.5rem;\n    top: 50%;\n    transform: translateY(-50%);\n    z-index: 100; }\n.cdr-popup--right_6\\.0\\.0 .cdr-popup__arrow_6\\.0\\.0::before {\n    border-right-color: #928b80; }\n.cdr-popup--right_6\\.0\\.0 .cdr-popup__arrow_6\\.0\\.0::after {\n    border-right-color: #ffffff; }\n.cdr-popup--corner-top_6\\.0\\.0 .cdr-popup__content_6\\.0\\.0 {\n    top: 0;\n    transform: unset; }\n.cdr-popup--corner-bottom_6\\.0\\.0 .cdr-popup__content_6\\.0\\.0 {\n    top: unset;\n    bottom: 0;\n    transform: unset; }\n.cdr-popup__arrow_6\\.0\\.0::before, .cdr-popup__arrow_6\\.0\\.0::after {\n    content: '';\n    position: absolute;\n    margin: auto;\n    width: 0;\n    height: 0;\n    border-style: solid;\n    border-color: transparent; }\n.cdr-popup__arrow_6\\.0\\.0::before {\n    border-width: 1rem; }\n.cdr-popup__arrow_6\\.0\\.0::after {\n    border-width: 0.9rem; }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9jc3Mvc2V0dGluZ3MvX29wdGlvbnMudmFycy5zY3NzIiwiQ2RyUG9wdXAuc2NzcyIsInNyYy9jb21wb25lbnRzL3BvcHVwL3N0eWxlcy9DZHJQb3B1cC5zY3NzIiwibm9kZV9tb2R1bGVzL0ByZWkvY2RyLXRva2Vucy9kaXN0L3Njc3MvY2RyLXRva2Vucy5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOzs7Ozs7O2lFQ09pRTtBREVqRTs7dUJDQ3VCO0FDTnZCO0VBQ0U7SUFFRSxVQUFVLEVBQUE7RUFHWjtJQUVFLFVBQVUsRUFBQSxFQUFBO0FBR2Q7RUFDRTtJQUVFLFVBQVUsRUFBQTtFQUdaO0lBRUUsVUFBVSxFQUFBLEVBQUE7QUFJZDtFQUNFO0lBRUUsVUFBVSxFQUFBO0VBR1o7SUFFRSxVQUFVLEVBQUEsRUFBQTtBQUdkO0VBQ0U7SUFFRSxVQUFVLEVBQUE7RUFHWjtJQUVFLFVBQVUsRUFBQSxFQUFBO0FBSWQ7RUFDRTtJQUVFLFVBQVUsRUFBQTtFQUdaO0lBRUUsVUFBVSxFQUFBLEVBQUE7QUFHZDtFQUNFO0lBRUUsVUFBVSxFQUFBO0VBR1o7SUFFRSxVQUFVLEVBQUEsRUFBQTtBQUlkO0VBQ0U7SUFFRSxVQUFVLEVBQUE7RUFHWjtJQUVFLFVBQVUsRUFBQSxFQUFBO0FBR2Q7RUFDRTtJQUVFLFVBQVUsRUFBQTtFQUdaO0lBRUUsVUFBVSxFQUFBLEVBQUE7QUFRZDtFQUNFLFVBQVU7RUFDVix3QkNnakRzQjtFRC9pRHRCLDJEQ29qRDhELEVBQUE7QURsakQ5RDtJQUNFLFVBQVUsRUFBQTtBQUdaO0lBQ0UsVUFBVSxFQUFBO0FBR1o7SUFDRSxtQkMyeENrQztJRDF4Q2xDLDRCQyt6Q2dDO0lEOXpDaEMsa0JBQWdCO0lBQ2hCLGtCQUFrQjtJQUNsQixZQUFZLEVBQUE7QUFtQmI7SUFHRyxTQUFTO0lBQ1QsMkJBQTJCLEVBQUE7QUFJOUI7SUFHSyxnQ0FBZ0MsRUFBQTtBQUhyQztJQVNLLCtCQUErQixFQUFBO0FBVHBDO0lBY0csd0JBN0RpRSxFQUFBO0FBd0JuRTtJQUNFLGVBQW1DO0lBQ25DLFNBQWlCO0lBQ2pCLDJCQUFXO0lBQ1gsWUFBWSxFQUFBO0FBRWQ7SUFDRSw0QkNpekM4QixFQUFBO0FEOXlDaEM7SUFDRSw0QkN3d0NnQyxFQUFBO0FEdHVDbkM7SUFHSyw4QkFBOEIsRUFBQTtBQUhuQztJQVNLLDZCQUE2QixFQUFBO0FBVGxDO0lBY0csMkJBbkZpRSxFQUFBO0FBd0JuRTtJQUNFLFlBQW1DO0lBQ25DLFNBQWlCO0lBQ2pCLDJCQUFXO0lBQ1gsWUFBWSxFQUFBO0FBRWQ7SUFDRSx5QkNpekM4QixFQUFBO0FEOXlDaEM7SUFDRSx5QkN3d0NnQyxFQUFBO0FEaHRDcEM7SUFDRSxPQUFPO0lBQ1AsZ0JBQWdCLEVBQUE7QUFHbEI7SUFDRSxXQUFXO0lBQ1gsUUFBUTtJQUNSLGdCQUFnQixFQUFBO0FBR2pCO0lBR0csUUFBUTtJQUNSLDJCQUEyQixFQUFBO0FBSTlCO0lBR0ssZ0NBQWdDLEVBQUE7QUFIckM7SUFTSywrQkFBK0IsRUFBQTtBQVRwQztJQWNHLDBCQTVIaUUsRUFBQTtBQXdCbkU7SUFDRSxhQUFtQztJQUNuQyxRQUFpQjtJQUNqQiwyQkFBVztJQUNYLFlBQVksRUFBQTtBQUVkO0lBQ0UsMEJDaXpDOEIsRUFBQTtBRDl5Q2hDO0lBQ0UsMEJDd3dDZ0MsRUFBQTtBRHZxQ25DO0lBR0ssaUNBQWlDLEVBQUE7QUFIdEM7SUFTSyxnQ0FBZ0MsRUFBQTtBQVRyQztJQWNHLHlCQWxKaUUsRUFBQTtBQXdCbkU7SUFDRSxjQUFtQztJQUNuQyxRQUFpQjtJQUNqQiwyQkFBVztJQUNYLFlBQVksRUFBQTtBQUVkO0lBQ0UsMkJDaXpDOEIsRUFBQTtBRDl5Q2hDO0lBQ0UsMkJDd3dDZ0MsRUFBQTtBRGhwQ3BDO0lBQ0UsTUFBTTtJQUNOLGdCQUFnQixFQUFBO0FBR2xCO0lBQ0UsVUFBVTtJQUNWLFNBQVM7SUFDVCxnQkFBZ0IsRUFBQTtBQUdqQjtJQUVHLFdBQVc7SUFDWCxrQkFBa0I7SUFDbEIsWUFBWTtJQUNaLFFBQVE7SUFDUixTQUFTO0lBQ1QsbUJBQW1CO0lBQ25CLHlCQUF5QixFQUFBO0FBUjVCO0lBWUcsa0JBcExXLEVBQUE7QUF3S2Q7SUFnQkcsb0JBQWMsRUFBQSIsImZpbGUiOiJDZHJQb3B1cC5zY3NzIn0= */";
+  var style$p = {"cdr-popup":"cdr-popup_6.0.0","cdr-popup--open":"cdr-popup--open_6.0.0","cdr-popup--exit":"cdr-popup--exit_6.0.0","cdr-popup--closed":"cdr-popup--closed_6.0.0","cdr-popup__content":"cdr-popup__content_6.0.0","cdr-popup--up":"cdr-popup--up_6.0.0","cdr-popup--down":"cdr-popup--down_6.0.0","cdr-popup__arrow":"cdr-popup__arrow_6.0.0","cdr-popup--corner-left":"cdr-popup--corner-left_6.0.0","cdr-popup--corner-right":"cdr-popup--corner-right_6.0.0","cdr-popup--left":"cdr-popup--left_6.0.0","cdr-popup--right":"cdr-popup--right_6.0.0","cdr-popup--corner-top":"cdr-popup--corner-top_6.0.0","cdr-popup--corner-bottom":"cdr-popup--corner-bottom_6.0.0"};
   styleInject(css_248z$m);
 
   function ownKeys$2X(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-  function _objectSpread$2W(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context3; forEach$2(_context3 = ownKeys$2X(Object(source), true)).call(_context3, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context4; forEach$2(_context4 = ownKeys$2X(Object(source))).call(_context4, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
+  function _objectSpread$2W(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context6; forEach$2(_context6 = ownKeys$2X(Object(source), true)).call(_context6, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context7; forEach$2(_context7 = ownKeys$2X(Object(source))).call(_context7, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
   var CdrPopup = {
     name: 'CdrPopup',
     inheritAttrs: false,
@@ -28848,15 +29190,18 @@ var cedar = (function () {
         style: style$p,
         keyHandler: undefined,
         clickHandler: undefined,
+        resizeHandler: undefined,
         pos: this.position,
         corner: undefined,
-        exiting: false
+        exiting: false,
+        popupRect: undefined,
+        closed: !this.opened
       };
     },
 
     computed: {
       positionClass() {
-        return this.style["cdr-popup--".concat(this.pos)];
+        return this.opened || this.exiting ? this.style["cdr-popup--".concat(this.pos)] : undefined;
       },
 
       cornerClass() {
@@ -28865,6 +29210,10 @@ var cedar = (function () {
 
       openClass() {
         return this.opened ? this.style['cdr-popup--open'] : undefined;
+      },
+
+      closedClass() {
+        return this.closed ? this.style['cdr-popup--closed'] : undefined;
       },
 
       exitingClass() {
@@ -28889,9 +29238,18 @@ var cedar = (function () {
 
     },
 
+    mounted() {
+      var _context;
+
+      this.measurePopup();
+      this.resizeHandler = bind$4(_context = this.handleResize).call(_context, this);
+      window.addEventListener('resize', this.resizeHandler);
+    },
+
     destroyed() {
       document.removeEventListener('keydown', this.keyHandler);
       document.removeEventListener('click', this.clickHandler);
+      window.removeEventListener('resize', this.resizeHandler);
     },
 
     methods: {
@@ -28921,70 +29279,143 @@ var cedar = (function () {
         });
       },
 
-      addHandlers() {
-        var _context, _context2;
+      handleResize() {
+        var _this2 = this;
 
-        this.keyHandler = bind$4(_context = this.handleKeyDown).call(_context, this);
+        debounce(function () {
+          _this2.measurePopup();
+        }, 300);
+      },
+
+      addHandlers() {
+        var _context2, _context3;
+
+        this.keyHandler = bind$4(_context2 = this.handleKeyDown).call(_context2, this);
         document.addEventListener('keydown', this.keyHandler);
-        this.clickHandler = bind$4(_context2 = this.handleClick).call(_context2, this);
+        this.clickHandler = bind$4(_context3 = this.handleClick).call(_context3, this);
         document.addEventListener('click', this.clickHandler);
       },
 
-      calculatePlacement() {
-        var rect = this.$refs.popup.getBoundingClientRect();
+      measurePopup() {
+        var _this3 = this;
 
-        if (this.pos === 'down' && rect.bottom >= window.innerHeight) {
-          this.pos = 'up';
-        } else if (this.pos === 'up' && rect.top <= 0) {
-          this.pos = 'down';
-        } else if (this.pos === 'left' && rect.left <= 0) {
-          this.pos = 'right';
-        } else if (this.pos === 'right' && rect.right >= window.innerWidth) {
-          this.pos = 'left';
+        this.closed = false;
+        this.$nextTick(function () {
+          _this3.popupRect = _this3.$refs.popup.getBoundingClientRect();
+          _this3.closed = true;
+        });
+      },
+
+      calculatePlacement(triggerRect, popupRect, screenWidth, screenHeight) {
+        var _context4, _context5;
+
+        var offset = 15; // 10px for arrow 5px for spacing
+
+        var triggerCenterY = triggerRect.top + triggerRect.height / 2;
+        var triggerCenterX = triggerRect.left + triggerRect.width / 2;
+        var dirs = {
+          up: triggerRect.top - popupRect.height - offset,
+          down: screenHeight - triggerRect.bottom - popupRect.height - offset,
+          left: triggerRect.left - popupRect.width - offset,
+          right: screenWidth - triggerRect.right - popupRect.width - offset
+        };
+        var corners = {
+          left: triggerCenterX - popupRect.width / 2 < 0,
+          right: triggerCenterX + popupRect.width / 2 > screenWidth,
+          top: triggerCenterY - popupRect.height / 2 < 0,
+          bottom: triggerCenterY + popupRect.height / 2 > screenHeight
+        };
+        var invert = {
+          up: 'down',
+          down: 'up',
+          left: 'right',
+          right: 'left'
+        };
+        var inverse = invert[this.position];
+
+        var validDirs = filter$2(_context4 = keys$3(dirs)).call(_context4, function (dir) {
+          return dirs[dir] > 0;
+        });
+
+        var sortedDirs = sort$3(_context5 = keys$3(dirs)).call(_context5, function (a, b) {
+          if (dirs[a] > dirs[b]) {
+            return -1;
+          }
+
+          if (dirs[a] < dirs[b]) {
+            return 1;
+          }
+
+          return 0;
+        });
+
+        if (dirs[this.position] > 0) {
+          // selected position is valid, or no positions are valid
+          this.pos = this.position;
+        } else if (dirs[inverse] > 0) {
+          // inverted position is valid
+          this.pos = inverse;
+        } else if (validDirs.length) {
+          // try the angles
+          var _validDirs = slicedToArray(validDirs, 1);
+
+          this.pos = _validDirs[0];
+        } else {
+          // use whichever direction has the most space
+          var _sortedDirs = slicedToArray(sortedDirs, 1);
+
+          this.pos = _sortedDirs[0];
         }
 
-        var orientation = this.pos === 'down' || this.pos === 'up' ? 'vertical' : 'horizontal';
-
-        if (orientation === 'vertical' && rect.left <= 0) {
-          this.corner = 'left';
-        } else if (orientation === 'vertical' && rect.right >= window.innerWidth) {
-          this.corner = 'right';
-        } else if (orientation === 'horizontal' && rect.top <= 0) {
+        if (this.pos === 'down' || this.pos === 'up') {
+          if (corners.left) {
+            this.corner = 'left';
+          } else if (corners.right) {
+            this.corner = 'right';
+          }
+        } else if (corners.top) {
           this.corner = 'top';
-        } else if (orientation === 'horizontal' && rect.bottom >= window.innerHeight) {
+        } else if (corners.bottom) {
           this.corner = 'bottom';
         }
       },
 
       handleOpened() {
-        var _this2 = this;
+        var _this4 = this;
 
+        this.closed = false;
         this.pos = this.position;
         this.corner = undefined;
 
         if (this.autoPosition) {
           this.$nextTick(function () {
-            _this2.calculatePlacement();
+            var triggerRect = _this4.$el.parentElement.getBoundingClientRect();
+
+            var popupRect = _this4.popupRect;
+            var _window = window,
+                innerHeight = _window.innerHeight,
+                innerWidth = _window.innerWidth;
+
+            _this4.calculatePlacement(triggerRect, popupRect, innerWidth, innerHeight);
           });
         }
 
         setTimeout$2(function () {
-          _this2.addHandlers();
+          _this4.addHandlers();
         }, 1);
       },
 
       handleClosed() {
-        var _this3 = this;
+        var _this5 = this;
 
+        this.closed = true;
         document.removeEventListener('keydown', this.keyHandler);
         document.removeEventListener('click', this.clickHandler);
-        this.exiting = true; // onTransitionEnd?
+        this.exiting = true;
 
         setTimeout$2(function () {
-          _this3.exiting = false;
+          _this5.exiting = false;
         }, 200); // $cdr-duration-2;
-        // add animation exit class
-        // remove it after animation
 
       }
 
@@ -28993,7 +29424,7 @@ var cedar = (function () {
     render() {
       var h = arguments[0];
       return h("div", {
-        "class": clsx(this.style['cdr-popup'], this.openClass, this.exitingClass, this.positionClass, this.cornerClass)
+        "class": clsx(this.style['cdr-popup'], this.openClass, this.exitingClass, this.positionClass, this.cornerClass, this.closedClass)
       }, [h("div", {
         "class": this.style['cdr-popup__content'],
         "ref": "popup",
@@ -29029,6 +29460,10 @@ var cedar = (function () {
       label: {
         type: String,
         required: false
+      },
+      id: {
+        type: String,
+        required: true
       }
     },
 
@@ -29043,6 +29478,12 @@ var cedar = (function () {
 
     mounted() {
       this.addHandlers();
+      var trigger = this.$refs.trigger.children[0];
+
+      if (trigger) {
+        trigger.setAttribute('aria-controls', this.id);
+        trigger.setAttribute('aria-haspopup', 'dialog');
+      }
     },
 
     methods: {
@@ -29089,7 +29530,9 @@ var cedar = (function () {
           "role": "dialog",
           "position": this.position,
           "autoPosition": this.autoPosition,
-          "opened": this.open
+          "opened": this.open,
+          "aria-expanded": "".concat(this.open),
+          "id": this.id
         },
         "ref": "popup",
         "on": {
@@ -29324,7 +29767,7 @@ var cedar = (function () {
 
   var keys$7 = keys$6;
 
-  var ArrayPrototype$8 = Array.prototype;
+  var ArrayPrototype$a = Array.prototype;
 
   var DOMIterables$1 = {
     DOMTokenList: true,
@@ -29333,28 +29776,12 @@ var cedar = (function () {
 
   var keys_1 = function (it) {
     var own = it.keys;
-    return it === ArrayPrototype$8 || (it instanceof Array && own === ArrayPrototype$8.keys)
+    return it === ArrayPrototype$a || (it instanceof Array && own === ArrayPrototype$a.keys)
       // eslint-disable-next-line no-prototype-builtins
       || DOMIterables$1.hasOwnProperty(classof(it)) ? keys$7 : own;
   };
 
   var keys$8 = keys_1;
-
-  var isArray$5 = isArray$1;
-
-  var isArray$6 = isArray$5;
-
-  function _arrayLikeToArray(arr, len) {
-    if (len == null || len > arr.length) len = arr.length;
-
-    for (var i = 0, arr2 = new Array(len); i < len; i++) {
-      arr2[i] = arr[i];
-    }
-
-    return arr2;
-  }
-
-  var arrayLikeToArray = _arrayLikeToArray;
 
   function _arrayWithoutHoles(arr) {
     if (isArray$6(arr)) return arrayLikeToArray(arr);
@@ -29362,240 +29789,11 @@ var cedar = (function () {
 
   var arrayWithoutHoles = _arrayWithoutHoles;
 
-  // `String.prototype.{ codePointAt, at }` methods implementation
-  var createMethod$2 = function (CONVERT_TO_STRING) {
-    return function ($this, pos) {
-      var S = String(requireObjectCoercible($this));
-      var position = toInteger(pos);
-      var size = S.length;
-      var first, second;
-      if (position < 0 || position >= size) return CONVERT_TO_STRING ? '' : undefined;
-      first = S.charCodeAt(position);
-      return first < 0xD800 || first > 0xDBFF || position + 1 === size
-        || (second = S.charCodeAt(position + 1)) < 0xDC00 || second > 0xDFFF
-          ? CONVERT_TO_STRING ? S.charAt(position) : first
-          : CONVERT_TO_STRING ? S.slice(position, position + 2) : (first - 0xD800 << 10) + (second - 0xDC00) + 0x10000;
-    };
-  };
-
-  var stringMultibyte = {
-    // `String.prototype.codePointAt` method
-    // https://tc39.github.io/ecma262/#sec-string.prototype.codepointat
-    codeAt: createMethod$2(false),
-    // `String.prototype.at` method
-    // https://github.com/mathiasbynens/String.prototype.at
-    charAt: createMethod$2(true)
-  };
-
-  var charAt = stringMultibyte.charAt;
-
-
-
-  var STRING_ITERATOR = 'String Iterator';
-  var setInternalState$2 = internalState.set;
-  var getInternalState$2 = internalState.getterFor(STRING_ITERATOR);
-
-  // `String.prototype[@@iterator]` method
-  // https://tc39.github.io/ecma262/#sec-string.prototype-@@iterator
-  defineIterator(String, 'String', function (iterated) {
-    setInternalState$2(this, {
-      type: STRING_ITERATOR,
-      string: String(iterated),
-      index: 0
-    });
-  // `%StringIteratorPrototype%.next` method
-  // https://tc39.github.io/ecma262/#sec-%stringiteratorprototype%.next
-  }, function next() {
-    var state = getInternalState$2(this);
-    var string = state.string;
-    var index = state.index;
-    var point;
-    if (index >= string.length) return { value: undefined, done: true };
-    point = charAt(string, index);
-    state.index += point.length;
-    return { value: point, done: false };
-  });
-
-  // call something on iterator step with safe closing on error
-  var callWithSafeIterationClosing = function (iterator, fn, value, ENTRIES) {
-    try {
-      return ENTRIES ? fn(anObject(value)[0], value[1]) : fn(value);
-    // 7.4.6 IteratorClose(iterator, completion)
-    } catch (error) {
-      var returnMethod = iterator['return'];
-      if (returnMethod !== undefined) anObject(returnMethod.call(iterator));
-      throw error;
-    }
-  };
-
-  var ITERATOR$2 = wellKnownSymbol('iterator');
-  var ArrayPrototype$9 = Array.prototype;
-
-  // check on default Array iterator
-  var isArrayIteratorMethod = function (it) {
-    return it !== undefined && (iterators.Array === it || ArrayPrototype$9[ITERATOR$2] === it);
-  };
-
-  var ITERATOR$3 = wellKnownSymbol('iterator');
-
-  var getIteratorMethod = function (it) {
-    if (it != undefined) return it[ITERATOR$3]
-      || it['@@iterator']
-      || iterators[classof(it)];
-  };
-
-  // `Array.from` method implementation
-  // https://tc39.github.io/ecma262/#sec-array.from
-  var arrayFrom = function from(arrayLike /* , mapfn = undefined, thisArg = undefined */) {
-    var O = toObject$1(arrayLike);
-    var C = typeof this == 'function' ? this : Array;
-    var argumentsLength = arguments.length;
-    var mapfn = argumentsLength > 1 ? arguments[1] : undefined;
-    var mapping = mapfn !== undefined;
-    var iteratorMethod = getIteratorMethod(O);
-    var index = 0;
-    var length, result, step, iterator, next, value;
-    if (mapping) mapfn = functionBindContext(mapfn, argumentsLength > 2 ? arguments[2] : undefined, 2);
-    // if the target is not iterable or it's an array with the default iterator - use a simple case
-    if (iteratorMethod != undefined && !(C == Array && isArrayIteratorMethod(iteratorMethod))) {
-      iterator = iteratorMethod.call(O);
-      next = iterator.next;
-      result = new C();
-      for (;!(step = next.call(iterator)).done; index++) {
-        value = mapping ? callWithSafeIterationClosing(iterator, mapfn, [step.value, index], true) : step.value;
-        createProperty(result, index, value);
-      }
-    } else {
-      length = toLength(O.length);
-      result = new C(length);
-      for (;length > index; index++) {
-        value = mapping ? mapfn(O[index], index) : O[index];
-        createProperty(result, index, value);
-      }
-    }
-    result.length = index;
-    return result;
-  };
-
-  var ITERATOR$4 = wellKnownSymbol('iterator');
-  var SAFE_CLOSING = false;
-
-  try {
-    var called = 0;
-    var iteratorWithReturn = {
-      next: function () {
-        return { done: !!called++ };
-      },
-      'return': function () {
-        SAFE_CLOSING = true;
-      }
-    };
-    iteratorWithReturn[ITERATOR$4] = function () {
-      return this;
-    };
-    // eslint-disable-next-line no-throw-literal
-    Array.from(iteratorWithReturn, function () { throw 2; });
-  } catch (error) { /* empty */ }
-
-  var checkCorrectnessOfIteration = function (exec, SKIP_CLOSING) {
-    if (!SKIP_CLOSING && !SAFE_CLOSING) return false;
-    var ITERATION_SUPPORT = false;
-    try {
-      var object = {};
-      object[ITERATOR$4] = function () {
-        return {
-          next: function () {
-            return { done: ITERATION_SUPPORT = true };
-          }
-        };
-      };
-      exec(object);
-    } catch (error) { /* empty */ }
-    return ITERATION_SUPPORT;
-  };
-
-  var INCORRECT_ITERATION = !checkCorrectnessOfIteration(function (iterable) {
-    Array.from(iterable);
-  });
-
-  // `Array.from` method
-  // https://tc39.github.io/ecma262/#sec-array.from
-  _export({ target: 'Array', stat: true, forced: INCORRECT_ITERATION }, {
-    from: arrayFrom
-  });
-
-  var from_1 = path.Array.from;
-
-  var from_1$1 = from_1;
-
-  var from_1$2 = from_1$1;
-
-  var ITERATOR$5 = wellKnownSymbol('iterator');
-
-  var isIterable = function (it) {
-    var O = Object(it);
-    return O[ITERATOR$5] !== undefined
-      || '@@iterator' in O
-      // eslint-disable-next-line no-prototype-builtins
-      || iterators.hasOwnProperty(classof(O));
-  };
-
-  var isIterable_1 = isIterable;
-
-  var isIterable$1 = isIterable_1;
-
-  // `Symbol.asyncDispose` well-known symbol
-  // https://github.com/tc39/proposal-using-statement
-  defineWellKnownSymbol('asyncDispose');
-
-  // `Symbol.dispose` well-known symbol
-  // https://github.com/tc39/proposal-using-statement
-  defineWellKnownSymbol('dispose');
-
-  // `Symbol.observable` well-known symbol
-  // https://github.com/tc39/proposal-observable
-  defineWellKnownSymbol('observable');
-
-  // `Symbol.patternMatch` well-known symbol
-  // https://github.com/tc39/proposal-pattern-matching
-  defineWellKnownSymbol('patternMatch');
-
-  // TODO: remove from `core-js@4`
-
-
-  defineWellKnownSymbol('replaceAll');
-
-  // TODO: Remove from `core-js@4`
-
-
-  var symbol$3 = symbol;
-
-  var symbol$4 = symbol$3;
-
   function _iterableToArray(iter) {
     if (typeof symbol$4 !== "undefined" && isIterable$1(Object(iter))) return from_1$2(iter);
   }
 
   var iterableToArray = _iterableToArray;
-
-  var slice$5 = slice_1;
-
-  var slice$6 = slice$5;
-
-  function _unsupportedIterableToArray(o, minLen) {
-    var _context;
-
-    if (!o) return;
-    if (typeof o === "string") return arrayLikeToArray(o, minLen);
-
-    var n = slice$6(_context = Object.prototype.toString.call(o)).call(_context, 8, -1);
-
-    if (n === "Object" && o.constructor) n = o.constructor.name;
-    if (n === "Map" || n === "Set") return from_1$2(o);
-    if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return arrayLikeToArray(o, minLen);
-  }
-
-  var unsupportedIterableToArray = _unsupportedIterableToArray;
 
   function _nonIterableSpread() {
     throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
@@ -30010,11 +30208,11 @@ var cedar = (function () {
 
   var findIndex = entryVirtual('Array').findIndex;
 
-  var ArrayPrototype$a = Array.prototype;
+  var ArrayPrototype$b = Array.prototype;
 
   var findIndex_1 = function (it) {
     var own = it.findIndex;
-    return it === ArrayPrototype$a || (it instanceof Array && own === ArrayPrototype$a.findIndex) ? findIndex : own;
+    return it === ArrayPrototype$b || (it instanceof Array && own === ArrayPrototype$b.findIndex) ? findIndex : own;
   };
 
   var findIndex$1 = findIndex_1;
@@ -30404,8 +30602,8 @@ var cedar = (function () {
 
   };
 
-  var css_248z$t = "/* ==========================================================================/*\n* Token option variables\n*\n* these are temporary variables, providing\n* cedar components mappings to previously available tokens.\n* These varables should be removed as tokens are available\n*\n=============================================================== */\n/* ---------------------\n* Outline\n* ------------------- */\n/* intentionally empty */\n.cdr-tooltip--wrapper_6\\.0\\.0 {\n  position: relative;\n  width: -webkit-max-content;\n  width: max-content;\n  height: -webkit-max-content;\n  height: max-content; }\n.cdr-tooltip--wrapper_6\\.0\\.0 .cdr-popup__content_6\\.0\\.0 {\n    background: #373734;\n    color: #f9f8f6;\n    border: 0.1rem solid #f9f8f6;\n    border-radius: 0.4rem;\n    font-family: Graphik, \"Helvetica Neue\", sans-serif;\n    font-style: normal;\n    font-weight: 600;\n    letter-spacing: -0.008rem;\n    font-size: 1.2rem;\n    line-height: 1.6rem;\n    padding: 0.6rem 1.2rem; }\n.cdr-tooltip--wrapper_6\\.0\\.0 .cdr-popup--down_6\\.0\\.0 .cdr-popup__arrow_6\\.0\\.0::before {\n    border-bottom-color: #f9f8f6; }\n.cdr-tooltip--wrapper_6\\.0\\.0 .cdr-popup--down_6\\.0\\.0 .cdr-popup__arrow_6\\.0\\.0::after {\n    border-bottom-color: #373734; }\n.cdr-tooltip--wrapper_6\\.0\\.0 .cdr-popup--up_6\\.0\\.0 .cdr-popup__arrow_6\\.0\\.0::before {\n    border-top-color: #f9f8f6; }\n.cdr-tooltip--wrapper_6\\.0\\.0 .cdr-popup--up_6\\.0\\.0 .cdr-popup__arrow_6\\.0\\.0::after {\n    border-top-color: #373734; }\n.cdr-tooltip--wrapper_6\\.0\\.0 .cdr-popup--right_6\\.0\\.0 .cdr-popup__arrow_6\\.0\\.0::before {\n    border-right-color: #f9f8f6; }\n.cdr-tooltip--wrapper_6\\.0\\.0 .cdr-popup--right_6\\.0\\.0 .cdr-popup__arrow_6\\.0\\.0::after {\n    border-right-color: #373734; }\n.cdr-tooltip--wrapper_6\\.0\\.0 .cdr-popup--left_6\\.0\\.0 .cdr-popup__arrow_6\\.0\\.0::before {\n    border-left-color: #f9f8f6; }\n.cdr-tooltip--wrapper_6\\.0\\.0 .cdr-popup--left_6\\.0\\.0 .cdr-popup__arrow_6\\.0\\.0::after {\n    border-left-color: #373734; }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9jc3Mvc2V0dGluZ3MvX29wdGlvbnMudmFycy5zY3NzIiwiQ2RyVG9vbHRpcC5zY3NzIiwiLi4vLi4vLi4vLi4vYnVpbGQvbm9vcC5jc3MiLCJzcmMvY29tcG9uZW50cy90b29sdGlwL3N0eWxlcy9DZHJUb29sdGlwLnNjc3MiLCJub2RlX21vZHVsZXMvQHJlaS9jZHItdG9rZW5zL2Rpc3Qvc2Nzcy9jZHItdG9rZW5zLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7Ozs7aUVDT2lFO0FERWpFOzt1QkNDdUI7QUNWdkIsd0JBQXdCO0FDUXhCO0VBQ0Usa0JBQWtCO0VBQ2xCLDBCQUFrQjtFQUFsQixrQkFBa0I7RUFDbEIsMkJBQW1CO0VBQW5CLG1CQUFtQixFQUFBO0FBSHJCO0lBTUksbUJBVDBDO0lBVTFDLGNBVG9DO0lBVXBDLDRCQVpzQztJQWF0QyxxQkM2cURzQjtJQWhtRHhCLGtEQUFrRDtJQUNsRCxrQkFBa0I7SUFDbEIsZ0JBQWdCO0lBQ2hCLHlCQUF1QjtJQUN2QixpQkFBaUI7SUFDakIsbUJBQW1CO0lEaEZqQixzQkN5dURrRCxFQUFBO0FEcHZEdEQ7SUFpQk0sNEJBckJvQyxFQUFBO0FBSTFDO0lBcUJNLDRCQXhCd0MsRUFBQTtBQUc5QztJQTJCTSx5QkEvQm9DLEVBQUE7QUFJMUM7SUErQk0seUJBbEN3QyxFQUFBO0FBRzlDO0lBcUNNLDJCQXpDb0MsRUFBQTtBQUkxQztJQXlDTSwyQkE1Q3dDLEVBQUE7QUFHOUM7SUErQ00sMEJBbkRvQyxFQUFBO0FBSTFDO0lBbURNLDBCQXREd0MsRUFBQSIsImZpbGUiOiJDZHJUb29sdGlwLnNjc3MifQ== */";
-  var style$w = {"cdr-tooltip--wrapper":"cdr-tooltip--wrapper_6.0.0","cdr-popup__content":"cdr-popup__content_6.0.0","cdr-popup--down":"cdr-popup--down_6.0.0","cdr-popup__arrow":"cdr-popup__arrow_6.0.0","cdr-popup--up":"cdr-popup--up_6.0.0","cdr-popup--right":"cdr-popup--right_6.0.0","cdr-popup--left":"cdr-popup--left_6.0.0"};
+  var css_248z$t = "/* ==========================================================================/*\n* Token option variables\n*\n* these are temporary variables, providing\n* cedar components mappings to previously available tokens.\n* These varables should be removed as tokens are available\n*\n=============================================================== */\n/* ---------------------\n* Outline\n* ------------------- */\n/* intentionally empty */\n.cdr-tooltip--wrapper_6\\.0\\.0 {\n  position: relative;\n  width: -webkit-max-content;\n  width: max-content;\n  height: -webkit-max-content;\n  height: max-content; }\n.cdr-tooltip--wrapper_6\\.0\\.0 .cdr-popup--closed_6\\.0\\.0 {\n    position: absolute;\n    width: 0.1rem;\n    height: 0.1rem;\n    padding: 0;\n    margin: -0.1rem;\n    overflow: hidden;\n    clip: rect(0, 0, 0, 0);\n    border: 0; }\n.cdr-tooltip--wrapper_6\\.0\\.0 .cdr-popup__content_6\\.0\\.0 {\n    background: #373734;\n    color: #f9f8f6;\n    border: 0.1rem solid #f9f8f6;\n    border-radius: 0.4rem;\n    font-family: Graphik, \"Helvetica Neue\", sans-serif;\n    font-style: normal;\n    font-weight: 600;\n    letter-spacing: -0.008rem;\n    font-size: 1.2rem;\n    line-height: 1.6rem;\n    padding: 0.6rem 1.2rem; }\n.cdr-tooltip--wrapper_6\\.0\\.0 .cdr-popup--down_6\\.0\\.0 .cdr-popup__arrow_6\\.0\\.0::before {\n    border-bottom-color: #f9f8f6; }\n.cdr-tooltip--wrapper_6\\.0\\.0 .cdr-popup--down_6\\.0\\.0 .cdr-popup__arrow_6\\.0\\.0::after {\n    border-bottom-color: #373734; }\n.cdr-tooltip--wrapper_6\\.0\\.0 .cdr-popup--up_6\\.0\\.0 .cdr-popup__arrow_6\\.0\\.0::before {\n    border-top-color: #f9f8f6; }\n.cdr-tooltip--wrapper_6\\.0\\.0 .cdr-popup--up_6\\.0\\.0 .cdr-popup__arrow_6\\.0\\.0::after {\n    border-top-color: #373734; }\n.cdr-tooltip--wrapper_6\\.0\\.0 .cdr-popup--right_6\\.0\\.0 .cdr-popup__arrow_6\\.0\\.0::before {\n    border-right-color: #f9f8f6; }\n.cdr-tooltip--wrapper_6\\.0\\.0 .cdr-popup--right_6\\.0\\.0 .cdr-popup__arrow_6\\.0\\.0::after {\n    border-right-color: #373734; }\n.cdr-tooltip--wrapper_6\\.0\\.0 .cdr-popup--left_6\\.0\\.0 .cdr-popup__arrow_6\\.0\\.0::before {\n    border-left-color: #f9f8f6; }\n.cdr-tooltip--wrapper_6\\.0\\.0 .cdr-popup--left_6\\.0\\.0 .cdr-popup__arrow_6\\.0\\.0::after {\n    border-left-color: #373734; }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9jc3Mvc2V0dGluZ3MvX29wdGlvbnMudmFycy5zY3NzIiwiQ2RyVG9vbHRpcC5zY3NzIiwiLi4vLi4vLi4vLi4vYnVpbGQvbm9vcC5jc3MiLCJzcmMvY29tcG9uZW50cy90b29sdGlwL3N0eWxlcy9DZHJUb29sdGlwLnNjc3MiLCJub2RlX21vZHVsZXMvQHJlaS9jZHItdG9rZW5zL2Rpc3Qvc2Nzcy9jZHItdG9rZW5zLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7Ozs7aUVDT2lFO0FERWpFOzt1QkNDdUI7QUNWdkIsd0JBQXdCO0FDUXhCO0VBQ0Usa0JBQWtCO0VBQ2xCLDBCQUFrQjtFQUFsQixrQkFBa0I7RUFDbEIsMkJBQW1CO0VBQW5CLG1CQUFtQixFQUFBO0FBSHJCO0lDbXBFRSxrQkFBa0I7SUFDbEIsYUFBVTtJQUNWLGNBQVc7SUFDWCxVQUFVO0lBQ1YsZUFBWTtJQUNaLGdCQUFnQjtJQUNoQixzQkFBc0I7SUFDdEIsU0FBUyxFQUFBO0FEMXBFWDtJQVVJLG1CQWIwQztJQWMxQyxjQWJvQztJQWNwQyw0QkFoQnNDO0lBaUJ0QyxxQkN5cURzQjtJQWhtRHhCLGtEQUFrRDtJQUNsRCxrQkFBa0I7SUFDbEIsZ0JBQWdCO0lBQ2hCLHlCQUF1QjtJQUN2QixpQkFBaUI7SUFDakIsbUJBQW1CO0lENUVqQixzQkNxdURrRCxFQUFBO0FEcHZEdEQ7SUFxQk0sNEJBekJvQyxFQUFBO0FBSTFDO0lBeUJNLDRCQTVCd0MsRUFBQTtBQUc5QztJQStCTSx5QkFuQ29DLEVBQUE7QUFJMUM7SUFtQ00seUJBdEN3QyxFQUFBO0FBRzlDO0lBeUNNLDJCQTdDb0MsRUFBQTtBQUkxQztJQTZDTSwyQkFoRHdDLEVBQUE7QUFHOUM7SUFtRE0sMEJBdkRvQyxFQUFBO0FBSTFDO0lBdURNLDBCQTFEd0MsRUFBQSIsImZpbGUiOiJDZHJUb29sdGlwLnNjc3MifQ== */";
+  var style$w = {"cdr-tooltip--wrapper":"cdr-tooltip--wrapper_6.0.0","cdr-popup--closed":"cdr-popup--closed_6.0.0","cdr-popup__content":"cdr-popup__content_6.0.0","cdr-popup--down":"cdr-popup--down_6.0.0","cdr-popup__arrow":"cdr-popup__arrow_6.0.0","cdr-popup--up":"cdr-popup--up_6.0.0","cdr-popup--right":"cdr-popup--right_6.0.0","cdr-popup--left":"cdr-popup--left_6.0.0"};
   styleInject(css_248z$t);
 
   var CdrTooltip = {
@@ -30425,6 +30623,10 @@ var cedar = (function () {
       autoPosition: {
         type: Boolean,
         default: true
+      },
+      id: {
+        type: String,
+        required: true
       }
     },
 
@@ -30440,6 +30642,8 @@ var cedar = (function () {
 
     mounted() {
       this.addHandlers();
+      var trigger = this.$refs.trigger.children[0];
+      if (trigger) trigger.setAttribute('aria-describedby', this.id);
     },
 
     methods: {
@@ -30488,7 +30692,8 @@ var cedar = (function () {
           "role": "tooltip",
           "position": this.position,
           "autoPosition": this.autoPosition,
-          "opened": this.open
+          "opened": this.open,
+          "id": this.id
         },
         "ref": "popup"
       }, [this.$slots.default])]);
@@ -30774,14 +30979,14 @@ var cedar = (function () {
     } return match;
   };
 
-  var FORCED$2 = fails(function () {
+  var FORCED$3 = fails(function () {
     return $stringify$1('\uDF06\uD834') !== '"\\udf06\\ud834"'
       || $stringify$1('\uDEAD') !== '"\\udead"';
   });
 
   if ($stringify$1) {
     // https://github.com/tc39/proposal-well-formed-stringify
-    _export({ target: 'JSON', stat: true, forced: FORCED$2 }, {
+    _export({ target: 'JSON', stat: true, forced: FORCED$3 }, {
       // eslint-disable-next-line no-unused-vars
       stringify: function stringify(it, replacer, space) {
         var result = $stringify$1.apply(null, arguments);
@@ -39790,12 +39995,12 @@ var cedar = (function () {
 
   var includes$1 = entryVirtual('String').includes;
 
-  var ArrayPrototype$b = Array.prototype;
+  var ArrayPrototype$c = Array.prototype;
   var StringPrototype = String.prototype;
 
   var includes$2 = function (it) {
     var own = it.includes;
-    if (it === ArrayPrototype$b || (it instanceof Array && own === ArrayPrototype$b.includes)) return includes;
+    if (it === ArrayPrototype$c || (it instanceof Array && own === ArrayPrototype$c.includes)) return includes;
     if (typeof it === 'string' || it === StringPrototype || (it instanceof String && own === StringPrototype.includes)) {
       return includes$1;
     } return own;
@@ -39845,12 +40050,12 @@ var cedar = (function () {
 
 
 
-  var STRICT_METHOD$4 = arrayMethodIsStrict('reduce');
+  var STRICT_METHOD$5 = arrayMethodIsStrict('reduce');
   var USES_TO_LENGTH$9 = arrayMethodUsesToLength('reduce', { 1: 0 });
 
   // `Array.prototype.reduce` method
   // https://tc39.github.io/ecma262/#sec-array.prototype.reduce
-  _export({ target: 'Array', proto: true, forced: !STRICT_METHOD$4 || !USES_TO_LENGTH$9 }, {
+  _export({ target: 'Array', proto: true, forced: !STRICT_METHOD$5 || !USES_TO_LENGTH$9 }, {
     reduce: function reduce(callbackfn /* , initialValue */) {
       return $reduce(this, callbackfn, arguments.length, arguments.length > 1 ? arguments[1] : undefined);
     }
@@ -39858,11 +40063,11 @@ var cedar = (function () {
 
   var reduce = entryVirtual('Array').reduce;
 
-  var ArrayPrototype$c = Array.prototype;
+  var ArrayPrototype$d = Array.prototype;
 
   var reduce_1 = function (it) {
     var own = it.reduce;
-    return it === ArrayPrototype$c || (it instanceof Array && own === ArrayPrototype$c.reduce) ? reduce : own;
+    return it === ArrayPrototype$d || (it instanceof Array && own === ArrayPrototype$d.reduce) ? reduce : own;
   };
 
   var reduce$1 = reduce_1;
@@ -43568,11 +43773,11 @@ var cedar = (function () {
 
   var fill = entryVirtual('Array').fill;
 
-  var ArrayPrototype$d = Array.prototype;
+  var ArrayPrototype$e = Array.prototype;
 
   var fill_1 = function (it) {
     var own = it.fill;
-    return it === ArrayPrototype$d || (it instanceof Array && own === ArrayPrototype$d.fill) ? fill : own;
+    return it === ArrayPrototype$e || (it instanceof Array && own === ArrayPrototype$e.fill) ? fill : own;
   };
 
   var fill$1 = fill_1;
@@ -43614,11 +43819,11 @@ var cedar = (function () {
 
   var $parseInt = global_1.parseInt;
   var hex = /^[+-]?0[Xx]/;
-  var FORCED$3 = $parseInt(whitespaces + '08') !== 8 || $parseInt(whitespaces + '0x16') !== 22;
+  var FORCED$4 = $parseInt(whitespaces + '08') !== 8 || $parseInt(whitespaces + '0x16') !== 22;
 
   // `parseInt` method
   // https://tc39.github.io/ecma262/#sec-parseint-string-radix
-  var numberParseInt = FORCED$3 ? function parseInt(string, radix) {
+  var numberParseInt = FORCED$4 ? function parseInt(string, radix) {
     var S = trim(String(string));
     return $parseInt(S, (radix >>> 0) || (hex.test(S) ? 16 : 10));
   } : $parseInt;
@@ -44535,7 +44740,8 @@ var cedar = (function () {
             attrs: {
               position: _vm.position,
               "auto-position": _vm.autoPos,
-              label: _vm.title
+              label: _vm.title,
+              id: "popover-test"
             }
           },
           [
@@ -44571,7 +44777,7 @@ var cedar = (function () {
     /* style */
     const __vue_inject_styles__$I = function (inject) {
       if (!inject) return
-      inject("data-v-0a422b40_0", { source: "\n.popover-container--center {\n  margin: 0 auto;\n}\n.popover-container--right {\n  margin-left: 95%;\n}\n.popover-example {\n  /* lots of bottom space to allow scrolling*/\n  margin-bottom: 1000px;\n}\nfieldset {\n  width: 20%;\n  float: left;\n}\n", map: {"version":3,"sources":["/home/travis/build/rei/rei-cedar/src/components/popover/examples/Popover.vue"],"names":[],"mappings":";AA2HA;EACA,cAAA;AACA;AACA;EACA,gBAAA;AACA;AAEA;EACA,2CAAA;EACA,qBAAA;AACA;AAEA;EACA,UAAA;EACA,WAAA;AACA","file":"Popover.vue","sourcesContent":["<template>\n  <div class=\"popover-example\">\n    <h2>popover</h2>\n    <cdr-form-group label=\"popover position\">\n      <cdr-radio\n        name=\"position\"\n        custom-value=\"up\"\n        v-model=\"position\"\n      >up</cdr-radio>\n      <cdr-radio\n        name=\"position\"\n        custom-value=\"down\"\n        v-model=\"position\"\n      >down</cdr-radio>\n      <cdr-radio\n        name=\"position\"\n        custom-value=\"left\"\n        v-model=\"position\"\n      >left</cdr-radio>\n      <cdr-radio\n        name=\"position\"\n        custom-value=\"right\"\n        v-model=\"position\"\n      >right</cdr-radio>\n    </cdr-form-group>\n\n    <cdr-form-group label=\"auto position\">\n      <cdr-radio\n        name=\"autoPos\"\n        :custom-value=\"true\"\n        v-model=\"autoPos\"\n      >true</cdr-radio>\n      <cdr-radio\n        name=\"autoPos\"\n        :custom-value=\"false\"\n        v-model=\"autoPos\"\n      >false</cdr-radio>\n    </cdr-form-group>\n\n    <cdr-form-group label=\"trigger position\">\n      <cdr-radio\n        name=\"trigger\"\n        custom-value=\"left\"\n        v-model=\"trigger\"\n      >left</cdr-radio>\n      <cdr-radio\n        name=\"trigger\"\n        custom-value=\"center\"\n        v-model=\"trigger\"\n      >center</cdr-radio>\n      <cdr-radio\n        name=\"trigger\"\n        custom-value=\"right\"\n        v-model=\"trigger\"\n      >right</cdr-radio>\n    </cdr-form-group>\n\n    <cdr-form-group label=\"title\">\n      <cdr-radio\n        name=\"title\"\n        custom-value=\"Hello my name is popover\"\n        v-model=\"title\"\n      >short title</cdr-radio>\n      <cdr-radio\n        name=\"title\"\n        custom-value=\"\"\n        v-model=\"title\"\n      >no title</cdr-radio>\n      <cdr-radio\n        name=\"title\"\n        custom-value=\"Hi i am a popover. Hello. Hows it going. Doing well i hope.\"\n        v-model=\"title\"\n      >long title</cdr-radio>\n    </cdr-form-group>\n\n    <div style=\"clear: both\" />\n    <cdr-popover\n      :position=\"position\"\n      :auto-position=\"autoPos\"\n      :label=\"title\"\n      :class=\"containerClass\"\n    >\n      <cdr-button\n        :icon-only=\"true\"\n        aria-label=\"information\"\n        slot=\"trigger\"\n      >\n        <icon-information-fill />\n      </cdr-button>\n      <cdr-text>\n        Thanks for stopping by. What a lovely day it is today. Please come back again soon.\n      </cdr-text>\n    </cdr-popover>\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\nexport default {\n  name: 'Popover',\n  components: {\n    ...Components,\n  },\n  data() {\n    return {\n      open: false,\n      position: 'up',\n      title: 'Hello my name is popover',\n      autoPos: true,\n      trigger: 'center',\n      type: 'icon',\n    };\n  },\n  computed: {\n    containerClass() {\n      return `popover-container--${this.trigger}`;\n    },\n  },\n};\n</script>\n\n<style>\n.popover-container--center {\n  margin: 0 auto;\n}\n.popover-container--right {\n  margin-left: 95%;\n}\n\n.popover-example {\n  /* lots of bottom space to allow scrolling*/\n  margin-bottom: 1000px;\n}\n\nfieldset {\n  width: 20%;\n  float: left;\n}\n</style>\n"]}, media: undefined });
+      inject("data-v-4384c43e_0", { source: "\n.popover-container--center {\n  margin: 0 auto;\n}\n.popover-container--right {\n  margin-left: 95%;\n}\n.popover-example {\n  /* lots of bottom space to allow scrolling*/\n  margin-bottom: 1000px;\n}\nfieldset {\n  width: 20%;\n  float: left;\n}\n", map: {"version":3,"sources":["/home/travis/build/rei/rei-cedar/src/components/popover/examples/Popover.vue"],"names":[],"mappings":";AA4HA;EACA,cAAA;AACA;AACA;EACA,gBAAA;AACA;AAEA;EACA,2CAAA;EACA,qBAAA;AACA;AAEA;EACA,UAAA;EACA,WAAA;AACA","file":"Popover.vue","sourcesContent":["<template>\n  <div class=\"popover-example\">\n    <h2>popover</h2>\n    <cdr-form-group label=\"popover position\">\n      <cdr-radio\n        name=\"position\"\n        custom-value=\"up\"\n        v-model=\"position\"\n      >up</cdr-radio>\n      <cdr-radio\n        name=\"position\"\n        custom-value=\"down\"\n        v-model=\"position\"\n      >down</cdr-radio>\n      <cdr-radio\n        name=\"position\"\n        custom-value=\"left\"\n        v-model=\"position\"\n      >left</cdr-radio>\n      <cdr-radio\n        name=\"position\"\n        custom-value=\"right\"\n        v-model=\"position\"\n      >right</cdr-radio>\n    </cdr-form-group>\n\n    <cdr-form-group label=\"auto position\">\n      <cdr-radio\n        name=\"autoPos\"\n        :custom-value=\"true\"\n        v-model=\"autoPos\"\n      >true</cdr-radio>\n      <cdr-radio\n        name=\"autoPos\"\n        :custom-value=\"false\"\n        v-model=\"autoPos\"\n      >false</cdr-radio>\n    </cdr-form-group>\n\n    <cdr-form-group label=\"trigger position\">\n      <cdr-radio\n        name=\"trigger\"\n        custom-value=\"left\"\n        v-model=\"trigger\"\n      >left</cdr-radio>\n      <cdr-radio\n        name=\"trigger\"\n        custom-value=\"center\"\n        v-model=\"trigger\"\n      >center</cdr-radio>\n      <cdr-radio\n        name=\"trigger\"\n        custom-value=\"right\"\n        v-model=\"trigger\"\n      >right</cdr-radio>\n    </cdr-form-group>\n\n    <cdr-form-group label=\"title\">\n      <cdr-radio\n        name=\"title\"\n        custom-value=\"Hello my name is popover\"\n        v-model=\"title\"\n      >short title</cdr-radio>\n      <cdr-radio\n        name=\"title\"\n        custom-value=\"\"\n        v-model=\"title\"\n      >no title</cdr-radio>\n      <cdr-radio\n        name=\"title\"\n        custom-value=\"Hi i am a popover. Hello. Hows it going. Doing well i hope.\"\n        v-model=\"title\"\n      >long title</cdr-radio>\n    </cdr-form-group>\n\n    <div style=\"clear: both\" />\n    <cdr-popover\n      :position=\"position\"\n      :auto-position=\"autoPos\"\n      :label=\"title\"\n      :class=\"containerClass\"\n      id=\"popover-test\"\n    >\n      <cdr-button\n        :icon-only=\"true\"\n        aria-label=\"information\"\n        slot=\"trigger\"\n      >\n        <icon-information-fill />\n      </cdr-button>\n      <cdr-text>\n        Thanks for stopping by. What a lovely day it is today. Please come back again soon.\n      </cdr-text>\n    </cdr-popover>\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\nexport default {\n  name: 'Popover',\n  components: {\n    ...Components,\n  },\n  data() {\n    return {\n      open: false,\n      position: 'up',\n      title: 'Hello my name is popover',\n      autoPos: true,\n      trigger: 'center',\n      type: 'icon',\n    };\n  },\n  computed: {\n    containerClass() {\n      return `popover-container--${this.trigger}`;\n    },\n  },\n};\n</script>\n\n<style>\n.popover-container--center {\n  margin: 0 auto;\n}\n.popover-container--right {\n  margin-left: 95%;\n}\n\n.popover-example {\n  /* lots of bottom space to allow scrolling*/\n  margin-bottom: 1000px;\n}\n\nfieldset {\n  width: 20%;\n  float: left;\n}\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
@@ -48591,7 +48797,11 @@ var cedar = (function () {
           "cdr-tooltip",
           {
             class: _vm.containerClass,
-            attrs: { position: _vm.position, "auto-position": _vm.autoPos }
+            attrs: {
+              position: _vm.position,
+              "auto-position": _vm.autoPos,
+              id: "tooltip-test"
+            }
           },
           [
             _c("cdr-button", { attrs: { slot: "trigger" }, slot: "trigger" }, [
@@ -48616,7 +48826,7 @@ var cedar = (function () {
     /* style */
     const __vue_inject_styles__$V = function (inject) {
       if (!inject) return
-      inject("data-v-1d119d5e_0", { source: "\n.tooltip-container--center {\n  margin: 0 auto;\n}\n.tooltip-container--right {\n  margin-left: 95%;\n}\n.tooltip-example {\n  /* lots of bottom space to allow scrolling*/\n  margin-bottom: 1000px;\n}\nfieldset {\n  width: 20%;\n  float: left;\n}\n", map: {"version":3,"sources":["/home/travis/build/rei/rei-cedar/src/components/tooltip/examples/Tooltip.vue"],"names":[],"mappings":";AAoGA;EACA,cAAA;AACA;AACA;EACA,gBAAA;AACA;AAEA;EACA,2CAAA;EACA,qBAAA;AACA;AAEA;EACA,UAAA;EACA,WAAA;AACA","file":"Tooltip.vue","sourcesContent":["<template>\n  <div class=\"tooltip-example\">\n    <h2>tooltip</h2>\n    <cdr-form-group label=\"tooltip position\">\n      <cdr-radio\n        name=\"position\"\n        custom-value=\"up\"\n        v-model=\"position\"\n      >up</cdr-radio>\n      <cdr-radio\n        name=\"position\"\n        custom-value=\"down\"\n        v-model=\"position\"\n      >down</cdr-radio>\n      <cdr-radio\n        name=\"position\"\n        custom-value=\"left\"\n        v-model=\"position\"\n      >left</cdr-radio>\n      <cdr-radio\n        name=\"position\"\n        custom-value=\"right\"\n        v-model=\"position\"\n      >right</cdr-radio>\n    </cdr-form-group>\n\n    <cdr-form-group label=\"auto position\">\n      <cdr-radio\n        name=\"autoPos\"\n        :custom-value=\"true\"\n        v-model=\"autoPos\"\n      >true</cdr-radio>\n      <cdr-radio\n        name=\"autoPos\"\n        :custom-value=\"false\"\n        v-model=\"autoPos\"\n      >false</cdr-radio>\n    </cdr-form-group>\n\n    <cdr-form-group label=\"trigger position\">\n      <cdr-radio\n        name=\"trigger\"\n        custom-value=\"left\"\n        v-model=\"trigger\"\n      >left</cdr-radio>\n      <cdr-radio\n        name=\"trigger\"\n        custom-value=\"center\"\n        v-model=\"trigger\"\n      >center</cdr-radio>\n      <cdr-radio\n        name=\"trigger\"\n        custom-value=\"right\"\n        v-model=\"trigger\"\n      >right</cdr-radio>\n    </cdr-form-group>\n\n    <div style=\"clear: both\" />\n\n    <cdr-tooltip\n      :position=\"position\"\n      :auto-position=\"autoPos\"\n      :class=\"containerClass\"\n    >\n      <cdr-button slot=\"trigger\">\n        tooltip\n      </cdr-button>\n      <div>\n        Hello! This tooltip contains important information about the web site you are visiting!\n        We're using the internet right now!\n      </div>\n    </cdr-tooltip>\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\nexport default {\n  name: 'Tooltip',\n  components: {\n    ...Components,\n  },\n  data() {\n    return {\n      position: 'up',\n      autoPos: true,\n      trigger: 'center',\n    };\n  },\n  computed: {\n    containerClass() {\n      return `tooltip-container--${this.trigger}`;\n    },\n  },\n};\n</script>\n\n<style>\n\n.tooltip-container--center {\n  margin: 0 auto;\n}\n.tooltip-container--right {\n  margin-left: 95%;\n}\n\n.tooltip-example {\n  /* lots of bottom space to allow scrolling*/\n  margin-bottom: 1000px;\n}\n\nfieldset {\n  width: 20%;\n  float: left;\n}\n</style>\n"]}, media: undefined });
+      inject("data-v-6da5c375_0", { source: "\n.tooltip-container--center {\n  margin: 0 auto;\n}\n.tooltip-container--right {\n  margin-left: 95%;\n}\n.tooltip-example {\n  /* lots of bottom space to allow scrolling*/\n  margin-bottom: 1000px;\n}\nfieldset {\n  width: 20%;\n  float: left;\n}\n", map: {"version":3,"sources":["/home/travis/build/rei/rei-cedar/src/components/tooltip/examples/Tooltip.vue"],"names":[],"mappings":";AAqGA;EACA,cAAA;AACA;AACA;EACA,gBAAA;AACA;AAEA;EACA,2CAAA;EACA,qBAAA;AACA;AAEA;EACA,UAAA;EACA,WAAA;AACA","file":"Tooltip.vue","sourcesContent":["<template>\n  <div class=\"tooltip-example\">\n    <h2>tooltip</h2>\n    <cdr-form-group label=\"tooltip position\">\n      <cdr-radio\n        name=\"position\"\n        custom-value=\"up\"\n        v-model=\"position\"\n      >up</cdr-radio>\n      <cdr-radio\n        name=\"position\"\n        custom-value=\"down\"\n        v-model=\"position\"\n      >down</cdr-radio>\n      <cdr-radio\n        name=\"position\"\n        custom-value=\"left\"\n        v-model=\"position\"\n      >left</cdr-radio>\n      <cdr-radio\n        name=\"position\"\n        custom-value=\"right\"\n        v-model=\"position\"\n      >right</cdr-radio>\n    </cdr-form-group>\n\n    <cdr-form-group label=\"auto position\">\n      <cdr-radio\n        name=\"autoPos\"\n        :custom-value=\"true\"\n        v-model=\"autoPos\"\n      >true</cdr-radio>\n      <cdr-radio\n        name=\"autoPos\"\n        :custom-value=\"false\"\n        v-model=\"autoPos\"\n      >false</cdr-radio>\n    </cdr-form-group>\n\n    <cdr-form-group label=\"trigger position\">\n      <cdr-radio\n        name=\"trigger\"\n        custom-value=\"left\"\n        v-model=\"trigger\"\n      >left</cdr-radio>\n      <cdr-radio\n        name=\"trigger\"\n        custom-value=\"center\"\n        v-model=\"trigger\"\n      >center</cdr-radio>\n      <cdr-radio\n        name=\"trigger\"\n        custom-value=\"right\"\n        v-model=\"trigger\"\n      >right</cdr-radio>\n    </cdr-form-group>\n\n    <div style=\"clear: both\" />\n\n    <cdr-tooltip\n      :position=\"position\"\n      :auto-position=\"autoPos\"\n      :class=\"containerClass\"\n      id=\"tooltip-test\"\n    >\n      <cdr-button slot=\"trigger\">\n        tooltip\n      </cdr-button>\n      <div>\n        Hello! This tooltip contains important information about the web site you are visiting!\n        We're using the internet right now!\n      </div>\n    </cdr-tooltip>\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\nexport default {\n  name: 'Tooltip',\n  components: {\n    ...Components,\n  },\n  data() {\n    return {\n      position: 'up',\n      autoPos: true,\n      trigger: 'center',\n    };\n  },\n  computed: {\n    containerClass() {\n      return `tooltip-container--${this.trigger}`;\n    },\n  },\n};\n</script>\n\n<style>\n\n.tooltip-container--center {\n  margin: 0 auto;\n}\n.tooltip-container--right {\n  margin-left: 95%;\n}\n\n.tooltip-example {\n  /* lots of bottom space to allow scrolling*/\n  margin-bottom: 1000px;\n}\n\nfieldset {\n  width: 20%;\n  float: left;\n}\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
@@ -49501,64 +49711,6 @@ var cedar = (function () {
       undefined,
       undefined
     );
-
-  function _arrayWithHoles(arr) {
-    if (isArray$6(arr)) return arr;
-  }
-
-  var arrayWithHoles = _arrayWithHoles;
-
-  var getIterator = function (it) {
-    var iteratorMethod = getIteratorMethod(it);
-    if (typeof iteratorMethod != 'function') {
-      throw TypeError(String(it) + ' is not iterable');
-    } return anObject(iteratorMethod.call(it));
-  };
-
-  var getIterator_1 = getIterator;
-
-  var getIterator$1 = getIterator_1;
-
-  function _iterableToArrayLimit(arr, i) {
-    if (typeof symbol$4 === "undefined" || !isIterable$1(Object(arr))) return;
-    var _arr = [];
-    var _n = true;
-    var _d = false;
-    var _e = undefined;
-
-    try {
-      for (var _i = getIterator$1(arr), _s; !(_n = (_s = _i.next()).done); _n = true) {
-        _arr.push(_s.value);
-
-        if (i && _arr.length === i) break;
-      }
-    } catch (err) {
-      _d = true;
-      _e = err;
-    } finally {
-      try {
-        if (!_n && _i["return"] != null) _i["return"]();
-      } finally {
-        if (_d) throw _e;
-      }
-    }
-
-    return _arr;
-  }
-
-  var iterableToArrayLimit = _iterableToArrayLimit;
-
-  function _nonIterableRest() {
-    throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
-  }
-
-  var nonIterableRest = _nonIterableRest;
-
-  function _slicedToArray(arr, i) {
-    return arrayWithHoles(arr) || iterableToArrayLimit(arr, i) || unsupportedIterableToArray(arr, i) || nonIterableRest();
-  }
-
-  var slicedToArray = _slicedToArray;
 
   /**
    * A specialized version of `_.map` for arrays without support for iteratee
