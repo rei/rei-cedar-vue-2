@@ -11,6 +11,10 @@ $cdr-color-text-tooltip-default: #f9f8f6;
   width: max-content;
   height: max-content;
 
+  .cdr-popup--closed {
+    @include cdr-display-sr-only;
+  }
+
   .cdr-popup__content {
     background: $cdr-color-background-tooltip-default;
     color: $cdr-color-text-tooltip-default;

@@ -2,7 +2,7 @@
 
 exports[`CdrPopup matches snapshot 1`] = `
 <div
-  class="cdr-popup cdr-popup--up"
+  class="cdr-popup cdr-popup--closed"
 >
   <div
     class="cdr-popup__content"

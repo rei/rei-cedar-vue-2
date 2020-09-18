@@ -79,6 +79,7 @@
       :auto-position="autoPos"
       :label="title"
       :class="containerClass"
+      id="popover-test"
     >
       <cdr-button
         :icon-only="true"

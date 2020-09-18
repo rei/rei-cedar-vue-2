@@ -31,6 +31,10 @@ export default {
       type: String,
       required: false,
     },
+    id: {
+      type: String,
+      required: true,
+    },
   },
   data() {
     return {
@@ -42,6 +46,12 @@ export default {
   },
   mounted() {
     this.addHandlers();
+
+    const trigger = this.$refs.trigger.children[0];
+    if (trigger) {
+      trigger.setAttribute('aria-controls', this.id);
+      trigger.setAttribute('aria-haspopup', 'dialog');
+    }
   },
   methods: {
     openPopover() {
@@ -80,6 +90,8 @@ export default {
           autoPosition={ this.autoPosition }
           opened={ this.open }
           onClosed={ this.closePopover }
+          aria-expanded={ `${this.open}` }
+          id= { this.id }
         >
           <div class={this.style['cdr-popover__container']}>
             <div class={this.style['cdr-popover__content']}>

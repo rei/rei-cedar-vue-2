@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import debounce from 'lodash-es/debounce';
 import style from './styles/CdrPopup.scss';
 import propValidator from '../../utils/propValidator';
 
@@ -29,20 +30,26 @@ export default {
       style,
       keyHandler: undefined,
       clickHandler: undefined,
+      resizeHandler: undefined,
       pos: this.position,
       corner: undefined,
       exiting: false,
+      popupRect: undefined,
+      closed: !this.opened,
     };
   },
   computed: {
     positionClass() {
-      return this.style[`cdr-popup--${this.pos}`];
+      return this.opened || this.exiting ? this.style[`cdr-popup--${this.pos}`] : undefined;
     },
     cornerClass() {
       return this.corner ? this.style[`cdr-popup--corner-${this.corner}`] : undefined;
     },
     openClass() {
       return this.opened ? this.style['cdr-popup--open'] : undefined;
+    },
+    closedClass() {
+      return this.closed ? this.style['cdr-popup--closed'] : undefined;
     },
     exitingClass() {
       return this.exiting ? this.style['cdr-popup--exit'] : undefined;
@@ -61,9 +68,16 @@ export default {
       }
     },
   },
+  mounted() {
+    this.measurePopup();
+
+    this.resizeHandler = this.handleResize.bind(this);
+    window.addEventListener('resize', this.resizeHandler);
+  },
   destroyed() {
     document.removeEventListener('keydown', this.keyHandler);
     document.removeEventListener('click', this.clickHandler);
+    window.removeEventListener('resize', this.resizeHandler);
   },
   methods: {
     closePopup(e) {
@@ -85,43 +99,98 @@ export default {
         }
       });
     },
+    handleResize() {
+      debounce(() => {
+        this.measurePopup();
+      }, 300);
+    },
     addHandlers() {
       this.keyHandler = this.handleKeyDown.bind(this);
       document.addEventListener('keydown', this.keyHandler);
       this.clickHandler = this.handleClick.bind(this);
       document.addEventListener('click', this.clickHandler);
     },
-    calculatePlacement() {
-      const rect = this.$refs.popup.getBoundingClientRect();
-      if (this.pos === 'down' && rect.bottom >= window.innerHeight) {
-        this.pos = 'up';
-      } else if (this.pos === 'up' && rect.top <= 0) {
-        this.pos = 'down';
-      } else if (this.pos === 'left' && rect.left <= 0) {
-        this.pos = 'right';
-      } else if (this.pos === 'right' && rect.right >= window.innerWidth) {
-        this.pos = 'left';
+    measurePopup() {
+      this.closed = false;
+      this.$nextTick(() => {
+        this.popupRect = this.$refs.popup.getBoundingClientRect();
+        this.closed = true;
+      });
+    },
+    calculatePlacement(triggerRect, popupRect, screenWidth, screenHeight) {
+      const offset = 15; // 10px for arrow 5px for spacing
+      const triggerCenterY = triggerRect.top + (triggerRect.height / 2);
+      const triggerCenterX = triggerRect.left + (triggerRect.width / 2);
+
+      const dirs = {
+        up: triggerRect.top - popupRect.height - offset,
+        down: screenHeight - triggerRect.bottom - popupRect.height - offset,
+        left: triggerRect.left - popupRect.width - offset,
+        right: screenWidth - triggerRect.right - popupRect.width - offset,
+      };
+
+      const corners = {
+        left: triggerCenterX - (popupRect.width / 2) < 0,
+        right: triggerCenterX + (popupRect.width / 2) > screenWidth,
+        top: triggerCenterY - (popupRect.height / 2) < 0,
+        bottom: triggerCenterY + (popupRect.height / 2) > screenHeight,
+      };
+
+      const invert = {
+        up: 'down',
+        down: 'up',
+        left: 'right',
+        right: 'left',
+      };
+
+      const inverse = invert[this.position];
+      const validDirs = Object.keys(dirs).filter((dir) => dirs[dir] > 0);
+      const sortedDirs = Object.keys(dirs).sort((a, b) => {
+        if (dirs[a] > dirs[b]) {
+          return -1;
+        } if (dirs[a] < dirs[b]) {
+          return 1;
+        }
+        return 0;
+      });
+
+      if (dirs[this.position] > 0) {
+        // selected position is valid, or no positions are valid
+        this.pos = this.position;
+      } else if (dirs[inverse] > 0) {
+        // inverted position is valid
+        this.pos = inverse;
+      } else if (validDirs.length) {
+        // try the angles
+        [this.pos] = validDirs;
+      } else {
+        // use whichever direction has the most space
+        [this.pos] = sortedDirs;
       }
 
-      const orientation = this.pos === 'down' || this.pos === 'up' ? 'vertical' : 'horizontal';
-
-      if (orientation === 'vertical' && rect.left <= 0) {
-        this.corner = 'left';
-      } else if (orientation === 'vertical' && rect.right >= window.innerWidth) {
-        this.corner = 'right';
-      } else if (orientation === 'horizontal' && rect.top <= 0) {
+      if (this.pos === 'down' || this.pos === 'up') {
+        if (corners.left) {
+          this.corner = 'left';
+        } else if (corners.right) {
+          this.corner = 'right';
+        }
+      } else if (corners.top) {
         this.corner = 'top';
-      } else if (orientation === 'horizontal' && rect.bottom >= window.innerHeight) {
+      } else if (corners.bottom) {
         this.corner = 'bottom';
       }
     },
     handleOpened() {
+      this.closed = false;
       this.pos = this.position;
       this.corner = undefined;
 
       if (this.autoPosition) {
         this.$nextTick(() => {
-          this.calculatePlacement();
+          const triggerRect = this.$el.parentElement.getBoundingClientRect();
+          const { popupRect } = this;
+          const { innerHeight, innerWidth } = window;
+          this.calculatePlacement(triggerRect, popupRect, innerWidth, innerHeight);
         });
       }
 
@@ -130,15 +199,13 @@ export default {
       }, 1);
     },
     handleClosed() {
+      this.closed = true;
       document.removeEventListener('keydown', this.keyHandler);
       document.removeEventListener('click', this.clickHandler);
       this.exiting = true;
-      // onTransitionEnd?
       setTimeout(() => {
         this.exiting = false;
       }, 200); // $cdr-duration-2;
-      // add animation exit class
-      // remove it after animation
     },
   },
   render() {
@@ -149,6 +216,7 @@ export default {
         this.exitingClass,
         this.positionClass,
         this.cornerClass,
+        this.closedClass,
       )}
       >
         <div
