@@ -3,6 +3,8 @@ import size from '../../mixins/size';
 import space from '../../mixins/space';
 import propValidator from '../../utils/propValidator';
 import style from './styles/CdrInput.scss';
+import IconCheckStroke from '../icon/comps/check-stroke';
+import IconErrorStroke from '../icon/comps/error-stroke';
 /**
  * Cedar 2 component for input
  * **NOTE:** `v-model` is required.
@@ -11,6 +13,10 @@ import style from './styles/CdrInput.scss';
  */
 export default {
   name: 'CdrInput',
+  components: {
+    IconCheckStroke,
+    IconErrorStroke,
+  },
   mixins: [size, space],
   inheritAttrs: false,
   props: {
@@ -38,6 +44,15 @@ export default {
       type: String,
       required: true,
     },
+    // HOW to do this without requiring 3 data bindings for every input?
+    success: {
+      type: Boolean,
+      default: false,
+    },
+    error: {
+      type: Boolean,
+      default: false,
+    },
     /**
      * Removes the label element but sets the input `aria-label` to `label` text for a11y.
     */
@@ -50,6 +65,7 @@ export default {
     disabled: Boolean,
     /** @ignore */
     required: Boolean,
+    optional: Boolean,
     /** @ignore */
     value: {
       type: [String, Number],
@@ -81,6 +97,13 @@ export default {
         [this.style['cdr-input--preicon']]: this.$slots['pre-icon'],
       };
     },
+    inputContainerClass() {
+      return {
+        [this.style['cdr-input-container']]: true,
+        [this.style['cdr-input--success']]: this.success,
+        [this.style['cdr-input--error']]: this.error,
+      }
+    },
     inputWrapClass() {
       return {
         [this.style['cdr-input-wrap']]: true,
@@ -102,7 +125,15 @@ export default {
         <span
           class={this.style['cdr-input__required-label']}
         >
-          Required
+          *
+        </span>
+      ) : '';
+
+      const optionalEl = this.optional ? (
+        <span
+          class={this.style['cdr-input__required-label']}
+        >
+          (optional)
         </span>
       ) : '';
 
@@ -112,7 +143,7 @@ export default {
           for={this.inputId}
           ref="label"
         >{ this.label }
-          {requiredEl}
+          {requiredEl || optionalEl}
         </label>
       ) : '';
     },
@@ -157,7 +188,7 @@ export default {
   },
   render() {
     return (
-      <div class={this.style['cdr-input-container']}>
+      <div class={this.inputContainerClass}>
         {this.labelEl}
         {this.$slots.info && (
           <span
@@ -182,6 +213,15 @@ export default {
               {this.$slots['post-icon']}
             </span>
           )}
+          {this.$slots['button']}
+          <icon-check-stroke class={clsx(
+            this.style['cdr-input__validation-icon'],
+            this.style['cdr-input__validation-success'],
+          )}/>
+          <icon-error-stroke class={clsx(
+            this.style['cdr-input__validation-icon'],
+            this.style['cdr-input__validation-error'],
+          )}/>
         </div>
         {this.$slots['helper-text'] && (
           <span

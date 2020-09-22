@@ -6,6 +6,9 @@
     >
       Text Inputs
     </cdr-text>
+<validation/>
+
+
     <div data-backstop="input-target">
       <cdr-input
         class="demo-input"
@@ -151,11 +154,13 @@
 
 <script>
 import * as Components from 'srcdir/index';
+import validation from './Validation.vue';
 
 export default {
   name: 'Inputs',
   components: {
     ...Components,
+    validation,
   },
   data() {
     return {
