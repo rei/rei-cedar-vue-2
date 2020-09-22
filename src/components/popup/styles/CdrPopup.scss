@@ -1,117 +1,22 @@
 @import '../../../css/settings/index.scss';
-
-$animation-transform: 10px;
-// TODO: if animating opacity only, replace keyframes with regular transition
-@keyframes :global(popup-exit-down) {
-  from {
-    // transform: translateY(0);
-    opacity: 1;
-  }
-
-  to {
-    // transform: translateY(-#{$animation-transform});
-    opacity: 0;
-  }
-}
-@keyframes :global(popup-enter-down) {
-  from {
-    // transform: translateY(-#{$animation-transform});
-    opacity: 0;
-  }
-
-  to {
-    // transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes :global(popup-exit-up) {
-  from {
-    // transform: translateY(0);
-    opacity: 1;
-  }
-
-  to {
-    // transform: translateY($animation-transform);
-    opacity: 0;
-  }
-}
-@keyframes :global(popup-enter-up) {
-  from {
-    // transform: translateY($animation-transform);
-    opacity: 0;
-  }
-
-  to {
-    // transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes :global(popup-exit-left) {
-  from {
-    // transform: translateX(0);
-    opacity: 1;
-  }
-
-  to {
-    // transform: translateX(-#{$animation-transform});
-    opacity: 0;
-  }
-}
-@keyframes :global(popup-enter-left) {
-  from {
-    // transform: translateX(-#{$animation-transform});
-    opacity: 0;
-  }
-
-  to {
-    // transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes :global(popup-exit-right) {
-  from {
-    // transform: translateX(0);
-    opacity: 1;
-  }
-
-  to {
-    // transform: translateX($animation-transform);
-    opacity: 0;
-  }
-}
-@keyframes :global(popup-enter-right) {
-  from {
-    // transform: translateX($animation-transform);
-    opacity: 0;
-  }
-
-  to {
-    // transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-$arrow-size: 1rem;
-$arrow-spacing: #{$arrow-size + $cdr-space-quarter-x + 0.1rem};
-$content-spacing: calc(100% + #{$arrow-size} + #{$cdr-space-quarter-x});
+@import './CdrPopup.vars.scss';
 
 .cdr-popup {
   opacity: 0;
-  animation-duration: $cdr-duration-2-x;
-  animation-timing-function: $cdr-timing-function-ease-out;
+  transition: opacity 0.2s;
 
-  &--open, &--exit {
+  &--open {
     opacity: 1;
   }
-  
+
   &--closed {
     opacity: 0;
   }
 
   &__content {
+    animation-duration: $animation-duration;
+    animation-timing-function: $cdr-timing-function-ease-out;
+    animation-fill-mode: forwards;
     background: $cdr-color-background-primary;
     border: 1px solid $cdr-color-border-secondary;
     min-width: 286px;
@@ -121,10 +26,8 @@ $content-spacing: calc(100% + #{$arrow-size} + #{$cdr-space-quarter-x});
 
   @mixin arrow($borderSide, $position, $translate) {
     &::before, &::after {
-      #{$borderSide}: -#{$arrow-spacing};
       #{$position}: 50%;
       transform: #{$translate};
-      z-index: 100;
     }
     &::before {
       border-#{$borderSide}-color: $cdr-color-border-secondary;
@@ -144,13 +47,13 @@ $content-spacing: calc(100% + #{$arrow-size} + #{$cdr-space-quarter-x});
   }
 
   &--down {
-    &.cdr-popup--open.cdr-popup {
+    &.cdr-popup--open .cdr-popup__content {
       :global {
         animation-name: popup-enter-down;
       }
     }
 
-    &.cdr-popup--exit.cdr-popup {
+    &.cdr-popup--exit .cdr-popup__content {
       :global {
         animation-name: popup-exit-down;
       }
@@ -163,16 +66,33 @@ $content-spacing: calc(100% + #{$arrow-size} + #{$cdr-space-quarter-x});
     .cdr-popup__arrow {
       @include arrow(bottom, left, translateX(-50%));
     }
+
+    &.cdr-popup--open .cdr-popup__arrow {
+      &::before, &::after {
+        :global {
+          animation-name: popup-arrow-enter-down;
+        }
+      }
+    }
+
+    &.cdr-popup--exit .cdr-popup__arrow {
+      &::before, &::after {
+        :global {
+          animation-name: popup-arrow-exit-down;
+        }
+      }
+    }
+
   }
 
   &--up {
-    &.cdr-popup--open.cdr-popup {
+    &.cdr-popup--open .cdr-popup__content {
       :global {
         animation-name: popup-enter-up;
       }
     }
 
-    &.cdr-popup--exit.cdr-popup {
+    &.cdr-popup--exit .cdr-popup__content {
       :global {
         animation-name: popup-exit-up;
       }
@@ -184,6 +104,22 @@ $content-spacing: calc(100% + #{$arrow-size} + #{$cdr-space-quarter-x});
 
     .cdr-popup__arrow {
       @include arrow(top, left, translateX(-50%));
+    }
+
+    &.cdr-popup--open .cdr-popup__arrow {
+      &::before, &::after {
+        :global {
+          animation-name: popup-arrow-enter-up;
+        }
+      }
+    }
+
+    &.cdr-popup--exit .cdr-popup__arrow {
+      &::before, &::after {
+        :global {
+          animation-name: popup-arrow-exit-up;
+        }
+      }
     }
   }
 
@@ -207,13 +143,13 @@ $content-spacing: calc(100% + #{$arrow-size} + #{$cdr-space-quarter-x});
   }
 
   &--left {
-    &.cdr-popup--open.cdr-popup {
+    &.cdr-popup--open .cdr-popup__content {
       :global {
         animation-name: popup-enter-left;
       }
     }
 
-    &.cdr-popup--exit.cdr-popup {
+    &.cdr-popup--exit .cdr-popup__content {
       :global {
         animation-name: popup-exit-left;
       }
@@ -226,16 +162,32 @@ $content-spacing: calc(100% + #{$arrow-size} + #{$cdr-space-quarter-x});
     .cdr-popup__arrow {
       @include arrow(left, top, translateY(-50%));
     }
+
+    &.cdr-popup--open .cdr-popup__arrow {
+      &::before, &::after {
+        :global {
+          animation-name: popup-arrow-enter-left;
+        }
+      }
+    }
+
+    &.cdr-popup--exit .cdr-popup__arrow {
+      &::before, &::after {
+        :global {
+          animation-name: popup-arrow-exit-left;
+        }
+      }
+    }
   }
 
   &--right {
-    &.cdr-popup--open.cdr-popup {
+    &.cdr-popup--open .cdr-popup__content {
       :global {
         animation-name: popup-enter-right;
       }
     }
 
-    &.cdr-popup--exit.cdr-popup {
+    &.cdr-popup--exit .cdr-popup__content {
       :global {
         animation-name: popup-exit-right;
       }
@@ -248,8 +200,23 @@ $content-spacing: calc(100% + #{$arrow-size} + #{$cdr-space-quarter-x});
     .cdr-popup__arrow {
       @include arrow(right, top, translateY(-50%));
     }
-  }
 
+    &.cdr-popup--open .cdr-popup__arrow {
+      &::before, &::after {
+        :global {
+          animation-name: popup-arrow-enter-right;
+        }
+      }
+    }
+
+    &.cdr-popup--exit .cdr-popup__arrow {
+      &::before, &::after {
+        :global {
+          animation-name: popup-arrow-exit-right;
+        }
+      }
+    }
+  }
 
   &--corner-top .cdr-popup__content {
     top: 0;
@@ -271,6 +238,10 @@ $content-spacing: calc(100% + #{$arrow-size} + #{$cdr-space-quarter-x});
       height: 0;
       border-style: solid;
       border-color: transparent;
+      animation-duration: $animation-duration;
+      animation-timing-function: $cdr-timing-function-ease-out;
+      animation-fill-mode: forwards;
+      z-index: 100;
     }
 
     &::before {

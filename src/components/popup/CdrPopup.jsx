@@ -49,7 +49,7 @@ export default {
       return this.opened ? this.style['cdr-popup--open'] : undefined;
     },
     closedClass() {
-      return this.closed ? this.style['cdr-popup--closed'] : undefined;
+      return this.closed && !this.exiting ? this.style['cdr-popup--closed'] : undefined;
     },
     exitingClass() {
       return this.exiting ? this.style['cdr-popup--exit'] : undefined;
@@ -118,7 +118,8 @@ export default {
       });
     },
     calculatePlacement(triggerRect, popupRect, screenWidth, screenHeight) {
-      const offset = 15; // 10px for arrow 5px for spacing
+      const offset = 14; // 10px for arrow 4px for spacing
+      const borderSize = 2; // need to include border for corner calculations
       const triggerCenterY = triggerRect.top + (triggerRect.height / 2);
       const triggerCenterX = triggerRect.left + (triggerRect.width / 2);
 
@@ -130,10 +131,10 @@ export default {
       };
 
       const corners = {
-        left: triggerCenterX - (popupRect.width / 2) < 0,
-        right: triggerCenterX + (popupRect.width / 2) > screenWidth,
-        top: triggerCenterY - (popupRect.height / 2) < 0,
-        bottom: triggerCenterY + (popupRect.height / 2) > screenHeight,
+        left: triggerCenterX - (popupRect.width / 2) - borderSize <= 0,
+        right: triggerCenterX + (popupRect.width / 2) + borderSize >= screenWidth,
+        top: triggerCenterY - (popupRect.height / 2) - borderSize <= 0,
+        bottom: triggerCenterY + (popupRect.height / 2) + borderSize >= screenHeight,
       };
 
       const invert = {
