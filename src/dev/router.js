@@ -40,7 +40,6 @@ const routes = [
   { path: '/modals', name: 'Modals', component: Examples.modal },
   { path: '/pagination', name: 'Pagination', component: Examples.pagination },
   { path: '/popover', name: 'Popover', component: Examples.popover },
-  { path: '/tooltip', name: 'Tooltip', component: Examples.tooltip },
   { path: '/quotes', name: 'Quotes', component: Examples.quote },
   { path: '/radios', name: 'Radios', component: Examples.radio },
   { path: '/ratings', name: 'Ratings', component: Examples.rating },
@@ -48,6 +47,7 @@ const routes = [
   { path: '/tables', name: 'Tables', component: Examples.table },
   { path: '/tabs', name: 'Tabs', component: Examples.tabs },
   { path: '/texts', name: 'Texts', component: Examples.text },
+  { path: '/tooltip', name: 'Tooltip', component: Examples.tooltip },
 
   { path: '/default-buttons', component: DefaultButtons },
   { path: '/secondary-buttons', component: SecondaryButtons },
