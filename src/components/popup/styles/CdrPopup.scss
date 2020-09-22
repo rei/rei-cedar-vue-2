@@ -3,7 +3,7 @@
 
 .cdr-popup {
   opacity: 0;
-  transition: opacity 0.2s;
+  transition: opacity $animation-duration $timing-function;
 
   &--open {
     opacity: 1;
@@ -15,7 +15,7 @@
 
   &__content {
     animation-duration: $animation-duration;
-    animation-timing-function: $cdr-timing-function-ease-out;
+    animation-timing-function: $timing-function;
     animation-fill-mode: forwards;
     background: $cdr-color-background-primary;
     border: 1px solid $cdr-color-border-secondary;
@@ -24,38 +24,70 @@
     z-index: 100;
   }
 
-  @mixin arrow($borderSide, $position, $translate) {
+  &__arrow {
     &::before, &::after {
-      #{$position}: 50%;
-      transform: #{$translate};
+      content: '';
+      position: absolute;
+      margin: auto;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-color: transparent;
+      animation-duration: $animation-duration;
+      animation-timing-function: $timing-function;
+      animation-fill-mode: forwards;
+      z-index: 100;
     }
+
     &::before {
-      border-#{$borderSide}-color: $cdr-color-border-secondary;
+      border-width: $arrow-size;
     }
 
     &::after {
-      border-#{$borderSide}-color: $cdr-color-background-primary;
+      border-width: #{$arrow-size - 0.1rem};
     }
   }
 
+  // Directional Logic
+
   &--up,
   &--down {
-    .cdr-popup__content {
+    .cdr-popup__content, .cdr-popup__arrow::before, .cdr-popup__arrow::after  {
       left: 50%;
       transform: translateX(-50%);
     }
   }
 
   &--down {
-    &.cdr-popup--open .cdr-popup__content {
-      :global {
-        animation-name: popup-enter-down;
+    &.cdr-popup--open {
+      .cdr-popup__content {
+        :global {
+          animation-name: popup-enter-down;
+        }
+      }
+
+      .cdr-popup__arrow {
+        &::before, &::after {
+          :global {
+            animation-name: popup-arrow-enter-down;
+          }
+        }
       }
     }
 
-    &.cdr-popup--exit .cdr-popup__content {
-      :global {
-        animation-name: popup-exit-down;
+    &.cdr-popup--exit {
+      .cdr-popup__content {
+        :global {
+          animation-name: popup-exit-down;
+        }
+      }
+
+      .cdr-popup__arrow {
+        &::before, &::after {
+          :global {
+            animation-name: popup-arrow-exit-down;
+          }
+        }
       }
     }
 
@@ -64,37 +96,40 @@
     }
 
     .cdr-popup__arrow {
-      @include arrow(bottom, left, translateX(-50%));
+      @include arrow(bottom);
     }
-
-    &.cdr-popup--open .cdr-popup__arrow {
-      &::before, &::after {
-        :global {
-          animation-name: popup-arrow-enter-down;
-        }
-      }
-    }
-
-    &.cdr-popup--exit .cdr-popup__arrow {
-      &::before, &::after {
-        :global {
-          animation-name: popup-arrow-exit-down;
-        }
-      }
-    }
-
   }
 
   &--up {
-    &.cdr-popup--open .cdr-popup__content {
-      :global {
-        animation-name: popup-enter-up;
+    &.cdr-popup--open {
+      .cdr-popup__content {
+        :global {
+          animation-name: popup-enter-up;
+        }
+      }
+
+      .cdr-popup__arrow {
+        &::before, &::after {
+          :global {
+            animation-name: popup-arrow-enter-up;
+          }
+        }
       }
     }
 
-    &.cdr-popup--exit .cdr-popup__content {
-      :global {
-        animation-name: popup-exit-up;
+    &.cdr-popup--exit {
+      .cdr-popup__content {
+        :global {
+          animation-name: popup-exit-up;
+        }
+      }
+
+      .cdr-popup__arrow {
+        &::before, &::after {
+          :global {
+            animation-name: popup-arrow-exit-up;
+          }
+        }
       }
     }
 
@@ -103,23 +138,7 @@
     }
 
     .cdr-popup__arrow {
-      @include arrow(top, left, translateX(-50%));
-    }
-
-    &.cdr-popup--open .cdr-popup__arrow {
-      &::before, &::after {
-        :global {
-          animation-name: popup-arrow-enter-up;
-        }
-      }
-    }
-
-    &.cdr-popup--exit .cdr-popup__arrow {
-      &::before, &::after {
-        :global {
-          animation-name: popup-arrow-exit-up;
-        }
-      }
+      @include arrow(top);
     }
   }
 
@@ -136,22 +155,42 @@
 
   &--left,
   &--right {
-    .cdr-popup__content {
+    .cdr-popup__content, .cdr-popup__arrow::before, .cdr-popup__arrow::after {
       top: 50%;
       transform: translateY(-50%);
     }
   }
 
   &--left {
-    &.cdr-popup--open .cdr-popup__content {
-      :global {
-        animation-name: popup-enter-left;
+    &.cdr-popup--open {
+      .cdr-popup__content {
+        :global {
+          animation-name: popup-enter-left;
+        }
+      }
+
+      .cdr-popup__arrow {
+        &::before, &::after {
+          :global {
+            animation-name: popup-arrow-enter-left;
+          }
+        }
       }
     }
 
-    &.cdr-popup--exit .cdr-popup__content {
-      :global {
-        animation-name: popup-exit-left;
+    &.cdr-popup--exit {
+      .cdr-popup__content {
+        :global {
+          animation-name: popup-exit-left;
+        }
+      }
+
+      .cdr-popup__arrow {
+        &::before, &::after {
+          :global {
+            animation-name: popup-arrow-exit-left;
+          }
+        }
       }
     }
 
@@ -160,36 +199,40 @@
     }
 
     .cdr-popup__arrow {
-      @include arrow(left, top, translateY(-50%));
-    }
-
-    &.cdr-popup--open .cdr-popup__arrow {
-      &::before, &::after {
-        :global {
-          animation-name: popup-arrow-enter-left;
-        }
-      }
-    }
-
-    &.cdr-popup--exit .cdr-popup__arrow {
-      &::before, &::after {
-        :global {
-          animation-name: popup-arrow-exit-left;
-        }
-      }
+      @include arrow(left);
     }
   }
 
   &--right {
-    &.cdr-popup--open .cdr-popup__content {
-      :global {
-        animation-name: popup-enter-right;
+    &.cdr-popup--open {
+      .cdr-popup__content {
+        :global {
+          animation-name: popup-enter-right;
+        }
+      }
+
+      .cdr-popup__arrow {
+        &::before, &::after {
+          :global {
+            animation-name: popup-arrow-enter-right;
+          }
+        }
       }
     }
 
-    &.cdr-popup--exit .cdr-popup__content {
-      :global {
-        animation-name: popup-exit-right;
+    &.cdr-popup--exit {
+      .cdr-popup__content {
+        :global {
+          animation-name: popup-exit-right;
+        }
+      }
+
+      .cdr-popup__arrow {
+        &::before, &::after {
+          :global {
+            animation-name: popup-arrow-exit-right;
+          }
+        }
       }
     }
 
@@ -198,23 +241,7 @@
     }
 
     .cdr-popup__arrow {
-      @include arrow(right, top, translateY(-50%));
-    }
-
-    &.cdr-popup--open .cdr-popup__arrow {
-      &::before, &::after {
-        :global {
-          animation-name: popup-arrow-enter-right;
-        }
-      }
-    }
-
-    &.cdr-popup--exit .cdr-popup__arrow {
-      &::before, &::after {
-        :global {
-          animation-name: popup-arrow-exit-right;
-        }
-      }
+      @include arrow(right);
     }
   }
 
@@ -227,29 +254,5 @@
     top: unset;
     bottom: 0;
     transform: unset;
-  }
-
-  &__arrow {
-    &::before, &::after {
-      content: '';
-      position: absolute;
-      margin: auto;
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-color: transparent;
-      animation-duration: $animation-duration;
-      animation-timing-function: $cdr-timing-function-ease-out;
-      animation-fill-mode: forwards;
-      z-index: 100;
-    }
-
-    &::before {
-      border-width: $arrow-size;
-    }
-
-    &::after {
-      border-width: #{$arrow-size - 0.1rem};
-    }
   }
 }
