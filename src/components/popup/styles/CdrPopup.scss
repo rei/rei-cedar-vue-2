@@ -19,7 +19,8 @@
     animation-fill-mode: forwards;
     background: $cdr-color-background-primary;
     border: 1px solid $cdr-color-border-secondary;
-    min-width: 286px;
+    max-width: 286px;
+    width: max-content;
     position: absolute;
     z-index: 100;
   }
