@@ -76,5 +76,20 @@ describe('CdrPopup', () => {
       }, 100, 100);
       expect(wrapper.vm.pos).toBe('right');
     });
+
+    it('emits closed event on esc key press', () => {
+      wrapper.vm.handleKeyDown({ key: 'Esc' });
+      expect(wrapper.emitted('closed')).toBeTruthy();
+    });
+
+    it('emits closed event on click outside', async (done) => {
+      const randomElement = document.createElement('div');
+      document.body.appendChild(randomElement);
+      wrapper.vm.handleClick({ target: randomElement });
+      wrapper.vm.$nextTick(() => {
+        expect(wrapper.emitted('closed')).toBeTruthy();
+        done();
+      })
+    });
   });
 });

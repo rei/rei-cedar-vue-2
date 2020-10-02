@@ -41,13 +41,15 @@ export default {
     if (trigger) trigger.setAttribute('aria-describedby', this.id);
   },
   methods: {
-    openTooltip() {
+    openTooltip(e) {
       if (this.timeout) clearTimeout(this.timeout);
       this.open = true;
+      this.$emit('opened', e);
     },
-    closeTooltip() {
+    closeTooltip(e) {
       this.timeout = setTimeout(() => {
         this.open = false;
+        this.$emit('closed', e);
       }, 250);
     },
     addHandlers() {
@@ -84,6 +86,7 @@ export default {
           autoPosition={ this.autoPosition }
           opened={ this.open }
           id={this.id}
+          onClosed={ this.closeTooltip }
         >
           { this.$slots.default }
         </cdr-popup>

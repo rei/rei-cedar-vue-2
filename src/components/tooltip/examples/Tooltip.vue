@@ -62,6 +62,8 @@
       :auto-position="autoPos"
       :class="containerClass"
       id="tooltip-test"
+      @opened="tooltipHandler"
+      @closed="tooltipHandler"
     >
       <cdr-button slot="trigger">
         tooltip
@@ -92,6 +94,11 @@ export default {
   computed: {
     containerClass() {
       return `tooltip-container--${this.trigger}`;
+    },
+  },
+  methods: {
+    tooltipHandler(e) {
+      console.log(e);
     },
   },
 };
