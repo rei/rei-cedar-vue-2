@@ -34,7 +34,7 @@ export default {
       default: 'text',
       validator: (value) => propValidator(
         value,
-        ['text', 'email', 'number', 'password', 'search', 'url'],
+        ['text', 'email', 'number', 'password', 'search', 'url', 'tel'],
       ),
     },
     /**
@@ -44,6 +44,10 @@ export default {
       type: String,
       required: true,
     },
+    infieldLabel: {
+      type: Boolean,
+      default: false,
+    },
     // HOW to do this without requiring 3 data bindings for every input?
     success: {
       type: Boolean,
@@ -52,6 +56,19 @@ export default {
     error: {
       type: Boolean,
       default: false,
+    },
+
+    background: {
+      type: [String],
+      default: 'primary',
+      validator: (value) => propValidator(
+        value,
+        ['primary', 'secondary'],
+      ),
+    },
+
+    mask: {
+      type: String,
     },
     /**
      * Removes the label element but sets the input `aria-label` to `label` text for a11y.
@@ -93,15 +110,17 @@ export default {
     inputClass() {
       return {
         [this.style['cdr-input']]: true,
+        [this.style['cdr-input--secondary']]: this.background === 'secondary',
         [this.style['cdr-input--multiline']]: this.rows > 1,
         [this.style['cdr-input--preicon']]: this.$slots['pre-icon'],
       };
     },
     inputContainerClass() {
       return {
-        [this.style['cdr-input-container']]: true,
+        // [this.style['cdr-input-container']]: true,
         [this.style['cdr-input--success']]: this.success,
         [this.style['cdr-input--error']]: this.error,
+        [this.style['cdr-input--infield']]: this.infieldLabel,
       }
     },
     inputWrapClass() {
@@ -116,7 +135,7 @@ export default {
       return {
         ...this.$listeners,
         input(event) {
-          vm.$emit('input', event.target.value);
+          vm.$emit('input', event.target.value, event);
         },
       };
     },
@@ -187,9 +206,20 @@ export default {
     },
   },
   render() {
+    // TODO: ITS NEVER A POST_ICON BUTTON! ITS ALWAYS A DARN ICON!
+    // ICON BUTTON NO BACKGROUND DONT BEHAVE LIKE THAT!
+    // NEEDS TO BE HEEEIGHT 100% TOO!
+    // INPUT BUTTON?!?!
+    // TODO: post-icon 2 buttons with lil line in between
+    // TODO: when element focused whole input and post-icon gets diffy color
+    // TODO: UGH probably gonna have to manage active/focus state with JS o_o...x_x
+    // TODO: password managers. put post-icon stuff in fake end of element.
+    // and uh, manage active/focus/etc. state of it
+
     return (
       <div class={this.inputContainerClass}>
-        {this.labelEl}
+
+        {this.infieldLabel || this.labelEl}
         {this.$slots.info && (
           <span
             class={this.style['cdr-input__info-container']}
@@ -197,7 +227,9 @@ export default {
             {this.$slots.info}
           </span>
         )}
+        <div style="clear: both"></div>
         <div class={this.inputWrapClass}>
+          {this.infieldLabel && this.labelEl}
           {this.inputEl}
           {this.$slots['pre-icon'] && (
             <span
@@ -223,6 +255,13 @@ export default {
             this.style['cdr-input__validation-error'],
           )}/>
         </div>
+        {this.$slots['messaging'] && (
+          <span
+            class={this.style['cdr-input__messaging']}
+          >
+            {this.$slots['messaging']}
+          </span>
+        )}
         {this.$slots['helper-text'] && (
           <span
             class={this.style['cdr-input__helper-text']}

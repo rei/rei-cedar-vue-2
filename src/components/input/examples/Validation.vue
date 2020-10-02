@@ -17,7 +17,7 @@
     >
       <div slot="helper-text" class="validation-msg">{{this.changeMessaging}}</div>
       <cdr-tooltip slot="post-icon" id="clear-tip">
-        <cdr-button slot="trigger" @click="clearChangeInput" modifier="secondary"><icon-x-sm slot="icon"/></cdr-button>
+        <cdr-button slot="trigger" class="button-style" @click="clearChangeInput" modifier="secondary"><icon-x-sm slot="icon"/></cdr-button>
         Click me to clear this input
       </cdr-tooltip>
     </cdr-input>
@@ -31,9 +31,55 @@
       @blur="() => {this.validateBlur(this.blurModel)}"
     ><div slot="helper-text" class="validation-msg">{{this.blurMessaging}}</div></cdr-input>
 
-    <cdr-input label="lalalala" class="demo-input button-example">
+    <!-- <cdr-input label="Button next to input" class="demo-input button-example">
       <cdr-button slot="button" modifier="secondary">hey</cdr-button>
+    </cdr-input> -->
+
+    <hr>
+
+    <cdr-input
+      class="demo-input"
+      v-model="changeModel"
+      label="Validate On Change"
+      :error="changeError"
+      :success="changeSuccess"
+      @input="validateChange"
+      :infield-label="true"
+      required
+    >
+      <icon-information-fill slot="pre-icon"/>
+      <div slot="info">info text</div>
+      <div slot="helper-text" class="validation-msg">{{this.changeMessaging}}</div>
+      <cdr-tooltip slot="post-icon" id="clear-tip">
+        <cdr-button slot="trigger" class="button-style" @click="clearChangeInput" style="//height: 60px;" modifier="secondary"><icon-x-sm slot="icon"/></cdr-button>
+        Click me to clear this input
+      </cdr-tooltip>
     </cdr-input>
+    <cdr-input
+      class="demo-input"
+      v-model="blurModel"
+      label="Validate On Blur"
+      :error="blurError"
+      :success="blurSuccess"
+      :infield-label="true"
+      optional
+      @blur="() => {this.validateBlur(this.blurModel)}"
+    ><div slot="helper-text" class="validation-msg">{{this.blurMessaging}}</div></cdr-input>
+    <hr>
+
+    <cdr-input
+      class="demo-input"
+      v-model="messageStackModel"
+      label="Messages Stack"
+      :error="messageStackError"
+      :success="messageStackSuccess"
+      optional
+      @blur="() => {this.validateMessageStack(this.messageStackModel)}"
+    >
+      <div slot="messaging" class="validation-msg">{{this.messageStackMessaging}}</div>
+      <div slot="helper-text" class="validation-msg">Must be 8 or less characters</div>
+    </cdr-input>
+    <hr>
   </div>
 </template>
 
@@ -51,6 +97,12 @@ export default {
       blurError: false,
       blurSuccess: false,
       blurMessaging: 'Must be 8 or less characters',
+
+
+      messageStackModel: '',
+      messageStackError: false,
+      messageStackSuccess: false,
+      messageStackMessaging: '',
 
       changeModel: '',
       changeError: false,
@@ -86,6 +138,22 @@ export default {
       }
     },
 
+    validateMessageStack(value, e) {
+      if(!value) {
+        this.messageStackError = true;
+        this.messageStackSuccess = false;
+        this.messageStackMessaging = "cannot be blank"
+      } else if (value.length > 8) {
+        this.messageStackError = true;
+        this.messageStackSuccess = false;
+        this.messageStackMessaging = "HEY I NEED DATA HERE!"
+      } else {
+        this.messageStackError = false;
+        this.messageStackSuccess = true;
+        this.messageStackMessaging = "Success!"
+      }
+    },
+
     validateBlur(value, e) {
       if (value.length > 8) {
         this.blurError = true;
@@ -117,5 +185,10 @@ export default {
   .button-example input {
     flex-grow: 1;
     width: auto;
+  }
+
+  .button-style {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
   }
 </style>

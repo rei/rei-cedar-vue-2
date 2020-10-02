@@ -20,15 +20,13 @@
     display: inline-flex;
     flex: none;
     padding: 0;
-
-    @include cdr-breadcrumb-item-mixin;
   }
 
 
   /* Link
   ---------- */
   &__link {
-    @include cdr-breadcrumb-item-linked-mixin;
+    @include cdr-breadcrumb-item-mixin;
 
     &:hover,
     &:active,

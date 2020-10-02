@@ -1,10 +1,6 @@
 @mixin cdr-breadcrumb-item-mixin() {
-  color: $cdr-color-text-secondary;
-}
-
-@mixin cdr-breadcrumb-item-linked-mixin() {
   text-decoration: none;
-  color: inherit;
+  color: $cdr-color-text-secondary;
   &:hover,
   &:active,
   &:focus {

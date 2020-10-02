@@ -4,7 +4,19 @@
 /* ==========================================================================
   # INPUT LABEL
   ========================================================================== */
+.cdr-input--infield {
+  .cdr-input__label {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    z-index: 1;
+  }
 
+  .cdr-input {
+    padding-top: 30px;
+    height: unset;
+  }
+}
 .cdr-input__label {
   @include cdr-input-base-label-mixin;
 
@@ -20,9 +32,48 @@
 .cdr-input {
   @include cdr-input-base-mixin;
 
-  &-container {
-
+  &--secondary {
+    &:active {
+      background-color: red;
+    }
   }
+
+  &--success {
+    .cdr-input:not(:focus):not(:active) {
+      // background-color: $cdr-color-background-success;
+      box-shadow: inset 0 0 0 1px $cdr-color-border-success;
+    }
+
+    .cdr-input__validation-success {
+      fill: $cdr-color-text-success;
+      display: block;
+    }
+
+    .cdr-input__messaging {
+      color: $cdr-color-text-success;
+    }
+  }
+
+  &--error {
+    .cdr-input:not(:focus):not(:active) {
+      // background-color: $cdr-color-background-error;
+      box-shadow: inset 0 0 0 1px $cdr-color-border-error;
+    }
+
+    .cdr-input__validation-error {
+      fill: $cdr-color-text-error;
+      display: block;
+    }
+// TODO: NEED to remove validation color on label when input is focus?!?!?!
+// must do with javascripts? :<
+    .cdr-input__messaging, .cdr-input__label, .cdr-input__required-label {
+      color: $cdr-color-text-error;
+    }
+  }
+
+  // &-container {
+  //   background-color: pink;
+  // }
   /* Style variants
     ========================================================================== */
 
@@ -37,37 +88,6 @@
     padding-left: calc(#{$cdr-space-half-x} + #{$cdr-space-quarter-x} + 25px);
   }
 
-  &--success {
-    .cdr-input {
-      // background-color: $cdr-color-background-success;
-      box-shadow: inset 0 0 0 1px $cdr-color-border-success;
-    }
-
-    .cdr-input__validation-success {
-      fill: $cdr-color-text-success;
-      display: block;
-    }
-
-    .cdr-input__helper-text, .cdr-input__label, .cdr-input__required-label {
-      color: $cdr-color-text-success;
-    }
-  }
-
-  &--error {
-    .cdr-input {
-      // background-color: $cdr-color-background-error;
-      box-shadow: inset 0 0 0 1px $cdr-color-border-error;
-    }
-
-    .cdr-input__validation-error {
-      fill: $cdr-color-text-error;
-      display: block;
-    }
-
-    .cdr-input__helper-text, .cdr-input__label, .cdr-input__required-label {
-      color: $cdr-color-text-error;
-    }
-  }
 
   &__validation-icon {
     position: absolute;

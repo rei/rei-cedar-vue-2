@@ -6,8 +6,8 @@
     >
       Text Inputs
     </cdr-text>
+    <masked/>
 <validation/>
-
 
     <div data-backstop="input-target">
       <cdr-input
@@ -155,12 +155,14 @@
 <script>
 import * as Components from 'srcdir/index';
 import validation from './Validation.vue';
+import masked from './Masked.vue';
 
 export default {
   name: 'Inputs',
   components: {
     ...Components,
     validation,
+    masked,
   },
   data() {
     return {
