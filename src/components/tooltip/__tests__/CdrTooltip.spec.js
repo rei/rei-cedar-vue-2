@@ -56,4 +56,17 @@ describe('CdrTooltip', () => {
     });
     expect(wrapper.find('#tooltip-trigger').attributes('aria-describedby')).toBe('tooltip-test');
   });
+
+  it('binds contentClass to content', () => {
+    const wrapper = mount(CdrTooltip, {
+      propsData: {
+        id: 'tooltip-test',
+        contentClass: 'tooltip-override',
+      },
+      slots: {
+        trigger: '<button id="tooltip-trigger"></button>'
+      }
+    });
+    expect(wrapper.find('.tooltip-override').exists()).toBe(true);
+  });
 });

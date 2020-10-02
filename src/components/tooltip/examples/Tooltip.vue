@@ -61,6 +61,7 @@
       :position="position"
       :auto-position="autoPos"
       :class="containerClass"
+      contentClass="tooltip-override"
       id="tooltip-test"
       @opened="tooltipHandler"
       @closed="tooltipHandler"
@@ -105,6 +106,9 @@ export default {
 </script>
 
 <style>
+
+.tooltip-override {
+}
 
 .tooltip-container--center {
   margin: 0 auto;

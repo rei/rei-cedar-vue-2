@@ -69,4 +69,17 @@ describe('CdrPopover', () => {
       done();
     });
   });
+
+  it('binds contentClass to content', () => {
+    const wrapper = mount(CdrPopover, {
+      propsData: {
+        id: 'popover-test',
+        contentClass: 'popover-override',
+      },
+      slots: {
+        trigger: '<button id="popover-trigger"></button>'
+      }
+    });
+    expect(wrapper.find('.popover-override').exists()).toBe(true);
+  });
 });

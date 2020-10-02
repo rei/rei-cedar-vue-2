@@ -25,6 +25,10 @@ export default {
       type: String,
       required: true,
     },
+    contentClass: {
+      type: String,
+      required: false,
+    },
   },
   data() {
     return {
@@ -80,6 +84,7 @@ export default {
         </div>
         <cdr-popup
           class={this.style['cdr-tooltip']}
+          contentClass={ this.contentClass }
           role="tooltip"
           ref="popup"
           position={ this.position }

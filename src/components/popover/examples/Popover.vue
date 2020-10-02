@@ -79,6 +79,7 @@
       :auto-position="autoPos"
       :label="title"
       :class="containerClass"
+      contentClass="popover-override"
       id="popover-test"
       @opened="popupHandler"
       @closed="popupHandler"
@@ -129,6 +130,10 @@ export default {
 </script>
 
 <style>
+.popover-override {
+
+}
+
 .popover-container--center {
   margin: 0 auto;
 }

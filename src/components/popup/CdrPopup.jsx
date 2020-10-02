@@ -24,6 +24,9 @@ export default {
       type: Boolean,
       default: true,
     },
+    contentClass: {
+      type: String,
+    },
   },
   data() {
     return {
@@ -221,7 +224,7 @@ export default {
       )}
       >
         <div
-          class={this.style['cdr-popup__content']}
+          class={clsx(this.style['cdr-popup__content'], this.contentClass)}
           ref="popup"
           {... { attrs: this.$attrs } }
         >
