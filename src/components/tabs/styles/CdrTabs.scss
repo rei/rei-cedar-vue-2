@@ -110,6 +110,16 @@
     color: inherit;
     font-weight: inherit;
 
+    // Prevent content from shifting when font-weight changes
+    &::before {
+      display: block;
+      content: attr(js-name);
+      font-weight: 500;
+      height: 0;
+      overflow: hidden;
+      visibility: hidden;
+    }
+
     &:active,
     &:hover,
     &:focus {
