@@ -27078,13 +27078,12 @@ var cedar = (function () {
           "modifier": "heading-serif-600"
         }
       }, [this.label])]), h("cdr-button", {
+        "class": this.style['cdr-modal__close-button'],
         "attrs": {
-          "id": "close-modal-button",
           "icon-only": true,
           "with-background": true,
           "aria-label": "Close"
         },
-        "class": this.style['cdr-modal__close-button'],
         "on": {
           "click": onClick
         }
