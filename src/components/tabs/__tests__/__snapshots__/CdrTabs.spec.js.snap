@@ -14,7 +14,7 @@ exports[`CdrTabs mounted mounts tabs 1`] = `
     <nav
       class="cdr-tabs__header-container"
     >
-      <ol
+      <div
         class="cdr-tabs__header"
         role="tablist"
       />
@@ -47,42 +47,34 @@ exports[`CdrTabs mounted mounts with cdr-tab-panel children 1`] = `
     <nav
       class="cdr-tabs__header-container"
     >
-      <ol
+      <div
         class="cdr-tabs__header"
         role="tablist"
       >
-        <li
+        <button
           aria-controls="tab-panel-1"
           aria-disabled="false"
           class="cdr-tabs__header-item"
           id="tab-1"
+          js-name="tab1"
           role="tab"
+          tabindex="-1"
         >
-          <a
-            class="cdr-tabs__header-item-label"
-            href="#tab-panel-1"
-            tabindex="-1"
-          >
-            tab1
-          </a>
-        </li>
-        <li
+          tab1
+        </button>
+        <button
           aria-controls="tab-panel-2"
           aria-disabled="false"
           aria-selected="true"
           class="cdr-tabs__header-item-active cdr-tabs__header-item"
           id="tab-2"
+          js-name="tab2"
           role="tab"
+          tabindex="0"
         >
-          <a
-            class="cdr-tabs__header-item-label"
-            href="#tab-panel-2"
-            tabindex="0"
-          >
-            tab2
-          </a>
-        </li>
-      </ol>
+          tab2
+        </button>
+      </div>
     </nav>
     <div
       class="cdr-tabs__gradient cdr-tabs__gradient--right"

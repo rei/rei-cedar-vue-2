@@ -38,7 +38,7 @@ describe('CdrTabs', () => {
       expect(wrapper.element).toMatchSnapshot();
 
       expect(wrapper.vm.tabs.length).toBe(2);
-      expect(wrapper.findAll('li').length).toBe(2);
+      expect(wrapper.findAll('button').length).toBe(2);
       expect(wrapper.vm.activeTabIndex).toBe(1);
       setTimeout(() => { // for debounce
         expect(spyGetHeaderWidth).toHaveBeenCalled();
@@ -156,7 +156,7 @@ describe('CdrTabs', () => {
       });
 
       await wrapper.vm.$nextTick();
-      wrapper.findAll('a').at(1).trigger('click');
+      wrapper.findAll('button').at(1).trigger('click');
       await wrapper.vm.$nextTick();
       expect(wrapper.vm.activeTabIndex).toBe(1);
     });
@@ -352,7 +352,7 @@ describe('CdrTabs', () => {
     await wrapper.vm.$nextTick();
     wrapper.vm.setFocusToActiveTabHeader();
     await wrapper.vm.$nextTick();
-    expect(wrapper.vm.$refs.cdrTabsHeader.children[wrapper.vm.activeTabIndex].children[0]).toBe(document.activeElement);
+    expect(wrapper.vm.$refs.cdrTabsHeader.children[wrapper.vm.activeTabIndex]).toBe(document.activeElement);
     wrapper.destroy();
   });
 
