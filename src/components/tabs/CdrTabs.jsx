@@ -245,6 +245,7 @@ export default {
           vOn:click_prevent={(e) => this.handleClick(tab, e)}
           href={`#${tab.id}`}
           class={this.style['cdr-tabs__header-item-label']}
+          js-name={ tab.name }
         >
           { tab.name }
         </a>
