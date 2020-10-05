@@ -320,7 +320,6 @@ export default {
                       }
                     </div>
                     <cdr-button
-                      id="close-modal-button"
                       class={this.style['cdr-modal__close-button']}
                       icon-only
                       with-background={true}
