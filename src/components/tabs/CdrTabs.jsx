@@ -78,7 +78,7 @@ export default {
       this.calculateOverflow();
       setTimeout(() => {
         this.updateUnderline();
-      }, 300);
+      }, 500);
     });
     // Check for header overflow on window resize for gradient behavior.
     window.addEventListener('resize', debounce(() => {
