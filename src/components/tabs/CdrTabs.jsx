@@ -186,13 +186,20 @@ export default {
       const elements = Array.from(this.$refs.cdrTabsHeader.children);
       if (elements.length > 0) {
         const activeTab = elements[this.activeTabIndex];
-        this.underlineOffsetX = activeTab.offsetLeft
-          - this.$refs.cdrTabsHeader.parentElement.scrollLeft;
-        this.underlineWidth = activeTab.offsetWidth;
+        const activeRect = activeTab.getBoundingClientRect();
+        const parentRect = this.$refs.cdrTabsHeader.getBoundingClientRect();
+        const offset = activeRect.x - parentRect.x;
 
-        // mobile fix, hide the underline if it scrolls outside the container
-        if (this.underlineOffsetX > this.$refs.cdrTabsContainer.offsetWidth) {
-          this.underlineOffsetX = this.$refs.cdrTabsContainer.offsetWidth;
+        this.underlineOffsetX = offset
+          - this.$refs.cdrTabsHeader.parentElement.scrollLeft;
+        this.underlineWidth = activeRect.width;
+
+        // hide the underline if it scrolls outside the container
+        if (this.underlineOffsetX > parentRect.width) {
+          this.underlineOffsetX = parentRect.width;
+          this.underlineWidth = 0;
+        } else if (this.underlineOffsetX < 0) {
+          this.underlineOffsetX = 0;
           this.underlineWidth = 0;
         }
       }
