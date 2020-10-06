@@ -53,7 +53,6 @@ exports[`CdrTabs mounted mounts with cdr-tab-panel children 1`] = `
       >
         <button
           aria-controls="tab-panel-1"
-          aria-disabled="false"
           class="cdr-tabs__header-item"
           id="tab-1"
           js-name="tab1"
@@ -64,7 +63,6 @@ exports[`CdrTabs mounted mounts with cdr-tab-panel children 1`] = `
         </button>
         <button
           aria-controls="tab-panel-2"
-          aria-disabled="false"
           aria-selected="true"
           class="cdr-tabs__header-item-active cdr-tabs__header-item"
           id="tab-2"
