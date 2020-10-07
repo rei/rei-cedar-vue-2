@@ -78,7 +78,7 @@ export default {
       this.calculateOverflow();
       setTimeout(() => {
         this.updateUnderline();
-      }, 250);
+      }, 500);
     });
     // Check for header overflow on window resize for gradient behavior.
     window.addEventListener('resize', debounce(() => {
@@ -152,7 +152,7 @@ export default {
       }
       this.activeTabIndex = newIndex;
       this.updateUnderline();
-      this.$refs.cdrTabsHeader.children[this.activeTabIndex].children[0].focus();
+      this.$refs.cdrTabsHeader.children[this.activeTabIndex].focus();
     },
     rightArrowNav: debounce(function handleRightArrow() {
       const nextTab = this.getNextTab(this.activeTabIndex + 1);
@@ -186,13 +186,20 @@ export default {
       const elements = Array.from(this.$refs.cdrTabsHeader.children);
       if (elements.length > 0) {
         const activeTab = elements[this.activeTabIndex];
-        this.underlineOffsetX = activeTab.offsetLeft
-          - this.$refs.cdrTabsHeader.parentElement.scrollLeft;
-        this.underlineWidth = activeTab.firstChild.offsetWidth;
+        const activeRect = activeTab.getBoundingClientRect();
+        const parentRect = this.$refs.cdrTabsHeader.getBoundingClientRect();
+        const offset = activeRect.x - parentRect.x;
 
-        // mobile fix, hide the underline if it scrolls outside the container
-        if (this.underlineOffsetX > this.$refs.cdrTabsContainer.offsetWidth) {
-          this.underlineOffsetX = this.$refs.cdrTabsContainer.offsetWidth;
+        this.underlineOffsetX = offset
+          - this.$refs.cdrTabsHeader.parentElement.scrollLeft;
+        this.underlineWidth = activeRect.width;
+
+        // hide the underline if it scrolls outside the container
+        if (this.underlineOffsetX > parentRect.width) {
+          this.underlineOffsetX = parentRect.width;
+          this.underlineWidth = 0;
+        } else if (this.underlineOffsetX < 0) {
+          this.underlineOffsetX = 0;
           this.underlineWidth = 0;
         }
       }
@@ -203,7 +210,7 @@ export default {
       }
     },
     setFocusToActiveTabHeader() {
-      this.$refs.cdrTabsHeader.children[this.activeTabIndex].children[0].focus();
+      this.$refs.cdrTabsHeader.children[this.activeTabIndex].focus();
     },
     getHeaderWidth() {
       let headerElements = [];
@@ -229,25 +236,32 @@ export default {
     },
     getTabEl(tab) {
       return tab.disabled ? (
-        <span
+        <button
           class={clsx(
-            this.style['cdr-tabs__header-item-label'],
-            this.style['cdr-tabs__header-item-label--disabled'],
+            this.style['cdr-tabs__header-item'],
+            this.style['cdr-tabs__header-item--disabled'],
           )}
-          aria-disabled="true"
-          aria-selected="false"
+          disabled
         >
           {tab.name}
-        </span>
+        </button>
       ) : (
-        <a
+        <button
+          role="tab"
+          aria-selected={tab.active}
+          aria-controls={tab.id}
+          id={tab.ariaLabelledby}
+          key={tab.id}
+          class={clsx(
+            tab.active ? this.style['cdr-tabs__header-item-active'] : '',
+            this.style['cdr-tabs__header-item'],
+          )}
           tabIndex={tab.active ? 0 : -1}
           vOn:click_prevent={(e) => this.handleClick(tab, e)}
-          href={`#${tab.id}`}
-          class={this.style['cdr-tabs__header-item-label']}
+          js-name={ tab.name }
         >
           { tab.name }
-        </a>
+        </button>
       );
     },
   },
@@ -274,28 +288,13 @@ export default {
           <nav
             class={this.style['cdr-tabs__header-container']}
           >
-            <ol
+            <div
               class={this.style['cdr-tabs__header']}
               role="tablist"
               ref="cdrTabsHeader"
             >
-              {this.tabs.map((tab) => (
-                  <li
-                    role="tab"
-                    aria-selected={tab.active}
-                    aria-disabled="false"
-                    aria-controls={tab.id}
-                    id={tab.ariaLabelledby}
-                    key={tab.id}
-                    class={clsx(
-                      tab.active ? this.style['cdr-tabs__header-item-active'] : '',
-                      this.style['cdr-tabs__header-item'],
-                    )}
-                  >
-                    {this.getTabEl(tab)}
-                  </li>
-              ))}
-            </ol>
+              {this.tabs.map((tab) => this.getTabEl(tab))}
+            </div>
           </nav>
           <div class={clsx(
             this.style['cdr-tabs__gradient'],
