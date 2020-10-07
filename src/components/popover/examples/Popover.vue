@@ -80,6 +80,8 @@
       :label="title"
       :class="containerClass"
       id="popover-test"
+      @opened="popupHandler"
+      @closed="popupHandler"
     >
       <cdr-button
         :icon-only="true"
@@ -116,6 +118,11 @@ export default {
   computed: {
     containerClass() {
       return `popover-container--${this.trigger}`;
+    },
+  },
+  methods: {
+    popupHandler(e) {
+      console.log(e);
     },
   },
 };

@@ -54,18 +54,20 @@ export default {
     }
   },
   methods: {
-    openPopover() {
+    openPopover(e) {
       const { activeElement } = document;
 
       this.lastActive = activeElement;
       this.open = true;
+      this.$emit('opened', e);
       this.$nextTick(() => {
         const tabbables = tabbable(this.$refs.popup.$el);
         if (tabbables[0]) tabbables[0].focus();
       });
     },
-    closePopover() {
+    closePopover(e) {
       this.open = false;
+      this.$emit('closed', e);
       if (this.lastActive) this.lastActive.focus();
     },
     addHandlers() {

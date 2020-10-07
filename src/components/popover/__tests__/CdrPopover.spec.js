@@ -15,6 +15,32 @@ describe('CdrPopover', () => {
     expect(wrapper.element).toMatchSnapshot();
   });
 
+  it('emits event when opened', () => {
+    const wrapper = mount(CdrPopover, {
+      propsData: {
+        id: 'popover-test',
+      },
+      slots: {
+        trigger: '<button id="popover-trigger"></button>'
+      }
+    });
+    wrapper.vm.openPopover(true);
+    expect(wrapper.emitted('opened')).toBeTruthy();
+  });
+
+  it('emits event when closed', () => {
+    const wrapper = mount(CdrPopover, {
+      propsData: {
+        id: 'popover-test',
+      },
+      slots: {
+        trigger: '<button id="popover-trigger"></button>'
+      }
+    });
+    wrapper.vm.closePopover(true);
+    expect(wrapper.emitted('closed')).toBeTruthy();
+  });
+
   it('sets aria properties on trigger', () => {
     const wrapper = mount(CdrPopover, {
       propsData: {

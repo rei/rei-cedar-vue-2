@@ -83,19 +83,19 @@ export default {
     closePopup(e) {
       this.$emit('closed', e);
     },
-    handleKeyDown({ key }) {
-      switch (key) {
+    handleKeyDown(e) {
+      switch (e.key) {
         case 'Escape':
         case 'Esc':
-          this.closePopup();
+          this.closePopup(e);
           break;
         default: break;
       }
     },
-    handleClick({ target }) {
+    handleClick(e) {
       this.$nextTick(() => {
-        if (target !== this.$refs.popup && !this.$refs.popup.contains(target)) {
-          this.closePopup();
+        if (e.target !== this.$refs.popup && !this.$refs.popup.contains(e.target)) {
+          this.closePopup(e);
         }
       });
     },
