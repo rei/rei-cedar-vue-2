@@ -1,7 +1,6 @@
 import clsx from 'clsx';
 import modifier from '../../mixins/modifier';
 import space from '../../mixins/space';
-import contentPriority from '../../mixins/contentPriority';
 import style from './styles/CdrList.scss';
 
 export default {
@@ -9,7 +8,6 @@ export default {
   mixins: [
     modifier,
     space,
-    contentPriority,
   ],
   props: {
     /**
@@ -38,7 +36,6 @@ export default {
         this.style[this.baseClass],
         this.modifierClass,
         this.space,
-        this.contentPriorityClass,
       )}
     >
       {this.$slots.default}
