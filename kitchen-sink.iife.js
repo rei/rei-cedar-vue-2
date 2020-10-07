@@ -24745,34 +24745,13 @@ var cedar = (function () {
 
   };
 
-  var contentPriority = {
-    mixins: [BuildClass],
-    props: {
-      contentPriority: {
-        type: String,
-        default: 'primary',
-        validator: function validator(value) {
-          var _context;
-
-          return indexOf$3(_context = ['primary', 'secondary', 'tertiary']).call(_context, value) >= 0 || false;
-        }
-      }
-    },
-    computed: {
-      contentPriorityClass() {
-        return this.buildClass('contentPriority');
-      }
-
-    }
-  };
-
   var css_248z$h = "/* ==========================================================================/*\n* Token option variables\n*\n* these are temporary variables, providing\n* cedar components mappings to previously available tokens.\n* These varables should be removed as tokens are available\n*\n=============================================================== */\n/* ---------------------\n* Outline\n* ------------------- */\n/* compact */\n/* compact nested */\n/* ordered */\n/* unordered nested */\n.cdr-list_6\\.0\\.0 {\n  list-style-type: none;\n  padding: 0;\n  margin: 0;\n  /* spacing\n    ---------- */\n  /* nesting\n    ---------- */\n  /* Style variants\n    ========================================================================== */\n  /* Compact\n    ========== */\n  /* Ordered\n    ========== */\n  /* Unordered\n     ========== */\n  /* Inline\n  ========== */ }\n.cdr-list_6\\.0\\.0 > li + li {\n    margin-top: 0.8rem; }\n.cdr-list_6\\.0\\.0 li > .cdr-list_6\\.0\\.0 {\n    margin-top: 0.8rem;\n    padding-left: 1em;\n    list-style-type: none; }\n.cdr-list--compact_6\\.0\\.0 {\n    /* nesting\n      ---------- */ }\n.cdr-list--compact_6\\.0\\.0 > li + li {\n      margin-top: 0.4rem; }\n.cdr-list--compact_6\\.0\\.0 li > .cdr-list_6\\.0\\.0 {\n      margin-top: 0.4rem; }\n.cdr-list--ordered_6\\.0\\.0 {\n    list-style-type: decimal;\n    padding-left: 1.5em;\n    list-style-position: outside; }\n.cdr-list--ordered_6\\.0\\.0 li {\n      padding: 0 0 0 0.4rem; }\n.cdr-list--ordered_6\\.0\\.0 li {\n      /* nesting\n      ---------- */ }\n.cdr-list--ordered_6\\.0\\.0 li > .cdr-list_6\\.0\\.0 {\n        position: relative;\n        padding-left: 1em; }\n.cdr-list--ordered_6\\.0\\.0 li > .cdr-list_6\\.0\\.0 > li {\n          padding-left: 0; }\n.cdr-list--ordered_6\\.0\\.0 li > .cdr-list_6\\.0\\.0 > li::before {\n            content: '\\2013';\n            position: absolute;\n            color: rgba(66, 59, 47, 0.75);\n            left: 0; }\n.cdr-list--unordered_6\\.0\\.0 {\n    position: relative;\n    padding-left: 1em;\n    /* nesting\n      ---------- */ }\n.cdr-list--unordered_6\\.0\\.0 > li::before {\n      content: '\\2022';\n      position: relative;\n      margin-left: -1em;\n      padding-right: 0.8rem;\n      color: rgba(66, 59, 47, 0.75); }\n.cdr-list--unordered_6\\.0\\.0 li > .cdr-list_6\\.0\\.0 {\n      position: relative;\n      padding-left: 1em; }\n.cdr-list--unordered_6\\.0\\.0 li > .cdr-list_6\\.0\\.0 > li::before {\n        content: '\\2013';\n        position: relative;\n        margin-left: -1em;\n        padding-right: 0.8rem;\n        color: rgba(66, 59, 47, 0.75); }\n.cdr-list--inline_6\\.0\\.0 {\n    display: flex;\n    flex-wrap: wrap;\n    list-style-type: none;\n    padding-left: 0;\n    /* inline - compact\n    ---------- */\n    /* inline - unordered\n    ---------- */ }\n.cdr-list--inline_6\\.0\\.0 > li {\n      display: block; }\n.cdr-list--inline_6\\.0\\.0 > li + li {\n        margin-top: 0;\n        padding-left: 1em; }\n.cdr-list--inline_6\\.0\\.0.cdr-list--compact_6\\.0\\.0 > li + li {\n      padding-left: 0.5em; }\n.cdr-list--inline_6\\.0\\.0.cdr-list--unordered_6\\.0\\.0 {\n      left: 0;\n      /* inline - unordered - compact\n      ---------- */ }\n.cdr-list--inline_6\\.0\\.0.cdr-list--unordered_6\\.0\\.0 > li {\n        position: relative; }\n.cdr-list--inline_6\\.0\\.0.cdr-list--unordered_6\\.0\\.0 > li + li {\n          padding-left: 1.5em; }\n.cdr-list--inline_6\\.0\\.0.cdr-list--unordered_6\\.0\\.0 > li:first-of-type::before {\n          display: none; }\n.cdr-list--inline_6\\.0\\.0.cdr-list--unordered_6\\.0\\.0 > li::before {\n          content: '\\2022';\n          color: rgba(66, 59, 47, 0.75);\n          display: block;\n          position: absolute;\n          top: 50%;\n          transform: translate(150%, -50%);\n          height: 0.6rem;\n          width: 0.6rem;\n          line-height: 0.6rem;\n          left: 0;\n          padding: 0;\n          margin: 0; }\n.cdr-list--inline_6\\.0\\.0.cdr-list--unordered_6\\.0\\.0.cdr-list--compact_6\\.0\\.0 > li + li {\n        padding-left: 1em; }\n.cdr-list--inline_6\\.0\\.0.cdr-list--unordered_6\\.0\\.0.cdr-list--compact_6\\.0\\.0 > li + li::before {\n          transform: translate(100%, -50%); }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9jc3Mvc2V0dGluZ3MvX29wdGlvbnMudmFycy5zY3NzIiwiQ2RyTGlzdC5zY3NzIiwic3JjL2NvbXBvbmVudHMvbGlzdC9zdHlsZXMvdmFycy9DZHJMaXN0LnZhcnMuc2NzcyIsInNyYy9jb21wb25lbnRzL2xpc3Qvc3R5bGVzL0Nkckxpc3Quc2NzcyIsIm5vZGVfbW9kdWxlcy9AcmVpL2Nkci10b2tlbnMvZGlzdC9zY3NzL2Nkci10b2tlbnMuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7OztpRUNPaUU7QURFakU7O3VCQ0N1QjtBQ1N2QixZQUFBO0FBT0EsbUJBQUE7QUFNQSxZQUFBO0FBd0NBLHFCQUFBO0FDckVBO0VERkUscUJBQXFCO0VBQ3JCLFVBQVU7RUFDVixTQUFTO0VBRVQ7Z0JEZWM7RUVkZDtnQkZnQmM7RUVWZDtnRkZZOEU7RUVUOUU7Z0JGV2M7RUVDZDtnQkZDYztFRWFkO2lCRlhlO0VFdUJmO2NGckJZLEVFc0JDO0FBbkRmO0lES0ksa0JFNnJEcUIsRUFBQTtBRGxzRHpCO0lEVUUsa0JFd3JEdUI7SUZ2ckR2QixpQkFBaUI7SUFDakIscUJBQXFCLEVBQUE7QUNFckI7SUFHRTtrQkZxQmMsRUVwQkM7QUFKaEI7TURLQyxrQkU4cUR3QixFQUFBO0FEbnJEekI7TURXRCxrQkV3cUQwQixFQUFBO0FEdnFEMUI7SURLQSx3QkFBd0I7SUFDeEIsbUJBQW1CO0lBQ25CLDRCQUE0QixFQUFBO0FDUDNCO01EVUMscUJFNnBEd0IsRUFBQTtBRHZxRHpCO01BSUc7a0JGcUJZLEVFcEJDO0FBTGhCO1FEZUQsa0JBQWtCO1FBQ2xCLGlCQUFpQixFQUFBO0FDaEJoQjtVRG1CQyxlQUFlLEVBQUE7QUNuQmhCO1lEc0JHLGdCQUFnQjtZQUNoQixrQkFBa0I7WUFDbEIsNkJFc3lDMkM7WUZyeUMzQyxPQUFPLEVBQUE7QUNYWDtJRGlCQSxrQkFBa0I7SUFDbEIsaUJBQWlCO0lDZmY7a0JGdUJjLEVFdEJDO0FBSmhCO01EcUJDLGdCQUFnQjtNQUNoQixrQkFBa0I7TUFDbEIsaUJBQWlCO01BQ2pCLHFCRWtvRHFCO01Gam9EckIsNkJFdXhDNkMsRUFBQTtBRGh6QzlDO01EK0JELGtCQUFrQjtNQUNsQixpQkFBaUIsRUFBQTtBQ2hDaEI7UURvQ0csZ0JBQWdCO1FBQ2hCLGtCQUFrQjtRQUNsQixpQkFBaUI7UUFDakIscUJFbW5EbUI7UUZsbkRuQiw2QkV3d0MyQyxFQUFBO0FEcHlDL0M7SUFDRSxhQUFhO0lBQ2IsZUFBZTtJQUNmLHFCQUFxQjtJQUNyQixlQUFlO0lBV2Y7Z0JGcUJZO0lFZlo7Z0JGaUJZLEVFaEJDO0FBdEJkO01BT0csY0FBYyxFQUFBO0FBUGpCO1FBVUssYUFBYTtRQUNiLGlCQUFpQixFQUFBO0FBWHRCO01Ba0JHLG1CQUFtQixFQUFBO0FBbEJ0QjtNQXdCRyxPQUFPO01BNkJQO2tCRkpZLEVFS0M7QUF0RGhCO1FBMkJLLGtCQUFrQixFQUFBO0FBM0J2QjtVQThCTyxtQkFBbUIsRUFBQTtBQTlCMUI7VUFrQ08sYUFBYSxFQUFBO0FBbENwQjtVQXNDTyxnQkFBZ0I7VUFDaEIsNkJDNnZDdUM7VUQ1dkN2QyxjQUFjO1VBQ2Qsa0JBQWtCO1VBQ2xCLFFBQVE7VUFDUixnQ0FBZ0M7VUFDaEMsY0FBVztVQUNYLGFBQVU7VUFDVixtQkFBZ0I7VUFDaEIsT0FBTztVQUNQLFVBQVU7VUFDVixTQUFTLEVBQUE7QUFqRGhCO1FBeURPLGlCQUFpQixFQUFBO0FBekR4QjtVQTREUyxnQ0FBZ0MsRUFBQSIsImZpbGUiOiJDZHJMaXN0LnNjc3MifQ== */";
   var style$j = {"cdr-list":"cdr-list_6.0.0","cdr-list--compact":"cdr-list--compact_6.0.0","cdr-list--ordered":"cdr-list--ordered_6.0.0","cdr-list--unordered":"cdr-list--unordered_6.0.0","cdr-list--inline":"cdr-list--inline_6.0.0"};
   styleInject(css_248z$h);
 
   var CdrList = {
     name: 'CdrList',
-    mixins: [modifier, space, contentPriority],
+    mixins: [modifier, space],
     props: {
       /**
        * Tag accepts a user defined element and expects either: 'ul' = Unordered List or 'ol' = Ordered List.
@@ -24805,7 +24784,7 @@ var cedar = (function () {
       var h = arguments[0];
       var Component = this.tag;
       return h(Component, {
-        "class": clsx(this.style[this.baseClass], this.modifierClass, this.space, this.contentPriorityClass)
+        "class": clsx(this.style[this.baseClass], this.modifierClass, this.space)
       }, [this.$slots.default]);
     }
 
@@ -29820,7 +29799,7 @@ var cedar = (function () {
 
   var CdrRating = {
     name: 'CdrRating',
-    mixins: [contentPriority, size, space],
+    mixins: [size, space],
     props: {
       /**
        * Rating value (out of 5)
@@ -29972,7 +29951,7 @@ var cedar = (function () {
         "attrs": {
           "href": this.href
         },
-        "class": clsx(this.style[this.baseClass], this.contentPriorityClass, this.sizeClass, this.space, this.href ? this.style['cdr-rating--linked'] : '')
+        "class": clsx(this.style[this.baseClass], this.sizeClass, this.space, this.href ? this.style['cdr-rating--linked'] : '')
       }, [h("div", {
         "class": this.style['cdr-rating__ratings']
       }, [map$2(_context3 = toConsumableArray(keys$8(_context4 = Array(this.whole)).call(_context4))).call(_context3, function (n) {
