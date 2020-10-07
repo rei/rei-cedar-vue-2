@@ -29241,24 +29241,21 @@ var cedar = (function () {
         this.$emit('closed', e);
       },
 
-      handleKeyDown(_ref) {
-        var key = _ref.key;
-
-        switch (key) {
+      handleKeyDown(e) {
+        switch (e.key) {
           case 'Escape':
           case 'Esc':
-            this.closePopup();
+            this.closePopup(e);
             break;
         }
       },
 
-      handleClick(_ref2) {
+      handleClick(e) {
         var _this = this;
 
-        var target = _ref2.target;
         this.$nextTick(function () {
-          if (target !== _this.$refs.popup && !_this.$refs.popup.contains(target)) {
-            _this.closePopup();
+          if (e.target !== _this.$refs.popup && !_this.$refs.popup.contains(e.target)) {
+            _this.closePopup(e);
           }
         });
       },
@@ -29473,21 +29470,23 @@ var cedar = (function () {
     },
 
     methods: {
-      openPopover() {
+      openPopover(e) {
         var _this = this;
 
         var _document = document,
             activeElement = _document.activeElement;
         this.lastActive = activeElement;
         this.open = true;
+        this.$emit('opened', e);
         this.$nextTick(function () {
           var tabbables = tabbable_1(_this.$refs.popup.$el);
           if (tabbables[0]) tabbables[0].focus();
         });
       },
 
-      closePopover() {
+      closePopover(e) {
         this.open = false;
+        this.$emit('closed', e);
         if (this.lastActive) this.lastActive.focus();
       },
 
@@ -30636,16 +30635,19 @@ var cedar = (function () {
     },
 
     methods: {
-      openTooltip() {
+      openTooltip(e) {
         if (this.timeout) clearTimeout(this.timeout);
         this.open = true;
+        this.$emit('opened', e);
       },
 
-      closeTooltip() {
+      closeTooltip(e) {
         var _this = this;
 
         this.timeout = setTimeout$2(function () {
           _this.open = false;
+
+          _this.$emit('closed', e);
         }, 250);
       },
 
@@ -30684,7 +30686,10 @@ var cedar = (function () {
           "opened": this.open,
           "id": this.id
         },
-        "ref": "popup"
+        "ref": "popup",
+        "on": {
+          "closed": this.closeTooltip
+        }
       }, [this.$slots.default])]);
     }
 
@@ -44488,6 +44493,12 @@ var cedar = (function () {
         return "popover-container--".concat(this.trigger);
       }
 
+    },
+    methods: {
+      popupHandler(e) {
+        console.log(e);
+      }
+
     }
   };
 
@@ -44731,7 +44742,8 @@ var cedar = (function () {
               "auto-position": _vm.autoPos,
               label: _vm.title,
               id: "popover-test"
-            }
+            },
+            on: { opened: _vm.popupHandler, closed: _vm.popupHandler }
           },
           [
             _c(
@@ -44766,7 +44778,7 @@ var cedar = (function () {
     /* style */
     const __vue_inject_styles__$I = function (inject) {
       if (!inject) return
-      inject("data-v-4384c43e_0", { source: "\n.popover-container--center {\n  margin: 0 auto;\n}\n.popover-container--right {\n  margin-left: 95%;\n}\n.popover-example {\n  /* lots of bottom space to allow scrolling*/\n  margin-bottom: 1000px;\n}\nfieldset {\n  width: 20%;\n  float: left;\n}\n", map: {"version":3,"sources":["/home/travis/build/rei/rei-cedar/src/components/popover/examples/Popover.vue"],"names":[],"mappings":";AA4HA;EACA,cAAA;AACA;AACA;EACA,gBAAA;AACA;AAEA;EACA,2CAAA;EACA,qBAAA;AACA;AAEA;EACA,UAAA;EACA,WAAA;AACA","file":"Popover.vue","sourcesContent":["<template>\n  <div class=\"popover-example\">\n    <h2>popover</h2>\n    <cdr-form-group label=\"popover position\">\n      <cdr-radio\n        name=\"position\"\n        custom-value=\"up\"\n        v-model=\"position\"\n      >up</cdr-radio>\n      <cdr-radio\n        name=\"position\"\n        custom-value=\"down\"\n        v-model=\"position\"\n      >down</cdr-radio>\n      <cdr-radio\n        name=\"position\"\n        custom-value=\"left\"\n        v-model=\"position\"\n      >left</cdr-radio>\n      <cdr-radio\n        name=\"position\"\n        custom-value=\"right\"\n        v-model=\"position\"\n      >right</cdr-radio>\n    </cdr-form-group>\n\n    <cdr-form-group label=\"auto position\">\n      <cdr-radio\n        name=\"autoPos\"\n        :custom-value=\"true\"\n        v-model=\"autoPos\"\n      >true</cdr-radio>\n      <cdr-radio\n        name=\"autoPos\"\n        :custom-value=\"false\"\n        v-model=\"autoPos\"\n      >false</cdr-radio>\n    </cdr-form-group>\n\n    <cdr-form-group label=\"trigger position\">\n      <cdr-radio\n        name=\"trigger\"\n        custom-value=\"left\"\n        v-model=\"trigger\"\n      >left</cdr-radio>\n      <cdr-radio\n        name=\"trigger\"\n        custom-value=\"center\"\n        v-model=\"trigger\"\n      >center</cdr-radio>\n      <cdr-radio\n        name=\"trigger\"\n        custom-value=\"right\"\n        v-model=\"trigger\"\n      >right</cdr-radio>\n    </cdr-form-group>\n\n    <cdr-form-group label=\"title\">\n      <cdr-radio\n        name=\"title\"\n        custom-value=\"Hello my name is popover\"\n        v-model=\"title\"\n      >short title</cdr-radio>\n      <cdr-radio\n        name=\"title\"\n        custom-value=\"\"\n        v-model=\"title\"\n      >no title</cdr-radio>\n      <cdr-radio\n        name=\"title\"\n        custom-value=\"Hi i am a popover. Hello. Hows it going. Doing well i hope.\"\n        v-model=\"title\"\n      >long title</cdr-radio>\n    </cdr-form-group>\n\n    <div style=\"clear: both\" />\n    <cdr-popover\n      :position=\"position\"\n      :auto-position=\"autoPos\"\n      :label=\"title\"\n      :class=\"containerClass\"\n      id=\"popover-test\"\n    >\n      <cdr-button\n        :icon-only=\"true\"\n        aria-label=\"information\"\n        slot=\"trigger\"\n      >\n        <icon-information-fill />\n      </cdr-button>\n      <cdr-text>\n        Thanks for stopping by. What a lovely day it is today. Please come back again soon.\n      </cdr-text>\n    </cdr-popover>\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\nexport default {\n  name: 'Popover',\n  components: {\n    ...Components,\n  },\n  data() {\n    return {\n      open: false,\n      position: 'up',\n      title: 'Hello my name is popover',\n      autoPos: true,\n      trigger: 'center',\n      type: 'icon',\n    };\n  },\n  computed: {\n    containerClass() {\n      return `popover-container--${this.trigger}`;\n    },\n  },\n};\n</script>\n\n<style>\n.popover-container--center {\n  margin: 0 auto;\n}\n.popover-container--right {\n  margin-left: 95%;\n}\n\n.popover-example {\n  /* lots of bottom space to allow scrolling*/\n  margin-bottom: 1000px;\n}\n\nfieldset {\n  width: 20%;\n  float: left;\n}\n</style>\n"]}, media: undefined });
+      inject("data-v-237c71d6_0", { source: "\n.popover-container--center {\n  margin: 0 auto;\n}\n.popover-container--right {\n  margin-left: 95%;\n}\n.popover-example {\n  /* lots of bottom space to allow scrolling*/\n  margin-bottom: 1000px;\n}\nfieldset {\n  width: 20%;\n  float: left;\n}\n", map: {"version":3,"sources":["/home/travis/build/rei/rei-cedar/src/components/popover/examples/Popover.vue"],"names":[],"mappings":";AAmIA;EACA,cAAA;AACA;AACA;EACA,gBAAA;AACA;AAEA;EACA,2CAAA;EACA,qBAAA;AACA;AAEA;EACA,UAAA;EACA,WAAA;AACA","file":"Popover.vue","sourcesContent":["<template>\n  <div class=\"popover-example\">\n    <h2>popover</h2>\n    <cdr-form-group label=\"popover position\">\n      <cdr-radio\n        name=\"position\"\n        custom-value=\"up\"\n        v-model=\"position\"\n      >up</cdr-radio>\n      <cdr-radio\n        name=\"position\"\n        custom-value=\"down\"\n        v-model=\"position\"\n      >down</cdr-radio>\n      <cdr-radio\n        name=\"position\"\n        custom-value=\"left\"\n        v-model=\"position\"\n      >left</cdr-radio>\n      <cdr-radio\n        name=\"position\"\n        custom-value=\"right\"\n        v-model=\"position\"\n      >right</cdr-radio>\n    </cdr-form-group>\n\n    <cdr-form-group label=\"auto position\">\n      <cdr-radio\n        name=\"autoPos\"\n        :custom-value=\"true\"\n        v-model=\"autoPos\"\n      >true</cdr-radio>\n      <cdr-radio\n        name=\"autoPos\"\n        :custom-value=\"false\"\n        v-model=\"autoPos\"\n      >false</cdr-radio>\n    </cdr-form-group>\n\n    <cdr-form-group label=\"trigger position\">\n      <cdr-radio\n        name=\"trigger\"\n        custom-value=\"left\"\n        v-model=\"trigger\"\n      >left</cdr-radio>\n      <cdr-radio\n        name=\"trigger\"\n        custom-value=\"center\"\n        v-model=\"trigger\"\n      >center</cdr-radio>\n      <cdr-radio\n        name=\"trigger\"\n        custom-value=\"right\"\n        v-model=\"trigger\"\n      >right</cdr-radio>\n    </cdr-form-group>\n\n    <cdr-form-group label=\"title\">\n      <cdr-radio\n        name=\"title\"\n        custom-value=\"Hello my name is popover\"\n        v-model=\"title\"\n      >short title</cdr-radio>\n      <cdr-radio\n        name=\"title\"\n        custom-value=\"\"\n        v-model=\"title\"\n      >no title</cdr-radio>\n      <cdr-radio\n        name=\"title\"\n        custom-value=\"Hi i am a popover. Hello. Hows it going. Doing well i hope.\"\n        v-model=\"title\"\n      >long title</cdr-radio>\n    </cdr-form-group>\n\n    <div style=\"clear: both\" />\n    <cdr-popover\n      :position=\"position\"\n      :auto-position=\"autoPos\"\n      :label=\"title\"\n      :class=\"containerClass\"\n      id=\"popover-test\"\n      @opened=\"popupHandler\"\n      @closed=\"popupHandler\"\n    >\n      <cdr-button\n        :icon-only=\"true\"\n        aria-label=\"information\"\n        slot=\"trigger\"\n      >\n        <icon-information-fill />\n      </cdr-button>\n      <cdr-text>\n        Thanks for stopping by. What a lovely day it is today. Please come back again soon.\n      </cdr-text>\n    </cdr-popover>\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\nexport default {\n  name: 'Popover',\n  components: {\n    ...Components,\n  },\n  data() {\n    return {\n      open: false,\n      position: 'up',\n      title: 'Hello my name is popover',\n      autoPos: true,\n      trigger: 'center',\n      type: 'icon',\n    };\n  },\n  computed: {\n    containerClass() {\n      return `popover-container--${this.trigger}`;\n    },\n  },\n  methods: {\n    popupHandler(e) {\n      console.log(e);\n    },\n  },\n};\n</script>\n\n<style>\n.popover-container--center {\n  margin: 0 auto;\n}\n.popover-container--right {\n  margin-left: 95%;\n}\n\n.popover-example {\n  /* lots of bottom space to allow scrolling*/\n  margin-bottom: 1000px;\n}\n\nfieldset {\n  width: 20%;\n  float: left;\n}\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
@@ -48607,6 +48619,12 @@ var cedar = (function () {
         return "tooltip-container--".concat(this.trigger);
       }
 
+    },
+    methods: {
+      tooltipHandler(e) {
+        console.log(e);
+      }
+
     }
   };
 
@@ -48790,7 +48808,8 @@ var cedar = (function () {
               position: _vm.position,
               "auto-position": _vm.autoPos,
               id: "tooltip-test"
-            }
+            },
+            on: { opened: _vm.tooltipHandler, closed: _vm.tooltipHandler }
           },
           [
             _c("cdr-button", { attrs: { slot: "trigger" }, slot: "trigger" }, [
@@ -48815,7 +48834,7 @@ var cedar = (function () {
     /* style */
     const __vue_inject_styles__$V = function (inject) {
       if (!inject) return
-      inject("data-v-6da5c375_0", { source: "\n.tooltip-container--center {\n  margin: 0 auto;\n}\n.tooltip-container--right {\n  margin-left: 95%;\n}\n.tooltip-example {\n  /* lots of bottom space to allow scrolling*/\n  margin-bottom: 1000px;\n}\nfieldset {\n  width: 20%;\n  float: left;\n}\n", map: {"version":3,"sources":["/home/travis/build/rei/rei-cedar/src/components/tooltip/examples/Tooltip.vue"],"names":[],"mappings":";AAqGA;EACA,cAAA;AACA;AACA;EACA,gBAAA;AACA;AAEA;EACA,2CAAA;EACA,qBAAA;AACA;AAEA;EACA,UAAA;EACA,WAAA;AACA","file":"Tooltip.vue","sourcesContent":["<template>\n  <div class=\"tooltip-example\">\n    <h2>tooltip</h2>\n    <cdr-form-group label=\"tooltip position\">\n      <cdr-radio\n        name=\"position\"\n        custom-value=\"up\"\n        v-model=\"position\"\n      >up</cdr-radio>\n      <cdr-radio\n        name=\"position\"\n        custom-value=\"down\"\n        v-model=\"position\"\n      >down</cdr-radio>\n      <cdr-radio\n        name=\"position\"\n        custom-value=\"left\"\n        v-model=\"position\"\n      >left</cdr-radio>\n      <cdr-radio\n        name=\"position\"\n        custom-value=\"right\"\n        v-model=\"position\"\n      >right</cdr-radio>\n    </cdr-form-group>\n\n    <cdr-form-group label=\"auto position\">\n      <cdr-radio\n        name=\"autoPos\"\n        :custom-value=\"true\"\n        v-model=\"autoPos\"\n      >true</cdr-radio>\n      <cdr-radio\n        name=\"autoPos\"\n        :custom-value=\"false\"\n        v-model=\"autoPos\"\n      >false</cdr-radio>\n    </cdr-form-group>\n\n    <cdr-form-group label=\"trigger position\">\n      <cdr-radio\n        name=\"trigger\"\n        custom-value=\"left\"\n        v-model=\"trigger\"\n      >left</cdr-radio>\n      <cdr-radio\n        name=\"trigger\"\n        custom-value=\"center\"\n        v-model=\"trigger\"\n      >center</cdr-radio>\n      <cdr-radio\n        name=\"trigger\"\n        custom-value=\"right\"\n        v-model=\"trigger\"\n      >right</cdr-radio>\n    </cdr-form-group>\n\n    <div style=\"clear: both\" />\n\n    <cdr-tooltip\n      :position=\"position\"\n      :auto-position=\"autoPos\"\n      :class=\"containerClass\"\n      id=\"tooltip-test\"\n    >\n      <cdr-button slot=\"trigger\">\n        tooltip\n      </cdr-button>\n      <div>\n        Hello! This tooltip contains important information about the web site you are visiting!\n        We're using the internet right now!\n      </div>\n    </cdr-tooltip>\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\nexport default {\n  name: 'Tooltip',\n  components: {\n    ...Components,\n  },\n  data() {\n    return {\n      position: 'up',\n      autoPos: true,\n      trigger: 'center',\n    };\n  },\n  computed: {\n    containerClass() {\n      return `tooltip-container--${this.trigger}`;\n    },\n  },\n};\n</script>\n\n<style>\n\n.tooltip-container--center {\n  margin: 0 auto;\n}\n.tooltip-container--right {\n  margin-left: 95%;\n}\n\n.tooltip-example {\n  /* lots of bottom space to allow scrolling*/\n  margin-bottom: 1000px;\n}\n\nfieldset {\n  width: 20%;\n  float: left;\n}\n</style>\n"]}, media: undefined });
+      inject("data-v-3c9955f1_0", { source: "\n.tooltip-container--center {\n  margin: 0 auto;\n}\n.tooltip-container--right {\n  margin-left: 95%;\n}\n.tooltip-example {\n  /* lots of bottom space to allow scrolling*/\n  margin-bottom: 1000px;\n}\nfieldset {\n  width: 20%;\n  float: left;\n}\n", map: {"version":3,"sources":["/home/travis/build/rei/rei-cedar/src/components/tooltip/examples/Tooltip.vue"],"names":[],"mappings":";AA4GA;EACA,cAAA;AACA;AACA;EACA,gBAAA;AACA;AAEA;EACA,2CAAA;EACA,qBAAA;AACA;AAEA;EACA,UAAA;EACA,WAAA;AACA","file":"Tooltip.vue","sourcesContent":["<template>\n  <div class=\"tooltip-example\">\n    <h2>tooltip</h2>\n    <cdr-form-group label=\"tooltip position\">\n      <cdr-radio\n        name=\"position\"\n        custom-value=\"up\"\n        v-model=\"position\"\n      >up</cdr-radio>\n      <cdr-radio\n        name=\"position\"\n        custom-value=\"down\"\n        v-model=\"position\"\n      >down</cdr-radio>\n      <cdr-radio\n        name=\"position\"\n        custom-value=\"left\"\n        v-model=\"position\"\n      >left</cdr-radio>\n      <cdr-radio\n        name=\"position\"\n        custom-value=\"right\"\n        v-model=\"position\"\n      >right</cdr-radio>\n    </cdr-form-group>\n\n    <cdr-form-group label=\"auto position\">\n      <cdr-radio\n        name=\"autoPos\"\n        :custom-value=\"true\"\n        v-model=\"autoPos\"\n      >true</cdr-radio>\n      <cdr-radio\n        name=\"autoPos\"\n        :custom-value=\"false\"\n        v-model=\"autoPos\"\n      >false</cdr-radio>\n    </cdr-form-group>\n\n    <cdr-form-group label=\"trigger position\">\n      <cdr-radio\n        name=\"trigger\"\n        custom-value=\"left\"\n        v-model=\"trigger\"\n      >left</cdr-radio>\n      <cdr-radio\n        name=\"trigger\"\n        custom-value=\"center\"\n        v-model=\"trigger\"\n      >center</cdr-radio>\n      <cdr-radio\n        name=\"trigger\"\n        custom-value=\"right\"\n        v-model=\"trigger\"\n      >right</cdr-radio>\n    </cdr-form-group>\n\n    <div style=\"clear: both\" />\n\n    <cdr-tooltip\n      :position=\"position\"\n      :auto-position=\"autoPos\"\n      :class=\"containerClass\"\n      id=\"tooltip-test\"\n      @opened=\"tooltipHandler\"\n      @closed=\"tooltipHandler\"\n    >\n      <cdr-button slot=\"trigger\">\n        tooltip\n      </cdr-button>\n      <div>\n        Hello! This tooltip contains important information about the web site you are visiting!\n        We're using the internet right now!\n      </div>\n    </cdr-tooltip>\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\nexport default {\n  name: 'Tooltip',\n  components: {\n    ...Components,\n  },\n  data() {\n    return {\n      position: 'up',\n      autoPos: true,\n      trigger: 'center',\n    };\n  },\n  computed: {\n    containerClass() {\n      return `tooltip-container--${this.trigger}`;\n    },\n  },\n  methods: {\n    tooltipHandler(e) {\n      console.log(e);\n    },\n  },\n};\n</script>\n\n<style>\n\n.tooltip-container--center {\n  margin: 0 auto;\n}\n.tooltip-container--right {\n  margin-left: 95%;\n}\n\n.tooltip-example {\n  /* lots of bottom space to allow scrolling*/\n  margin-bottom: 1000px;\n}\n\nfieldset {\n  width: 20%;\n  float: left;\n}\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
