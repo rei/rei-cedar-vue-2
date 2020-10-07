@@ -30220,8 +30220,8 @@ var cedar = (function () {
 
   var findIndex$2 = findIndex$1;
 
-  var css_248z$s = "/* ==========================================================================/*\n* Token option variables\n*\n* these are temporary variables, providing\n* cedar components mappings to previously available tokens.\n* These varables should be removed as tokens are available\n*\n=============================================================== */\n/* ---------------------\n* Outline\n* ------------------- */\n/* intentionally empty */\n.cdr-tabs_6\\.0\\.0 {\n  /* overflow-x: auto; */\n  display: flex;\n  flex-flow: column;\n  height: 50rem;\n  overflow-x: hidden;\n  /* Compact\n    ========== */\n  /* No Border\n    ========== */\n  /* Full Width\n    ========== */\n  /* Centered\n    ========== */ }\n.cdr-tabs_6\\.0\\.0 ::-webkit-scrollbar {\n    -webkit-appearance: none;\n    width: 0.7rem; }\n.cdr-tabs_6\\.0\\.0 ::-webkit-scrollbar-thumb {\n    border-radius: 0.4rem;\n    background-color: rgba(0, 0, 0, 0.5);\n    -webkit-box-shadow: 0 0 0.1rem rgba(255, 255, 255, 0.5); }\n.cdr-tabs__header-container_6\\.0\\.0 {\n    overflow-x: auto;\n    border-bottom: 0.1rem solid #928b80;\n    -webkit-overflow-scrolling: touch;\n    -ms-overflow-style: -ms-autohiding-scrollbar; }\n.cdr-tabs__header-container_6\\.0\\.0::-webkit-scrollbar {\n      width: 0 !important;\n      height: 0 !important; }\n.cdr-tabs__gradient-container_6\\.0\\.0 {\n    position: relative; }\n.cdr-tabs__gradient_6\\.0\\.0 {\n    transition: opacity 0.2s ease;\n    -webkit-transition: opacity 0.2s ease;\n    position: absolute;\n    z-index: 100;\n    top: 0;\n    bottom: 0;\n    width: 4.8rem;\n    pointer-events: none;\n    opacity: 0; }\n.cdr-tabs__gradient--left_6\\.0\\.0 {\n      left: 0; }\n.cdr-tabs__gradient--right_6\\.0\\.0 {\n      right: 0; }\n.cdr-tabs__gradient--active_6\\.0\\.0 {\n      opacity: 1; }\n.cdr-tabs__header_6\\.0\\.0 {\n    display: flex;\n    width: 100%;\n    margin: 0;\n    padding: 0;\n    position: relative; }\n.cdr-tabs__header-item_6\\.0\\.0 {\n    display: block;\n    padding: 0;\n    color: rgba(66, 59, 47, 0.75);\n    font-weight: 300; }\n.cdr-tabs__header-item_6\\.0\\.0 + .cdr-tabs__header-item_6\\.0\\.0 {\n      margin-left: 1.6rem; }\n.cdr-tabs__header-item-active_6\\.0\\.0 {\n    color: rgba(12, 11, 8, 0.75);\n    font-weight: 500; }\n.cdr-tabs__header-item-label_6\\.0\\.0 {\n    font-family: Graphik, \"Helvetica Neue\", sans-serif;\n    font-style: normal;\n    font-weight: inherit;\n    letter-spacing: -0.008rem;\n    font-size: 1.6rem;\n    line-height: 2.2rem;\n    display: block;\n    text-decoration: none;\n    padding: 1.2rem 0.8rem;\n    white-space: nowrap;\n    outline-offset: -0.3rem;\n    color: inherit;\n    font-weight: inherit; }\n.cdr-tabs__header-item-label_6\\.0\\.0:active, .cdr-tabs__header-item-label_6\\.0\\.0:hover, .cdr-tabs__header-item-label_6\\.0\\.0:focus {\n      text-decoration: none;\n      color: #406eb5; }\n.cdr-tabs__header-item-label--disabled_6\\.0\\.0 {\n      color: #d1cbbd; }\n.cdr-tabs__header-item-label--disabled_6\\.0\\.0:active, .cdr-tabs__header-item-label--disabled_6\\.0\\.0:hover, .cdr-tabs__header-item-label--disabled_6\\.0\\.0:focus {\n        color: #d1cbbd;\n        cursor: not-allowed; }\n.cdr-tabs__underline_6\\.0\\.0 {\n    z-index: 1;\n    position: absolute;\n    width: 3rem;\n    margin: 0;\n    height: 0.4rem;\n    margin-top: -0.4rem;\n    box-sizing: border-box;\n    border: none;\n    /* border: none; */\n    background-color: #406eb5;\n    transition: 0.4s cubic-bezier(0.32, 0.94, 0.6, 1); }\n.cdr-tabs__content-container_6\\.0\\.0 {\n    position: relative;\n    flex: 1 1 auto;\n    overflow-x: hidden;\n    overflow-y: auto; }\n.cdr-tabs_6\\.0\\.0 .fade-enter-active_6\\.0\\.0,\n  .cdr-tabs_6\\.0\\.0 .fade-leave-active_6\\.0\\.0 {\n    opacity: 0.5s; }\n.cdr-tabs_6\\.0\\.0 .fade-enter_6\\.0\\.0,\n  .cdr-tabs_6\\.0\\.0 .fade-leave-to_6\\.0\\.0 {\n    opacity: 0; }\n.cdr-tabs--compact_6\\.0\\.0 .cdr-tabs__header-item-label_6\\.0\\.0, .cdr-tabs--small_6\\.0\\.0 .cdr-tabs__header-item-label_6\\.0\\.0 {\n    font-family: Graphik, \"Helvetica Neue\", sans-serif;\n    font-style: normal;\n    font-weight: inherit;\n    letter-spacing: -0.008rem;\n    font-size: 1.4rem;\n    line-height: 1.8rem;\n    padding: 0.6rem 1.2rem; }\n.cdr-tabs--compact_6\\.0\\.0 .cdr-tabs__header-item_6\\.0\\.0 + .cdr-tabs--compact_6\\.0\\.0 .cdr-tabs__header-item_6\\.0\\.0, .cdr-tabs--small_6\\.0\\.0 .cdr-tabs__header-item_6\\.0\\.0 + .cdr-tabs--compact_6\\.0\\.0 .cdr-tabs__header-item_6\\.0\\.0, .cdr-tabs--compact_6\\.0\\.0 .cdr-tabs__header-item_6\\.0\\.0 + .cdr-tabs--small_6\\.0\\.0 .cdr-tabs__header-item_6\\.0\\.0, .cdr-tabs--small_6\\.0\\.0 .cdr-tabs__header-item_6\\.0\\.0 + .cdr-tabs--small_6\\.0\\.0 .cdr-tabs__header-item_6\\.0\\.0 {\n    margin-left: 0.8rem; }\n.cdr-tabs--no-border_6\\.0\\.0 .cdr-tabs__header_6\\.0\\.0,\n  .cdr-tabs--no-border_6\\.0\\.0 .cdr-tabs__header-container_6\\.0\\.0 {\n    border-bottom: 0.1rem solid transparent; }\n.cdr-tabs--full-width_6\\.0\\.0 .cdr-tabs__header-item_6\\.0\\.0 {\n    flex-grow: 1; }\n.cdr-tabs--centered_6\\.0\\.0 .cdr-tabs__header-item_6\\.0\\.0:first-of-type {\n    margin-left: auto; }\n.cdr-tabs--centered_6\\.0\\.0 .cdr-tabs__header-item_6\\.0\\.0:last-of-type {\n    margin-right: auto; }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9jc3Mvc2V0dGluZ3MvX29wdGlvbnMudmFycy5zY3NzIiwiQ2RyVGFicy5zY3NzIiwiLi4vLi4vLi4vLi4vYnVpbGQvbm9vcC5jc3MiLCJzcmMvY29tcG9uZW50cy90YWJzL3N0eWxlcy9DZHJUYWJzLnNjc3MiLCJub2RlX21vZHVsZXMvQHJlaS9jZHItdG9rZW5zL2Rpc3Qvc2Nzcy9jZHItdG9rZW5zLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7Ozs7aUVDT2lFO0FERWpFOzt1QkNDdUI7QUNWdkIsd0JBQXdCO0FDcUJ4QjtFQUNFLHNCQUFBO0VBQ0EsYUFBYTtFQUNiLGlCQUFpQjtFQUNqQixhQUFhO0VBQ2Isa0JBQWtCO0VBeUlsQjtnQkZoSmM7RUVnS2Q7Z0JGOUpjO0VFdUtkO2dCRnJLYztFRTZLZDtnQkYzS2MsRUU0S0M7QUFoTGpCO0lBU0ksd0JBQXdCO0lBQ3hCLGFBQVUsRUFBQTtBQVZkO0lBYUkscUJBQWtCO0lBQ2xCLG9DQUFtQztJQUNuQyx1REFBbUQsRUFBQTtBQUdyRDtJQUNFLGdCQUFnQjtJQUNoQixtQ0MrNkN1QztJRDk2Q3ZDLGlDQUFpQztJQUNqQyw0Q0FBNEMsRUFBQTtBQUo3QztNQUt3QixtQkFBbUI7TUFBRSxvQkFBb0IsRUFBQTtBQUdsRTtJQUNFLGtCQUFrQixFQUFBO0FBR3BCO0lBQ0UsNkJBQTBDO0lBQzFDLHFDQUFrRDtJQUNsRCxrQkFBa0I7SUFDbEIsWUFBWTtJQUNaLE1BQU07SUFDTixTQUFTO0lBQ1QsYUM2b0RzQjtJRDVvRHRCLG9CQUFvQjtJQUNwQixVQUFVLEVBQUE7QUFFVjtNQUNFLE9BQU8sRUFBQTtBQUdUO01BQ0UsUUFBUSxFQUFBO0FBR1Y7TUFDRSxVQUFVLEVBQUE7QUFJZDtJQUNFLGFBQWE7SUFDYixXQUFXO0lBQ1gsU0FBUztJQUVULFVBQVU7SUFDVixrQkFBa0IsRUFBQTtBQUdwQjtJQUNFLGNBQWM7SUFDZCxVQUFVO0lBQ1YsNkJDeXlDNEM7SUR4eUM1QyxnQkFBZ0IsRUFBQTtBQUpqQjtNQU9HLG1CQ3ltRGtCLEVBQUE7QURwbUR0QjtJQUNFLDRCQ2d5QzZDO0lEL3hDN0MsZ0JBQWdCLEVBQUE7QUFHbEI7SUFqR0Esa0RDMndEMEQ7SUQxd0QxRCxrQkFBa0I7SUFDbEIsb0JBQW9CO0lBQ3BCLHlCQUFzQjtJQUN0QixpQkFBaUI7SUFDakIsbUJBQW1CO0lBK0ZqQixjQUFjO0lBQ2QscUJBQXFCO0lBQ3JCLHNCQ2lwRDBDO0lEaHBEMUMsbUJBQW1CO0lBQ25CLHVCQUFvQjtJQUNwQixjQUFjO0lBQ2Qsb0JBQW9CLEVBQUE7QUFUckI7TUFjRyxxQkFBcUI7TUFDckIsY0M4d0M0QixFQUFBO0FEM3dDOUI7TUFDRSxjQzJ3QytCLEVBQUE7QUQ1d0NoQztRQU1HLGNDc3dDNkI7UURyd0M3QixtQkFBbUIsRUFBQTtBQUt6QjtJQUNFLFVBQVU7SUFDVixrQkFBa0I7SUFDbEIsV0FBVztJQUNYLFNBQVM7SUFDVCxjQ3lqRHdCO0lEeGpEeEIsbUJDd2pEd0I7SUR2akR4QixzQkFBc0I7SUFDdEIsWUFBWTtJQUVaLGtCQUFBO0lBQ0EseUJDMjBDeUM7SUQxMEN6QyxpREM0Z0Q0RCxFQUFBO0FEemdEOUQ7SUFDRSxrQkFBa0I7SUFDbEIsY0FBYztJQUNkLGtCQUFrQjtJQUNsQixnQkFBZ0IsRUFBQTtBQWpJcEI7O0lBc0lJLGFBQWEsRUFBQTtBQXRJakI7O0lBMklJLFVBQVUsRUFBQTtBQUtYO0lBeEpELGtEQ2t3RDBEO0lEandEMUQsa0JBQWtCO0lBQ2xCLG9CQUFvQjtJQUNwQix5QkFBc0I7SUFDdEIsaUJBQWlCO0lBQ2pCLG1CQUFtQjtJQXVKZixzQkNtbERnRCxFQUFBO0FEdmxEbkQ7SUFTSyxtQkNvaERpQixFQUFBO0FEN2dEdEI7O0lBR0csdUNBQW9DLEVBQUE7QUFNdkM7SUFFRyxZQUFZLEVBQUE7QUFNZjtJQUVHLGlCQUFpQixFQUFBO0FBRnBCO0lBS0csa0JBQWtCLEVBQUEiLCJmaWxlIjoiQ2RyVGFicy5zY3NzIn0= */";
-  var style$v = {"cdr-tabs":"cdr-tabs_6.0.0","cdr-tabs__header-container":"cdr-tabs__header-container_6.0.0","cdr-tabs__gradient-container":"cdr-tabs__gradient-container_6.0.0","cdr-tabs__gradient":"cdr-tabs__gradient_6.0.0","cdr-tabs__gradient--left":"cdr-tabs__gradient--left_6.0.0","cdr-tabs__gradient--right":"cdr-tabs__gradient--right_6.0.0","cdr-tabs__gradient--active":"cdr-tabs__gradient--active_6.0.0","cdr-tabs__header":"cdr-tabs__header_6.0.0","cdr-tabs__header-item":"cdr-tabs__header-item_6.0.0","cdr-tabs__header-item-active":"cdr-tabs__header-item-active_6.0.0","cdr-tabs__header-item-label":"cdr-tabs__header-item-label_6.0.0","cdr-tabs__header-item-label--disabled":"cdr-tabs__header-item-label--disabled_6.0.0","cdr-tabs__underline":"cdr-tabs__underline_6.0.0","cdr-tabs__content-container":"cdr-tabs__content-container_6.0.0","fade-enter-active":"fade-enter-active_6.0.0","fade-leave-active":"fade-leave-active_6.0.0","fade-enter":"fade-enter_6.0.0","fade-leave-to":"fade-leave-to_6.0.0","cdr-tabs--compact":"cdr-tabs--compact_6.0.0","cdr-tabs--small":"cdr-tabs--small_6.0.0","cdr-tabs--no-border":"cdr-tabs--no-border_6.0.0","cdr-tabs--full-width":"cdr-tabs--full-width_6.0.0","cdr-tabs--centered":"cdr-tabs--centered_6.0.0"};
+  var css_248z$s = "/* ==========================================================================/*\n* Token option variables\n*\n* these are temporary variables, providing\n* cedar components mappings to previously available tokens.\n* These varables should be removed as tokens are available\n*\n=============================================================== */\n/* ---------------------\n* Outline\n* ------------------- */\n/* intentionally empty */\n.cdr-tabs_6\\.0\\.0 {\n  /* overflow-x: auto; */\n  display: flex;\n  flex-flow: column;\n  height: 50rem;\n  overflow-x: hidden;\n  /* Compact\n    ========== */\n  /* No Border\n    ========== */\n  /* Full Width\n    ========== */\n  /* Centered\n    ========== */ }\n.cdr-tabs_6\\.0\\.0 ::-webkit-scrollbar {\n    -webkit-appearance: none;\n    width: 0.7rem; }\n.cdr-tabs_6\\.0\\.0 ::-webkit-scrollbar-thumb {\n    border-radius: 0.4rem;\n    background-color: rgba(0, 0, 0, 0.5);\n    -webkit-box-shadow: 0 0 0.1rem rgba(255, 255, 255, 0.5); }\n.cdr-tabs__header-container_6\\.0\\.0 {\n    overflow-x: auto;\n    border-bottom: 0.1rem solid #928b80;\n    -webkit-overflow-scrolling: touch;\n    -ms-overflow-style: -ms-autohiding-scrollbar; }\n.cdr-tabs__header-container_6\\.0\\.0::-webkit-scrollbar {\n      width: 0 !important;\n      height: 0 !important; }\n.cdr-tabs__gradient-container_6\\.0\\.0 {\n    position: relative; }\n.cdr-tabs__gradient_6\\.0\\.0 {\n    transition: opacity 0.2s ease;\n    -webkit-transition: opacity 0.2s ease;\n    position: absolute;\n    z-index: 100;\n    top: 0;\n    bottom: 0;\n    width: 4.8rem;\n    pointer-events: none;\n    opacity: 0; }\n.cdr-tabs__gradient--left_6\\.0\\.0 {\n      left: 0; }\n.cdr-tabs__gradient--right_6\\.0\\.0 {\n      right: 0; }\n.cdr-tabs__gradient--active_6\\.0\\.0 {\n      opacity: 1; }\n.cdr-tabs__header_6\\.0\\.0 {\n    display: flex;\n    width: 100%;\n    margin: 0;\n    padding: 0;\n    position: relative; }\n.cdr-tabs__header-item_6\\.0\\.0 {\n    font-family: Graphik, \"Helvetica Neue\", sans-serif;\n    font-style: normal;\n    font-weight: inherit;\n    letter-spacing: -0.008rem;\n    font-size: 1.6rem;\n    line-height: 2.2rem;\n    border: none;\n    background-color: transparent;\n    display: block;\n    color: rgba(66, 59, 47, 0.75);\n    font-weight: 300;\n    text-decoration: none;\n    padding: 1.2rem 0.8rem;\n    white-space: nowrap;\n    outline-offset: -0.3rem; }\n.cdr-tabs__header-item_6\\.0\\.0 + .cdr-tabs__header-item_6\\.0\\.0 {\n      margin-left: 1.6rem; }\n.cdr-tabs__header-item-active_6\\.0\\.0 {\n      color: rgba(12, 11, 8, 0.75);\n      font-weight: 500; }\n.cdr-tabs__header-item_6\\.0\\.0::before {\n      display: block;\n      content: attr(js-name);\n      font-weight: 500;\n      height: 0;\n      overflow: hidden;\n      visibility: hidden; }\n.cdr-tabs__header-item_6\\.0\\.0:active, .cdr-tabs__header-item_6\\.0\\.0:hover, .cdr-tabs__header-item_6\\.0\\.0:focus {\n      text-decoration: none;\n      color: #406eb5; }\n.cdr-tabs__header-item--disabled_6\\.0\\.0 {\n      border: none;\n      background-color: transparent;\n      color: #d1cbbd; }\n.cdr-tabs__header-item--disabled_6\\.0\\.0:active, .cdr-tabs__header-item--disabled_6\\.0\\.0:hover, .cdr-tabs__header-item--disabled_6\\.0\\.0:focus {\n        color: #d1cbbd;\n        cursor: not-allowed; }\n.cdr-tabs__underline_6\\.0\\.0 {\n    z-index: 1;\n    position: absolute;\n    width: 3rem;\n    margin: 0;\n    height: 0.4rem;\n    margin-top: -0.4rem;\n    box-sizing: border-box;\n    border: none;\n    background-color: #406eb5;\n    transition: 0.4s cubic-bezier(0.32, 0.94, 0.6, 1); }\n.cdr-tabs__content-container_6\\.0\\.0 {\n    position: relative;\n    flex: 1 1 auto;\n    overflow-x: hidden;\n    overflow-y: auto; }\n.cdr-tabs_6\\.0\\.0 .fade-enter-active_6\\.0\\.0,\n  .cdr-tabs_6\\.0\\.0 .fade-leave-active_6\\.0\\.0 {\n    opacity: 0.5s; }\n.cdr-tabs_6\\.0\\.0 .fade-enter_6\\.0\\.0,\n  .cdr-tabs_6\\.0\\.0 .fade-leave-to_6\\.0\\.0 {\n    opacity: 0; }\n.cdr-tabs--compact_6\\.0\\.0 .cdr-tabs__header-item-label_6\\.0\\.0, .cdr-tabs--small_6\\.0\\.0 .cdr-tabs__header-item-label_6\\.0\\.0 {\n    font-family: Graphik, \"Helvetica Neue\", sans-serif;\n    font-style: normal;\n    font-weight: inherit;\n    letter-spacing: -0.008rem;\n    font-size: 1.4rem;\n    line-height: 1.8rem;\n    padding: 0.6rem 1.2rem; }\n.cdr-tabs--compact_6\\.0\\.0 .cdr-tabs__header-item_6\\.0\\.0 + .cdr-tabs--compact_6\\.0\\.0 .cdr-tabs__header-item_6\\.0\\.0, .cdr-tabs--small_6\\.0\\.0 .cdr-tabs__header-item_6\\.0\\.0 + .cdr-tabs--compact_6\\.0\\.0 .cdr-tabs__header-item_6\\.0\\.0, .cdr-tabs--compact_6\\.0\\.0 .cdr-tabs__header-item_6\\.0\\.0 + .cdr-tabs--small_6\\.0\\.0 .cdr-tabs__header-item_6\\.0\\.0, .cdr-tabs--small_6\\.0\\.0 .cdr-tabs__header-item_6\\.0\\.0 + .cdr-tabs--small_6\\.0\\.0 .cdr-tabs__header-item_6\\.0\\.0 {\n    margin-left: 0.8rem; }\n.cdr-tabs--no-border_6\\.0\\.0 .cdr-tabs__header_6\\.0\\.0,\n  .cdr-tabs--no-border_6\\.0\\.0 .cdr-tabs__header-container_6\\.0\\.0 {\n    border-bottom: 0.1rem solid transparent; }\n.cdr-tabs--full-width_6\\.0\\.0 .cdr-tabs__header-item_6\\.0\\.0 {\n    flex-grow: 1; }\n.cdr-tabs--centered_6\\.0\\.0 .cdr-tabs__header-item_6\\.0\\.0:first-of-type {\n    margin-left: auto; }\n.cdr-tabs--centered_6\\.0\\.0 .cdr-tabs__header-item_6\\.0\\.0:last-of-type {\n    margin-right: auto; }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9jc3Mvc2V0dGluZ3MvX29wdGlvbnMudmFycy5zY3NzIiwiQ2RyVGFicy5zY3NzIiwiLi4vLi4vLi4vLi4vYnVpbGQvbm9vcC5jc3MiLCJzcmMvY29tcG9uZW50cy90YWJzL3N0eWxlcy9DZHJUYWJzLnNjc3MiLCJub2RlX21vZHVsZXMvQHJlaS9jZHItdG9rZW5zL2Rpc3Qvc2Nzcy9jZHItdG9rZW5zLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7Ozs7aUVDT2lFO0FERWpFOzt1QkNDdUI7QUNWdkIsd0JBQXdCO0FDcUJ4QjtFQUNFLHNCQUFBO0VBQ0EsYUFBYTtFQUNiLGlCQUFpQjtFQUNqQixhQUFhO0VBQ2Isa0JBQWtCO0VBMklsQjtnQkZsSmM7RUVrS2Q7Z0JGaEtjO0VFeUtkO2dCRnZLYztFRStLZDtnQkY3S2MsRUU4S0M7QUFsTGpCO0lBU0ksd0JBQXdCO0lBQ3hCLGFBQVUsRUFBQTtBQVZkO0lBYUkscUJBQWtCO0lBQ2xCLG9DQUFtQztJQUNuQyx1REFBbUQsRUFBQTtBQUdyRDtJQUNFLGdCQUFnQjtJQUNoQixtQ0MrNkN1QztJRDk2Q3ZDLGlDQUFpQztJQUNqQyw0Q0FBNEMsRUFBQTtBQUo3QztNQUt3QixtQkFBbUI7TUFBRSxvQkFBb0IsRUFBQTtBQUdsRTtJQUNFLGtCQUFrQixFQUFBO0FBR3BCO0lBQ0UsNkJBQTBDO0lBQzFDLHFDQUFrRDtJQUNsRCxrQkFBa0I7SUFDbEIsWUFBWTtJQUNaLE1BQU07SUFDTixTQUFTO0lBQ1QsYUM2b0RzQjtJRDVvRHRCLG9CQUFvQjtJQUNwQixVQUFVLEVBQUE7QUFFVjtNQUNFLE9BQU8sRUFBQTtBQUdUO01BQ0UsUUFBUSxFQUFBO0FBR1Y7TUFDRSxVQUFVLEVBQUE7QUFJZDtJQUNFLGFBQWE7SUFDYixXQUFXO0lBQ1gsU0FBUztJQUVULFVBQVU7SUFDVixrQkFBa0IsRUFBQTtBQUVwQjtJQS9FQSxrREMyd0QwRDtJRDF3RDFELGtCQUFrQjtJQUNsQixvQkFBb0I7SUFDcEIseUJBQXNCO0lBQ3RCLGlCQUFpQjtJQUNqQixtQkFBbUI7SUErRWpCLFlBQVk7SUFDWiw2QkFBNkI7SUFDN0IsY0FBYztJQUNkLDZCQ3F5QzRDO0lEcHlDNUMsZ0JBQWdCO0lBQ2hCLHFCQUFxQjtJQUNyQixzQkM2cEQwQztJRDVwRDFDLG1CQUFtQjtJQUNuQix1QkFBb0IsRUFBQTtBQWJyQjtNQUVHLG1CQyttRGtCLEVBQUE7QURsbURwQjtNQUNFLDRCQzh4QzJDO01EN3hDM0MsZ0JBQWdCLEVBQUE7QUFqQm5CO01Bc0JHLGNBQWM7TUFDZCxzQkFBc0I7TUFDdEIsZ0JBQWdCO01BQ2hCLFNBQVM7TUFDVCxnQkFBZ0I7TUFDaEIsa0JBQWtCLEVBQUE7QUEzQnJCO01BaUNHLHFCQUFxQjtNQUNyQixjQzZ3QzRCLEVBQUE7QUQxd0M5QjtNQUNFLFlBQVk7TUFDWiw2QkFBNkI7TUFDN0IsY0N3d0MrQixFQUFBO0FEM3dDaEM7UUFRRyxjQ213QzZCO1FEbHdDN0IsbUJBQW1CLEVBQUE7QUFLekI7SUFDRSxVQUFVO0lBQ1Ysa0JBQWtCO0lBQ2xCLFdBQVc7SUFDWCxTQUFTO0lBQ1QsY0NzakR3QjtJRHJqRHhCLG1CQ3FqRHdCO0lEcGpEeEIsc0JBQXNCO0lBQ3RCLFlBQVk7SUFFWix5QkN5MEN5QztJRHgwQ3pDLGlEQzBnRDRELEVBQUE7QUR2Z0Q5RDtJQUNFLGtCQUFrQjtJQUNsQixjQUFjO0lBQ2Qsa0JBQWtCO0lBQ2xCLGdCQUFnQixFQUFBO0FBbklwQjs7SUF3SUksYUFBYSxFQUFBO0FBeElqQjs7SUE2SUksVUFBVSxFQUFBO0FBS1g7SUExSkQsa0RDa3dEMEQ7SURqd0QxRCxrQkFBa0I7SUFDbEIsb0JBQW9CO0lBQ3BCLHlCQUFzQjtJQUN0QixpQkFBaUI7SUFDakIsbUJBQW1CO0lBeUpmLHNCQ2lsRGdELEVBQUE7QURybERuRDtJQVNLLG1CQ2toRGlCLEVBQUE7QUQzZ0R0Qjs7SUFHRyx1Q0FBb0MsRUFBQTtBQU12QztJQUVHLFlBQVksRUFBQTtBQU1mO0lBRUcsaUJBQWlCLEVBQUE7QUFGcEI7SUFLRyxrQkFBa0IsRUFBQSIsImZpbGUiOiJDZHJUYWJzLnNjc3MifQ== */";
+  var style$v = {"cdr-tabs":"cdr-tabs_6.0.0","cdr-tabs__header-container":"cdr-tabs__header-container_6.0.0","cdr-tabs__gradient-container":"cdr-tabs__gradient-container_6.0.0","cdr-tabs__gradient":"cdr-tabs__gradient_6.0.0","cdr-tabs__gradient--left":"cdr-tabs__gradient--left_6.0.0","cdr-tabs__gradient--right":"cdr-tabs__gradient--right_6.0.0","cdr-tabs__gradient--active":"cdr-tabs__gradient--active_6.0.0","cdr-tabs__header":"cdr-tabs__header_6.0.0","cdr-tabs__header-item":"cdr-tabs__header-item_6.0.0","cdr-tabs__header-item-active":"cdr-tabs__header-item-active_6.0.0","cdr-tabs__header-item--disabled":"cdr-tabs__header-item--disabled_6.0.0","cdr-tabs__underline":"cdr-tabs__underline_6.0.0","cdr-tabs__content-container":"cdr-tabs__content-container_6.0.0","fade-enter-active":"fade-enter-active_6.0.0","fade-leave-active":"fade-leave-active_6.0.0","fade-enter":"fade-enter_6.0.0","fade-leave-to":"fade-leave-to_6.0.0","cdr-tabs--compact":"cdr-tabs--compact_6.0.0","cdr-tabs__header-item-label":"cdr-tabs__header-item-label_6.0.0","cdr-tabs--small":"cdr-tabs--small_6.0.0","cdr-tabs--no-border":"cdr-tabs--no-border_6.0.0","cdr-tabs--full-width":"cdr-tabs--full-width_6.0.0","cdr-tabs--centered":"cdr-tabs--centered_6.0.0"};
   styleInject(css_248z$s);
 
   var CdrTabs = {
@@ -30310,7 +30310,7 @@ var cedar = (function () {
 
         setTimeout$2(function () {
           _this.updateUnderline();
-        }, 250);
+        }, 500);
       }); // Check for header overflow on window resize for gradient behavior.
 
       window.addEventListener('resize', debounce(function () {
@@ -30406,7 +30406,7 @@ var cedar = (function () {
 
         this.activeTabIndex = newIndex;
         this.updateUnderline();
-        this.$refs.cdrTabsHeader.children[this.activeTabIndex].children[0].focus();
+        this.$refs.cdrTabsHeader.children[this.activeTabIndex].focus();
       },
 
       rightArrowNav: debounce(function handleRightArrow() {
@@ -30455,11 +30455,17 @@ var cedar = (function () {
 
         if (elements.length > 0) {
           var activeTab = elements[this.activeTabIndex];
-          this.underlineOffsetX = activeTab.offsetLeft - this.$refs.cdrTabsHeader.parentElement.scrollLeft;
-          this.underlineWidth = activeTab.firstChild.offsetWidth; // mobile fix, hide the underline if it scrolls outside the container
+          var activeRect = activeTab.getBoundingClientRect();
+          var parentRect = this.$refs.cdrTabsHeader.getBoundingClientRect();
+          var offset = activeRect.x - parentRect.x;
+          this.underlineOffsetX = offset - this.$refs.cdrTabsHeader.parentElement.scrollLeft;
+          this.underlineWidth = activeRect.width; // hide the underline if it scrolls outside the container
 
-          if (this.underlineOffsetX > this.$refs.cdrTabsContainer.offsetWidth) {
-            this.underlineOffsetX = this.$refs.cdrTabsContainer.offsetWidth;
+          if (this.underlineOffsetX > parentRect.width) {
+            this.underlineOffsetX = parentRect.width;
+            this.underlineWidth = 0;
+          } else if (this.underlineOffsetX < 0) {
+            this.underlineOffsetX = 0;
             this.underlineWidth = 0;
           }
         }
@@ -30472,7 +30478,7 @@ var cedar = (function () {
       },
 
       setFocusToActiveTabHeader() {
-        this.$refs.cdrTabsHeader.children[this.activeTabIndex].children[0].focus();
+        this.$refs.cdrTabsHeader.children[this.activeTabIndex].focus();
       },
 
       getHeaderWidth() {
@@ -30512,18 +30518,22 @@ var cedar = (function () {
         var _this4 = this;
 
         var h = this.$createElement;
-        return tab.disabled ? h("span", {
-          "class": clsx(this.style['cdr-tabs__header-item-label'], this.style['cdr-tabs__header-item-label--disabled']),
+        return tab.disabled ? h("button", {
+          "class": clsx(this.style['cdr-tabs__header-item'], this.style['cdr-tabs__header-item--disabled']),
           "attrs": {
-            "aria-disabled": "true",
-            "aria-selected": "false"
+            "disabled": true
           }
-        }, [tab.name]) : h("a", {
+        }, [tab.name]) : h("button", {
           "attrs": {
+            "role": "tab",
+            "aria-selected": tab.active,
+            "aria-controls": tab.id,
+            "id": tab.ariaLabelledby,
             "tabIndex": tab.active ? 0 : -1,
-            "href": "#".concat(tab.id)
+            "js-name": tab.name
           },
-          "class": this.style['cdr-tabs__header-item-label'],
+          "key": tab.id,
+          "class": clsx(tab.active ? this.style['cdr-tabs__header-item-active'] : '', this.style['cdr-tabs__header-item']),
           "on": {
             "click": function click($event) {
               $event.preventDefault();
@@ -30571,24 +30581,14 @@ var cedar = (function () {
         "style": this.gradientLeftStyle
       }), h("nav", {
         "class": this.style['cdr-tabs__header-container']
-      }, [h("ol", {
+      }, [h("div", {
         "class": this.style['cdr-tabs__header'],
         "attrs": {
           "role": "tablist"
         },
         "ref": "cdrTabsHeader"
       }, [map$2(_context4 = this.tabs).call(_context4, function (tab) {
-        return h("li", {
-          "attrs": {
-            "role": "tab",
-            "aria-selected": tab.active,
-            "aria-disabled": "false",
-            "aria-controls": tab.id,
-            "id": tab.ariaLabelledby
-          },
-          "key": tab.id,
-          "class": clsx(tab.active ? _this5.style['cdr-tabs__header-item-active'] : '', _this5.style['cdr-tabs__header-item'])
-        }, [_this5.getTabEl(tab)]);
+        return _this5.getTabEl(tab);
       })])]), h("div", {
         "class": clsx(this.style['cdr-tabs__gradient'], this.style['cdr-tabs__gradient--right'], this.overflowRight ? this.style['cdr-tabs__gradient--active'] : ''),
         "style": this.gradientRightStyle
