@@ -194,13 +194,13 @@ export default {
           - this.$refs.cdrTabsHeader.parentElement.scrollLeft;
         this.underlineWidth = activeRect.width;
 
-        // hide the underline if it scrolls outside the container
-        if (this.underlineOffsetX > parentRect.width) {
-          this.underlineOffsetX = parentRect.width;
-          this.underlineWidth = 0;
+        // shrink/hide the underline if it scrolls outside the container
+        if (this.underlineOffsetX + this.underlineWidth >= parentRect.width) {
+          this.underlineWidth = Math.max(0, parentRect.width - this.underlineOffsetX);
+          this.underlineOffsetX = Math.min(this.underlineOffsetX, parentRect.width);
         } else if (this.underlineOffsetX < 0) {
+          this.underlineWidth = Math.max(0, this.underlineWidth + this.underlineOffsetX);
           this.underlineOffsetX = 0;
-          this.underlineWidth = 0;
         }
       }
     },
@@ -228,11 +228,14 @@ export default {
       return totalWidth;
     },
     hideScrollBar() {
-      const styleRef = this.$refs.cdrTabsContainer.style;
+      const containerRef = this.$refs.cdrTabsContainer.style;
+      const slotRef = this.$refs.slotWrapper.style;
       window.addEventListener('transitionend', () => {
-        styleRef.setProperty('overflow-x', 'unset');
+        containerRef.setProperty('overflow-x', 'unset');
+        slotRef.setProperty('overflow-y', 'unset');
       }, { once: true });
-      styleRef.setProperty('overflow-x', 'hidden');
+      containerRef.setProperty('overflow-x', 'hidden');
+      slotRef.setProperty('overflow-y', 'hidden');
     },
     getTabEl(tab) {
       return tab.disabled ? (
