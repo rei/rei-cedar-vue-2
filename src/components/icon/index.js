@@ -103,6 +103,7 @@ export { default as IconLockLockedFill } from './comps/lock-locked-fill';
 export { default as IconLockLockedStroke } from './comps/lock-locked-stroke';
 export { default as IconLockUnlockedStroke } from './comps/lock-unlocked-stroke';
 export { default as IconMail } from './comps/mail';
+export { default as IconMap } from './comps/map';
 export { default as IconMemberCard } from './comps/member-card';
 export { default as IconMicrophone } from './comps/microphone';
 export { default as IconMinusFill } from './comps/minus-fill';
