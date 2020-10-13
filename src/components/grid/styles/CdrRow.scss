@@ -171,6 +171,26 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
     }
   }
 
+  &--gutter-small {
+    margin-top: calc(#{$rowGutter-sm} * -1) !important;
+    margin-left: calc(#{$rowGutter-sm} * -1) !important;
+
+    & > .cdr-col {
+      padding-top: $rowGutter-sm !important;
+      padding-left: $rowGutter-sm !important;
+    }
+  }
+
+  &--gutter-medium {
+    margin-top: calc(#{$rowGutter-md} * -1) !important;
+    margin-left: calc(#{$rowGutter-md} * -1) !important;
+
+    & > .cdr-col {
+      padding-top: $rowGutter-md !important;
+      padding-left: $rowGutter-md !important;
+    }
+  }
+
   &--gutter-xxs {
     margin-top: calc(#{$cdr-space-eighth-x} * -1) !important;
     margin-left: calc(#{$cdr-space-eighth-x} * -1) !important;
@@ -367,6 +387,26 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
 
       & > .cdr-col {
         padding: 0 !important;
+      }
+    }
+
+    &--gutter-small\@sm {
+      margin-top: calc(#{$rowGutter-sm} * -1) !important;
+      margin-left: calc(#{$rowGutter-sm} * -1) !important;
+
+      & > .cdr-col {
+        padding-top: $rowGutter-sm !important;
+        padding-left: $rowGutter-sm !important;
+      }
+    }
+
+    &--gutter-medium\@sm {
+      margin-top: calc(#{$rowGutter-md} * -1) !important;
+      margin-left: calc(#{$rowGutter-md} * -1) !important;
+
+      & > .cdr-col {
+        padding-top: $rowGutter-md !important;
+        padding-left: $rowGutter-md !important;
       }
     }
 
@@ -572,6 +612,26 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
       }
     }
 
+    &--gutter-small\@md {
+      margin-top: calc(#{$rowGutter-sm} * -1) !important;
+      margin-left: calc(#{$rowGutter-sm} * -1) !important;
+
+      & > .cdr-col {
+        padding-top: $rowGutter-sm !important;
+        padding-left: $rowGutter-sm !important;
+      }
+    }
+
+    &--gutter-medium\@md {
+      margin-top: calc(#{$rowGutter-md} * -1) !important;
+      margin-left: calc(#{$rowGutter-md} * -1) !important;
+
+      & > .cdr-col {
+        padding-top: $rowGutter-md !important;
+        padding-left: $rowGutter-md !important;
+      }
+    }
+
     &--gutter-xxs\@md {
       margin-top: calc(#{$cdr-space-eighth-x} * -1) !important;
       margin-left: calc(#{$cdr-space-eighth-x} * -1) !important;
@@ -771,6 +831,26 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
 
       & > .cdr-col {
         padding: 0 !important;
+      }
+    }
+
+    &--gutter-small\@lg {
+      margin-top: calc(#{$rowGutter-sm} * -1) !important;
+      margin-left: calc(#{$rowGutter-sm} * -1) !important;
+
+      & > .cdr-col {
+        padding-top: $rowGutter-sm !important;
+        padding-left: $rowGutter-sm !important;
+      }
+    }
+
+    &--gutter-medium\@lg {
+      margin-top: calc(#{$rowGutter-md} * -1) !important;
+      margin-left: calc(#{$rowGutter-md} * -1) !important;
+
+      & > .cdr-col {
+        padding-top: $rowGutter-md !important;
+        padding-left: $rowGutter-md !important;
       }
     }
 
