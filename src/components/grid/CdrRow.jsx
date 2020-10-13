@@ -44,15 +44,15 @@ export default {
       ),
     },
     /**
-     * Defines gutter size. Default gutter size is 16px @xs and @sm and 32px @md and @lg.
-     * Possible values: {none, xxs}.
+     * Defines gutter size. Default gutter size is 16px @xs and @sm (small) and 32px @md and @lg (medium).
+     * Possible values: {none, xxs, small, medium}.
      * Also accepts responsive values with `@breakpoint`: "none@md"
      */
     gutter: {
       type: String,
       validator: (value) => propValidator(
         value,
-        ['none', 'xxs'],
+        ['none', 'xxs', 'small', 'medium'],
       ),
     },
     /**
