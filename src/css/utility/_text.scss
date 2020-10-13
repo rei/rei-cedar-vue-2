@@ -20,10 +20,21 @@ h6.cdr-text.cdr-text,
   &--italic {
     font-variation-settings: 'ital' 1;
     font-style: italic;
+    font-weight: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    font-family: inherit;
   }
 
   &--strong {
     font-weight: 700;
+    font-size: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    font-family: inherit;
   }
 
   &--body {
