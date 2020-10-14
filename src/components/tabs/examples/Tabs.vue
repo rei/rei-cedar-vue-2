@@ -175,38 +175,38 @@
         </cdr-tab-panel>
 
         <cdr-tab-panel
-          name="six"
-          id="centered-six"
+          name="nine"
+          id="centered-nine"
         >
           <cdr-text
             tag="strong"
             modifier="subheading"
           >
-            Tab six Content
+            Tab nine Content
           </cdr-text>
         </cdr-tab-panel>
 
         <cdr-tab-panel
-          name="seven"
-          id="centered-seven"
+          name="ten"
+          id="centered-ten"
         >
           <cdr-text
             tag="strong"
             modifier="subheading"
           >
-            Tab seven Content
+            Tab ten Content
           </cdr-text>
         </cdr-tab-panel>
 
         <cdr-tab-panel
-          name="eight"
-          id="centered-eight"
+          name="eleven"
+          id="centered-eleven"
         >
           <cdr-text
             tag="strong"
             modifier="subheading"
           >
-            Tab eight Content
+            Tab eleven Content
           </cdr-text>
         </cdr-tab-panel>
       </cdr-tabs>
