@@ -60,8 +60,6 @@ export default {
       offset: null,
       headerHeight: 0,
       totalHeight: 0,
-      scrollHeight: 0,
-      offsetHeight: 0,
       fullscreen: false,
     };
   },
@@ -89,9 +87,6 @@ export default {
       return this.totalHeight
         - this.headerHeight
         - this.verticalSpace;
-    },
-    scrolling() {
-      return this.scrollHeight > this.offsetHeight;
     },
   },
   watch: {
@@ -125,8 +120,6 @@ export default {
         this.totalHeight = window.innerHeight;
         this.fullscreen = window.innerWidth < CdrBreakpointSm;
         this.headerHeight = this.$refs.header.offsetHeight;
-        this.scrollHeight = this.$refs.content.scrollHeight;
-        this.offsetHeight = this.$refs.content.offsetHeight;
       });
     },
     handleKeyDown({ key }) {
@@ -344,13 +337,6 @@ export default {
                     >
                       {this.$slots.default}
                     </div>
-                    {
-                      this.scrolling && (
-                        <div
-                        class={this.style['cdr-modal__text-fade']}
-                      />
-                      )
-                    }
                   </div>
                 </div>
               </section>
