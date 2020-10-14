@@ -103,17 +103,6 @@ $modal-animation-duration: 150ms;
     position: relative;
   }
 
-  &__text-fade {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: $cdr-space-two-x;
-    /* full transparency doesn't fly on safari */
-    background: linear-gradient(rgba(255,255,255,0.001), rgba(255,255,255,1));
-    background-attachment: scroll;
-    width: 100%;
-  }
-
   @media (min-width: $cdr-breakpoint-sm) {
     &__outerWrap {
       padding: $cdr-space-one-x;
