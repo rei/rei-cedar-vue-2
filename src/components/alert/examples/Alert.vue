@@ -22,6 +22,10 @@
         <icon-x-fill /> error alert
       </cdr-text>
     </cdr-alert>
+
+    <cdr-alert type="error" :dismissable="true">
+      <icon-x-fill /> dismissable alert
+    </cdr-alert>
   </div>
 </template>
 

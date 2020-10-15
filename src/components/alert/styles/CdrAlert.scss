@@ -20,3 +20,8 @@
 .cdr-alert--error {
   @include cdr-alert-error-mixin;
 }
+
+.cdr-alert__close {
+  float: right;
+  padding: 0 !important;
+}
