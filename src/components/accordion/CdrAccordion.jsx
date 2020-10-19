@@ -18,13 +18,6 @@ export default {
       required: true,
     },
     /**
-     * The readable text on the accordion button.
-     */
-    label: {
-      type: String,
-      required: false,
-    },
-    /**
      * Toggle this value to open/close the accordion.
      */
     opened: {
@@ -143,7 +136,7 @@ export default {
             class={this.style['cdr-accordion__label']}
             id={`${this.id}-label`}
             >
-            { this.$slots.label || this.label}
+            { this.$slots.label }
           </span>
           <icon-caret-down
             class={clsx(this.style['cdr-accordion__icon'], this.isOpenClass)}

@@ -262,7 +262,6 @@ export default {
       helperTextModel: '',
       infoLinkModel: '',
       infoIconModel: '',
-      // DEPRECATED
       multiple: ['1', '2'],
       multiple2: ['-1'],
       multiple2Data: ['a', 'b', 'c', 'd'],

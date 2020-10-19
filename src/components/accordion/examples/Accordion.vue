@@ -87,9 +87,11 @@
           level="3"
           :opened="accordionDefault2"
           @accordion-toggle="accordionDefault2 = !accordionDefault2"
-          label="Label with multiple words, so many words in fact that
-          this content may wrap to several lines"
         >
+          <template slot="label">
+            Label with multiple words, so many words in fact
+            that this content may wrap to several lines
+          </template>
           <cdr-list modifier="unordered">
             <li>This is a cdr-list item inside an accordion.</li>
             <li>It includes no extra styling</li>
@@ -138,11 +140,13 @@
         <cdr-accordion
           id="compact"
           level="3"
-          label="Compact"
           :compact="true"
           :opened="accordionCompact"
           @accordion-toggle="accordionCompact = !accordionCompact"
         >
+          <template slot="label">
+            compact
+          </template>
           <cdr-list modifier="unordered">
             <li>
               <cdr-link
@@ -170,12 +174,15 @@
         <cdr-accordion
           id="compact-2"
           level="3"
-          label="Label with multiple words, so many words in fact that
-          this content may wrap to several lines"
           :compact="true"
           :opened="accordionCompact2"
           @accordion-toggle="accordionCompact2 = !accordionCompact2"
         >
+
+          <template slot="label">
+            Label with multiple words, so many words in fact
+            that this content may wrap to several lines
+          </template>
           <cdr-list tag="ol">
             <li>Item one</li>
             <li>Item two</li>

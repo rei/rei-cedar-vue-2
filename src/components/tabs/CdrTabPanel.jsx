@@ -48,7 +48,6 @@ export default {
       if (state) this.hidden = false;
       this.active = state;
       this.$emit('tab-change', state, this.id);
-      this.$emit('tabChange', state, this.id);
     },
     setAnimationDirection(direction) {
       this.animationDirection = direction;
