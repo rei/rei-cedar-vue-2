@@ -130,10 +130,11 @@
           id="tabs-accordion-default-long-label"
           :opened="accordion2"
           @accordion-toggle="accordion2 = !accordion2"
-          label="Label with multiple words, so many words in fact that
-          this content may wrap to several lines"
           level="4"
         >
+          <template slot="label">
+            Label with multiple words, so many words in fact that this content may wrap to several lines
+          </template>
           <cdr-list modifier="unordered">
             <li>This is a cdr-list item inside an accordion.</li>
             <li>It includes no extra styling</li>
