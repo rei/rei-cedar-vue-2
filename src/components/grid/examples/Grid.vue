@@ -580,6 +580,90 @@
           tag="h4"
           modifier="subheading"
         >
+          gutter="small"
+        </cdr-text>
+        <cdr-row
+          cols="3"
+          gutter="small"
+        >
+          <cdr-col>
+            <div class="row-demo">
+              3
+            </div>
+          </cdr-col>
+          <cdr-col>
+            <div class="row-demo">
+              3
+            </div>
+          </cdr-col>
+          <cdr-col>
+            <div class="row-demo">
+              3
+            </div>
+          </cdr-col>
+          <cdr-col>
+            <div class="row-demo">
+              3
+            </div>
+          </cdr-col>
+          <cdr-col>
+            <div class="row-demo">
+              3
+            </div>
+          </cdr-col>
+          <cdr-col>
+            <div class="row-demo">
+              3
+            </div>
+          </cdr-col>
+        </cdr-row>
+
+        <cdr-text
+          tag="h4"
+          modifier="subheading"
+        >
+          gutter="medium"
+        </cdr-text>
+        <cdr-row
+          cols="3"
+          gutter="medium"
+        >
+          <cdr-col>
+            <div class="row-demo">
+              3
+            </div>
+          </cdr-col>
+          <cdr-col>
+            <div class="row-demo">
+              3
+            </div>
+          </cdr-col>
+          <cdr-col>
+            <div class="row-demo">
+              3
+            </div>
+          </cdr-col>
+          <cdr-col>
+            <div class="row-demo">
+              3
+            </div>
+          </cdr-col>
+          <cdr-col>
+            <div class="row-demo">
+              3
+            </div>
+          </cdr-col>
+          <cdr-col>
+            <div class="row-demo">
+              3
+            </div>
+          </cdr-col>
+        </cdr-row>
+
+        <cdr-text
+          tag="h4"
+          modifier="subheading"
+        >
           gutter="xxs"
         </cdr-text>
         <cdr-row
@@ -1418,6 +1502,40 @@
           </cdr-col>
         </cdr-row>
 
+        <cdr-text>gutter="small@sm"</cdr-text>
+        <cdr-row
+          cols="6"
+          gutter="small@sm"
+        >
+          <cdr-col>
+            <div class="row-demo">
+              6
+            </div>
+          </cdr-col>
+          <cdr-col>
+            <div class="row-demo">
+              6
+            </div>
+          </cdr-col>
+        </cdr-row>
+
+        <cdr-text>gutter="medium@sm"</cdr-text>
+        <cdr-row
+          cols="6"
+          gutter="medium@sm"
+        >
+          <cdr-col>
+            <div class="row-demo">
+              6
+            </div>
+          </cdr-col>
+          <cdr-col>
+            <div class="row-demo">
+              6
+            </div>
+          </cdr-col>
+        </cdr-row>
+
         <cdr-text>gutter="xxs@sm"</cdr-text>
         <cdr-row
           cols="6"
@@ -1709,10 +1827,61 @@
           </cdr-col>
         </cdr-row>
 
-        <cdr-text>gutter="none@sm"</cdr-text>
+        <cdr-text>gutter="none@md"</cdr-text>
         <cdr-row
           cols="6"
           gutter="none@md"
+        >
+          <cdr-col>
+            <div class="row-demo">
+              6
+            </div>
+          </cdr-col>
+          <cdr-col>
+            <div class="row-demo">
+              6
+            </div>
+          </cdr-col>
+        </cdr-row>
+
+        <cdr-text>gutter="default@md"</cdr-text>
+        <cdr-row
+          cols="6"
+          gutter="default@md"
+        >
+          <cdr-col>
+            <div class="row-demo">
+              6
+            </div>
+          </cdr-col>
+          <cdr-col>
+            <div class="row-demo">
+              6
+            </div>
+          </cdr-col>
+        </cdr-row>
+
+        <cdr-text>gutter="small@md"</cdr-text>
+        <cdr-row
+          cols="6"
+          gutter="small@md"
+        >
+          <cdr-col>
+            <div class="row-demo">
+              6
+            </div>
+          </cdr-col>
+          <cdr-col>
+            <div class="row-demo">
+              6
+            </div>
+          </cdr-col>
+        </cdr-row>
+
+        <cdr-text>gutter="medium@md"</cdr-text>
+        <cdr-row
+          cols="6"
+          gutter="medium@md"
         >
           <cdr-col>
             <div class="row-demo">
@@ -2021,6 +2190,40 @@
         <cdr-row
           cols="6"
           gutter="none@lg"
+        >
+          <cdr-col>
+            <div class="row-demo">
+              6
+            </div>
+          </cdr-col>
+          <cdr-col>
+            <div class="row-demo">
+              6
+            </div>
+          </cdr-col>
+        </cdr-row>
+
+        <cdr-text>gutter="small@lg"</cdr-text>
+        <cdr-row
+          cols="6"
+          gutter="small@lg"
+        >
+          <cdr-col>
+            <div class="row-demo">
+              6
+            </div>
+          </cdr-col>
+          <cdr-col>
+            <div class="row-demo">
+              6
+            </div>
+          </cdr-col>
+        </cdr-row>
+
+        <cdr-text>gutter="medium@lg"</cdr-text>
+        <cdr-row
+          cols="6"
+          gutter="medium@lg"
         >
           <cdr-col>
             <div class="row-demo">
