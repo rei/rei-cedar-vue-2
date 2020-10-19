@@ -207,11 +207,6 @@
   /* Hide Figure
     ========== */
 
-  // TODO: remove compact?
-  &--compact {
-    @include cdr-label-small-mixin;
-  }
-
   &--hide-figure {
     padding-left: 0;
 

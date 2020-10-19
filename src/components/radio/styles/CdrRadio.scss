@@ -191,17 +191,6 @@
   /* Modifiers
     ========================================================================== */
 
-  /* Compact
-    ========== */
-
-  &--compact {
-    @include cdr-label-small-mixin;
-
-    & > .cdr-radio__figure {
-      @include cdr-label-figure-small-mixin; // TODO: ????
-    }
-  }
-
   /* Hide Figure
     ========== */
 
