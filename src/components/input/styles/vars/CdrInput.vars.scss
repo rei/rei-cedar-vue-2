@@ -91,7 +91,11 @@
 }
 
 @mixin cdr-input-required-label-mixin() {
-  color: $cdr-color-text-input-required;
   margin-left: $cdr-space-inset-quarter-x;
-  font-weight: 400;
+}
+
+@mixin cdr-input-optional-label-mixin() {
+  // TODO: add -optional token? update $cdr-color-text-input-required
+  color: $cdr-color-text-input-secondary;
+  margin-left: $cdr-space-inset-quarter-x;
 }

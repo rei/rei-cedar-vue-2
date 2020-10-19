@@ -10,14 +10,21 @@
       <cdr-input
         class="demo-input"
         v-model="defaultModel"
-        label="#1 Default"
+        label="Default"
       />
 
       <cdr-input
         class="demo-input"
         v-model="requiredModel"
-        label="#2 Required"
+        label="Required"
         required
+      />
+
+      <cdr-input
+        class="demo-input"
+        v-model="optionalModel"
+        label="Optional"
+        optional
       />
     </div>
 
@@ -26,13 +33,13 @@
       v-model="hiddenModel"
       label="This has no label"
       hide-label
-      placeholder="#3 hidden-label"
+      placeholder="hidden-label"
     />
 
     <cdr-input
       class="demo-input"
       v-model="disabledModel"
-      label="#4 Disabled Input"
+      label="Disabled Input"
       placeholder="I am disabled"
       data-backstop="input-disabled"
       disabled
@@ -79,7 +86,7 @@
       v-model="requiredWithIcons"
       id="required-with-icon"
       placeholder="Required with Icon"
-      label="#5 Input Label"
+      label="Input Label"
       required
       type="email"
     >
@@ -111,8 +118,8 @@
       class="demo-input "
       v-model="multiRowModel"
       :rows="10"
-      placeholder="#6 Multi Line Input/TextArea"
-      label="#6 Multi Line Input/TextArea"
+      placeholder="Multi Line Input/TextArea"
+      label="Multi Line Input/TextArea"
     />
     <cdr-input
       class="demo-input "
@@ -123,22 +130,25 @@
     />
 
     <div class="demo-input">
-      Input #1 Value = {{ defaultModel }}
+      Default Input Value = {{ defaultModel }}
     </div>
     <div class="demo-input">
-      Input #2 Value = {{ requiredModel }}
+      Required Input Value = {{ requiredModel }}
     </div>
     <div class="demo-input">
-      Input #3 Value = {{ hiddenModel }}
+      Optional Input Value = {{ optionalModel }}
     </div>
     <div class="demo-input">
-      Input #4 Value = {{ disabledModel }}
+      Hidden Input Value = {{ hiddenModel }}
     </div>
     <div class="demo-input">
-      Input #5 Value = {{ requiredWithIcons }}
+      Disabled Input Value = {{ disabledModel }}
     </div>
     <div class="demo-input">
-      Input #6 Value = {{ multiRowModel }}
+      With Icons Input Value = {{ requiredWithIcons }}
+    </div>
+    <div class="demo-input">
+      Multi Row Input Value = {{ multiRowModel }}
     </div>
     <div class="demo-input">
       Size Inputs Value = {{ sizeModel }}
@@ -161,6 +171,7 @@ export default {
     return {
       defaultModel: '',
       requiredModel: '',
+      optionalModel: '',
       hiddenModel: '',
       disabledModel: '',
       requiredWithIcons: '',
@@ -174,6 +185,7 @@ export default {
       console.log('On Master Input value = ', value, ' e = ', e); // eslint-disable-line
       this.defaultModel = value;
       this.requiredModel = value;
+      this.optionalModel = value;
       this.hiddenModel = value;
       this.disabledModel = value;
       this.requiredWithIcons = value;

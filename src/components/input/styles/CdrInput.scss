@@ -101,6 +101,10 @@
     @include cdr-input-required-label-mixin;
   }
 
+  &__optional-label {
+    @include cdr-input-required-label-mixin;
+  }
+
   &__info-container {
     @include cdr-input-info-container-mixin;
   }

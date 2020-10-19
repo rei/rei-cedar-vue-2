@@ -15,13 +15,14 @@ export default {
   inheritAttrs: false,
   props: {
     /**
-     * `id` for the input that is mapped to the label `for` attribute. If one is not provided, it will be auto generated.
+     * `id` for the input that is mapped to the label `for` attribute.
+     *  If one is not provided, it will be auto generated.
     */
     id: String,
     /**
-     *  'type' attribute for the input as defined by w3c.  Only supporting text|email|number|password|search|url.
+     *  'type' attribute for the input as defined by w3c.
+     *  Only supporting text|email|number|password|search|url.
      *  The increment/decrement webkit psuedo element is hidden for number.
-     *  See https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input for more details.
     */
     type: {
       type: [String],
@@ -46,11 +47,9 @@ export default {
      * Number of rows for input.  Converts component to text-area if rows greater than 1.
     */
     rows: Number,
-    /** @ignore */
     disabled: Boolean,
-    /** @ignore */
     required: Boolean,
-    /** @ignore */
+    optional: Boolean,
     value: {
       type: [String, Number],
     },
@@ -101,8 +100,17 @@ export default {
       const requiredEl = this.required ? (
         <span
           class={this.style['cdr-input__required-label']}
+          aria-label="required"
         >
-          Required
+          *
+        </span>
+      ) : '';
+
+      const optionalEl = this.optional ? (
+        <span
+          class={this.style['cdr-input__optional-label']}
+        >
+          (optional)
         </span>
       ) : '';
 
@@ -111,8 +119,8 @@ export default {
           class={this.labelClass}
           for={this.inputId}
           ref="label"
-        >{ this.label }
-          {requiredEl}
+        >
+          { this.label }{ requiredEl || optionalEl }
         </label>
       ) : '';
     },

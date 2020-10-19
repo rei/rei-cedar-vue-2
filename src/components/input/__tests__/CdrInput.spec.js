@@ -94,6 +94,18 @@ describe('CdrInput', () => {
     expect(wrapper.vm.$refs.input.hasAttribute('required')).toBe(true);
   });
 
+  it('does not render both required and optional labels simultaneously', () => {
+    const wrapper = shallowMount(CdrInput, {
+      propsData: {
+        label: 'test',
+        required: true,
+        optional: true,
+      },
+    });
+    expect(wrapper.vm.$refs.input.hasAttribute('required')).toBe(true);
+    expect(wrapper.vm.$refs.label.textContent).toBe('test*');
+  });
+
   it('sets input autofocus attribute correctly', () => {
     const wrapper = shallowMount(CdrInput, {
       propsData: {

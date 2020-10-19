@@ -28,9 +28,10 @@ exports[`CdrInput renders required label correctly 1`] = `
   >
     Label Test
     <span
+      aria-label="required"
       class="cdr-input__required-label"
     >
-      Required
+      *
     </span>
   </label>
   <div
