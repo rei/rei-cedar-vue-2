@@ -2,12 +2,16 @@
 
 exports[`CdrInput renders a label element 1`] = `
 <div>
-  <label
-    class="cdr-input__label"
-    for="1"
+  <div
+    class="cdr-input-wrap"
   >
-    Label Test
-  </label>
+    <label
+      class="cdr-input__label"
+      for="1"
+    >
+      Label Test
+    </label>
+  </div>
   <div
     class="cdr-input-wrap"
   >
@@ -22,18 +26,22 @@ exports[`CdrInput renders a label element 1`] = `
 
 exports[`CdrInput renders required label correctly 1`] = `
 <div>
-  <label
-    class="cdr-input__label"
-    for="3"
+  <div
+    class="cdr-input-wrap"
   >
-    Label Test
-    <span
-      aria-label="required"
-      class="cdr-input__required-label"
+    <label
+      class="cdr-input__label"
+      for="3"
     >
-      *
-    </span>
-  </label>
+      Label Test
+      <span
+        aria-label="required"
+        class="cdr-input__required-label"
+      >
+        *
+      </span>
+    </label>
+  </div>
   <div
     class="cdr-input-wrap"
   >

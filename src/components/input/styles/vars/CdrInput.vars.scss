@@ -78,16 +78,16 @@
   font-size: 1.4rem;
   line-height: 1.8rem;
   letter-spacing: -0.016rem;
-
   color: $cdr-color-text-input-help;
   display: block;
-  margin-top: $cdr-space-quarter-x;
 }
 
 @mixin cdr-input-info-container-mixin() {
   @include cdr-text-utility-sans-200;
 
-  float: right;
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
 
 @mixin cdr-input-required-label-mixin() {

@@ -114,6 +114,28 @@
         This is helper text. Input length: {{ requiredWithIcons.length }}
       </template>
     </cdr-input>
+
+    <cdr-input
+      class="demo-input"
+      v-model="helperValidationModel"
+      helper-position="top"
+      placeholder="Helper above with validation"
+      label="Top helper with validation"
+    >
+      <template slot="helper-text">
+        This is persistent helper text.
+      </template>
+
+      <template slot="info">
+        <cdr-link
+          modifier="standalone"
+          href="#/inputs"
+        >
+          Support link
+        </cdr-link>
+      </template>
+    </cdr-input>
+
     <cdr-input
       class="demo-input "
       v-model="multiRowModel"
@@ -148,6 +170,9 @@
       With Icons Input Value = {{ requiredWithIcons }}
     </div>
     <div class="demo-input">
+      Helper/Validation Input Value = {{ helperValidationModel }}
+    </div>
+    <div class="demo-input">
       Multi Row Input Value = {{ multiRowModel }}
     </div>
     <div class="demo-input">
@@ -174,6 +199,7 @@ export default {
       optionalModel: '',
       hiddenModel: '',
       disabledModel: '',
+      helperValidationModel: '',
       requiredWithIcons: '',
       multiRowModel: '',
       sizeModel: '',
@@ -189,6 +215,7 @@ export default {
       this.hiddenModel = value;
       this.disabledModel = value;
       this.requiredWithIcons = value;
+      this.helperValidationModel = value;
       this.multiRowModel = value;
       this.sizeModel = value;
     },

@@ -112,6 +112,15 @@
   &__helper-text {
     @include cdr-input-helper-text-mixin;
   }
+
+  &__helper-text-top {
+    margin-top: $cdr-space-eighth-x;
+    margin-bottom: $cdr-space-half-x;
+  }
+
+  &__helper-text-bottom {
+    margin-top: $cdr-space-quarter-x;
+  }
 }
 
 /* ==========================================================================

@@ -284,7 +284,20 @@ describe('CdrInput', () => {
         'helper-text': 'very helpful',
       },
     });
-    expect(wrapper.find('.cdr-input__helper-text').text()).toBe('very helpful');
+    expect(wrapper.find('.cdr-input__helper-text-bottom').text()).toBe('very helpful');
+  });
+
+  it('renders helper-text slot in top position', () => {
+    const wrapper = shallowMount(CdrInput, {
+      propsData: {
+        label: 'test',
+        helperPosition: 'top'
+      },
+      slots: {
+        'helper-text': 'very helpful',
+      },
+    });
+    expect(wrapper.find('.cdr-input__helper-text-top').text()).toBe('very helpful');
   });
 
   it('renders info slot', () => {

@@ -47,6 +47,14 @@ export default {
      * Number of rows for input.  Converts component to text-area if rows greater than 1.
     */
     rows: Number,
+    helperPosition: {
+      type: [String],
+      default: 'bottom',
+      validator: (value) => propValidator(
+        value,
+        ['top', 'bottom'],
+      ),
+    },
     disabled: Boolean,
     required: Boolean,
     optional: Boolean,
@@ -166,14 +174,23 @@ export default {
   render() {
     return (
       <div class={this.style['cdr-input-container']}>
-        {this.labelEl}
-        {this.$slots.info && (
-          <span
-            class={this.style['cdr-input__info-container']}
-          >
-            {this.$slots.info}
-          </span>
-        )}
+        <div class={this.style['cdr-input-wrap']}>
+          {this.labelEl}
+          { this.$slots['helper-text'] && this.helperPosition === 'top' && (
+            <span
+              class={clsx(this.style['cdr-input__helper-text'], this.style['cdr-input__helper-text-top'])}
+            >
+              {this.$slots['helper-text']}
+            </span>
+          )}
+          {this.$slots.info && (
+            <span
+              class={this.style['cdr-input__info-container']}
+            >
+              {this.$slots.info}
+            </span>
+          )}
+        </div>
         <div class={this.inputWrapClass}>
           {this.inputEl}
           {this.$slots['pre-icon'] && (
@@ -191,9 +208,9 @@ export default {
             </span>
           )}
         </div>
-        {this.$slots['helper-text'] && (
+        {this.$slots['helper-text'] && this.helperPosition === 'bottom' && (
           <span
-            class={this.style['cdr-input__helper-text']}
+            class={clsx(this.style['cdr-input__helper-text'], this.style['cdr-input__helper-text-bottom'])}
           >
             {this.$slots['helper-text']}
           </span>
