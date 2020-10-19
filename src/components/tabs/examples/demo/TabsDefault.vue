@@ -43,7 +43,7 @@
         >
           Specs
         </cdr-text>
-        <cdr-data-table
+        <cdr-table
           modifier="compact borderless"
         >
           <template slot="tbody">
@@ -84,7 +84,7 @@
               <td>Unisex</td>
             </tr>
           </template>
-        </cdr-data-table>
+        </cdr-table>
       </cdr-tab-panel>
       <cdr-tab-panel
         name="Reviews"

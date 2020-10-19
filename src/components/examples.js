@@ -6,7 +6,6 @@ import caption from 'componentsdir/caption/examples/Caption';
 import card from 'componentsdir/card/examples/Cards';
 import checkbox from 'componentsdir/checkbox/examples/checkboxes';
 import cta from 'componentsdir/cta/examples/Cta';
-import dataTable from 'componentsdir/dataTable/examples/DataTable';
 import formGroup from 'componentsdir/formGroup/examples/FormGroup';
 import grid from 'componentsdir/grid/examples/Grid';
 import icon from 'componentsdir/icon/examples/Icons';
@@ -36,7 +35,6 @@ export default {
   card,
   checkbox,
   cta,
-  dataTable,
   formGroup,
   grid,
   icon,
