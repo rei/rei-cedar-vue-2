@@ -228,7 +228,7 @@ export default {
       multiRowModel: '',
       sizeModel: '',
       masterModel: '',
-      backgroundColor: 'primary'
+      backgroundColor: 'primary',
     };
   },
   methods: {
@@ -250,15 +250,15 @@ export default {
     setBackground(background) {
       switch (background) {
         case 'primary':
-          this.backgroundColor = CdrColorBackgroundPrimary;
+          this.backgroundColor = 'primary';
           break;
         case 'secondary':
-          this.backgroundColor = CdrColorBackgroundSecondary;
+          this.backgroundColor = 'secondary';
           break;
         default:
-          this.backgroundColor = CdrColorBackgroundPrimary;
+          this.backgroundColor = 'primary';
       }
-    }
+    },
   },
   watch: {
     $route(to) {
