@@ -119,11 +119,17 @@
       class="demo-input"
       v-model="helperValidationModel"
       helper-position="top"
-      placeholder="Helper above with validation"
+      placeholder=""
+      :error="helperValidationError"
+      @blur="validate"
       label="Top helper with validation"
     >
       <template slot="helper-text">
-        This is persistent helper text.
+        Must be 4 or less characters
+      </template>
+
+      <template slot="error" v-if="helperValidationError">
+        ERROR ERROR
       </template>
 
       <template slot="info">
@@ -200,6 +206,7 @@ export default {
       hiddenModel: '',
       disabledModel: '',
       helperValidationModel: '',
+      helperValidationError: false,
       requiredWithIcons: '',
       multiRowModel: '',
       sizeModel: '',
@@ -207,6 +214,9 @@ export default {
     };
   },
   methods: {
+    validate() {
+      this.helperValidationError = this.helperValidationModel.length > 4;
+    },
     onMasterInput(value, e) {
       console.log('On Master Input value = ', value, ' e = ', e); // eslint-disable-line
       this.defaultModel = value;

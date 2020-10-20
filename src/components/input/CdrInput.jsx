@@ -2,6 +2,7 @@ import clsx from 'clsx';
 import size from '../../mixins/size';
 import space from '../../mixins/space';
 import propValidator from '../../utils/propValidator';
+import IconErrorStroke from '../icon/comps/error-stroke';
 import style from './styles/CdrInput.scss';
 /**
  * Cedar 2 component for input
@@ -11,6 +12,9 @@ import style from './styles/CdrInput.scss';
  */
 export default {
   name: 'CdrInput',
+  components: {
+    IconErrorStroke,
+  },
   mixins: [size, space],
   inheritAttrs: false,
   props: {
@@ -47,6 +51,9 @@ export default {
      * Number of rows for input.  Converts component to text-area if rows greater than 1.
     */
     rows: Number,
+    /**
+     * Set whether helper text renders above or below the input element
+    */
     helperPosition: {
       type: [String],
       default: 'bottom',
@@ -54,6 +61,20 @@ export default {
         value,
         ['top', 'bottom'],
       ),
+    },
+    // Set which background type the input renders on
+    background: {
+      type: [String],
+      default: 'primary',
+      validator: (value) => propValidator(
+        value,
+        ['primary', 'secondary'],
+      ),
+    },
+    // Set error styling
+    error: {
+      type: Boolean,
+      default: false,
     },
     disabled: Boolean,
     required: Boolean,
@@ -86,13 +107,16 @@ export default {
         [this.style['cdr-input']]: true,
         [this.style['cdr-input--multiline']]: this.rows > 1,
         [this.style['cdr-input--preicon']]: this.$slots['pre-icon'],
+        [this.style[`cdr-input--${this.background}`]]: true,
+        [this.style['cdr-input--error']]: this.error,
+        [this.style['cdr-input--has-buttons']]: this.$slots['post-buttons'],
       };
     },
-    inputWrapClass() {
-      return {
-        [this.style['cdr-input-wrap']]: true,
-      };
-    },
+    // inputWrapClass() {
+    //   return {
+    //     [this.style['cdr-input-wrap']]: true,
+    //   };
+    // },
     inputListeners() {
       // https://vuejs.org/v2/guide/components-custom-events.html#Binding-Native-Events-to-Components
       // handles conflict between v-model and v-on="$listeners"
@@ -208,11 +232,18 @@ export default {
             </span>
           )}
         </div>
-        {this.$slots['helper-text'] && this.helperPosition === 'bottom' && (
+        {this.$slots['helper-text'] && this.helperPosition === 'bottom' && !this.error && (
           <span
             class={clsx(this.style['cdr-input__helper-text'], this.style['cdr-input__helper-text-bottom'])}
           >
             {this.$slots['helper-text']}
+          </span>
+        )}
+        {this.$slots['error'] && this.error && (
+          <span
+            class={clsx(this.style['cdr-input__error-message'])}
+          >
+            <icon-error-stroke inherit-color/> {this.$slots['error']}
           </span>
         )}
       </div>
