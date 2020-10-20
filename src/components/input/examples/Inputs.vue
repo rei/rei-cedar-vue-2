@@ -11,6 +11,7 @@
         class="demo-input"
         v-model="defaultModel"
         label="Default"
+        :background="backgroundColor"
       />
 
       <cdr-input
@@ -18,6 +19,7 @@
         v-model="requiredModel"
         label="Required"
         required
+        :background="backgroundColor"
       />
 
       <cdr-input
@@ -25,6 +27,7 @@
         v-model="optionalModel"
         label="Optional"
         optional
+        :background="backgroundColor"
       />
     </div>
 
@@ -34,6 +37,7 @@
       label="This has no label"
       hide-label
       placeholder="hidden-label"
+      :background="backgroundColor"
     />
 
     <cdr-input
@@ -43,6 +47,7 @@
       placeholder="I am disabled"
       data-backstop="input-disabled"
       disabled
+      :background="backgroundColor"
     />
 
     <cdr-input
@@ -51,6 +56,7 @@
       label="Large Input"
       placeholder="Large Input"
       size="large"
+      :background="backgroundColor"
     />
     <cdr-input
       class="demo-input"
@@ -58,6 +64,7 @@
       label="Large@xs Input"
       placeholder="Large@xs Input"
       size="large@xs"
+      :background="backgroundColor"
     />
     <cdr-input
       class="demo-input"
@@ -65,6 +72,7 @@
       label="Large@sm Input"
       placeholder="Large@sm Input"
       size="large@sm"
+      :background="backgroundColor"
     />
     <cdr-input
       class="demo-input"
@@ -72,6 +80,7 @@
       label="Large@md Input"
       placeholder="Large@md Input"
       size="large@md"
+      :background="backgroundColor"
     />
     <cdr-input
       class="demo-input"
@@ -79,6 +88,7 @@
       label="Large@lg Input"
       placeholder="Large@lg Input"
       size="large@lg"
+      :background="backgroundColor"
     />
 
     <cdr-input
@@ -89,6 +99,7 @@
       label="Input Label"
       required
       type="email"
+      :background="backgroundColor"
     >
       <template slot="info">
         <cdr-link
@@ -123,6 +134,7 @@
       :error="helperValidationError"
       @blur="validate"
       label="Top helper with validation"
+      :background="backgroundColor"
     >
       <template slot="helper-text">
         Must be 4 or less characters
@@ -151,6 +163,7 @@
       :rows="10"
       placeholder="Multi Line Input/TextArea"
       label="Multi Line Input/TextArea"
+      :background="backgroundColor"
     />
     <cdr-input
       class="demo-input "
@@ -158,6 +171,7 @@
       @input="onMasterInput"
       placeholder="What would you like to set all input values to?"
       label="Master input that overwrites all other inputs on this page"
+      :background="backgroundColor"
     />
 
     <div class="demo-input">
@@ -214,6 +228,7 @@ export default {
       multiRowModel: '',
       sizeModel: '',
       masterModel: '',
+      backgroundColor: 'primary'
     };
   },
   methods: {
@@ -232,6 +247,26 @@ export default {
       this.multiRowModel = value;
       this.sizeModel = value;
     },
+    setBackground(background) {
+      switch (background) {
+        case 'primary':
+          this.backgroundColor = CdrColorBackgroundPrimary;
+          break;
+        case 'secondary':
+          this.backgroundColor = CdrColorBackgroundSecondary;
+          break;
+        default:
+          this.backgroundColor = CdrColorBackgroundPrimary;
+      }
+    }
+  },
+  watch: {
+    $route(to) {
+      this.setBackground(to.query.background);
+    },
+  },
+  mounted() {
+    this.setBackground(this.$router.currentRoute.query.background);
   },
 };
 </script>
