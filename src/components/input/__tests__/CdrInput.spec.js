@@ -336,6 +336,48 @@ describe('CdrInput', () => {
     expect(wrapper.find('.cdr-input__post-icon').text()).toBe('😎');
   });
 
+  it('renders error slot when error state is active', () => {
+    const wrapper = shallowMount(CdrInput, {
+      propsData: {
+        label: 'test',
+        error: true
+      },
+      slots: {
+        'error': 'whoops',
+      },
+    });
+    expect(wrapper.find('.cdr-input__error-message').text()).toBe('whoops');
+  });
+
+  it('does not render error slot when error state is inactive', () => {
+    const wrapper = shallowMount(CdrInput, {
+      propsData: {
+        label: 'test',
+        error: false
+      },
+      slots: {
+        'error': 'whoops',
+      },
+    });
+    expect(wrapper.find('.cdr-input__error-message').exists()).toBe(false);
+  });
+
+  it('renders error slot instead of bottom helper slot when error is active', () => {
+    const wrapper = shallowMount(CdrInput, {
+      propsData: {
+        label: 'test',
+        error: true,
+        helperPosition: 'bottom'
+      },
+      slots: {
+        'error': 'whoops',
+        'helper-text': 'not me'
+      },
+    });
+    expect(wrapper.find('.cdr-input__error-message').text()).toBe('whoops');
+    expect(wrapper.find('.cdr-input__helper-text-bottom').exists()).toBe(false);
+  });
+
   // NOTE - can't use v-model directly here, targeting the `data` prop instead
   it('updating v-model data updates the input', async () => {
     const wrapper = shallowMount(CdrInput, {

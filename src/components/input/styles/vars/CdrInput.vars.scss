@@ -79,7 +79,7 @@
   line-height: 1.8rem;
   letter-spacing: -0.016rem;
   color: $cdr-color-text-input-help;
-  display: block;
+  display: inline-block;
 }
 
 @mixin cdr-input-info-container-mixin() {
@@ -87,7 +87,7 @@
 
   position: absolute;
   right: 0;
-  bottom: 0;
+  bottom: $cdr-space-quarter-x;
 }
 
 @mixin cdr-input-required-label-mixin() {

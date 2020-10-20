@@ -128,7 +128,10 @@
         Must be 4 or less characters
       </template>
 
-      <template slot="error" v-if="helperValidationError">
+      <template
+        slot="error"
+        v-if="helperValidationError"
+      >
         ERROR ERROR
       </template>
 

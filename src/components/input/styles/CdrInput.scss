@@ -33,7 +33,13 @@
     // TODO: use icon token here?
     padding-left: calc(#{$cdr-space-half-x} + #{$cdr-space-quarter-x} + 25px);
   }
-
+  &--primary {
+    &:active,
+    &:focus {
+      // TODO: token?
+      background-color: $cdr-color-background-primary;
+    }
+  }
   &--secondary {
     &:active,
     &:focus {
@@ -138,8 +144,7 @@
   }
 
   &__helper-text-top {
-    margin-top: $cdr-space-eighth-x;
-    margin-bottom: $cdr-space-half-x;
+    margin-bottom: $cdr-space-quarter-x;
   }
 
   &__helper-text-bottom {

@@ -109,14 +109,8 @@ export default {
         [this.style['cdr-input--preicon']]: this.$slots['pre-icon'],
         [this.style[`cdr-input--${this.background}`]]: true,
         [this.style['cdr-input--error']]: this.error,
-        [this.style['cdr-input--has-buttons']]: this.$slots['post-buttons'],
       };
     },
-    // inputWrapClass() {
-    //   return {
-    //     [this.style['cdr-input-wrap']]: true,
-    //   };
-    // },
     inputListeners() {
       // https://vuejs.org/v2/guide/components-custom-events.html#Binding-Native-Events-to-Components
       // handles conflict between v-model and v-on="$listeners"
@@ -199,10 +193,12 @@ export default {
     return (
       <div class={this.style['cdr-input-container']}>
         <div class={this.style['cdr-input-wrap']}>
-          {this.labelEl}
+          {this.labelEl}<br/>
           { this.$slots['helper-text'] && this.helperPosition === 'top' && (
             <span
-              class={clsx(this.style['cdr-input__helper-text'], this.style['cdr-input__helper-text-top'])}
+              class={
+                clsx(this.style['cdr-input__helper-text'],
+                  this.style['cdr-input__helper-text-top'])}
             >
               {this.$slots['helper-text']}
             </span>
@@ -215,7 +211,7 @@ export default {
             </span>
           )}
         </div>
-        <div class={this.inputWrapClass}>
+        <div class={this.style['cdr-input-wrap']}>
           {this.inputEl}
           {this.$slots['pre-icon'] && (
             <span
@@ -234,16 +230,18 @@ export default {
         </div>
         {this.$slots['helper-text'] && this.helperPosition === 'bottom' && !this.error && (
           <span
-            class={clsx(this.style['cdr-input__helper-text'], this.style['cdr-input__helper-text-bottom'])}
+            class={
+              clsx(this.style['cdr-input__helper-text'],
+                this.style['cdr-input__helper-text-bottom'])}
           >
             {this.$slots['helper-text']}
           </span>
         )}
-        {this.$slots['error'] && this.error && (
+        {this.$slots.error && this.error && (
           <span
             class={clsx(this.style['cdr-input__error-message'])}
           >
-            <icon-error-stroke inherit-color/> {this.$slots['error']}
+            <icon-error-stroke inherit-color/> {this.$slots.error}
           </span>
         )}
       </div>

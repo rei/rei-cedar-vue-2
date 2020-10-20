@@ -79,7 +79,7 @@
       :auto-position="autoPos"
       :label="title"
       :class="containerClass"
-      contentClass="popover-override"
+      content-class="popover-override"
       id="popover-test"
       @opened="popupHandler"
       @closed="popupHandler"
