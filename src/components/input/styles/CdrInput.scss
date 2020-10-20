@@ -134,7 +134,7 @@
   }
 
   &__optional-label {
-    @include cdr-input-required-label-mixin;
+    @include cdr-input-optional-label-mixin;
   }
 
   &__info-container {
