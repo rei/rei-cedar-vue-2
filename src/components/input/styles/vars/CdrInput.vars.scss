@@ -78,20 +78,24 @@
   font-size: 1.4rem;
   line-height: 1.8rem;
   letter-spacing: -0.016rem;
-
   color: $cdr-color-text-input-help;
-  display: block;
-  margin-top: $cdr-space-quarter-x;
+  display: inline-block;
 }
 
 @mixin cdr-input-info-container-mixin() {
   @include cdr-text-utility-sans-200;
 
-  float: right;
+  position: absolute;
+  right: 0;
+  bottom: $cdr-space-quarter-x;
 }
 
 @mixin cdr-input-required-label-mixin() {
-  color: $cdr-color-text-input-required;
   margin-left: $cdr-space-inset-quarter-x;
-  font-weight: 400;
+}
+
+@mixin cdr-input-optional-label-mixin() {
+  // TODO: add -optional token? update $cdr-color-text-input-required
+  color: $cdr-color-text-input-secondary;
+  margin-left: $cdr-space-inset-quarter-x;
 }

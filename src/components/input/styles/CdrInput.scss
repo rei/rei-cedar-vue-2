@@ -33,6 +33,36 @@
     // TODO: use icon token here?
     padding-left: calc(#{$cdr-space-half-x} + #{$cdr-space-quarter-x} + 25px);
   }
+  &--primary {
+    &:active,
+    &:focus {
+      // TODO: token?
+      background-color: $cdr-color-background-primary;
+    }
+  }
+  &--secondary {
+    &:active,
+    &:focus {
+      // TODO: token?
+      background-color: $cdr-color-background-secondary;
+    }
+  }
+
+  &--has-buttons {
+    box-shadow: none;
+  }
+
+  &--error {
+    // TODO: token?
+    background-color: $cdr-color-background-error;
+    box-shadow: inset 0 0 0 1px $cdr-color-border-error;
+  }
+
+  &__error-message {
+    color: $cdr-color-text-error;
+    fill: $cdr-color-text-error;
+  }
+
 
   /* Size variants
     ========================================================================== */
@@ -101,12 +131,24 @@
     @include cdr-input-required-label-mixin;
   }
 
+  &__optional-label {
+    @include cdr-input-required-label-mixin;
+  }
+
   &__info-container {
     @include cdr-input-info-container-mixin;
   }
 
   &__helper-text {
     @include cdr-input-helper-text-mixin;
+  }
+
+  &__helper-text-top {
+    margin-bottom: $cdr-space-quarter-x;
+  }
+
+  &__helper-text-bottom {
+    margin-top: $cdr-space-quarter-x;
   }
 }
 

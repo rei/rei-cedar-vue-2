@@ -61,7 +61,7 @@
       :position="position"
       :auto-position="autoPos"
       :class="containerClass"
-      contentClass="tooltip-override"
+      content-class="tooltip-override"
       id="tooltip-test"
       @opened="tooltipHandler"
       @closed="tooltipHandler"

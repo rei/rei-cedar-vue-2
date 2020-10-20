@@ -94,6 +94,18 @@ describe('CdrInput', () => {
     expect(wrapper.vm.$refs.input.hasAttribute('required')).toBe(true);
   });
 
+  it('does not render both required and optional labels simultaneously', () => {
+    const wrapper = shallowMount(CdrInput, {
+      propsData: {
+        label: 'test',
+        required: true,
+        optional: true,
+      },
+    });
+    expect(wrapper.vm.$refs.input.hasAttribute('required')).toBe(true);
+    expect(wrapper.vm.$refs.label.textContent).toBe('test*');
+  });
+
   it('sets input autofocus attribute correctly', () => {
     const wrapper = shallowMount(CdrInput, {
       propsData: {
@@ -272,7 +284,20 @@ describe('CdrInput', () => {
         'helper-text': 'very helpful',
       },
     });
-    expect(wrapper.find('.cdr-input__helper-text').text()).toBe('very helpful');
+    expect(wrapper.find('.cdr-input__helper-text-bottom').text()).toBe('very helpful');
+  });
+
+  it('renders helper-text slot in top position', () => {
+    const wrapper = shallowMount(CdrInput, {
+      propsData: {
+        label: 'test',
+        helperPosition: 'top'
+      },
+      slots: {
+        'helper-text': 'very helpful',
+      },
+    });
+    expect(wrapper.find('.cdr-input__helper-text-top').text()).toBe('very helpful');
   });
 
   it('renders info slot', () => {
@@ -309,6 +334,48 @@ describe('CdrInput', () => {
       },
     });
     expect(wrapper.find('.cdr-input__post-icon').text()).toBe('😎');
+  });
+
+  it('renders error slot when error state is active', () => {
+    const wrapper = shallowMount(CdrInput, {
+      propsData: {
+        label: 'test',
+        error: true
+      },
+      slots: {
+        'error': 'whoops',
+      },
+    });
+    expect(wrapper.find('.cdr-input__error-message').text()).toBe('whoops');
+  });
+
+  it('does not render error slot when error state is inactive', () => {
+    const wrapper = shallowMount(CdrInput, {
+      propsData: {
+        label: 'test',
+        error: false
+      },
+      slots: {
+        'error': 'whoops',
+      },
+    });
+    expect(wrapper.find('.cdr-input__error-message').exists()).toBe(false);
+  });
+
+  it('renders error slot instead of bottom helper slot when error is active', () => {
+    const wrapper = shallowMount(CdrInput, {
+      propsData: {
+        label: 'test',
+        error: true,
+        helperPosition: 'bottom'
+      },
+      slots: {
+        'error': 'whoops',
+        'helper-text': 'not me'
+      },
+    });
+    expect(wrapper.find('.cdr-input__error-message').text()).toBe('whoops');
+    expect(wrapper.find('.cdr-input__helper-text-bottom').exists()).toBe(false);
   });
 
   // NOTE - can't use v-model directly here, targeting the `data` prop instead
