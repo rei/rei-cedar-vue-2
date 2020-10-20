@@ -16,11 +16,11 @@ $cdr-color-text-tooltip-default: #f9f8f6;
   }
 
   .cdr-popup__content {
+    @include cdr-text-utility-sans-strong-100;
     background: $cdr-color-background-tooltip-default;
     color: $cdr-color-text-tooltip-default;
     border: 1px solid $cdr-color-border-tooltip-default;
     border-radius: $cdr-radius-softer;
-    @include cdr-text-utility-strong-100;
     padding: $cdr-space-inset-three-quarter-x-squish;
   }
 
