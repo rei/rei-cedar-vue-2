@@ -96,7 +96,7 @@
       v-model="requiredWithIcons"
       id="required-with-icon"
       placeholder="Required with Icon"
-      label="Input Label"
+      label="Required with Icon"
       required
       type="email"
       :background="backgroundColor"
@@ -116,27 +116,76 @@
         />
       </template>
       <template slot="post-icon">
-        <cdr-icon
-          use="#check-lg"
-          inherit-color
-        />
+        <cdr-button
+          :icon-only="true"
+          class="cdr-input__button"
+        >
+          <cdr-icon
+            use="#check-lg"
+            inherit-color
+          />
+        </cdr-button>
       </template>
       <template slot="helper-text">
         This is helper text. Input length: {{ requiredWithIcons.length }}
       </template>
     </cdr-input>
 
+    <form>
+      <cdr-input
+        class="demo-input"
+        v-model="formWithButtons"
+        id="form-example"
+        placeholder="For testing icon/button placement with autofill"
+        label="Form with Two Buttons"
+        required
+        type="email"
+        autocomplete="username"
+        :background="backgroundColor"
+      >
+        <template slot="pre-icon">
+          <cdr-icon
+            use="#twitter"
+            inherit-color
+          />
+        </template>
+        <template slot="post-icon">
+          <cdr-tooltip class="cdr-input__button">
+            <cdr-button
+              :icon-only="true"
+              slot="trigger"
+            >
+              <cdr-icon
+                use="#map"
+                inherit-color
+              />
+            </cdr-button>
+
+            hey where am i?
+          </cdr-tooltip>
+          <cdr-button
+            :icon-only="true"
+            class="cdr-input__button"
+          >
+            <cdr-icon
+              use="#x-lg"
+              inherit-color
+            />
+          </cdr-button>
+        </template>
+      </cdr-input>
+    </form>
+
     <cdr-input
       class="demo-input"
       v-model="helperValidationModel"
-      helper-position="top"
       placeholder=""
       :error="helperValidationError"
       @blur="validate"
       label="Top helper with validation"
       :background="backgroundColor"
     >
-      <template slot="helper-text">
+      <template slot="helper-text-top">
         Must be 4 or less characters
       </template>
 
@@ -193,6 +242,9 @@
       With Icons Input Value = {{ requiredWithIcons }}
     </div>
     <div class="demo-input">
+      Form With Buttons Value = {{ formWithButtons }}
+    </div>
+    <div class="demo-input">
       Helper/Validation Input Value = {{ helperValidationModel }}
     </div>
     <div class="demo-input">
@@ -227,9 +279,18 @@ export default {
       requiredWithIcons: '',
       multiRowModel: '',
       sizeModel: '',
+      formWithButtons: '',
       masterModel: '',
       backgroundColor: 'primary',
     };
+  },
+  watch: {
+    $route(to) {
+      this.setBackground(to.query.background);
+    },
+  },
+  mounted() {
+    this.setBackground(this.$router.currentRoute.query.background);
   },
   methods: {
     validate() {
@@ -242,6 +303,7 @@ export default {
       this.optionalModel = value;
       this.hiddenModel = value;
       this.disabledModel = value;
+      this.formWithButtons = value;
       this.requiredWithIcons = value;
       this.helperValidationModel = value;
       this.multiRowModel = value;
@@ -259,14 +321,6 @@ export default {
           this.backgroundColor = 'primary';
       }
     },
-  },
-  watch: {
-    $route(to) {
-      this.setBackground(to.query.background);
-    },
-  },
-  mounted() {
-    this.setBackground(this.$router.currentRoute.query.background);
   },
 };
 </script>

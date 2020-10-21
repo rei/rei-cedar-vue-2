@@ -164,7 +164,8 @@
   //   // top: 50%;
   //   // right: 0;//$cdr-space-half-x;
   //   // transform: translateY(-50%);
-  // nothing?
+  // necessary????
+    display: block;
   }
 
   &__required-label {

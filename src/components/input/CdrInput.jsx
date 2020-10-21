@@ -89,7 +89,7 @@ export default {
     containerClass() {
       return {
         [this.style['cdr-input--focused']]: this.isFocused,
-      }
+      };
     },
     labelClass() {
       return {
