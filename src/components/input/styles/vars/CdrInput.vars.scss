@@ -54,8 +54,6 @@
   color: $cdr-color-text-input-label;
   display: inline-block;
   margin: 0;
-  margin-bottom: $cdr-space-quarter-x;
-  margin-right: $cdr-space-inset-quarter-x;
 }
 
 @mixin cdr-input-large-mixin() {
@@ -80,10 +78,8 @@
 
 @mixin cdr-input-info-container-mixin() {
   @include cdr-text-utility-sans-200;
-
   position: absolute;
   right: 0;
-  bottom: $cdr-space-quarter-x;
 }
 
 @mixin cdr-input-required-label-mixin() {

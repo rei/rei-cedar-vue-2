@@ -150,7 +150,7 @@
           />
         </template>
         <template slot="post-icon">
-          <cdr-tooltip class="cdr-input__button">
+          <cdr-tooltip class="cdr-input__button" id="input-tooltip">
             <cdr-button
               :icon-only="true"
               slot="trigger"

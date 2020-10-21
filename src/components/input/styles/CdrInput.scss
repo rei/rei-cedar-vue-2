@@ -185,7 +185,7 @@
   }
 
   &__helper-text-top {
-    margin-bottom: $cdr-space-quarter-x;
+    margin-top: $cdr-space-eighth-x;
   }
 
   &__helper-text-bottom {
@@ -209,14 +209,14 @@
 
 .cdr-input-wrap {
   position: relative;
-  border: 1px solid $cdr-color-border-input-default;
+  box-shadow: inset 0 0 0 1px $cdr-color-border-input-default;
   border-radius: $cdr-radius-softer;
   fill: $cdr-color-icon-default;
   display: flex;
+  margin-top: $cdr-space-half-x;
 }
 
 .cdr-input--focused .cdr-input-wrap {
-  border: 1px solid $cdr-color-border-input-default-active;
   // TODO: rename hover to active?
   background-color: $cdr-color-background-input-default-hover;
   box-shadow: inset 0 0 0 3px $cdr-color-border-input-default-active;
