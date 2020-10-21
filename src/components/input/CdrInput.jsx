@@ -86,6 +86,7 @@ export default {
   data() {
     return {
       style,
+      isFocused: false,
     };
   },
   computed: {
@@ -95,6 +96,12 @@ export default {
     },
     baseClass() {
       return 'cdr-input';
+    },
+    containerClass() {
+      return {
+        [this.style['cdr-input-container']]: true,
+        [this.style['cdr-input--focused']]: this.isFocused,
+      }
     },
     labelClass() {
       return {
@@ -119,6 +126,14 @@ export default {
         ...this.$listeners,
         input(event) {
           vm.$emit('input', event.target.value);
+        },
+        focus(event) {
+          vm.isFocused = true;
+          vm.$emit('focus', event);
+        },
+        blur(event) {
+          vm.isFocused = false;
+          vm.$emit('blur', event);
         },
       };
     },
@@ -191,8 +206,8 @@ export default {
   },
   render() {
     return (
-      <div class={this.style['cdr-input-container']}>
-        <div class={this.style['cdr-input-wrap']}>
+      <div class={this.containerClass}>
+        <div class={this.style['cdr-input-label-wrap']}>
           {this.labelEl}<br/>
           { this.$slots['helper-text'] && this.helperPosition === 'top' && (
             <span
@@ -212,14 +227,16 @@ export default {
           )}
         </div>
         <div class={this.style['cdr-input-wrap']}>
-          {this.inputEl}
-          {this.$slots['pre-icon'] && (
-            <span
-              class={this.style['cdr-input__pre-icon']}
-            >
-              {this.$slots['pre-icon']}
-            </span>
-          )}
+          <div class={this.style['cdr-input-inner-wrap']}>
+            {this.inputEl}
+            {this.$slots['pre-icon'] && (
+              <span
+                class={this.style['cdr-input__pre-icon']}
+              >
+                {this.$slots['pre-icon']}
+              </span>
+            )}
+          </div>
           {this.$slots['post-icon'] && (
             <span
               class={this.style['cdr-input__post-icon']}

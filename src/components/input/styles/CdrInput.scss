@@ -13,6 +13,47 @@
   }
 }
 
+:global(.cdr-input__button) {
+  fill: inherit;
+  & ~ & {
+    position: relative;
+    margin-left: -4px; // TODO: why is ther ea space there?
+    &::before {
+      content: '';
+      background-color: $cdr-color-border-input-default;
+      position: absolute;
+      left: -1px;
+      width: 1px;
+      height: 55%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  &:hover,
+  &:active,
+  &:focus,
+  &:focus-within {
+    background-color: $cdr-color-background-input-default-selected;
+    box-shadow: inset 0 0 0 3px $cdr-color-border-input-default-active;
+    outline: none;
+    fill: $cdr-color-text-primary;
+    svg {
+      box-shadow: none;
+      fill: $cdr-color-text-primary !important;
+    }
+
+    &::before {
+      width: 0px;
+    }
+  }
+
+  &:last-child {
+    border-top-right-radius: $cdr-radius-softer;
+    border-bottom-right-radius: $cdr-radius-softer;
+  }
+}
+
 /* ==========================================================================
   # INPUT
   ========================================================================== */
@@ -50,16 +91,13 @@
     }
   }
 
-  &--has-buttons {
-    box-shadow: none;
-  }
-
   &--error {
     background-color: $cdr-color-background-input-error;
     box-shadow: inset 0 0 0 1px $cdr-color-border-input-error;
   }
 
   &__error-message {
+    margin-top: $cdr-space-quarter-x;
     // TODO: use token once fixed
     color: #B33322;//$cdr-color-text-input-error;
     fill: #B33322;//$cdr-color-text-input-error;
@@ -118,15 +156,15 @@
     top: 50%;
     left: $cdr-space-half-x;
     transform: translateY(-50%);
-    fill: $cdr-color-icon-default;
   }
 
   &__post-icon {
-    fill: $cdr-color-icon-default;
-    position: absolute;
-    top: 50%;
-    right: $cdr-space-half-x;
-    transform: translateY(-50%);
+  //   // CENTER ALIGN ME
+  //   // position: absolute;
+  //   // top: 50%;
+  //   // right: 0;//$cdr-space-half-x;
+  //   // transform: translateY(-50%);
+  // nothing?
   }
 
   &__required-label {
@@ -158,7 +196,31 @@
    # INPUT WRAPPER
    ========================================================================== */
 
-/* related to positioning/layout? */
+.cdr-input-label-wrap {
+  position: relative;
+}
+
+// real cedar input wrapper
+.cdr-input-inner-wrap {
+  position: relative;
+  flex-grow: 1
+}
+
 .cdr-input-wrap {
   position: relative;
+  border: 1px solid $cdr-color-border-input-default;
+  border-radius: $cdr-radius-softer;
+  fill: $cdr-color-icon-default;
+  display: flex;
+}
+
+.cdr-input--focused .cdr-input-wrap {
+  border: 1px solid $cdr-color-border-input-default-active;
+  // TODO: rename hover to active?
+  background-color: $cdr-color-background-input-default-hover;
+  box-shadow: inset 0 0 0 3px $cdr-color-border-input-default-active;
+  svg {
+    // TODO: token?
+    fill: $cdr-color-text-primary;
+  }
 }

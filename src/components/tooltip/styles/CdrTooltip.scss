@@ -10,6 +10,7 @@ $cdr-color-text-tooltip-default: #f9f8f6;
   position: relative;
   width: max-content;
   height: max-content;
+  display: inline-block;
 
   .cdr-popup--closed {
     @include cdr-display-sr-only;

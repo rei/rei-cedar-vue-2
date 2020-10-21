@@ -1,9 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CdrInput renders a label element 1`] = `
-<div>
+<div
+  class=""
+>
   <div
-    class="cdr-input-wrap"
+    class="cdr-input-label-wrap"
   >
     <label
       class="cdr-input__label"
@@ -16,19 +18,25 @@ exports[`CdrInput renders a label element 1`] = `
   <div
     class="cdr-input-wrap"
   >
-    <input
-      class="cdr-input cdr-input--primary"
-      id="1"
-      type="text"
-    />
+    <div
+      class="cdr-input-inner-wrap"
+    >
+      <input
+        class="cdr-input cdr-input--primary"
+        id="1"
+        type="text"
+      />
+    </div>
   </div>
 </div>
 `;
 
 exports[`CdrInput renders required label correctly 1`] = `
-<div>
+<div
+  class=""
+>
   <div
-    class="cdr-input-wrap"
+    class="cdr-input-label-wrap"
   >
     <label
       class="cdr-input__label"
@@ -47,12 +55,16 @@ exports[`CdrInput renders required label correctly 1`] = `
   <div
     class="cdr-input-wrap"
   >
-    <input
-      class="cdr-input cdr-input--primary"
-      id="3"
-      required="required"
-      type="text"
-    />
+    <div
+      class="cdr-input-inner-wrap"
+    >
+      <input
+        class="cdr-input cdr-input--primary"
+        id="3"
+        required="required"
+        type="text"
+      />
+    </div>
   </div>
 </div>
 `;

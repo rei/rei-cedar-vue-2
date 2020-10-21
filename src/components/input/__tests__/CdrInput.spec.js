@@ -243,6 +243,25 @@ describe('CdrInput', () => {
     expect(spy.calledOnce).toBeTruthy();
   });
 
+  it('adds focused class to wrapper on input focus', async () => {
+    const spy = sinon.spy();
+    const wrapper = shallowMount(CdrInput, {
+      propsData: {
+        label: 'test',
+      },
+      listeners: {
+        'focus': spy
+      }
+    });
+    const input = wrapper.findComponent({ ref: 'input' });
+    input.trigger('focus')
+    await wrapper.vm.$nextTick();
+    expect(wrapper.classes('cdr-input--focused')).toBeTruthy();
+    input.trigger('blur')
+    await wrapper.vm.$nextTick();
+    expect(wrapper.classes('cdr-input--focused')).toBeFalsy();
+  });
+
   it('emits a paste event', () => {
     const spy = sinon.spy();
     const wrapper = shallowMount(CdrInput, {
