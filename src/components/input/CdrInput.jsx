@@ -102,6 +102,11 @@ export default {
         [this.style['cdr-input']]: true,
         [this.style['cdr-input--multiline']]: this.rows > 1,
         [this.style['cdr-input--preicon']]: this.$slots['pre-icon'],
+      };
+    },
+    wrapperClass() {
+      return {
+        [this.style['cdr-input-wrap']]: true,
         [this.style[`cdr-input--${this.background}`]]: true,
         [this.style['cdr-input--error']]: this.error,
       };
@@ -215,7 +220,7 @@ export default {
             </span>
           )}
         </div>
-        <div class={this.style['cdr-input-wrap']}>
+        <div class={this.wrapperClass}>
           <div class={this.style['cdr-input-inner-wrap']}>
             {this.inputEl}
             {this.$slots['pre-icon'] && (

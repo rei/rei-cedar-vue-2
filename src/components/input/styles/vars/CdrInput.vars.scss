@@ -64,20 +64,11 @@
   margin-top: $cdr-space-half-x;
 }
 
-@mixin cdr-input-focus-mixin() {
-  background-color: $cdr-color-background-input-default-hover; // $cdr-color-background-input-default-active TODO:
-  box-shadow: inset 0 0 0 3px $cdr-color-border-input-default-active;
-  svg {
-    // TODO: token?
-    fill: $cdr-color-text-primary;
-  }
-}
-
 @mixin cdr-input-primary-mixin() {
   background-color: $cdr-color-background-input-default;
   &:active,
   &:focus {
-    background-color: $cdr-color-background-input-default;
+    background-color: $cdr-color-background-input-default-active;
   }
 }
 
@@ -85,7 +76,15 @@
   background-color: $cdr-color-background-input-secondary;
   &:active,
   &:focus {
-    background-color: $cdr-color-background-input-secondary-selected;
+    background-color: $cdr-color-background-input-secondary-active;
+  }
+}
+
+@mixin cdr-input-focus-mixin() {
+  box-shadow: inset 0 0 0 3px $cdr-color-border-input-default-active;
+  svg {
+    // TODO: token?
+    fill: $cdr-color-text-primary;
   }
 }
 
