@@ -330,6 +330,31 @@ describe('CdrInput', () => {
     expect(wrapper.find('.cdr-input__helper-text-top').text()).toBe('very helpful');
   });
 
+  it('renders break between label and helper-text-top if both are present', () => {
+    const wrapper = shallowMount(CdrInput, {
+      propsData: {
+        label: 'test',
+      },
+      slots: {
+        'helper-text-top': 'very helpful',
+      },
+    });
+    expect(wrapper.find('br').exists()).toBe(true);
+  });
+
+  it('does not render break between label and helper-text-top if label is hidden', () => {
+    const wrapper = shallowMount(CdrInput, {
+      propsData: {
+        label: 'test',
+        hideLabel: true
+      },
+      slots: {
+        'helper-text-top': 'very helpful',
+      },
+    });
+    expect(wrapper.find('br').exists()).toBe(false);
+  });
+
   it('renders info slot', () => {
     const wrapper = shallowMount(CdrInput, {
       propsData: {

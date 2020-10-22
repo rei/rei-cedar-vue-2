@@ -196,7 +196,8 @@ export default {
     return (
       <div class={this.containerClass}>
         <div class={this.style['cdr-input-label-wrap']}>
-          {this.labelEl}<br/>
+          {this.labelEl}
+          {this.labelEl && this.$slots['helper-text-top'] && (<br/>)}
           { this.$slots['helper-text-top'] && (
             <span
               class={
