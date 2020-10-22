@@ -116,15 +116,10 @@
         />
       </template>
       <template slot="post-icon">
-        <cdr-button
-          :icon-only="true"
-          class="cdr-input__button"
-        >
-          <cdr-icon
-            use="#check-lg"
-            inherit-color
-          />
-        </cdr-button>
+        <cdr-icon
+          use="#check-lg"
+          inherit-color
+        />
       </template>
       <template slot="helper-text">
         This is helper text. Input length: {{ requiredWithIcons.length }}
@@ -154,6 +149,7 @@
             <cdr-button
               :icon-only="true"
               slot="trigger"
+              aria-label="navigate"
             >
               <cdr-icon
                 use="#map"
@@ -166,6 +162,7 @@
           <cdr-button
             :icon-only="true"
             class="cdr-input__button"
+            aria-label="close"
           >
             <cdr-icon
               use="#x-lg"

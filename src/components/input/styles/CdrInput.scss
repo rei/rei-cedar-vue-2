@@ -49,6 +49,7 @@
   }
 
   &:last-child {
+    margin-right: -$cdr-space-half-x;
     border-top-right-radius: $cdr-radius-softer;
     border-bottom-right-radius: $cdr-radius-softer;
   }
@@ -143,6 +144,10 @@
 
   &__post-icon {
     display: block;
+    position: absolute;
+    top: 50%;
+    right: $cdr-space-half-x;
+    transform: translateY(-50%);
   }
 
   &__required-label {
