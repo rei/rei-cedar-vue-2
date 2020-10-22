@@ -1,4 +1,13 @@
+// base mixin used for component variables only
 @mixin cdr-input-base-mixin() {
+  @include cdr-input-core-mixin;
+  @include cdr-input-outline-mixin;
+  &:focus {
+    @include cdr-input-focus-mixin;
+  }
+}
+
+@mixin cdr-input-core-mixin() {
   @include cdr-text-utility-sans-300;
   background-color: $cdr-color-background-input-default;
   color: $cdr-color-text-input-default;
@@ -48,6 +57,49 @@
   }
 }
 
+@mixin cdr-input-outline-mixin() {
+  box-shadow: inset 0 0 0 1px $cdr-color-border-input-default;
+  border-radius: $cdr-radius-softer;
+  fill: $cdr-color-icon-default;
+  margin-top: $cdr-space-half-x;
+}
+
+@mixin cdr-input-focus-mixin() {
+  background-color: $cdr-color-background-input-default-hover; // $cdr-color-background-input-default-active TODO:
+  box-shadow: inset 0 0 0 3px $cdr-color-border-input-default-active;
+  svg {
+    // TODO: token?
+    fill: $cdr-color-text-primary;
+  }
+}
+
+@mixin cdr-input-primary-mixin() {
+  background-color: $cdr-color-background-input-default;
+  &:active,
+  &:focus {
+    background-color: $cdr-color-background-input-default;
+  }
+}
+
+@mixin cdr-input-secondary-mixin() {
+  background-color: $cdr-color-background-input-secondary;
+  &:active,
+  &:focus {
+    background-color: $cdr-color-background-input-secondary-selected;
+  }
+}
+
+@mixin cdr-input-error-mixin() {
+  background-color: $cdr-color-background-input-error;
+  box-shadow: inset 0 0 0 1px $cdr-color-border-input-error;
+}
+
+@mixin cdr-input-error-message-mixin() {
+  // TODO: use token once fixed
+  color: #B33322;//$cdr-color-text-input-error;
+  fill: #B33322;//$cdr-color-text-input-error;
+}
+
 @mixin cdr-input-base-label-mixin() {
   @include cdr-text-utility-sans-200;
   font-weight: 600;
@@ -67,26 +119,21 @@
 }
 
 @mixin cdr-input-helper-text-mixin() {
-  // TODO: possible custom font token
   font-family: $cdr-font-family-sans;
   font-size: 1.4rem;
   line-height: 1.8rem;
   letter-spacing: -0.016rem;
   color: $cdr-color-text-input-help;
-  display: inline-block;
 }
 
 @mixin cdr-input-info-container-mixin() {
   @include cdr-text-utility-sans-200;
-  position: absolute;
-  right: 0;
 }
 
 @mixin cdr-input-required-label-mixin() {
-  margin-left: $cdr-space-inset-quarter-x;
+  color: $cdr-color-text-input-label;
 }
 
 @mixin cdr-input-optional-label-mixin() {
   color: $cdr-color-text-input-optional;
-  margin-left: $cdr-space-inset-quarter-x;
 }
