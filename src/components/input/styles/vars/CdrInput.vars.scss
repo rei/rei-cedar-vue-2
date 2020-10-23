@@ -98,14 +98,6 @@
   fill: $cdr-color-text-input-error;
 }
 
-@mixin cdr-input-base-label-mixin() {
-  @include cdr-text-utility-sans-200;
-  font-weight: 600;
-  color: $cdr-color-text-input-label;
-  display: inline-block;
-  margin: 0;
-}
-
 @mixin cdr-input-large-mixin() {
   @include cdr-text-utility-sans-400;
   line-height: $cdr-space-half-x + $cdr-text-utility-sans-400-height;
@@ -122,16 +114,4 @@
   line-height: 1.8rem;
   letter-spacing: -0.016rem;
   color: $cdr-color-text-input-help;
-}
-
-@mixin cdr-input-info-container-mixin() {
-  @include cdr-text-utility-sans-200;
-}
-
-@mixin cdr-input-required-label-mixin() {
-  color: $cdr-color-text-input-label;
-}
-
-@mixin cdr-input-optional-label-mixin() {
-  color: $cdr-color-text-input-optional;
 }

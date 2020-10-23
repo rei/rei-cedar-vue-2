@@ -117,6 +117,9 @@ exports[`CdrPagination renders correctly 1`] = `
         class=""
       >
         <div
+          class="cdr-label-standalone-wrap"
+        />
+        <div
           class="cdr-select-outer-wrap"
         >
           <div
@@ -307,6 +310,9 @@ exports[`CdrPagination renders scoped slot correctly 1`] = `
       <div
         class=""
       >
+        <div
+          class="cdr-label-standalone-wrap"
+        />
         <div
           class="cdr-select-outer-wrap"
         >

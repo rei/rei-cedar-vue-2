@@ -1,17 +1,10 @@
 @import '../../../css/settings/index.scss';
 @import './vars/CdrInput.vars.scss';
+@import url('@rei/cedar/dist/style/cdr-label-standalone.css');
 
 /* ==========================================================================
   # INPUT LABEL
   ========================================================================== */
-
-.cdr-input__label {
-  @include cdr-input-base-label-mixin;
-
-  &--disabled {
-    color:  $cdr-color-text-input-disabled;
-  }
-}
 
 :global(.cdr-input__button) {
   fill: inherit;
@@ -150,32 +143,9 @@
     transform: translateY(-50%);
   }
 
-  &__required-label {
-    margin-left: $cdr-space-inset-quarter-x;
-  }
-
-  &__optional-label {
-    @include cdr-input-optional-label-mixin;
-    margin-left: $cdr-space-inset-quarter-x;
-  }
-
-  &__info-container {
-    @include cdr-input-info-container-mixin;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-  }
-
   &__helper-text {
     @include cdr-input-helper-text-mixin;
     display: inline-block;
-  }
-
-  &__helper-text-top {
-    margin-top: $cdr-space-eighth-x;
-  }
-
-  &__helper-text-bottom {
     margin-top: $cdr-space-quarter-x;
   }
 
@@ -188,11 +158,6 @@
 /* ==========================================================================
    # INPUT WRAPPER
    ========================================================================== */
-
-.cdr-input-label-wrap {
-  position: relative;
-}
-
 // real cedar input wrapper
 .cdr-input-inner-wrap {
   position: relative;

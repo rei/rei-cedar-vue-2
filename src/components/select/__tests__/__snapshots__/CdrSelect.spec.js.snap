@@ -4,12 +4,16 @@ exports[`cdrSelect renders correctly 1`] = `
 <div
   class=""
 >
-  <label
-    class="cdr-select__label"
-    for="renders"
+  <div
+    class="cdr-label-standalone-wrap"
   >
-    Label Test
-  </label>
+    <label
+      class="cdr-label-standalone__label"
+      for="renders"
+    >
+      Label Test
+    </label>
+  </div>
   <div
     class="cdr-select-outer-wrap"
   >
@@ -36,57 +40,18 @@ exports[`cdrSelect renders correctly 1`] = `
 </div>
 `;
 
-exports[`cdrSelect renders helper-text slot 1`] = `
-<div
-  class=""
->
-  <label
-    class="cdr-select__label"
-    for="helper-text"
-  >
-    test
-  </label>
-  <br />
-  <span
-    class="cdr-select__helper-text"
-  >
-    very helpful
-  </span>
-  <div
-    class="cdr-select-outer-wrap"
-  >
-    <div
-      class="cdr-select-wrap"
-    >
-      <select
-        class="cdr-select cdr-select__prompt cdr-select--primary"
-        id="helper-text"
-      />
-      <icon-caret-down-stub
-        class="cdr-select__caret"
-        size="medium"
-        space=""
-      />
-    </div>
-  </div>
-</div>
-`;
-
 exports[`cdrSelect renders info action slot 1`] = `
 <div
   class=""
 >
-  <label
-    class="cdr-select__label"
-    for="info-action"
+  <cdr-label-standalone-stub
+    forid="info-action"
+    label="test"
   >
-    test
-  </label>
-  <span
-    class="cdr-select__info-container"
-  >
-    🤠
-  </span>
+    <template>
+      🤠
+    </template>
+  </cdr-label-standalone-stub>
   <div
     class="cdr-select-outer-wrap"
   >
@@ -96,78 +61,6 @@ exports[`cdrSelect renders info action slot 1`] = `
       <select
         class="cdr-select cdr-select__prompt cdr-select--primary"
         id="info-action"
-      />
-      <icon-caret-down-stub
-        class="cdr-select__caret"
-        size="medium"
-        space=""
-      />
-    </div>
-  </div>
-</div>
-`;
-
-exports[`cdrSelect renders info slot 1`] = `
-<div
-  class=""
->
-  <label
-    class="cdr-select__label"
-    for="info-slot"
-  >
-    test
-  </label>
-  <span
-    class="cdr-select__info-container"
-  >
-    🤠
-  </span>
-  <div
-    class="cdr-select-outer-wrap"
-  >
-    <div
-      class="cdr-select-wrap"
-    >
-      <select
-        class="cdr-select cdr-select__prompt cdr-select--primary"
-        id="info-slot"
-      />
-      <icon-caret-down-stub
-        class="cdr-select__caret"
-        size="medium"
-        space=""
-      />
-    </div>
-  </div>
-</div>
-`;
-
-exports[`cdrSelect renders required label correctly 1`] = `
-<div
-  class=""
->
-  <label
-    class="cdr-select__label"
-    for="required-label"
-  >
-    Label Test
-    <span
-      aria-label="required"
-      class="cdr-select__required-label"
-    >
-      *
-    </span>
-  </label>
-  <div
-    class="cdr-select-outer-wrap"
-  >
-    <div
-      class="cdr-select-wrap"
-    >
-      <select
-        class="cdr-select cdr-select__prompt cdr-select--primary"
-        id="required-label"
-        required="required"
       />
       <icon-caret-down-stub
         class="cdr-select__caret"

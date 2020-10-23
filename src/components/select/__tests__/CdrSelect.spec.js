@@ -12,17 +12,6 @@ describe('cdrSelect', () => {
     expect(wrapper.element).toMatchSnapshot();
   });
 
-  it('renders required label correctly', () => {
-    const wrapper = shallowMount(CdrSelect, {
-      propsData: {
-        label: 'Label Test',
-        required: true,
-        id: 'required-label'
-      },
-    });
-    expect(wrapper.element).toMatchSnapshot();
-  });
-
   it('hide-label sets aria-label correctly', () => {
     const wrapper = shallowMount(CdrSelect, {
       propsData: {
@@ -31,16 +20,6 @@ describe('cdrSelect', () => {
       },
     });
     expect(wrapper.vm.$refs.select.hasAttribute('aria-label', 'test')).toBe(true);
-  });
-
-  it('maps select id to label for correctly', () => {
-    const wrapper = shallowMount(CdrSelect, {
-      propsData: {
-        label: 'testing',
-        id: 'test',
-      },
-    });
-    expect(wrapper.vm.$refs.select.id).toBe(wrapper.vm.$refs.label.htmlFor);
   });
 
   it('generates an id correctly', () => {
@@ -184,44 +163,6 @@ describe('cdrSelect', () => {
     expect(options.at(0).element.selected).toBeTruthy();
   });
 
-  it('renders break between label and helper-text if both are present', () => {
-    const wrapper = shallowMount(CdrSelect, {
-      propsData: {
-        label: 'test',
-      },
-      slots: {
-        'helper-text': 'very helpful',
-      },
-    });
-    expect(wrapper.find('br').exists()).toBe(true);
-  });
-
-  it('does not render break between label and helper-text if label is hidden', () => {
-    const wrapper = shallowMount(CdrSelect, {
-      propsData: {
-        label: 'test',
-        hideLabel: true
-      },
-      slots: {
-        'helper-text': 'very helpful',
-      },
-    });
-    expect(wrapper.find('br').exists()).toBe(false);
-  });
-
-  it('renders info slot', () => {
-    const wrapper = shallowMount(CdrSelect, {
-      propsData: {
-        label: 'test',
-        id: 'info-slot'
-      },
-      slots: {
-        'info': '🤠',
-      },
-    });
-    expect(wrapper.element).toMatchSnapshot();
-  });
-
   it('renders info action slot', () => {
     const wrapper = shallowMount(CdrSelect, {
       propsData: {
@@ -245,19 +186,6 @@ describe('cdrSelect', () => {
       },
     });
     expect(wrapper.find('.cdr-select__pre-icon').text()).toBe('🤠');
-  });
-
-  it('renders helper-text slot', () => {
-    const wrapper = shallowMount(CdrSelect, {
-      propsData: {
-        label: 'test',
-        id: 'helper-text'
-      },
-      slots: {
-        'helper-text': 'very helpful',
-      },
-    });
-    expect(wrapper.element).toMatchSnapshot();
   });
 
   it('renders error slot when error state is active', () => {

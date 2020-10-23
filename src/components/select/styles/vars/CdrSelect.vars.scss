@@ -1,16 +1,3 @@
-@mixin cdr-select-base-label-mixin() {
-  @include cdr-text-utility-sans-200;
-  font-weight: 600;
-  color: $cdr-color-text-input-label;
-  display: inline-block;
-  margin: 0;
-}
-
-/* input label disabled */
-@mixin cdr-select-base-label-disabled-mixin() {
-  color: $cdr-color-text-input-disabled;
-}
-
 /* select base */
 
 @mixin cdr-select-base-mixin() {
@@ -73,18 +60,6 @@
   height: 48px;
 }
 
-/* required label */
-@mixin cdr-select-required-label-mixin() {
-  // TODO: margin-left here
-  color: $cdr-color-text-input-required;
-}
-
-/* optional label */
-@mixin cdr-select-optional-label-mixin() {
-  // TODO: margin-left here
-  color: $cdr-color-text-input-optional;
-}
-
 @mixin cdr-select-primary-mixin() {
   background-color: $cdr-color-background-input-default;
   &:active,
@@ -109,19 +84,4 @@
 @mixin cdr-select-error-message-mixin() {
   color: $cdr-color-text-input-error;
   fill: $cdr-color-text-input-error;
-}
-
-/* info container */
-@mixin cdr-select-info-container-mixin() {
-  @include cdr-text-utility-sans-200;
-
-  float: right;
-}
-
-/* helper text */
-@mixin cdr-select-helper-text-mixin() {
-  @include cdr-text-utility-sans-200;
-  display: inline-block;
-  margin-top: $cdr-space-eighth-x;
-  color: $cdr-color-text-input-help;
 }

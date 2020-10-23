@@ -3,6 +3,7 @@ import toArray from 'lodash-es/toArray';
 import propValidator from '../../utils/propValidator';
 import IconCaretDown from '../icon/comps/caret-down';
 import IconErrorStroke from '../icon/comps/error-stroke';
+import CdrLabelStandalone from '../labelStandalone/CdrLabelStandalone';
 import size from '../../mixins/size';
 import space from '../../mixins/space';
 import style from './styles/CdrSelect.scss';
@@ -12,6 +13,7 @@ export default {
   components: {
     IconCaretDown,
     IconErrorStroke,
+    CdrLabelStandalone,
   },
   mixins: [size, space],
   inheritAttrs: false,
@@ -91,12 +93,6 @@ export default {
         [this.style['cdr-select--preicon']]: this.$slots['pre-icon'],
       };
     },
-    labelClass() {
-      return {
-        [this.style['cdr-select__label']]: true,
-        [this.style['cdr-select__label--disabled']]: this.disabled,
-      };
-    },
     caretClass() {
       return {
         [this.style['cdr-select__caret']]: true,
@@ -158,52 +154,6 @@ export default {
         </select>
       );
     },
-    labelEl() {
-      const requiredEl = this.required ? (
-        <span
-          class={this.style['cdr-select__required-label']}
-          aria-label="required"
-        >
-          *
-        </span>
-      ) : '';
-
-      const optionalEl = this.optional ? (
-        <span
-          class={this.style['cdr-select__optional-label']}
-        >
-          (optional)
-        </span>
-      ) : '';
-
-      return !this.hideLabel ? (
-        <label
-          class={this.labelClass}
-          for={this.selectId}
-          ref="label"
-        >
-          { this.label }{ requiredEl || optionalEl }
-        </label>
-      ) : '';
-    },
-    infoEl() {
-      return this.$slots.info ? (
-        <span
-          class={this.style['cdr-select__info-container']}
-        >
-          {this.$slots.info}
-        </span>
-      ) : '';
-    },
-    helperEl() {
-      return this.$slots['helper-text'] ? (
-        <span
-          class={this.style['cdr-select__helper-text']}
-        >
-          {this.$slots['helper-text']}
-        </span>
-      ) : '';
-    },
     computedOpts() {
       const optsArr = [];
       if (this.options) {
@@ -230,10 +180,24 @@ export default {
   render() {
     return (
       <div class={clsx(this.space)}>
-        {this.labelEl}
-        {this.labelEl && this.helperEl && (<br/>)}
-        {this.helperEl}
-        {this.infoEl}
+        <cdr-label-standalone
+          for-id={ this.selectId }
+          label={ this.label }
+          hide-label={ this.hideLabel }
+          required={ this.required }
+          optional={ this.optional }
+        >
+          { this.$slots['helper-text'] && (
+            <template slot="helper">
+              { this.$slots['helper-text'] }
+            </template>
+          )}
+          { this.$slots.info && (
+            <template slot="info">
+              {this.$slots.info}
+            </template>
+          )}
+        </cdr-label-standalone>
         <div class={this.style['cdr-select-outer-wrap']}>
           <div class={this.style['cdr-select-wrap']}>
             {this.$slots['pre-icon'] && (

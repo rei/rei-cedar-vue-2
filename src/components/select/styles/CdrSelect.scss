@@ -1,6 +1,7 @@
 @import '../../../css/settings/index.scss';
 @import './vars/CdrSelect.vars.scss';
 @import url('@rei/cedar/dist/style/cdr-icon.css');
+@import url('@rei/cedar/dist/style/cdr-label-standalone.css');
 /* ==========================================================================
   # CdrSelect
 
@@ -42,28 +43,6 @@
     @include cdr-select-prompt-mixin;
   }
 
-  &__required-label {
-    @include cdr-select-required-label-mixin;
-    margin-left: $cdr-space-inset-quarter-x;
-  }
-
-  &__optional-label {
-    @include cdr-select-required-label-mixin;
-    margin-left: $cdr-space-inset-quarter-x;
-  }
-
-  &__label {
-    @include cdr-select-base-label-mixin;
-
-    &--large {
-      @include cdr-select-large-mixin;
-    }
-
-    &--disabled {
-      @include cdr-select-base-label-disabled-mixin;
-    }
-  }
-
   &__caret {
     fill: $cdr-color-icon-default;
     position: absolute;
@@ -84,10 +63,6 @@
     transform: translateY(-50%);
   }
 
-  &__info-container {
-    @include cdr-select-info-container-mixin;
-  }
-
   &__info-action {
     position: relative;
     margin: 0 $cdr-space-half-x;
@@ -96,10 +71,6 @@
       top: 50%;
       transform: translateY(-50%);
     }
-  }
-
-  &__helper-text {
-    @include cdr-select-helper-text-mixin;
   }
 
   &__error-message {

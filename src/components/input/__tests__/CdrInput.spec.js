@@ -3,33 +3,14 @@ import sinon from 'sinon';
 import CdrInput from 'componentdir/input/CdrInput';
 
 describe('CdrInput', () => {
-  it('renders a label element', () => {
+  it('renders correctly', () => {
     const wrapper = mount(CdrInput, {
       propsData: {
         label: 'Label Test',
+        id: 'renders'
       },
     });
     expect(wrapper.element).toMatchSnapshot();
-  });
-
-  it('renders required label correctly', () => {
-    const wrapper = mount(CdrInput, {
-      propsData: {
-        label: 'Label Test',
-        required: true,
-      },
-    });
-    expect(wrapper.element).toMatchSnapshot();
-  });
-
-  it('maps input id to label for correctly', () => {
-    const wrapper = shallowMount(CdrInput, {
-      propsData: {
-        label: 'testing',
-        id: 'test',
-      },
-    });
-    expect(wrapper.vm.$refs.input.id).toBe(wrapper.vm.$refs.label.htmlFor);
   });
 
   it('generates an id correctly', () => {
@@ -92,18 +73,6 @@ describe('CdrInput', () => {
       },
     });
     expect(wrapper.vm.$refs.input.hasAttribute('required')).toBe(true);
-  });
-
-  it('does not render both required and optional labels simultaneously', () => {
-    const wrapper = shallowMount(CdrInput, {
-      propsData: {
-        label: 'test',
-        required: true,
-        optional: true,
-      },
-    });
-    expect(wrapper.vm.$refs.input.hasAttribute('required')).toBe(true);
-    expect(wrapper.vm.$refs.label.textContent).toBe('test*');
   });
 
   it('sets input autofocus attribute correctly', () => {
@@ -180,16 +149,6 @@ describe('CdrInput', () => {
       },
     });
     expect(wrapper.vm.$refs.input.hasAttribute('type', 'url')).toBe(true);
-  });
-
-  it('hide-label sets aria-label correctly', () => {
-    const wrapper = shallowMount(CdrInput, {
-      propsData: {
-        label: 'test',
-        hideLabel: true,
-      },
-    });
-    expect(wrapper.vm.$refs.input.hasAttribute('aria-label', 'test')).toBe(true);
   });
 
   it('auto generates an id', () => {
@@ -303,7 +262,7 @@ describe('CdrInput', () => {
         'helper-text': 'very helpful',
       },
     });
-    expect(wrapper.find('.cdr-input__helper-text-bottom').text()).toBe('very helpful');
+    expect(wrapper.find('.cdr-input__helper-text').text()).toBe('very helpful');
   });
 
   it('renders helper-text-bottom slot', () => {
@@ -315,56 +274,7 @@ describe('CdrInput', () => {
         'helper-text-bottom': 'very helpful',
       },
     });
-    expect(wrapper.find('.cdr-input__helper-text-bottom').text()).toBe('very helpful');
-  });
-
-  it('renders helper-text-top slot', () => {
-    const wrapper = shallowMount(CdrInput, {
-      propsData: {
-        label: 'test',
-      },
-      slots: {
-        'helper-text-top': 'very helpful',
-      },
-    });
-    expect(wrapper.find('.cdr-input__helper-text-top').text()).toBe('very helpful');
-  });
-
-  it('renders break between label and helper-text-top if both are present', () => {
-    const wrapper = shallowMount(CdrInput, {
-      propsData: {
-        label: 'test',
-      },
-      slots: {
-        'helper-text-top': 'very helpful',
-      },
-    });
-    expect(wrapper.find('br').exists()).toBe(true);
-  });
-
-  it('does not render break between label and helper-text-top if label is hidden', () => {
-    const wrapper = shallowMount(CdrInput, {
-      propsData: {
-        label: 'test',
-        hideLabel: true
-      },
-      slots: {
-        'helper-text-top': 'very helpful',
-      },
-    });
-    expect(wrapper.find('br').exists()).toBe(false);
-  });
-
-  it('renders info slot', () => {
-    const wrapper = shallowMount(CdrInput, {
-      propsData: {
-        label: 'test',
-      },
-      slots: {
-        info: 'very informative',
-      },
-    });
-    expect(wrapper.find('.cdr-input__info-container').text()).toBe('very informative');
+    expect(wrapper.find('.cdr-input__helper-text').text()).toBe('very helpful');
   });
 
   it('renders pre-icon slot', () => {
