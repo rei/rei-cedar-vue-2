@@ -192,8 +192,10 @@
       space="cdr-my-space-two-x"
       prompt="Choose One"
     >
-      <template slot="info">
-        <icon-information-fill size="small" />
+      <template slot="info-action">
+        <cdr-link>
+          <icon-information-stroke inherit-color />
+        </cdr-link>
       </template>
     </cdr-select>
     <cdr-text>Selected Value: {{ infoIconModel }}</cdr-text>

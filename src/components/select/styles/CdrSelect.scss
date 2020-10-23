@@ -88,6 +88,16 @@
     @include cdr-select-info-container-mixin;
   }
 
+  &__info-action {
+    position: relative;
+    margin: 0 $cdr-space-half-x;
+    & > * {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
   &__helper-text {
     @include cdr-select-helper-text-mixin;
   }
@@ -158,4 +168,12 @@
 /* Sets new origin for relative positioning of Select and Caret */
 .cdr-select-wrap {
   position: relative;
+  flex: 1;
+}
+
+.cdr-select-outer-wrap {
+  position: relative;
+  display: flex;
+  margin-top: $cdr-space-half-x;
+  margin-bottom: $cdr-space-quarter-x;
 }

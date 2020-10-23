@@ -103,11 +103,6 @@ export default {
         [this.style['cdr-select__caret--disabled']]: this.disabled,
       };
     },
-    selectWrapClass() {
-      return {
-        [this.style['cdr-select-wrap']]: true,
-      };
-    },
     inputListeners() {
       // https://vuejs.org/v2/guide/components-custom-events.html#Binding-Native-Events-to-Components
       // handles conflict between v-model and v-on="$listeners"
@@ -239,18 +234,27 @@ export default {
         {this.labelEl && this.helperEl && (<br/>)}
         {this.helperEl}
         {this.infoEl}
-        <div class={this.selectWrapClass}>
-          {this.$slots['pre-icon'] && (
-            <span
-              class={this.style['cdr-select__pre-icon']}
+        <div class={this.style['cdr-select-outer-wrap']}>
+          <div class={this.style['cdr-select-wrap']}>
+            {this.$slots['pre-icon'] && (
+              <span
+                class={this.style['cdr-select__pre-icon']}
+              >
+                {this.$slots['pre-icon']}
+              </span>
+            )}
+            {this.selectEl}
+            <icon-caret-down
+            class={this.caretClass}
+            />
+          </div>
+          {this.$slots['info-action'] && (
+            <div
+              class={clsx(this.style['cdr-select__info-action'])}
             >
-              {this.$slots['pre-icon']}
-            </span>
+              {this.$slots['info-action']}
+            </div>
           )}
-          {this.selectEl}
-          <icon-caret-down
-          class={this.caretClass}
-          />
         </div>
         {this.$slots.error && this.error && (
           <span

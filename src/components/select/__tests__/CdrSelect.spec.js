@@ -222,6 +222,19 @@ describe('cdrSelect', () => {
     expect(wrapper.element).toMatchSnapshot();
   });
 
+  it('renders info action slot', () => {
+    const wrapper = shallowMount(CdrSelect, {
+      propsData: {
+        label: 'test',
+        id: 'info-action'
+      },
+      slots: {
+        'info': '🤠',
+      },
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
   it('renders pre-icon slot', () => {
     const wrapper = shallowMount(CdrSelect, {
       propsData: {

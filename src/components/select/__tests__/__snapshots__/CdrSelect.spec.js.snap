@@ -11,23 +11,27 @@ exports[`cdrSelect renders correctly 1`] = `
     Label Test
   </label>
   <div
-    class="cdr-select-wrap"
+    class="cdr-select-outer-wrap"
   >
-    <select
-      class="cdr-select cdr-select__prompt cdr-select--primary"
-      id="renders"
-    />
-    <svg
-      aria-hidden="true"
-      class="cdr-icon cdr-select__caret"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
+    <div
+      class="cdr-select-wrap"
     >
-      <path
-        d="M12 16c.273 0 .521-.11.702-.288l5.005-5.005a1 1 0 00-1.414-1.414L12 13.586 7.705 9.29a1 1 0 00-1.412 1.417l4.98 4.98c.182.193.44.313.727.313z"
-        role="presentation"
+      <select
+        class="cdr-select cdr-select__prompt cdr-select--primary"
+        id="renders"
       />
-    </svg>
+      <svg
+        aria-hidden="true"
+        class="cdr-icon cdr-select__caret"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 16c.273 0 .521-.11.702-.288l5.005-5.005a1 1 0 00-1.414-1.414L12 13.586 7.705 9.29a1 1 0 00-1.412 1.417l4.98 4.98c.182.193.44.313.727.313z"
+          role="presentation"
+        />
+      </svg>
+    </div>
   </div>
 </div>
 `;
@@ -49,17 +53,56 @@ exports[`cdrSelect renders helper-text slot 1`] = `
     very helpful
   </span>
   <div
-    class="cdr-select-wrap"
+    class="cdr-select-outer-wrap"
   >
-    <select
-      class="cdr-select cdr-select__prompt cdr-select--primary"
-      id="helper-text"
-    />
-    <icon-caret-down-stub
-      class="cdr-select__caret"
-      size="medium"
-      space=""
-    />
+    <div
+      class="cdr-select-wrap"
+    >
+      <select
+        class="cdr-select cdr-select__prompt cdr-select--primary"
+        id="helper-text"
+      />
+      <icon-caret-down-stub
+        class="cdr-select__caret"
+        size="medium"
+        space=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`cdrSelect renders info action slot 1`] = `
+<div
+  class=""
+>
+  <label
+    class="cdr-select__label"
+    for="info-action"
+  >
+    test
+  </label>
+  <span
+    class="cdr-select__info-container"
+  >
+    🤠
+  </span>
+  <div
+    class="cdr-select-outer-wrap"
+  >
+    <div
+      class="cdr-select-wrap"
+    >
+      <select
+        class="cdr-select cdr-select__prompt cdr-select--primary"
+        id="info-action"
+      />
+      <icon-caret-down-stub
+        class="cdr-select__caret"
+        size="medium"
+        space=""
+      />
+    </div>
   </div>
 </div>
 `;
@@ -80,17 +123,21 @@ exports[`cdrSelect renders info slot 1`] = `
     🤠
   </span>
   <div
-    class="cdr-select-wrap"
+    class="cdr-select-outer-wrap"
   >
-    <select
-      class="cdr-select cdr-select__prompt cdr-select--primary"
-      id="info-slot"
-    />
-    <icon-caret-down-stub
-      class="cdr-select__caret"
-      size="medium"
-      space=""
-    />
+    <div
+      class="cdr-select-wrap"
+    >
+      <select
+        class="cdr-select cdr-select__prompt cdr-select--primary"
+        id="info-slot"
+      />
+      <icon-caret-down-stub
+        class="cdr-select__caret"
+        size="medium"
+        space=""
+      />
+    </div>
   </div>
 </div>
 `;
@@ -112,18 +159,22 @@ exports[`cdrSelect renders required label correctly 1`] = `
     </span>
   </label>
   <div
-    class="cdr-select-wrap"
+    class="cdr-select-outer-wrap"
   >
-    <select
-      class="cdr-select cdr-select__prompt cdr-select--primary"
-      id="required-label"
-      required="required"
-    />
-    <icon-caret-down-stub
-      class="cdr-select__caret"
-      size="medium"
-      space=""
-    />
+    <div
+      class="cdr-select-wrap"
+    >
+      <select
+        class="cdr-select cdr-select__prompt cdr-select--primary"
+        id="required-label"
+        required="required"
+      />
+      <icon-caret-down-stub
+        class="cdr-select__caret"
+        size="medium"
+        space=""
+      />
+    </div>
   </div>
 </div>
 `;
