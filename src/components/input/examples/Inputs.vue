@@ -104,6 +104,7 @@
       <template slot="info-action">
         <cdr-link>
           <icon-information-stroke inherit-color />
+          <span class="cdr-display-sr-only">Information!</span>
         </cdr-link>
       </template>
       <template slot="pre-icon">

@@ -169,7 +169,7 @@ export default {
     return (
       <div class={ this.containerClass }>
         <cdr-label-standalone
-          for-id={ this.inputId }
+          for-id={ `${this.inputId}` }
           label={ this.label }
           hide-label={ this.hideLabel }
           required={ this.required }
@@ -209,7 +209,7 @@ export default {
           </div>
           {this.$slots['info-action'] && (
             <div
-              class={clsx(this.style['cdr-input__info-action'])}
+              class={this.style['cdr-input__info-action']}
             >
               {this.$slots['info-action']}
             </div>
@@ -223,7 +223,7 @@ export default {
         )}
         {this.$slots.error && this.error && (
           <span
-            class={clsx(this.style['cdr-input__error-message'])}
+            class={this.style['cdr-input__error-message']}
           >
             <icon-error-stroke inherit-color/> {this.$slots.error}
           </span>

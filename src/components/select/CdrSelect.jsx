@@ -181,7 +181,7 @@ export default {
     return (
       <div class={clsx(this.space)}>
         <cdr-label-standalone
-          for-id={ this.selectId }
+          for-id={ `${this.selectId}` }
           label={ this.label }
           hide-label={ this.hideLabel }
           required={ this.required }
@@ -214,7 +214,7 @@ export default {
           </div>
           {this.$slots['info-action'] && (
             <div
-              class={clsx(this.style['cdr-select__info-action'])}
+              class={this.style['cdr-select__info-action']}
             >
               {this.$slots['info-action']}
             </div>
@@ -222,7 +222,7 @@ export default {
         </div>
         {this.$slots.error && this.error && (
           <span
-            class={clsx(this.style['cdr-select__error-message'])}
+            class={this.style['cdr-select__error-message']}
           >
             <icon-error-stroke inherit-color/> {this.$slots.error}
           </span>
