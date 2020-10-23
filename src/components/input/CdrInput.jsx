@@ -187,23 +187,32 @@ export default {
           )}
         </cdr-label-standalone>
 
-        <div class={this.wrapperClass}>
-          <div class={this.style['cdr-input-inner-wrap']}>
-            {this.inputEl}
-            {this.$slots['pre-icon'] && (
+        <div class={this.style['cdr-input-outer-wrap']}>
+          <div class={this.wrapperClass}>
+            <div class={this.style['cdr-input-inner-wrap']}>
+              {this.inputEl}
+              {this.$slots['pre-icon'] && (
+                <span
+                  class={this.style['cdr-input__pre-icon']}
+                >
+                  {this.$slots['pre-icon']}
+                </span>
+              )}
+            </div>
+            {this.$slots['post-icon'] && (
               <span
-                class={this.style['cdr-input__pre-icon']}
+                class={this.style['cdr-input__post-icon']}
               >
-                {this.$slots['pre-icon']}
+                {this.$slots['post-icon']}
               </span>
             )}
           </div>
-          {this.$slots['post-icon'] && (
-            <span
-              class={this.style['cdr-input__post-icon']}
+          {this.$slots['info-action'] && (
+            <div
+              class={clsx(this.style['cdr-input__info-action'])}
             >
-              {this.$slots['post-icon']}
-            </span>
+              {this.$slots['info-action']}
+            </div>
           )}
         </div>
         {(this.$slots['helper-text'] || this.$slots['helper-text-bottom'])

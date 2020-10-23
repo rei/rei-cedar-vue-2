@@ -146,12 +146,21 @@
   &__helper-text {
     @include cdr-input-helper-text-mixin;
     display: inline-block;
-    margin-top: $cdr-space-quarter-x;
   }
 
   &__error-message {
-    margin-top: $cdr-space-quarter-x;
     @include cdr-input-error-message-mixin;
+  }
+
+  &__info-action {
+    position: relative;
+    width: 40px;
+    & > * {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
   }
 }
 
@@ -167,9 +176,16 @@
 .cdr-input-wrap {
   position: relative;
   display: flex;
+  flex-grow: 1;
   @include cdr-input-outline-mixin;
 }
 
 .cdr-input--focused .cdr-input-wrap {
   @include cdr-input-focus-mixin;
+}
+
+.cdr-input-outer-wrap {
+  display: flex;
+  margin-top: $cdr-space-half-x;
+  margin-bottom: $cdr-space-quarter-x;
 }

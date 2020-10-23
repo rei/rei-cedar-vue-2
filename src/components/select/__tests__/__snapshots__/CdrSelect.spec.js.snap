@@ -39,35 +39,3 @@ exports[`cdrSelect renders correctly 1`] = `
   </div>
 </div>
 `;
-
-exports[`cdrSelect renders info action slot 1`] = `
-<div
-  class=""
->
-  <cdr-label-standalone-stub
-    forid="info-action"
-    label="test"
-  >
-    <template>
-      🤠
-    </template>
-  </cdr-label-standalone-stub>
-  <div
-    class="cdr-select-outer-wrap"
-  >
-    <div
-      class="cdr-select-wrap"
-    >
-      <select
-        class="cdr-select cdr-select__prompt cdr-select--primary"
-        id="info-action"
-      />
-      <icon-caret-down-stub
-        class="cdr-select__caret"
-        size="medium"
-        space=""
-      />
-    </div>
-  </div>
-</div>
-`;

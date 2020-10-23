@@ -170,10 +170,10 @@ describe('cdrSelect', () => {
         id: 'info-action'
       },
       slots: {
-        'info': '🤠',
+        'info-action': '🤠',
       },
     });
-    expect(wrapper.element).toMatchSnapshot();
+    expect(wrapper.find('.cdr-select__info-action').text()).toBe('🤠');
   });
 
   it('renders pre-icon slot', () => {

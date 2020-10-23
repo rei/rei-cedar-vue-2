@@ -301,6 +301,19 @@ describe('CdrInput', () => {
     expect(wrapper.find('.cdr-input__post-icon').text()).toBe('😎');
   });
 
+  it('renders info action slot', () => {
+    const wrapper = shallowMount(CdrInput, {
+      propsData: {
+        label: 'test',
+        id: 'info-action'
+      },
+      slots: {
+        'info-action': '🤠',
+      },
+    });
+    expect(wrapper.find('.cdr-input__info-action').text()).toBe('🤠');
+  });
+
   it('renders error slot when error state is active', () => {
     const wrapper = shallowMount(CdrInput, {
       propsData: {
