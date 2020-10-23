@@ -1,6 +1,9 @@
 <template>
   <div data-backstop="form-group-checkboxes">
-    <cdr-form-group label="What's your favorite letter?">
+    <cdr-form-group
+      label="What's your favorite letter?"
+      :error="true"
+    >
       <cdr-checkbox
         custom-value="A"
         v-model="exGroup"
@@ -13,6 +16,9 @@
         custom-value="C"
         v-model="exGroup"
       >C</cdr-checkbox>
+      <template slot="error">
+        ayyyy
+      </template>
     </cdr-form-group>
 
     <cdr-form-group>
