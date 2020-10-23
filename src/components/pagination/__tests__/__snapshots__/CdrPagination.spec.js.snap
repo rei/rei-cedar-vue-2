@@ -121,7 +121,7 @@ exports[`CdrPagination renders correctly 1`] = `
         >
           <select
             aria-label="Navigate to page"
-            class="cdr-select"
+            class="cdr-select cdr-select--primary"
             id="select-test1"
           >
             <option
@@ -308,7 +308,7 @@ exports[`CdrPagination renders scoped slot correctly 1`] = `
         >
           <select
             aria-label="Navigate to page"
-            class="cdr-select"
+            class="cdr-select cdr-select--primary"
             id="select-test2"
           >
             <option

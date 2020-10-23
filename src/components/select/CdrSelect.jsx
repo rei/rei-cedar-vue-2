@@ -1,6 +1,8 @@
 import clsx from 'clsx';
 import toArray from 'lodash-es/toArray';
+import propValidator from '../../utils/propValidator';
 import IconCaretDown from '../icon/comps/caret-down';
+import IconErrorStroke from '../icon/comps/error-stroke';
 import size from '../../mixins/size';
 import space from '../../mixins/space';
 import style from './styles/CdrSelect.scss';
@@ -9,6 +11,7 @@ export default {
   name: 'CdrSelect',
   components: {
     IconCaretDown,
+    IconErrorStroke,
   },
   mixins: [size, space],
   inheritAttrs: false,
@@ -42,14 +45,26 @@ export default {
     options: {
       type: Array,
     },
-    /** @ignore */
+    // Set which background type the select renders on
+    background: {
+      type: [String],
+      default: 'primary',
+      validator: (value) => propValidator(
+        value,
+        ['primary', 'secondary'],
+      ),
+    },
+    // Set error styling
+    error: {
+      type: Boolean,
+      default: false,
+    },
     value: {
       type: [String, Number, Boolean, Object, Array, Symbol, Function],
     },
-    /** @ignore */
     disabled: Boolean,
-    /** @ignore */
     required: Boolean,
+    optional: Boolean,
     multiple: Boolean,
     multipleSize: Number,
   },
@@ -71,6 +86,9 @@ export default {
         [this.style['cdr-select']]: true,
         [this.style['cdr-select__prompt']]: !this.value,
         [this.style['cdr-select--multiple']]: this.multiple,
+        [this.style[`cdr-select--${this.background}`]]: true,
+        [this.style['cdr-select--error']]: this.error,
+        [this.style['cdr-select--preicon']]: this.$slots['pre-icon'],
       };
     },
     labelClass() {
@@ -149,8 +167,17 @@ export default {
       const requiredEl = this.required ? (
         <span
           class={this.style['cdr-select__required-label']}
+          aria-label="required"
         >
-          Required
+          *
+        </span>
+      ) : '';
+
+      const optionalEl = this.optional ? (
+        <span
+          class={this.style['cdr-select__optional-label']}
+        >
+          (optional)
         </span>
       ) : '';
 
@@ -159,9 +186,8 @@ export default {
           class={this.labelClass}
           for={this.selectId}
           ref="label"
-        >{ this.label }
-          {' '}
-          {requiredEl}
+        >
+          { this.label }{ requiredEl || optionalEl }
         </label>
       ) : '';
     },
@@ -210,14 +236,29 @@ export default {
     return (
       <div class={clsx(this.space)}>
         {this.labelEl}
+        {this.labelEl && this.helperEl && (<br/>)}
+        {this.helperEl}
         {this.infoEl}
         <div class={this.selectWrapClass}>
+          {this.$slots['pre-icon'] && (
+            <span
+              class={this.style['cdr-select__pre-icon']}
+            >
+              {this.$slots['pre-icon']}
+            </span>
+          )}
           {this.selectEl}
           <icon-caret-down
           class={this.caretClass}
           />
         </div>
-        {this.helperEl}
+        {this.$slots.error && this.error && (
+          <span
+            class={clsx(this.style['cdr-select__error-message'])}
+          >
+            <icon-error-stroke inherit-color/> {this.$slots.error}
+          </span>
+        )}
       </div>
     );
   },

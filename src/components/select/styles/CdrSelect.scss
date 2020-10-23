@@ -19,12 +19,37 @@
 .cdr-select {
   @include cdr-select-base-mixin;
 
+  &--primary {
+    @include cdr-select-primary-mixin;
+  }
+
+  &--secondary {
+    @include cdr-select-secondary-mixin;
+  }
+
+  &--error {
+    @include cdr-select-error-mixin;
+  }
+
+  &--preicon {
+    /* $input-pre-icon-default-width = 25px with the expectation that
+        slot provided icon is close to that width */
+    // TODO: use icon token here?
+    padding-left: calc(#{$cdr-space-half-x} + #{$cdr-space-quarter-x} + 25px);
+  }
+
   &__prompt {
     @include cdr-select-prompt-mixin;
   }
 
   &__required-label {
     @include cdr-select-required-label-mixin;
+    margin-left: $cdr-space-inset-quarter-x;
+  }
+
+  &__optional-label {
+    @include cdr-select-required-label-mixin;
+    margin-left: $cdr-space-inset-quarter-x;
   }
 
   &__label {
@@ -40,11 +65,23 @@
   }
 
   &__caret {
-    @include cdr-select-base-caret-mixin;
+    fill: $cdr-color-icon-default;
+    position: absolute;
+    top: 50%;
+    right: $cdr-space-half-x;
+    transform: translateY(-50%);
+    pointer-events: none;
 
     &--disabled {
-      @include cdr-select-base-caret-disabled-mixin;
+      fill: $cdr-color-icon-disabled;
     }
+  }
+
+  &__pre-icon {
+    position: absolute;
+    top: 50%;
+    left: $cdr-space-half-x;
+    transform: translateY(-50%);
   }
 
   &__info-container {
@@ -53,6 +90,10 @@
 
   &__helper-text {
     @include cdr-select-helper-text-mixin;
+  }
+
+  &__error-message {
+    @include cdr-select-error-message-mixin;
   }
 
   &--multiple {

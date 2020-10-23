@@ -167,7 +167,7 @@ describe('cdrSelect', () => {
     expect(wrapper.emitted().change[0][0]).toEqual(['1', '3']);
     expect(wrapper.emitted().change[0][1] instanceof Event).toBeTruthy();
   });
-  
+
   it('updating v-model data updates the select', async () => {
     const wrapper = shallowMount(CdrSelect, {
       propsData: {
@@ -184,6 +184,31 @@ describe('cdrSelect', () => {
     expect(options.at(0).element.selected).toBeTruthy();
   });
 
+  it('renders break between label and helper-text if both are present', () => {
+    const wrapper = shallowMount(CdrSelect, {
+      propsData: {
+        label: 'test',
+      },
+      slots: {
+        'helper-text': 'very helpful',
+      },
+    });
+    expect(wrapper.find('br').exists()).toBe(true);
+  });
+
+  it('does not render break between label and helper-text if label is hidden', () => {
+    const wrapper = shallowMount(CdrSelect, {
+      propsData: {
+        label: 'test',
+        hideLabel: true
+      },
+      slots: {
+        'helper-text': 'very helpful',
+      },
+    });
+    expect(wrapper.find('br').exists()).toBe(false);
+  });
+
   it('renders info slot', () => {
     const wrapper = shallowMount(CdrSelect, {
       propsData: {
@@ -197,6 +222,18 @@ describe('cdrSelect', () => {
     expect(wrapper.element).toMatchSnapshot();
   });
 
+  it('renders pre-icon slot', () => {
+    const wrapper = shallowMount(CdrSelect, {
+      propsData: {
+        label: 'test',
+      },
+      slots: {
+        'pre-icon': '🤠',
+      },
+    });
+    expect(wrapper.find('.cdr-select__pre-icon').text()).toBe('🤠');
+  });
+
   it('renders helper-text slot', () => {
     const wrapper = shallowMount(CdrSelect, {
       propsData: {
@@ -208,5 +245,31 @@ describe('cdrSelect', () => {
       },
     });
     expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it('renders error slot when error state is active', () => {
+    const wrapper = shallowMount(CdrSelect, {
+      propsData: {
+        label: 'test',
+        error: true
+      },
+      slots: {
+        'error': 'whoops',
+      },
+    });
+    expect(wrapper.find('.cdr-select__error-message').text()).toBe('whoops');
+  });
+
+  it('does not render error slot when error state is inactive', () => {
+    const wrapper = shallowMount(CdrSelect, {
+      propsData: {
+        label: 'test',
+        error: false
+      },
+      slots: {
+        'error': 'whoops',
+      },
+    });
+    expect(wrapper.find('.cdr-select__error-message').exists()).toBe(false);
   });
 });

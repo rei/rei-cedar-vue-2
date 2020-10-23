@@ -8,13 +8,13 @@ exports[`cdrSelect renders correctly 1`] = `
     class="cdr-select__label"
     for="renders"
   >
-    Label Test 
+    Label Test
   </label>
   <div
     class="cdr-select-wrap"
   >
     <select
-      class="cdr-select cdr-select__prompt"
+      class="cdr-select cdr-select__prompt cdr-select--primary"
       id="renders"
     />
     <svg
@@ -40,13 +40,19 @@ exports[`cdrSelect renders helper-text slot 1`] = `
     class="cdr-select__label"
     for="helper-text"
   >
-    test 
+    test
   </label>
+  <br />
+  <span
+    class="cdr-select__helper-text"
+  >
+    very helpful
+  </span>
   <div
     class="cdr-select-wrap"
   >
     <select
-      class="cdr-select cdr-select__prompt"
+      class="cdr-select cdr-select__prompt cdr-select--primary"
       id="helper-text"
     />
     <icon-caret-down-stub
@@ -55,11 +61,6 @@ exports[`cdrSelect renders helper-text slot 1`] = `
       space=""
     />
   </div>
-  <span
-    class="cdr-select__helper-text"
-  >
-    very helpful
-  </span>
 </div>
 `;
 
@@ -71,7 +72,7 @@ exports[`cdrSelect renders info slot 1`] = `
     class="cdr-select__label"
     for="info-slot"
   >
-    test 
+    test
   </label>
   <span
     class="cdr-select__info-container"
@@ -82,7 +83,7 @@ exports[`cdrSelect renders info slot 1`] = `
     class="cdr-select-wrap"
   >
     <select
-      class="cdr-select cdr-select__prompt"
+      class="cdr-select cdr-select__prompt cdr-select--primary"
       id="info-slot"
     />
     <icon-caret-down-stub
@@ -102,18 +103,19 @@ exports[`cdrSelect renders required label correctly 1`] = `
     class="cdr-select__label"
     for="required-label"
   >
-    Label Test 
+    Label Test
     <span
+      aria-label="required"
       class="cdr-select__required-label"
     >
-      Required
+      *
     </span>
   </label>
   <div
     class="cdr-select-wrap"
   >
     <select
-      class="cdr-select cdr-select__prompt"
+      class="cdr-select cdr-select__prompt cdr-select--primary"
       id="required-label"
       required="required"
     />

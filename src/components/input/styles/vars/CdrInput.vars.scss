@@ -94,9 +94,8 @@
 }
 
 @mixin cdr-input-error-message-mixin() {
-  // TODO: use token once fixed
-  color: #B33322;//$cdr-color-text-input-error;
-  fill: #B33322;//$cdr-color-text-input-error;
+  color: $cdr-color-text-input-error;
+  fill: $cdr-color-text-input-error;
 }
 
 @mixin cdr-input-base-label-mixin() {
