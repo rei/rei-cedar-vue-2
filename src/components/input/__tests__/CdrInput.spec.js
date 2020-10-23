@@ -243,6 +243,25 @@ describe('CdrInput', () => {
     expect(spy.calledOnce).toBeTruthy();
   });
 
+  it('adds focused class to wrapper on input focus', async () => {
+    const spy = sinon.spy();
+    const wrapper = shallowMount(CdrInput, {
+      propsData: {
+        label: 'test',
+      },
+      listeners: {
+        'focus': spy
+      }
+    });
+    const input = wrapper.findComponent({ ref: 'input' });
+    input.trigger('focus')
+    await wrapper.vm.$nextTick();
+    expect(wrapper.classes('cdr-input--focused')).toBeTruthy();
+    input.trigger('blur')
+    await wrapper.vm.$nextTick();
+    expect(wrapper.classes('cdr-input--focused')).toBeFalsy();
+  });
+
   it('emits a paste event', () => {
     const spy = sinon.spy();
     const wrapper = shallowMount(CdrInput, {
@@ -275,7 +294,7 @@ describe('CdrInput', () => {
     expect(spy.called).toBeTruthy();
   });
 
-  it('renders helper-text slot', () => {
+  it('renders deprecated helper-text slot', () => {
     const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'test',
@@ -287,17 +306,53 @@ describe('CdrInput', () => {
     expect(wrapper.find('.cdr-input__helper-text-bottom').text()).toBe('very helpful');
   });
 
-  it('renders helper-text slot in top position', () => {
+  it('renders helper-text-bottom slot', () => {
     const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'test',
-        helperPosition: 'top'
       },
       slots: {
-        'helper-text': 'very helpful',
+        'helper-text-bottom': 'very helpful',
+      },
+    });
+    expect(wrapper.find('.cdr-input__helper-text-bottom').text()).toBe('very helpful');
+  });
+
+  it('renders helper-text-top slot', () => {
+    const wrapper = shallowMount(CdrInput, {
+      propsData: {
+        label: 'test',
+      },
+      slots: {
+        'helper-text-top': 'very helpful',
       },
     });
     expect(wrapper.find('.cdr-input__helper-text-top').text()).toBe('very helpful');
+  });
+
+  it('renders break between label and helper-text-top if both are present', () => {
+    const wrapper = shallowMount(CdrInput, {
+      propsData: {
+        label: 'test',
+      },
+      slots: {
+        'helper-text-top': 'very helpful',
+      },
+    });
+    expect(wrapper.find('br').exists()).toBe(true);
+  });
+
+  it('does not render break between label and helper-text-top if label is hidden', () => {
+    const wrapper = shallowMount(CdrInput, {
+      propsData: {
+        label: 'test',
+        hideLabel: true
+      },
+      slots: {
+        'helper-text-top': 'very helpful',
+      },
+    });
+    expect(wrapper.find('br').exists()).toBe(false);
   });
 
   it('renders info slot', () => {

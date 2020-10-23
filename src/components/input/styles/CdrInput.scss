@@ -13,12 +13,54 @@
   }
 }
 
+:global(.cdr-input__button) {
+  fill: inherit;
+  & ~ & {
+    position: relative;
+    margin-left: -4px;
+    &::before {
+      content: '';
+      background-color: $cdr-color-border-input-default;
+      position: absolute;
+      left: -1px;
+      width: 1px;
+      height: 55%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  &:hover,
+  &:active,
+  &:focus,
+  &:focus-within {
+    background-color: $cdr-color-background-input-default-active;
+    box-shadow: inset 0 0 0 3px $cdr-color-border-input-default-active;
+    outline: none;
+    fill: $cdr-color-text-primary;
+    svg {
+      box-shadow: none;
+      fill: $cdr-color-text-primary !important;
+    }
+
+    &::before {
+      width: 0px;
+    }
+  }
+
+  &:last-child {
+    margin-right: -$cdr-space-half-x;
+    border-top-right-radius: $cdr-radius-softer;
+    border-bottom-right-radius: $cdr-radius-softer;
+  }
+}
+
 /* ==========================================================================
   # INPUT
   ========================================================================== */
 
 .cdr-input {
-  @include cdr-input-base-mixin;
+  @include cdr-input-core-mixin;
 
   /* Style variants
     ========================================================================== */
@@ -34,37 +76,17 @@
     padding-left: calc(#{$cdr-space-half-x} + #{$cdr-space-quarter-x} + 25px);
   }
 
-// TODO: merge with variables (clean up variables?)  //
   &--primary {
-    background-color: $cdr-color-background-input-default;
-    &:active,
-    &:focus {
-      background-color: $cdr-color-background-input-default;
-    }
-  }
-  &--secondary {
-    background-color: $cdr-color-background-input-secondary;
-    &:active,
-    &:focus {
-      background-color: $cdr-color-background-input-secondary-selected;
-    }
+    @include cdr-input-primary-mixin;
   }
 
-  &--has-buttons {
-    box-shadow: none;
+  &--secondary {
+    @include cdr-input-secondary-mixin;
   }
 
   &--error {
-    background-color: $cdr-color-background-input-error;
-    box-shadow: inset 0 0 0 1px $cdr-color-border-input-error;
+    @include cdr-input-error-mixin;
   }
-
-  &__error-message {
-    // TODO: use token once fixed
-    color: #B33322;//$cdr-color-text-input-error;
-    fill: #B33322;//$cdr-color-text-input-error;
-  }
-
 
   /* Size variants
     ========================================================================== */
@@ -118,11 +140,10 @@
     top: 50%;
     left: $cdr-space-half-x;
     transform: translateY(-50%);
-    fill: $cdr-color-icon-default;
   }
 
   &__post-icon {
-    fill: $cdr-color-icon-default;
+    display: block;
     position: absolute;
     top: 50%;
     right: $cdr-space-half-x;
@@ -130,27 +151,37 @@
   }
 
   &__required-label {
-    @include cdr-input-required-label-mixin;
+    margin-left: $cdr-space-inset-quarter-x;
   }
 
   &__optional-label {
-    @include cdr-input-required-label-mixin;
+    @include cdr-input-optional-label-mixin;
+    margin-left: $cdr-space-inset-quarter-x;
   }
 
   &__info-container {
     @include cdr-input-info-container-mixin;
+    position: absolute;
+    right: 0;
+    bottom: 0;
   }
 
   &__helper-text {
     @include cdr-input-helper-text-mixin;
+    display: inline-block;
   }
 
   &__helper-text-top {
-    margin-bottom: $cdr-space-quarter-x;
+    margin-top: $cdr-space-eighth-x;
   }
 
   &__helper-text-bottom {
     margin-top: $cdr-space-quarter-x;
+  }
+
+  &__error-message {
+    margin-top: $cdr-space-quarter-x;
+    @include cdr-input-error-message-mixin;
   }
 }
 
@@ -158,7 +189,22 @@
    # INPUT WRAPPER
    ========================================================================== */
 
-/* related to positioning/layout? */
+.cdr-input-label-wrap {
+  position: relative;
+}
+
+// real cedar input wrapper
+.cdr-input-inner-wrap {
+  position: relative;
+  flex-grow: 1
+}
+
 .cdr-input-wrap {
   position: relative;
+  display: flex;
+  @include cdr-input-outline-mixin;
+}
+
+.cdr-input--focused .cdr-input-wrap {
+  @include cdr-input-focus-mixin;
 }

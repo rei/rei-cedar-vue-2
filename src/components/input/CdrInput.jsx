@@ -51,17 +51,6 @@ export default {
      * Number of rows for input.  Converts component to text-area if rows greater than 1.
     */
     rows: Number,
-    /**
-     * Set whether helper text renders above or below the input element
-    */
-    helperPosition: {
-      type: [String],
-      default: 'bottom',
-      validator: (value) => propValidator(
-        value,
-        ['top', 'bottom'],
-      ),
-    },
     // Set which background type the input renders on
     background: {
       type: [String],
@@ -86,6 +75,7 @@ export default {
   data() {
     return {
       style,
+      isFocused: false,
     };
   },
   computed: {
@@ -95,6 +85,11 @@ export default {
     },
     baseClass() {
       return 'cdr-input';
+    },
+    containerClass() {
+      return {
+        [this.style['cdr-input--focused']]: this.isFocused,
+      };
     },
     labelClass() {
       return {
@@ -107,6 +102,11 @@ export default {
         [this.style['cdr-input']]: true,
         [this.style['cdr-input--multiline']]: this.rows > 1,
         [this.style['cdr-input--preicon']]: this.$slots['pre-icon'],
+      };
+    },
+    wrapperClass() {
+      return {
+        [this.style['cdr-input-wrap']]: true,
         [this.style[`cdr-input--${this.background}`]]: true,
         [this.style['cdr-input--error']]: this.error,
       };
@@ -119,6 +119,14 @@ export default {
         ...this.$listeners,
         input(event) {
           vm.$emit('input', event.target.value);
+        },
+        focus(event) {
+          vm.isFocused = true;
+          vm.$emit('focus', event);
+        },
+        blur(event) {
+          vm.isFocused = false;
+          vm.$emit('blur', event);
         },
       };
     },
@@ -191,16 +199,17 @@ export default {
   },
   render() {
     return (
-      <div class={this.style['cdr-input-container']}>
-        <div class={this.style['cdr-input-wrap']}>
-          {this.labelEl}<br/>
-          { this.$slots['helper-text'] && this.helperPosition === 'top' && (
+      <div class={this.containerClass}>
+        <div class={this.style['cdr-input-label-wrap']}>
+          {this.labelEl}
+          {this.labelEl && this.$slots['helper-text-top'] && (<br/>)}
+          { this.$slots['helper-text-top'] && (
             <span
               class={
                 clsx(this.style['cdr-input__helper-text'],
                   this.style['cdr-input__helper-text-top'])}
             >
-              {this.$slots['helper-text']}
+              {this.$slots['helper-text-top']}
             </span>
           )}
           {this.$slots.info && (
@@ -211,15 +220,17 @@ export default {
             </span>
           )}
         </div>
-        <div class={this.style['cdr-input-wrap']}>
-          {this.inputEl}
-          {this.$slots['pre-icon'] && (
-            <span
-              class={this.style['cdr-input__pre-icon']}
-            >
-              {this.$slots['pre-icon']}
-            </span>
-          )}
+        <div class={this.wrapperClass}>
+          <div class={this.style['cdr-input-inner-wrap']}>
+            {this.inputEl}
+            {this.$slots['pre-icon'] && (
+              <span
+                class={this.style['cdr-input__pre-icon']}
+              >
+                {this.$slots['pre-icon']}
+              </span>
+            )}
+          </div>
           {this.$slots['post-icon'] && (
             <span
               class={this.style['cdr-input__post-icon']}
@@ -228,14 +239,15 @@ export default {
             </span>
           )}
         </div>
-        {this.$slots['helper-text'] && this.helperPosition === 'bottom' && !this.error && (
-          <span
-            class={
-              clsx(this.style['cdr-input__helper-text'],
-                this.style['cdr-input__helper-text-bottom'])}
-          >
-            {this.$slots['helper-text']}
-          </span>
+        {(this.$slots['helper-text'] || this.$slots['helper-text-bottom'])
+          && !this.error && !this.$slots.error && (
+            <span
+              class={
+                clsx(this.style['cdr-input__helper-text'],
+                  this.style['cdr-input__helper-text-bottom'])}
+            >
+              {this.$slots['helper-text'] || this.$slots['helper-text-bottom']}
+            </span>
         )}
         {this.$slots.error && this.error && (
           <span
