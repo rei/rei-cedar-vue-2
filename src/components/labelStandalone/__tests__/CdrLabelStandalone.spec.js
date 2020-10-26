@@ -27,6 +27,17 @@ describe('CdrFormLabelStandalone', () => {
     expect(wrapper.vm.$refs.label.textContent).toBe('Label Test');
   });
 
+  it('does not render label if hideLabel is passed', () => {
+    const wrapper = shallowMount(CdrLabelStandalone, {
+      propsData: {
+        label: 'Label Test',
+        forId: 'test',
+        hideLabel: true,
+      },
+    });
+    expect(wrapper.find('label').exists()).toBe(false);
+  });
+
   it('maps input id to label for correctly', () => {
     const wrapper = shallowMount(CdrLabelStandalone, {
       propsData: {
@@ -35,6 +46,17 @@ describe('CdrFormLabelStandalone', () => {
       },
     });
     expect(wrapper.vm.$refs.label.htmlFor).toBe('test');
+  });
+
+  it('renders required label', () => {
+    const wrapper = shallowMount(CdrLabelStandalone, {
+      propsData: {
+        label: 'test',
+        required: true,
+        forId: 'test',
+      },
+    });
+    expect(wrapper.vm.$refs.label.textContent).toBe('test*');
   });
 
   it('does not render both required and optional labels simultaneously', () => {

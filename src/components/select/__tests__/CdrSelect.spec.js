@@ -22,6 +22,16 @@ describe('cdrSelect', () => {
     expect(wrapper.vm.$refs.select.hasAttribute('aria-label', 'test')).toBe(true);
   });
 
+  it('renders a prompt', () => {
+    const wrapper = shallowMount(CdrSelect, {
+      propsData: {
+        label: 'test',
+        prompt: 'what is it'
+      },
+    });
+    expect(wrapper.find('option').text()).toBe('what is it');
+  });
+
   it('generates an id correctly', () => {
     const wrapper = shallowMount(CdrSelect, {
       propsData: {
@@ -174,6 +184,32 @@ describe('cdrSelect', () => {
       },
     });
     expect(wrapper.find('.cdr-select__info-action').text()).toBe('🤠');
+  });
+
+  it('renders helper-text slot', () => {
+    const wrapper = mount(CdrSelect, {
+      propsData: {
+        label: 'test',
+        id: 'info-action'
+      },
+      slots: {
+        'helper-text': 'yee haw',
+      },
+    });
+    expect(wrapper.find('.cdr-label-standalone__helper').text()).toBe('yee haw');
+  });
+
+  it('renders info slot', () => {
+    const wrapper = mount(CdrSelect, {
+      propsData: {
+        label: 'test',
+        id: 'info-action'
+      },
+      slots: {
+        'info': 'howdy',
+      },
+    });
+    expect(wrapper.find('.cdr-label-standalone__info').text()).toBe('howdy');
   });
 
   it('renders pre-icon slot', () => {
