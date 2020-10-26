@@ -1089,9 +1089,9 @@ h1[id] {
   width: 100%;
   max-width: 32rem;
   min-width: 32rem;
-  display: block !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 .card-doc-heading {
   margin-bottom: 0;

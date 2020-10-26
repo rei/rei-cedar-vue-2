@@ -6,8 +6,6 @@ module.exports = [
       "[data-example-id='tile-orginization']",
       "[data-example-id='groups-within-tiles']",
       "[data-example-id='linked-tile']",
-      "[data-example-id='image-overlays']",
-      "[data-example-id='theming-a-tile']"
     ],
     "readyEvent": null,
     "delay": 500,
