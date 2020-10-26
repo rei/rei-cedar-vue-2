@@ -174,6 +174,7 @@ export default {
           hide-label={ this.hideLabel }
           required={ this.required }
           optional={ this.optional }
+          disabled={ this.disabled }
         >
           { this.$slots['helper-text-top'] && (
             <template slot="helper">
