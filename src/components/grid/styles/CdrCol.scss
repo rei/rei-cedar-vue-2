@@ -273,7 +273,7 @@ $colPct12: calc(12 / #{$rowColumns} * 100%);
   /* COL SMALL
   ========================================================================== */
 
-  @include cdr-sm-mq {
+  @include cdr-sm-mq-up {
     /* increase specificity to prevent cedar 1 from overriding */
     &.cdr-col {
       padding-top: $rowGutter-sm;
@@ -484,7 +484,7 @@ $colPct12: calc(12 / #{$rowColumns} * 100%);
   /* COL MEDIUM
   ========================================================================== */
 
-  @include cdr-md-mq {
+  @include cdr-md-mq-up {
     /* increase specificity to prevent cedar 1 from overriding */
     &.cdr-col {
       padding-top: $rowGutter-md;
@@ -695,7 +695,7 @@ $colPct12: calc(12 / #{$rowColumns} * 100%);
   /* COL LARGE
   ========================================================================== */
 
-  @include cdr-lg-mq {
+  @include cdr-lg-mq-up {
     /* increase specificity to prevent cedar 1 from overriding */
     &.cdr-col {
       padding-top: $rowGutter-lg;
