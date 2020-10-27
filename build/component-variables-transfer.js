@@ -16,7 +16,6 @@ const SUPPORTED_COMPONENTS = [
   'CdrBreadcrumb.vars.scss',
   'CdrFormGroup.vars.scss',
   'CdrLink.vars.scss',
-  'form-label.vars.scss',
   'CdrInput.vars.scss',
   'CdrSelect.vars.scss',
   'CdrCta.vars.scss',

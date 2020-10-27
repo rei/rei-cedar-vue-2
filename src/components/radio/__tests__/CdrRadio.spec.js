@@ -3,7 +3,7 @@ import CdrRadio from 'componentdir/radio/CdrRadio';
 
 describe('CdrRadio', () => {
   it('renders an input', () => {
-    const wrapper = shallowMount(CdrRadio, {
+    const wrapper = mount(CdrRadio, {
       propsData: {
         customValue: 'A',
         name: 'testName',
@@ -23,7 +23,7 @@ describe('CdrRadio', () => {
   });
 
   it('adds a custom label class correctly', () => {
-    const wrapper = shallowMount(CdrRadio, {
+    const wrapper = mount(CdrRadio, {
       propsData: {
         labelClass: 'custom-label-class',
         customValue: 'A',
@@ -33,7 +33,7 @@ describe('CdrRadio', () => {
         default: 'Label Test',
       },
     });
-    expect(wrapper.vm.$refs.label.classList.contains('custom-label-class')).toBe(true);
+    expect(wrapper.find('.custom-label-class').exists()).toBe(true);
   });
 
   it('adds a custom input class correctly', () => {
@@ -51,7 +51,7 @@ describe('CdrRadio', () => {
   });
 
   it('adds a custom content class correctly', () => {
-    const wrapper = shallowMount(CdrRadio, {
+    const wrapper = mount(CdrRadio, {
       propsData: {
         contentClass: 'custom-content-class',
         customValue: 'A',

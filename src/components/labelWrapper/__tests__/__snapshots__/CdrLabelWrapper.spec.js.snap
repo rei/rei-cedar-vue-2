@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CdrLabelWrapper matches snapshot 1`] = `
+<div
+  class="cdr-label-wrapper__container"
+  name="testName"
+>
+  <label
+    class="cdr-label-wrapper cdr-label-wrapper--hide-figure cdr-label-wrapper--medium custom-label-class"
+  >
+    <input
+      type="checkbox"
+    />
+    <span
+      class="cdr-label-wrapper__figure"
+    />
+    <div
+      class="cdr-label-wrapper__content custom-content-class"
+    >
+      Label Wrapper Test
+    </div>
+  </label>
+</div>
+`;

@@ -2,20 +2,20 @@
 
 exports[`CdrCheckbox renders correctly 1`] = `
 <div
-  class="cdr-checkbox__wrap"
+  class="cdr-label-wrapper__container cdr-checkbox"
 >
   <label
-    class="cdr-checkbox custom-label-class cdr-checkbox--medium"
+    class="cdr-label-wrapper cdr-label-wrapper--medium custom-label-class"
   >
     <input
       class="cdr-checkbox__input"
       type="checkbox"
     />
     <span
-      class="cdr-checkbox__figure"
+      class="cdr-label-wrapper__figure"
     />
     <div
-      class="cdr-checkbox__content"
+      class="cdr-label-wrapper__content"
     >
       Label Test
     </div>

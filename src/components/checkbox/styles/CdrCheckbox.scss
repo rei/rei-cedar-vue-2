@@ -1,55 +1,9 @@
 @import '../../../css/settings/index.scss';
-@import './vars/CdrCheckbox.vars.scss';
+@import url('@rei/cedar/dist/style/cdr-label-wrapper.css');
 .cdr-checkbox {
-  @include cdr-label-base-mixin;
-  display: inline-block;
-  margin: 0;
-  position: relative;
-  user-select: none;
-
-  /* Elements
-    ========================================================================== */
-
-  /* Wrap
-  ========== */
-  &__wrap {
-    /* get rid of inline-block whitespace from label element */
-    font-size: 0;
-    line-height: 1;
-  }
-
-  /* Input
-  ========== */
-  &__input {
-    position: absolute;
-    opacity: 0;
-    z-index: -1;
-  }
-
-  /* Content
-  ========== */
-  &__content {
-    user-select: text;
-  }
-
-  /* Figure
-  ========== */
-  &__figure {
-    @include cdr-label-figure-medium-mixin;
-    position: absolute;
-    left: 0;
-    border-radius: $cdr-radius-softer;
-    background-color: $cdr-color-background-input-default;
-    box-shadow: inset 0 0 0 1px $cdr-color-border-input-default;
-    transition: box-shadow $cdr-duration-2-x $cdr-timing-function-ease;
-  }
-
-  /* States
-    ========================================================================== */
-
   /* Checked
   ========== */
-  &__input:checked ~ &__figure {
+  &__input:checked ~ .cdr-label-wrapper__figure {
     box-shadow: inset 0 0 0 1px $cdr-color-border-input-default-selected;
     // border-color: ;
     background-color: $cdr-color-background-input-default-selected;
@@ -59,7 +13,7 @@
 
   /* Indeterminate
   ========== */
-  &__input[indeterminate] ~ .cdr-checkbox__figure {
+  &__input[indeterminate] ~ .cdr-label-wrapper__figure {
     box-shadow: inset 0 0 0 1px $cdr-color-border-input-default-selected;
 
     &::after {
@@ -78,20 +32,16 @@
   /* Hover
   ========== */
   &:hover {
-    & > .cdr-checkbox__figure {
+    & > .cdr-label-wrapper__figure {
       cursor: pointer;
       box-shadow: 0 0 0 3px $cdr-color-border-input-default-hover;
       background-color: $cdr-color-background-input-default-hover;
     }
 
-    & > .cdr-checkbox__content {
-      @include cdr-label-hover-mixin;
-    }
-
     & > .cdr-checkbox__input {
       /* Hover + Checked
       ========== */
-      &:checked ~ .cdr-checkbox__figure {
+      &:checked ~ .cdr-label-wrapper__figure {
         box-shadow: 0 0 0 3px $cdr-color-border-input-default-selected-hover;
         background-color: $cdr-color-background-input-default-selected-hover;
         background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/check-lg.svg', fill="#{$cdr-color-icon-checkbox-default-selected-hover}");
@@ -100,7 +50,7 @@
 
       /* Hover + Indeterminate
       ========== */
-      &[indeterminate] ~ .cdr-checkbox__figure {
+      &[indeterminate] ~ .cdr-label-wrapper__figure {
         box-shadow: 0 0 0 3px $cdr-color-border-input-default-selected-hover;
         &::after {
           background-color: $cdr-color-icon-checkbox-default-selected-hover;
@@ -112,11 +62,8 @@
   /* Disabled
   ========== */
   &__input:disabled {
-    & ~ .cdr-checkbox__content {
-      @include cdr-label-disabled-mixin;
-    }
 
-    & ~ .cdr-checkbox__figure {
+    & ~ .cdr-label-wrapper__figure {
       box-shadow: inset 0 0 0 1px $cdr-color-border-input-default-disabled ;
       background-color: $cdr-color-background-input-default-disabled !important;
       cursor: not-allowed;
@@ -125,7 +72,7 @@
     /* Disabled + Checked
     ========== */
     &:checked {
-      & ~ .cdr-checkbox__figure {
+      & ~ .cdr-label-wrapper__figure {
         background-color: $cdr-color-background-input-default-disabled !important;
       }
     }
@@ -133,7 +80,7 @@
     /* Disabled + Indeterminate
     ========== */
     &[indeterminate] {
-      & ~ .cdr-checkbox__figure {
+      & ~ .cdr-label-wrapper__figure {
         box-shadow: inset 0 0 0 1px $cdr-color-border-input-default-disabled !important;
 
         &::after {
@@ -145,73 +92,13 @@
 
   /* Active
   ========== */
-  &:active > .cdr-checkbox__figure {
+  &:active > .cdr-label-wrapper__figure {
     box-shadow: inset 0 0 0 1px $cdr-color-border-input-default-active;
   }
 
   /* Focus
   ========== */
-  &__input:focus ~ .cdr-checkbox__figure {
+  &__input:focus ~ .cdr-label-wrapper__figure {
     box-shadow: 0 0 0 3px $cdr-color-border-input-default-active;
-  }
-
-
-  /* Sizes
-    ========================================================================== */
-  @include checkbox-small-mixin(&);
-  @include checkbox-medium-mixin(&);
-  @include checkbox-large-mixin(&);
-
-  /* Breakpoint variants
-
-  /* @xs
-    0px - 767px
-    ========== */
-  @include cdr-xs-mq-only {
-    @include checkbox-small-mixin(&, \@xs);
-    @include checkbox-medium-mixin(&, \@xs);
-    @include checkbox-large-mixin(&, \@xs);
-  }
-
-  /* @sm
-    768px - 991px
-    ========== */
-  @include cdr-sm-mq-only {
-    @include checkbox-small-mixin(&, \@sm);
-      @include checkbox-medium-mixin(&, \@sm);
-    @include checkbox-large-mixin(&, \@sm);
-  }
-
-  /* @md
-    992px - 1199px
-    ========== */
-  @include cdr-md-mq-only {
-    @include checkbox-small-mixin(&, \@md);
-    @include checkbox-medium-mixin(&, \@md);
-    @include checkbox-large-mixin(&, \@md);
-  }
-
-  /* @lg
-    1200px and up
-    ========== */
-
-  @include cdr-lg-mq-only {
-    @include checkbox-small-mixin(&, \@lg);
-    @include checkbox-medium-mixin(&, \@lg);
-    @include checkbox-large-mixin(&, \@lg);
-  }
-
-  /* Modifiers
-    ========================================================================== */
-
-  /* Hide Figure
-    ========== */
-
-  &--hide-figure {
-    padding-left: 0;
-
-    & > .cdr-checkbox__figure {
-      display: none;
-    }
   }
 }

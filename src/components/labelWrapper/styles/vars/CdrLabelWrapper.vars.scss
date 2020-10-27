@@ -1,0 +1,90 @@
+@import '../../../../css/settings/index.scss';
+// variables shared between checkbox and radio
+$cdr-label-base-spacing: $cdr-space-half-x;
+
+$cdr-label-figure-size-small: 16px;
+$cdr-label-figure-size-medium: 16px;
+$cdr-label-figure-size-large: 20px;
+$cdr-label-figure-box-shadow: 0 0 8px 0 $cdr-color-border-input-default-active;
+
+$cdr-label-height-medium: $cdr-text-utility-sans-300-height;
+@mixin cdr-label-base-mixin() {
+  @include cdr-text-utility-sans-300;
+  padding-left: calc(#{$cdr-label-figure-size-medium} + #{$cdr-label-base-spacing});
+  color: $cdr-color-text-input-label;
+}
+
+@mixin cdr-label-hover-mixin() {
+  cursor: pointer;
+}
+
+@mixin cdr-label-disabled-mixin() {
+  color: $cdr-color-text-disabled !important;
+  cursor: default;
+}
+
+$cdr-label-height-small: $cdr-text-utility-sans-200-height;
+@mixin cdr-label-small-mixin() {
+  @include cdr-text-utility-sans-200;
+  padding-left: calc(#{$cdr-label-figure-size-small} + #{$cdr-label-base-spacing});
+}
+
+$cdr-label-height-large: $cdr-text-utility-sans-300-height;
+@mixin cdr-label-large-mixin() {
+  @include cdr-text-utility-sans-300;
+  padding-left: calc(#{$cdr-label-figure-size-large} + #{$cdr-label-base-spacing});
+}
+
+
+
+
+@mixin label-wrapper-small-mixin($breakpoint: '') {
+  &--small#{$breakpoint} {
+    @include cdr-label-small-mixin;
+
+    & > .cdr-label-wrapper__figure {
+      top: calc((#{$cdr-label-height-small} - #{$cdr-label-figure-size-small}) / 2);
+      width: $cdr-label-figure-size-small;
+      height: $cdr-label-figure-size-small;
+      // TODO: verify these don't mess up checkbox :]
+      &::after {
+        width: $cdr-label-figure-size-small / 2; // TODO: verify these get compiled
+        height: $cdr-label-figure-size-small / 2;
+      }
+    }
+  }
+}
+
+@mixin label-wrapper-medium-mixin($breakpoint: '') {
+  &--medium#{$breakpoint} {
+    @include cdr-label-base-mixin;
+
+    & > .cdr-label-wrapper__figure {
+      top: calc((#{$cdr-label-height-medium} - #{$cdr-label-figure-size-medium}) / 2);
+      width: $cdr-label-figure-size-medium;
+      height: $cdr-label-figure-size-medium;
+      // TODO: verify these don't mess up checkbox :]
+      &::after {
+        width: $cdr-label-figure-size-medium / 2; // TODO: verify these get compiled
+        height: $cdr-label-figure-size-medium / 2;
+      }
+    }
+  }
+}
+
+@mixin label-wrapper-large-mixin($breakpoint: '') {
+  &--large#{$breakpoint} {
+    @include cdr-label-large-mixin;
+
+    & > .cdr-label-wrapper__figure {
+      top: calc((#{$cdr-label-height-large} - #{$cdr-label-figure-size-large}) / 2);
+      width: $cdr-label-figure-size-large;
+      height: $cdr-label-figure-size-large;
+      // TODO: verify these don't mess up checkbox :]
+      &::after {
+        width: $cdr-label-figure-size-large / 2; // TODO: verify these get compiled
+        height: $cdr-label-figure-size-large / 2;
+      }
+    }
+  }
+}

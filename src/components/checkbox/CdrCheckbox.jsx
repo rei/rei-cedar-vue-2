@@ -3,11 +3,15 @@ import modifier from '../../mixins/modifier';
 import space from '../../mixins/space';
 import size from '../../mixins/size';
 import style from './styles/CdrCheckbox.scss';
+import CdrLabelWrapper from '../labelWrapper/CdrLabelWrapper';
 
 export default {
   name: 'CdrCheckbox',
   mixins: [modifier, space, size],
   inheritAttrs: false,
+  components: {
+    CdrLabelWrapper,
+  },
   props: {
     /**
      * Class that is added to the label for custom styles
@@ -83,32 +87,29 @@ export default {
   // TODO: pass disabled/checked/other attrs through? need direct binding?
   render() {
     return (
-      <div class={clsx(this.space, this.style['cdr-checkbox__wrap'])}>
-        <label
-          class={clsx(this.style[this.baseClass],
-            this.modifierClass,
-            this.labelClass,
-            this.sizeClass)}
-          ref="label"
-        >
-          <input
-            class={clsx(this.style['cdr-checkbox__input'], this.inputClass)}
-            type="checkbox"
-            {... { attrs: this.$attrs } }
-            vModel={this.newValue}
-            onChange={(e) => this.updateValue(this.newValue, e)}
-            true-value={this.customValue ? null : this.trueValue}
-            false-value={this.customValue ? null : this.falseValue}
-            value={this.customValue}
-            indeterminate={this.indeterminate}
-            ref="checkbox"
-          />
-          <span class={this.style['cdr-checkbox__figure']} />
-          <div class={clsx(this.style['cdr-checkbox__content'], this.contentClass)}>
-            {this.$slots.default}
-          </div>
-        </label>
-      </div>
+      <cdr-label-wrapper
+        class={clsx(this.space, this.style['cdr-checkbox'])}
+        ref="label"
+        size={this.size}
+        modifier={this.modifier}
+        labelClass={this.labelClass}
+        contentClass={this.contentClass}
+      >
+        <input
+          class={clsx(this.style['cdr-checkbox__input'], this.inputClass)}
+          type="checkbox"
+          {... { attrs: this.$attrs } }
+          vModel={this.newValue}
+          onChange={(e) => this.updateValue(this.newValue, e)}
+          true-value={this.customValue ? null : this.trueValue}
+          false-value={this.customValue ? null : this.falseValue}
+          value={this.customValue}
+          indeterminate={this.indeterminate}
+          ref="checkbox"
+          slot="input"
+        />
+        {this.$slots.default}
+      </cdr-label-wrapper>
     );
   },
 };
