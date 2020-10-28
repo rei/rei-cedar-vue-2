@@ -18897,47 +18897,15 @@ var cedar = (function () {
 
   };
 
-  var css_248z$c = "/* ==========================================================================/*\n* Token option variables\n*\n* these are temporary variables, providing\n* cedar components mappings to previously available tokens.\n* These varables should be removed as tokens are available\n*\n=============================================================== */\n/* ---------------------\n* Outline\n* ------------------- */\n.cdr-form-group_7\\.0\\.0-alpha\\.0 {\n  font-family: Graphik, \"Helvetica Neue\", sans-serif;\n  font-style: normal;\n  font-weight: 500;\n  letter-spacing: 0;\n  font-size: 1.6rem;\n  line-height: 2rem;\n  border: none;\n  -webkit-margin-start: 0;\n          margin-inline-start: 0;\n  -webkit-margin-end: 0;\n          margin-inline-end: 0;\n  -webkit-padding-before: 0;\n          padding-block-start: 0;\n  -webkit-padding-start: 0;\n          padding-inline-start: 0;\n  -webkit-padding-end: 0;\n          padding-inline-end: 0;\n  -webkit-padding-after: 0;\n          padding-block-end: 0;\n  margin-bottom: 3.2rem; }\n.cdr-form-group_7\\.0\\.0-alpha\\.0 legend {\n    -webkit-padding-start: 0;\n            padding-inline-start: 0;\n    margin-bottom: 1.6rem; }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9jc3Mvc2V0dGluZ3MvX29wdGlvbnMudmFycy5zY3NzIiwiQ2RyRm9ybUdyb3VwLnNjc3MiLCJzcmMvY29tcG9uZW50cy9mb3JtR3JvdXAvc3R5bGVzL0NkckZvcm1Hcm91cC5zY3NzIiwibm9kZV9tb2R1bGVzL0ByZWkvY2RyLXRva2Vucy9kaXN0L3Njc3MvY2RyLXRva2Vucy5zY3NzIiwic3JjL2NvbXBvbmVudHMvZm9ybUdyb3VwL3N0eWxlcy9DZHJGb3JtR3JvdXAudmFycy5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOzs7Ozs7O2lFQ09pRTtBREVqRTs7dUJDQ3VCO0FDUHZCO0VDc0tFLGtEQUFrRDtFQUNsRCxrQkFBa0I7RUFDbEIsZ0JBQWdCO0VBQ2hCLGlCQUFtQjtFQUNuQixpQkFBaUI7RUFDakIsaUJBQWlCO0VDNUtqQixZQUFZO0VBRVosdUJBQXNCO1VBQXRCLHNCQUFzQjtFQUN0QixxQkFBb0I7VUFBcEIsb0JBQW9CO0VBQ3BCLHlCQUFzQjtVQUF0QixzQkFBc0I7RUFDdEIsd0JBQXVCO1VBQXZCLHVCQUF1QjtFQUN2QixzQkFBcUI7VUFBckIscUJBQXFCO0VBQ3JCLHdCQUFvQjtVQUFwQixvQkFBb0I7RUFFcEIscUJEaTVDc0IsRUFBQTtBRHo1Q3hCO0lFV0ksd0JBQXVCO1lBQXZCLHVCQUF1QjtJQUN2QixxQkQyNENvQixFQUFBIiwiZmlsZSI6IkNkckZvcm1Hcm91cC5zY3NzIn0= */";
-  var style$e = {"cdr-form-group":"cdr-form-group_7.0.0-alpha.0"};
+  var css_248z$c = "/* ==========================================================================/*\n* Token option variables\n*\n* these are temporary variables, providing\n* cedar components mappings to previously available tokens.\n* These varables should be removed as tokens are available\n*\n=============================================================== */\n/* ---------------------\n* Outline\n* ------------------- */\n.cdr-form-group_7\\.0\\.0-alpha\\.0 {\n  font-family: Graphik, \"Helvetica Neue\", sans-serif;\n  font-style: normal;\n  font-weight: 500;\n  letter-spacing: 0;\n  font-size: 1.6rem;\n  line-height: 2rem;\n  border: none;\n  -webkit-margin-start: 0;\n          margin-inline-start: 0;\n  -webkit-margin-end: 0;\n          margin-inline-end: 0;\n  -webkit-padding-before: 0;\n          padding-block-start: 0;\n  -webkit-padding-start: 0;\n          padding-inline-start: 0;\n  -webkit-padding-end: 0;\n          padding-inline-end: 0;\n  -webkit-padding-after: 0;\n          padding-block-end: 0;\n  margin-bottom: 3.2rem; }\n.cdr-form-group_7\\.0\\.0-alpha\\.0 legend {\n    -webkit-padding-start: 0;\n            padding-inline-start: 0;\n    margin-bottom: 0.8rem; }\n.cdr-form-group--error_7\\.0\\.0-alpha\\.0 {\n  box-shadow: inset 0 0 0 0.1rem #b33322;\n  background-color: rgba(255, 242, 242, 0.75); }\n.cdr-form-group--error_7\\.0\\.0-alpha\\.0:hover {\n    background-color: none; }\n.cdr-form-group__error-message_7\\.0\\.0-alpha\\.0 {\n  color: #b33322;\n  fill: #b33322;\n  position: absolute;\n  top: calc(100% + 0.4rem); }\n.cdr-form-group__wrapper_7\\.0\\.0-alpha\\.0 {\n  position: relative;\n  border-radius: 0.4rem; }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9jc3Mvc2V0dGluZ3MvX29wdGlvbnMudmFycy5zY3NzIiwiQ2RyRm9ybUdyb3VwLnNjc3MiLCJzcmMvY29tcG9uZW50cy9mb3JtR3JvdXAvc3R5bGVzL0NkckZvcm1Hcm91cC5zY3NzIiwibm9kZV9tb2R1bGVzL0ByZWkvY2RyLXRva2Vucy9kaXN0L3Njc3MvY2RyLXRva2Vucy5zY3NzIiwic3JjL2NvbXBvbmVudHMvZm9ybUdyb3VwL3N0eWxlcy9DZHJGb3JtR3JvdXAudmFycy5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOzs7Ozs7O2lFQ09pRTtBREVqRTs7dUJDQ3VCO0FDUHZCO0VDc0tFLGtEQUFrRDtFQUNsRCxrQkFBa0I7RUFDbEIsZ0JBQWdCO0VBQ2hCLGlCQUFtQjtFQUNuQixpQkFBaUI7RUFDakIsaUJBQWlCO0VDNUtqQixZQUFZO0VBRVosdUJBQXNCO1VBQXRCLHNCQUFzQjtFQUN0QixxQkFBb0I7VUFBcEIsb0JBQW9CO0VBQ3BCLHlCQUFzQjtVQUF0QixzQkFBc0I7RUFDdEIsd0JBQXVCO1VBQXZCLHVCQUF1QjtFQUN2QixzQkFBcUI7VUFBckIscUJBQXFCO0VBQ3JCLHdCQUFvQjtVQUFwQixvQkFBb0I7RUFFcEIscUJEaTVDc0IsRUFBQTtBRHo1Q3hCO0lFV0ksd0JBQXVCO1lBQXZCLHVCQUF1QjtJQUN2QixxQkR5NENxQixFQUFBO0FEajVDekI7RUFDRSxzQ0N5d0NvQztFRHh3Q3BDLDJDQ2t1QzBELEVBQUE7QURwdUM1RDtJQUlJLHNCQUFzQixFQUFBO0FBSTFCO0VBQ0UsY0M0cUNrQztFRDNxQ2xDLGFDMnFDa0M7RUQxcUNsQyxrQkFBa0I7RUFDbEIsd0JBQXlDLEVBQUE7QUFHM0M7RUFDRSxrQkFBa0I7RUFDbEIscUJDNDNDd0IsRUFBQSIsImZpbGUiOiJDZHJGb3JtR3JvdXAuc2NzcyJ9 */";
+  var style$e = {"cdr-form-group":"cdr-form-group_7.0.0-alpha.0","cdr-form-group--error":"cdr-form-group--error_7.0.0-alpha.0","cdr-form-group__error-message":"cdr-form-group__error-message_7.0.0-alpha.0","cdr-form-group__wrapper":"cdr-form-group__wrapper_7.0.0-alpha.0"};
   styleInject(css_248z$c);
-
-  var CdrFormGroup = {
-    name: 'CdrFormGroup',
-    props: {
-      label: {
-        type: String,
-        default: '',
-        required: false
-      }
-    },
-
-    data() {
-      return {
-        style: style$e
-      };
-    },
-
-    computed: {
-      baseClass() {
-        return 'cdr-form-group';
-      }
-
-    },
-
-    render() {
-      var h = arguments[0];
-      return h("fieldset", {
-        "class": this.style[this.baseClass]
-      }, [h("legend", [this.$slots.label || this.label]), this.$slots.default]);
-    }
-
-  };
 
   function ownKeys$5(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$4(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$5(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$5(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var accountProfileFill = {
-    name: 'IconAccountProfileFill',
+  var IconErrorStroke = {
+    name: 'IconErrorStroke',
     components: {
       CdrIcon
     },
@@ -18951,9 +18919,57 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M4 21a1 1 0 01-1-1h-.008a9.08 9.08 0 01.02-.159 9.08 9.08 0 015.454-7.127 5.5 5.5 0 117.068 0A9.08 9.08 0 0121.008 20H21a1 1 0 01-1 1H4z"
+          "d": "M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zm0 2a8 8 0 100 16 8 8 0 000-16zm0 11.5a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5zm.22-9.5a1 1 0 011 1.03l-.191 6.5a1 1 0 01-1 .97h-.058a1 1 0 01-1-.97l-.19-6.5A1 1 0 0111.78 6h.44z"
         }
       })]);
+    }
+
+  };
+
+  var CdrFormGroup = {
+    name: 'CdrFormGroup',
+    components: {
+      IconErrorStroke
+    },
+    props: {
+      label: {
+        type: String,
+        default: '',
+        required: false
+      },
+      error: Boolean
+    },
+
+    data() {
+      return {
+        style: style$e
+      };
+    },
+
+    computed: {
+      baseClass() {
+        return 'cdr-form-group';
+      },
+
+      errorClass() {
+        return this.error ? this.style['cdr-form-group--error'] : '';
+      }
+
+    },
+
+    render() {
+      var h = arguments[0];
+      return h("fieldset", {
+        "class": this.style[this.baseClass]
+      }, [h("legend", [this.$slots.label || this.label]), h("div", {
+        "class": clsx(this.style['cdr-form-group__wrapper'], this.errorClass)
+      }, [this.$slots.default, this.error && this.$slots.error && h("div", {
+        "class": this.style['cdr-form-group__error-message']
+      }, [h("icon-error-stroke", {
+        "attrs": {
+          "inherit-color": true
+        }
+      }), " ", this.$slots.error])])]);
     }
 
   };
@@ -18961,8 +18977,8 @@ var cedar = (function () {
   function ownKeys$6(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$5(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$6(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$6(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var accountProfile = {
-    name: 'IconAccountProfile',
+  var accountProfileFill = {
+    name: 'IconAccountProfileFill',
     components: {
       CdrIcon
     },
@@ -18976,7 +18992,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M12 12a3.5 3.5 0 100-7 3.5 3.5 0 000 7zm6.762 7a7.073 7.073 0 00-13.524 0h13.524zM4 21a1 1 0 01-1-1h-.008a9.08 9.08 0 01.02-.159 9.08 9.08 0 015.454-7.127 5.5 5.5 0 117.068 0A9.08 9.08 0 0121.008 20H21a1 1 0 01-1 1H4z"
+          "d": "M4 21a1 1 0 01-1-1h-.008a9.08 9.08 0 01.02-.159 9.08 9.08 0 015.454-7.127 5.5 5.5 0 117.068 0A9.08 9.08 0 0121.008 20H21a1 1 0 01-1 1H4z"
         }
       })]);
     }
@@ -18986,8 +19002,8 @@ var cedar = (function () {
   function ownKeys$7(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$6(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$7(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$7(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var arrowDown = {
-    name: 'IconArrowDown',
+  var accountProfile = {
+    name: 'IconAccountProfile',
     components: {
       CdrIcon
     },
@@ -19001,7 +19017,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M11 16.585L7.705 13.29a1 1 0 00-1.412 1.417l4.98 4.98a.997.997 0 001.429.025l5.005-5.005a1 1 0 00-1.414-1.414L13 16.586V5a1 1 0 00-2 0v11.585z"
+          "d": "M12 12a3.5 3.5 0 100-7 3.5 3.5 0 000 7zm6.762 7a7.073 7.073 0 00-13.524 0h13.524zM4 21a1 1 0 01-1-1h-.008a9.08 9.08 0 01.02-.159 9.08 9.08 0 015.454-7.127 5.5 5.5 0 117.068 0A9.08 9.08 0 0121.008 20H21a1 1 0 01-1 1H4z"
         }
       })]);
     }
@@ -19011,8 +19027,8 @@ var cedar = (function () {
   function ownKeys$8(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$7(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$8(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$8(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var arrowLeft = {
-    name: 'IconArrowLeft',
+  var arrowDown = {
+    name: 'IconArrowDown',
     components: {
       CdrIcon
     },
@@ -19026,7 +19042,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M7.415 11l3.295-3.295a1 1 0 00-1.417-1.412l-4.98 4.98a.997.997 0 00-.025 1.429l5.005 5.005a1 1 0 101.414-1.414L7.414 13H19a1 1 0 000-2H7.415z"
+          "d": "M11 16.585L7.705 13.29a1 1 0 00-1.412 1.417l4.98 4.98a.997.997 0 001.429.025l5.005-5.005a1 1 0 00-1.414-1.414L13 16.586V5a1 1 0 00-2 0v11.585z"
         }
       })]);
     }
@@ -19036,8 +19052,8 @@ var cedar = (function () {
   function ownKeys$9(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$8(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$9(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$9(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var arrowRight = {
-    name: 'IconArrowRight',
+  var arrowLeft = {
+    name: 'IconArrowLeft',
     components: {
       CdrIcon
     },
@@ -19051,7 +19067,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M16.585 13l-3.295 3.295a1 1 0 001.417 1.412l4.98-4.98a.997.997 0 00.025-1.429l-5.005-5.005a1 1 0 00-1.414 1.414L16.586 11H5a1 1 0 000 2h11.585z"
+          "d": "M7.415 11l3.295-3.295a1 1 0 00-1.417-1.412l-4.98 4.98a.997.997 0 00-.025 1.429l5.005 5.005a1 1 0 101.414-1.414L7.414 13H19a1 1 0 000-2H7.415z"
         }
       })]);
     }
@@ -19061,8 +19077,8 @@ var cedar = (function () {
   function ownKeys$a(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$9(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$a(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$a(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var arrowUp = {
-    name: 'IconArrowUp',
+  var arrowRight = {
+    name: 'IconArrowRight',
     components: {
       CdrIcon
     },
@@ -19076,7 +19092,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M13 7.415l3.295 3.295a1 1 0 001.412-1.417l-4.98-4.98a.997.997 0 00-1.429-.025L6.293 9.293a1 1 0 001.414 1.414L11 7.414V19a1 1 0 002 0V7.415z"
+          "d": "M16.585 13l-3.295 3.295a1 1 0 001.417 1.412l4.98-4.98a.997.997 0 00.025-1.429l-5.005-5.005a1 1 0 00-1.414 1.414L16.586 11H5a1 1 0 000 2h11.585z"
         }
       })]);
     }
@@ -19086,8 +19102,8 @@ var cedar = (function () {
   function ownKeys$b(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$a(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$b(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$b(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var atv = {
-    name: 'IconAtv',
+  var arrowUp = {
+    name: 'IconArrowUp',
     components: {
       CdrIcon
     },
@@ -19101,7 +19117,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M12.341 14h-.682A5.998 5.998 0 006 10a5.972 5.972 0 00-3 .803V9.007A1 1 0 014.42 8.1l7.588 1.487 2.48-1.461L13.475 6H12a1 1 0 110-2h2a1 1 0 01.939.655l1.066 2.348 3.451 2.107A1 1 0 0120 10v.341A5.99 5.99 0 0018 10a5.987 5.987 0 00-5.659 4zM6 20a4 4 0 110-8 4 4 0 010 8zm0-2a2 2 0 100-4 2 2 0 000 4zm12 2a4 4 0 110-8 4 4 0 010 8zm0-2a2 2 0 100-4 2 2 0 000 4z"
+          "d": "M13 7.415l3.295 3.295a1 1 0 001.412-1.417l-4.98-4.98a.997.997 0 00-1.429-.025L6.293 9.293a1 1 0 001.414 1.414L11 7.414V19a1 1 0 002 0V7.415z"
         }
       })]);
     }
@@ -19111,8 +19127,8 @@ var cedar = (function () {
   function ownKeys$c(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$b(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$c(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$c(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var bedOutline = {
-    name: 'IconBedOutline',
+  var atv = {
+    name: 'IconAtv',
     components: {
       CdrIcon
     },
@@ -19126,7 +19142,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M9 10h12a1 1 0 011 1v3.785a1.004 1.004 0 010 .43V19a1 1 0 01-2 0v-3H4v3a1 1 0 01-2 0V5a1 1 0 112 0v3.25A1.98 1.98 0 015 8h2a2 2 0 012 2zm-5 2v2h16v-2H4z"
+          "d": "M12.341 14h-.682A5.998 5.998 0 006 10a5.972 5.972 0 00-3 .803V9.007A1 1 0 014.42 8.1l7.588 1.487 2.48-1.461L13.475 6H12a1 1 0 110-2h2a1 1 0 01.939.655l1.066 2.348 3.451 2.107A1 1 0 0120 10v.341A5.99 5.99 0 0018 10a5.987 5.987 0 00-5.659 4zM6 20a4 4 0 110-8 4 4 0 010 8zm0-2a2 2 0 100-4 2 2 0 000 4zm12 2a4 4 0 110-8 4 4 0 010 8zm0-2a2 2 0 100-4 2 2 0 000 4z"
         }
       })]);
     }
@@ -19136,8 +19152,8 @@ var cedar = (function () {
   function ownKeys$d(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$c(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$d(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$d(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var bikeShop = {
-    name: 'IconBikeShop',
+  var bedOutline = {
+    name: 'IconBedOutline',
     components: {
       CdrIcon
     },
@@ -19151,7 +19167,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M13.517 12.18l7.206 7.207a.945.945 0 01-1.336 1.336l-7.206-7.206a1.26 1.26 0 111.336-1.336zm5.37 2.753a7.5 7.5 0 10-3.977 3.977l1.585 1.585-.064-.023a1.253 1.253 0 00-1.574.65l-.122.266a1.052 1.052 0 01-1.67.332l-.213-.197a1.255 1.255 0 00-1.704 0l-.213.197a1.052 1.052 0 01-1.67-.332l-.122-.266a1.253 1.253 0 00-1.574-.65l-.272.1a1.052 1.052 0 01-1.416-.943l-.011-.297a1.251 1.251 0 00-1.204-1.201l-.291-.011a1.051 1.051 0 01-.947-1.414l.103-.28a1.248 1.248 0 00-.65-1.568l-.267-.122a1.051 1.051 0 01-.334-1.67l.202-.218a1.247 1.247 0 000-1.696l-.202-.218a1.05 1.05 0 01.334-1.67l.266-.122c.594-.273.878-.956.651-1.568l-.103-.28a1.05 1.05 0 01.947-1.414l.29-.01A1.251 1.251 0 005.87 4.667l.01-.297a1.05 1.05 0 011.417-.943l.272.1a1.253 1.253 0 001.574-.65l.122-.266a1.052 1.052 0 011.67-.332l.213.197c.48.446 1.224.446 1.704 0l.213-.197a1.052 1.052 0 011.67.332l.122.266c.273.594.96.878 1.574.65l.272-.1a1.052 1.052 0 011.416.943l.011.297c.025.653.55 1.176 1.204 1.201l.291.011a1.051 1.051 0 01.947 1.414l-.103.28a1.248 1.248 0 00.65 1.568l.267.122a1.051 1.051 0 01.334 1.67l-.202.218a1.247 1.247 0 000 1.696l.202.218a1.05 1.05 0 01-.334 1.67l-.266.122a1.248 1.248 0 00-.651 1.568l.052.14-1.634-1.633z"
+          "d": "M9 10h12a1 1 0 011 1v3.785a1.004 1.004 0 010 .43V19a1 1 0 01-2 0v-3H4v3a1 1 0 01-2 0V5a1 1 0 112 0v3.25A1.98 1.98 0 015 8h2a2 2 0 012 2zm-5 2v2h16v-2H4z"
         }
       })]);
     }
@@ -19161,8 +19177,8 @@ var cedar = (function () {
   function ownKeys$e(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$d(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$e(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$e(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var binoculars = {
-    name: 'IconBinoculars',
+  var bikeShop = {
+    name: 'IconBikeShop',
     components: {
       CdrIcon
     },
@@ -19176,7 +19192,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M10 13v1h3.996v2H10v1a4 4 0 11-7.853-1.085l1.795-8.93.093-.442A3 3 0 0110 7v4h3.997V7a3 3 0 015.965-.456l.093.442 1.795 8.93A4.003 4.003 0 0117.998 21a4 4 0 01-4-4v-4H10zm9.296.214l-1.308-6.38a1.01 1.01 0 00-.99-.835 1 1 0 00-1 1v6.536a4.016 4.016 0 013.299-.321zm-14.6 0c.408-.14.844-.215 1.298-.215.73 0 1.413.195 2.002.536V7a1 1 0 00-1-1 1.01 1.01 0 00-.99.836l-1.31 6.38zM18 19a2 2 0 100-4 2 2 0 000 4zM6.011 19a2 2 0 100-4 2 2 0 000 4z"
+          "d": "M13.517 12.18l7.206 7.207a.945.945 0 01-1.336 1.336l-7.206-7.206a1.26 1.26 0 111.336-1.336zm5.37 2.753a7.5 7.5 0 10-3.977 3.977l1.585 1.585-.064-.023a1.253 1.253 0 00-1.574.65l-.122.266a1.052 1.052 0 01-1.67.332l-.213-.197a1.255 1.255 0 00-1.704 0l-.213.197a1.052 1.052 0 01-1.67-.332l-.122-.266a1.253 1.253 0 00-1.574-.65l-.272.1a1.052 1.052 0 01-1.416-.943l-.011-.297a1.251 1.251 0 00-1.204-1.201l-.291-.011a1.051 1.051 0 01-.947-1.414l.103-.28a1.248 1.248 0 00-.65-1.568l-.267-.122a1.051 1.051 0 01-.334-1.67l.202-.218a1.247 1.247 0 000-1.696l-.202-.218a1.05 1.05 0 01.334-1.67l.266-.122c.594-.273.878-.956.651-1.568l-.103-.28a1.05 1.05 0 01.947-1.414l.29-.01A1.251 1.251 0 005.87 4.667l.01-.297a1.05 1.05 0 011.417-.943l.272.1a1.253 1.253 0 001.574-.65l.122-.266a1.052 1.052 0 011.67-.332l.213.197c.48.446 1.224.446 1.704 0l.213-.197a1.052 1.052 0 011.67.332l.122.266c.273.594.96.878 1.574.65l.272-.1a1.052 1.052 0 011.416.943l.011.297c.025.653.55 1.176 1.204 1.201l.291.011a1.051 1.051 0 01.947 1.414l-.103.28a1.248 1.248 0 00.65 1.568l.267.122a1.051 1.051 0 01.334 1.67l-.202.218a1.247 1.247 0 000 1.696l.202.218a1.05 1.05 0 01-.334 1.67l-.266.122a1.248 1.248 0 00-.651 1.568l.052.14-1.634-1.633z"
         }
       })]);
     }
@@ -19186,8 +19202,8 @@ var cedar = (function () {
   function ownKeys$f(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$e(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$f(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$f(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var birding = {
-    name: 'IconBirding',
+  var binoculars = {
+    name: 'IconBinoculars',
     components: {
       CdrIcon
     },
@@ -19201,7 +19217,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M14.56 8.828L9.936 13H12a1 1 0 001-1 1 1 0 012 0 3 3 0 01-3 3H7.718L6.61 16H14a3 3 0 003-3V6a1 1 0 10-2 0l.001 2a.997.997 0 01-.235.642l-.205.186zM19 6v.517l1.172.498A1 1 0 0121 8v1h-1.233l-.005.013L19.73 9H19v4a5 5 0 01-5 5v1a1 1 0 110 2h-1a1 1 0 01-1-1v-2H4a1 1 0 01-.592-1.806L13 7.542V6a3 3 0 016 0z"
+          "d": "M10 13v1h3.996v2H10v1a4 4 0 11-7.853-1.085l1.795-8.93.093-.442A3 3 0 0110 7v4h3.997V7a3 3 0 015.965-.456l.093.442 1.795 8.93A4.003 4.003 0 0117.998 21a4 4 0 01-4-4v-4H10zm9.296.214l-1.308-6.38a1.01 1.01 0 00-.99-.835 1 1 0 00-1 1v6.536a4.016 4.016 0 013.299-.321zm-14.6 0c.408-.14.844-.215 1.298-.215.73 0 1.413.195 2.002.536V7a1 1 0 00-1-1 1.01 1.01 0 00-.99.836l-1.31 6.38zM18 19a2 2 0 100-4 2 2 0 000 4zM6.011 19a2 2 0 100-4 2 2 0 000 4z"
         }
       })]);
     }
@@ -19211,8 +19227,8 @@ var cedar = (function () {
   function ownKeys$g(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$f(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$g(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$g(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var boat = {
-    name: 'IconBoat',
+  var birding = {
+    name: 'IconBirding',
     components: {
       CdrIcon
     },
@@ -19226,7 +19242,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M19 17h-6v3h4a1 1 0 010 2H7a1 1 0 010-2h4v-5H5a1 1 0 01-.813-1.582L11 4.036V3a1 1 0 112 0v1.007l6.789 11.378a1 1 0 01-.79 1.615zm-8-4V7.439L6.96 13H11zm2-5.123V15h4.24L13 7.877z"
+          "d": "M14.56 8.828L9.936 13H12a1 1 0 001-1 1 1 0 012 0 3 3 0 01-3 3H7.718L6.61 16H14a3 3 0 003-3V6a1 1 0 10-2 0l.001 2a.997.997 0 01-.235.642l-.205.186zM19 6v.517l1.172.498A1 1 0 0121 8v1h-1.233l-.005.013L19.73 9H19v4a5 5 0 01-5 5v1a1 1 0 110 2h-1a1 1 0 01-1-1v-2H4a1 1 0 01-.592-1.806L13 7.542V6a3 3 0 016 0z"
         }
       })]);
     }
@@ -19236,8 +19252,8 @@ var cedar = (function () {
   function ownKeys$h(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$g(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$h(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$h(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var boating = {
-    name: 'IconBoating',
+  var boat = {
+    name: 'IconBoat',
     components: {
       CdrIcon
     },
@@ -19251,7 +19267,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M6.008 16.578l-.01-.01.387-.387A6.964 6.964 0 015.071 13H3a1 1 0 010-2h2.07a6.964 6.964 0 011.325-3.194 1.015 1.015 0 01-.052-.049L4.929 6.343A1 1 0 016.343 4.93l.707.707.012-.012.76.76a6.964 6.964 0 013.165-1.311V4.49H11V3a1 1 0 012 0v2a.802.802 0 01-.003.07 6.964 6.964 0 013.184 1.315l.424-.424.01.01 1.042-1.042a1 1 0 011.414 1.414l-1.414 1.414a1.015 1.015 0 01-.052.049A6.964 6.964 0 0118.928 11h2.07a1 1 0 010 2h-2.07a6.964 6.964 0 01-1.312 3.178l.052.052-.012.012 1.414 1.415a1 1 0 01-1.414 1.414l-1.414-1.414a1.015 1.015 0 01-.049-.052 6.964 6.964 0 01-3.197 1.324.843.843 0 01.003.071v2a1 1 0 01-2 0v-1.51h-.013v-.563a6.964 6.964 0 01-3.181-1.322 1.015 1.015 0 01-.049.052L6.343 19.07a1 1 0 11-1.414-1.414l1.079-1.08v.002zM14.395 11H16.9a4.972 4.972 0 00-.736-1.769L14.394 11h.001zm.35-3.18a4.971 4.971 0 00-1.758-.723V9.58l1.759-1.76h-.001zM9.567 13H7.1c.129.634.377 1.224.72 1.746L9.567 13zm-.335 3.164c.524.35 1.118.602 1.756.733v-2.489l-1.756 1.756zM9.61 11L7.838 9.228A4.972 4.972 0 007.1 11h2.51zm-.353-3.181l1.73 1.73V7.102a4.972 4.972 0 00-1.73.716v.001zM14.438 13l1.743 1.743c.343-.521.59-1.11.719-1.743h-2.462zm.334 3.162l-1.785-1.785v2.526a4.972 4.972 0 001.785-.741z"
+          "d": "M19 17h-6v3h4a1 1 0 010 2H7a1 1 0 010-2h4v-5H5a1 1 0 01-.813-1.582L11 4.036V3a1 1 0 112 0v1.007l6.789 11.378a1 1 0 01-.79 1.615zm-8-4V7.439L6.96 13H11zm2-5.123V15h4.24L13 7.877z"
         }
       })]);
     }
@@ -19261,8 +19277,8 @@ var cedar = (function () {
   function ownKeys$i(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$h(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$i(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$i(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var bookmarkFill = {
-    name: 'IconBookmarkFill',
+  var boating = {
+    name: 'IconBoating',
     components: {
       CdrIcon
     },
@@ -19276,7 +19292,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M5 2h14a1 1 0 011 1v18a1 1 0 01-1.6.8L12.002 17 5.6 21.8A1 1 0 014 21V3a1 1 0 011-1z"
+          "d": "M6.008 16.578l-.01-.01.387-.387A6.964 6.964 0 015.071 13H3a1 1 0 010-2h2.07a6.964 6.964 0 011.325-3.194 1.015 1.015 0 01-.052-.049L4.929 6.343A1 1 0 016.343 4.93l.707.707.012-.012.76.76a6.964 6.964 0 013.165-1.311V4.49H11V3a1 1 0 012 0v2a.802.802 0 01-.003.07 6.964 6.964 0 013.184 1.315l.424-.424.01.01 1.042-1.042a1 1 0 011.414 1.414l-1.414 1.414a1.015 1.015 0 01-.052.049A6.964 6.964 0 0118.928 11h2.07a1 1 0 010 2h-2.07a6.964 6.964 0 01-1.312 3.178l.052.052-.012.012 1.414 1.415a1 1 0 01-1.414 1.414l-1.414-1.414a1.015 1.015 0 01-.049-.052 6.964 6.964 0 01-3.197 1.324.843.843 0 01.003.071v2a1 1 0 01-2 0v-1.51h-.013v-.563a6.964 6.964 0 01-3.181-1.322 1.015 1.015 0 01-.049.052L6.343 19.07a1 1 0 11-1.414-1.414l1.079-1.08v.002zM14.395 11H16.9a4.972 4.972 0 00-.736-1.769L14.394 11h.001zm.35-3.18a4.971 4.971 0 00-1.758-.723V9.58l1.759-1.76h-.001zM9.567 13H7.1c.129.634.377 1.224.72 1.746L9.567 13zm-.335 3.164c.524.35 1.118.602 1.756.733v-2.489l-1.756 1.756zM9.61 11L7.838 9.228A4.972 4.972 0 007.1 11h2.51zm-.353-3.181l1.73 1.73V7.102a4.972 4.972 0 00-1.73.716v.001zM14.438 13l1.743 1.743c.343-.521.59-1.11.719-1.743h-2.462zm.334 3.162l-1.785-1.785v2.526a4.972 4.972 0 001.785-.741z"
         }
       })]);
     }
@@ -19286,8 +19302,8 @@ var cedar = (function () {
   function ownKeys$j(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$i(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$j(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$j(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var bookmarkStroke = {
-    name: 'IconBookmarkStroke',
+  var bookmarkFill = {
+    name: 'IconBookmarkFill',
     components: {
       CdrIcon
     },
@@ -19301,7 +19317,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M5 2h14a1 1 0 011 1v18a1 1 0 01-1.6.8L12.002 17 5.6 21.8A1 1 0 014 21V3a1 1 0 011-1zm1 2v15l5.402-4.05a1 1 0 011.2 0L18 19V4H6z"
+          "d": "M5 2h14a1 1 0 011 1v18a1 1 0 01-1.6.8L12.002 17 5.6 21.8A1 1 0 014 21V3a1 1 0 011-1z"
         }
       })]);
     }
@@ -19311,8 +19327,8 @@ var cedar = (function () {
   function ownKeys$k(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$j(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$k(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$k(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var brandAbstract = {
-    name: 'IconBrandAbstract',
+  var bookmarkStroke = {
+    name: 'IconBookmarkStroke',
     components: {
       CdrIcon
     },
@@ -19326,7 +19342,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M10 9a5 5 0 110 10 5 5 0 010-10zm9-4v14h-3V8H5V5h14zm-9 7a2 2 0 100 4 2 2 0 000-4z"
+          "d": "M5 2h14a1 1 0 011 1v18a1 1 0 01-1.6.8L12.002 17 5.6 21.8A1 1 0 014 21V3a1 1 0 011-1zm1 2v15l5.402-4.05a1 1 0 011.2 0L18 19V4H6z"
         }
       })]);
     }
@@ -19336,8 +19352,8 @@ var cedar = (function () {
   function ownKeys$l(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$k(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$l(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$l(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var brandCodeSandbox = {
-    name: 'IconBrandCodeSandbox',
+  var brandAbstract = {
+    name: 'IconBrandAbstract',
     components: {
       CdrIcon
     },
@@ -19351,7 +19367,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M12 1.853l9 5.062v10.17l-9 5.062-9-5.062V6.915l9-5.062zM5 9.118v3.409l3 1.58v3.496l3 1.687v-7.172l-6-3zm14 0l-6 3v7.172l3-1.687v-3.487l3-1.587V9.118zm-4.481-3.554L12.006 7 9.478 5.566 6.133 7.448 12 10.382l5.867-2.934-3.348-1.884z"
+          "d": "M10 9a5 5 0 110 10 5 5 0 010-10zm9-4v14h-3V8H5V5h14zm-9 7a2 2 0 100 4 2 2 0 000-4z"
         }
       })]);
     }
@@ -19361,8 +19377,8 @@ var cedar = (function () {
   function ownKeys$m(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$l(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$m(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$m(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var brandGithub = {
-    name: 'IconBrandGithub',
+  var brandCodeSandbox = {
+    name: 'IconBrandCodeSandbox',
     components: {
       CdrIcon
     },
@@ -19376,7 +19392,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.268 2.75 1.026A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.337 1.909-1.294 2.747-1.026 2.747-1.026.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.137 20.163 22 16.418 22 12c0-5.523-4.478-10-10-10"
+          "d": "M12 1.853l9 5.062v10.17l-9 5.062-9-5.062V6.915l9-5.062zM5 9.118v3.409l3 1.58v3.496l3 1.687v-7.172l-6-3zm14 0l-6 3v7.172l3-1.687v-3.487l3-1.587V9.118zm-4.481-3.554L12.006 7 9.478 5.566 6.133 7.448 12 10.382l5.867-2.934-3.348-1.884z"
         }
       })]);
     }
@@ -19386,8 +19402,8 @@ var cedar = (function () {
   function ownKeys$n(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$m(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$n(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$n(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var brandLinkedin = {
-    name: 'IconBrandLinkedin',
+  var brandGithub = {
+    name: 'IconBrandGithub',
     components: {
       CdrIcon
     },
@@ -19401,7 +19417,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M19.668 3c.688 0 1.257.51 1.325 1.165l.007.132v15.404c0 .672-.526 1.226-1.196 1.292l-.136.007H4.328a1.319 1.319 0 01-1.321-1.166L3 19.7V4.297a1.31 1.31 0 011.193-1.29L4.329 3h15.339zm-4.532 6.535c-1.223 0-2.066.63-2.458 1.268l-.069.119h-.035V9.748h-2.56v8.59h2.666v-4.25c0-1.12.214-2.205 1.603-2.205 1.205 0 1.363.993 1.384 1.91l.003.368v4.177h2.668v-4.711l-.005-.391c-.06-2.12-.649-3.701-3.197-3.701zm-6.797.213h-2.67v8.59h2.67v-8.59zm-1.335-4.27a1.548 1.548 0 100 3.096 1.548 1.548 0 000-3.096z"
+          "d": "M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.268 2.75 1.026A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.337 1.909-1.294 2.747-1.026 2.747-1.026.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.137 20.163 22 16.418 22 12c0-5.523-4.478-10-10-10"
         }
       })]);
     }
@@ -19411,8 +19427,8 @@ var cedar = (function () {
   function ownKeys$o(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$n(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$o(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$o(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var brandReiIceAxes = {
-    name: 'IconBrandReiIceAxes',
+  var brandLinkedin = {
+    name: 'IconBrandLinkedin',
     components: {
       CdrIcon
     },
@@ -19426,7 +19442,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M14.623 2.354c.148.038.27.073.368.103a10.004 10.004 0 016.982 10.26L21.95 13l-.802-.276a1 1 0 01-.671-.874c-.137-1.9-.893-3.306-2.267-4.217L18 7.5l-4.556 4.527 7.526 7.523c.186.186.334.408.435.651l.573 1.383a.301.301 0 01-.393.393l-1.383-.573a2.007 2.007 0 01-.651-.435L12 13.463 4.447 20.97c-.149.15-.32.274-.507.37l-.144.065-1.382.573a.301.301 0 01-.413-.327l.02-.066.572-1.383a2 2 0 01.328-.535l.107-.116 7.525-7.524L6 7.5c-1.508.905-2.333 2.355-2.477 4.35a1 1 0 01-.672.874L2.05 13A10.003 10.003 0 019.008 2.457c.097-.03.22-.065.367-.103A.5.5 0 0110 2.84v.792a1 1 0 01-.56.897l-1.09.535a1 1 0 00-.267 1.605l3.915 3.914 3.918-3.914a1 1 0 00.137-.17l.053-.097a1 1 0 00-.355-1.28l-.102-.058-1.09-.535a1 1 0 01-.552-.772l-.008-.125V2.84a.5.5 0 01.447-.498l.088-.001.09.014zM6.5 5a.5.5 0 100 1 .5.5 0 000-1zm11 0a.5.5 0 100 1 .5.5 0 000-1z"
+          "d": "M19.668 3c.688 0 1.257.51 1.325 1.165l.007.132v15.404c0 .672-.526 1.226-1.196 1.292l-.136.007H4.328a1.319 1.319 0 01-1.321-1.166L3 19.7V4.297a1.31 1.31 0 011.193-1.29L4.329 3h15.339zm-4.532 6.535c-1.223 0-2.066.63-2.458 1.268l-.069.119h-.035V9.748h-2.56v8.59h2.666v-4.25c0-1.12.214-2.205 1.603-2.205 1.205 0 1.363.993 1.384 1.91l.003.368v4.177h2.668v-4.711l-.005-.391c-.06-2.12-.649-3.701-3.197-3.701zm-6.797.213h-2.67v8.59h2.67v-8.59zm-1.335-4.27a1.548 1.548 0 100 3.096 1.548 1.548 0 000-3.096z"
         }
       })]);
     }
@@ -19436,8 +19452,8 @@ var cedar = (function () {
   function ownKeys$p(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$o(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$p(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$p(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var brandSketch = {
-    name: 'IconBrandSketch',
+  var brandReiIceAxes = {
+    name: 'IconBrandReiIceAxes',
     components: {
       CdrIcon
     },
@@ -19451,7 +19467,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M12 18.352L14.993 10H9.006L12 18.352zm-1.942-2.362L7.946 10H5.13l4.928 5.99zM16.054 10l-2.116 5.995L18.87 10h-2.816zM9.16 9h5.68l-2.836-5L9.16 9zm4.133-4.735L16 9V4.721l-2.707-.456zM8 4.727V9l2.695-4.718L8 4.727zM17 9h2.693L17 5.12V9zM4.306 8.998L7 9V5.12L4.306 8.998zm7.592-6.941a1 1 0 01.33 0l5.338.9a1 1 0 01.655.415l3.547 5.107a1 1 0 01-.049 1.205l-8.947 10.877a1 1 0 01-1.544 0L2.28 9.684a1 1 0 01-.05-1.205l3.547-5.105a1 1 0 01.658-.416l5.462-.901z"
+          "d": "M14.623 2.354c.148.038.27.073.368.103a10.004 10.004 0 016.982 10.26L21.95 13l-.802-.276a1 1 0 01-.671-.874c-.137-1.9-.893-3.306-2.267-4.217L18 7.5l-4.556 4.527 7.526 7.523c.186.186.334.408.435.651l.573 1.383a.301.301 0 01-.393.393l-1.383-.573a2.007 2.007 0 01-.651-.435L12 13.463 4.447 20.97c-.149.15-.32.274-.507.37l-.144.065-1.382.573a.301.301 0 01-.413-.327l.02-.066.572-1.383a2 2 0 01.328-.535l.107-.116 7.525-7.524L6 7.5c-1.508.905-2.333 2.355-2.477 4.35a1 1 0 01-.672.874L2.05 13A10.003 10.003 0 019.008 2.457c.097-.03.22-.065.367-.103A.5.5 0 0110 2.84v.792a1 1 0 01-.56.897l-1.09.535a1 1 0 00-.267 1.605l3.915 3.914 3.918-3.914a1 1 0 00.137-.17l.053-.097a1 1 0 00-.355-1.28l-.102-.058-1.09-.535a1 1 0 01-.552-.772l-.008-.125V2.84a.5.5 0 01.447-.498l.088-.001.09.014zM6.5 5a.5.5 0 100 1 .5.5 0 000-1zm11 0a.5.5 0 100 1 .5.5 0 000-1z"
         }
       })]);
     }
@@ -19461,8 +19477,8 @@ var cedar = (function () {
   function ownKeys$q(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$p(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$q(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$q(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var buddies = {
-    name: 'IconBuddies',
+  var brandSketch = {
+    name: 'IconBrandSketch',
     components: {
       CdrIcon
     },
@@ -19476,7 +19492,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M8 3a4 4 0 012.536 7.094c.568.278 1.09.65 1.547 1.095a4 4 0 116.453 3.905c1.726.849 3.016 2.542 3.41 4.585l.042.242A.935.935 0 0121.064 21h-10.13a.933.933 0 01-.933-.933l.002-.072.009-.072A6.607 6.607 0 0112.122 16H2.933A.933.933 0 012 15.067l.002-.072.009-.072c.335-2.152 1.658-3.946 3.452-4.83A4 4 0 018 3zm8 13c-2.025 0-3.797 1.462-4.369 3.5h8.731C19.771 17.436 18.006 16 16 16zm0-6.5a2.5 2.5 0 100 5 2.5 2.5 0 000-5zM8 11c-2.025 0-3.797 1.462-4.369 3.5h8.731C11.771 12.436 10.006 11 8 11zm0-6.5a2.5 2.5 0 100 5 2.5 2.5 0 000-5z"
+          "d": "M12 18.352L14.993 10H9.006L12 18.352zm-1.942-2.362L7.946 10H5.13l4.928 5.99zM16.054 10l-2.116 5.995L18.87 10h-2.816zM9.16 9h5.68l-2.836-5L9.16 9zm4.133-4.735L16 9V4.721l-2.707-.456zM8 4.727V9l2.695-4.718L8 4.727zM17 9h2.693L17 5.12V9zM4.306 8.998L7 9V5.12L4.306 8.998zm7.592-6.941a1 1 0 01.33 0l5.338.9a1 1 0 01.655.415l3.547 5.107a1 1 0 01-.049 1.205l-8.947 10.877a1 1 0 01-1.544 0L2.28 9.684a1 1 0 01-.05-1.205l3.547-5.105a1 1 0 01.658-.416l5.462-.901z"
         }
       })]);
     }
@@ -19486,8 +19502,8 @@ var cedar = (function () {
   function ownKeys$r(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$q(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$r(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$r(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var bus = {
-    name: 'IconBus',
+  var buddies = {
+    name: 'IconBuddies',
     components: {
       CdrIcon
     },
@@ -19501,7 +19517,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M5.22 18.527H3.127a1 1 0 01-.995-.894c-.675-6.335 1.454-9.997 1.543-10.146a1 1 0 01.856-.481h.484V5a1 1 0 011-1h11.983a1 1 0 011 1v2.006h.313c.308 0 .598.14.787.382 2.534 3.22 1.885 9.959 1.857 10.24-.053.51-.483.899-.995.899h-2.18a2.5 2.5 0 01-4.56 0H9.78a2.5 2.5 0 01-4.56 0zm9.004-2.064a2.5 2.5 0 014.552 0h1.217c.089-1.993 0-5.507-1.201-7.458H5.147c-.447 1.01-1.216 2.648-1.15 7.458h1.226a2.5 2.5 0 014.552 0h4.449zM7 7.008h10V6H7v1.008zm.5 11.242a.75.75 0 100-1.5.75.75 0 000 1.5zm9 0a.75.75 0 100-1.5.75.75 0 000 1.5zm-9.498-7.248h5.001a1 1 0 010 2H7.002a1 1 0 010-2zm7.999.005h2.011a1 1 0 010 2h-2.011a1 1 0 110-2z"
+          "d": "M8 3a4 4 0 012.536 7.094c.568.278 1.09.65 1.547 1.095a4 4 0 116.453 3.905c1.726.849 3.016 2.542 3.41 4.585l.042.242A.935.935 0 0121.064 21h-10.13a.933.933 0 01-.933-.933l.002-.072.009-.072A6.607 6.607 0 0112.122 16H2.933A.933.933 0 012 15.067l.002-.072.009-.072c.335-2.152 1.658-3.946 3.452-4.83A4 4 0 018 3zm8 13c-2.025 0-3.797 1.462-4.369 3.5h8.731C19.771 17.436 18.006 16 16 16zm0-6.5a2.5 2.5 0 100 5 2.5 2.5 0 000-5zM8 11c-2.025 0-3.797 1.462-4.369 3.5h8.731C11.771 12.436 10.006 11 8 11zm0-6.5a2.5 2.5 0 100 5 2.5 2.5 0 000-5z"
         }
       })]);
     }
@@ -19511,8 +19527,8 @@ var cedar = (function () {
   function ownKeys$s(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$r(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$s(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$s(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var calendar = {
-    name: 'IconCalendar',
+  var bus = {
+    name: 'IconBus',
     components: {
       CdrIcon
     },
@@ -19526,7 +19542,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M18 5h2a1 1 0 011 1v14a1 1 0 01-1 1H4a1 1 0 01-1-1V6a1 1 0 011-1h2v1a2 2 0 104 0V5h4v1a2 2 0 104 0V5zM4.5 9v10.5h15V9h-15zM7 11.5h2v2H7v-2zm0 4h2v2H7v-2zm4-4h2v2h-2v-2zm0 4h2v2h-2v-2zm4-4h2v2h-2v-2zm0 4h2v2h-2v-2zM8 3a1 1 0 011 1v2a1 1 0 11-2 0V4a1 1 0 011-1zm8 0a1 1 0 011 1v2a1 1 0 01-2 0V4a1 1 0 011-1z"
+          "d": "M5.22 18.527H3.127a1 1 0 01-.995-.894c-.675-6.335 1.454-9.997 1.543-10.146a1 1 0 01.856-.481h.484V5a1 1 0 011-1h11.983a1 1 0 011 1v2.006h.313c.308 0 .598.14.787.382 2.534 3.22 1.885 9.959 1.857 10.24-.053.51-.483.899-.995.899h-2.18a2.5 2.5 0 01-4.56 0H9.78a2.5 2.5 0 01-4.56 0zm9.004-2.064a2.5 2.5 0 014.552 0h1.217c.089-1.993 0-5.507-1.201-7.458H5.147c-.447 1.01-1.216 2.648-1.15 7.458h1.226a2.5 2.5 0 014.552 0h4.449zM7 7.008h10V6H7v1.008zm.5 11.242a.75.75 0 100-1.5.75.75 0 000 1.5zm9 0a.75.75 0 100-1.5.75.75 0 000 1.5zm-9.498-7.248h5.001a1 1 0 010 2H7.002a1 1 0 010-2zm7.999.005h2.011a1 1 0 010 2h-2.011a1 1 0 110-2z"
         }
       })]);
     }
@@ -19536,8 +19552,8 @@ var cedar = (function () {
   function ownKeys$t(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$s(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$t(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$t(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var camera = {
-    name: 'IconCamera',
+  var calendar = {
+    name: 'IconCalendar',
     components: {
       CdrIcon
     },
@@ -19551,7 +19567,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M3 7h3l1.703-2.555A1 1 0 018.535 4h6.933a1 1 0 01.833.446L18 7h3a1 1 0 011 1v11a1 1 0 01-1 1H3a1 1 0 01-1-1V8a1 1 0 011-1zm1 11h16V9h-2.534a1 1 0 01-.832-.446L14.933 6H9.07L7.367 8.555A1 1 0 016.535 9H4v9zm8 0a5 5 0 110-10 5 5 0 010 10zm0-2a3 3 0 100-6 3 3 0 000 6z"
+          "d": "M18 5h2a1 1 0 011 1v14a1 1 0 01-1 1H4a1 1 0 01-1-1V6a1 1 0 011-1h2v1a2 2 0 104 0V5h4v1a2 2 0 104 0V5zM4.5 9v10.5h15V9h-15zM7 11.5h2v2H7v-2zm0 4h2v2H7v-2zm4-4h2v2h-2v-2zm0 4h2v2h-2v-2zm4-4h2v2h-2v-2zm0 4h2v2h-2v-2zM8 3a1 1 0 011 1v2a1 1 0 11-2 0V4a1 1 0 011-1zm8 0a1 1 0 011 1v2a1 1 0 01-2 0V4a1 1 0 011-1z"
         }
       })]);
     }
@@ -19561,8 +19577,8 @@ var cedar = (function () {
   function ownKeys$u(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$t(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$u(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$u(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var canoe = {
-    name: 'IconCanoe',
+  var camera = {
+    name: 'IconCamera',
     components: {
       CdrIcon
     },
@@ -19576,7 +19592,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M14.01 11.975l.976 2H16.5h-.033.033a2.5 2.5 0 001.463-4.527A3 3 0 0115 11.975h-.99zm-2.219 0H9a3 3 0 01-2.963-2.527A2.5 2.5 0 007.5 13.975h5.265l-.974-2zm-.973-2L8.166 4.527a1 1 0 011.687-1.074l.004.007c.03.05.056.103.077.157l3.101 6.358H15a1 1 0 001-1v-1a1 1 0 011.13-.992c2.332.143 3.87 2.1 3.87 4.492a4.5 4.5 0 01-4.5 4.5h-.449l.86 1.024a.98.98 0 01.227.302l.877 1.798a1 1 0 01-.46 1.337l-.9.438a1 1 0 01-1.336-.46l-.877-1.798a.998.998 0 01-.098-.349l-.375-1.778a.997.997 0 01-.03-.1l-.201-.414H7.5a4.5 4.5 0 01-4.5-4.5c0-2.392 1.538-4.349 3.87-4.492A1 1 0 018 7.975v1a1 1 0 001 1h1.818z"
+          "d": "M3 7h3l1.703-2.555A1 1 0 018.535 4h6.933a1 1 0 01.833.446L18 7h3a1 1 0 011 1v11a1 1 0 01-1 1H3a1 1 0 01-1-1V8a1 1 0 011-1zm1 11h16V9h-2.534a1 1 0 01-.832-.446L14.933 6H9.07L7.367 8.555A1 1 0 016.535 9H4v9zm8 0a5 5 0 110-10 5 5 0 010 10zm0-2a3 3 0 100-6 3 3 0 000 6z"
         }
       })]);
     }
@@ -19586,8 +19602,8 @@ var cedar = (function () {
   function ownKeys$v(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$u(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$v(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$v(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var car = {
-    name: 'IconCar',
+  var canoe = {
+    name: 'IconCanoe',
     components: {
       CdrIcon
     },
@@ -19601,7 +19617,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M3 18a1 1 0 01-1-1V9c0-.287.121-.546.315-.728l3.9-3.891A.998.998 0 017 4h8a1 1 0 01.942.663l1.78 3.487 3.408.858A1 1 0 0122 10v7a1 1 0 01-1 1h-2.05a2.5 2.5 0 01-4.9 0h-4.1a2.5 2.5 0 01-4.9 0H3zm4.5.25a.75.75 0 100-1.5.75.75 0 000 1.5zm9 0a.75.75 0 100-1.5.75.75 0 000 1.5zM4 16h1.5c.456-.607 1.182-1 2-1 .818 0 1.544.393 2 1h5c.456-.607 1.182-1 2-1 .818 0 1.544.393 2 1H20v-5.215l-3.176-.8a1.001 1.001 0 01-.799-.76L14.38 6H7.412L4 9.404V16zm2.002-5.997a1 1 0 000 2h4.01a1 1 0 100-2h-4.01zm6.999.004a1 1 0 000 2h2.011a1 1 0 100-2h-2.011z"
+          "d": "M14.01 11.975l.976 2H16.5h-.033.033a2.5 2.5 0 001.463-4.527A3 3 0 0115 11.975h-.99zm-2.219 0H9a3 3 0 01-2.963-2.527A2.5 2.5 0 007.5 13.975h5.265l-.974-2zm-.973-2L8.166 4.527a1 1 0 011.687-1.074l.004.007c.03.05.056.103.077.157l3.101 6.358H15a1 1 0 001-1v-1a1 1 0 011.13-.992c2.332.143 3.87 2.1 3.87 4.492a4.5 4.5 0 01-4.5 4.5h-.449l.86 1.024a.98.98 0 01.227.302l.877 1.798a1 1 0 01-.46 1.337l-.9.438a1 1 0 01-1.336-.46l-.877-1.798a.998.998 0 01-.098-.349l-.375-1.778a.997.997 0 01-.03-.1l-.201-.414H7.5a4.5 4.5 0 01-4.5-4.5c0-2.392 1.538-4.349 3.87-4.492A1 1 0 018 7.975v1a1 1 0 001 1h1.818z"
         }
       })]);
     }
@@ -19611,8 +19627,8 @@ var cedar = (function () {
   function ownKeys$w(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$v(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$w(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$w(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var IconCaretLeft = {
-    name: 'IconCaretLeft',
+  var car = {
+    name: 'IconCar',
     components: {
       CdrIcon
     },
@@ -19626,7 +19642,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M8 12c0 .273.11.521.288.702l5.005 5.005a1 1 0 001.414-1.414L10.415 12l4.295-4.295a1 1 0 00-1.417-1.412l-4.98 4.98A.997.997 0 008 12z"
+          "d": "M3 18a1 1 0 01-1-1V9c0-.287.121-.546.315-.728l3.9-3.891A.998.998 0 017 4h8a1 1 0 01.942.663l1.78 3.487 3.408.858A1 1 0 0122 10v7a1 1 0 01-1 1h-2.05a2.5 2.5 0 01-4.9 0h-4.1a2.5 2.5 0 01-4.9 0H3zm4.5.25a.75.75 0 100-1.5.75.75 0 000 1.5zm9 0a.75.75 0 100-1.5.75.75 0 000 1.5zM4 16h1.5c.456-.607 1.182-1 2-1 .818 0 1.544.393 2 1h5c.456-.607 1.182-1 2-1 .818 0 1.544.393 2 1H20v-5.215l-3.176-.8a1.001 1.001 0 01-.799-.76L14.38 6H7.412L4 9.404V16zm2.002-5.997a1 1 0 000 2h4.01a1 1 0 100-2h-4.01zm6.999.004a1 1 0 000 2h2.011a1 1 0 100-2h-2.011z"
         }
       })]);
     }
@@ -19636,8 +19652,8 @@ var cedar = (function () {
   function ownKeys$x(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$w(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$x(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$x(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var IconCaretRight = {
-    name: 'IconCaretRight',
+  var IconCaretLeft = {
+    name: 'IconCaretLeft',
     components: {
       CdrIcon
     },
@@ -19651,7 +19667,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M16 12a.997.997 0 00-.288-.702l-5.005-5.005a1 1 0 00-1.414 1.414L13.585 12 9.29 16.295a1 1 0 001.417 1.412l4.98-4.98A.997.997 0 0016 12z"
+          "d": "M8 12c0 .273.11.521.288.702l5.005 5.005a1 1 0 001.414-1.414L10.415 12l4.295-4.295a1 1 0 00-1.417-1.412l-4.98 4.98A.997.997 0 008 12z"
         }
       })]);
     }
@@ -19661,8 +19677,8 @@ var cedar = (function () {
   function ownKeys$y(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$x(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$y(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$y(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var caretUp = {
-    name: 'IconCaretUp',
+  var IconCaretRight = {
+    name: 'IconCaretRight',
     components: {
       CdrIcon
     },
@@ -19676,7 +19692,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M12 8a.997.997 0 00-.702.288l-5.005 5.005a1 1 0 001.414 1.414L12 10.415l4.295 4.295a1 1 0 001.412-1.417l-4.98-4.98A.997.997 0 0012 8z"
+          "d": "M16 12a.997.997 0 00-.288-.702l-5.005-5.005a1 1 0 00-1.414 1.414L13.585 12 9.29 16.295a1 1 0 001.417 1.412l4.98-4.98A.997.997 0 0016 12z"
         }
       })]);
     }
@@ -19686,8 +19702,8 @@ var cedar = (function () {
   function ownKeys$z(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$y(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$z(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$z(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var cartFill = {
-    name: 'IconCartFill',
+  var caretUp = {
+    name: 'IconCaretUp',
     components: {
       CdrIcon
     },
@@ -19701,7 +19717,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M9.25 18.5a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5zm7.5 0a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5zM6 3c.317 0 .6.147.782.377.085.105.15.23.187.369L7.573 6H20a1 1 0 01.936.648c.073.19.089.404.032.616l-1.607 5.998a1 1 0 01-1.048.738H9.168l-.402 1.5H18a1 1 0 010 2H7.47a1 1 0 01-.864-.497.997.997 0 01-.107-.77l.873-3.258L5.236 5H4a1 1 0 110-2h2z"
+          "d": "M12 8a.997.997 0 00-.702.288l-5.005 5.005a1 1 0 001.414 1.414L12 10.415l4.295 4.295a1 1 0 001.412-1.417l-4.98-4.98A.997.997 0 0012 8z"
         }
       })]);
     }
@@ -19711,8 +19727,8 @@ var cedar = (function () {
   function ownKeys$A(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$z(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$A(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$A(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var cart = {
-    name: 'IconCart',
+  var cartFill = {
+    name: 'IconCartFill',
     components: {
       CdrIcon
     },
@@ -19726,7 +19742,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M9.25 18.5a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5zm7.5 0a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5zM6 3c.317 0 .6.147.782.377.085.105.15.23.187.369L7.573 6H20a1 1 0 01.936.648c.073.19.089.404.032.616l-1.607 5.998a1 1 0 01-1.048.738H9.168l-.402 1.5H18a1 1 0 010 2H7.47a1 1 0 01-.864-.497.997.997 0 01-.107-.77l.873-3.258L5.236 5H4a1 1 0 110-2h2zm12.7 5H8.11l1.071 4h8.447L18.7 8z"
+          "d": "M9.25 18.5a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5zm7.5 0a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5zM6 3c.317 0 .6.147.782.377.085.105.15.23.187.369L7.573 6H20a1 1 0 01.936.648c.073.19.089.404.032.616l-1.607 5.998a1 1 0 01-1.048.738H9.168l-.402 1.5H18a1 1 0 010 2H7.47a1 1 0 01-.864-.497.997.997 0 01-.107-.77l.873-3.258L5.236 5H4a1 1 0 110-2h2z"
         }
       })]);
     }
@@ -19736,8 +19752,8 @@ var cedar = (function () {
   function ownKeys$B(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$A(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$B(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$B(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var chainLink = {
-    name: 'IconChainLink',
+  var cart = {
+    name: 'IconCart',
     components: {
       CdrIcon
     },
@@ -19751,7 +19767,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M5.586 12.762a3.998 3.998 0 013.864-1.036L5.586 15.59a2 2 0 102.828 2.828l3.864-3.864a3.998 3.998 0 01-1.035 3.864l-1.415 1.415a4 4 0 11-5.656-5.657zm10.117-4.47a1 1 0 010 1.415l-5.996 5.996a1 1 0 11-1.414-1.414l5.996-5.996a1 1 0 011.414 0zm4.13-4.12a4 4 0 01.15 5.497l-.15.16-1.415 1.414a3.996 3.996 0 01-3.64 1.088l-.224-.053 3.864-3.864a2 2 0 00-2.7-2.945l-.128.117-3.864 3.864a4 4 0 01.868-3.686l.168-.178 1.414-1.414a4 4 0 015.657 0z"
+          "d": "M9.25 18.5a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5zm7.5 0a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5zM6 3c.317 0 .6.147.782.377.085.105.15.23.187.369L7.573 6H20a1 1 0 01.936.648c.073.19.089.404.032.616l-1.607 5.998a1 1 0 01-1.048.738H9.168l-.402 1.5H18a1 1 0 010 2H7.47a1 1 0 01-.864-.497.997.997 0 01-.107-.77l.873-3.258L5.236 5H4a1 1 0 110-2h2zm12.7 5H8.11l1.071 4h8.447L18.7 8z"
         }
       })]);
     }
@@ -19761,8 +19777,8 @@ var cedar = (function () {
   function ownKeys$C(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$B(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$C(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$C(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var chat = {
-    name: 'IconChat',
+  var chainLink = {
+    name: 'IconChainLink',
     components: {
       CdrIcon
     },
@@ -19776,7 +19792,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M21 4a1 1 0 011 1v11a1 1 0 01-1 1h-2.002v2a.999.999 0 01-1.635.771L14 17H3a1 1 0 01-1-1V5a1 1 0 011-1h18zm-1 2H4v9h10.718l2.28 1.879V15H20V6zm-7.5 3a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm-4 0a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm8 0a1.5 1.5 0 110 3 1.5 1.5 0 010-3z"
+          "d": "M5.586 12.762a3.998 3.998 0 013.864-1.036L5.586 15.59a2 2 0 102.828 2.828l3.864-3.864a3.998 3.998 0 01-1.035 3.864l-1.415 1.415a4 4 0 11-5.656-5.657zm10.117-4.47a1 1 0 010 1.415l-5.996 5.996a1 1 0 11-1.414-1.414l5.996-5.996a1 1 0 011.414 0zm4.13-4.12a4 4 0 01.15 5.497l-.15.16-1.415 1.414a3.996 3.996 0 01-3.64 1.088l-.224-.053 3.864-3.864a2 2 0 00-2.7-2.945l-.128.117-3.864 3.864a4 4 0 01.868-3.686l.168-.178 1.414-1.414a4 4 0 015.657 0z"
         }
       })]);
     }
@@ -19786,8 +19802,8 @@ var cedar = (function () {
   function ownKeys$D(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$C(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$D(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$D(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var checkFill = {
-    name: 'IconCheckFill',
+  var chat = {
+    name: 'IconChat',
     components: {
       CdrIcon
     },
@@ -19801,7 +19817,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm4.77-13.357a1 1 0 10-1.533-1.286l-5.95 7.083-1.52-1.817a1 1 0 00-1.533 1.285l2.227 2.66a.999.999 0 001.565.1l6.743-8.025z"
+          "d": "M21 4a1 1 0 011 1v11a1 1 0 01-1 1h-2.002v2a.999.999 0 01-1.635.771L14 17H3a1 1 0 01-1-1V5a1 1 0 011-1h18zm-1 2H4v9h10.718l2.28 1.879V15H20V6zm-7.5 3a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm-4 0a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm8 0a1.5 1.5 0 110 3 1.5 1.5 0 010-3z"
         }
       })]);
     }
@@ -19811,8 +19827,8 @@ var cedar = (function () {
   function ownKeys$E(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$D(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$E(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$E(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var checkLg = {
-    name: 'IconCheckLg',
+  var checkFill = {
+    name: 'IconCheckFill',
     components: {
       CdrIcon
     },
@@ -19826,7 +19842,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M9.673 18.669h.001L19.766 6.644a1 1 0 10-1.532-1.286l-9.3 11.085-3.169-3.776a1 1 0 10-1.532 1.286l3.875 4.618a.999.999 0 001.565.099z"
+          "d": "M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm4.77-13.357a1 1 0 10-1.533-1.286l-5.95 7.083-1.52-1.817a1 1 0 00-1.533 1.285l2.227 2.66a.999.999 0 001.565.1l6.743-8.025z"
         }
       })]);
     }
@@ -19836,8 +19852,8 @@ var cedar = (function () {
   function ownKeys$F(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$E(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$F(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$F(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var checkSm = {
-    name: 'IconCheckSm',
+  var checkLg = {
+    name: 'IconCheckLg',
     components: {
       CdrIcon
     },
@@ -19851,7 +19867,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M16.77 8.645a1 1 0 10-1.533-1.286l-5.95 7.083-1.52-1.817a1 1 0 10-1.533 1.285l2.227 2.66a.999.999 0 001.565.1l6.743-8.025z"
+          "d": "M9.673 18.669h.001L19.766 6.644a1 1 0 10-1.532-1.286l-9.3 11.085-3.169-3.776a1 1 0 10-1.532 1.286l3.875 4.618a.999.999 0 001.565.099z"
         }
       })]);
     }
@@ -19861,8 +19877,8 @@ var cedar = (function () {
   function ownKeys$G(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$F(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$G(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$G(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var checkStroke = {
-    name: 'IconCheckStroke',
+  var checkSm = {
+    name: 'IconCheckSm',
     components: {
       CdrIcon
     },
@@ -19876,7 +19892,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zm0 2a8 8 0 100 16 8 8 0 000-16zm3.237 3.36a1 1 0 111.532 1.285l-6.743 8.025a.997.997 0 01-1.565-.1l-2.227-2.66a1 1 0 111.532-1.285l1.52 1.817z"
+          "d": "M16.77 8.645a1 1 0 10-1.533-1.286l-5.95 7.083-1.52-1.817a1 1 0 10-1.533 1.285l2.227 2.66a.999.999 0 001.565.1l6.743-8.025z"
         }
       })]);
     }
@@ -19886,8 +19902,8 @@ var cedar = (function () {
   function ownKeys$H(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$G(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$H(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$H(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var climb = {
-    name: 'IconClimb',
+  var checkStroke = {
+    name: 'IconCheckStroke',
     components: {
       CdrIcon
     },
@@ -19901,7 +19917,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M19.24 11.306a1 1 0 01.729 1.212l-1.078 3.979a1 1 0 01-1.212.728l-.51-.127c-.182.61-.377 1.244-.585 1.902a5.001 5.001 0 01-9.12.106c-1.992-4.486-3.142-8.23-3.451-11.232A5.5 5.5 0 019.5 2c1.205 0 3.043.237 5.513.71A5.502 5.502 0 0119 8c0 .85-.115 1.903-.346 3.16l.587.146h-.001zM17 8a3.502 3.502 0 00-2.46-3.343C12.233 4.217 10.536 4 9.5 4a3.5 3.5 0 00-3.493 3.721c.293 2.755 1.383 6.29 3.27 10.542a3 3 0 005.436.02c.182-.576.353-1.132.513-1.67l-.458-.113a1 1 0 01-.728-1.213l1.078-3.979a1 1 0 011.212-.728l.38.095C16.904 9.597 17 8.703 17 8zm-.76 6.806l.97.242.555-2.049-.97-.241-.555 2.048z"
+          "d": "M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zm0 2a8 8 0 100 16 8 8 0 000-16zm3.237 3.36a1 1 0 111.532 1.285l-6.743 8.025a.997.997 0 01-1.565-.1l-2.227-2.66a1 1 0 111.532-1.285l1.52 1.817z"
         }
       })]);
     }
@@ -19911,8 +19927,8 @@ var cedar = (function () {
   function ownKeys$I(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$H(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$I(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$I(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var clipboard = {
-    name: 'IconClipboard',
+  var climb = {
+    name: 'IconClimb',
     components: {
       CdrIcon
     },
@@ -19926,7 +19942,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M6 6v14h12V6h1a1 1 0 011 1v14a1 1 0 01-1 1H5a1 1 0 01-1-1V7a1 1 0 011-1h1zm6 8v1H8v-1h4zm4-2v1H8v-1h8zm0-2v1H8v-1h8zm-4-8a2 2 0 011.732 3.001L16 5a1 1 0 011 1v1H7V6a1 1 0 011-1l2.268.001A2 2 0 0112 2zm0 1a1 1 0 100 2 1 1 0 000-2z"
+          "d": "M19.24 11.306a1 1 0 01.729 1.212l-1.078 3.979a1 1 0 01-1.212.728l-.51-.127c-.182.61-.377 1.244-.585 1.902a5.001 5.001 0 01-9.12.106c-1.992-4.486-3.142-8.23-3.451-11.232A5.5 5.5 0 019.5 2c1.205 0 3.043.237 5.513.71A5.502 5.502 0 0119 8c0 .85-.115 1.903-.346 3.16l.587.146h-.001zM17 8a3.502 3.502 0 00-2.46-3.343C12.233 4.217 10.536 4 9.5 4a3.5 3.5 0 00-3.493 3.721c.293 2.755 1.383 6.29 3.27 10.542a3 3 0 005.436.02c.182-.576.353-1.132.513-1.67l-.458-.113a1 1 0 01-.728-1.213l1.078-3.979a1 1 0 011.212-.728l.38.095C16.904 9.597 17 8.703 17 8zm-.76 6.806l.97.242.555-2.049-.97-.241-.555 2.048z"
         }
       })]);
     }
@@ -19936,8 +19952,8 @@ var cedar = (function () {
   function ownKeys$J(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$I(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$J(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$J(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var clock = {
-    name: 'IconClock',
+  var clipboard = {
+    name: 'IconClipboard',
     components: {
       CdrIcon
     },
@@ -19951,7 +19967,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zm0 2a8 8 0 100 16 8 8 0 000-16zm-.25 2a.75.75 0 01.75.75v5.097l2.775 2.775a.78.78 0 01-1.103 1.103l-2.884-2.884A.749.749 0 0111 12.25v-5.5a.75.75 0 01.75-.75z"
+          "d": "M6 6v14h12V6h1a1 1 0 011 1v14a1 1 0 01-1 1H5a1 1 0 01-1-1V7a1 1 0 011-1h1zm6 8v1H8v-1h4zm4-2v1H8v-1h8zm0-2v1H8v-1h8zm-4-8a2 2 0 011.732 3.001L16 5a1 1 0 011 1v1H7V6a1 1 0 011-1l2.268.001A2 2 0 0112 2zm0 1a1 1 0 100 2 1 1 0 000-2z"
         }
       })]);
     }
@@ -19961,8 +19977,8 @@ var cedar = (function () {
   function ownKeys$K(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$J(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$K(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$K(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var codeHtml = {
-    name: 'IconCodeHtml',
+  var clock = {
+    name: 'IconClock',
     components: {
       CdrIcon
     },
@@ -19976,7 +19992,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M4.414 12l2.293 2.293a1 1 0 11-1.414 1.414l-3-2.999a1 1 0 010-1.414l3-3.001a1 1 0 111.414 1.414l-2.293 2.294zm12.879-2.293a1 1 0 111.414-1.414l3 3a1 1 0 010 1.415l-3 3a1 1 0 11-1.414-1.415L19.586 12l-2.293-2.294zm-4.255-4.982a1 1 0 111.924.55l-4 14a1 1 0 11-1.924-.55l4-14z"
+          "d": "M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zm0 2a8 8 0 100 16 8 8 0 000-16zm-.25 2a.75.75 0 01.75.75v5.097l2.775 2.775a.78.78 0 01-1.103 1.103l-2.884-2.884A.749.749 0 0111 12.25v-5.5a.75.75 0 01.75-.75z"
         }
       })]);
     }
@@ -19986,8 +20002,8 @@ var cedar = (function () {
   function ownKeys$L(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$K(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$L(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$L(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var codeJs = {
-    name: 'IconCodeJs',
+  var codeHtml = {
+    name: 'IconCodeHtml',
     components: {
       CdrIcon
     },
@@ -20001,7 +20017,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M17 9V6a1 1 0 00-1-1 1 1 0 010-2 3 3 0 013 3v3a2 2 0 002 2 1 1 0 010 2 2 2 0 00-2 2v3a3 3 0 01-3 3 1 1 0 010-2 1 1 0 001-1v-3a3.99 3.99 0 011.354-3A3.99 3.99 0 0117 9zM7 9a3.99 3.99 0 01-1.354 3A3.99 3.99 0 017 15v3a1 1 0 001 1 1 1 0 010 2 3 3 0 01-3-3v-3a2 2 0 00-2-2 1 1 0 010-2 2 2 0 002-2V6a3 3 0 013-3 1 1 0 110 2 1 1 0 00-1 1v3zm2 8a1 1 0 110-2 1 1 0 010 2zm3 0a1 1 0 110-2 1 1 0 010 2zm3 0a1 1 0 110-2 1 1 0 010 2z"
+          "d": "M4.414 12l2.293 2.293a1 1 0 11-1.414 1.414l-3-2.999a1 1 0 010-1.414l3-3.001a1 1 0 111.414 1.414l-2.293 2.294zm12.879-2.293a1 1 0 111.414-1.414l3 3a1 1 0 010 1.415l-3 3a1 1 0 11-1.414-1.415L19.586 12l-2.293-2.294zm-4.255-4.982a1 1 0 111.924.55l-4 14a1 1 0 11-1.924-.55l4-14z"
         }
       })]);
     }
@@ -20011,8 +20027,8 @@ var cedar = (function () {
   function ownKeys$M(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$L(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$M(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$M(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var compass = {
-    name: 'IconCompass',
+  var codeJs = {
+    name: 'IconCodeJs',
     components: {
       CdrIcon
     },
@@ -20026,7 +20042,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 100-16 8 8 0 000 16zm.224-7.776l.487-.937-.937.487-.487.937.937-.487zm-1.751-1.748v-.002l.002-.002v.001l5.366-2.786a.35.35 0 01.472.472l-2.786 5.365v.002l-.002.002v-.001l-5.366 2.786a.35.35 0 01-.472-.472l2.786-5.365z"
+          "d": "M17 9V6a1 1 0 00-1-1 1 1 0 010-2 3 3 0 013 3v3a2 2 0 002 2 1 1 0 010 2 2 2 0 00-2 2v3a3 3 0 01-3 3 1 1 0 010-2 1 1 0 001-1v-3a3.99 3.99 0 011.354-3A3.99 3.99 0 0117 9zM7 9a3.99 3.99 0 01-1.354 3A3.99 3.99 0 017 15v3a1 1 0 001 1 1 1 0 010 2 3 3 0 01-3-3v-3a2 2 0 00-2-2 1 1 0 010-2 2 2 0 002-2V6a3 3 0 013-3 1 1 0 110 2 1 1 0 00-1 1v3zm2 8a1 1 0 110-2 1 1 0 010 2zm3 0a1 1 0 110-2 1 1 0 010 2zm3 0a1 1 0 110-2 1 1 0 010 2z"
         }
       })]);
     }
@@ -20036,8 +20052,8 @@ var cedar = (function () {
   function ownKeys$N(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$M(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$N(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$N(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var copy = {
-    name: 'IconCopy',
+  var compass = {
+    name: 'IconCompass',
     components: {
       CdrIcon
     },
@@ -20051,7 +20067,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M19 2a1 1 0 011 1v15a1 1 0 01-1 1h-2v2a1 1 0 01-1 1H5a1 1 0 01-1-1V6a1 1 0 011-1h2V3a1 1 0 011-1h11zM7 7H6v13h9v-1H8a1 1 0 01-1-1V7zm11-3H9v13h9V4zm-4 6v1h-4v-1h4zm3-2v1h-7V8h7zm0-2v1h-7V6h7z"
+          "d": "M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 100-16 8 8 0 000 16zm.224-7.776l.487-.937-.937.487-.487.937.937-.487zm-1.751-1.748v-.002l.002-.002v.001l5.366-2.786a.35.35 0 01.472.472l-2.786 5.365v.002l-.002.002v-.001l-5.366 2.786a.35.35 0 01-.472-.472l2.786-5.365z"
         }
       })]);
     }
@@ -20061,8 +20077,8 @@ var cedar = (function () {
   function ownKeys$O(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$N(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$O(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$O(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var couponFill = {
-    name: 'IconCouponFill',
+  var copy = {
+    name: 'IconCopy',
     components: {
       CdrIcon
     },
@@ -20076,7 +20092,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M19.998 3a1 1 0 011 1l-.011 7.587a1 1 0 01-.293.705l-8.404 8.414a1 1 0 01-1.411.004l-7.582-7.506a1 1 0 01-.007-1.415l8.402-8.492A1 1 0 0112.403 3h7.595zM16.75 6a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5z"
+          "d": "M19 2a1 1 0 011 1v15a1 1 0 01-1 1h-2v2a1 1 0 01-1 1H5a1 1 0 01-1-1V6a1 1 0 011-1h2V3a1 1 0 011-1h11zM7 7H6v13h9v-1H8a1 1 0 01-1-1V7zm11-3H9v13h9V4zm-4 6v1h-4v-1h4zm3-2v1h-7V8h7zm0-2v1h-7V6h7z"
         }
       })]);
     }
@@ -20086,8 +20102,8 @@ var cedar = (function () {
   function ownKeys$P(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$O(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$P(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$P(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var couponStroke = {
-    name: 'IconCouponStroke',
+  var couponFill = {
+    name: 'IconCouponFill',
     components: {
       CdrIcon
     },
@@ -20101,7 +20117,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M19.998 3a1 1 0 011 1l-.011 7.587a1 1 0 01-.293.705l-8.404 8.414a1 1 0 01-1.411.004l-7.582-7.506a1 1 0 01-.007-1.415l8.402-8.492A1 1 0 0112.403 3h7.595zm-1.002 2h-6.175l-7.408 7.485 6.165 6.103 7.41-7.417L18.995 5zM16.75 6a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5z"
+          "d": "M19.998 3a1 1 0 011 1l-.011 7.587a1 1 0 01-.293.705l-8.404 8.414a1 1 0 01-1.411.004l-7.582-7.506a1 1 0 01-.007-1.415l8.402-8.492A1 1 0 0112.403 3h7.595zM16.75 6a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5z"
         }
       })]);
     }
@@ -20111,8 +20127,8 @@ var cedar = (function () {
   function ownKeys$Q(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$P(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$Q(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$Q(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var creditCard = {
-    name: 'IconCreditCard',
+  var couponStroke = {
+    name: 'IconCouponStroke',
     components: {
       CdrIcon
     },
@@ -20126,7 +20142,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M21 5a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V6a1 1 0 011-1h18zm-1 7H4v5h16v-5zm0-5H4v2h16V7zm-4 7h3v2h-3v-2zm-3 0h2v2h-2v-2z"
+          "d": "M19.998 3a1 1 0 011 1l-.011 7.587a1 1 0 01-.293.705l-8.404 8.414a1 1 0 01-1.411.004l-7.582-7.506a1 1 0 01-.007-1.415l8.402-8.492A1 1 0 0112.403 3h7.595zm-1.002 2h-6.175l-7.408 7.485 6.165 6.103 7.41-7.417L18.995 5zM16.75 6a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5z"
         }
       })]);
     }
@@ -20136,8 +20152,8 @@ var cedar = (function () {
   function ownKeys$R(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$Q(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$R(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$R(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var curbsidePickup = {
-    name: 'IconCurbsidePickup',
+  var creditCard = {
+    name: 'IconCreditCard',
     components: {
       CdrIcon
     },
@@ -20151,7 +20167,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M17.256 6a1 1 0 01.958.713L19.2 10h1.3a.5.5 0 01.5.5v1a.5.5 0 01-.5.5h-1v9.5a.5.5 0 01-.5.5h-2a.5.5 0 01-.5-.5V19h-9v2.5a.5.5 0 01-.5.5H5a.5.5 0 01-.5-.5V12h-1a.5.5 0 01-.5-.5v-1a.5.5 0 01.5-.5h1.302l.984-3.287A1 1 0 016.744 6h10.512zm.244 7h-11v4h11v-4zm-9.25.75a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5zm7.5 0a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5zM16.512 8H7.488l-.899 3h6.496a1.5 1.5 0 012.83 0h1.497l-.9-3zM12 2c1.394 0 2.676.475 3.695 1.272.186.187.305.444.305.728a1 1 0 01-1.603.798A3.98 3.98 0 0012 4c-.88 0-1.692.284-2.353.765a1 1 0 11-1.252-1.56A5.971 5.971 0 0112 1.999z"
+          "d": "M21 5a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V6a1 1 0 011-1h18zm-1 7H4v5h16v-5zm0-5H4v2h16V7zm-4 7h3v2h-3v-2zm-3 0h2v2h-2v-2z"
         }
       })]);
     }
@@ -20161,8 +20177,8 @@ var cedar = (function () {
   function ownKeys$S(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$R(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$S(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$S(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var day = {
-    name: 'IconDay',
+  var curbsidePickup = {
+    name: 'IconCurbsidePickup',
     components: {
       CdrIcon
     },
@@ -20176,7 +20192,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M12 15a3 3 0 100-6 3 3 0 000 6zm0 2a5 5 0 110-10 5 5 0 010 10zm0-15a1 1 0 011 1v2a1 1 0 01-2 0V3a1 1 0 011-1zm0 16a1 1 0 011 1v2a1 1 0 01-2 0v-2a1 1 0 011-1zm7.071-13.071a1 1 0 010 1.414l-1.414 1.414a1 1 0 11-1.414-1.414l1.414-1.414a1 1 0 011.414 0zM7.757 16.243a1 1 0 010 1.414L6.343 19.07a1 1 0 11-1.414-1.414l1.414-1.414a1 1 0 011.414 0v.001zM22 12a1 1 0 01-1 1h-2a1 1 0 010-2h2a1 1 0 011 1zM6 12a1 1 0 01-1 1H3a1 1 0 010-2h2a1 1 0 011 1zm13.071 7.071a1 1 0 01-1.414 0l-1.414-1.414a1 1 0 111.414-1.414l1.414 1.414a1 1 0 010 1.414zM7.757 7.757a1 1 0 01-1.414 0L4.93 6.343A1 1 0 016.343 4.93l1.414 1.414a1 1 0 010 1.414v-.001z"
+          "d": "M17.256 6a1 1 0 01.958.713L19.2 10h1.3a.5.5 0 01.5.5v1a.5.5 0 01-.5.5h-1v9.5a.5.5 0 01-.5.5h-2a.5.5 0 01-.5-.5V19h-9v2.5a.5.5 0 01-.5.5H5a.5.5 0 01-.5-.5V12h-1a.5.5 0 01-.5-.5v-1a.5.5 0 01.5-.5h1.302l.984-3.287A1 1 0 016.744 6h10.512zm.244 7h-11v4h11v-4zm-9.25.75a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5zm7.5 0a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5zM16.512 8H7.488l-.899 3h6.496a1.5 1.5 0 012.83 0h1.497l-.9-3zM12 2c1.394 0 2.676.475 3.695 1.272.186.187.305.444.305.728a1 1 0 01-1.603.798A3.98 3.98 0 0012 4c-.88 0-1.692.284-2.353.765a1 1 0 11-1.252-1.56A5.971 5.971 0 0112 1.999z"
         }
       })]);
     }
@@ -20186,8 +20202,8 @@ var cedar = (function () {
   function ownKeys$T(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$S(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$T(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$T(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var diving = {
-    name: 'IconDiving',
+  var day = {
+    name: 'IconDay',
     components: {
       CdrIcon
     },
@@ -20201,7 +20217,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M14 12a1.3 1.3 0 011.265 1c.348.598.995 1 1.735 1a2 2 0 100-4h-6a2 2 0 101.732 3c.138-.573.653-1 1.268-1zm-3-4h6a4 4 0 11-3 6.646A4.002 4.002 0 017.126 13H5v3.5A2.5 2.5 0 007.5 19H12a1 1 0 012 0v1a1 1 0 01-1 1H7.5A4.5 4.5 0 013 16.5V4a1 1 0 112 0v7h2.126C7.57 9.275 9.136 8 11 8z"
+          "d": "M12 15a3 3 0 100-6 3 3 0 000 6zm0 2a5 5 0 110-10 5 5 0 010 10zm0-15a1 1 0 011 1v2a1 1 0 01-2 0V3a1 1 0 011-1zm0 16a1 1 0 011 1v2a1 1 0 01-2 0v-2a1 1 0 011-1zm7.071-13.071a1 1 0 010 1.414l-1.414 1.414a1 1 0 11-1.414-1.414l1.414-1.414a1 1 0 011.414 0zM7.757 16.243a1 1 0 010 1.414L6.343 19.07a1 1 0 11-1.414-1.414l1.414-1.414a1 1 0 011.414 0v.001zM22 12a1 1 0 01-1 1h-2a1 1 0 010-2h2a1 1 0 011 1zM6 12a1 1 0 01-1 1H3a1 1 0 010-2h2a1 1 0 011 1zm13.071 7.071a1 1 0 01-1.414 0l-1.414-1.414a1 1 0 111.414-1.414l1.414 1.414a1 1 0 010 1.414zM7.757 7.757a1 1 0 01-1.414 0L4.93 6.343A1 1 0 016.343 4.93l1.414 1.414a1 1 0 010 1.414v-.001z"
         }
       })]);
     }
@@ -20211,8 +20227,8 @@ var cedar = (function () {
   function ownKeys$U(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$T(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$U(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$U(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var dog = {
-    name: 'IconDog',
+  var diving = {
+    name: 'IconDiving',
     components: {
       CdrIcon
     },
@@ -20226,7 +20242,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M12.024 17.245c-.55.496-1.266.77-2.007.769h-.005a1.002 1.002 0 010-2.003 1.01 1.01 0 00.922-.676l-.555-.55a1 1 0 01.671-1.773h1.928l.037-.001a1 1 0 01.684 1.73l-.59.586c.134.388.497.674.925.684a1.002 1.002 0 010 2.003h-.004a2.989 2.989 0 01-2.007-.77l.001.001zm2.99-6.236a1.001 1.001 0 11-2.002 0 1.001 1.001 0 012.002 0zm-3.997-.004a1 1 0 110-.001v.001zm-2.79 8.005h7.574c1.275-.33 2.213-1.605 2.213-2.91 0-.988-.486-1.912-1.3-2.471a1 1 0 01-.583-1.43 5.3 5.3 0 00.384-2.043 4.5 4.5 0 00-4.5-4.5v-2c.98 0 1.911.217 2.745.606A3.574 3.574 0 0117.496 3c1.785 0 3.262 1.292 3.52 2.977v3.86a1 1 0 01-1.685.873 2.98 2.98 0 00-.816-.488 6.49 6.49 0 01-.338 2.006 4.99 4.99 0 011.837 3.873c0 2.42-1.674 4.513-4 4.901l-.005.008H8.02l-.007-.008c-2.325-.388-4-2.48-4-4.901a4.99 4.99 0 011.838-3.873 6.49 6.49 0 01-.338-2.006 2.98 2.98 0 00-.816.488 1 1 0 01-1.684-.873v-3.86C3.27 4.292 4.746 3 6.532 3c1.1 0 2.082.49 2.735 1.262.86-.4 1.797-.607 2.745-.606v2a4.5 4.5 0 00-4.5 4.5c0 .737.113 1.355.384 2.043a1 1 0 01-.583 1.43 2.997 2.997 0 00-1.3 2.472c0 1.304.94 2.579 2.214 2.91v-.001zM5.012 8.275c.275-.093.557-.163.843-.208a6.505 6.505 0 011.72-2.66A1.533 1.533 0 006.531 5c-.796 0-1.449.599-1.519 1.363v1.912zm14.004 0V6.363A1.516 1.516 0 0017.497 5c-.404 0-.77.154-1.044.406a6.505 6.505 0 011.72 2.66c.287.045.569.115.843.209z"
+          "d": "M14 12a1.3 1.3 0 011.265 1c.348.598.995 1 1.735 1a2 2 0 100-4h-6a2 2 0 101.732 3c.138-.573.653-1 1.268-1zm-3-4h6a4 4 0 11-3 6.646A4.002 4.002 0 017.126 13H5v3.5A2.5 2.5 0 007.5 19H12a1 1 0 012 0v1a1 1 0 01-1 1H7.5A4.5 4.5 0 013 16.5V4a1 1 0 112 0v7h2.126C7.57 9.275 9.136 8 11 8z"
         }
       })]);
     }
@@ -20236,8 +20252,8 @@ var cedar = (function () {
   function ownKeys$V(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$U(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$V(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$V(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var download = {
-    name: 'IconDownload',
+  var dog = {
+    name: 'IconDog',
     components: {
       CdrIcon
     },
@@ -20251,7 +20267,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M19 17a1 1 0 011 1v3a.997.997 0 01-1 1H5a.997.997 0 01-1-1v-3a1 1 0 012 0v2h12v-2a1 1 0 011-1zM12 2a1 1 0 011 1v11.586l3.293-3.293a1 1 0 011.414 1.414l-5.005 5.005a.997.997 0 01-1.43-.026l-4.98-4.979a1 1 0 011.413-1.417L11 14.585V3a1 1 0 011-1z"
+          "d": "M12.024 17.245c-.55.496-1.266.77-2.007.769h-.005a1.002 1.002 0 010-2.003 1.01 1.01 0 00.922-.676l-.555-.55a1 1 0 01.671-1.773h1.928l.037-.001a1 1 0 01.684 1.73l-.59.586c.134.388.497.674.925.684a1.002 1.002 0 010 2.003h-.004a2.989 2.989 0 01-2.007-.77l.001.001zm2.99-6.236a1.001 1.001 0 11-2.002 0 1.001 1.001 0 012.002 0zm-3.997-.004a1 1 0 110-.001v.001zm-2.79 8.005h7.574c1.275-.33 2.213-1.605 2.213-2.91 0-.988-.486-1.912-1.3-2.471a1 1 0 01-.583-1.43 5.3 5.3 0 00.384-2.043 4.5 4.5 0 00-4.5-4.5v-2c.98 0 1.911.217 2.745.606A3.574 3.574 0 0117.496 3c1.785 0 3.262 1.292 3.52 2.977v3.86a1 1 0 01-1.685.873 2.98 2.98 0 00-.816-.488 6.49 6.49 0 01-.338 2.006 4.99 4.99 0 011.837 3.873c0 2.42-1.674 4.513-4 4.901l-.005.008H8.02l-.007-.008c-2.325-.388-4-2.48-4-4.901a4.99 4.99 0 011.838-3.873 6.49 6.49 0 01-.338-2.006 2.98 2.98 0 00-.816.488 1 1 0 01-1.684-.873v-3.86C3.27 4.292 4.746 3 6.532 3c1.1 0 2.082.49 2.735 1.262.86-.4 1.797-.607 2.745-.606v2a4.5 4.5 0 00-4.5 4.5c0 .737.113 1.355.384 2.043a1 1 0 01-.583 1.43 2.997 2.997 0 00-1.3 2.472c0 1.304.94 2.579 2.214 2.91v-.001zM5.012 8.275c.275-.093.557-.163.843-.208a6.505 6.505 0 011.72-2.66A1.533 1.533 0 006.531 5c-.796 0-1.449.599-1.519 1.363v1.912zm14.004 0V6.363A1.516 1.516 0 0017.497 5c-.404 0-.77.154-1.044.406a6.505 6.505 0 011.72 2.66c.287.045.569.115.843.209z"
         }
       })]);
     }
@@ -20261,8 +20277,8 @@ var cedar = (function () {
   function ownKeys$W(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$V(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$W(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$W(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var edit = {
-    name: 'IconEdit',
+  var download = {
+    name: 'IconDownload',
     components: {
       CdrIcon
     },
@@ -20276,7 +20292,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M18.196 3.59l2.174 2.188c.74.745.78 1.93.117 2.72l-.124.136-11.4 11.359-4.741 1.004a1.054 1.054 0 01-1.22-1.092l.012-.122.944-4.827L15.37 3.583a1.993 1.993 0 012.825.007zm-4.488 4.484l-7.905 7.878-.54 2.765 2.71-.575 7.91-7.881-2.175-2.187zm3.072-3.06l-1.649 1.643 2.176 2.186 1.647-1.64-2.174-2.188z"
+          "d": "M19 17a1 1 0 011 1v3a.997.997 0 01-1 1H5a.997.997 0 01-1-1v-3a1 1 0 012 0v2h12v-2a1 1 0 011-1zM12 2a1 1 0 011 1v11.586l3.293-3.293a1 1 0 011.414 1.414l-5.005 5.005a.997.997 0 01-1.43-.026l-4.98-4.979a1 1 0 011.413-1.417L11 14.585V3a1 1 0 011-1z"
         }
       })]);
     }
@@ -20286,8 +20302,8 @@ var cedar = (function () {
   function ownKeys$X(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$W(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$X(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$X(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var elevation = {
-    name: 'IconElevation',
+  var edit = {
+    name: 'IconEdit',
     components: {
       CdrIcon
     },
@@ -20301,7 +20317,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M9.038 15.274L8.003 12.7 5.483 19H18.55L14.01 6.907l-3.034 8.312a1 1 0 01-1.938.055zM20 21H4a1 1 0 01-.884-1.467l3.92-9.802a1 1 0 011.92-.024l.998 2.482 3.072-8.415a1 1 0 011.954.025l5.912 15.748A1 1 0 0120 21z"
+          "d": "M18.196 3.59l2.174 2.188c.74.745.78 1.93.117 2.72l-.124.136-11.4 11.359-4.741 1.004a1.054 1.054 0 01-1.22-1.092l.012-.122.944-4.827L15.37 3.583a1.993 1.993 0 012.825.007zm-4.488 4.484l-7.905 7.878-.54 2.765 2.71-.575 7.91-7.881-2.175-2.187zm3.072-3.06l-1.649 1.643 2.176 2.186 1.647-1.64-2.174-2.188z"
         }
       })]);
     }
@@ -20311,8 +20327,8 @@ var cedar = (function () {
   function ownKeys$Y(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$X(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$Y(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$Y(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var errorFill = {
-    name: 'IconErrorFill',
+  var elevation = {
+    name: 'IconElevation',
     components: {
       CdrIcon
     },
@@ -20326,7 +20342,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zm0 13.5a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5zm.22-9.5h-.44a1 1 0 00-.996.913l-.004.116.191 6.5a1 1 0 00.886.965l.114.006h.058a1 1 0 00.99-.857l.01-.114.19-6.5A1 1 0 0012.22 6z"
+          "d": "M9.038 15.274L8.003 12.7 5.483 19H18.55L14.01 6.907l-3.034 8.312a1 1 0 01-1.938.055zM20 21H4a1 1 0 01-.884-1.467l3.92-9.802a1 1 0 011.92-.024l.998 2.482 3.072-8.415a1 1 0 011.954.025l5.912 15.748A1 1 0 0120 21z"
         }
       })]);
     }
@@ -20336,8 +20352,8 @@ var cedar = (function () {
   function ownKeys$Z(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$Y(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$Z(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$Z(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var IconErrorStroke = {
-    name: 'IconErrorStroke',
+  var errorFill = {
+    name: 'IconErrorFill',
     components: {
       CdrIcon
     },
@@ -20351,7 +20367,7 @@ var cedar = (function () {
       }, [this.$slots.default, h("path", {
         "attrs": {
           "role": "presentation",
-          "d": "M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zm0 2a8 8 0 100 16 8 8 0 000-16zm0 11.5a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5zm.22-9.5a1 1 0 011 1.03l-.191 6.5a1 1 0 01-1 .97h-.058a1 1 0 01-1-.97l-.19-6.5A1 1 0 0111.78 6h.44z"
+          "d": "M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zm0 13.5a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5zm.22-9.5h-.44a1 1 0 00-.996.913l-.004.116.191 6.5a1 1 0 00.886.965l.114.006h.058a1 1 0 00.99-.857l.01-.114.19-6.5A1 1 0 0012.22 6z"
         }
       })]);
     }
@@ -34583,7 +34599,7 @@ var cedar = (function () {
       [
         _c(
           "cdr-form-group",
-          { attrs: { label: "What's your favorite letter?" } },
+          { attrs: { label: "What's your favorite letter?", error: true } },
           [
             _c(
               "cdr-checkbox",
@@ -34628,9 +34644,11 @@ var cedar = (function () {
                 }
               },
               [_vm._v("C")]
-            )
+            ),
+            _vm._v(" "),
+            _c("template", { slot: "error" }, [_vm._v("\n      ayyyy\n    ")])
           ],
-          1
+          2
         ),
         _vm._v(" "),
         _c(
@@ -34704,7 +34722,7 @@ var cedar = (function () {
     /* style */
     const __vue_inject_styles__$g = function (inject) {
       if (!inject) return
-      inject("data-v-2fb038c6_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"Checkboxes.vue"}, media: undefined });
+      inject("data-v-a4a329f6_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"Checkboxes.vue"}, media: undefined });
 
     };
     /* scoped */
