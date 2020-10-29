@@ -332,7 +332,15 @@
       @toggle-ruleset();
       @toggle-expand-collapse-ruleset();
   }
-
+@toggle-sort-ruleset: {	
+    > [ type="checkbox" ]:checked + label:before,	
+    > [ type="radio" ]:checked + label:before {	
+        content:"\e688";	
+    }	
+};.toggle-sort {	
+    @toggle-ruleset();	
+    @toggle-sort-ruleset();	
+  }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //            OVERRIDES
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
