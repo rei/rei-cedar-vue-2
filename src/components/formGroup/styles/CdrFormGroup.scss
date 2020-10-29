@@ -1,5 +1,5 @@
 @import '../../../css/settings/index.scss';
-@import './CdrFormGroup.vars.scss';
+@import './vars/CdrFormGroup.vars.scss';
 
 .cdr-form-group {
   @include cdr-form-group-base-mixin;
