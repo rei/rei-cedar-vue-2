@@ -3,6 +3,7 @@ import size from '../../mixins/size';
 import space from '../../mixins/space';
 import propValidator from '../../utils/propValidator';
 import IconErrorStroke from '../icon/comps/error-stroke';
+import CdrLabelStandalone from '../labelStandalone/CdrLabelStandalone';
 import style from './styles/CdrInput.scss';
 /**
  * Cedar 2 component for input
@@ -14,6 +15,7 @@ export default {
   name: 'CdrInput',
   components: {
     IconErrorStroke,
+    CdrLabelStandalone,
   },
   mixins: [size, space],
   inheritAttrs: false,
@@ -91,12 +93,6 @@ export default {
         [this.style['cdr-input--focused']]: this.isFocused,
       };
     },
-    labelClass() {
-      return {
-        [this.style['cdr-input__label']]: true,
-        [this.style['cdr-input__label--disabled']]: this.disabled,
-      };
-    },
     inputClass() {
       return {
         [this.style['cdr-input']]: true,
@@ -129,34 +125,6 @@ export default {
           vm.$emit('blur', event);
         },
       };
-    },
-    labelEl() {
-      const requiredEl = this.required ? (
-        <span
-          class={this.style['cdr-input__required-label']}
-          aria-label="required"
-        >
-          *
-        </span>
-      ) : '';
-
-      const optionalEl = this.optional ? (
-        <span
-          class={this.style['cdr-input__optional-label']}
-        >
-          (optional)
-        </span>
-      ) : '';
-
-      return !this.hideLabel ? (
-        <label
-          class={this.labelClass}
-          for={this.inputId}
-          ref="label"
-        >
-          { this.label }{ requiredEl || optionalEl }
-        </label>
-      ) : '';
     },
     inputEl() {
       if (this.rows && this.rows > 1) {
@@ -199,59 +167,64 @@ export default {
   },
   render() {
     return (
-      <div class={this.containerClass}>
-        <div class={this.style['cdr-input-label-wrap']}>
-          {this.labelEl}
-          {this.labelEl && this.$slots['helper-text-top'] && (<br/>)}
+      <div class={ this.containerClass }>
+        <cdr-label-standalone
+          for-id={ `${this.inputId}` }
+          label={ this.label }
+          hide-label={ this.hideLabel }
+          required={ this.required }
+          optional={ this.optional }
+          disabled={ this.disabled }
+        >
           { this.$slots['helper-text-top'] && (
-            <span
-              class={
-                clsx(this.style['cdr-input__helper-text'],
-                  this.style['cdr-input__helper-text-top'])}
-            >
-              {this.$slots['helper-text-top']}
-            </span>
+            <template slot="helper">
+              { this.$slots['helper-text-top'] }
+            </template>
           )}
-          {this.$slots.info && (
-            <span
-              class={this.style['cdr-input__info-container']}
-            >
+          { this.$slots.info && (
+            <template slot="info">
               {this.$slots.info}
-            </span>
+            </template>
           )}
-        </div>
-        <div class={this.wrapperClass}>
-          <div class={this.style['cdr-input-inner-wrap']}>
-            {this.inputEl}
-            {this.$slots['pre-icon'] && (
+        </cdr-label-standalone>
+
+        <div class={this.style['cdr-input-outer-wrap']}>
+          <div class={this.wrapperClass}>
+            <div class={this.style['cdr-input-inner-wrap']}>
+              {this.inputEl}
+              {this.$slots['pre-icon'] && (
+                <span
+                  class={this.style['cdr-input__pre-icon']}
+                >
+                  {this.$slots['pre-icon']}
+                </span>
+              )}
+            </div>
+            {this.$slots['post-icon'] && (
               <span
-                class={this.style['cdr-input__pre-icon']}
+                class={this.style['cdr-input__post-icon']}
               >
-                {this.$slots['pre-icon']}
+                {this.$slots['post-icon']}
               </span>
             )}
           </div>
-          {this.$slots['post-icon'] && (
-            <span
-              class={this.style['cdr-input__post-icon']}
+          {this.$slots['info-action'] && (
+            <div
+              class={this.style['cdr-input__info-action']}
             >
-              {this.$slots['post-icon']}
-            </span>
+              {this.$slots['info-action']}
+            </div>
           )}
         </div>
         {(this.$slots['helper-text'] || this.$slots['helper-text-bottom'])
           && !this.error && !this.$slots.error && (
-            <span
-              class={
-                clsx(this.style['cdr-input__helper-text'],
-                  this.style['cdr-input__helper-text-bottom'])}
-            >
+            <span class={this.style['cdr-input__helper-text']}>
               {this.$slots['helper-text'] || this.$slots['helper-text-bottom']}
             </span>
         )}
         {this.$slots.error && this.error && (
           <span
-            class={clsx(this.style['cdr-input__error-message'])}
+            class={this.style['cdr-input__error-message']}
           >
             <icon-error-stroke inherit-color/> {this.$slots.error}
           </span>

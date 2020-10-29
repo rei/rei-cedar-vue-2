@@ -1,6 +1,7 @@
 @import '../../../css/settings/index.scss';
 @import './vars/CdrSelect.vars.scss';
 @import url('@rei/cedar/dist/style/cdr-icon.css');
+@import url('@rei/cedar/dist/style/cdr-label-standalone.css');
 /* ==========================================================================
   # CdrSelect
 
@@ -19,40 +20,62 @@
 .cdr-select {
   @include cdr-select-base-mixin;
 
+  &--primary {
+    @include cdr-select-primary-mixin;
+  }
+
+  &--secondary {
+    @include cdr-select-secondary-mixin;
+  }
+
+  &--error {
+    @include cdr-select-error-mixin;
+  }
+
+  &--preicon {
+    /* $input-pre-icon-default-width = 25px with the expectation that
+        slot provided icon is close to that width */
+    // TODO: use icon token here?
+    padding-left: calc(#{$cdr-space-half-x} + #{$cdr-space-quarter-x} + 25px);
+  }
+
   &__prompt {
     @include cdr-select-prompt-mixin;
   }
 
-  &__required-label {
-    @include cdr-select-required-label-mixin;
-  }
-
-  &__label {
-    @include cdr-select-base-label-mixin;
-
-    &--large {
-      @include cdr-select-large-mixin;
-    }
-
-    &--disabled {
-      @include cdr-select-base-label-disabled-mixin;
-    }
-  }
-
   &__caret {
-    @include cdr-select-base-caret-mixin;
+    fill: $cdr-color-text-primary;
+    position: absolute;
+    top: 50%;
+    right: $cdr-space-half-x;
+    transform: translateY(-50%);
+    pointer-events: none;
 
     &--disabled {
-      @include cdr-select-base-caret-disabled-mixin;
+      fill: $cdr-color-icon-disabled;
     }
   }
 
-  &__info-container {
-    @include cdr-select-info-container-mixin;
+  &__pre-icon {
+    position: absolute;
+    top: 50%;
+    left: $cdr-space-half-x;
+    transform: translateY(-50%);
   }
 
-  &__helper-text {
-    @include cdr-select-helper-text-mixin;
+  &__info-action {
+    position: relative;
+    width: 40px;
+    & > * {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__error-message {
+    @include cdr-select-error-message-mixin;
   }
 
   &--multiple {
@@ -117,4 +140,12 @@
 /* Sets new origin for relative positioning of Select and Caret */
 .cdr-select-wrap {
   position: relative;
+  flex: 1;
+}
+
+.cdr-select-outer-wrap {
+  position: relative;
+  display: flex;
+  margin-top: $cdr-space-half-x;
+  margin-bottom: $cdr-space-quarter-x;
 }

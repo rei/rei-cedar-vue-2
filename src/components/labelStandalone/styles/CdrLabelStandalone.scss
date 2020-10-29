@@ -1,0 +1,45 @@
+@import '../../../css/settings/index.scss';
+
+.cdr-label-standalone {
+  &-wrap {
+    position: relative;
+  }
+
+  &__label {
+    @include cdr-text-utility-sans-200;
+    font-weight: 600;
+    color: $cdr-color-text-input-label;
+    display: inline-block;
+    margin: 0;
+
+    &--disabled {
+      color:  $cdr-color-text-input-disabled;
+    }
+  }
+
+  &__required {
+    color: $cdr-color-text-input-label;
+    margin-left: $cdr-space-inset-quarter-x;
+  }
+
+  &__optional {
+    color: $cdr-color-text-input-optional;
+    margin-left: $cdr-space-inset-quarter-x;
+  }
+
+  &__helper {
+    font-family: $cdr-font-family-sans;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    letter-spacing: -0.016rem;
+    color: $cdr-color-text-input-help;
+    display: inline-block;
+  }
+
+  &__info {
+    @include cdr-text-utility-sans-200;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+}

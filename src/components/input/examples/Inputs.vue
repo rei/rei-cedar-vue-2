@@ -101,12 +101,10 @@
       type="email"
       :background="backgroundColor"
     >
-      <template slot="info">
-        <cdr-link
-          modifier="standalone"
-          href="#/inputs"
-        >
-          Support link
+      <template slot="info-action">
+        <cdr-link>
+          <icon-information-stroke inherit-color />
+          <span class="cdr-display-sr-only">Information!</span>
         </cdr-link>
       </template>
       <template slot="pre-icon">

@@ -1,6 +1,9 @@
 import clsx from 'clsx';
 import toArray from 'lodash-es/toArray';
+import propValidator from '../../utils/propValidator';
 import IconCaretDown from '../icon/comps/caret-down';
+import IconErrorStroke from '../icon/comps/error-stroke';
+import CdrLabelStandalone from '../labelStandalone/CdrLabelStandalone';
 import size from '../../mixins/size';
 import space from '../../mixins/space';
 import style from './styles/CdrSelect.scss';
@@ -9,6 +12,8 @@ export default {
   name: 'CdrSelect',
   components: {
     IconCaretDown,
+    IconErrorStroke,
+    CdrLabelStandalone,
   },
   mixins: [size, space],
   inheritAttrs: false,
@@ -42,14 +47,26 @@ export default {
     options: {
       type: Array,
     },
-    /** @ignore */
+    // Set which background type the select renders on
+    background: {
+      type: [String],
+      default: 'primary',
+      validator: (value) => propValidator(
+        value,
+        ['primary', 'secondary'],
+      ),
+    },
+    // Set error styling
+    error: {
+      type: Boolean,
+      default: false,
+    },
     value: {
       type: [String, Number, Boolean, Object, Array, Symbol, Function],
     },
-    /** @ignore */
     disabled: Boolean,
-    /** @ignore */
     required: Boolean,
+    optional: Boolean,
     multiple: Boolean,
     multipleSize: Number,
   },
@@ -71,23 +88,15 @@ export default {
         [this.style['cdr-select']]: true,
         [this.style['cdr-select__prompt']]: !this.value,
         [this.style['cdr-select--multiple']]: this.multiple,
-      };
-    },
-    labelClass() {
-      return {
-        [this.style['cdr-select__label']]: true,
-        [this.style['cdr-select__label--disabled']]: this.disabled,
+        [this.style[`cdr-select--${this.background}`]]: true,
+        [this.style['cdr-select--error']]: this.error,
+        [this.style['cdr-select--preicon']]: this.$slots['pre-icon'],
       };
     },
     caretClass() {
       return {
         [this.style['cdr-select__caret']]: true,
         [this.style['cdr-select__caret--disabled']]: this.disabled,
-      };
-    },
-    selectWrapClass() {
-      return {
-        [this.style['cdr-select-wrap']]: true,
       };
     },
     inputListeners() {
@@ -145,44 +154,6 @@ export default {
         </select>
       );
     },
-    labelEl() {
-      const requiredEl = this.required ? (
-        <span
-          class={this.style['cdr-select__required-label']}
-        >
-          Required
-        </span>
-      ) : '';
-
-      return !this.hideLabel ? (
-        <label
-          class={this.labelClass}
-          for={this.selectId}
-          ref="label"
-        >{ this.label }
-          {' '}
-          {requiredEl}
-        </label>
-      ) : '';
-    },
-    infoEl() {
-      return this.$slots.info ? (
-        <span
-          class={this.style['cdr-select__info-container']}
-        >
-          {this.$slots.info}
-        </span>
-      ) : '';
-    },
-    helperEl() {
-      return this.$slots['helper-text'] ? (
-        <span
-          class={this.style['cdr-select__helper-text']}
-        >
-          {this.$slots['helper-text']}
-        </span>
-      ) : '';
-    },
     computedOpts() {
       const optsArr = [];
       if (this.options) {
@@ -209,15 +180,54 @@ export default {
   render() {
     return (
       <div class={clsx(this.space)}>
-        {this.labelEl}
-        {this.infoEl}
-        <div class={this.selectWrapClass}>
-          {this.selectEl}
-          <icon-caret-down
-          class={this.caretClass}
-          />
+        <cdr-label-standalone
+          for-id={ `${this.selectId}` }
+          label={ this.label }
+          hide-label={ this.hideLabel }
+          required={ this.required }
+          optional={ this.optional }
+          disabled={ this.disabled }
+        >
+          { this.$slots['helper-text'] && (
+            <template slot="helper">
+              { this.$slots['helper-text'] }
+            </template>
+          )}
+          { this.$slots.info && (
+            <template slot="info">
+              {this.$slots.info}
+            </template>
+          )}
+        </cdr-label-standalone>
+        <div class={this.style['cdr-select-outer-wrap']}>
+          <div class={this.style['cdr-select-wrap']}>
+            {this.$slots['pre-icon'] && (
+              <span
+                class={this.style['cdr-select__pre-icon']}
+              >
+                {this.$slots['pre-icon']}
+              </span>
+            )}
+            {this.selectEl}
+            <icon-caret-down
+            class={this.caretClass}
+            />
+          </div>
+          {this.$slots['info-action'] && (
+            <div
+              class={this.style['cdr-select__info-action']}
+            >
+              {this.$slots['info-action']}
+            </div>
+          )}
         </div>
-        {this.helperEl}
+        {this.$slots.error && this.error && (
+          <span
+            class={this.style['cdr-select__error-message']}
+          >
+            <icon-error-stroke inherit-color/> {this.$slots.error}
+          </span>
+        )}
       </div>
     );
   },
