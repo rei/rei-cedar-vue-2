@@ -2,7 +2,6 @@
   <div data-backstop="form-group-checkboxes">
     <cdr-form-group
       label="What's your favorite letter?"
-      :error="true"
     >
       <cdr-checkbox
         custom-value="A"
@@ -16,9 +15,6 @@
         custom-value="C"
         v-model="exGroup"
       >C</cdr-checkbox>
-      <template slot="error">
-        ayyyy
-      </template>
     </cdr-form-group>
 
     <cdr-form-group>
@@ -40,6 +36,46 @@
         custom-value="C"
         v-model="exGroup"
       >C</cdr-checkbox>
+    </cdr-form-group>
+
+    <cdr-form-group
+      label="What's your favorite optional letter?"
+      :optional="true"
+    >
+      <cdr-checkbox
+        custom-value="A"
+        v-model="exGroup"
+      >A</cdr-checkbox>
+      <cdr-checkbox
+        custom-value="B"
+        v-model="exGroup"
+      >B</cdr-checkbox>
+      <cdr-checkbox
+        custom-value="C"
+        v-model="exGroup"
+      >C</cdr-checkbox>
+    </cdr-form-group>
+
+    <cdr-form-group
+      label="What's your favorite required letter?"
+      :error="true"
+      :required="true"
+    >
+      <cdr-checkbox
+        custom-value="A"
+        v-model="exGroup"
+      >A</cdr-checkbox>
+      <cdr-checkbox
+        custom-value="B"
+        v-model="exGroup"
+      >B</cdr-checkbox>
+      <cdr-checkbox
+        custom-value="C"
+        v-model="exGroup"
+      >C</cdr-checkbox>
+      <template slot="error">
+        You must make a selection!
+      </template>
     </cdr-form-group>
   </div>
 </template>
