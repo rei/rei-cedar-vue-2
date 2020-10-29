@@ -3,6 +3,7 @@ import style from './styles/CdrLabelWrapper.scss';
 import modifier from '../../mixins/modifier';
 import space from '../../mixins/space';
 import size from '../../mixins/size';
+import propValidator from '../../utils/propValidator';
 
 export default {
   name: 'CdrLabelWrapper',
@@ -10,6 +11,14 @@ export default {
   props: {
     labelClass: String,
     contentClass: String,
+    background: {
+      type: [String],
+      default: 'primary',
+      validator: (value) => propValidator(
+        value,
+        ['primary', 'secondary'],
+      ),
+    },
   },
   data() {
     return {
@@ -26,6 +35,7 @@ export default {
       <div class={this.style['cdr-label-wrapper__container']}>
         <label class={clsx(
           this.style['cdr-label-wrapper'],
+          this.style[`cdr-label-wrapper--${this.background}`],
           this.modifierClass,
           this.sizeClass,
           this.labelClass,

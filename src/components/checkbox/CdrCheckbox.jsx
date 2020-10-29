@@ -2,6 +2,7 @@ import clsx from 'clsx';
 import modifier from '../../mixins/modifier';
 import space from '../../mixins/space';
 import size from '../../mixins/size';
+import propValidator from '../../utils/propValidator';
 import style from './styles/CdrCheckbox.scss';
 import CdrLabelWrapper from '../labelWrapper/CdrLabelWrapper';
 
@@ -50,6 +51,15 @@ export default {
      * The value when used in a checkbox group. Replaces `trueValue` and `falseValue`.
     */
     customValue: [String, Number, Boolean, Object, Array, Symbol, Function],
+    // Set which background type the input renders on
+    background: {
+      type: [String],
+      default: 'primary',
+      validator: (value) => propValidator(
+        value,
+        ['primary', 'secondary'],
+      ),
+    },
     /** @ignore */
     value: {
       type: [String, Number, Boolean, Object, Array, Symbol, Function],
@@ -84,7 +94,6 @@ export default {
       this.$emit('change', newValue, e);
     },
   },
-  // TODO: pass disabled/checked/other attrs through? need direct binding?
   render() {
     return (
       <cdr-label-wrapper
@@ -94,6 +103,7 @@ export default {
         modifier={this.modifier}
         labelClass={this.labelClass}
         contentClass={this.contentClass}
+        background={this.background}
       >
         <input
           class={clsx(this.style['cdr-checkbox__input'], this.inputClass)}

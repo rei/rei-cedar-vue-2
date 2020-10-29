@@ -2,6 +2,7 @@ import clsx from 'clsx';
 import modifier from '../../mixins/modifier';
 import space from '../../mixins/space';
 import size from '../../mixins/size';
+import propValidator from '../../utils/propValidator';
 import style from './styles/CdrRadio.scss';
 import CdrLabelWrapper from '../labelWrapper/CdrLabelWrapper';
 
@@ -31,6 +32,16 @@ export default {
     name: {
       type: String,
       required: true,
+    },
+
+    // Set which background type the input renders on
+    background: {
+      type: [String],
+      default: 'primary',
+      validator: (value) => propValidator(
+        value,
+        ['primary', 'secondary'],
+      ),
     },
 
     /**
@@ -88,6 +99,7 @@ export default {
         modifier={this.modifier}
         labelClass={this.labelClass}
         contentClass={this.contentClass}
+        background={this.background}
       >
         <input
           class={clsx(this.style['cdr-radio__input'], this.inputClass)}
