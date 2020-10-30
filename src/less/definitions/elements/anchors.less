@@ -21,9 +21,12 @@ a,
         text-decoration: none;
     }    
     &:focus{	
-        outline-width: 1px;	
-        outline-color: @core-action-1;	
-        outline-offset: -0.1rem;
+        // Default	
+    outline: thin dotted;	
+    // WebKit	
+    outline: 0.5rem auto;	
+    outline-color: @core-action-1;	
+    outline-offset: -0.2rem;
     }
 }
 
