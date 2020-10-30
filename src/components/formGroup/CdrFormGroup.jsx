@@ -53,12 +53,12 @@ export default {
       </legend>
       <div class={clsx(this.style['cdr-form-group__wrapper'], this.errorClass)}>
         {this.$slots.default}
-        {this.error && this.$slots.error && (
-          <div class={this.style['cdr-form-group__error-message']}>
-            <icon-error-stroke inherit-color/> { this.$slots.error }
-          </div>
-        )}
       </div>
+      {this.error && this.$slots.error && (
+        <div class={this.style['cdr-form-group__error-message']}>
+          <icon-error-stroke inherit-color/> { this.$slots.error }
+        </div>
+      )}
     </fieldset>);
   },
 };

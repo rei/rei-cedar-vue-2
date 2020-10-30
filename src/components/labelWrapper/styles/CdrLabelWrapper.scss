@@ -5,6 +5,7 @@
   padding: $cdr-space-half-x;
   @include cdr-label-base-mixin;
   border-radius: $cdr-radius-softer;
+  width: 100%;
   display: inline-block;
   margin: 0;
   position: relative;
