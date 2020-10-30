@@ -14,6 +14,8 @@ export default {
       required: false,
     },
     error: Boolean,
+    required: Boolean,
+    optional: Boolean,
   },
   data() {
     return {
@@ -30,7 +32,25 @@ export default {
   },
   render() {
     return (<fieldset class={this.style[this.baseClass]}>
-      <legend>{this.$slots.label || this.label}</legend>
+      <legend>
+        {this.$slots.label || this.label}
+        {this.required && (
+          <span
+            class={this.style['cdr-form-group__required']}
+            aria-label="required"
+          >
+            *
+          </span>
+        )}
+
+        {this.optional && (
+          <span
+            class={this.style['cdr-form-group__optional']}
+          >
+            (optional)
+          </span>
+        )}
+      </legend>
       <div class={clsx(this.style['cdr-form-group__wrapper'], this.errorClass)}>
         {this.$slots.default}
         {this.error && this.$slots.error && (

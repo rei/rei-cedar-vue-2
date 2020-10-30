@@ -1,5 +1,5 @@
 @import '../../../css/settings/index.scss';
-@import './CdrPopup.vars.scss';
+@import './vars/CdrPopup.vars.scss';
 
 .cdr-popup {
   opacity: 0;
@@ -19,6 +19,8 @@
     animation-fill-mode: forwards;
     background: $cdr-color-background-primary;
     border: 1px solid $cdr-color-border-secondary;
+    border-radius: $cdr-radius-softer;
+    box-shadow: $cdr-prominence-elevated;
     max-width: 286px;
     width: max-content;
     position: absolute;

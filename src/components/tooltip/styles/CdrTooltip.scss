@@ -1,10 +1,6 @@
 @import '../../../css/settings/index.scss';
 @import url('@rei/cedar/dist/style/cdr-popup.css');
 
-// TODO: delete these once tokens is updated
-$cdr-color-border-tooltip-default: #f9f8f6;
-$cdr-color-background-tooltip-default: #373734;
-$cdr-color-text-tooltip-default: #f9f8f6;
 
 .cdr-tooltip--wrapper {
   position: relative;
@@ -21,7 +17,6 @@ $cdr-color-text-tooltip-default: #f9f8f6;
     background: $cdr-color-background-tooltip-default;
     color: $cdr-color-text-tooltip-default;
     border: 1px solid $cdr-color-border-tooltip-default;
-    border-radius: $cdr-radius-softer;
     padding: $cdr-space-inset-three-quarter-x-squish;
   }
 

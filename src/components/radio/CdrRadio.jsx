@@ -2,12 +2,17 @@ import clsx from 'clsx';
 import modifier from '../../mixins/modifier';
 import space from '../../mixins/space';
 import size from '../../mixins/size';
+import propValidator from '../../utils/propValidator';
 import style from './styles/CdrRadio.scss';
+import CdrLabelWrapper from '../labelWrapper/CdrLabelWrapper';
 
 export default {
   name: 'CdrRadio',
   mixins: [modifier, space, size],
   inheritAttrs: false,
+  components: {
+    CdrLabelWrapper,
+  },
   props: {
     /**
      * Class that is added to the label for custom styles
@@ -27,6 +32,16 @@ export default {
     name: {
       type: String,
       required: true,
+    },
+
+    // Set which background type the input renders on
+    background: {
+      type: [String],
+      default: 'primary',
+      validator: (value) => propValidator(
+        value,
+        ['primary', 'secondary'],
+      ),
     },
 
     /**
@@ -77,32 +92,28 @@ export default {
   },
   render() {
     return (
-      <div class={clsx(this.space, this.style['cdr-radio__wrap'])}>
-        <label
-          class={clsx(
-            this.style[this.baseClass],
-            this.modifierClass,
-            this.labelClass,
-            this.sizeClass,
-          )}
-          ref="label"
-        >
-          <input
-            class={clsx(this.style['cdr-radio__input'], this.inputClass)}
-            type="radio"
-            { ...{ attrs: this.$attrs } }
-            vModel={this.newValue}
-            onChange={(e) => this.updateValue(this.newValue, e)}
-            name={this.name}
-            value={this.customValue}
-            ref="radio"
-          />
-          <span class={this.style['cdr-radio__figure']} />
-          <div class={clsx(this.style['cdr-radio__content'], this.contentClass)}>
-            {this.$slots.default}
-          </div>
-        </label>
-      </div>
+      <cdr-label-wrapper
+        class={clsx(this.space, this.style['cdr-radio'])}
+        ref="label"
+        size={this.size}
+        modifier={this.modifier}
+        labelClass={this.labelClass}
+        contentClass={this.contentClass}
+        background={this.background}
+      >
+        <input
+          class={clsx(this.style['cdr-radio__input'], this.inputClass)}
+          type="radio"
+          { ...{ attrs: this.$attrs } }
+          vModel={this.newValue}
+          onChange={(e) => this.updateValue(this.newValue, e)}
+          name={this.name}
+          value={this.customValue}
+          ref="radio"
+          slot="input"
+        />
+        {this.$slots.default}
+      </cdr-label-wrapper>
     );
   },
 };
