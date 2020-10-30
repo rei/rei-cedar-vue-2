@@ -12,7 +12,7 @@ describe('CdrPopup', () => {
     beforeEach(() => {
       wrapper = shallowMount(CdrPopup, {
         propsData: {
-          position: 'up',
+          position: 'top',
           autoPosition: true,
         }
       });
@@ -29,7 +29,7 @@ describe('CdrPopup', () => {
         width: 100,
         height: 50,
       }, 100, 100);
-      expect(wrapper.vm.pos).toBe('up');
+      expect(wrapper.vm.pos).toBe('top');
     });
 
     it('Uses inverted position if selected is invalid', () => {
@@ -44,7 +44,7 @@ describe('CdrPopup', () => {
         width: 200,
         height: 50,
       }, 100, 100);
-      expect(wrapper.vm.pos).toBe('down');
+      expect(wrapper.vm.pos).toBe('bottom');
     });
 
     it('Uses angled position if selected and inverted is invalid', () => {
