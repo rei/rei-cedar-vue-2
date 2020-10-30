@@ -2,7 +2,7 @@
 
 @mixin cdr-select-base-mixin() {
   @include cdr-text-utility-sans-300;
-
+  font-weight: 500;
   background: $cdr-color-background-input-default;
   color: $cdr-color-text-input-default;
   box-shadow: inset 0 0 0 1px $cdr-color-border-input-default;
@@ -82,6 +82,7 @@
 }
 
 @mixin cdr-select-error-message-mixin() {
+  @include cdr-text-utility-sans-200;
   color: $cdr-color-text-input-error;
   fill: $cdr-color-text-input-error;
 }

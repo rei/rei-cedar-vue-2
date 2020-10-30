@@ -9,6 +9,7 @@
 
 @mixin cdr-input-core-mixin() {
   @include cdr-text-utility-sans-300;
+  font-weight: 500;
   background-color: $cdr-color-background-input-default;
   color: $cdr-color-text-input-default;
   border: 0;
@@ -93,6 +94,7 @@
 }
 
 @mixin cdr-input-error-message-mixin() {
+  @include cdr-text-utility-sans-200;
   color: $cdr-color-text-input-error;
   fill: $cdr-color-text-input-error;
 }
@@ -108,9 +110,6 @@
 }
 
 @mixin cdr-input-helper-text-mixin() {
-  font-family: $cdr-font-family-sans;
-  font-size: 1.4rem;
-  line-height: 1.8rem;
-  letter-spacing: -0.016rem;
+  @include cdr-text-utility-sans-200;
   color: $cdr-color-text-input-help;
 }
