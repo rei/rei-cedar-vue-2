@@ -43,7 +43,7 @@
 
     .cdr-radio__input:checked ~ .cdr-label-wrapper__figure {
       box-shadow: 0 0 0 2px $cdr-color-border-input-default-selected-hover;
-      background-color: $cdr-color-background-input-default-selected-hover !important;
+      background-color: $cdr-color-background-input-default-selected-hover;
     }
   }
 
@@ -72,16 +72,7 @@
       }
     }
   }
-  //
-  // /* Active
-  // ========== */
-  &:active .cdr-label-wrapper__figure {
-    box-shadow: 0 0 0 2px $cdr-color-border-input-default-active;
-    background-color: $cdr-color-background-input-default-active;
-    &::after {
-      background-color: $cdr-color-icon-checkbox-default-selected-active;
-    }
-  }
+
   //
   // /* Focus
   // ========== */
@@ -92,5 +83,18 @@
 
   &__input:focus:checked ~ .cdr-label-wrapper__figure {
     background-color: $cdr-color-background-input-default-selected-focus;
+  }
+
+  //
+  // /* Active
+  // ========== */
+  &:active {
+    .cdr-label-wrapper__figure, .cdr-radio__input:checked ~ .cdr-label-wrapper__figure {
+      box-shadow: 0 0 0 2px $cdr-color-border-input-default-active;
+      background-color: $cdr-color-background-input-default-active;
+      &::after {
+        background-color: $cdr-color-icon-checkbox-default-selected-active;
+      }
+    }
   }
 }

@@ -56,7 +56,6 @@
     @include cdr-label-disabled-mixin; // TODO: refactor me!
     cursor: not-allowed;
     .cdr-label-wrapper__figure, .cdr-label-wrapper__content {
-      // TODO: whats going on here eh?
       cursor: not-allowed !important;
     }
     &:hover, &:focus-within, &:active {

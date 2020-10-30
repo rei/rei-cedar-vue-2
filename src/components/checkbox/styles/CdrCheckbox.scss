@@ -96,11 +96,12 @@
 
   /* Active
   ========== */
-  &__input:active ~ .cdr-label-wrapper__figure {
-    box-shadow: 0 0 0 2px $cdr-color-border-input-default-active;
-    background-color: $cdr-color-background-input-default-active;
-    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/check-lg.svg', fill="#{$cdr-color-icon-checkbox-default-selected-active}");
-
+  &:active {
+    .cdr-label-wrapper__figure, .cdr-checkbox__input:checked ~ .cdr-label-wrapper__figure  {
+      box-shadow: 0 0 0 2px $cdr-color-border-input-default-active;
+      background-color: $cdr-color-background-input-default-active;
+      background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/check-lg.svg', fill="#{$cdr-color-icon-checkbox-default-selected-active}");
+    }
   }
 
   /* Focus
