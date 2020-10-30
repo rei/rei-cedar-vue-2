@@ -53,7 +53,9 @@
     & ~ .cdr-label-wrapper__figure {
       box-shadow: 0 0 0 1px $cdr-color-border-input-default-disabled !important;
       background-color: $cdr-color-background-input-default-disabled !important;
-      cursor: not-allowed;
+      &:after {
+        background-color: $cdr-color-background-input-default-disabled !important;
+      }
     }
 
     & ~ .cdr-label-wrapper__content {

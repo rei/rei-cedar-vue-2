@@ -104,6 +104,7 @@ export default {
         labelClass={this.labelClass}
         contentClass={this.contentClass}
         background={this.background}
+        disabled={this.$attrs.disabled}
       >
         <input
           class={clsx(this.style['cdr-checkbox__input'], this.inputClass)}

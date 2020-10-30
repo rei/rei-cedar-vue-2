@@ -19,6 +19,7 @@ export default {
         ['primary', 'secondary'],
       ),
     },
+    disabled: Boolean,
   },
   data() {
     return {
@@ -29,6 +30,9 @@ export default {
     baseClass() {
       return 'cdr-label-wrapper';
     },
+    disabledClass() {
+      return this.disabled ? this.style['cdr-label-wrapper--disabled'] : '';
+    },
   },
   render() {
     return (
@@ -36,6 +40,7 @@ export default {
         <label class={clsx(
           this.style['cdr-label-wrapper'],
           this.style[`cdr-label-wrapper--${this.background}`],
+          this.disabledClass,
           this.modifierClass,
           this.sizeClass,
           this.labelClass,
