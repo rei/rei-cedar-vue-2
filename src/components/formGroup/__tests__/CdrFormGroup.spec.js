@@ -14,7 +14,7 @@ describe('CdrFormGroup', () => {
     expect(wrapper.element).toMatchSnapshot();
   });
 
-  test('renders error state', () => {
+  test('renders error slot', () => {
     const wrapper = mount(CdrFormGroup, {
       propsData: {
         error: true
@@ -26,6 +26,17 @@ describe('CdrFormGroup', () => {
 
     expect(wrapper.find('.cdr-form-group--error').exists()).toBe(true);
     expect(wrapper.find('.cdr-form-group__error-message').text()).toBe('whoops');
+  });
+
+  test('renders text when passed as error prop', () => {
+    const wrapper = mount(CdrFormGroup, {
+      propsData: {
+        error: 'false!'
+      },
+    });
+
+    expect(wrapper.find('.cdr-form-group--error').exists()).toBe(true);
+    expect(wrapper.find('.cdr-form-group__error-message').text()).toBe('false!');
   });
 
   test('does not render error slot if error state is inactive', () => {

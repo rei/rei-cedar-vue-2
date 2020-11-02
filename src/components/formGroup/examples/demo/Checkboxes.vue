@@ -58,20 +58,23 @@
 
     <cdr-form-group
       label="What's your favorite required letter?"
-      :error="true"
+      :error="hasError"
       :required="true"
     >
       <cdr-checkbox
         custom-value="A"
         v-model="exGroup"
+        @input="validate"
       >A</cdr-checkbox>
       <cdr-checkbox
         custom-value="B"
         v-model="exGroup"
+        @input="validate"
       >B</cdr-checkbox>
       <cdr-checkbox
         custom-value="C"
         v-model="exGroup"
+        @input="validate"
       >C</cdr-checkbox>
       <template slot="error">
         You must make a selection!
@@ -92,8 +95,14 @@ export default {
   },
   data() {
     return {
-      exGroup: ['A'],
+      exGroup: [],
+      hasError: true,
     };
+  },
+  methods: {
+    validate() {
+      this.hasError = !this.exGroup.length;
+    },
   },
 };
 </script>

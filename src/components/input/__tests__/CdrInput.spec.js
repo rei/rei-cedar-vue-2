@@ -327,6 +327,16 @@ describe('CdrInput', () => {
     expect(wrapper.find('.cdr-input__error-message').text()).toBe('whoops');
   });
 
+  it('renders text when passed as error', () => {
+    const wrapper = shallowMount(CdrInput, {
+      propsData: {
+        label: 'test',
+        error: 'incorrect!'
+      },
+    });
+    expect(wrapper.find('.cdr-input__error-message').text()).toBe('incorrect!');
+  });
+
   it('does not render error slot when error state is inactive', () => {
     const wrapper = shallowMount(CdrInput, {
       propsData: {

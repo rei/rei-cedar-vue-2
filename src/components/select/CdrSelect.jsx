@@ -58,7 +58,7 @@ export default {
     },
     // Set error styling
     error: {
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     value: {
@@ -221,11 +221,11 @@ export default {
             </div>
           )}
         </div>
-        {this.$slots.error && this.error && (
+        {this.error && (
           <span
             class={this.style['cdr-select__error-message']}
           >
-            <icon-error-stroke inherit-color/> {this.$slots.error}
+            {this.$slots.error || (<span><icon-error-stroke inherit-color/> {this.error}</span>)}
           </span>
         )}
       </div>

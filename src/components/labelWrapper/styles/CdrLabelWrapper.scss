@@ -5,6 +5,7 @@
   padding: $cdr-space-half-x;
   @include cdr-label-base-mixin;
   border-radius: $cdr-radius-softer;
+  width: 100%;
   display: inline-block;
   margin: 0;
   position: relative;
@@ -34,7 +35,7 @@
   }
 
   &:active {
-    background-color: $cdr-color-background-label-default-active !important;
+    background-color: $cdr-color-background-label-default-active;
   }
 
   &--secondary {
@@ -47,12 +48,19 @@
     }
 
     &:active {
-      background-color: $cdr-color-background-label-secondary-active !important;
+      background-color: $cdr-color-background-label-secondary-active;
     }
   }
 
-  &--disabled > .cdr-label-wrapper__content {
+  &--disabled {
     @include cdr-label-disabled-mixin; // TODO: refactor me!
+    cursor: not-allowed;
+    .cdr-label-wrapper__figure, .cdr-label-wrapper__content {
+      cursor: not-allowed !important;
+    }
+    &:hover, &:focus-within, &:active {
+      background-color: transparent !important;
+    }
   }
 
   &__figure {
@@ -60,9 +68,8 @@
     transform: translateY(-50%);
     width: $cdr-label-figure-size-medium;
     height: $cdr-label-figure-size-medium;
-    // TODO: verify these don't mess up checkbox :]
     &::after {
-      width: $cdr-label-figure-size-medium / 4; // TODO: verify these get compiled
+      width: $cdr-label-figure-size-medium / 4;
       height: $cdr-label-figure-size-medium / 4;
     }
 

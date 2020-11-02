@@ -28,10 +28,7 @@
   }
 
   &__helper {
-    font-family: $cdr-font-family-sans;
-    font-size: 1.4rem;
-    line-height: 1.8rem;
-    letter-spacing: -0.016rem;
+    @include cdr-text-utility-sans-200;
     color: $cdr-color-text-input-help;
     display: inline-block;
   }

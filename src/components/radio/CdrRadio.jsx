@@ -8,11 +8,11 @@ import CdrLabelWrapper from '../labelWrapper/CdrLabelWrapper';
 
 export default {
   name: 'CdrRadio',
-  mixins: [modifier, space, size],
-  inheritAttrs: false,
   components: {
     CdrLabelWrapper,
   },
+  mixins: [modifier, space, size],
+  inheritAttrs: false,
   props: {
     /**
      * Class that is added to the label for custom styles
@@ -100,6 +100,7 @@ export default {
         labelClass={this.labelClass}
         contentClass={this.contentClass}
         background={this.background}
+        disabled={this.$attrs.disabled}
       >
         <input
           class={clsx(this.style['cdr-radio__input'], this.inputClass)}

@@ -237,6 +237,16 @@ describe('cdrSelect', () => {
     expect(wrapper.find('.cdr-select__error-message').text()).toBe('whoops');
   });
 
+  it('renders text when passed as error prop', () => {
+    const wrapper = shallowMount(CdrSelect, {
+      propsData: {
+        label: 'test',
+        error: 'wrong!'
+      },
+    });
+    expect(wrapper.find('.cdr-select__error-message').text()).toBe('wrong!');
+  });
+
   it('does not render error slot when error state is inactive', () => {
     const wrapper = shallowMount(CdrSelect, {
       propsData: {

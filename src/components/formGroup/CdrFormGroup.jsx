@@ -13,7 +13,11 @@ export default {
       default: '',
       required: false,
     },
-    error: Boolean,
+    // Set error styling
+    error: {
+      type: [Boolean, String],
+      default: false,
+    },
     required: Boolean,
     optional: Boolean,
   },
@@ -53,12 +57,12 @@ export default {
       </legend>
       <div class={clsx(this.style['cdr-form-group__wrapper'], this.errorClass)}>
         {this.$slots.default}
-        {this.error && this.$slots.error && (
-          <div class={this.style['cdr-form-group__error-message']}>
-            <icon-error-stroke inherit-color/> { this.$slots.error }
-          </div>
-        )}
       </div>
+      {this.error && (
+        <div class={this.style['cdr-form-group__error-message']}>
+          {this.$slots.error || (<span><icon-error-stroke inherit-color/> {this.error}</span>)}
+        </div>
+      )}
     </fieldset>);
   },
 };
