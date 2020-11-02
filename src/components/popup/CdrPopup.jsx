@@ -14,10 +14,10 @@ export default {
     position: {
       type: String,
       required: false,
-      default: 'up',
+      default: 'top',
       validator: (value) => propValidator(
         value,
-        ['up', 'down', 'left', 'right'],
+        ['top', 'bottom', 'left', 'right'],
       ),
     },
     autoPosition: {
@@ -127,8 +127,8 @@ export default {
       const triggerCenterX = triggerRect.left + (triggerRect.width / 2);
 
       const dirs = {
-        up: triggerRect.top - popupRect.height - offset,
-        down: screenHeight - triggerRect.bottom - popupRect.height - offset,
+        top: triggerRect.top - popupRect.height - offset,
+        bottom: screenHeight - triggerRect.bottom - popupRect.height - offset,
         left: triggerRect.left - popupRect.width - offset,
         right: screenWidth - triggerRect.right - popupRect.width - offset,
       };
@@ -141,8 +141,8 @@ export default {
       };
 
       const invert = {
-        up: 'down',
-        down: 'up',
+        top: 'bottom',
+        bottom: 'top',
         left: 'right',
         right: 'left',
       };

@@ -11,10 +11,10 @@ export default {
     position: {
       type: String,
       required: false,
-      default: 'up',
+      default: 'top',
       validator: (value) => propValidator(
         value,
-        ['up', 'down', 'left', 'right'],
+        ['top', 'bottom', 'left', 'right'],
       ),
     },
     autoPosition: {
