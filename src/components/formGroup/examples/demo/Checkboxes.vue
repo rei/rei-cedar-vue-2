@@ -101,9 +101,9 @@ export default {
   },
   methods: {
     validate() {
-      this.hasError = !this.exGroup.length
-    }
-  }
+      this.hasError = !this.exGroup.length;
+    },
+  },
 };
 </script>
 

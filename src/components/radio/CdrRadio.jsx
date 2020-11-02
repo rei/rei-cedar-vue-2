@@ -8,11 +8,11 @@ import CdrLabelWrapper from '../labelWrapper/CdrLabelWrapper';
 
 export default {
   name: 'CdrRadio',
-  mixins: [modifier, space, size],
-  inheritAttrs: false,
   components: {
     CdrLabelWrapper,
   },
+  mixins: [modifier, space, size],
+  inheritAttrs: false,
   props: {
     /**
      * Class that is added to the label for custom styles

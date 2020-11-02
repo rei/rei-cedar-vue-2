@@ -2,11 +2,6 @@ import style from './styles/CdrLabelStandalone.scss';
 
 export default {
   name: 'CdrLabelStandalone',
-  data() {
-    return {
-      style,
-    };
-  },
   props: {
     forId: {
       type: String,
@@ -17,6 +12,11 @@ export default {
     required: Boolean,
     optional: Boolean,
     hideLabel: Boolean,
+  },
+  data() {
+    return {
+      style,
+    };
   },
   computed: {
     labelClass() {
