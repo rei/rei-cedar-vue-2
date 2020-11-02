@@ -28869,9 +28869,9 @@ var cedar = (function () {
       position: {
         type: String,
         required: false,
-        default: 'up',
+        default: 'top',
         validator: function validator(value) {
-          return validateProp$1(value, ['up', 'down', 'left', 'right']);
+          return validateProp$1(value, ['top', 'bottom', 'left', 'right']);
         }
       },
       autoPosition: {
@@ -29011,8 +29011,8 @@ var cedar = (function () {
         var triggerCenterY = triggerRect.top + triggerRect.height / 2;
         var triggerCenterX = triggerRect.left + triggerRect.width / 2;
         var dirs = {
-          up: triggerRect.top - popupRect.height - offset,
-          down: screenHeight - triggerRect.bottom - popupRect.height - offset,
+          top: triggerRect.top - popupRect.height - offset,
+          bottom: screenHeight - triggerRect.bottom - popupRect.height - offset,
           left: triggerRect.left - popupRect.width - offset,
           right: screenWidth - triggerRect.right - popupRect.width - offset
         };
@@ -29023,8 +29023,8 @@ var cedar = (function () {
           bottom: triggerCenterY + popupRect.height / 2 + borderSize >= screenHeight
         };
         var invert = {
-          up: 'down',
-          down: 'up',
+          top: 'bottom',
+          bottom: 'top',
           left: 'right',
           right: 'left'
         };
@@ -29144,9 +29144,9 @@ var cedar = (function () {
       position: {
         type: String,
         required: false,
-        default: 'up',
+        default: 'top',
         validator: function validator(value) {
-          return validateProp$1(value, ['up', 'down', 'left', 'right']);
+          return validateProp$1(value, ['top', 'bottom', 'left', 'right']);
         }
       },
       autoPosition: {
@@ -30334,9 +30334,9 @@ var cedar = (function () {
       position: {
         type: String,
         required: false,
-        default: 'up',
+        default: 'top',
         validator: function validator(value) {
-          return validateProp$1(value, ['up', 'down', 'left', 'right']);
+          return validateProp$1(value, ['top', 'bottom', 'left', 'right']);
         }
       },
       autoPosition: {
