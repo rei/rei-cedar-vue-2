@@ -50,27 +50,18 @@
 @control-standard-label: {
     cursor: pointer;
     display: block;
-    margin-bottom: 0;
-    min-height: 1.6rem;
-    padding-left: 0;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: -0.016rem;
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    padding-left: 0.4rem;
+    color: rgba(12, 11, 8, 0.75);
 };
 @control-standard-element-and-label: {
     display: block;
     color: inherit;
     position: relative;
-    .required & {
-        left: 3.5rem;
-        position: relative;
-        &:after {
-            left: -1.4rem;
-            position: absolute;
-        }
-        &:before {
-            left: -3.5rem;
-            position: absolute;
-            top: 0.5rem
-        }
-    }
 };
 @control-standard-element-and-label-before: {
     content: '';
@@ -83,7 +74,7 @@
     left: -( @padding-base-horizontal + 0.425rem );
     margin-right: @padding-large-horizontal/ 2 ;
     position: absolute;
-    top: 0.1rem;
+    top: 0.4rem;
     width: 1.6rem;
     /* Prevent iOS from altering border and box-shadow */
     -webkit-appearance: none;
@@ -204,20 +195,20 @@
         &:before {
             @control-standard-element-and-label-before();
             box-shadow: 0 0 0 0.1rem @cdr-color-border-input-default;
+            height: 17px;
+            width: 17px;
         }
         &:empty:before {
             @control-standard-element-and-label-empty-before();
         }
     }
     > [type="checkbox"]:checked + label:before {
-        font-family: 'rei-icons';
-        font-size: 11px;
         box-shadow: inset 0 0 0 1px @cdr-color-border-input-default-selected;
         background-color: @cdr-color-background-input-default-selected;
-        content: @icon-var-rei-check;
+        content: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath role='presentation' d='M9.673 18.669h.001L19.766 6.644a1 1 0 10-1.532-1.286l-9.3 11.085-3.169-3.776a1 1 0 10-1.532 1.286l3.875 4.618a.999.999 0 001.565.099z'/%3E%3C/svg%3E");
         color: #fff;
+        white-space: pre;
         outline: none;
-        padding-left: 3px !important;
     }
     > [type="checkbox"]:hover + label:before,
     > [type="checkbox"]:focus + label:before {
@@ -244,7 +235,7 @@
       > [type="checkbox"]:checked:hover + label:before{
         box-shadow: 0 0 0 3px @cdr-color-border-input-default-selected-hover;
         background-color: @cdr-color-background-input-default-selected-hover;
-        content: @icon-var-rei-check;
+        content: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23406eb5'%3E%3Cpath role='presentation' d='M9.673 18.669h.001L19.766 6.644a1 1 0 10-1.532-1.286l-9.3 11.085-3.169-3.776a1 1 0 10-1.532 1.286l3.875 4.618a.999.999 0 001.565.099z'/%3E%3C/svg%3E");
         color: @cdr-color-background-input-default-selected;
       }
 
@@ -252,8 +243,10 @@
         outline: none;
         border: 0.1rem solid @core-action-2;
         box-shadow: inset 0 0 0 1px @cdr-color-border-input-default-active;
-        background-color: @cdr-color-background-input-default-selected;
-        content: @icon-var-rei-check;
+        background-color: @cdr-color-background-input-default;
+        content: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath role='presentation' d='M9.673 18.669h.001L19.766 6.644a1 1 0 10-1.532-1.286l-9.3 11.085-3.169-3.776a1 1 0 10-1.532 1.286l3.875 4.618a.999.999 0 001.565.099z'/%3E%3C/svg%3E");
+        color: #fff;
+
     }
 }
 
@@ -339,7 +332,15 @@
       @toggle-ruleset();
       @toggle-expand-collapse-ruleset();
   }
-
+@toggle-sort-ruleset: {	
+    > [ type="checkbox" ]:checked + label:before,	
+    > [ type="radio" ]:checked + label:before {	
+        content:"\e688";	
+    }	
+};.toggle-sort {	
+    @toggle-ruleset();	
+    @toggle-sort-ruleset();	
+  }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //            OVERRIDES
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
