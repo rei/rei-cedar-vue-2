@@ -28,6 +28,16 @@ describe('CdrFormGroup', () => {
     expect(wrapper.find('.cdr-form-group__error-message').text()).toBe('whoops');
   });
 
+  test('renders disabled state', () => {
+    const wrapper = mount(CdrFormGroup, {
+      propsData: {
+        disabled: true
+      },
+    });
+
+    expect(wrapper.find('.cdr-form-group--disabledd').exists()).toBe(true);
+  });
+
   test('renders text when passed as error prop', () => {
     const wrapper = mount(CdrFormGroup, {
       propsData: {

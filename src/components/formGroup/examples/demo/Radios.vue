@@ -21,6 +21,32 @@
       >Sony</cdr-radio>
 
     </cdr-form-group>
+
+
+    <cdr-form-group label="Disabled Radio Example" :disabled="true">
+
+      <cdr-radio
+        name="example"
+        custom-value="casio"
+        v-model="ex"
+        :disabled="true"
+      >Casio</cdr-radio>
+
+      <cdr-radio
+        name="example"
+        custom-value="panasonic"
+        v-model="ex"
+        :disabled="true"
+      >Panasonic</cdr-radio>
+
+      <cdr-radio
+        name="example"
+        custom-value="sony"
+        v-model="ex"
+        :disabled="true"
+      >Sony</cdr-radio>
+
+    </cdr-form-group>
   </div>
 </template>
 

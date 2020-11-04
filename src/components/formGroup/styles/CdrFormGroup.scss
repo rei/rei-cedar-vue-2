@@ -12,6 +12,13 @@
     }
   }
 
+  &--disabled {
+    cursor: not-allowed;
+    legend {
+      color: $cdr-color-text-disabled;
+    }
+  }
+
   &__error-message {
     @include cdr-text-utility-sans-300;
     color: $cdr-color-text-input-error;

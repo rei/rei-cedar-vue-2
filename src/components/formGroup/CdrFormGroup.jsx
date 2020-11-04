@@ -20,6 +20,7 @@ export default {
     },
     required: Boolean,
     optional: Boolean,
+    disabled: Boolean,
   },
   data() {
     return {
@@ -33,9 +34,12 @@ export default {
     errorClass() {
       return this.error ? this.style['cdr-form-group--error'] : '';
     },
+    disabledClass() {
+      return this.disabled ? this.style['cdr-form-group--disabled']: '';
+    }
   },
   render() {
-    return (<fieldset class={this.style[this.baseClass]}>
+    return (<fieldset class={clsx(this.style[this.baseClass], this.disabledClass)}>
       <legend>
         {this.$slots.label || this.label}
         {this.required && (
