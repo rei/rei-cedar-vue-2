@@ -205,6 +205,50 @@
     </cdr-input>
 
     <cdr-input
+      class="demo-input"
+      :required="true"
+      v-model="megaModel"
+      :error="megaErr"
+      label="Everything at the same time"
+      @blur="megaErr = false"
+    >
+      <icon-map slot="pre-icon"/>
+      <template slot="helper-text-top">Hey im on top of the input!</template>
+      <template slot="helper-text-bottom">Hey im below the input!</template>
+      <template slot="info">
+        <cdr-link href="#" modifier="standalone">
+          Hey im also on top of the input!
+        </cdr-link>
+      </template>
+      <template slot="info-action">
+        <cdr-link tag="button" type="button">
+          <icon-check-lg inherit-color/>
+        </cdr-link>
+      </template>
+      <template slot="post-icon">
+        <cdr-tooltip slot="post-icon" class="cdr-input__button">
+          <cdr-button
+            slot="trigger"
+            :icon-only="true"
+            @click="megaErr = 'An error has occurred please fix it'"
+          >
+            <icon-x-stroke/>
+          </cdr-button>
+          I put the input into an error state!
+        </cdr-tooltip>
+        <cdr-popover slot="post-icon" class="cdr-input__button">
+          <cdr-button
+            slot="trigger"
+            :icon-only="true"
+          >
+            <icon-information-stroke/>
+          </cdr-button>
+          Hey What's Up?
+        </cdr-popover>
+      </template>
+    </cdr-input>
+
+    <cdr-input
       class="demo-input "
       v-model="multiRowModel"
       :rows="10"
@@ -251,6 +295,10 @@
     <div class="demo-input">
       Size Inputs Value = {{ sizeModel }}
     </div>
+
+    <div class="demo-input">
+      Mega Input Value = {{ megaModel }}
+    </div>
     <div class="demo-input">
       Master Inputs Value = {{ masterModel }}
     </div>
@@ -279,6 +327,8 @@ export default {
       sizeModel: '',
       formWithButtons: '',
       masterModel: '',
+      megaModel: '',
+      megaErr: false,
       backgroundColor: 'primary',
     };
   },
@@ -306,6 +356,7 @@ export default {
       this.helperValidationModel = value;
       this.multiRowModel = value;
       this.sizeModel = value;
+      this.megaModel = value;
     },
     setBackground(background) {
       switch (background) {

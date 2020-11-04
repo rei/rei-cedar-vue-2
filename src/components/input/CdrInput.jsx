@@ -77,7 +77,6 @@ export default {
   data() {
     return {
       style,
-      isFocused: false,
     };
   },
   computed: {
@@ -88,16 +87,13 @@ export default {
     baseClass() {
       return 'cdr-input';
     },
-    containerClass() {
-      return {
-        [this.style['cdr-input--focused']]: this.isFocused,
-      };
-    },
     inputClass() {
       return {
         [this.style['cdr-input']]: true,
         [this.style['cdr-input--multiline']]: this.rows > 1,
         [this.style['cdr-input--preicon']]: this.$slots['pre-icon'],
+        [this.style['cdr-input--posticon']]: this.$slots['post-icon'],
+        [this.style['cdr-input--posticons']]: this.$slots['post-icon'] && this.$slots['post-icon'].length > 1,
       };
     },
     wrapperClass() {
@@ -115,14 +111,6 @@ export default {
         ...this.$listeners,
         input(event) {
           vm.$emit('input', event.target.value);
-        },
-        focus(event) {
-          vm.isFocused = true;
-          vm.$emit('focus', event);
-        },
-        blur(event) {
-          vm.isFocused = false;
-          vm.$emit('blur', event);
         },
       };
     },
@@ -167,7 +155,7 @@ export default {
   },
   render() {
     return (
-      <div class={ this.containerClass }>
+      <div>
         <cdr-label-standalone
           for-id={ `${this.inputId}` }
           label={ this.label }
@@ -190,16 +178,15 @@ export default {
 
         <div class={this.style['cdr-input-outer-wrap']}>
           <div class={this.wrapperClass}>
-            <div class={this.style['cdr-input-inner-wrap']}>
-              {this.inputEl}
-              {this.$slots['pre-icon'] && (
-                <span
-                  class={this.style['cdr-input__pre-icon']}
-                >
-                  {this.$slots['pre-icon']}
-                </span>
-              )}
-            </div>
+            {this.inputEl}
+            {this.$slots['pre-icon'] && (
+              <span
+                class={this.style['cdr-input__pre-icon']}
+              >
+                {this.$slots['pre-icon']}
+              </span>
+            )}
+
             {this.$slots['post-icon'] && (
               <span
                 class={this.style['cdr-input__post-icon']}

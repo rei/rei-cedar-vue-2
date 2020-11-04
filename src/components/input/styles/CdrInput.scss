@@ -53,7 +53,7 @@
   ========================================================================== */
 
 .cdr-input {
-  @include cdr-input-core-mixin;
+  @include cdr-input-base-mixin;
   background-color: transparent;
   /* Style variants
     ========================================================================== */
@@ -67,6 +67,15 @@
         slot provided icon is close to that width */
     // TODO: use icon token here?
     padding-left: calc(#{$cdr-space-half-x} + #{$cdr-space-quarter-x} + 25px);
+  }
+// add right padding so input content does not overlap post-icon(s)
+// CHECK button icon width in safari?
+  &--posticon {
+    padding-right: 40px;
+  }
+
+  &--posticons {
+    padding-right: 80px;
   }
 
   &--primary {
@@ -167,22 +176,18 @@
 /* ==========================================================================
    # INPUT WRAPPER
    ========================================================================== */
-// real cedar input wrapper
-.cdr-input-inner-wrap {
-  position: relative;
-  flex-grow: 1
-}
 
 .cdr-input-wrap {
   position: relative;
-  display: flex;
+  // display: flex;
   flex-grow: 1;
-  @include cdr-input-outline-mixin;
+  // TODO: apply fill to pre/post icons BUT ONLY if input is focused. can't focus-within :~(
+  // &:focus-within svg {
+  //   // TODO: token?
+  //   fill: $cdr-color-text-primary;
+  // }
 }
 
-.cdr-input--focused .cdr-input-wrap {
-  @include cdr-input-focus-mixin;
-}
 
 .cdr-input-outer-wrap {
   display: flex;
