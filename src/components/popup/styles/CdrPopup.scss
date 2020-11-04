@@ -53,15 +53,15 @@
 
   // Directional Logic
 
-  &--up,
-  &--down {
+  &--top,
+  &--bottom {
     .cdr-popup__content, .cdr-popup__arrow::before, .cdr-popup__arrow::after  {
       left: 50%;
       transform: translateX(-50%);
     }
   }
 
-  &--down {
+  &--bottom {
     &.cdr-popup--open {
       .cdr-popup__content {
         :global {
@@ -103,7 +103,7 @@
     }
   }
 
-  &--up {
+  &--top {
     &.cdr-popup--open {
       .cdr-popup__content {
         :global {
