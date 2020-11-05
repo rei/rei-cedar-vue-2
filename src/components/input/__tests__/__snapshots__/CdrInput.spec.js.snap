@@ -1,9 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CdrInput renders correctly 1`] = `
-<div
-  class=""
->
+<div>
   <div
     class="cdr-label-standalone-wrap"
   >
@@ -20,15 +18,11 @@ exports[`CdrInput renders correctly 1`] = `
     <div
       class="cdr-input-wrap cdr-input--primary"
     >
-      <div
-        class="cdr-input-inner-wrap"
-      >
-        <input
-          class="cdr-input"
-          id="renders"
-          type="text"
-        />
-      </div>
+      <input
+        class="cdr-input"
+        id="renders"
+        type="text"
+      />
     </div>
   </div>
 </div>

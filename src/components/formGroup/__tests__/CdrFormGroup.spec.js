@@ -35,7 +35,7 @@ describe('CdrFormGroup', () => {
       },
     });
 
-    expect(wrapper.find('.cdr-form-group--disabledd').exists()).toBe(true);
+    expect(wrapper.find('.cdr-form-group--disabled').exists()).toBe(true);
   });
 
   test('renders text when passed as error prop', () => {

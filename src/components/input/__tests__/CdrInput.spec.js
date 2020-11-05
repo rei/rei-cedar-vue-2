@@ -215,10 +215,10 @@ describe('CdrInput', () => {
     const input = wrapper.findComponent({ ref: 'input' });
     input.trigger('focus')
     await wrapper.vm.$nextTick();
-    expect(wrapper.classes('cdr-input--focus')).toBeTruthy();
+    expect(wrapper.find('.cdr-input--focus').exists()).toBeTruthy();
     input.trigger('blur')
     await wrapper.vm.$nextTick();
-    expect(wrapper.classes('cdr-input--focus')).toBeFalsy();
+    expect(wrapper.find('.cdr-input--focus').exists()).toBeFalsy();
   });
 
   it('emits a paste event', () => {
