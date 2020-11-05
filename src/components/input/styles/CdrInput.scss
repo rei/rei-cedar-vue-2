@@ -7,7 +7,6 @@
   ========================================================================== */
 
 :global(.cdr-input__button) {
-  fill: inherit;
   & ~ & {
     position: relative;
     margin-left: -4px;
@@ -57,6 +56,12 @@
   background-color: transparent;
   /* Style variants
     ========================================================================== */
+
+  &--focus {
+    svg {
+      fill: $cdr-color-text-primary !important;
+    }
+  }
 
   &--multiline {
     height: auto;
@@ -179,15 +184,8 @@
 
 .cdr-input-wrap {
   position: relative;
-  // display: flex;
   flex-grow: 1;
-  // TODO: apply fill to pre/post icons BUT ONLY if input is focused. can't focus-within :~(
-  // &:focus-within svg {
-  //   // TODO: token?
-  //   fill: $cdr-color-text-primary;
-  // }
 }
-
 
 .cdr-input-outer-wrap {
   display: flex;

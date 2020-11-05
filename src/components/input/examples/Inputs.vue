@@ -103,20 +103,18 @@
     >
       <template slot="info-action">
         <cdr-link>
-          <icon-information-stroke inherit-color />
+          <icon-information-stroke/>
           <span class="cdr-display-sr-only">Information!</span>
         </cdr-link>
       </template>
       <template slot="pre-icon">
         <cdr-icon
           use="#twitter"
-          inherit-color
         />
       </template>
       <template slot="post-icon">
         <cdr-icon
           use="#check-lg"
-          inherit-color
         />
       </template>
       <template slot="helper-text">
@@ -139,7 +137,6 @@
         <template slot="pre-icon">
           <cdr-icon
             use="#twitter"
-            inherit-color
           />
         </template>
         <template slot="post-icon">
@@ -152,10 +149,7 @@
               slot="trigger"
               aria-label="navigate"
             >
-              <cdr-icon
-                use="#map"
-                inherit-color
-              />
+              <icon-map/>
             </cdr-button>
 
             hey where am i?
@@ -165,10 +159,7 @@
             class="cdr-input__button"
             aria-label="close"
           >
-            <cdr-icon
-              use="#x-lg"
-              inherit-color
-            />
+            <icon-x-lg/>
           </cdr-button>
         </template>
       </cdr-input>
@@ -222,11 +213,11 @@
       </template>
       <template slot="info-action">
         <cdr-link tag="button" type="button">
-          <icon-check-lg inherit-color/>
+          <icon-check-stroke inherit-color/>
         </cdr-link>
       </template>
       <template slot="post-icon">
-        <cdr-tooltip slot="post-icon" class="cdr-input__button">
+        <cdr-tooltip class="cdr-input__button">
           <cdr-button
             slot="trigger"
             :icon-only="true"
@@ -236,7 +227,7 @@
           </cdr-button>
           I put the input into an error state!
         </cdr-tooltip>
-        <cdr-popover slot="post-icon" class="cdr-input__button">
+        <cdr-popover class="cdr-input__button">
           <cdr-button
             slot="trigger"
             :icon-only="true"

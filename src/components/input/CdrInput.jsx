@@ -77,6 +77,7 @@ export default {
   data() {
     return {
       style,
+      isFocused: false,
     };
   },
   computed: {
@@ -101,6 +102,7 @@ export default {
         [this.style['cdr-input-wrap']]: true,
         [this.style[`cdr-input--${this.background}`]]: true,
         [this.style['cdr-input--error']]: this.error,
+        [this.style['cdr-input--focus']]: this.isFocused,
       };
     },
     inputListeners() {
@@ -111,6 +113,14 @@ export default {
         ...this.$listeners,
         input(event) {
           vm.$emit('input', event.target.value);
+        },
+        focus(event) {
+          vm.isFocused = true;
+          vm.$emit('focus', event);
+        },
+        blur(event) {
+          vm.isFocused = false;
+          vm.$emit('blur', event);
         },
       };
     },
