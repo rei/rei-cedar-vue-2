@@ -86,6 +86,10 @@
     }
   }
 
+  &--icon-only-large {
+    padding: $cdr-space-three-quarter-x;
+  }
+
   &--with-background {
     @include cdr-button-with-background-mixin;
   }

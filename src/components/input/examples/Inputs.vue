@@ -223,8 +223,9 @@
             slot="trigger"
             :icon-only="true"
             @click="megaErr = 'An error has occurred please fix it'"
+            size="large"
           >
-            <icon-x-stroke/>
+            <icon-x-stroke />
           </cdr-button>
           I put the input into an error state!
         </cdr-tooltip>
@@ -232,8 +233,9 @@
           <cdr-button
             slot="trigger"
             :icon-only="true"
+            size="large"
           >
-            <icon-information-stroke/>
+            <icon-information-stroke />
           </cdr-button>
           Hey What's Up?
         </cdr-popover>
