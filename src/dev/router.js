@@ -17,6 +17,11 @@ import ContainerUtilities from 'componentsdir/Utilities/demos/container';
 import AlignUtilities from 'componentsdir/Utilities/demos/align';
 import VisibilityUtilities from 'componentsdir/Utilities/demos/visibility';
 
+import AddressForm from 'componentsdir/Form/AddressForm';
+import LoginForm from 'componentsdir/Form/LoginForm';
+import PaymentForm from 'componentsdir/Form/PaymentForm';
+import SurveyForm from 'componentsdir/Form/SurveyForm';
+
 const routes = [
   { path: '/', name: ' ', component: App },
   { path: '/kitchen-sink', name: 'KitchenSink', component: KitchenSink },
@@ -58,6 +63,12 @@ const routes = [
   { path: '/container-utilities', component: ContainerUtilities },
   { path: '/align-utilities', component: AlignUtilities },
   { path: '/visibility-utilities', component: VisibilityUtilities },
+
+
+  { path: '/address-form', component: AddressForm },
+  { path: '/login-form', component: LoginForm },
+  { path: '/survey-form', component: SurveyForm },
+  { path: '/payment-form', component: PaymentForm },
 ];
 
 export default routes;
