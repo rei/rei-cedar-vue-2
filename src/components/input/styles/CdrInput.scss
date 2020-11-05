@@ -71,7 +71,7 @@
     /* $input-pre-icon-default-width = 25px with the expectation that
         slot provided icon is close to that width */
     // TODO: use icon token here?
-    padding-left: calc(#{$cdr-space-half-x} + #{$cdr-space-quarter-x} + 25px);
+    padding-left: calc(#{$cdr-space-half-x} + #{$cdr-space-quarter-x} + 25px) !important;
   }
 // add right padding so input content does not overlap post-icon(s)
 // CHECK button icon width in safari?

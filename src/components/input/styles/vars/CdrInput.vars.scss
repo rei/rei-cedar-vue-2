@@ -1,5 +1,3 @@
-
-
 @mixin cdr-input-base-mixin() {
   @include cdr-text-utility-sans-300;
   font-weight: 500;
@@ -55,10 +53,6 @@
   }
 }
 
-// @mixin cdr-input-outline-mixin() {
-//
-// }
-
 @mixin cdr-input-primary-mixin() {
   background-color: $cdr-color-background-input-default;
   &:active,
@@ -72,14 +66,6 @@
   &:active,
   &:focus {
     background-color: $cdr-color-background-input-secondary-active;
-  }
-}
-
-@mixin cdr-input-focus-mixin() {
-  box-shadow: inset 0 0 0 2px #20201d;// $cdr-color-border-input-default-active; TODO: fix me
-  svg {
-    // TODO: token?
-    fill: $cdr-color-text-primary;
   }
 }
 

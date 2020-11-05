@@ -202,6 +202,7 @@
       :error="megaErr"
       label="Everything at the same time"
       @blur="megaErr = false"
+      size="large"
     >
       <icon-map slot="pre-icon"/>
       <template slot="helper-text-top">Hey im on top of the input!</template>
