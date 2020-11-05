@@ -103,7 +103,7 @@
     >
       <template slot="info-action">
         <cdr-link>
-          <icon-information-stroke />
+          <icon-information-stroke inherit-color/>
           <span class="cdr-display-sr-only">Information!</span>
         </cdr-link>
       </template>
@@ -224,26 +224,29 @@
           tag="button"
           type="button"
         >
+          <span class="cdr-display-sr-only">I trigger some sort of action!</span>
           <icon-check-stroke inherit-color />
         </cdr-link>
       </template>
       <template slot="post-icon">
-        <cdr-tooltip class="cdr-input__button">
+        <cdr-tooltip class="cdr-input__button" id="mega-tooltip">
           <cdr-button
             slot="trigger"
             :icon-only="true"
             @click="megaErr = 'An error has occurred please fix it'"
             size="large"
+            aria-label="Click me to cause an error"
           >
             <icon-x-stroke />
           </cdr-button>
           I put the input into an error state!
         </cdr-tooltip>
-        <cdr-popover class="cdr-input__button">
+        <cdr-popover class="cdr-input__button" id="mega-popover">
           <cdr-button
             slot="trigger"
             :icon-only="true"
             size="large"
+            aria-label="Hello"
           >
             <icon-information-stroke />
           </cdr-button>
