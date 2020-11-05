@@ -7,9 +7,18 @@
       Survey Example
     </cdr-text>
 
-    <form class="form-example" novalidate>
+    <form
+      class="form-example"
+      novalidate
+    >
 
-      <cdr-select label="Rate your experience" prompt="Choose one" v-model="experience" :error="experienceErr" @change="experienceErr = false">
+      <cdr-select
+        label="Rate your experience"
+        prompt="Choose one"
+        v-model="experience"
+        :error="experienceErr"
+        @change="experienceErr = false"
+      >
         <option value="good">
           Good
         </option>
@@ -21,21 +30,78 @@
         </option>
       </cdr-select>
 
-      <cdr-form-group label="Which is most important?" :error="importantErr">
-        <cdr-radio name="important" @change="importantErr = false" v-model="important" :error="importantErr" custom-value="mind">Mind</cdr-radio>
-        <cdr-radio name="important" @change="importantErr = false" v-model="important" :error="importantErr" custom-value="body">Body</cdr-radio>
-        <cdr-radio name="important" @change="importantErr = false" v-model="important" :error="importantErr" custom-value="spirit">Spirit</cdr-radio>
+      <cdr-form-group
+        label="Which is most important?"
+        :error="importantErr"
+      >
+        <cdr-radio
+          name="important"
+          @change="importantErr = false"
+          v-model="important"
+          :error="importantErr"
+          custom-value="mind"
+        >
+          Mind
+        </cdr-radio>
+        <cdr-radio
+          name="important"
+          @change="importantErr = false"
+          v-model="important"
+          :error="importantErr"
+          custom-value="body"
+        >
+          Body
+        </cdr-radio>
+        <cdr-radio
+          name="important"
+          @change="importantErr = false"
+          v-model="important"
+          :error="importantErr"
+          custom-value="spirit"
+        >
+          Spirit
+        </cdr-radio>
       </cdr-form-group>
 
-      <cdr-form-group label="What do you want more of?" :error="moreErr">
-        <cdr-checkbox v-model="more" @change="moreErr = false" custom-value="potatoes" :error="moreErr">Potatoes</cdr-checkbox>
-        <cdr-checkbox v-model="more" @change="moreErr = false" custom-value="apples" :error="moreErr">Apples</cdr-checkbox>
-        <cdr-checkbox v-model="more" @change="moreErr = false" custom-value="carrots" :error="moreErr">Carrots</cdr-checkbox>
+      <cdr-form-group
+        label="What do you want more of?"
+        :error="moreErr"
+      >
+        <cdr-checkbox
+          v-model="more"
+          @change="moreErr = false"
+          custom-value="potatoes"
+          :error="moreErr"
+        >
+          Potatoes
+        </cdr-checkbox>
+        <cdr-checkbox
+          v-model="more"
+          @change="moreErr = false"
+          custom-value="apples"
+          :error="moreErr"
+        >
+          Apples
+        </cdr-checkbox>
+        <cdr-checkbox
+          v-model="more"
+          @change="moreErr = false"
+          custom-value="carrots"
+          :error="moreErr"
+        >
+          Carrots
+        </cdr-checkbox>
       </cdr-form-group>
 
-      <cdr-input :rows="3" label="Anything else we should know?"/>
+      <cdr-input
+        :rows="3"
+        label="Anything else we should know?"
+      />
 
-      <cdr-button @click="validate" type="submit">
+      <cdr-button
+        @click="validate"
+        type="submit"
+      >
         Submit
       </cdr-button>
 
@@ -98,13 +164,6 @@ export default {
 };
 </script>
 <style>
-/*
-TODO:
-- how to deal with width/layout...grid?
-
-
-
-*/
 .form-example {
   width: 640px;
 }

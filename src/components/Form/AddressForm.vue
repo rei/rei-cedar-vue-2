@@ -7,7 +7,10 @@
       Address Form Example
     </cdr-text>
 
-    <form class="form-example" novalidate>
+    <form
+      class="form-example"
+      novalidate
+    >
 
       <cdr-select
         :required="true"
@@ -56,7 +59,9 @@
         maxlength="10"
         placeholder="(555)555-5555"
       >
-        <template slot="helper-text-top">In case there's an issue with an order.</template>
+        <template slot="helper-text-top">
+          In case there's an issue with an order.
+        </template>
       </cdr-input>
 
       <cdr-button @click="validate">
@@ -77,7 +82,7 @@ export default {
   data() {
     return {
       countryOpts: ['Canada', 'Mexico', 'United States'],
-      stateOpts: ['California', 'Florida', 'New York', 'Oregon', 'Texas', 'Washington', ],
+      stateOpts: ['California', 'Florida', 'New York', 'Oregon', 'Texas', 'Washington'],
       country: '',
       countryErr: false,
       fullName: '',
@@ -106,8 +111,6 @@ export default {
   },
   methods: {
     validate() {
-      // check if all the models have good content
-      // vue forms patterns?
     },
     setBackground(background) {
       switch (background) {

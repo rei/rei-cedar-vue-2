@@ -35,8 +35,8 @@ export default {
       return this.error ? this.style['cdr-form-group--error'] : '';
     },
     disabledClass() {
-      return this.disabled ? this.style['cdr-form-group--disabled']: '';
-    }
+      return this.disabled ? this.style['cdr-form-group--disabled'] : '';
+    },
   },
   render() {
     return (<fieldset class={clsx(this.style[this.baseClass], this.disabledClass)}>

@@ -301,6 +301,31 @@ describe('CdrInput', () => {
     expect(wrapper.find('.cdr-input__post-icon').text()).toBe('😎');
   });
 
+  it('adds spacing class when post-icon slot is present', () => {
+    const wrapper = shallowMount(CdrInput, {
+      propsData: {
+        label: 'test',
+      },
+      slots: {
+        'post-icon': '😎',
+      },
+    });
+    expect(wrapper.find('.cdr-input--posticon').exists()).toBe(true);
+  });
+
+
+  it('adds spacing class when multiple elements are present in post-icon slot', () => {
+    const wrapper = shallowMount(CdrInput, {
+      propsData: {
+        label: 'test',
+      },
+      slots: {
+        'post-icon': '<div>😎</div><div>🤠</div>',
+      },
+    });
+    expect(wrapper.find('.cdr-input--posticons').exists()).toBe(true);
+  });
+
   it('renders info action slot', () => {
     const wrapper = shallowMount(CdrInput, {
       propsData: {

@@ -7,7 +7,10 @@
       Payment Form Example
     </cdr-text>
 
-    <form class="form-example" novalidate>
+    <form
+      class="form-example"
+      novalidate
+    >
       <cdr-input
         :required="true"
         v-model="creditCard"
@@ -35,7 +38,13 @@
       >
         <template slot="info">
           <cdr-popover>
-            <cdr-link slot="trigger" tag="button" modifier="standalone">Where?</cdr-link>
+            <cdr-link
+              slot="trigger"
+              tag="button"
+              modifier="standalone"
+            >
+              Where?
+            </cdr-link>
             Where to find the magic numbers
           </cdr-popover>
         </template>
@@ -58,8 +67,14 @@ export default {
   },
   data() {
     return {
-      monthOpts: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', "September", "October", "November", "December"],
-      yearOpts: ['2020', '2021', '2022', '2023', '2024', '2025', '2026', '2027', '2028', '2029', '2030'],
+      monthOpts: [
+        'January', 'February', 'March', 'April', 'May', 'June',
+        'July', 'August', 'September', 'October', 'November', 'December',
+      ],
+      yearOpts: [
+        '2020', '2021', '2022', '2023', '2024', '2025',
+        '2026', '2027', '2028', '2029', '2030',
+      ],
       creditCard: '',
       creditCardErr: '',
       month: '',
@@ -79,13 +94,9 @@ export default {
   mounted() {
     this.setBackground(this.$router.currentRoute.query.background);
   },
-// HOW TTO put limit on zip/phone length?
-
-
   methods: {
     validate() {
-      // check if all the models have good content
-      // vue forms patterns?
+
     },
     setBackground(background) {
       switch (background) {
@@ -103,13 +114,6 @@ export default {
 };
 </script>
 <style>
-/*
-TODO:
-- how to deal with width/layout...grid?
-
-
-
-*/
 .form-example {
   width: 640px;
 }

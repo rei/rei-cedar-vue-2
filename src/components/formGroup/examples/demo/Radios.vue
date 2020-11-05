@@ -22,8 +22,10 @@
 
     </cdr-form-group>
 
-
-    <cdr-form-group label="Disabled Radio Example" :disabled="true">
+    <cdr-form-group
+      label="Disabled Radio Example"
+      :disabled="true"
+    >
 
       <cdr-radio
         name="example"

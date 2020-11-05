@@ -7,7 +7,10 @@
       Login Form Example
     </cdr-text>
 
-    <form class="form-example" novalidate>
+    <form
+      class="form-example"
+      novalidate
+    >
 
       <cdr-input
         :required="true"
@@ -23,18 +26,24 @@
         label="Password"
         :type="passwordVisible ? 'text' : 'password'"
       >
-        <cdr-tooltip slot="post-icon" class="cdr-input__button">
+        <cdr-tooltip
+          slot="post-icon"
+          class="cdr-input__button"
+        >
           <cdr-button
             slot="trigger"
             :icon-only="true"
             @click="passwordVisible = !passwordVisible"
           >
-            <icon-x-stroke/>
+            <icon-x-stroke />
           </cdr-button>
           {{ passwordVisible ? 'Hide' : 'Show' }} Password
         </cdr-tooltip>
       </cdr-input>
-      <cdr-button @click="validate" type="submit">
+      <cdr-button
+        @click="validate"
+        type="submit"
+      >
         Save
       </cdr-button>
 
@@ -100,13 +109,6 @@ export default {
 };
 </script>
 <style>
-/*
-TODO:
-- how to deal with width/layout...grid?
-
-
-
-*/
 .form-example {
   width: 640px;
 }

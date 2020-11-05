@@ -103,7 +103,7 @@
     >
       <template slot="info-action">
         <cdr-link>
-          <icon-information-stroke/>
+          <icon-information-stroke />
           <span class="cdr-display-sr-only">Information!</span>
         </cdr-link>
       </template>
@@ -149,7 +149,7 @@
               slot="trigger"
               aria-label="navigate"
             >
-              <icon-map/>
+              <icon-map />
             </cdr-button>
 
             hey where am i?
@@ -159,7 +159,7 @@
             class="cdr-input__button"
             aria-label="close"
           >
-            <icon-x-lg/>
+            <icon-x-lg />
           </cdr-button>
         </template>
       </cdr-input>
@@ -204,17 +204,27 @@
       @blur="megaErr = false"
       size="large"
     >
-      <icon-map slot="pre-icon"/>
-      <template slot="helper-text-top">Hey im on top of the input!</template>
-      <template slot="helper-text-bottom">Hey im below the input!</template>
+      <icon-map slot="pre-icon" />
+      <template slot="helper-text-top">
+        Hey im on top of the input!
+      </template>
+      <template slot="helper-text-bottom">
+        Hey im below the input!
+      </template>
       <template slot="info">
-        <cdr-link href="#" modifier="standalone">
+        <cdr-link
+          href="#"
+          modifier="standalone"
+        >
           Hey im also on top of the input!
         </cdr-link>
       </template>
       <template slot="info-action">
-        <cdr-link tag="button" type="button">
-          <icon-check-stroke inherit-color/>
+        <cdr-link
+          tag="button"
+          type="button"
+        >
+          <icon-check-stroke inherit-color />
         </cdr-link>
       </template>
       <template slot="post-icon">

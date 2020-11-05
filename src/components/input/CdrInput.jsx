@@ -89,12 +89,14 @@ export default {
       return 'cdr-input';
     },
     inputClass() {
+      const hasPostIcon = !!this.$slots['post-icon'];
+      const hasPostIcons = hasPostIcon && this.$slots['post-icon'].length > 1;
       return {
         [this.style['cdr-input']]: true,
         [this.style['cdr-input--multiline']]: this.rows > 1,
         [this.style['cdr-input--preicon']]: this.$slots['pre-icon'],
-        [this.style['cdr-input--posticon']]: this.$slots['post-icon'],
-        [this.style['cdr-input--posticons']]: this.$slots['post-icon'] && this.$slots['post-icon'].length > 1,
+        [this.style['cdr-input--posticon']]: hasPostIcon,
+        [this.style['cdr-input--posticons']]: hasPostIcons,
       };
     },
     wrapperClass() {
