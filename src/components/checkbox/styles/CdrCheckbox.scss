@@ -69,8 +69,7 @@
     }
 
     & ~ .cdr-label-wrapper__content {
-      // TODO: add token
-      color: #b2ab9f;//$cdr-color-text-input-label-disabled;
+      color: $cdr-color-text-input-disabled;
     }
 
     /* Disabled + Checked
@@ -107,6 +106,11 @@
   /* Focus
   ========== */
   &__input:focus ~ .cdr-label-wrapper__figure {
-    box-shadow: inset 0 0 0 2px $cdr-color-border-input-default-focus;
+    box-shadow: inset 0 0 0 2px $cdr-color-border-input-default-active;
+    background-color: $cdr-color-background-input-default-focus;
+  }
+
+  &__input:focus:checked ~ .cdr-label-wrapper__figure {
+    background-color: $cdr-color-background-input-default-selected-focus;
   }
 }
