@@ -16,10 +16,10 @@ exports[`CdrInput renders correctly 1`] = `
     class="cdr-input-outer-wrap"
   >
     <div
-      class="cdr-input-wrap cdr-input--primary"
+      class="cdr-input-wrap"
     >
       <input
-        class="cdr-input"
+        class="cdr-input cdr-input--primary"
         id="renders"
         type="text"
       />
