@@ -97,13 +97,13 @@ export default {
         [this.style['cdr-input--preicon']]: this.$slots['pre-icon'],
         [this.style['cdr-input--posticon']]: hasPostIcon,
         [this.style['cdr-input--posticons']]: hasPostIcons,
+        [this.style['cdr-input--error']]: this.error,
+        [this.style[`cdr-input--${this.background}`]]: true,
       };
     },
     wrapperClass() {
       return {
         [this.style['cdr-input-wrap']]: true,
-        [this.style[`cdr-input--${this.background}`]]: true,
-        [this.style['cdr-input--error']]: this.error,
         [this.style['cdr-input--focus']]: this.isFocused,
       };
     },
