@@ -103,20 +103,18 @@
     >
       <template slot="info-action">
         <cdr-link>
-          <icon-information-stroke inherit-color />
+          <icon-information-stroke inherit-color/>
           <span class="cdr-display-sr-only">Information!</span>
         </cdr-link>
       </template>
       <template slot="pre-icon">
         <cdr-icon
           use="#twitter"
-          inherit-color
         />
       </template>
       <template slot="post-icon">
         <cdr-icon
           use="#check-lg"
-          inherit-color
         />
       </template>
       <template slot="helper-text">
@@ -139,7 +137,6 @@
         <template slot="pre-icon">
           <cdr-icon
             use="#twitter"
-            inherit-color
           />
         </template>
         <template slot="post-icon">
@@ -152,10 +149,7 @@
               slot="trigger"
               aria-label="navigate"
             >
-              <cdr-icon
-                use="#map"
-                inherit-color
-              />
+              <icon-map />
             </cdr-button>
 
             hey where am i?
@@ -165,10 +159,7 @@
             class="cdr-input__button"
             aria-label="close"
           >
-            <cdr-icon
-              use="#x-lg"
-              inherit-color
-            />
+            <icon-x-lg />
           </cdr-button>
         </template>
       </cdr-input>
@@ -201,6 +192,66 @@
         >
           Support link
         </cdr-link>
+      </template>
+    </cdr-input>
+
+    <cdr-input
+      class="demo-input"
+      :required="true"
+      v-model="megaModel"
+      :error="megaErr"
+      label="Everything at the same time"
+      @blur="megaErr = false"
+      size="large"
+    >
+      <icon-map slot="pre-icon" />
+      <template slot="helper-text-top">
+        Hey im on top of the input!
+      </template>
+      <template slot="helper-text-bottom">
+        Hey im below the input!
+      </template>
+      <template slot="info">
+        <cdr-link
+          href="#"
+          modifier="standalone"
+        >
+          Hey im also on top of the input!
+        </cdr-link>
+      </template>
+      <template slot="info-action">
+        <cdr-link
+          tag="button"
+          type="button"
+        >
+          <span class="cdr-display-sr-only">I trigger some sort of action!</span>
+          <icon-check-stroke inherit-color />
+        </cdr-link>
+      </template>
+      <template slot="post-icon">
+        <cdr-tooltip class="cdr-input__button" id="mega-tooltip">
+          <cdr-button
+            slot="trigger"
+            :icon-only="true"
+            @click="megaErr = 'An error has occurred please fix it'"
+            size="large"
+            aria-label="Click me to cause an error"
+          >
+            <icon-x-stroke />
+          </cdr-button>
+          I put the input into an error state!
+        </cdr-tooltip>
+        <cdr-popover class="cdr-input__button" id="mega-popover">
+          <cdr-button
+            slot="trigger"
+            :icon-only="true"
+            size="large"
+            aria-label="Hello"
+          >
+            <icon-information-stroke />
+          </cdr-button>
+          Hey What's Up?
+        </cdr-popover>
       </template>
     </cdr-input>
 
@@ -251,6 +302,10 @@
     <div class="demo-input">
       Size Inputs Value = {{ sizeModel }}
     </div>
+
+    <div class="demo-input">
+      Mega Input Value = {{ megaModel }}
+    </div>
     <div class="demo-input">
       Master Inputs Value = {{ masterModel }}
     </div>
@@ -279,6 +334,8 @@ export default {
       sizeModel: '',
       formWithButtons: '',
       masterModel: '',
+      megaModel: '',
+      megaErr: false,
       backgroundColor: 'primary',
     };
   },
@@ -306,6 +363,7 @@ export default {
       this.helperValidationModel = value;
       this.multiRowModel = value;
       this.sizeModel = value;
+      this.megaModel = value;
     },
     setBackground(background) {
       switch (background) {

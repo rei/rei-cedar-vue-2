@@ -20,6 +20,7 @@ export default {
     },
     required: Boolean,
     optional: Boolean,
+    disabled: Boolean,
   },
   data() {
     return {
@@ -33,36 +34,44 @@ export default {
     errorClass() {
       return this.error ? this.style['cdr-form-group--error'] : '';
     },
+    disabledClass() {
+      return this.disabled ? this.style['cdr-form-group--disabled'] : '';
+    },
   },
   render() {
-    return (<fieldset class={this.style[this.baseClass]}>
-      <legend>
-        {this.$slots.label || this.label}
-        {this.required && (
-          <span
-            class={this.style['cdr-form-group__required']}
-            aria-label="required"
-          >
-            *
-          </span>
-        )}
+    return (
+      <fieldset
+        class={clsx(this.style[this.baseClass], this.disabledClass)}
+        disabled={this.disabled}
+      >
+        <legend>
+          {this.$slots.label || this.label}
+          {this.required && (
+            <span
+              class={this.style['cdr-form-group__required']}
+              aria-label="required"
+            >
+              *
+            </span>
+          )}
 
-        {this.optional && (
-          <span
-            class={this.style['cdr-form-group__optional']}
-          >
-            (optional)
-          </span>
-        )}
-      </legend>
-      <div class={clsx(this.style['cdr-form-group__wrapper'], this.errorClass)}>
-        {this.$slots.default}
-      </div>
-      {this.error && (
-        <div class={this.style['cdr-form-group__error-message']}>
-          {this.$slots.error || (<span><icon-error-stroke inherit-color/> {this.error}</span>)}
+          {this.optional && (
+            <span
+              class={this.style['cdr-form-group__optional']}
+            >
+              (optional)
+            </span>
+          )}
+        </legend>
+        <div class={clsx(this.style['cdr-form-group__wrapper'], this.errorClass)}>
+          {this.$slots.default}
         </div>
-      )}
-    </fieldset>);
+        {this.error && (
+          <div class={this.style['cdr-form-group__error-message']}>
+            {this.$slots.error || (<span><icon-error-stroke inherit-color/> {this.error}</span>)}
+          </div>
+        )}
+      </fieldset>
+    );
   },
 };

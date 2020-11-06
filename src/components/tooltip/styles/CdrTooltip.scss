@@ -21,7 +21,7 @@
   }
 
   // set arrow color on popup
-  .cdr-popup--down .cdr-popup__arrow {
+  .cdr-popup--bottom .cdr-popup__arrow {
     &::before {
       border-bottom-color: $cdr-color-border-tooltip-default;
     }
@@ -31,7 +31,7 @@
     }
   }
 
-  .cdr-popup--up .cdr-popup__arrow {
+  .cdr-popup--top .cdr-popup__arrow {
     &::before {
       border-top-color: $cdr-color-border-tooltip-default;
     }

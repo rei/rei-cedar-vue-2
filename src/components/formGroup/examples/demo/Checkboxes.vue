@@ -80,6 +80,27 @@
         You must make a selection!
       </template>
     </cdr-form-group>
+
+    <cdr-form-group
+      label="Disabled example"
+      :disabled="true"
+    >
+      <cdr-checkbox
+        custom-value="A"
+        v-model="exGroup"
+        :disabled="true"
+      >A</cdr-checkbox>
+      <cdr-checkbox
+        custom-value="B"
+        v-model="exGroup"
+        :disabled="true"
+      >B</cdr-checkbox>
+      <cdr-checkbox
+        custom-value="C"
+        v-model="exGroup"
+        :disabled="true"
+      >C</cdr-checkbox>
+    </cdr-form-group>
   </div>
 </template>
 
