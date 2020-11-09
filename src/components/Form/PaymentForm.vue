@@ -6,7 +6,7 @@
     >
       Payment Form Example
     </cdr-text>
-
+    <br><br>
     <form
       class="form-example"
       novalidate
@@ -14,41 +14,49 @@
       <cdr-input
         :required="true"
         v-model="creditCard"
-        type="number"
+        type="tel"
         label="Credit card"
+        maxlength="16"
+        :error="creditCardErr"
+        :background="backgroundColor"
       />
-      <cdr-select
-        :required="true"
-        v-model="month"
-        :options="monthOpts"
-        prompt="Month"
-        label="Expiration Month"
-      />
-      <cdr-select
-        :required="true"
-        v-model="year"
-        :options="yearOpts"
-        label="Expiration year"
-      />
-      <cdr-input
-        :required="true"
-        v-model="securityCode"
-        label="Security Code"
-        type="number"
-      >
-        <template slot="info">
-          <cdr-popover>
-            <cdr-link
-              slot="trigger"
-              tag="button"
-              modifier="standalone"
-            >
-              Where?
-            </cdr-link>
-            Where to find the magic numbers
-          </cdr-popover>
-        </template>
-      </cdr-input>
+      <div class="form-grid">
+        <cdr-select
+          :required="true"
+          v-model="month"
+          :options="monthOpts"
+          prompt="Month"
+          label="Expiration Month"
+          :background="backgroundColor"
+        />
+        <cdr-select
+          :required="true"
+          v-model="year"
+          :options="yearOpts"
+          label="Expiration year"
+          :background="backgroundColor"
+        />
+        <cdr-input
+          :required="true"
+          v-model="securityCode"
+          label="Security Code"
+          type="number"
+          :background="backgroundColor"
+        >
+          <template slot="info">
+            <cdr-popover>
+              <cdr-link
+                slot="trigger"
+                tag="button"
+                modifier="standalone"
+              >
+                Where?
+              </cdr-link>
+              Where to find the magic numbers
+            </cdr-popover>
+          </template>
+        </cdr-input>
+      </div>
 
       <cdr-button @click="validate">
         Save
@@ -76,13 +84,13 @@ export default {
         '2026', '2027', '2028', '2029', '2030',
       ],
       creditCard: '',
-      creditCardErr: '',
+      creditCardErr: false,
       month: '',
-      monthErr: '',
+      monthErr: false,
       year: '',
-      yearErr: '',
+      yearErr: false,
       securityCode: '',
-      securityCodeErr: '',
+      securityCodeErr: false,
       backgroundColor: 'primary',
     };
   },
@@ -96,7 +104,10 @@ export default {
   },
   methods: {
     validate() {
-
+      this.creditCardErr = this.creditCard.length !== 16 && 'Please input your 16 digit credit card number';
+      this.monthErr = !this.month && 'Please input the expiration month';
+      this.yearErr = !this.year && 'Please input the expiration year';
+      this.securityCodeErr = !this.securityCode && 'Please input the security code';
     },
     setBackground(background) {
       switch (background) {
@@ -113,8 +124,15 @@ export default {
   },
 };
 </script>
-<style>
+<style lang="scss">
 .form-example {
   width: 640px;
 }
+
+.form-grid {
+  display: grid;
+  column-gap: $cdr-space-one-x;
+  grid-template-columns: 1fr 1fr;
+}
+
 </style>
