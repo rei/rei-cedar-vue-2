@@ -101,6 +101,10 @@
       background-color: $cdr-color-background-input-default-active;
       background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/check-lg.svg', fill="#{$cdr-color-icon-checkbox-default-selected-active}");
     }
+
+    .cdr-checkbox__input[indeterminate] ~ .cdr-label-wrapper__figure::after {
+      content: none;
+    }
   }
 
   /* Focus
