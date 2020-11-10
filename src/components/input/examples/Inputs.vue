@@ -103,7 +103,7 @@
     >
       <template slot="info-action">
         <cdr-link>
-          <icon-information-stroke inherit-color/>
+          <icon-information-stroke inherit-color />
           <span class="cdr-display-sr-only">Information!</span>
         </cdr-link>
       </template>
@@ -229,7 +229,10 @@
         </cdr-link>
       </template>
       <template slot="post-icon">
-        <cdr-tooltip class="cdr-input__button" id="mega-tooltip">
+        <cdr-tooltip
+          class="cdr-input__button"
+          id="mega-tooltip"
+        >
           <cdr-button
             slot="trigger"
             :icon-only="true"
@@ -241,7 +244,10 @@
           </cdr-button>
           I put the input into an error state!
         </cdr-tooltip>
-        <cdr-popover class="cdr-input__button" id="mega-popover">
+        <cdr-popover
+          class="cdr-input__button"
+          id="mega-popover"
+        >
           <cdr-button
             slot="trigger"
             :icon-only="true"

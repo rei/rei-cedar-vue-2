@@ -6,6 +6,7 @@
     >
       Survey Example
     </cdr-text>
+    <br><br>
 
     <form
       class="form-example"
@@ -18,6 +19,8 @@
         v-model="experience"
         :error="experienceErr"
         @change="experienceErr = false"
+        :background="backgroundColor"
+        :required="true"
       >
         <option value="good">
           Good
@@ -33,6 +36,7 @@
       <cdr-form-group
         label="Which is most important?"
         :error="importantErr"
+        :required="true"
       >
         <cdr-radio
           name="important"
@@ -40,6 +44,7 @@
           v-model="important"
           :error="importantErr"
           custom-value="mind"
+          :background="backgroundColor"
         >
           Mind
         </cdr-radio>
@@ -49,6 +54,7 @@
           v-model="important"
           :error="importantErr"
           custom-value="body"
+          :background="backgroundColor"
         >
           Body
         </cdr-radio>
@@ -58,6 +64,7 @@
           v-model="important"
           :error="importantErr"
           custom-value="spirit"
+          :background="backgroundColor"
         >
           Spirit
         </cdr-radio>
@@ -66,12 +73,14 @@
       <cdr-form-group
         label="What do you want more of?"
         :error="moreErr"
+        :required="true"
       >
         <cdr-checkbox
           v-model="more"
           @change="moreErr = false"
           custom-value="potatoes"
           :error="moreErr"
+          :background="backgroundColor"
         >
           Potatoes
         </cdr-checkbox>
@@ -80,6 +89,7 @@
           @change="moreErr = false"
           custom-value="apples"
           :error="moreErr"
+          :background="backgroundColor"
         >
           Apples
         </cdr-checkbox>
@@ -88,6 +98,7 @@
           @change="moreErr = false"
           custom-value="carrots"
           :error="moreErr"
+          :background="backgroundColor"
         >
           Carrots
         </cdr-checkbox>
@@ -96,6 +107,8 @@
       <cdr-input
         :rows="3"
         label="Anything else we should know?"
+        :background="backgroundColor"
+        :optional="true"
       />
 
       <cdr-button

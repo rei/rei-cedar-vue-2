@@ -2,7 +2,7 @@
 
 exports[`cdrSelect renders correctly 1`] = `
 <div
-  class=""
+  class="cdr-select-container"
 >
   <div
     class="cdr-label-standalone-wrap"

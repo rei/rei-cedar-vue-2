@@ -184,10 +184,15 @@
 .cdr-input-wrap {
   position: relative;
   flex-grow: 1;
+  fill: $cdr-color-icon-default;
 }
 
 .cdr-input-outer-wrap {
   display: flex;
   margin-top: $cdr-space-half-x;
   margin-bottom: $cdr-space-quarter-x;
+}
+
+.cdr-input-container {
+  margin-bottom: $cdr-space-one-x;
 }

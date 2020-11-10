@@ -6,6 +6,7 @@
     >
       Address Form Example
     </cdr-text>
+    <br><br>
 
     <form
       class="form-example"
@@ -17,39 +18,47 @@
         v-model="country"
         :options="countryOpts"
         label="Country"
+        :background="backgroundColor"
       />
       <cdr-input
         :required="true"
         v-model="fullName"
         label="Full name"
+        :background="backgroundColor"
       />
       <cdr-input
         :required="true"
         v-model="address"
         label="Street address"
+        :background="backgroundColor"
       />
       <cdr-input
         :optional="true"
         v-model="address2"
         label="Address line 2"
+        :background="backgroundColor"
       />
       <cdr-input
         :required="true"
         v-model="postal"
         label="ZIP code"
-        type="number"
+        type="tel"
         maxlength="5"
+        class="half-width"
+        :background="backgroundColor"
       />
       <cdr-input
         :required="true"
         v-model="city"
         label="City"
+        :background="backgroundColor"
       />
       <cdr-select
         :required="true"
         v-model="state"
         :options="stateOpts"
         label="State"
+        :background="backgroundColor"
       />
       <cdr-input
         :required="true"
@@ -58,6 +67,7 @@
         type="tel"
         maxlength="10"
         placeholder="(555)555-5555"
+        :background="backgroundColor"
       >
         <template slot="helper-text-top">
           In case there's an issue with an order.
@@ -127,8 +137,13 @@ export default {
   },
 };
 </script>
-<style>
+<style lang="scss">
 .form-example {
   width: 640px;
+}
+
+.half-width {
+  // ???
+  width: calc(50% - #{$cdr-space-one-x});
 }
 </style>

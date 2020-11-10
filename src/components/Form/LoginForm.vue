@@ -6,6 +6,7 @@
     >
       Login Form Example
     </cdr-text>
+    <br><br>
 
     <form
       class="form-example"
@@ -18,6 +19,7 @@
         :error="emailErr"
         label="Email"
         type="email"
+        :background="backgroundColor"
       />
       <cdr-input
         :required="true"
@@ -25,6 +27,7 @@
         :error="passwordErr"
         label="Password"
         :type="passwordVisible ? 'text' : 'password'"
+        :background="backgroundColor"
       >
         <cdr-tooltip
           slot="post-icon"
@@ -35,7 +38,8 @@
             :icon-only="true"
             @click="passwordVisible = !passwordVisible"
           >
-            <icon-x-stroke />
+            <icon-eye-hide v-if="passwordVisible" />
+            <icon-eye-show v-else />
           </cdr-button>
           {{ passwordVisible ? 'Hide' : 'Show' }} Password
         </cdr-tooltip>
@@ -108,7 +112,7 @@ export default {
   },
 };
 </script>
-<style>
+<style lang="scss">
 .form-example {
   width: 640px;
 }

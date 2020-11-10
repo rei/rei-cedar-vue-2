@@ -167,7 +167,7 @@ export default {
   },
   render() {
     return (
-      <div>
+      <div class={this.style['cdr-input-container']}>
         <cdr-label-standalone
           for-id={ `${this.inputId}` }
           label={ this.label }

@@ -179,7 +179,7 @@ export default {
   },
   render() {
     return (
-      <div class={clsx(this.space)}>
+      <div class={clsx(this.style['cdr-select-container'], this.space)}>
         <cdr-label-standalone
           for-id={ `${this.selectId}` }
           label={ this.label }
