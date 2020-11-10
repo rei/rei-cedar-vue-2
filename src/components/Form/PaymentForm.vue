@@ -14,7 +14,7 @@
       <cdr-input
         :required="true"
         v-model="creditCard"
-        type="tel"
+        type="number"
         label="Credit card"
         maxlength="16"
         :error="creditCardErr"
@@ -33,6 +33,7 @@
           :required="true"
           v-model="year"
           :options="yearOpts"
+          prompt="Year"
           label="Expiration year"
           :background="backgroundColor"
         />
