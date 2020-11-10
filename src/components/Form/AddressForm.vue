@@ -85,7 +85,7 @@
 import * as Components from 'srcdir/index';
 
 export default {
-  name: 'Form',
+  name: 'AddressForm',
   components: {
     ...Components,
   },

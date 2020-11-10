@@ -25,6 +25,7 @@ import tabs from 'componentsdir/tabs/examples/Tabs';
 import text from 'componentsdir/text/examples/Text';
 import tooltip from 'componentsdir/tooltip/examples/Tooltip';
 import utilities from 'componentsdir/Utilities/Utilities';
+import form from 'componentsdir/Form/Form';
 
 export default {
   alert,
@@ -54,4 +55,5 @@ export default {
   text,
   tooltip,
   utilities,
+  form,
 };
