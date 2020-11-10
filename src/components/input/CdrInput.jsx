@@ -35,7 +35,7 @@ export default {
       default: 'text',
       validator: (value) => propValidator(
         value,
-        ['text', 'email', 'number', 'password', 'search', 'url'],
+        ['text', 'email', 'number', 'password', 'search', 'url', 'tel'],
       ),
     },
     /**

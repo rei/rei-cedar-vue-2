@@ -45,7 +45,7 @@
           :background="backgroundColor"
         >
           <template slot="info">
-            <cdr-popover>
+            <cdr-popover id="security-code-popover">
               <cdr-link
                 slot="trigger"
                 tag="button"

@@ -20,6 +20,7 @@
         label="Email"
         type="email"
         :background="backgroundColor"
+        autocomplete="email"
       />
       <cdr-input
         :required="true"
@@ -28,10 +29,12 @@
         label="Password"
         :type="passwordVisible ? 'text' : 'password'"
         :background="backgroundColor"
+        autocomplete="current-password"
       >
         <cdr-tooltip
           slot="post-icon"
           class="cdr-input__button"
+          id="password-tooltip"
         >
           <cdr-button
             slot="trigger"
