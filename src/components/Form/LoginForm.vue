@@ -38,8 +38,8 @@
             :icon-only="true"
             @click="passwordVisible = !passwordVisible"
           >
-            <icon-eye-hide v-if="passwordVisible"/>
-            <icon-eye-show v-else/>
+            <icon-eye-hide v-if="passwordVisible" />
+            <icon-eye-show v-else />
           </cdr-button>
           {{ passwordVisible ? 'Hide' : 'Show' }} Password
         </cdr-tooltip>

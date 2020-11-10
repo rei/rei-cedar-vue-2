@@ -104,7 +104,7 @@ export default {
   },
   methods: {
     validate() {
-      this.creditCardErr = this.creditCard.length !== 16 && 'Please input your 16 digit credit card number';
+      this.creditCardErr = this.creditCard.length !== 16 && 'Please input your credit card number';
       this.monthErr = !this.month && 'Please input the expiration month';
       this.yearErr = !this.year && 'Please input the expiration year';
       this.securityCodeErr = !this.securityCode && 'Please input the security code';
