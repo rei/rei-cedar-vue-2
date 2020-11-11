@@ -1,6 +1,7 @@
 @import '../../../css/settings/index.scss';
 @import './vars/CdrInput.vars.scss';
 @import url('@rei/cedar/dist/style/cdr-label-standalone.css');
+@import url('@rei/cedar/dist/style/cdr-form-error.css');
 
 /* ==========================================================================
   # INPUT LABEL
@@ -159,10 +160,6 @@
   &__helper-text {
     @include cdr-input-helper-text-mixin;
     display: inline-block;
-  }
-
-  &__error-message {
-    @include cdr-input-error-message-mixin;
   }
 
   &__info-action {

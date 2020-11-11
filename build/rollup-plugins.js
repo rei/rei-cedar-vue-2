@@ -33,6 +33,7 @@ const copyTargets = [
   { src: 'static/star-50.svg', dest: 'dist/svg' },
   { src: 'static/star-75.svg', dest: 'dist/svg' },
   { src: 'static/star-100.svg', dest: 'dist/svg' },
+  { src: 'static/icon-error.svg', dest: 'dist/svg' },
 ];
 
 // prod only options

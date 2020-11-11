@@ -4,6 +4,7 @@ import propValidator from '../../utils/propValidator';
 import IconCaretDown from '../icon/comps/caret-down';
 import IconErrorStroke from '../icon/comps/error-stroke';
 import CdrLabelStandalone from '../labelStandalone/CdrLabelStandalone';
+import CdrFormError from '../formError/CdrFormError';
 import size from '../../mixins/size';
 import space from '../../mixins/space';
 import style from './styles/CdrSelect.scss';
@@ -14,6 +15,7 @@ export default {
     IconCaretDown,
     IconErrorStroke,
     CdrLabelStandalone,
+    CdrFormError,
   },
   mixins: [size, space],
   inheritAttrs: false,
@@ -222,11 +224,11 @@ export default {
           )}
         </div>
         {this.error && (
-          <span
-            class={this.style['cdr-select__error-message']}
-          >
-            {this.$slots.error || (<span><icon-error-stroke inherit-color/> {this.error}</span>)}
-          </span>
+          <cdr-form-error error={this.error}>
+            <template slot="error">
+              {this.$slots.error}
+            </template>
+          </cdr-form-error>
         )}
       </div>
     );

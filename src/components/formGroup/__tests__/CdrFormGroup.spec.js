@@ -25,7 +25,7 @@ describe('CdrFormGroup', () => {
     });
 
     expect(wrapper.find('.cdr-form-group--error').exists()).toBe(true);
-    expect(wrapper.find('.cdr-form-group__error-message').text()).toBe('whoops');
+    expect(wrapper.find('.cdr-form-error').text()).toBe('whoops');
   });
 
   test('renders disabled state', () => {
@@ -46,7 +46,7 @@ describe('CdrFormGroup', () => {
     });
 
     expect(wrapper.find('.cdr-form-group--error').exists()).toBe(true);
-    expect(wrapper.find('.cdr-form-group__error-message').text()).toBe('false!');
+    expect(wrapper.find('.cdr-form-error').text()).toBe('false!');
   });
 
   test('does not render error slot if error state is inactive', () => {
@@ -59,6 +59,6 @@ describe('CdrFormGroup', () => {
       },
     });
     expect(wrapper.find('.cdr-form-group--error').exists()).toBe(false);
-    expect(wrapper.find('.cdr-form-group__error-message').exists()).toBe(false);
+    expect(wrapper.find('.cdr-form-error').exists()).toBe(false);
   });
 });

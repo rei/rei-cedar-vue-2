@@ -1,5 +1,6 @@
 @import '../../../css/settings/index.scss';
 @import './vars/CdrFormGroup.vars.scss';
+@import url('@rei/cedar/dist/style/cdr-form-error.css');
 
 .cdr-form-group {
   @include cdr-form-group-base-mixin;
@@ -17,13 +18,6 @@
     legend, .cdr-form-group__optional, .cdr-form-group__required {
       color: $cdr-color-text-disabled;
     }
-  }
-
-  &__error-message {
-    @include cdr-text-utility-sans-300;
-    color: $cdr-color-text-input-error;
-    fill: $cdr-color-text-input-error;
-    margin-top: $cdr-space-quarter-x;
   }
 
   &__wrapper {
