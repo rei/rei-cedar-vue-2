@@ -54,11 +54,6 @@
     text-decoration: none;
   }
 
-  &:focus {
-    outline: $default-outline;
-    outline-color: -webkit-focus-ring-color;
-  }
-
   &[disabled] {
     cursor: not-allowed;
   }

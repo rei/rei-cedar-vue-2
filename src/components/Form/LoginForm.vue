@@ -40,7 +40,9 @@
             slot="trigger"
             :icon-only="true"
             @click="passwordVisible = !passwordVisible"
+            :aria-label="passwordVisible ? 'Hide password' : 'Show password'"
           >
+            <!-- TODO: aria-describedby vs. aria-labelledby in tooltip? -->
             <icon-eye-hide v-if="passwordVisible" />
             <icon-eye-show v-else />
           </cdr-button>

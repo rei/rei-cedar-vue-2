@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CdrFormError matches snapshot 1`] = `
+<div
+  class="cdr-form-error"
+>
+  <svg
+    fill="none"
+    height="18"
+    viewBox="0 0 18 18"
+    width="18"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle
+      cx="9"
+      cy="9"
+      opacity="0.75"
+      r="8"
+      stroke="#FFF5F5"
+      stroke-width="2"
+    />
+    <circle
+      cx="9"
+      cy="9"
+      fill="white"
+      r="6.25"
+      stroke="#B33322"
+      stroke-width="1.5"
+    />
+    <rect
+      fill="#B33322"
+      height="8"
+      rx="0.75"
+      transform="rotate(-45 5.6416 6.70215)"
+      width="1.5"
+      x="5.6416"
+      y="6.70215"
+    />
+  </svg>
+   yahoo!
+</div>
+`;
