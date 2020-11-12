@@ -1,0 +1,10 @@
+@import '../../../css/settings/index.scss';
+@import './vars/CdrFormError.vars.scss';
+
+.cdr-form-error {
+  @include cdr-form-error-base-mixin;
+
+  svg {
+    transform: translateY(13%);
+  }
+}

@@ -42,7 +42,6 @@
         :required="true"
         v-model="postal"
         label="ZIP code"
-        type="tel"
         maxlength="5"
         class="half-width"
         :background="backgroundColor"
@@ -85,7 +84,7 @@
 import * as Components from 'srcdir/index';
 
 export default {
-  name: 'Form',
+  name: 'AddressForm',
   components: {
     ...Components,
   },

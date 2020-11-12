@@ -1,11 +1,13 @@
 import clsx from 'clsx';
 import style from './styles/CdrFormGroup.scss';
 import IconErrorStroke from '../icon/comps/error-stroke';
+import CdrFormError from '../formError/CdrFormError';
 
 export default {
   name: 'CdrFormGroup',
   components: {
     IconErrorStroke,
+    CdrFormError,
   },
   props: {
     label: {
@@ -67,9 +69,11 @@ export default {
           {this.$slots.default}
         </div>
         {this.error && (
-          <div class={this.style['cdr-form-group__error-message']}>
-            {this.$slots.error || (<span><icon-error-stroke inherit-color/> {this.error}</span>)}
-          </div>
+          <cdr-form-error error={this.error}>
+            <template slot="error">
+              {this.$slots.error}
+            </template>
+          </cdr-form-error>
         )}
       </fieldset>
     );

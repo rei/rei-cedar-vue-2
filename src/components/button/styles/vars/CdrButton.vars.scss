@@ -36,6 +36,7 @@
   display: inline-flex;
   outline: none;
   overflow: visible;
+  margin: 0;
   padding: $cdr-space-inset-one-x-squish;
   text-align: left;
   text-decoration: none;
@@ -51,11 +52,6 @@
     outline: none;
     outline-offset: 0;
     text-decoration: none;
-  }
-
-  &:focus {
-    outline: $default-outline;
-    outline-color: -webkit-focus-ring-color;
   }
 
   &[disabled] {

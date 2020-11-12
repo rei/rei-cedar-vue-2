@@ -4,6 +4,7 @@ import space from '../../mixins/space';
 import propValidator from '../../utils/propValidator';
 import IconErrorStroke from '../icon/comps/error-stroke';
 import CdrLabelStandalone from '../labelStandalone/CdrLabelStandalone';
+import CdrFormError from '../formError/CdrFormError';
 import style from './styles/CdrInput.scss';
 /**
  * Cedar 2 component for input
@@ -16,6 +17,7 @@ export default {
   components: {
     IconErrorStroke,
     CdrLabelStandalone,
+    CdrFormError,
   },
   mixins: [size, space],
   inheritAttrs: false,
@@ -35,7 +37,7 @@ export default {
       default: 'text',
       validator: (value) => propValidator(
         value,
-        ['text', 'email', 'number', 'password', 'search', 'url'],
+        ['text', 'email', 'number', 'password', 'search', 'url', 'tel'],
       ),
     },
     /**
@@ -222,11 +224,11 @@ export default {
             </span>
         )}
         {this.error && (
-          <span
-            class={this.style['cdr-input__error-message']}
-          >
-            {this.$slots.error || (<span><icon-error-stroke inherit-color/> {this.error}</span>)}
-          </span>
+          <cdr-form-error error={this.error}>
+            <template slot="error">
+              {this.$slots.error}
+            </template>
+          </cdr-form-error>
         )}
       </div>
     );

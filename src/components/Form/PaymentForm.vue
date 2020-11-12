@@ -14,7 +14,7 @@
       <cdr-input
         :required="true"
         v-model="creditCard"
-        type="tel"
+        type="number"
         label="Credit card"
         maxlength="16"
         :error="creditCardErr"
@@ -33,6 +33,7 @@
           :required="true"
           v-model="year"
           :options="yearOpts"
+          prompt="Year"
           label="Expiration year"
           :background="backgroundColor"
         />
@@ -44,7 +45,7 @@
           :background="backgroundColor"
         >
           <template slot="info">
-            <cdr-popover>
+            <cdr-popover id="security-code-popover">
               <cdr-link
                 slot="trigger"
                 tag="button"
@@ -69,7 +70,7 @@
 import * as Components from 'srcdir/index';
 
 export default {
-  name: 'Form',
+  name: 'PaymentForm',
   components: {
     ...Components,
   },

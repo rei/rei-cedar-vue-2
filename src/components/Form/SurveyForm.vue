@@ -126,7 +126,7 @@
 import * as Components from 'srcdir/index';
 
 export default {
-  name: 'Form',
+  name: 'SurveyForm',
   components: {
     ...Components,
   },

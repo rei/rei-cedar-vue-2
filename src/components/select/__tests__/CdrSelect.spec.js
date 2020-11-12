@@ -225,7 +225,7 @@ describe('cdrSelect', () => {
   });
 
   it('renders error slot when error state is active', () => {
-    const wrapper = shallowMount(CdrSelect, {
+    const wrapper = mount(CdrSelect, {
       propsData: {
         label: 'test',
         error: true
@@ -234,21 +234,21 @@ describe('cdrSelect', () => {
         'error': 'whoops',
       },
     });
-    expect(wrapper.find('.cdr-select__error-message').text()).toBe('whoops');
+    expect(wrapper.find('.cdr-form-error').text()).toBe('whoops');
   });
 
   it('renders text when passed as error prop', () => {
-    const wrapper = shallowMount(CdrSelect, {
+    const wrapper = mount(CdrSelect, {
       propsData: {
         label: 'test',
         error: 'wrong!'
       },
     });
-    expect(wrapper.find('.cdr-select__error-message').text()).toBe('wrong!');
+    expect(wrapper.find('.cdr-form-error').text()).toBe('wrong!');
   });
 
   it('does not render error slot when error state is inactive', () => {
-    const wrapper = shallowMount(CdrSelect, {
+    const wrapper = mount(CdrSelect, {
       propsData: {
         label: 'test',
         error: false
@@ -257,6 +257,6 @@ describe('cdrSelect', () => {
         'error': 'whoops',
       },
     });
-    expect(wrapper.find('.cdr-select__error-message').exists()).toBe(false);
+    expect(wrapper.find('.cdr-form-error').exists()).toBe(false);
   });
 });

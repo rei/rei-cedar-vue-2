@@ -340,7 +340,7 @@ describe('CdrInput', () => {
   });
 
   it('renders error slot when error state is active', () => {
-    const wrapper = shallowMount(CdrInput, {
+    const wrapper = mount(CdrInput, {
       propsData: {
         label: 'test',
         error: true
@@ -349,21 +349,21 @@ describe('CdrInput', () => {
         'error': 'whoops',
       },
     });
-    expect(wrapper.find('.cdr-input__error-message').text()).toBe('whoops');
+    expect(wrapper.find('.cdr-form-error').text()).toBe('whoops');
   });
 
   it('renders text when passed as error', () => {
-    const wrapper = shallowMount(CdrInput, {
+    const wrapper = mount(CdrInput, {
       propsData: {
         label: 'test',
         error: 'incorrect!'
       },
     });
-    expect(wrapper.find('.cdr-input__error-message').text()).toBe('incorrect!');
+    expect(wrapper.find('.cdr-form-error').text()).toBe('incorrect!');
   });
 
   it('does not render error slot when error state is inactive', () => {
-    const wrapper = shallowMount(CdrInput, {
+    const wrapper = mount(CdrInput, {
       propsData: {
         label: 'test',
         error: false
@@ -372,11 +372,11 @@ describe('CdrInput', () => {
         'error': 'whoops',
       },
     });
-    expect(wrapper.find('.cdr-input__error-message').exists()).toBe(false);
+    expect(wrapper.find('.cdr-form-error').exists()).toBe(false);
   });
 
   it('renders error slot instead of bottom helper slot when error is active', () => {
-    const wrapper = shallowMount(CdrInput, {
+    const wrapper = mount(CdrInput, {
       propsData: {
         label: 'test',
         error: true,
@@ -387,7 +387,7 @@ describe('CdrInput', () => {
         'helper-text': 'not me'
       },
     });
-    expect(wrapper.find('.cdr-input__error-message').text()).toBe('whoops');
+    expect(wrapper.find('.cdr-form-error').text()).toBe('whoops');
     expect(wrapper.find('.cdr-input__helper-text-bottom').exists()).toBe(false);
   });
 

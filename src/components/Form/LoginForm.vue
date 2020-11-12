@@ -20,6 +20,7 @@
         label="Email"
         type="email"
         :background="backgroundColor"
+        autocomplete="email"
       />
       <cdr-input
         :required="true"
@@ -28,16 +29,20 @@
         label="Password"
         :type="passwordVisible ? 'text' : 'password'"
         :background="backgroundColor"
+        autocomplete="current-password"
       >
         <cdr-tooltip
           slot="post-icon"
           class="cdr-input__button"
+          id="password-tooltip"
         >
           <cdr-button
             slot="trigger"
             :icon-only="true"
             @click="passwordVisible = !passwordVisible"
+            :aria-label="passwordVisible ? 'Hide password' : 'Show password'"
           >
+            <!-- TODO: aria-describedby vs. aria-labelledby in tooltip? -->
             <icon-eye-hide v-if="passwordVisible" />
             <icon-eye-show v-else />
           </cdr-button>
@@ -59,7 +64,7 @@
 import * as Components from 'srcdir/index';
 
 export default {
-  name: 'Form',
+  name: 'LoginForm',
   components: {
     ...Components,
   },
