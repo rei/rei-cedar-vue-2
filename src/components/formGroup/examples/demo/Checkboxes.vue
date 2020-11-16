@@ -84,6 +84,7 @@
     <cdr-form-group
       label="Disabled example"
       :disabled="true"
+      :required="true"
     >
       <cdr-checkbox
         custom-value="A"
