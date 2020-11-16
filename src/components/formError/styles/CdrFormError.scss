@@ -3,8 +3,7 @@
 
 .cdr-form-error {
   @include cdr-form-error-base-mixin;
-
-  svg {
-    transform: translateY(13%);
+  &__icon {
+    @include cdr-form-error-icon-mixin;
   }
 }
