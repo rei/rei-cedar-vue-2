@@ -6,7 +6,6 @@
   position: relative;
   width: max-content;
   height: max-content;
-  display: inline-block;
 
   .cdr-popup--closed {
     @include cdr-display-sr-only;

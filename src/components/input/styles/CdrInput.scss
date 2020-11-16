@@ -8,6 +8,8 @@
   ========================================================================== */
 
 :global(.cdr-input__button) {
+  display: inline-block;
+
   & ~ & {
     position: relative;
     margin-left: -4px;
