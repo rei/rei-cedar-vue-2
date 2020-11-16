@@ -1,0 +1,30 @@
+@mixin cdr-label-standalone-label-mixin() {
+  @include cdr-text-utility-sans-200;
+  font-weight: 600;
+  color: $cdr-color-text-input-label;
+  display: inline-block;
+  margin: 0;
+}
+
+@mixin cdr-label-standalone-disabled-mixin() {
+  color:  $cdr-color-text-input-disabled;
+}
+
+@mixin cdr-label-standalone-required-mixin() {
+  color: $cdr-color-text-input-label;
+  margin-left: $cdr-space-inset-quarter-x;
+}
+
+@mixin cdr-label-standalone-optional-mixin() {
+  color: $cdr-color-text-input-optional;
+  margin-left: $cdr-space-inset-quarter-x;
+}
+
+@mixin cdr-label-standalone-helper-mixin() {
+  @include cdr-text-utility-sans-200;
+  color: $cdr-color-text-input-help;
+}
+
+@mixin cdr-label-standalone-info-mixin() {
+  @include cdr-text-utility-sans-200;
+}

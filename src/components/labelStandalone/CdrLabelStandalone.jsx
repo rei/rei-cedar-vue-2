@@ -56,7 +56,7 @@ export default {
   },
   render() {
     return (
-      <div class={this.style['cdr-label-standalone-wrap']}>
+      <div class={this.style['cdr-label-standalone']}>
         { this.labelEl }
         { this.labelEl && this.$slots.helper && (<br/>) }
         { this.$slots.helper && (
