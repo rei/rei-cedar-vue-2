@@ -41,7 +41,6 @@
 }
 
 @mixin cdr-form-group-content-mixin() {
-  width: max-content;
   border-radius: $cdr-radius-softer;
   display: flex;
   flex-direction: column;

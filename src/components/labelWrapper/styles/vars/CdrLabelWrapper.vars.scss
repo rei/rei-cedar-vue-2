@@ -2,7 +2,9 @@
   @include cdr-text-utility-sans-300;
   padding: $cdr-space-half-x;
   padding-left: calc(#{$cdr-form-figure-size-medium} + #{$cdr-space-one-x});
+  padding-right: $cdr-space-three-quarter-x;
   color: $cdr-color-text-input-label;
+  background-color: $cdr-color-background-input-default;
   border-radius: $cdr-radius-softer;
   width: 100%;
   display: inline-block;
@@ -21,6 +23,10 @@
 
 @mixin cdr-label-wrapper-primary-active-mixin() {
   background-color: $cdr-color-background-label-default-active;
+}
+
+@mixin cdr-label-wrapper-secondary-mixin() {
+  background-color: $cdr-color-background-input-default;
 }
 
 @mixin cdr-label-wrapper-secondary-hover-mixin() {
@@ -91,8 +97,7 @@
 }
 
 @mixin cdr-form-figure-base-mixin() {
-  top: 50%;
-  transform: translateY(-50%);
+  top: 11px;
   width: $cdr-form-figure-size-medium;
   height: $cdr-form-figure-size-medium;
   &::after {

@@ -3,6 +3,9 @@
 
 .cdr-label-wrapper {
   @include cdr-label-wrapper-base-mixin;
+  display: flex;
+  align-items: flex-start;
+  flex-grow: 1;
 
   position: relative;
   user-select: none;
@@ -31,6 +34,8 @@
   }
 
   &--secondary {
+    @include cdr-label-wrapper-secondary-mixin;
+
     &:hover {
       @include cdr-label-wrapper-secondary-hover-mixin;
     }
@@ -46,7 +51,7 @@
 
   &--disabled {
     @include cdr-label-wrapper-disabled-mixin;
-    .cdr-label-wrapper__figure { 
+    .cdr-label-wrapper__figure {
       cursor: not-allowed !important;
     }
   }
