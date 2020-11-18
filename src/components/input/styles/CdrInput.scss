@@ -162,6 +162,7 @@
   &__helper-text {
     @include cdr-input-helper-text-mixin;
     display: inline-block;
+    margin-top: $cdr-space-quarter-x;
   }
 
   &__info-action {
@@ -189,9 +190,8 @@
 .cdr-input-outer-wrap {
   display: flex;
   margin-top: $cdr-space-half-x;
-  margin-bottom: $cdr-space-quarter-x;
 }
 
 .cdr-input-container {
-  margin-bottom: $cdr-space-one-x;
+  margin-bottom: $cdr-space-two-x;
 }

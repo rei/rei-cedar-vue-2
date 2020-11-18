@@ -48,7 +48,9 @@
 
 /* --large */
 @mixin cdr-select-large-mixin() {
+  @include cdr-text-utility-sans-400;
   height: $cdr-form-input-height-large;
+  padding-left: $cdr-space-half-x;
 }
 
 @mixin cdr-select-primary-mixin() {

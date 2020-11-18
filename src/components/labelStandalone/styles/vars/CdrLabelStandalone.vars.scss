@@ -1,6 +1,5 @@
 @mixin cdr-label-standalone-label-mixin() {
   @include cdr-text-utility-sans-200;
-  font-weight: 600;
   color: $cdr-color-text-input-label;
   margin: 0;
 }
@@ -16,6 +15,7 @@
 @mixin cdr-label-standalone-helper-mixin() {
   @include cdr-text-utility-sans-200;
   color: $cdr-color-text-input-help;
+  margin-top: $cdr-space-eighth-x;
 }
 
 @mixin cdr-label-standalone-info-mixin() {
