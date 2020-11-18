@@ -1,86 +1,141 @@
-@import '../../../../css/settings/index.scss';
-// variables shared between checkbox and radio
-$cdr-label-base-spacing: $cdr-space-one-x;
-
-$cdr-label-figure-size-small: 16px;
-$cdr-label-figure-size-medium: 16px;
-$cdr-label-figure-size-large: 20px;
-
-$cdr-label-height-medium: $cdr-text-utility-sans-300-height;
-@mixin cdr-label-base-mixin() {
+@mixin cdr-label-wrapper-base-mixin() {
   @include cdr-text-utility-sans-300;
-  padding-left: calc(#{$cdr-label-figure-size-medium} + #{$cdr-label-base-spacing});
+  padding: $cdr-space-half-x;
+  padding-left: calc(#{$cdr-form-figure-size-medium} + #{$cdr-space-one-x});
   color: $cdr-color-text-input-label;
+  border-radius: $cdr-radius-softer;
+  width: 100%;
+  display: inline-block;
+  margin: 0;
 }
 
-@mixin cdr-label-hover-mixin() {
+@mixin cdr-label-wrapper-primary-hover-mixin() {
+  background-color: $cdr-color-background-label-default-hover;
   cursor: pointer;
 }
 
-@mixin cdr-label-disabled-mixin() {
-  color: $cdr-color-text-disabled !important;
-  cursor: default;
+@mixin cdr-label-wrapper-primary-focus-mixin() {
+  background-color: $cdr-color-background-label-default-focus;
+  box-shadow: inset 0 0 0 2px $cdr-color-border-label-default-focus;
 }
 
-$cdr-label-height-small: $cdr-text-utility-sans-200-height;
-@mixin cdr-label-small-mixin() {
+@mixin cdr-label-wrapper-primary-active-mixin() {
+  background-color: $cdr-color-background-label-default-active;
+}
+
+@mixin cdr-label-wrapper-secondary-hover-mixin() {
+  background-color: $cdr-color-background-label-secondary-hover;
+  cursor: pointer;
+}
+
+@mixin cdr-label-wrapper-secondary-focus-mixin() {
+  background-color: $cdr-color-background-label-secondary-focus;
+}
+
+@mixin cdr-label-wrapper-secondary-active-mixin() {
+  background-color: $cdr-color-background-label-secondary-active;
+}
+
+@mixin cdr-label-wrapper-disabled-mixin() {
+  color: $cdr-color-text-input-disabled !important;
+  cursor: not-allowed !important;
+
+  &:hover, &:focus-within, &:active {
+    background-color: transparent !important;
+  }
+}
+
+@mixin cdr-label-wrapper-small-mixin() {
   @include cdr-text-utility-sans-200;
-  padding-left: calc(#{$cdr-label-figure-size-small} + #{$cdr-label-base-spacing});
+  padding-left: calc(#{$cdr-form-figure-size-small} + #{$cdr-space-one-x});
 }
 
-$cdr-label-height-large: $cdr-text-utility-sans-300-height;
-@mixin cdr-label-large-mixin() {
+@mixin cdr-label-wrapper-medium-mixin() {
   @include cdr-text-utility-sans-300;
-  padding-left: calc(#{$cdr-label-figure-size-large} + #{$cdr-label-base-spacing});
+  padding-left: calc(#{$cdr-form-figure-size-medium} + #{$cdr-space-one-x});
 }
 
+@mixin cdr-label-wrapper-large-mixin() {
+  @include cdr-text-utility-sans-300;
+  padding-left: calc(#{$cdr-form-figure-size-large} + #{$cdr-space-one-x});
+}
 
+@mixin cdr-label-wrapper-figure-small-mixin() {
+  width: $cdr-form-figure-size-small;
+  height: $cdr-form-figure-size-small;
 
+  &::after {
+    width: $cdr-form-figure-size-small / 4;
+    height: $cdr-form-figure-size-small / 4;
+  }
+}
+
+@mixin cdr-label-wrapper-figure-medium-mixin() {
+  width: $cdr-form-figure-size-medium;
+  height: $cdr-form-figure-size-medium;
+
+  &::after {
+    width: $cdr-form-figure-size-medium / 4;
+    height: $cdr-form-figure-size-medium / 4;
+  }
+}
+
+@mixin cdr-label-wrapper-figure-large-mixin() {
+  width: $cdr-form-figure-size-large;
+  height: $cdr-form-figure-size-large;
+
+  &::after {
+    width: $cdr-form-figure-size-large / 4;
+    height: $cdr-form-figure-size-large / 4;
+  }
+}
+
+@mixin cdr-form-figure-base-mixin() {
+  top: 50%;
+  transform: translateY(-50%);
+  width: $cdr-form-figure-size-medium;
+  height: $cdr-form-figure-size-medium;
+  &::after {
+    width: $cdr-form-figure-size-medium / 4;
+    height: $cdr-form-figure-size-medium / 4;
+  }
+
+  position: absolute;
+  left: $cdr-space-half-x;
+  border-radius: $cdr-radius-softer;
+  background-color: $cdr-color-background-input-default;
+  box-shadow: 0 0 0 1px $cdr-color-border-input-default;
+  transition: box-shadow $cdr-duration-2-x $cdr-timing-function-ease;
+};
+
+// responsize size mixins
 
 @mixin label-wrapper-small-mixin($breakpoint: '') {
   &--small#{$breakpoint} {
-    @include cdr-label-small-mixin;
+    @include cdr-label-wrapper-small-mixin;
 
     & > .cdr-label-wrapper__figure {
-      width: $cdr-label-figure-size-small;
-      height: $cdr-label-figure-size-small;
-
-      &::after {
-        width: $cdr-label-figure-size-small / 4;
-        height: $cdr-label-figure-size-small / 4;
-      }
+      @include cdr-label-wrapper-figure-small-mixin;
     }
   }
 }
 
 @mixin label-wrapper-medium-mixin($breakpoint: '') {
   &--medium#{$breakpoint} {
-    @include cdr-label-base-mixin;
+    @include cdr-label-wrapper-medium-mixin;
 
     & > .cdr-label-wrapper__figure {
-      width: $cdr-label-figure-size-medium;
-      height: $cdr-label-figure-size-medium;
-
-      &::after {
-        width: $cdr-label-figure-size-medium / 4;
-        height: $cdr-label-figure-size-medium / 4;
-      }
+      @include cdr-label-wrapper-figure-medium-mixin;
     }
   }
 }
 
 @mixin label-wrapper-large-mixin($breakpoint: '') {
   &--large#{$breakpoint} {
-    @include cdr-label-large-mixin;
+    @include cdr-label-wrapper-large-mixin;
 
     & > .cdr-label-wrapper__figure {
-      width: $cdr-label-figure-size-large;
-      height: $cdr-label-figure-size-large;
-
-      &::after {
-        width: $cdr-label-figure-size-large / 4;
-        height: $cdr-label-figure-size-large / 4;
-      }
+      @include cdr-label-wrapper-figure-large-mixin;
     }
   }
 }
