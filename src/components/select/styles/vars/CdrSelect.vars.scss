@@ -16,15 +16,6 @@
   overflow: auto;
   margin: 0;
 
-  /* Hide Browser Styled Drowpdown Arrow */
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-
-  &::-ms-expand {
-    display: none;
-  }
-
   &[disabled] {
     background-color: $cdr-color-background-input-default-disabled;
     color: $cdr-color-text-input-disabled;
