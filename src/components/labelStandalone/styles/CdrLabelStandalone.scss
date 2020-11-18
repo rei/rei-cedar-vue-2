@@ -6,18 +6,15 @@
 
   &__label {
     @include cdr-label-standalone-label-mixin;
+    display: inline-block;
 
     &--disabled {
       @include cdr-label-standalone-disabled-mixin;
 
-      .cdr-label-standalone__required, .cdr-label-standalone__optional {
+      .cdr-label-standalone__optional {
         @include cdr-label-standalone-disabled-mixin;
       }
     }
-  }
-
-  &__required {
-    @include cdr-label-standalone-required-mixin;
   }
 
   &__optional {
