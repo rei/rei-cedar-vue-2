@@ -46,7 +46,7 @@ export default {
           for={this.forId}
           ref="label"
         >
-          { this.label } { requiredEl || optionalEl }
+          { this.label }{ requiredEl || optionalEl ? ' ' : ''}{ requiredEl || optionalEl }
         </label>
       ) : '';
     },

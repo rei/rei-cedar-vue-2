@@ -5,7 +5,7 @@ exports[`CdrInput renders correctly 1`] = `
   class="cdr-input-container"
 >
   <div
-    class="cdr-label-standalone-wrap"
+    class="cdr-label-standalone"
   >
     <label
       class="cdr-label-standalone__label"

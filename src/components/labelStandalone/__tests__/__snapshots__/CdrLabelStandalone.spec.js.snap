@@ -2,16 +2,15 @@
 
 exports[`CdrFormLabelStandalone matches snapshot 1`] = `
 <div
-  class="cdr-label-standalone-wrap"
+  class="cdr-label-standalone"
 >
   <label
     class="cdr-label-standalone__label"
     for="test"
   >
-    Label Test
+    Label Test 
     <span
       aria-label="required"
-      class="cdr-label-standalone__required"
     >
       *
     </span>
