@@ -54,7 +54,7 @@ export default {
         (optional)
       </span>
     ) : '';
-    
+
     return (
       <fieldset
         class={clsx(this.style[this.baseClass], this.disabledClass)}

@@ -1,8 +1,6 @@
 const path = require('path');
 const fs = require('fs-extra');
 const glob = require('glob');
-const cedarPackageJson = require('../package.json');
-const variablesPackageJson = require('../../rei-cedar-component-variables/package.json');
 
 const DEST_REPO_NAME = 'rei-cedar-component-variables';
 const DEST_PATH = 'dist/scss';
