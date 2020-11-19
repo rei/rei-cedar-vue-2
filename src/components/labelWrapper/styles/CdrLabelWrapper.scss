@@ -21,32 +21,12 @@
     z-index: -1;
   }
 
-  &:hover {
-    @include cdr-label-wrapper-primary-hover-mixin;
-  }
-
-  &:focus-within {
-    @include cdr-label-wrapper-primary-focus-mixin;
-  }
-
-  &:active {
-    @include cdr-label-wrapper-primary-active-mixin;
+  &--primary {
+    @include cdr-label-wrapper-primary-mixin;
   }
 
   &--secondary {
     @include cdr-label-wrapper-secondary-mixin;
-
-    &:hover {
-      @include cdr-label-wrapper-secondary-hover-mixin;
-    }
-
-    &:focus-within {
-      @include cdr-label-wrapper-secondary-focus-mixin;
-    }
-
-    &:active {
-      @include cdr-label-wrapper-secondary-active-mixin;
-    }
   }
 
   &--disabled {

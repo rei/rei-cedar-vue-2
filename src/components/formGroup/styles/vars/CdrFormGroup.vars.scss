@@ -27,12 +27,6 @@
 
 @mixin cdr-form-group-optional-mixin() {
   color: $cdr-color-text-input-optional;
-  margin-left: $cdr-space-inset-quarter-x;
-}
-
-@mixin cdr-form-group-required-mixin() {
-  color: $cdr-color-text-input-required;
-  margin-left: $cdr-space-inset-quarter-x;
 }
 
 @mixin cdr-form-group-disabled-mixin() {
