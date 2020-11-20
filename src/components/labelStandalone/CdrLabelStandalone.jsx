@@ -27,10 +27,7 @@ export default {
     },
     labelEl() {
       const requiredEl = this.required ? (
-        <span
-          class={this.style['cdr-label-standalone__required']}
-          aria-label="required"
-        >
+        <span aria-label="required">
           *
         </span>
       ) : '';
@@ -49,14 +46,14 @@ export default {
           for={this.forId}
           ref="label"
         >
-          { this.label }{ requiredEl || optionalEl }
+          { this.label }{ requiredEl || optionalEl ? ' ' : ''}{ requiredEl || optionalEl }
         </label>
       ) : '';
     },
   },
   render() {
     return (
-      <div class={this.style['cdr-label-standalone-wrap']}>
+      <div class={this.style['cdr-label-standalone']}>
         { this.labelEl }
         { this.labelEl && this.$slots.helper && (<br/>) }
         { this.$slots.helper && (

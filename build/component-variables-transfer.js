@@ -1,8 +1,6 @@
 const path = require('path');
 const fs = require('fs-extra');
 const glob = require('glob');
-const cedarPackageJson = require('../package.json');
-const variablesPackageJson = require('../../rei-cedar-component-variables/package.json');
 
 const DEST_REPO_NAME = 'rei-cedar-component-variables';
 const DEST_PATH = 'dist/scss';
@@ -15,6 +13,11 @@ const SUPPORTED_COMPONENTS = [
   'CdrCard.vars.scss',
   'CdrBreadcrumb.vars.scss',
   'CdrFormGroup.vars.scss',
+  'CdrFormError.vars.scss',
+  'CdrLabelStandalone.vars.scss',
+  'CdrLabelWrapper.vars.scss',
+  'CdrRadio.vars.scss',
+  'CdrCheckbox.vars.scss',
   'CdrLink.vars.scss',
   'CdrInput.vars.scss',
   'CdrSelect.vars.scss',
@@ -43,13 +46,3 @@ const singleFile = SUPPORTED_COMPONENTS.map(fname => fs.readFileSync(`${destMixi
 
 fs.outputFileSync(`${destMixinsDir}/index.scss`, indexFile);
 fs.outputFileSync(`${destMixinsDir}/cedar-component-variables.scss`, singleFile);
-
-// update cedar and cdr-tokens versions in component-variables
-
-const cedarVersion = cedarPackageJson.version;
-const tokenVersion = cedarPackageJson.devDependencies['@rei/cdr-tokens'];
-
-console.log('updating component-variables peerDependencies', { cedarVersion, tokenVersion, currentDeps: variablesPackageJson.dependencies }, )
-variablesPackageJson.dependencies['@rei/cdr-tokens'] = tokenVersion;
-variablesPackageJson.dependencies['@rei/cedar'] = cedarVersion;
-fs.outputFileSync('../../rei-cedar-component-variables/package.json', JSON.stringify(variablesPackageJson));

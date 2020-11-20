@@ -56,7 +56,7 @@ describe('CdrFormLabelStandalone', () => {
         forId: 'test',
       },
     });
-    expect(wrapper.vm.$refs.label.textContent).toBe('test*');
+    expect(wrapper.vm.$refs.label.textContent).toBe('test *');
   });
 
   it('does not render both required and optional labels simultaneously', () => {
@@ -68,7 +68,7 @@ describe('CdrFormLabelStandalone', () => {
         forId: 'test',
       },
     });
-    expect(wrapper.vm.$refs.label.textContent).toBe('test*');
+    expect(wrapper.vm.$refs.label.textContent).toBe('test *');
   });
 
   it('renders optional messaging', () => {
@@ -79,7 +79,7 @@ describe('CdrFormLabelStandalone', () => {
         forId: 'test',
       },
     });
-    expect(wrapper.vm.$refs.label.textContent).toBe('test(optional)');
+    expect(wrapper.vm.$refs.label.textContent).toBe('test (optional)');
   });
 
   it('renders helper slot', () => {

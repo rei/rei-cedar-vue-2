@@ -21,6 +21,15 @@
 .cdr-select {
   @include cdr-select-base-mixin;
 
+  /* Hide Browser Styled Drowpdown Arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  &::-ms-expand {
+    display: none;
+  }
+
   &--primary {
     @include cdr-select-primary-mixin;
   }
@@ -148,5 +157,5 @@
 }
 
 .cdr-select-container {
-  margin-bottom: $cdr-space-one-x;
+  margin-bottom: $cdr-space-two-x;
 }

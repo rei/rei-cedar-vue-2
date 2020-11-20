@@ -6,7 +6,7 @@ exports[`CdrLabelWrapper matches snapshot 1`] = `
   name="testName"
 >
   <label
-    class="cdr-label-wrapper cdr-label-wrapper--hide-figure cdr-label-wrapper--medium custom-label-class"
+    class="cdr-label-wrapper cdr-label-wrapper--primary cdr-label-wrapper--hide-figure cdr-label-wrapper--medium custom-label-class"
   >
     <input
       type="checkbox"

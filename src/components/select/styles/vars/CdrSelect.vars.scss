@@ -10,20 +10,11 @@
   border-radius: $cdr-radius-softer;
   padding-left: $cdr-space-half-x;
   padding-right: $cdr-space-two-x;
-  height: 40px;
+  height: $cdr-form-input-height-default;
   display: block;
   width: 100%;
   overflow: auto;
   margin: 0;
-
-  /* Hide Browser Styled Drowpdown Arrow */
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-
-  &::-ms-expand {
-    display: none;
-  }
 
   &[disabled] {
     background-color: $cdr-color-background-input-default-disabled;
@@ -38,8 +29,7 @@
 
   &:active,
   &:focus {
-    background-color: $cdr-color-background-primary;
-    box-shadow: inset 0 0 0 2px $cdr-color-border-input-default-active, $cdr-prominence-raised;
+    box-shadow: inset 0 0 0 2px $cdr-color-border-input-default-focus, $cdr-prominence-raised;
     outline: none;
   }
 }
@@ -57,7 +47,9 @@
 
 /* --large */
 @mixin cdr-select-large-mixin() {
-  height: 48px;
+  @include cdr-text-utility-sans-400;
+  height: $cdr-form-input-height-large;
+  padding-left: $cdr-space-half-x;
 }
 
 @mixin cdr-select-primary-mixin() {

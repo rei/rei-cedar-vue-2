@@ -41,6 +41,20 @@ export default {
     },
   },
   render() {
+    const requiredEl = this.required ? (
+      <span aria-label="required">
+        *
+      </span>
+    ) : '';
+
+    const optionalEl = this.optional ? (
+      <span
+        class={this.style['cdr-form-group__optional']}
+      >
+        (optional)
+      </span>
+    ) : '';
+
     return (
       <fieldset
         class={clsx(this.style[this.baseClass], this.disabledClass)}
@@ -48,22 +62,8 @@ export default {
       >
         <legend>
           {this.$slots.label || this.label}
-          {this.required && (
-            <span
-              class={this.style['cdr-form-group__required']}
-              aria-label="required"
-            >
-              *
-            </span>
-          )}
-
-          {this.optional && (
-            <span
-              class={this.style['cdr-form-group__optional']}
-            >
-              (optional)
-            </span>
-          )}
+          {requiredEl || optionalEl ? ' ' : ''}
+          {requiredEl || optionalEl}
         </legend>
         <div class={clsx(this.style['cdr-form-group__wrapper'], this.errorClass)}>
           {this.$slots.default}

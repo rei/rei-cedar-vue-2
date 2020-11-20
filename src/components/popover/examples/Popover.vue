@@ -4,14 +4,14 @@
     <cdr-form-group label="popover position">
       <cdr-radio
         name="position"
-        custom-value="up"
+        custom-value="top"
         v-model="position"
-      >up</cdr-radio>
+      >top</cdr-radio>
       <cdr-radio
         name="position"
-        custom-value="down"
+        custom-value="bottom"
         v-model="position"
-      >down</cdr-radio>
+      >bottom</cdr-radio>
       <cdr-radio
         name="position"
         custom-value="left"
@@ -109,7 +109,7 @@ export default {
   data() {
     return {
       open: false,
-      position: 'up',
+      position: 'top',
       title: 'Hello my name is popover',
       autoPos: true,
       trigger: 'center',

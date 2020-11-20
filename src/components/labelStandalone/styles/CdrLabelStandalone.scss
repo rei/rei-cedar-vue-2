@@ -1,40 +1,33 @@
 @import '../../../css/settings/index.scss';
+@import './vars/CdrLabelStandalone.vars.scss';
 
 .cdr-label-standalone {
-  &-wrap {
-    position: relative;
-  }
+  position: relative;
 
   &__label {
-    @include cdr-text-utility-sans-200;
-    font-weight: 600;
-    color: $cdr-color-text-input-label;
+    @include cdr-label-standalone-label-mixin;
     display: inline-block;
-    margin: 0;
 
     &--disabled {
-      color:  $cdr-color-text-input-disabled;
+      @include cdr-label-standalone-disabled-mixin;
+
+      .cdr-label-standalone__optional {
+        @include cdr-label-standalone-disabled-mixin;
+      }
     }
   }
 
-  &__required {
-    color: $cdr-color-text-input-label;
-    margin-left: $cdr-space-inset-quarter-x;
-  }
-
   &__optional {
-    color: $cdr-color-text-input-optional;
-    margin-left: $cdr-space-inset-quarter-x;
+    @include cdr-label-standalone-optional-mixin;
   }
 
   &__helper {
-    @include cdr-text-utility-sans-200;
-    color: $cdr-color-text-input-help;
+    @include cdr-label-standalone-helper-mixin;
     display: inline-block;
   }
 
   &__info {
-    @include cdr-text-utility-sans-200;
+    @include cdr-label-standalone-info-mixin;
     position: absolute;
     right: 0;
     bottom: 0;
