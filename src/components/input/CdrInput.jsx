@@ -218,7 +218,7 @@ export default {
           )}
         </div>
         {(this.$slots['helper-text'] || this.$slots['helper-text-bottom'])
-          && !this.error && !this.$slots.error && (
+          && !this.error && (
             <span class={this.style['cdr-input__helper-text']}>
               {this.$slots['helper-text'] || this.$slots['helper-text-bottom']}
             </span>
