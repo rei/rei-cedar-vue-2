@@ -176,8 +176,3 @@ export default {
   },
 };
 </script>
-<style>
-.form-example {
-  width: 640px;
-}
-</style>

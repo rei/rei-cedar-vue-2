@@ -137,10 +137,6 @@ export default {
 };
 </script>
 <style lang="scss">
-.form-example {
-  width: 640px;
-}
-
 .half-width {
   // ???
   width: calc(50% - #{$cdr-space-one-x});
