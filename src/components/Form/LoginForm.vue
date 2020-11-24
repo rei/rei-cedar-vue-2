@@ -88,8 +88,8 @@ export default {
   },
   methods: {
     validate() {
-      // check if all the models have good content
-      // vue forms patterns?
+      this.emailErr = false;
+      this.passwordErr = false;
       if (!this.email.length) {
         this.emailErr = 'Must enter an email';
       }
@@ -117,8 +117,3 @@ export default {
   },
 };
 </script>
-<style lang="scss">
-.form-example {
-  width: 640px;
-}
-</style>

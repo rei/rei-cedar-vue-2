@@ -2,7 +2,7 @@
 
 exports[`CdrFormLabelStandalone matches snapshot 1`] = `
 <div
-  class="cdr-label-standalone"
+  class="cdr-label-standalone cdr-label-standalone--spacing"
 >
   <label
     class="cdr-label-standalone__label"

@@ -2,10 +2,10 @@
 
 exports[`cdrSelect renders correctly 1`] = `
 <div
-  class="cdr-select-container"
+  class=""
 >
   <div
-    class="cdr-label-standalone"
+    class="cdr-label-standalone cdr-label-standalone--spacing"
   >
     <label
       class="cdr-label-standalone__label"

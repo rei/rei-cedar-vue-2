@@ -169,7 +169,7 @@ export default {
   },
   render() {
     return (
-      <div class={this.style['cdr-input-container']}>
+      <div>
         <cdr-label-standalone
           for-id={ `${this.inputId}` }
           label={ this.label }
@@ -189,7 +189,6 @@ export default {
             </template>
           )}
         </cdr-label-standalone>
-
         <div class={this.style['cdr-input-outer-wrap']}>
           <div class={this.wrapperClass}>
             {this.inputEl}
@@ -218,7 +217,7 @@ export default {
           )}
         </div>
         {(this.$slots['helper-text'] || this.$slots['helper-text-bottom'])
-          && !this.error && !this.$slots.error && (
+          && !this.error && (
             <span class={this.style['cdr-input__helper-text']}>
               {this.$slots['helper-text'] || this.$slots['helper-text-bottom']}
             </span>

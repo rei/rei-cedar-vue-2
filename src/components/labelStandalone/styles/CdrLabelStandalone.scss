@@ -4,6 +4,10 @@
 .cdr-label-standalone {
   position: relative;
 
+  &--spacing {
+    margin-bottom: $cdr-space-half-x;
+  }
+
   &__label {
     @include cdr-label-standalone-label-mixin;
     display: inline-block;

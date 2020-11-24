@@ -25,6 +25,13 @@ export default {
         [this.style['cdr-label-standalone__label--disabled']]: this.disabled,
       };
     },
+    wrapperClass() {
+      const hasContent = !this.hideLabel || this.$slots.helper || this.$slots.info;
+      return {
+        [this.style['cdr-label-standalone']]: true,
+        [this.style['cdr-label-standalone--spacing']]: hasContent,
+      };
+    },
     labelEl() {
       const requiredEl = this.required ? (
         <span aria-label="required">
@@ -53,7 +60,7 @@ export default {
   },
   render() {
     return (
-      <div class={this.style['cdr-label-standalone']}>
+      <div class={this.wrapperClass}>
         { this.labelEl }
         { this.labelEl && this.$slots.helper && (<br/>) }
         { this.$slots.helper && (
