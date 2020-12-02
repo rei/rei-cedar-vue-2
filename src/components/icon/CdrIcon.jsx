@@ -30,30 +30,17 @@ export default {
   },
   render() {
     const defaultDataObj = {
-      attrs: {
+      // attrs: {
         xmlns: 'http://www.w3.org/2000/svg',
         viewBox: '0 0 24 24',
-      },
+      // },
     };
 
     if (!this.$attrs['aria-label'] && !this.$attrs['aria-labelledby']) {
-      defaultDataObj.attrs['aria-hidden'] = true;
-    }
-
-    let slotDataObj = {};
-
-    if (this.$slots.default) {
-      const vNode = this.$slots.default[0];
-      if (vNode.tag === 'svg') {
-        // keep svg attrs/classes/on/etc to bind to our svg
-        slotDataObj = vNode.data;
-        // remove wrapping svg from slot but keep its contents
-        this.$slots.default = vNode.children;
-      }
+      defaultDataObj['aria-hidden'] = true;
     }
 
     return (<svg
-      {...slotDataObj}
       {...defaultDataObj}
       class={clsx(
         this.style[this.baseClass],
@@ -61,7 +48,7 @@ export default {
         this.inheritColorClass,
       )}
     >
-      {this.$slots.default}
+      {this.$slots.default && this.$slots.default()}
       {this.use ? <use
         href={this.use}
         xlinkHref={this.use}

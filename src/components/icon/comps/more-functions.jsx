@@ -7,7 +7,7 @@ export default {
   extends: CdrIcon,
   render() {
     return (<cdr-icon {...{props: this.$props, attrs: this.$attrs} }>
-      {this.$slots.default}
+      {this.$slots.default && this.$slots.default()}
       <path role="presentation" d="M12 17a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm0-6.5a1.5 1.5 0 110 3 1.5 1.5 0 010-3zM12 4a1.5 1.5 0 110 3 1.5 1.5 0 010-3z"></path>
     </cdr-icon>)
   },

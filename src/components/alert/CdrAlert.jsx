@@ -32,7 +32,7 @@ export default {
   render() {
     return (
       <div class={clsx(this.style[this.baseClass], this.iconClass)}>
-        {this.$slots.default}
+        {this.$slots.default()}
       </div>
     );
   },

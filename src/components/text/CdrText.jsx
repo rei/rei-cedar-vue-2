@@ -30,8 +30,13 @@ export default {
   },
   render() {
     const Component = this.tag;
+<<<<<<< HEAD
     return (<Component class={clsx(this.s[this.baseClass], this.modifierClass)}>
       {this.$slots.default}
+=======
+    return (<Component class={clsx(this.baseClass, this.modifierClass, this.space)}>
+      {this.$slots.default && this.$slots.default()}
+>>>>>>> WIP(vue): vue 3 upgrade
     </Component>);
   },
 };

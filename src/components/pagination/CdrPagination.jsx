@@ -11,10 +11,6 @@ export default {
     IconCaretRight,
     CdrSelect,
   },
-  model: {
-    prop: 'value',
-    event: 'update-pagination',
-  },
   props: {
     /**
      * Total number of pages. Sometimes the total number of pages is different than total page data
@@ -47,7 +43,7 @@ export default {
       },
     },
     /** @ignore used for binding v-model, represents the current page */
-    value: {
+    modelValue: {
       type: Number,
     },
   },
@@ -62,11 +58,11 @@ export default {
     // track value internally (for use with select vmodel) and update external value when internal changes
     innerValue: {
       get() {
-        return this.value;
+        return this.modelValue;
       },
       set(newValue) {
         this.setCurrentIdx(newValue);
-        this.$emit('update-pagination', newValue);
+        this.$emit('update:modelValue', newValue);
       },
     },
     currentUrl() {

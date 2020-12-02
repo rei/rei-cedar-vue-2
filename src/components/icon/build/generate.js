@@ -37,7 +37,7 @@ export default {
   extends: CdrIcon,
   render() {
     return (<cdr-icon {...{props: this.$props, attrs: this.$attrs} }>
-      {this.$slots.default}
+      {this.$slots.default && this.$slots.default()}
       ${innerHTML.trim()}
     </cdr-icon>)
   },

@@ -35,8 +35,7 @@ module.exports = function (api) {
     [
       "@babel/preset-env",
       presetEnvConfig,
-    ],
-    "@vue/babel-preset-jsx"
+    ]
   ];
 
   const plugins = [
@@ -46,7 +45,8 @@ module.exports = function (api) {
         "corejs": 3,
         "useESModules": babelEnv === 'esm',
       }
-    ]
+    ],
+    "@vue/babel-plugin-jsx"
   ];
 
   return {
