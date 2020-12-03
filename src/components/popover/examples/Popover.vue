@@ -95,6 +95,38 @@
         Thanks for stopping by. What a lovely day it is today. Please come back again soon.
       </cdr-text>
     </cdr-popover>
+
+    <hr>
+
+    <div style="clear: both" />
+    <div
+      style="position: relative; width: max-content;"
+      :class="containerClass"
+    >
+      <cdr-button
+        :icon-only="true"
+        aria-label="information"
+        @click="open = !open"
+        aria-controls="popover-custom-test"
+        aria-haspopup="dialog"
+      >
+        <icon-brand-rei-ice-axes />
+      </cdr-button>
+      <cdr-popover
+        :position="position"
+        :auto-position="autoPos"
+        :label="title"
+        :open="open"
+        content-class="popover-override"
+        id="popover-custom-test"
+        @opened="popupHandler"
+        @closed="popupHandler"
+      >
+        <cdr-text>
+          This is an example of a popover where the trigger is not passed into the component
+        </cdr-text>
+      </cdr-popover>
+    </div>
   </div>
 </template>
 

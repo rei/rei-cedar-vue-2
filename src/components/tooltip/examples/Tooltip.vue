@@ -74,6 +74,38 @@
         We're using the internet right now!
       </div>
     </cdr-tooltip>
+
+    <hr>
+
+    <div
+      style="position: relative; width: max-content"
+      :class="containerClass"
+    >
+      <cdr-button
+        @mouseover="open = true"
+        @mouseleave="open = false"
+        @focus="open = true"
+        @blur="open = false"
+        aria-describedby="tooltip-custom-test"
+      >
+        tooltip with custom trigger
+      </cdr-button>
+      <cdr-tooltip
+        :position="position"
+        :auto-position="autoPos"
+        content-class="tooltip-override"
+        :open="open"
+        id="tooltip-custom-test"
+        @opened="tooltipHandler"
+        @closed="tooltipHandler"
+      >
+        <div>
+          Hello! This tooltip contains important information about the web site you are visiting!
+          We're using the internet right now!
+        </div>
+      </cdr-tooltip>
+
+    </div>
   </div>
 </template>
 
@@ -90,6 +122,7 @@ export default {
       position: 'top',
       autoPos: true,
       trigger: 'center',
+      open: false,
     };
   },
   computed: {

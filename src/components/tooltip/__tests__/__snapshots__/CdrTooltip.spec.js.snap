@@ -2,7 +2,7 @@
 
 exports[`CdrTooltip matches snapshot 1`] = `
 <div
-  class="cdr-tooltip--wrapper"
+  class="cdr-tooltip--wrapper cdr-tooltip--position"
 >
   <div>
     <button

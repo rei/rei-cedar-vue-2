@@ -4,9 +4,10 @@
 @import '../../../css/settings/index.scss';
 
 .cdr-popover{
-
-  &--wrapper {
+  &--position {
     position: relative;
+  }
+  &--wrapper {
     width: max-content;
     height: max-content;
 

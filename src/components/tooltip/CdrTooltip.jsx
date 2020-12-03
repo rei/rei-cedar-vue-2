@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import style from './styles/CdrTooltip.scss';
 import CdrPopup from '../popup/CdrPopup';
 import propValidator from '../../utils/propValidator';
@@ -29,15 +30,29 @@ export default {
       type: String,
       required: false,
     },
+    open: {
+      type: Boolean,
+      default: false,
+      required: false,
+    },
   },
   data() {
     return {
       style,
-      open: false,
+      isOpen: false,
       openHandler: undefined,
       closeHandler: undefined,
       timeout: undefined,
     };
+  },
+  watch: {
+    open() {
+      if (this.open) {
+        this.openTooltip();
+      } else {
+        this.closeTooltip();
+      }
+    },
   },
   mounted() {
     this.addHandlers();
@@ -47,12 +62,12 @@ export default {
   methods: {
     openTooltip(e) {
       if (this.timeout) clearTimeout(this.timeout);
-      this.open = true;
+      this.isOpen = true;
       this.$emit('opened', e);
     },
     closeTooltip(e) {
       this.timeout = setTimeout(() => {
-        this.open = false;
+        this.isOpen = false;
         this.$emit('closed', e);
       }, 250);
     },
@@ -76,9 +91,10 @@ export default {
   },
   render() {
     return (
-      <div
-        class={this.style['cdr-tooltip--wrapper']}
-      >
+      <div class={clsx(
+        this.style['cdr-tooltip--wrapper'],
+        this.$slots.trigger ? this.style['cdr-tooltip--position'] : '',
+      )}>
         <div ref="trigger">
           { this.$slots.trigger }
         </div>
@@ -89,7 +105,7 @@ export default {
           ref="popup"
           position={ this.position }
           autoPosition={ this.autoPosition }
-          opened={ this.open }
+          opened={ this.isOpen }
           id={this.id}
           onClosed={ this.closeTooltip }
         >
