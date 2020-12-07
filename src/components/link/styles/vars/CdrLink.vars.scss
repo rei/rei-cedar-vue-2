@@ -15,9 +15,6 @@
   text-decoration: underline;
   vertical-align: top;
 
-  /* States
-    ---------- */
-
   &:active,
   &:focus {
     color: $cdr-color-text-link-active;
