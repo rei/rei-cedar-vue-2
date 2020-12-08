@@ -1,4 +1,5 @@
 import tabbable from 'tabbable';
+import clsx from 'clsx';
 import style from './styles/CdrPopover.scss';
 import propValidator from '../../utils/propValidator';
 import IconXSm from '../icon/comps/x-sm';
@@ -39,14 +40,28 @@ export default {
       type: String,
       required: false,
     },
+    open: {
+      type: Boolean,
+      default: false,
+      required: false,
+    },
   },
   data() {
     return {
       style,
-      open: false,
+      isOpen: false,
       openHandler: undefined,
       lastActive: undefined,
     };
+  },
+  watch: {
+    open() {
+      if (this.open) {
+        this.openPopover();
+      } else {
+        this.closePopover();
+      }
+    },
   },
   mounted() {
     this.addHandlers();
@@ -62,7 +77,7 @@ export default {
       const { activeElement } = document;
 
       this.lastActive = activeElement;
-      this.open = true;
+      this.isOpen = true;
       this.$emit('opened', e);
       this.$nextTick(() => {
         const tabbables = tabbable(this.$refs.popup.$el);
@@ -70,7 +85,7 @@ export default {
       });
     },
     closePopover(e) {
-      this.open = false;
+      this.isOpen = false;
       this.$emit('closed', e);
       if (this.lastActive) this.lastActive.focus();
     },
@@ -84,7 +99,10 @@ export default {
   },
   render() {
     return (
-      <div class={this.style['cdr-popover--wrapper']}>
+      <div class={clsx(
+        this.style['cdr-popover--wrapper'],
+        this.$slots.trigger ? this.style['cdr-popover--position'] : '',
+      )}>
         <div ref="trigger">
           { this.$slots.trigger }
         </div>
@@ -94,9 +112,9 @@ export default {
           ref="popup"
           position={ this.position }
           autoPosition={ this.autoPosition }
-          opened={ this.open }
+          opened={ this.isOpen }
           onClosed={ this.closePopover }
-          aria-expanded={ `${this.open}` }
+          aria-expanded={ `${this.isOpen}` }
           id={ this.id }
           contentClass={ this.contentClass }
         >

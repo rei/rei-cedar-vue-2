@@ -3,8 +3,6 @@
   padding: 0;
   margin: 0;
 
-  /* spacing
-    ---------- */
   & > li + li {
     margin-top: $cdr-space-half-x;
   }
@@ -16,21 +14,16 @@
   list-style-type: none;
 }
 
-
-/* compact */
 @mixin cdr-list-compact-mixin() {
   & > li + li {
     margin-top: $cdr-space-quarter-x;
   }
 }
 
-/* compact nested */
 @mixin cdr-list-compact-nested-mixin() {
   margin-top: $cdr-space-quarter-x;
 }
 
-
-/* ordered */
 @mixin cdr-list-ordered-mixin() {
   list-style-type: decimal;
   padding-left: 1.5em;
@@ -70,7 +63,6 @@
   }
 }
 
-/* unordered nested */
 @mixin cdr-list-unordered-nested-mixin() {
   position: relative;
   padding-left: 1em;

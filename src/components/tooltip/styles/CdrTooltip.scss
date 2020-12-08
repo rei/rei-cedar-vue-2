@@ -1,9 +1,11 @@
 @import '../../../css/settings/index.scss';
 @import url('@rei/cedar/dist/style/cdr-popup.css');
 
+.cdr-tooltip--position {
+  position: relative;
+}
 
 .cdr-tooltip--wrapper {
-  position: relative;
   width: max-content;
   height: max-content;
 

@@ -2,7 +2,7 @@
 
 exports[`CdrPopover matches snapshot 1`] = `
 <div
-  class="cdr-popover--wrapper"
+  class="cdr-popover--wrapper cdr-popover--position"
 >
   <div>
     <button
