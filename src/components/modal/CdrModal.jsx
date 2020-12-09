@@ -1,5 +1,5 @@
 import debounce from 'lodash-es/debounce';
-import tabbable from 'tabbable';
+import { tabbable } from 'tabbable';
 import clsx from 'clsx';
 import {
   CdrBreakpointSm, CdrSpaceOneX, CdrSpaceTwoX,

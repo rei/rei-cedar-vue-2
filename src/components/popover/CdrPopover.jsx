@@ -1,4 +1,4 @@
-import tabbable from 'tabbable';
+import { tabbable } from 'tabbable';
 import clsx from 'clsx';
 import style from './styles/CdrPopover.scss';
 import propValidator from '../../utils/propValidator';

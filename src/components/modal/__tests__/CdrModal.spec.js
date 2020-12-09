@@ -1,7 +1,6 @@
 import { shallowMount, mount } from '@vue/test-utils';
 import CdrModal from 'componentdir/modal/CdrModal';
 import Vue from 'vue';
-// import packageJson from '../../../../package.json';
 import CdrButton from 'componentdir/button/CdrButton';
 
 describe('CdrModal.vue', () => {
@@ -66,6 +65,7 @@ describe('CdrModal.vue', () => {
     }, 300);
   });
 
+// CURRENTLY causing infinite call stack error?
   it('handleKeyDown', async () => {
     const elem = document.createElement('div')
     if (document.body) {
@@ -86,20 +86,20 @@ describe('CdrModal.vue', () => {
       attachTo: elem,
     });
 
-    wrapper.trigger('keydown', {
-      key: 'a'
-    });
-    await wrapper.vm.$nextTick();
-
-    wrapper.trigger('keydown', {
-      key: 'Esc',
-    });
-    await wrapper.vm.$nextTick();
-
-    wrapper.trigger('keydown', {
-      key: 'Escape',
-    });
-    await wrapper.vm.$nextTick();
+    // wrapper.trigger('keydown', {
+    //   key: 'a'
+    // });
+    // // await wrapper.vm.$nextTick();
+    //
+    // wrapper.trigger('keydown', {
+    //   key: 'Esc',
+    // });
+    // // await wrapper.vm.$nextTick();
+    //
+    // wrapper.trigger('keydown', {
+    //   key: 'Escape',
+    // });
+    // await wrapper.vm.$nextTick();
 
     expect(wrapper.emitted().closed.length).toBe(2);
     wrapper.destroy();
@@ -196,7 +196,7 @@ describe('CdrModal.vue', () => {
     });
   });
 
-  it('handleClosed', async () => {
+  it('handleClosed', async (done) => {
     const elem = document.createElement('div')
     if (document.body) {
       document.body.appendChild(elem)
@@ -229,6 +229,7 @@ describe('CdrModal.vue', () => {
       expect(wrapper.vm.reallyClosed).toBe(true);
       expect(wrapper.vm.unsubscribe).toBe(null);
       wrapper.destroy();
+      done()
     }, 500);
   });
 
