@@ -14,11 +14,11 @@ describe('CdrAccordion', () => {
     const wrapper = shallowMount(CdrAccordion, {
       propsData: {
         id: 'test',
-        label: 'label',
         level: '2',
       },
       slots: {
-        default: 'This is some slot text.'
+        default: 'This is some slot text.',
+        label: 'label'
       },
     });
     expect(wrapper.element).toMatchSnapshot()
@@ -29,11 +29,11 @@ describe('CdrAccordion', () => {
     const wrapper = shallowMount(CdrAccordion, {
       propsData: {
         id: 'test',
-        label: 'label',
         level: '2',
       },
       slots: {
-        default: 'This is some slot text.'
+        default: 'This is some slot text.',
+        label: 'label',
       },
     });
     const button = wrapper.find('#test');
@@ -56,12 +56,12 @@ describe('CdrAccordion', () => {
       const wrapper = shallowMount(CdrAccordion, {
         propsData: {
           id: 'test',
-          label: 'label',
           level: '2',
           opened: false,
         },
         slots: {
-          default: 'This is some slot text.'
+          default: 'This is some slot text.',
+          label: 'label',
         },
       });
 
@@ -72,12 +72,12 @@ describe('CdrAccordion', () => {
       const wrapper = shallowMount(CdrAccordion, {
         propsData: {
           id: 'test',
-          label: 'label',
           level: '2',
           opened: true,
         },
         slots: {
-          default: 'This is some slot text.'
+          default: 'This is some slot text.',
+          label: 'label',
         },
       });
 
@@ -90,11 +90,11 @@ describe('CdrAccordion', () => {
       const wrapper = shallowMount(CdrAccordion, {
         propsData: {
           id: 'test',
-          label: 'label',
           level: '2',
         },
         slots: {
-          default: 'This is some slot text.'
+          default: 'This is some slot text.',
+          label: 'label',
         },
       });
 
@@ -107,12 +107,12 @@ describe('CdrAccordion', () => {
       const wrapper = shallowMount(CdrAccordion, {
         propsData: {
           id: 'test',
-          label: 'label',
           level: '2',
           opened: true,
         },
         slots: {
-          default: 'This is some slot text.'
+          default: 'This is some slot text.',
+          label: 'label',
         },
       });
 
@@ -126,12 +126,12 @@ describe('CdrAccordion', () => {
     const wrapper = shallowMount(CdrAccordion, {
       propsData: {
         id: 'test',
-        label: 'label',
         level: '2',
         opened: false,
       },
       slots: {
-        default: 'This is some slot text.'
+        default: 'This is some slot text.',
+        label: 'label',
       },
     });
 
@@ -142,7 +142,8 @@ describe('CdrAccordion', () => {
     const wrapper = shallowMount(CdrAccordion, {
       propsData: propsData,
       slots: {
-        default: 'This is some slot text.'
+        default: 'This is some slot text.',
+        label: 'label',
       },
     });
     wrapper.find('button').trigger('focus');
@@ -158,13 +159,13 @@ describe('CdrAccordion', () => {
     const wrapper = shallowMount(CdrAccordion, {
       propsData: {
         id: 'test',
-        label: 'A label',
         level: '2',
         compact: true,
         borderAligned: true,
       },
       slots: {
-        default: 'This is some slot text.'
+        default: 'This is some slot text.',
+        label: 'label',
       },
     });
 

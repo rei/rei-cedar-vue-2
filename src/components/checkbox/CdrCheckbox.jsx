@@ -2,10 +2,15 @@ import clsx from 'clsx';
 import modifier from '../../mixins/modifier';
 import space from '../../mixins/space';
 import size from '../../mixins/size';
+import propValidator from '../../utils/propValidator';
 import style from './styles/CdrCheckbox.scss';
+import CdrLabelWrapper from '../labelWrapper/CdrLabelWrapper';
 
 export default {
   name: 'CdrCheckbox',
+  components: {
+    CdrLabelWrapper,
+  },
   mixins: [modifier, space, size],
   inheritAttrs: false,
   props: {
@@ -46,6 +51,15 @@ export default {
      * The value when used in a checkbox group. Replaces `trueValue` and `falseValue`.
     */
     customValue: [String, Number, Boolean, Object, Array, Symbol, Function],
+    // Set which background type the input renders on
+    background: {
+      type: [String],
+      default: 'primary',
+      validator: (value) => propValidator(
+        value,
+        ['primary', 'secondary'],
+      ),
+    },
     /** @ignore */
     value: {
       type: [String, Number, Boolean, Object, Array, Symbol, Function],
@@ -80,35 +94,33 @@ export default {
       this.$emit('change', newValue, e);
     },
   },
-  // TODO: pass disabled/checked/other attrs through? need direct binding?
   render() {
     return (
-      <div class={clsx(this.space, this.style['cdr-checkbox__wrap'])}>
-        <label
-          class={clsx(this.style[this.baseClass],
-            this.modifierClass,
-            this.labelClass,
-            this.sizeClass)}
-          ref="label"
-        >
-          <input
-            class={clsx(this.style['cdr-checkbox__input'], this.inputClass)}
-            type="checkbox"
-            {... { attrs: this.$attrs } }
-            vModel={this.newValue}
-            onChange={(e) => this.updateValue(this.newValue, e)}
-            true-value={this.customValue ? null : this.trueValue}
-            false-value={this.customValue ? null : this.falseValue}
-            value={this.customValue}
-            indeterminate={this.indeterminate}
-            ref="checkbox"
-          />
-          <span class={this.style['cdr-checkbox__figure']} />
-          <div class={clsx(this.style['cdr-checkbox__content'], this.contentClass)}>
-            {this.$slots.default}
-          </div>
-        </label>
-      </div>
+      <cdr-label-wrapper
+        class={clsx(this.space, this.style['cdr-checkbox'])}
+        ref="label"
+        size={this.size}
+        modifier={this.modifier}
+        labelClass={this.labelClass}
+        contentClass={this.contentClass}
+        background={this.background}
+        disabled={this.$attrs.disabled}
+      >
+        <input
+          class={clsx(this.style['cdr-checkbox__input'], this.inputClass)}
+          type="checkbox"
+          {... { attrs: this.$attrs } }
+          vModel={this.newValue}
+          onChange={(e) => this.updateValue(this.newValue, e)}
+          true-value={this.customValue ? null : this.trueValue}
+          false-value={this.customValue ? null : this.falseValue}
+          value={this.customValue}
+          indeterminate={this.indeterminate}
+          ref="checkbox"
+          slot="input"
+        />
+        {this.$slots.default}
+      </cdr-label-wrapper>
     );
   },
 };

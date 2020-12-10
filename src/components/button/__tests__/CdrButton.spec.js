@@ -43,14 +43,14 @@ describe('CdrButton', () => {
     expect(wrapper.classes()).toContain('cdr-button');
   });
 
-  it('does not add size class when icon only', () => {
+  it('adds custom size class when icon only', () => {
     const wrapper = shallowMount(CdrButton, {
       propsData: {
         size: 'large',
         iconOnly: true,
       },
     });
-    expect(wrapper.vm.buttonSizeClass).toBe(null);
+    expect(wrapper.vm.buttonSizeClass).toBe('cdr-button--icon-only-large');
   })
 
   it('does not add icon class when slot is unused', () => {

@@ -1,0 +1,9 @@
+@import '../../../css/settings/index.scss';
+@import './vars/CdrFormError.vars.scss';
+
+.cdr-form-error {
+  @include cdr-form-error-base-mixin;
+  &__icon {
+    @include cdr-form-error-icon-mixin;
+  }
+}

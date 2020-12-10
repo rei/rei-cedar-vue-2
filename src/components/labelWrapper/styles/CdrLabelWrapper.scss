@@ -1,0 +1,101 @@
+@import '../../../css/settings/index.scss';
+@import './vars/CdrLabelWrapper.vars.scss';
+
+.cdr-label-wrapper {
+  @include cdr-label-wrapper-base-mixin;
+  display: flex;
+  align-items: flex-start;
+  flex-grow: 1;
+
+  position: relative;
+  user-select: none;
+
+  &__container {
+    font-size: 0;
+    line-height: 1;
+  }
+
+  input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+  }
+
+  &--primary {
+    @include cdr-label-wrapper-primary-mixin;
+  }
+
+  &--secondary {
+    @include cdr-label-wrapper-secondary-mixin;
+  }
+
+  &--disabled {
+    @include cdr-label-wrapper-disabled-mixin;
+    .cdr-label-wrapper__figure {
+      cursor: not-allowed !important;
+    }
+  }
+
+  &__figure {
+    @include cdr-form-figure-base-mixin;
+  }
+
+  &__content {
+    user-select: text;
+  }
+
+  &--hide-figure {
+    padding-left: 0;
+
+    & > .cdr-label-wrapper__figure {
+      display: none;
+    }
+  }
+
+
+
+  /* Sizes
+    ========================================================================== */
+  @include label-wrapper-small-mixin;
+  @include label-wrapper-medium-mixin;
+  @include label-wrapper-large-mixin;
+
+  /* Breakpoint variants
+
+  /* @xs
+    0px - 767px
+    ========== */
+  @include cdr-xs-mq-only {
+    @include label-wrapper-small-mixin(\@xs);
+    @include label-wrapper-medium-mixin(\@xs);
+    @include label-wrapper-large-mixin(\@xs);
+  }
+
+  /* @sm
+    768px - 991px
+    ========== */
+  @include cdr-sm-mq-only {
+    @include label-wrapper-small-mixin(\@sm);
+    @include label-wrapper-medium-mixin(\@sm);
+    @include label-wrapper-large-mixin(\@sm);
+  }
+
+  /* @md
+    992px - 1199px
+    ========== */
+  @include cdr-md-mq-only {
+    @include label-wrapper-small-mixin(\@md);
+    @include label-wrapper-medium-mixin(\@md);
+    @include label-wrapper-large-mixin(\@md);
+  }
+
+  /* @lg
+    1200px and up
+    ========== */
+
+  @include cdr-lg-mq-only {
+    @include label-wrapper-small-mixin(\@lg);
+    @include label-wrapper-medium-mixin(\@lg);
+    @include label-wrapper-large-mixin(\@lg);
+  }
+}

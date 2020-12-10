@@ -60,7 +60,7 @@ export default {
       return this.modifier ? undefined : this.modifyClassName(this.baseClass, 'primary');
     },
     buttonSizeClass() {
-      return !this.iconOnly ? this.sizeClass : null;
+      return !this.iconOnly ? this.sizeClass : this.style[`cdr-button--icon-only-${this.size}`];
     },
     iconClass() {
       const classes = [];

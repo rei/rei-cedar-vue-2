@@ -2,10 +2,10 @@
 
 exports[`CdrRadio renders an input 1`] = `
 <div
-  class="cdr-radio__wrap"
+  class="cdr-label-wrapper__container cdr-radio"
 >
   <label
-    class="cdr-radio cdr-radio--medium"
+    class="cdr-label-wrapper cdr-label-wrapper--primary cdr-label-wrapper--medium"
   >
     <input
       class="cdr-radio__input"
@@ -13,10 +13,10 @@ exports[`CdrRadio renders an input 1`] = `
       type="radio"
     />
     <span
-      class="cdr-radio__figure"
+      class="cdr-label-wrapper__figure"
     />
     <div
-      class="cdr-radio__content"
+      class="cdr-label-wrapper__content"
     />
   </label>
 </div>

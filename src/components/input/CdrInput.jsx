@@ -2,6 +2,9 @@ import clsx from 'clsx';
 import size from '../../mixins/size';
 import space from '../../mixins/space';
 import propValidator from '../../utils/propValidator';
+import IconErrorStroke from '../icon/comps/error-stroke';
+import CdrLabelStandalone from '../labelStandalone/CdrLabelStandalone';
+import CdrFormError from '../formError/CdrFormError';
 import style from './styles/CdrInput.scss';
 /**
  * Cedar 2 component for input
@@ -11,24 +14,30 @@ import style from './styles/CdrInput.scss';
  */
 export default {
   name: 'CdrInput',
+  components: {
+    IconErrorStroke,
+    CdrLabelStandalone,
+    CdrFormError,
+  },
   mixins: [size, space],
   inheritAttrs: false,
   props: {
     /**
-     * `id` for the input that is mapped to the label `for` attribute. If one is not provided, it will be auto generated.
+     * `id` for the input that is mapped to the label `for` attribute.
+     *  If one is not provided, it will be auto generated.
     */
     id: String,
     /**
-     *  'type' attribute for the input as defined by w3c.  Only supporting text|email|number|password|search|url.
+     *  'type' attribute for the input as defined by w3c.
+     *  Only supporting text|email|number|password|search|url.
      *  The increment/decrement webkit psuedo element is hidden for number.
-     *  See https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input for more details.
     */
     type: {
       type: [String],
       default: 'text',
       validator: (value) => propValidator(
         value,
-        ['text', 'email', 'number', 'password', 'search', 'url'],
+        ['text', 'email', 'number', 'password', 'search', 'url', 'tel'],
       ),
     },
     /**
@@ -46,11 +55,23 @@ export default {
      * Number of rows for input.  Converts component to text-area if rows greater than 1.
     */
     rows: Number,
-    /** @ignore */
+    // Set which background type the input renders on
+    background: {
+      type: [String],
+      default: 'primary',
+      validator: (value) => propValidator(
+        value,
+        ['primary', 'secondary'],
+      ),
+    },
+    // Set error styling
+    error: {
+      type: [Boolean, String],
+      default: false,
+    },
     disabled: Boolean,
-    /** @ignore */
     required: Boolean,
-    /** @ignore */
+    optional: Boolean,
     value: {
       type: [String, Number],
     },
@@ -58,6 +79,7 @@ export default {
   data() {
     return {
       style,
+      isFocused: false,
     };
   },
   computed: {
@@ -68,22 +90,23 @@ export default {
     baseClass() {
       return 'cdr-input';
     },
-    labelClass() {
-      return {
-        [this.style['cdr-input__label']]: true,
-        [this.style['cdr-input__label--disabled']]: this.disabled,
-      };
-    },
     inputClass() {
+      const hasPostIcon = !!this.$slots['post-icon'];
+      const hasPostIcons = hasPostIcon && this.$slots['post-icon'].length > 1;
       return {
         [this.style['cdr-input']]: true,
         [this.style['cdr-input--multiline']]: this.rows > 1,
         [this.style['cdr-input--preicon']]: this.$slots['pre-icon'],
+        [this.style['cdr-input--posticon']]: hasPostIcon,
+        [this.style['cdr-input--posticons']]: hasPostIcons,
+        [this.style['cdr-input--error']]: this.error,
+        [this.style[`cdr-input--${this.background}`]]: true,
       };
     },
-    inputWrapClass() {
+    wrapperClass() {
       return {
         [this.style['cdr-input-wrap']]: true,
+        [this.style['cdr-input--focus']]: this.isFocused,
       };
     },
     inputListeners() {
@@ -95,26 +118,15 @@ export default {
         input(event) {
           vm.$emit('input', event.target.value);
         },
+        focus(event) {
+          vm.isFocused = true;
+          vm.$emit('focus', event);
+        },
+        blur(event) {
+          vm.isFocused = false;
+          vm.$emit('blur', event);
+        },
       };
-    },
-    labelEl() {
-      const requiredEl = this.required ? (
-        <span
-          class={this.style['cdr-input__required-label']}
-        >
-          Required
-        </span>
-      ) : '';
-
-      return !this.hideLabel ? (
-        <label
-          class={this.labelClass}
-          for={this.inputId}
-          ref="label"
-        >{ this.label }
-          {requiredEl}
-        </label>
-      ) : '';
     },
     inputEl() {
       if (this.rows && this.rows > 1) {
@@ -157,38 +169,65 @@ export default {
   },
   render() {
     return (
-      <div class={this.style['cdr-input-container']}>
-        {this.labelEl}
-        {this.$slots.info && (
-          <span
-            class={this.style['cdr-input__info-container']}
-          >
-            {this.$slots.info}
-          </span>
-        )}
-        <div class={this.inputWrapClass}>
-          {this.inputEl}
-          {this.$slots['pre-icon'] && (
-            <span
-              class={this.style['cdr-input__pre-icon']}
-            >
-              {this.$slots['pre-icon']}
-            </span>
+      <div>
+        <cdr-label-standalone
+          for-id={ `${this.inputId}` }
+          label={ this.label }
+          hide-label={ this.hideLabel }
+          required={ this.required }
+          optional={ this.optional }
+          disabled={ this.disabled }
+        >
+          { this.$slots['helper-text-top'] && (
+            <template slot="helper">
+              { this.$slots['helper-text-top'] }
+            </template>
           )}
-          {this.$slots['post-icon'] && (
-            <span
-              class={this.style['cdr-input__post-icon']}
+          { this.$slots.info && (
+            <template slot="info">
+              {this.$slots.info}
+            </template>
+          )}
+        </cdr-label-standalone>
+        <div class={this.style['cdr-input-outer-wrap']}>
+          <div class={this.wrapperClass}>
+            {this.inputEl}
+            {this.$slots['pre-icon'] && (
+              <span
+                class={this.style['cdr-input__pre-icon']}
+              >
+                {this.$slots['pre-icon']}
+              </span>
+            )}
+
+            {this.$slots['post-icon'] && (
+              <span
+                class={this.style['cdr-input__post-icon']}
+              >
+                {this.$slots['post-icon']}
+              </span>
+            )}
+          </div>
+          {this.$slots['info-action'] && (
+            <div
+              class={this.style['cdr-input__info-action']}
             >
-              {this.$slots['post-icon']}
-            </span>
+              {this.$slots['info-action']}
+            </div>
           )}
         </div>
-        {this.$slots['helper-text'] && (
-          <span
-            class={this.style['cdr-input__helper-text']}
-          >
-            {this.$slots['helper-text']}
-          </span>
+        {(this.$slots['helper-text'] || this.$slots['helper-text-bottom'])
+          && !this.error && (
+            <span class={this.style['cdr-input__helper-text']}>
+              {this.$slots['helper-text'] || this.$slots['helper-text-bottom']}
+            </span>
+        )}
+        {this.error && (
+          <cdr-form-error error={this.error}>
+            <template slot="error">
+              {this.$slots.error}
+            </template>
+          </cdr-form-error>
         )}
       </div>
     );

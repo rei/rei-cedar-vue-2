@@ -1,0 +1,169 @@
+$arrow-size: 1rem;
+$arrow-spacing: #{$arrow-size + $cdr-space-quarter-x + 0.1rem};
+$content-spacing: calc(100% + #{$arrow-size} + #{$cdr-space-quarter-x});
+
+$animation-duration: $cdr-duration-2-x;
+$timing-function: $cdr-timing-function-ease-out;
+
+@mixin arrow($borderSide) {
+  &::before {
+    border-#{$borderSide}-color: $cdr-color-border-secondary;
+  }
+
+  &::after {
+    border-#{$borderSide}-color: $cdr-color-background-primary;
+  }
+}
+
+@keyframes :global(popup-exit-down) {
+  from {
+    top: $content-spacing;
+  }
+
+  to {
+    top: 100%;
+  }
+}
+@keyframes :global(popup-enter-down) {
+  from {
+    top: 100%;
+  }
+
+  to {
+    top: $content-spacing;
+  }
+}
+
+@keyframes :global(popup-arrow-exit-down) {
+  from {
+    bottom: -$arrow-spacing;
+  }
+
+  to {
+    bottom: 0;
+  }
+}
+
+@keyframes :global(popup-arrow-enter-down) {
+  from {
+    bottom: 0;
+  }
+
+  to {
+    bottom: -$arrow-spacing;
+  }
+}
+
+@keyframes :global(popup-exit-up) {
+  from {
+    bottom: $content-spacing;
+  }
+
+  to {
+    bottom: 100%;
+  }
+}
+@keyframes :global(popup-enter-up) {
+  from {
+    bottom: 100%;
+  }
+
+  to {
+    bottom: $content-spacing;
+  }
+}
+
+@keyframes :global(popup-arrow-exit-up) {
+  from {
+    top: -$arrow-spacing;
+  }
+
+  to {
+    top: 0;
+  }
+}
+@keyframes :global(popup-arrow-enter-up) {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: -$arrow-spacing;
+  }
+}
+
+@keyframes :global(popup-exit-left) {
+  from {
+    right: $content-spacing;
+  }
+
+  to {
+    right: 100%;
+  }
+}
+@keyframes :global(popup-enter-left) {
+  from {
+    right: 100%;
+  }
+
+  to {
+    right: $content-spacing;
+  }
+}
+
+@keyframes :global(popup-arrow-exit-left) {
+  from {
+    left: -$arrow-spacing;
+  }
+
+  to {
+    left: 0;
+  }
+}
+@keyframes :global(popup-arrow-enter-left) {
+  from {
+    left: 0;
+  }
+
+  to {
+    left: -$arrow-spacing;
+  }
+}
+
+@keyframes :global(popup-exit-right) {
+  from {
+    left: $content-spacing;
+  }
+
+  to {
+    left: 100%;
+  }
+}
+@keyframes :global(popup-enter-right) {
+  from {
+    left: 100%;
+  }
+
+  to {
+    left: $content-spacing;
+  }
+}
+
+@keyframes :global(popup-arrow-exit-right) {
+  from {
+    right: -$arrow-spacing;
+  }
+
+  to {
+    right: 0;
+  }
+}
+@keyframes :global(popup-arrow-enter-right) {
+  from {
+    right: 0;
+  }
+
+  to {
+    right: -$arrow-spacing;
+  }
+}

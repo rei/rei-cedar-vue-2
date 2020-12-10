@@ -1,0 +1,64 @@
+@import '../../../css/settings/index.scss';
+@import url('@rei/cedar/dist/style/cdr-popup.css');
+
+.cdr-tooltip--position {
+  position: relative;
+}
+
+.cdr-tooltip--wrapper {
+  width: max-content;
+  height: max-content;
+
+  .cdr-popup--closed {
+    @include cdr-display-sr-only;
+  }
+
+  .cdr-popup__content {
+    @include cdr-text-utility-sans-strong-100;
+    background: $cdr-color-background-tooltip-default;
+    color: $cdr-color-text-tooltip-default;
+    border: 1px solid $cdr-color-border-tooltip-default;
+    padding: $cdr-space-inset-three-quarter-x-squish;
+  }
+
+  // set arrow color on popup
+  .cdr-popup--bottom .cdr-popup__arrow {
+    &::before {
+      border-bottom-color: $cdr-color-border-tooltip-default;
+    }
+
+    &::after {
+      border-bottom-color: $cdr-color-background-tooltip-default;
+    }
+  }
+
+  .cdr-popup--top .cdr-popup__arrow {
+    &::before {
+      border-top-color: $cdr-color-border-tooltip-default;
+    }
+
+    &::after {
+      border-top-color: $cdr-color-background-tooltip-default;
+    }
+  }
+
+  .cdr-popup--right .cdr-popup__arrow {
+    &::before {
+      border-right-color: $cdr-color-border-tooltip-default;
+    }
+
+    &::after {
+      border-right-color: $cdr-color-background-tooltip-default;
+    }
+  }
+
+  .cdr-popup--left .cdr-popup__arrow {
+    &::before {
+      border-left-color: $cdr-color-border-tooltip-default;
+    }
+
+    &::after {
+      border-left-color: $cdr-color-background-tooltip-default;
+    }
+  }
+}

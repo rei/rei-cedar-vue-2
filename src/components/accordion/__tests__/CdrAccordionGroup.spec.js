@@ -17,8 +17,8 @@ describe('CdrAccordionGroup', () => {
       },
       slots: {
         default: [
-          '<cdr-accordion id="tab1" label="label1" level="2"/>',
-          '<cdr-accordion id="tab2" label="label2" level="2"/>'
+          '<cdr-accordion id="tab1" level="2"><template slot="label">label1</template></cdr-accordion>',
+          '<cdr-accordion id="tab2" level="2"><template slot="label">label2</template></cdr-accordion>'
         ]
       },
     });
@@ -36,9 +36,9 @@ describe('CdrAccordionGroup', () => {
       },
       slots: {
         default: [
-          '<cdr-accordion id="tab1" label="label1" level="2"/>',
-          '<cdr-accordion id="tab2" label="label2" level="2"/>',
-          '<cdr-accordion id="tab3" label="label3" level="2"/>',
+          '<cdr-accordion id="tab1" level="2"/>',
+          '<cdr-accordion id="tab2" level="2"/>',
+          '<cdr-accordion id="tab3" level="2"/>',
         ]
       },
       attachTo: elem,

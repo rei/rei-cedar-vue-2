@@ -4,6 +4,13 @@ exports[`CdrFormGroup renders correctly 1`] = `
 <fieldset
   class="cdr-form-group"
 >
-  <legend />
+  <legend>
+    hey
+  </legend>
+  <div
+    class="cdr-form-group__wrapper"
+  >
+    form elements!
+  </div>
 </fieldset>
 `;

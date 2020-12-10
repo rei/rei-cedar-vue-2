@@ -20,12 +20,12 @@ describe('CdrCheckbox', () => {
   });
 
   it('renders a label element', () => {
-    const wrapper = shallowMount(CdrCheckbox);
-    expect(wrapper.vm.$refs.label.tagName).toBe('LABEL');
+    const wrapper = mount(CdrCheckbox);
+    expect(wrapper.find('label').exists()).toBe(true);
   });
-  
+
   it('adds a custom label class correctly', () => {
-    const wrapper = shallowMount(CdrCheckbox, {
+    const wrapper = mount(CdrCheckbox, {
       propsData: {
         labelClass: 'custom-label-class',
       },
@@ -33,9 +33,9 @@ describe('CdrCheckbox', () => {
         default: 'Label Test',
       },
     });
-    expect(wrapper.vm.$refs.label.classList.contains('custom-label-class')).toBe(true);
+    expect(wrapper.find('.custom-label-class').exists()).toBe(true);
   });
-  
+
   it('adds a custom input class correctly', () => {
     const wrapper = shallowMount(CdrCheckbox, {
       propsData: {
@@ -47,9 +47,9 @@ describe('CdrCheckbox', () => {
     });
     expect(wrapper.vm.$refs.checkbox.classList.contains('custom-input-class')).toBe(true);
   });
-  
+
   it('adds a custom content class correctly', () => {
-    const wrapper = shallowMount(CdrCheckbox, {
+    const wrapper = mount(CdrCheckbox, {
       propsData: {
         contentClass: 'custom-content-class',
       },
@@ -84,7 +84,7 @@ describe('CdrCheckbox', () => {
     cb.trigger('click');
     expect(wrapper.emitted().change[1][0]).toBe(false);
   });
-  
+
   it('emits change events with correct values for custom checkbox', () => {
     const wrapper = shallowMount(CdrCheckbox, {
       propsData: {
@@ -99,7 +99,7 @@ describe('CdrCheckbox', () => {
     cb.trigger('click');
     expect(wrapper.emitted().change[1][0]).toBe('unchecked');
   });
-  
+
   it('emits change events with correct values for group checkbox', () => {
     const wrapper = shallowMount(CdrCheckbox, {
       propsData: {

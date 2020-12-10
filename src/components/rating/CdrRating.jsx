@@ -1,5 +1,4 @@
 import clsx from 'clsx';
-import contentPriority from '../../mixins/contentPriority';
 import size from '../../mixins/size';
 import space from '../../mixins/space';
 import style from './styles/CdrRating.scss';
@@ -7,7 +6,6 @@ import style from './styles/CdrRating.scss';
 export default {
   name: 'CdrRating',
   mixins: [
-    contentPriority,
     size,
     space,
   ],
@@ -124,7 +122,6 @@ export default {
         href={this.href}
         class={clsx(
           this.style[this.baseClass],
-          this.contentPriorityClass,
           this.sizeClass,
           this.space,
           this.href ? this.style['cdr-rating--linked'] : '',

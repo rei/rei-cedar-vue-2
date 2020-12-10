@@ -17,6 +17,11 @@ import ContainerUtilities from 'componentsdir/Utilities/demos/container';
 import AlignUtilities from 'componentsdir/Utilities/demos/align';
 import VisibilityUtilities from 'componentsdir/Utilities/demos/visibility';
 
+import AddressForm from 'componentsdir/Form/AddressForm';
+import LoginForm from 'componentsdir/Form/LoginForm';
+import PaymentForm from 'componentsdir/Form/PaymentForm';
+import SurveyForm from 'componentsdir/Form/SurveyForm';
+
 const routes = [
   { path: '/', name: ' ', component: App },
   { path: '/kitchen-sink', name: 'KitchenSink', component: KitchenSink },
@@ -29,8 +34,8 @@ const routes = [
   { path: '/cards', name: 'Cards', component: Examples.card },
   { path: '/checkboxes', name: 'CheckBoxes', component: Examples.checkbox },
   { path: '/cta', name: 'CTA', component: Examples.cta },
-  { path: '/dataTables', name: 'Data Tables', component: Examples.dataTable },
   { path: '/formGroups', name: 'Form Groups', component: Examples.formGroup },
+  { path: '/form', name: 'Form Patterns', component: Examples.form },
   { path: '/grids', name: 'Grids', component: Examples.grid },
   { path: '/icons', name: 'Icons', component: Examples.icon },
   { path: '/images', name: 'Images', component: Examples.image },
@@ -39,6 +44,7 @@ const routes = [
   { path: '/lists', name: 'Lists', component: Examples.list },
   { path: '/modals', name: 'Modals', component: Examples.modal },
   { path: '/pagination', name: 'Pagination', component: Examples.pagination },
+  { path: '/popover', name: 'Popover', component: Examples.popover },
   { path: '/quotes', name: 'Quotes', component: Examples.quote },
   { path: '/radios', name: 'Radios', component: Examples.radio },
   { path: '/ratings', name: 'Ratings', component: Examples.rating },
@@ -46,6 +52,7 @@ const routes = [
   { path: '/tables', name: 'Tables', component: Examples.table },
   { path: '/tabs', name: 'Tabs', component: Examples.tabs },
   { path: '/texts', name: 'Texts', component: Examples.text },
+  { path: '/tooltip', name: 'Tooltip', component: Examples.tooltip },
 
   { path: '/default-buttons', component: DefaultButtons },
   { path: '/secondary-buttons', component: SecondaryButtons },
@@ -57,6 +64,11 @@ const routes = [
   { path: '/container-utilities', component: ContainerUtilities },
   { path: '/align-utilities', component: AlignUtilities },
   { path: '/visibility-utilities', component: VisibilityUtilities },
+
+  { path: '/address-form', component: AddressForm },
+  { path: '/login-form', component: LoginForm },
+  { path: '/survey-form', component: SurveyForm },
+  { path: '/payment-form', component: PaymentForm },
 ];
 
 export default routes;

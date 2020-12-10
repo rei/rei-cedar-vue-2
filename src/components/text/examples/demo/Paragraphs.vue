@@ -60,7 +60,7 @@
       </cdr-text>
       <cdr-text
         v-for="utilitystrong in utilities"
-        :key="`utility-strong-${utilitystrong}`"
+        :key="`utility-sans-strong-${utilitystrong}`"
         :modifier="`utility-sans-strong-${utilitystrong}`"
       >
         utility-sans-strong-{{ utilitystrong }}: <br> Lorem ipsum dolor sit amet, orci tristique enim condimentum pellentesque amet

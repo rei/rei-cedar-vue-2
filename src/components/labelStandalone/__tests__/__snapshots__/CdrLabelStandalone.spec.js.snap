@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CdrFormLabelStandalone matches snapshot 1`] = `
+<div
+  class="cdr-label-standalone cdr-label-standalone--spacing"
+>
+  <label
+    class="cdr-label-standalone__label"
+    for="test"
+  >
+    Label Test 
+    <span
+      aria-label="required"
+    >
+      *
+    </span>
+  </label>
+  <br />
+  <span
+    class="cdr-label-standalone__helper"
+  >
+    very helpful
+  </span>
+  <span
+    class="cdr-label-standalone__info"
+  >
+    very informative
+  </span>
+</div>
+`;

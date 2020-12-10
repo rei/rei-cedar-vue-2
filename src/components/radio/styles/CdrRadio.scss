@@ -1,60 +1,12 @@
 @import '../../../css/settings/index.scss';
 @import './vars/CdrRadio.vars.scss';
-
+@import url('@rei/cedar/dist/style/cdr-label-wrapper.css');
 .cdr-radio {
-  @include cdr-label-base-mixin;
-  display: inline-block;
-  margin: 0;
-  position: relative;
-  user-select: none;
-
-  /* Elements
-    ========================================================================== */
-
-  /* Wrap
-  ========== */
-  &__wrap {
-    /* get rid of inline-block whitespace from label element */
-    font-size: 0;
-    line-height: 1;
-  }
-
-  /* Input
-  ========== */
-  &__input {
-    position: absolute;
-    opacity: 0;
-    z-index: -1;
-  }
-
-  /* Content
-  ========== */
-  &__content {
-    user-select: text;
-  }
-
   /* Figure
   ========== */
 
-  &__figure {
-    @include cdr-label-figure-medium-mixin
-    position: absolute;
-    left: 0;
-    border-radius: $cdr-radius-round;
-    background-color: $cdr-color-background-input-default;
-    box-shadow: inset 0 0 0 1px $cdr-color-border-input-default;
-    transition: box-shadow $cdr-duration-2-x $cdr-timing-function-ease;
-    &::after {
-      content: '';
-      position: absolute;
-      // @include cdr-label-figure-medium-mixin
-      width: $cdr-label-figure-size-medium / 2;
-      height: $cdr-label-figure-size-medium / 2;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      border-radius: $cdr-radius-round;
-    }
+  .cdr-label-wrapper__figure {
+    @include cdr-form-figure-radio-base-mixin;
   }
 
   /* States
@@ -62,155 +14,55 @@
 
   /* Checked
   ========== */
-  &__input:checked ~ &__figure {
-    // outer circle
-    box-shadow: inset 0 0 0 1px $cdr-color-border-input-default-selected;
-
-    &::after {
-      // inner circle
-      background-color: $cdr-color-background-input-default-selected;
-    }
+  &__input:checked ~ .cdr-label-wrapper__figure {
+    @include cdr-form-figure-radio-checked-mixin;
   }
 
-  /* Hover */
+  // /* Hover */
   &:hover {
-    & > .cdr-radio__figure {
-      cursor: pointer;
-      box-shadow: 0 0 0 3px $cdr-color-border-input-default-hover;
-      background-color: $cdr-color-background-input-default-hover;
+    .cdr-label-wrapper__figure {
+      @include cdr-form-figure-radio-hover-mixin;
     }
 
-    & > .cdr-radio__content {
-      @include cdr-label-hover-mixin;
-    }
-
-    & > .cdr-radio__input {
-      /* Hover + Checked
-      ========== */
-      &:checked ~ .cdr-radio__figure {
-        box-shadow: 0 0 0 3px $cdr-color-border-input-default-selected-hover;
-
-        background-color: $cdr-color-background-input-default-selected-hover;
-      }
+    .cdr-radio__input:checked ~ .cdr-label-wrapper__figure {
+      @include cdr-form-figure-radio-checked-hover-mixin;
     }
   }
 
-  /* Disabled
-  ========== */
+  // /* Disabled
+  // ========== */
   &__input:disabled {
-    & ~ .cdr-radio__content {
-      @include cdr-label-disabled-mixin;
-    }
 
-    & ~ .cdr-radio__figure {
-      box-shadow: inset 0 0 0 1px $cdr-color-border-input-default-disabled !important;
-      background-color: $cdr-color-background-input-default-disabled !important;
-      cursor: not-allowed;
+    & ~ .cdr-label-wrapper__figure {
+      @include cdr-form-figure-radio-disabled-mixin;
     }
 
     /* Disabled + Checked
     ========== */
     &:checked {
-      & ~ .cdr-radio__figure {
-        &::after {
-          background-color: $cdr-color-background-input-default-disabled !important;
-        }
+      & ~ .cdr-label-wrapper__figure {
+        @include cdr-form-figure-radio-checked-disabled-mixin;
       }
     }
   }
 
-  /* Active
-  ========== */
-  &:active > .cdr-radio__figure {
-    box-shadow: inset 0 0 0 1px $cdr-color-border-input-default-active;
-    background-color: $cdr-color-background-input-default;
+  //
+  // /* Focus
+  // ========== */
+  &__input:focus ~ .cdr-label-wrapper__figure {
+    @include cdr-form-figure-radio-focus-mixin;
   }
 
-  /* Focus
-  ========== */
-  &__input:focus ~ .cdr-radio__figure {
-    box-shadow: 0 0 0 3px $cdr-color-border-input-default-active;
+  &__input:focus:checked ~ .cdr-label-wrapper__figure {
+    @include cdr-form-figure-radio-checked-focus-mixin;
   }
 
-
-  /* Sizes
-  ========================================================================== */
-  @include radio-small-mixin(&);
-
-  @include radio-medium-mixin(&);
-
-  @include radio-large-mixin(&);
-
-  /* Breakpoint variants
-
-  /* @xs
-    0px - 767px
-    ========== */
-  @include cdr-xs-mq-only {
-    @include radio-small-mixin(&, \@xs);
-
-    @include radio-medium-mixin(&, \@xs);
-
-    @include radio-large-mixin(&, \@xs);
-  }
-
-  /* @sm
-    768px - 991px
-    ========== */
-  @include cdr-sm-mq-only {
-    @include radio-small-mixin(&, \@sm);
-
-    @include radio-medium-mixin(&, \@sm);
-
-    @include radio-large-mixin(&, \@sm);
-  }
-
-  /* @md
-    992px - 1199px
-    ========== */
-  @include cdr-md-mq-only {
-    @include radio-small-mixin(&, \@md);
-
-    @include radio-medium-mixin(&, \@md);
-
-    @include radio-large-mixin(&, \@md);
-  }
-
-  /* @lg
-    1200px and up
-    ========== */
-
-  @include cdr-lg-mq-only {
-    @include radio-small-mixin(&, \@lg);
-
-    @include radio-medium-mixin(&, \@lg);
-
-    @include radio-large-mixin(&, \@lg);
-  }
-
-  /* Modifiers
-    ========================================================================== */
-
-  /* Compact
-    ========== */
-
-  &--compact {
-    @include cdr-label-small-mixin;
-
-    & > .cdr-radio__figure {
-      @include cdr-label-figure-small-mixin; // TODO: ????
+  //
+  // /* Active
+  // ========== */
+  &:active {
+    .cdr-label-wrapper__figure, .cdr-radio__input:checked ~ .cdr-label-wrapper__figure {
+      @include cdr-form-figure-radio-active-mixin;
     }
   }
-
-  /* Hide Figure
-    ========== */
-
-  &--hide-figure {
-    padding-left: 0 !important;
-
-    & > .cdr-radio__figure {
-      display: none;
-    }
-  }
-
 }

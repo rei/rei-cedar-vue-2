@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CdrFormError matches snapshot 1`] = `
+<div
+  class="cdr-form-error"
+>
+  <span
+    class="cdr-form-error__icon"
+  />
+   yahoo!
+</div>
+`;

@@ -1,6 +1,28 @@
 @import '../../../css/settings/index.scss';
-@import './CdrFormGroup.vars.scss';
+@import './vars/CdrFormGroup.vars.scss';
+@import url('@rei/cedar/dist/style/cdr-form-error.css');
 
 .cdr-form-group {
   @include cdr-form-group-base-mixin;
+
+  &--error {
+    @include cdr-form-group-error-mixin;
+
+  }
+
+  &--disabled {
+    @include cdr-form-group-disabled-mixin;
+
+    .cdr-form-group__optional, .cdr-form-group__required {
+      color: $cdr-color-text-disabled;
+    }
+  }
+
+  &__wrapper {
+    @include cdr-form-group-content-mixin;
+  }
+
+  &__optional {
+    @include cdr-form-group-optional-mixin;
+  }
 }

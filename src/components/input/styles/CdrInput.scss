@@ -1,15 +1,52 @@
 @import '../../../css/settings/index.scss';
 @import './vars/CdrInput.vars.scss';
+@import url('@rei/cedar/dist/style/cdr-label-standalone.css');
+@import url('@rei/cedar/dist/style/cdr-form-error.css');
 
 /* ==========================================================================
   # INPUT LABEL
   ========================================================================== */
 
-.cdr-input__label {
-  @include cdr-input-base-label-mixin;
+:global(.cdr-input__button) {
+  display: inline-block;
 
-  &--disabled {
-    color:  $cdr-color-text-input-disabled;
+  & ~ & {
+    position: relative;
+    margin-left: -4px;
+    &::before {
+      content: '';
+      background-color: $cdr-color-border-input-default;
+      position: absolute;
+      left: -1px;
+      width: 1px;
+      height: 55%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  &:hover,
+  &:active,
+  &:focus,
+  &:focus-within {
+    background-color: $cdr-color-background-input-default-active;
+    box-shadow: inset 0 0 0 2px $cdr-color-border-input-default-focus;
+    outline: none;
+    fill: $cdr-color-text-primary;
+    svg {
+      box-shadow: none;
+      fill: $cdr-color-text-primary !important;
+    }
+
+    &::before {
+      width: 0px;
+    }
+  }
+
+  &:last-child {
+    margin-right: -$cdr-space-half-x;
+    border-top-right-radius: $cdr-radius-softer;
+    border-bottom-right-radius: $cdr-radius-softer;
   }
 }
 
@@ -19,9 +56,14 @@
 
 .cdr-input {
   @include cdr-input-base-mixin;
-
   /* Style variants
     ========================================================================== */
+
+  &--focus {
+    svg {
+      fill: $cdr-color-text-primary !important;
+    }
+  }
 
   &--multiline {
     height: auto;
@@ -31,7 +73,28 @@
     /* $input-pre-icon-default-width = 25px with the expectation that
         slot provided icon is close to that width */
     // TODO: use icon token here?
-    padding-left: calc(#{$cdr-space-half-x} + #{$cdr-space-quarter-x} + 25px);
+    padding-left: calc(#{$cdr-space-half-x} + #{$cdr-space-quarter-x} + 25px) !important;
+  }
+// add right padding so input content does not overlap post-icon(s)
+// CHECK button icon width in safari?
+  &--posticon {
+    padding-right: 45px;
+  }
+
+  &--posticons {
+    padding-right: 90px;
+  }
+
+  &--primary {
+    @include cdr-input-primary-mixin;
+  }
+
+  &--secondary {
+    @include cdr-input-secondary-mixin;
+  }
+
+  &--error {
+    @include cdr-input-error-mixin;
   }
 
   /* Size variants
@@ -86,27 +149,31 @@
     top: 50%;
     left: $cdr-space-half-x;
     transform: translateY(-50%);
-    fill: $cdr-color-icon-default;
   }
 
   &__post-icon {
-    fill: $cdr-color-icon-default;
+    display: block;
     position: absolute;
     top: 50%;
     right: $cdr-space-half-x;
     transform: translateY(-50%);
   }
 
-  &__required-label {
-    @include cdr-input-required-label-mixin;
-  }
-
-  &__info-container {
-    @include cdr-input-info-container-mixin;
-  }
-
   &__helper-text {
     @include cdr-input-helper-text-mixin;
+    display: inline-block;
+    margin-top: $cdr-space-quarter-x;
+  }
+
+  &__info-action {
+    position: relative;
+    width: 40px;
+    & > * {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
   }
 }
 
@@ -114,7 +181,12 @@
    # INPUT WRAPPER
    ========================================================================== */
 
-/* related to positioning/layout? */
 .cdr-input-wrap {
   position: relative;
+  flex-grow: 1;
+  fill: $cdr-color-icon-default;
+}
+
+.cdr-input-outer-wrap {
+  display: flex;
 }

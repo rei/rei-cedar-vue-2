@@ -102,13 +102,4 @@ h5.cdr-text,
 h6.cdr-text {
   @include cdr-text-default;
   margin: 0;
-
-  .cdr-text {
-    font-weight: inherit;
-    font-size: inherit;
-    line-height: inherit;
-    letter-spacing: inherit;
-    color: inherit;
-    font-family: inherit;
-  }
 }

@@ -4,124 +4,38 @@ exports[`cdrSelect renders correctly 1`] = `
 <div
   class=""
 >
-  <label
-    class="cdr-select__label"
-    for="renders"
-  >
-    Label Test 
-  </label>
   <div
-    class="cdr-select-wrap"
+    class="cdr-label-standalone cdr-label-standalone--spacing"
   >
-    <select
-      class="cdr-select cdr-select__prompt"
-      id="renders"
-    />
-    <svg
-      aria-hidden="true"
-      class="cdr-icon cdr-select__caret"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
+    <label
+      class="cdr-label-standalone__label"
+      for="renders"
     >
-      <path
-        d="M12 16c.273 0 .521-.11.702-.288l5.005-5.005a1 1 0 00-1.414-1.414L12 13.586 7.705 9.29a1 1 0 00-1.412 1.417l4.98 4.98c.182.193.44.313.727.313z"
-        role="presentation"
+      Label Test
+    </label>
+  </div>
+  <div
+    class="cdr-select-outer-wrap"
+  >
+    <div
+      class="cdr-select-wrap"
+    >
+      <select
+        class="cdr-select cdr-select__prompt cdr-select--primary"
+        id="renders"
       />
-    </svg>
-  </div>
-</div>
-`;
-
-exports[`cdrSelect renders helper-text slot 1`] = `
-<div
-  class=""
->
-  <label
-    class="cdr-select__label"
-    for="helper-text"
-  >
-    test 
-  </label>
-  <div
-    class="cdr-select-wrap"
-  >
-    <select
-      class="cdr-select cdr-select__prompt"
-      id="helper-text"
-    />
-    <icon-caret-down-stub
-      class="cdr-select__caret"
-      size="medium"
-      space=""
-    />
-  </div>
-  <span
-    class="cdr-select__helper-text"
-  >
-    very helpful
-  </span>
-</div>
-`;
-
-exports[`cdrSelect renders info slot 1`] = `
-<div
-  class=""
->
-  <label
-    class="cdr-select__label"
-    for="info-slot"
-  >
-    test 
-  </label>
-  <span
-    class="cdr-select__info-container"
-  >
-    🤠
-  </span>
-  <div
-    class="cdr-select-wrap"
-  >
-    <select
-      class="cdr-select cdr-select__prompt"
-      id="info-slot"
-    />
-    <icon-caret-down-stub
-      class="cdr-select__caret"
-      size="medium"
-      space=""
-    />
-  </div>
-</div>
-`;
-
-exports[`cdrSelect renders required label correctly 1`] = `
-<div
-  class=""
->
-  <label
-    class="cdr-select__label"
-    for="required-label"
-  >
-    Label Test 
-    <span
-      class="cdr-select__required-label"
-    >
-      Required
-    </span>
-  </label>
-  <div
-    class="cdr-select-wrap"
-  >
-    <select
-      class="cdr-select cdr-select__prompt"
-      id="required-label"
-      required="required"
-    />
-    <icon-caret-down-stub
-      class="cdr-select__caret"
-      size="medium"
-      space=""
-    />
+      <svg
+        aria-hidden="true"
+        class="cdr-icon cdr-select__caret"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 16c.273 0 .521-.11.702-.288l5.005-5.005a1 1 0 00-1.414-1.414L12 13.586 7.705 9.29a1 1 0 00-1.412 1.417l4.98 4.98c.182.193.44.313.727.313z"
+          role="presentation"
+        />
+      </svg>
+    </div>
   </div>
 </div>
 `;

@@ -1,0 +1,39 @@
+@import '../../../css/settings/index.scss';
+@import './vars/CdrLabelStandalone.vars.scss';
+
+.cdr-label-standalone {
+  position: relative;
+
+  &--spacing {
+    margin-bottom: $cdr-space-half-x;
+  }
+
+  &__label {
+    @include cdr-label-standalone-label-mixin;
+    display: inline-block;
+
+    &--disabled {
+      @include cdr-label-standalone-disabled-mixin;
+
+      .cdr-label-standalone__optional {
+        @include cdr-label-standalone-disabled-mixin;
+      }
+    }
+  }
+
+  &__optional {
+    @include cdr-label-standalone-optional-mixin;
+  }
+
+  &__helper {
+    @include cdr-label-standalone-helper-mixin;
+    display: inline-block;
+  }
+
+  &__info {
+    @include cdr-label-standalone-info-mixin;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+}
