@@ -172,7 +172,7 @@ export default {
         [this.pos] = sortedDirs;
       }
 
-      if (this.pos === 'down' || this.pos === 'up') {
+      if (this.pos === 'bottom' || this.pos === 'top') {
         if (corners.left) {
           this.corner = 'left';
         } else if (corners.right) {
