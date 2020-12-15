@@ -23,8 +23,7 @@ module.exports = {
   'Page Is Accessible: Primary Background':function (browser) {
     runA11yTests(browser, 'background=primary');
   },
-  // TODO: enable this test once everything is updated
-  // 'Page Is Accessible: Secondary Background': function (browser) {
-  //   runA11yTests(browser, 'background=secondary')
-  // },
+  'Page Is Accessible: Secondary Background': function (browser) {
+    runA11yTests(browser, 'background=secondary')
+  },
 };
