@@ -13,7 +13,7 @@ const server = http.createServer((request, response) => {
 
 
 server.listen(process.env.PORT, () => {
-  
+
   let opts = process.argv.slice(2);
 
   if (opts.indexOf('--config') === -1) {
@@ -22,6 +22,8 @@ server.listen(process.env.PORT, () => {
   if (opts.indexOf('--env') === -1) {
     opts = opts.concat(['--env', 'chrome']);
   }
+
+  opts = opts.concat(['--timeout', '180000']);
 
   const runner = spawn('./node_modules/.bin/nightwatch', opts, { stdio: 'inherit' });
 
