@@ -119,6 +119,8 @@ export default {
       return classObj;
     },
     ratioClass() {
+      // TODO: UPDATE!
+      // Set via style instead of class?
       const classObj = {};
       classObj[this.style[`cdr-media-frame--${this.ratio}`]] = this.ratio;
       classObj[this.style[`cdr-media-frame--${this.ratioSm}@sm`]] = this.ratioSm;
@@ -127,6 +129,8 @@ export default {
       return classObj;
     },
     coverClass() {
+      // TODO: UPDATE!
+      // Set via style instead of class?
       const classObj = {};
       classObj[this.style['cdr-media-frame__cover']] = true;
       classObj[this.style['cdr-media-frame__cover--crop']] = this.crop;
@@ -134,6 +138,8 @@ export default {
       return classObj;
     },
     cropClass() {
+      // TODO: UPDATE!
+      // Set via style instead of class?
       const base = 'cdr-media-frame';
       const cropArr = this.crop ? this.crop.split(' ') : [];
       let final = [];
@@ -141,11 +147,6 @@ export default {
       final = final.concat(cropArr.map((mod) => this.modifyClassName(base, mod)));
 
       return final.join(' ');
-    },
-    styleObject() {
-      return {
-        backgroundImage: `url(${this.src})`,
-      };
     },
     lazyAttrs() {
       const attrObj = {};
@@ -158,32 +159,6 @@ export default {
     },
   },
   render() {
-    if (this.ratio) {
-      return (
-        <div
-          class={clsx(this.style['cdr-media-frame'], this.ratioClass, this.cropClass)}
-        >
-          <div
-            class={clsx(this.coverClass, this.lazyClass, this.radiusClass)}
-            style={this.styleObject}
-            aria-hidden="true"
-            {...{ attrs: this.lazyAttrs }}
-          />
-          <img
-            class={clsx(
-              this.style['cdr-media-frame__image'],
-              this.style['cdr-media-frame__image--hidden'],
-              this.style[this.baseClass],
-              this.modifierClass,
-              this.radiusClass,
-            )}
-            src={this.src}
-            alt={this.alt}
-            {...{ on: this.$listeners }}
-          />
-        </div>
-      );
-    }
     return (<img
           class={clsx(this.style[this.baseClass],
             this.modifierClass,
@@ -191,7 +166,7 @@ export default {
             this.lazyClass)}
           src={this.src}
           alt={this.alt}
-          {...{ attrs: this.lazyAttrs, on: this.$listeners }}
+          {...{ attrs: this.lazyAttrs }}
         />);
   },
 };
