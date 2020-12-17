@@ -1,0 +1,6 @@
+@import '../../../css/settings/index.scss';
+@import './vars/CdrGridTwo.vars.scss';
+
+.cdr-grid-two {
+  @include cdr-grid-two-base-mixin;
+}
