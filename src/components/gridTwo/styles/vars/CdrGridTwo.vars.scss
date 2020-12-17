@@ -1,8 +1,19 @@
 @mixin cdr-grid-two-base-mixin() {
   display: grid;
-  gap: $cdr-space-one-x $cdr-space-one-x;
+}
 
-  @include cdr-md-mq-up {
-    gap: $cdr-space-two-x $cdr-space-two-x;
-  }
+@mixin cdr-grid-two-gutter-none-mixin() {
+  gap: 0 0;
+}
+
+@mixin cdr-grid-two-gutter-small-mixin() {
+  gap: $cdr-space-eighth-x $cdr-space-eighth-x;
+}
+
+@mixin cdr-grid-two-gutter-medium-mixin() {
+  gap: $cdr-space-one-x $cdr-space-one-x;
+}
+
+@mixin cdr-grid-two-gutter-large-mixin() {
+  gap: $cdr-space-two-x $cdr-space-two-x;
 }
