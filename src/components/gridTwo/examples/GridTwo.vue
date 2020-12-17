@@ -26,12 +26,20 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 .custom-grid {
+  // 3 column at md or lg
   grid-template-columns: 1fr 1fr 1fr;
+
+  @include cdr-sm-mq-down {
+    // 1 column at xs or sm
+    grid-template-columns: 1fr;
+  }
 }
 
 .grid-item {
-
+  border: 1px solid black;
+  text-align: center;
+  padding: $cdr-space-one-x;
 }
 </style>
