@@ -21,6 +21,7 @@ module.exports = {
       silent: true,
       globals: {
         devServerURL: `http://localhost:${process.env.PORT}/#/kitchen-sink`,
+        asyncHookTimeout: 120000,
       },
     },
 
