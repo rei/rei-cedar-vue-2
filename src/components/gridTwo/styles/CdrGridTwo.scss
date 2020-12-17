@@ -3,4 +3,90 @@
 
 .cdr-grid-two {
   @include cdr-grid-two-base-mixin;
+
+  // Responsive Gutters
+  &--gutter-none {
+    @include cdr-grid-two-gutter-none-mixin;
+  }
+
+  &--gutter-small {
+    @include cdr-grid-two-gutter-small-mixin;
+  }
+
+  &--gutter-medium {
+    @include cdr-grid-two-gutter-medium-mixin;
+  }
+
+  &--gutter-large {
+    @include cdr-grid-two-gutter-large-mixin;
+  }
+
+  @include cdr-xs-mq-only {
+    &--gutter-none\@xs {
+      @include cdr-grid-two-gutter-none-mixin;
+    }
+
+    &--gutter-small\@xs {
+      @include cdr-grid-two-gutter-small-mixin;
+    }
+
+    &--gutter-medium\@xs {
+      @include cdr-grid-two-gutter-medium-mixin;
+    }
+
+    &--gutter-large\@xs {
+      @include cdr-grid-two-gutter-large-mixin;
+    }
+  }
+  @include cdr-sm-mq-only {
+    &--gutter-none\@sm {
+      @include cdr-grid-two-gutter-none-mixin;
+    }
+
+    &--gutter-small\@sm {
+      @include cdr-grid-two-gutter-small-mixin;
+    }
+
+    &--gutter-medium\@sm {
+      @include cdr-grid-two-gutter-medium-mixin;
+    }
+
+    &--gutter-large\@sm {
+      @include cdr-grid-two-gutter-large-mixin;
+    }
+  }
+  @include cdr-md-mq-only {
+    &--gutter-none\@md {
+      @include cdr-grid-two-gutter-none-mixin;
+    }
+
+    &--gutter-small\@md {
+      @include cdr-grid-two-gutter-small-mixin;
+    }
+
+    &--gutter-medium\@md {
+      @include cdr-grid-two-gutter-medium-mixin;
+    }
+
+    &--gutter-large\@md {
+      @include cdr-grid-two-gutter-large-mixin;
+    }
+  }
+  @include cdr-lg-mq-only {
+    &--gutter-none\@lg {
+      @include cdr-grid-two-gutter-none-mixin;
+    }
+
+    &--gutter-small\@lg {
+      @include cdr-grid-two-gutter-small-mixin;
+    }
+
+    &--gutter-medium\@lg {
+      @include cdr-grid-two-gutter-medium-mixin;
+    }
+
+    &--gutter-large\@lg {
+      @include cdr-grid-two-gutter-large-mixin;
+    }
+  }
 }

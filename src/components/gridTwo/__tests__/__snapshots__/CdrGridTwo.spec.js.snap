@@ -2,6 +2,6 @@
 
 exports[`CdrGridTwo matches snapshot 1`] = `
 <div
-  class="cdr-grid-two"
+  class="cdr-grid-two cdr-grid-two--gutter-medium@xs cdr-grid-two--gutter-medium@sm cdr-grid-two--gutter-large@md cdr-grid-two--gutter-large@lg"
 />
 `;

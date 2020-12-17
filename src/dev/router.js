@@ -33,7 +33,6 @@ const routes = [
   { path: '/captions', name: 'Captions', component: Examples.caption },
   { path: '/cards', name: 'Cards', component: Examples.card },
   { path: '/checkboxes', name: 'CheckBoxes', component: Examples.checkbox },
-  { path: '/cta', name: 'CTA', component: Examples.cta },
   { path: '/formGroups', name: 'Form Groups', component: Examples.formGroup },
   { path: '/form', name: 'Form Patterns', component: Examples.form },
   { path: '/grids', name: 'Grids', component: Examples.grid },
