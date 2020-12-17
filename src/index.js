@@ -8,7 +8,6 @@ export { default as CdrCaption } from './components/caption/CdrCaption';
 export { default as CdrCard } from './components/card/CdrCard';
 export { default as CdrCheckbox } from './components/checkbox/CdrCheckbox';
 export { default as CdrCol } from './components/grid/CdrCol';
-export { default as CdrCta } from './components/cta/CdrCta';
 export { default as CdrFormGroup } from './components/formGroup/CdrFormGroup';
 export { default as CdrGrid } from './components/gridTwo/CdrGridTwo';
 // export all single icon components
