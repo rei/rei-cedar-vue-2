@@ -32,7 +32,6 @@
     >Link, href set, spacing class applied</cdr-text>
     <cdr-link
       href="https://www.rei.com/"
-      space="cdr-space-inset-one-x"
     >
       REI.com
     </cdr-link>
@@ -52,7 +51,7 @@
     >Standalone Link (No underline)</cdr-text>
     <cdr-link
       modifier="standalone"
-      space="cdr-space-inset-one-x"
+
       data-backstop="cdr-link--standalone"
     >
       REI.com
@@ -63,16 +62,13 @@
       modifier="subheading-sans-300"
     >Links, with icon</cdr-text>
 
-    <cdr-list
-      space="cdr-space-inset-one-x"
-    >
+    <cdr-list>
       <li>
         <cdr-link>
           <cdr-icon
             inherit-color
             use="#mail"
             modifier="inherit-color"
-            space="cdr-mr-space-half-x"
           />
           Icon on the left
         </cdr-link>
@@ -84,7 +80,6 @@
             inherit-color
             use="#download"
             modifier="inherit-color"
-            space="cdr-ml-space-half-x"
           />
         </cdr-link>
       </li>
@@ -94,14 +89,12 @@
             inherit-color
             use="#twitter"
             modifier="inherit-color"
-            space="cdr-mr-space-half-x"
           />
           Icons on both sides
           <cdr-icon
             inherit-color
             use="#external-link"
             modifier="inherit-color"
-            space="cdr-ml-space-half-x"
           />
         </cdr-link>
       </li>
@@ -124,7 +117,6 @@
           inherit-color
           use="#mail"
           modifier="inherit-color"
-          space="cdr-mr-space-half-x"
         />
         cdr-link icon inherit
       </cdr-link>

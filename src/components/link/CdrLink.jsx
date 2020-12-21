@@ -1,13 +1,11 @@
 import clsx from 'clsx';
 import modifier from '../../mixins/modifier';
-import space from '../../mixins/space';
 import style from './styles/CdrLink.scss';
 
 export default {
   name: 'CdrLink',
   mixins: [
     modifier,
-    space,
   ],
   props: {
     tag: {
@@ -52,7 +50,6 @@ export default {
       class={clsx(
         this.style[this.baseClass],
         this.modifierClass,
-        this.space,
         this.inheritColorClass,
       )}
       target={this.target}

@@ -11,7 +11,7 @@ const propsData = {
 
 describe('CdrAccordion', () => {
   it('renders correctly', () => {
-    const wrapper = shallowMount(CdrAccordion, {
+    const wrapper = mount(CdrAccordion, {
       propsData: {
         id: 'test',
         level: '2',

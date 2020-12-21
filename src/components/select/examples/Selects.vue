@@ -3,7 +3,6 @@
     <cdr-text
       tag="h2"
       modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
-      space="cdr-my-space-two-x"
     >
       Selects
     </cdr-text>
@@ -16,7 +15,7 @@
         v-model="selectedA"
         :background="backgroundColor"
         prompt="Choose one"
-        space="cdr-my-space-two-x"
+
         @select-change="doExternal"
       >
         <option value="1">
@@ -43,7 +42,6 @@
         :background="backgroundColor"
         prompt="Choose one"
         required
-        space="cdr-my-space-two-x"
       >
         <option value="1">
           1
@@ -68,7 +66,6 @@
       v-model="selectedDisabled"
       :background="backgroundColor"
       disabled
-      space="cdr-my-space-two-x"
     >
       <option value="1">
         1
@@ -84,7 +81,6 @@
       v-model="selectedC"
       :background="backgroundColor"
       prompt="Hidden label"
-      space="cdr-my-space-two-x"
     >
       <option value="1">
         1
@@ -105,7 +101,7 @@
     <!-- No Prompt Example -->
     <cdr-select
       label="No Prompt"
-      space="cdr-my-space-two-x"
+
       v-model="selectedD"
       :background="backgroundColor"
     >
@@ -131,7 +127,7 @@
       v-model="dynamic"
       :background="backgroundColor"
       :options="dynamicData"
-      space="cdr-my-space-two-x"
+
       prompt="Choose One"
     />
     <cdr-text>Selected: {{ dynamic }}</cdr-text>
@@ -143,7 +139,7 @@
       v-model="helperTextModel"
       :background="backgroundColor"
       :options="dynamicData"
-      space="cdr-my-space-two-x"
+
       prompt="Choose One"
     >
       <template slot="helper-text">
@@ -168,7 +164,7 @@
       v-model="infoLinkModel"
       :background="backgroundColor"
       :options="dynamicData"
-      space="cdr-my-space-two-x"
+
       prompt="Choose One"
     >
       <template slot="info">
@@ -189,7 +185,7 @@
       v-model="infoIconModel"
       :background="backgroundColor"
       :options="dynamicData"
-      space="cdr-my-space-two-x"
+
       prompt="Choose One"
     >
       <template slot="info-action">
@@ -208,7 +204,7 @@
       v-model="preIconModel"
       :background="backgroundColor"
       :options="dynamicData"
-      space="cdr-my-space-two-x"
+
       prompt="Choose One"
     >
       <template slot="pre-icon">
@@ -224,7 +220,7 @@
       v-model="preIconModel"
       :background="backgroundColor"
       :options="dynamicData"
-      space="cdr-my-space-two-x"
+
       prompt="Choose One"
       :error="true"
     >
@@ -241,7 +237,7 @@
       :background="backgroundColor"
       size="large"
       :options="dynamicData"
-      space="cdr-my-space-two-x"
+
       prompt="Choose One"
     />
     <cdr-text>Selected Value: {{ dynamic }}</cdr-text>

@@ -2,12 +2,11 @@ import clsx from 'clsx';
 import modifier from '../../mixins/modifier';
 import fullWidth from '../../mixins/fullWidth';
 import size from '../../mixins/size';
-import space from '../../mixins/space';
 import style from './styles/CdrButton.scss';
 
 export default {
   name: 'CdrButton',
-  mixins: [modifier, size, space, fullWidth],
+  mixins: [modifier, size, fullWidth],
   props: {
     /**
      * Controls render as button or anchor. {button, a}
@@ -100,7 +99,6 @@ export default {
         this.buttonSizeClass,
         this.fullWidthClass,
         this.iconClass,
-        this.space,
       )}
       type={this.tag === 'button' ? this.type : null}
       {...{ on: this.$listeners }}

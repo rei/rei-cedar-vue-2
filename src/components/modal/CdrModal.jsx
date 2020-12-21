@@ -8,14 +8,12 @@ import style from './styles/CdrModal.scss';
 import onTransitionEnd from './onTransitionEnd';
 import CdrButton from '../button/CdrButton';
 import IconXLg from '../icon/comps/x-lg';
-import CdrText from '../text/CdrText';
 
 export default {
   name: 'CdrModal',
   components: {
     CdrButton,
     IconXLg,
-    CdrText,
   },
   props: {
     opened: {
@@ -306,12 +304,9 @@ export default {
                       }
                       {
                         this.showTitle && !this.$slots.title && (
-                          <cdr-text
-                            tag="h1"
-                            modifier="heading-serif-600"
-                          >
+                          <h1>
                             {this.label}
-                          </cdr-text>
+                          </h1>
                         )
                       }
                     </div>

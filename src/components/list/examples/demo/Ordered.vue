@@ -11,7 +11,6 @@
     <cdr-list
       tag="ol"
       modifier="ordered"
-      space="cdr-mb-space-two-x"
     >
       <li>List item text</li>
       <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodList ordered

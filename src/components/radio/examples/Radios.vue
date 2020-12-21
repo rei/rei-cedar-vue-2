@@ -129,20 +129,20 @@
       Radios with spacing
     </cdr-text>
     <cdr-radio
-      space="cdr-ml-space-one-x cdr-mt-space-half-x"
+
       id="test2"
       name="examplespacing"
       custom-value="a1"
       v-model="ex1spacing"
     >A1</cdr-radio>
     <cdr-radio
-      space="cdr-ml-space-one-x cdr-mt-space-half-x"
+
       name="examplespacing"
       custom-value="a2"
       v-model="ex1spacing"
     >A2</cdr-radio>
     <cdr-radio
-      space="cdr-ml-space-one-x cdr-mt-space-half-x"
+
       name="examplespacing"
       :custom-value="{val:'a3'}"
       v-model="ex1spacing"

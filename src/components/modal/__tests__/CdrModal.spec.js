@@ -10,7 +10,7 @@ describe('CdrModal.vue', () => {
     if (document.body) {
       document.body.appendChild(elem)
     }
-    const wrapper = shallowMount(CdrModal, {
+    const wrapper = mount(CdrModal, {
       propsData: {
         opened: true,
         label: "Label is the modal title"
@@ -42,7 +42,7 @@ describe('CdrModal.vue', () => {
       document.body.appendChild(elem)
     }
     const mockMeasureContent = jest.fn();
-    const wrapper = shallowMount(CdrModal, {
+    const wrapper = mount(CdrModal, {
       propsData: {
         opened: false,
         label: "Label is the modal title"
@@ -111,7 +111,7 @@ describe('CdrModal.vue', () => {
       document.body.appendChild(elem)
     }
     const mockMeasureContent = jest.fn();
-    const wrapper = shallowMount(CdrModal, {
+    const wrapper = mount(CdrModal, {
       propsData: {
         opened: true,
         label: "Label is the modal title"
