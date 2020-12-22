@@ -10,17 +10,13 @@ exports[`CdrImg renders correctly 1`] = `
 
 exports[`CdrImg renders crop/ratio correctly 1`] = `
 <div
-  class="cdr-media-frame cdr-media-frame--square cdr-media-frame--left"
+  class="cdr-image-ratio cdr-image-ratio--square"
 >
-  <div
-    aria-hidden="true"
-    class="cdr-media-frame__cover cdr-media-frame__cover--crop cdr-media-frame__cover--cover"
-    style="background-image: url(http://placehold.it/1920x1080);"
-  />
   <img
     alt="crop left"
-    class="cdr-media-frame__image cdr-media-frame__image--hidden cdr-image"
+    class="cdr-image cdr-image-ratio__cover cdr-image-ratio__cover--crop cdr-image-ratio__cover--cover"
     src="http://placehold.it/1920x1080"
+    style="object-position: left;"
   />
 </div>
 `;

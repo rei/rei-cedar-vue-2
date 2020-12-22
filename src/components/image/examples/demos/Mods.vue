@@ -18,6 +18,7 @@
             class="cdr-img-test"
             ratio="4-3"
             modifier="responsive"
+            loading="lazy"
             alt="ratio responsive"
             src="http://placehold.it/200x200"
           />

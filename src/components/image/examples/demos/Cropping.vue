@@ -31,7 +31,7 @@
           <cdr-img
             ratio="square"
             cover
-            crop="x-center"
+            crop="center"
             alt="crop x-center"
             src="http://placehold.it/1920x1080"
           />
@@ -84,7 +84,7 @@
           <cdr-img
             ratio="square"
             cover
-            crop="y-center"
+            crop="center"
             alt="crop y-center"
             src="http://placehold.it/1080x1920"
           />
@@ -148,7 +148,7 @@
           </cdr-text>
           <cdr-img
             ratio="16-9"
-            crop="top x-center"
+            crop="top center"
             alt="crop top x-center"
             :src="testImage"
           />
@@ -174,7 +174,7 @@
           </cdr-text>
           <cdr-img
             ratio="16-9"
-            crop="y-center left"
+            crop="center left"
             alt="crop y-center left"
             :src="testImage"
           />
@@ -187,7 +187,7 @@
           </cdr-text>
           <cdr-img
             ratio="16-9"
-            crop="y-center x-center"
+            crop="center center"
             alt="crop y-center x-center"
             :src="testImage"
           />
@@ -200,7 +200,7 @@
           </cdr-text>
           <cdr-img
             ratio="16-9"
-            crop="y-center right"
+            crop="center right"
             alt="crop y-center right"
             :src="testImage"
           />
@@ -213,7 +213,7 @@
           </cdr-text>
           <cdr-img
             ratio="16-9"
-            crop="bottom left"
+            crop="left bottom"
             alt="crop bottom left"
             :src="testImage"
           />
@@ -226,7 +226,7 @@
           </cdr-text>
           <cdr-img
             ratio="16-9"
-            crop="bottom x-center"
+            crop="center bottom"
             alt="crop bottom x-center"
             :src="testImage"
           />
@@ -239,7 +239,7 @@
           </cdr-text>
           <cdr-img
             ratio="16-9"
-            crop="bottom right"
+            crop="right bottom"
             alt="crop bottom right"
             :src="testImage"
           />
