@@ -4,8 +4,8 @@ import style from './styles/CdrImg.scss';
 
 export default {
   name: 'CdrImg',
-  inheritAttrs: false,
   mixins: [modifier],
+  inheritAttrs: false,
   props: {
     /**
      * Required. Image source url.
@@ -39,7 +39,7 @@ export default {
         '16-9'].indexOf(value) >= 0) || false,
     },
     /**
-     * Requires a `ratio`. Area to crop the image overflow to. {top, y-center, bottom} {left, x-center, right}
+     * Requires a `ratio`. Area to crop the image overflow to. {left, center, right} {top, center, bottom}
      */
     crop: {
       type: String,
@@ -72,9 +72,6 @@ export default {
     radiusClass() {
       return this.radius ? this.style[`cdr-image--${this.radius}`] : '';
     },
-    ratioClass() {
-      return this.ratio ? this.style[`cdr-image-ratio--${this.ratio}`] : '';
-    },
     coverClass() {
       const classObj = {};
       classObj[this.style['cdr-image-ratio__cover']] = true;
@@ -87,12 +84,23 @@ export default {
         objectPosition: this.crop,
       };
     },
+    ratioPct() {
+      if (this.ratio === 'square') {
+        return '100%';
+      }
+      if (this.ratio) {
+        const [x, y] = this.ratio.split('-');
+        return `${(y / x) * 100}%`;
+      }
+      return '0%';
+    },
   },
   render() {
     if (this.ratio) {
       return (
         <div
-          class={clsx(this.style['cdr-image-ratio'], this.ratioClass)}
+          style={{ '--ratio': this.ratioPct }}
+          class={this.style['cdr-image-ratio']}
         >
           <img
             style={this.cropObject}

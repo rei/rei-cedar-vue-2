@@ -10,7 +10,8 @@ exports[`CdrImg renders correctly 1`] = `
 
 exports[`CdrImg renders crop/ratio correctly 1`] = `
 <div
-  class="cdr-image-ratio cdr-image-ratio--square"
+  class="cdr-image-ratio"
+  style="--ratio: 100%;"
 >
   <img
     alt="crop left"
