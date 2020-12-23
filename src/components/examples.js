@@ -1,17 +1,17 @@
 import accordion from 'componentsdir/accordion/examples/Accordion';
 import alert from 'componentsdir/alert/examples/Alert';
 import breadcrumb from 'componentsdir/breadcrumb/examples/Breadcrumb';
-import button from 'componentsdir/button/examples/Buttons';
-import caption from 'componentsdir/caption/examples/Caption';
+import buttons from 'componentsdir/button/examples/Buttons';
+import captions from 'componentsdir/caption/examples/Caption';
 import card from 'componentsdir/card/examples/Cards';
 import checkbox from 'componentsdir/checkbox/examples/checkboxes';
 import formGroup from 'componentsdir/formGroup/examples/FormGroup';
 import gridTwo from 'componentsdir/gridTwo/examples/GridTwo';
 import grid from 'componentsdir/grid/examples/Grid';
 import icon from 'componentsdir/icon/examples/Icons';
-import image from 'componentsdir/image/examples/Images';
-import input from 'componentsdir/input/examples/Inputs';
-import link from 'componentsdir/link/examples/Links';
+import images from 'componentsdir/image/examples/Images';
+import inputs from 'componentsdir/input/examples/Inputs';
+import links from 'componentsdir/link/examples/Links';
 import list from 'componentsdir/list/examples/Lists';
 import modal from 'componentsdir/modal/examples/Modal';
 import pagination from 'componentsdir/pagination/examples/Pagination';
@@ -19,29 +19,29 @@ import popover from 'componentsdir/popover/examples/Popover';
 import quote from 'componentsdir/quote/examples/Quote';
 import radio from 'componentsdir/radio/examples/Radios';
 import rating from 'componentsdir/rating/examples/Ratings';
-import select from 'componentsdir/select/examples/Selects';
-import table from 'componentsdir/table/examples/Table';
+import selects from 'componentsdir/select/examples/Selects';
+import tables from 'componentsdir/table/examples/Table';
 import tabs from 'componentsdir/tabs/examples/Tabs';
-import text from 'componentsdir/text/examples/Text';
+import texts from 'componentsdir/text/examples/Text';
 import tooltip from 'componentsdir/tooltip/examples/Tooltip';
 import utilities from 'componentsdir/Utilities/Utilities';
-import form from 'componentsdir/Form/Form';
+import forms from 'componentsdir/Form/Form';
 
 export default {
   alert,
   accordion,
   breadcrumb,
-  button,
-  caption,
+  buttons,
+  captions,
   card,
   checkbox,
   formGroup,
   grid,
   gridTwo,
   icon,
-  image,
-  input,
-  link,
+  images,
+  inputs,
+  links,
   list,
   modal,
   pagination,
@@ -49,11 +49,11 @@ export default {
   quote,
   radio,
   rating,
-  select,
-  table,
+  selects,
+  tables,
   tabs,
-  text,
+  texts,
   tooltip,
   utilities,
-  form,
+  forms,
 };
