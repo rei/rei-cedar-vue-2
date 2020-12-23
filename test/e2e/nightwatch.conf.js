@@ -20,22 +20,14 @@ module.exports = {
     default: {
       silent: true,
       globals: {
-        devServerURL: `http://localhost:${process.env.PORT}/#/kitchen-sink`,
-        asyncHookTimeout: 120000,
+        devServerURL: `http://localhost:${process.env.PORT}/#/`,
+        asyncHookTimeout: 180000,
       },
     },
 
     chrome: {
       desiredCapabilities: {
         browserName: 'chrome',
-        javascriptEnabled: true,
-        acceptSslCerts: true,
-      },
-    },
-
-    firefox: {
-      desiredCapabilities: {
-        browserName: 'firefox',
         javascriptEnabled: true,
         acceptSslCerts: true,
       },

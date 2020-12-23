@@ -2,6 +2,8 @@ import App from 'srcdir/App';
 import Examples from 'componentsdir/examples';
 
 import KitchenSink from 'srcdir/dev/KitchenSink';
+import e2e1 from 'srcdir/dev/e2e1';
+import e2e2 from 'srcdir/dev/e2e2';
 
 // Extra paths for backstop.
 //  These are smaller sections of larger demo pages to make screenshotting more reliable
@@ -29,18 +31,18 @@ const routes = [
   { path: '/accordion', name: 'Accordion', component: Examples.accordion },
   { path: '/alert', name: 'Alert', component: Examples.alert },
   { path: '/breadcrumbs', name: 'Breadcrumb', component: Examples.breadcrumb },
-  { path: '/buttons', name: 'Buttons', component: Examples.button },
-  { path: '/captions', name: 'Captions', component: Examples.caption },
+  { path: '/buttons', name: 'Buttons', component: Examples.buttons },
+  { path: '/captions', name: 'Captions', component: Examples.captions },
   { path: '/cards', name: 'Cards', component: Examples.card },
   { path: '/checkboxes', name: 'CheckBoxes', component: Examples.checkbox },
   { path: '/formGroups', name: 'Form Groups', component: Examples.formGroup },
-  { path: '/form', name: 'Form Patterns', component: Examples.form },
+  { path: '/form', name: 'Form Patterns', component: Examples.forms },
   { path: '/grids', name: 'Grids', component: Examples.grid },
   { path: '/grid-two', name: 'Grid v2', component: Examples.gridTwo },
   { path: '/icons', name: 'Icons', component: Examples.icon },
-  { path: '/images', name: 'Images', component: Examples.image },
-  { path: '/inputs', name: 'Input', component: Examples.input },
-  { path: '/links', name: 'Links', component: Examples.link },
+  { path: '/images', name: 'Images', component: Examples.images },
+  { path: '/inputs', name: 'Input', component: Examples.inputs },
+  { path: '/links', name: 'Links', component: Examples.links },
   { path: '/lists', name: 'Lists', component: Examples.list },
   { path: '/modals', name: 'Modals', component: Examples.modal },
   { path: '/pagination', name: 'Pagination', component: Examples.pagination },
@@ -48,12 +50,13 @@ const routes = [
   { path: '/quotes', name: 'Quotes', component: Examples.quote },
   { path: '/radios', name: 'Radios', component: Examples.radio },
   { path: '/ratings', name: 'Ratings', component: Examples.rating },
-  { path: '/selects', name: 'Selects', component: Examples.select },
-  { path: '/tables', name: 'Tables', component: Examples.table },
+  { path: '/selects', name: 'Selects', component: Examples.selects },
+  { path: '/tables', name: 'Tables', component: Examples.tables },
   { path: '/tabs', name: 'Tabs', component: Examples.tabs },
-  { path: '/texts', name: 'Texts', component: Examples.text },
+  { path: '/texts', name: 'Texts', component: Examples.texts },
   { path: '/tooltip', name: 'Tooltip', component: Examples.tooltip },
 
+  // Backstop test targets
   { path: '/default-buttons', component: DefaultButtons },
   { path: '/secondary-buttons', component: SecondaryButtons },
   { path: '/full-width-buttons', component: FullWidthButtons },
@@ -65,10 +68,15 @@ const routes = [
   { path: '/align-utilities', component: AlignUtilities },
   { path: '/visibility-utilities', component: VisibilityUtilities },
 
+  // form examples
   { path: '/address-form', component: AddressForm },
   { path: '/login-form', component: LoginForm },
   { path: '/survey-form', component: SurveyForm },
   { path: '/payment-form', component: PaymentForm },
+
+  // Nightwatch test targets
+  { path: '/e2e-1', component: e2e1 },
+  { path: '/e2e-2', component: e2e2 },
 ];
 
 export default routes;
