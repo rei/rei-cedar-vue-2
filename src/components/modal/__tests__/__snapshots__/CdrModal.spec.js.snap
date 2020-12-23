@@ -5,11 +5,11 @@ exports[`CdrModal.vue default open, scrolling 1`] = `
   class="cdr-modal"
 >
   <div
-    class="cdr-modal__outerWrap"
+    class="cdr-modal__outerWrap baz"
   >
     <div
       aria-hidden="true"
-      class="cdr-modal__overlay"
+      class="cdr-modal__overlay qux"
     />
     <div
       tabindex="0"
@@ -17,12 +17,12 @@ exports[`CdrModal.vue default open, scrolling 1`] = `
     <div
       aria-label="Label is the modal title"
       aria-modal="true"
-      class="cdr-modal__contentWrap cdr-modal__dialog"
+      class="cdr-modal__contentWrap bar"
       role="dialog"
       tabindex="-1"
     >
       <div
-        class="cdr-modal__innerWrap"
+        class="cdr-modal__innerWrap foo"
       >
         <section>
           <div
@@ -102,7 +102,7 @@ exports[`CdrModal.vue leaves optional slots empty, handleOpened 1`] = `
     <div
       aria-label="Label is the modal title"
       aria-modal="true"
-      class="cdr-modal__contentWrap cdr-modal__dialog"
+      class="cdr-modal__contentWrap"
       role="dialog"
       tabindex="-1"
     >
@@ -185,7 +185,7 @@ exports[`CdrModal.vue scrolling and fullscreen snapshot 1`] = `
     <div
       aria-label="Label is the modal title"
       aria-modal="true"
-      class="cdr-modal__contentWrap cdr-modal__dialog"
+      class="cdr-modal__contentWrap"
       role="dialog"
       tabindex="-1"
     >

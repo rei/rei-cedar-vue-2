@@ -44,6 +44,7 @@ export default {
     overlayClass: String,
     wrapperClass: String,
     contentClass: String,
+    dialogClass: String,
     animationDuration: {
       type: Number,
       default: 300,
@@ -72,9 +73,6 @@ export default {
         'aria-modal': 'true',
         id: this.id,
       };
-    },
-    dialogClass() {
-      return `${this.style['cdr-modal__dialog']}`;
     },
     verticalSpace() {
       // contentWrap vertical padding
@@ -251,7 +249,6 @@ export default {
   render() {
     const {
       onClick,
-      modalId,
       opened,
       label,
       wrapperClass,
@@ -284,7 +281,6 @@ export default {
           <div
             ref="modal"
             class={clsx(this.style['cdr-modal__contentWrap'], dialogClass)}
-            id={modalId}
             tabIndex="-1"
             role="dialog"
             aria-modal={!!opened}

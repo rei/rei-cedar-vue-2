@@ -13,7 +13,11 @@ describe('CdrModal.vue', () => {
     const wrapper = shallowMount(CdrModal, {
       propsData: {
         opened: true,
-        label: "Label is the modal title"
+        label: "Label is the modal title",
+        contentClass: "foo",
+        dialogClass: "bar",
+        wrapperClass: "baz",
+        overlayClass: "qux",
       },
       slots: {
         default: 'Sticky content',
