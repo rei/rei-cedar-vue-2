@@ -4,6 +4,7 @@ import Examples from 'componentsdir/examples';
 import KitchenSink from 'srcdir/dev/KitchenSink';
 import e2e1 from 'srcdir/dev/e2e1';
 import e2e2 from 'srcdir/dev/e2e2';
+import FallDemo from 'srcdir/dev/FallDemo';
 
 // Extra paths for backstop.
 //  These are smaller sections of larger demo pages to make screenshotting more reliable
@@ -77,6 +78,9 @@ const routes = [
   // Nightwatch test targets
   { path: '/e2e-1', component: e2e1 },
   { path: '/e2e-2', component: e2e2 },
+
+
+  { path: '/fall-demo', component: FallDemo },
 ];
 
 export default routes;
