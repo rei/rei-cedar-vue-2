@@ -57,6 +57,7 @@ export default {
       lastActive: null,
       focusHandler: null,
       reallyClosed: !this.opened,
+      isOpening: false,
       offset: null,
       headerHeight: 0,
       totalHeight: 0,
@@ -151,8 +152,8 @@ export default {
     },
     handleOpened() {
       const { activeElement } = document;
-
       this.addNoScroll();
+      this.isOpening = true;
       this.reallyClosed = false;
       this.lastActive = activeElement;
 
@@ -175,10 +176,13 @@ export default {
     handleClosed() {
       const { documentElement } = document;
       document.removeEventListener('keydown', this.keyHandler);
+      document.removeEventListener('focusin', this.focusHandler, true);
+      this.isOpening = false;
 
       this.unsubscribe = onTransitionEnd(
         this.$refs.wrapper,
         () => {
+          if (this.isOpening) return;
           this.unsubscribe();
           this.removeNoScroll();
           this.unsubscribe = null;
@@ -189,8 +193,6 @@ export default {
           // restore previous scroll position
           window.scrollTo(this.offset.x, this.offset.y);
           if (documentElement) documentElement.style.scrollBehavior = '';
-
-          document.removeEventListener('focusin', this.focusHandler, true);
 
           if (this.lastActive) this.lastActive.focus();
         },
