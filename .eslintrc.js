@@ -36,7 +36,7 @@ module.exports = {
           ['directivesdir', resolve('src/directives')],
           ['mixinsdir', resolve('src/mixins')],
         ],
-        extensions: ['.vue', '.json', '.js', '.jsx']
+        extensions: ['.vue', '.json', '.js']
       },
     },
   },
@@ -45,7 +45,6 @@ module.exports = {
     // don't require .vue extension when importing
     'import/extensions': ['error', 'always', {
       js: 'never',
-      jsx: 'never',
       vue: 'never'
     }],
     // allow optionalDependencies

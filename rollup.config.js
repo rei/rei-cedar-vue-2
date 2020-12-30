@@ -40,7 +40,7 @@ const config = [
 if (env === 'prod' && babelEnv === 'esm') {
   config.push(
     {
-      input: 'src/index.js',
+      input: 'src/index.ts',
       output: [
         {
           dir: 'dist/lib',
@@ -51,10 +51,10 @@ if (env === 'prod' && babelEnv === 'esm') {
       plugins: [
         ...plugins,
         renameExtensions({
-          include: ['**/*.js', '**/*.jsx', '**/*.scss'],
+          include: ['**/*.js', '**/*.vue', '**/*.scss'],
           mappings: {
             '.js': '.mjs',
-            '.jsx': '.mjs',
+            '.vue': '.mjs',
             '.scss': '.mjs',
           },
         }),
