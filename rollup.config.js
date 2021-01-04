@@ -50,17 +50,17 @@ if (env === 'prod' && babelEnv === 'esm') {
       ],
       plugins: [
         ...plugins,
-        renameExtensions({
-          include: ['**/*.js', '**/*.vue', '**/*.scss'],
-          mappings: {
-            '.js': '.mjs',
-            '.vue': '.mjs',
-            '.scss': '.mjs',
-          },
-        }),
+        // renameExtensions({
+        //   include: ['**/*.js', '**/*.vue', '**/*.scss'],
+        //   mappings: {
+        //     '.js': '.mjs',
+        //     '.vue': '.mjs',
+        //     '.scss': '.mjs',
+        //   },
+        // }),
       ],
       external: env === 'prod' ? externalFn : undefined,
-      preserveModules: true,
+      // preserveModules: true,
     },
   );
 }

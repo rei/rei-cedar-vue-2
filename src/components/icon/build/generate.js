@@ -27,6 +27,8 @@ Object.keys(iconData).forEach(function (name) {
   });
   const { innerHTML } = fragment;
 
+
+// TODO: .VUE3-ify!
   // create vue component
   const component = `import CdrIcon from '../CdrIcon';
 export default {

@@ -1,11 +1,16 @@
-import clsx from 'clsx';
-import propValidator from '../../utils/propValidator';
-import BuildClass from '../../mixins/buildClass';
-import style from './styles/CdrAlert.scss';
+<template>
+  <div :class="alertClass">
+    {{ this.$slots.default && this.$slots.default() }}
+  </div>
+</template>
 
-export default {
+
+<script lang="ts">
+import { defineComponent, computed } from 'vue'
+import propValidator from '../../utils/propValidator';
+
+export default defineComponent({
   name: 'CdrAlert',
-  mixins: [BuildClass],
   props: {
     type: {
       type: String,
@@ -16,24 +21,11 @@ export default {
       default: 'info',
     },
   },
-  data() {
+  setup(props) {
+    const alertClass = computed(() => props.type && `cdr-alert cdr-alert--${props.type}`)
     return {
-      style,
-    };
-  },
-  computed: {
-    baseClass() {
-      return 'cdr-alert';
-    },
-    iconClass() {
-      return this.modifyClassName(this.baseClass, this.type);
-    },
-  },
-  render() {
-    return (
-      <div class={clsx(this.style[this.baseClass], this.iconClass)}>
-        {this.$slots.default}
-      </div>
-    );
-  },
-};
+      alertClass,
+    }
+  }
+});
+</script>

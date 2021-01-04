@@ -6,6 +6,7 @@
     {{ this.$slots.default && this.$slots.default() }}
   </Component>
 </template>
+
 <script lang="ts">
 import { defineComponent, computed } from 'vue'
 
@@ -21,11 +22,11 @@ export default defineComponent({
       required: false,
     }
   },
-  setup() {
-    const modifierClass = computed(() => this.modifier && `cdr-text--${this.modifier}`)
+  setup(props) {
+    const modifierClass = computed(() => props.modifier && `cdr-text--${props.modifier}`)
     return {
       modifierClass,
-      // tag, // TODO: ???
+      tag: props.tag,
     }
   },
 });

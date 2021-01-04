@@ -1,11 +1,12 @@
 import { mount } from '@vue/test-utils';
+import { h } from 'vue';
 import CdrText from 'componentdir/text/CdrText';
 
 describe('CdrText', () => {
   test('renders correctly', () => {
     const wrapper = mount(CdrText, {
       slots: {
-        default: 'paragraph'
+        default: h('paragraph')
       }
     });
     expect(wrapper.element).toMatchSnapshot();

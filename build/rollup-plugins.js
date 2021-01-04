@@ -71,11 +71,11 @@ const plugins = [
     extensions: ['.mjs', '.js', '.vue', '.json'],
   }),
   vue({
-    style: {
-      postcssModulesOptions: {
-        generateScopedName,
-      },
-    },
+    // style: {
+    //   postcssModulesOptions: {
+    //     generateScopedName,
+    //   },
+    // },
     data: {
       // this gets prepended in all components <style>
       scss() {

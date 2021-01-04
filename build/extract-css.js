@@ -90,18 +90,18 @@ function buildCss({ srcPath, outPath, scopeClasses }) {
       console.log(chalk.red('error!', err));
     } else {
       postcssrc().then(({ plugins, options }) => {
-        if (scopeClasses) {
-          plugins.push(postcssModules({
-            generateScopedName: function (name) {
-              // scope classes for components
-              return `${name}_${packageJson.version}`;
-            },
-            getJSON: function noop() {}
-            // Passing a noop as getJSON makes it so postcss-modules does not output a JSON
-            // representation of the transformed class names into the source folder.
-            // This JSON data gets handled by the JS build and is not needed here.
-          }))
-        }
+        // if (scopeClasses) {
+        //   plugins.push(postcssModules({
+        //     generateScopedName: function (name) {
+        //       // scope classes for components
+        //       return `${name}_${packageJson.version}`;
+        //     },
+        //     getJSON: function noop() {}
+        //     // Passing a noop as getJSON makes it so postcss-modules does not output a JSON
+        //     // representation of the transformed class names into the source folder.
+        //     // This JSON data gets handled by the JS build and is not needed here.
+        //   }))
+        // }
         options.from = srcPath; // enables source maps, browserlist, etc.
         postcss(plugins)
         .process(result.css, options)

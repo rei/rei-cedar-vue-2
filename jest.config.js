@@ -24,7 +24,6 @@ const config = {
     '<rootDir>/test/e2e/',
     '<rootDir>/templates/__tests__',
     '<rootDir>/src/components/accordion',
-    '<rootDir>/src/components/alert',
     '<rootDir>/src/components/breadcrumb',
     '<rootDir>/src/components/button',
     '<rootDir>/src/components/caption',
@@ -57,8 +56,9 @@ const config = {
 
   ],
   transform: {
+    ".*\\.(vue)$": "vue-jest",
     '^.+\\.(js|vue)?$': 'babel-jest',
-    '.+\\.(css|styl|less|sass|scss)$': '<rootDir>/node_modules/jest-css-modules-transform',
+    // '.+\\.(css|styl|less|sass|scss)$': '<rootDir>/node_modules/jest-css-modules-transform',
   },
   transformIgnorePatterns: [
     '<rootDir>/node_modules/(?!(lodash-es|@rei\/cdr-tokens)/.*)', // https://stackoverflow.com/questions/42260218/jest-setup-syntaxerror-unexpected-token-export
