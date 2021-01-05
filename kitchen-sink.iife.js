@@ -26542,6 +26542,7 @@ var cedar = (function () {
         lastActive: null,
         focusHandler: null,
         reallyClosed: !this.opened,
+        isOpening: false,
         offset: null,
         headerHeight: 0,
         totalHeight: 0,
@@ -26659,6 +26660,7 @@ var cedar = (function () {
         var _document2 = document,
             activeElement = _document2.activeElement;
         this.addNoScroll();
+        this.isOpening = true;
         this.reallyClosed = false;
         this.lastActive = activeElement;
         this.$nextTick(function () {
@@ -26685,7 +26687,11 @@ var cedar = (function () {
         var _document3 = document,
             documentElement = _document3.documentElement;
         document.removeEventListener('keydown', this.keyHandler);
+        document.removeEventListener('focusin', this.focusHandler, true);
+        this.isOpening = false;
         this.unsubscribe = onTransitionEnd(this.$refs.wrapper, function () {
+          if (_this4.isOpening) return;
+
           _this4.unsubscribe();
 
           _this4.removeNoScroll();
@@ -26697,7 +26703,6 @@ var cedar = (function () {
 
           window.scrollTo(_this4.offset.x, _this4.offset.y);
           if (documentElement) documentElement.style.scrollBehavior = '';
-          document.removeEventListener('focusin', _this4.focusHandler, true);
           if (_this4.lastActive) _this4.lastActive.focus();
         }, this.animationDuration + 16);
       },
