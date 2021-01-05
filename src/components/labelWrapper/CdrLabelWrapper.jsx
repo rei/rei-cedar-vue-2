@@ -1,13 +1,12 @@
 import clsx from 'clsx';
 import style from './styles/CdrLabelWrapper.scss';
 import modifier from '../../mixins/modifier';
-import space from '../../mixins/space';
 import size from '../../mixins/size';
 import propValidator from '../../utils/propValidator';
 
 export default {
   name: 'CdrLabelWrapper',
-  mixins: [modifier, space, size],
+  mixins: [modifier, size],
   props: {
     labelClass: String,
     contentClass: String,

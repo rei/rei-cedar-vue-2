@@ -1,6 +1,5 @@
 import clsx from 'clsx';
 import modifier from '../../mixins/modifier';
-import space from '../../mixins/space';
 
 /**
  * Cedar 2 component for text styles
@@ -10,7 +9,7 @@ import space from '../../mixins/space';
  */
 export default {
   name: 'CdrText',
-  mixins: [modifier, space],
+  mixins: [modifier],
   props: {
     /** Any valid HTML tag */
     tag: {
@@ -25,7 +24,7 @@ export default {
   },
   render() {
     const Component = this.tag;
-    return (<Component class={clsx(this.baseClass, this.modifierClass, this.space)}>
+    return (<Component class={clsx(this.baseClass, this.modifierClass)}>
       {this.$slots.default}
     </Component>);
   },

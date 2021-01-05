@@ -113,9 +113,7 @@ exports[`CdrPagination renders correctly 1`] = `
     <li
       class="cdr-pagination__li--select"
     >
-      <div
-        class=""
-      >
+      <div>
         <div
           class="cdr-label-standalone"
         />
@@ -307,9 +305,7 @@ exports[`CdrPagination renders scoped slot correctly 1`] = `
     <li
       class="cdr-pagination__li--select"
     >
-      <div
-        class=""
-      >
+      <div>
         <div
           class="cdr-label-standalone"
         />

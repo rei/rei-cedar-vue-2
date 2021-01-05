@@ -16,7 +16,7 @@
         v-for="(button, index2) in section.buttons"
         :key="index2"
         :size="button.size"
-        space="cdr-mr-space-one-x"
+
         :full-width="button.fullWidth"
         :modifier="button.modifier"
         :type="button.type"

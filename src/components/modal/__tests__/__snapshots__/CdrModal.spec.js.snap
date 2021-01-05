@@ -34,30 +34,27 @@ exports[`CdrModal.vue default open, scrolling 1`] = `
               <div
                 class="cdr-modal__title"
               >
-                <cdr-text-stub
-                  modifier="heading-serif-600"
-                  space=""
-                  tag="h1"
-                >
+                <h1>
                   Label is the modal title
-                </cdr-text-stub>
+                </h1>
               </div>
-              <cdr-button-stub
+              <button
                 aria-label="Close"
-                class="cdr-modal__close-button"
-                icononly="true"
-                size="medium"
-                space=""
-                tag="button"
+                class="cdr-button cdr-button--primary cdr-button--icon-only cdr-button--with-background cdr-modal__close-button"
                 type="button"
-                withbackground="true"
               >
-                <iconxlg-stub
-                  inheritcolor="true"
-                  size="medium"
-                  space=""
-                />
-              </cdr-button-stub>
+                <svg
+                  aria-hidden="true"
+                  class="cdr-icon cdr-icon--inherit-color"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M13.415 12.006l5.295-5.292a1 1 0 00-1.414-1.415L12 10.591 6.71 5.296A1 1 0 005.295 6.71l5.292 5.295-5.295 5.292a1 1 0 101.414 1.414l5.295-5.292 5.292 5.295a1 1 0 001.414-1.414l-5.292-5.294z"
+                    role="presentation"
+                  />
+                </svg>
+              </button>
             </div>
             <div
               class="cdr-modal__text"
@@ -120,30 +117,27 @@ exports[`CdrModal.vue leaves optional slots empty, handleOpened 1`] = `
               <div
                 class="cdr-modal__title"
               >
-                <cdr-text-stub
-                  modifier="heading-serif-600"
-                  space=""
-                  tag="h1"
-                >
+                <h1>
                   Label is the modal title
-                </cdr-text-stub>
+                </h1>
               </div>
-              <cdr-button-stub
+              <button
                 aria-label="Close"
-                class="cdr-modal__close-button"
-                icononly="true"
-                size="medium"
-                space=""
-                tag="button"
+                class="cdr-button cdr-button--primary cdr-button--icon-only cdr-button--with-background cdr-modal__close-button"
                 type="button"
-                withbackground="true"
               >
-                <iconxlg-stub
-                  inheritcolor="true"
-                  size="medium"
-                  space=""
-                />
-              </cdr-button-stub>
+                <svg
+                  aria-hidden="true"
+                  class="cdr-icon cdr-icon--inherit-color"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M13.415 12.006l5.295-5.292a1 1 0 00-1.414-1.415L12 10.591 6.71 5.296A1 1 0 005.295 6.71l5.292 5.295-5.295 5.292a1 1 0 101.414 1.414l5.295-5.292 5.292 5.295a1 1 0 001.414-1.414l-5.292-5.294z"
+                    role="presentation"
+                  />
+                </svg>
+              </button>
             </div>
             <div
               class="cdr-modal__text"
@@ -202,30 +196,27 @@ exports[`CdrModal.vue scrolling and fullscreen snapshot 1`] = `
               <div
                 class="cdr-modal__title"
               >
-                <cdr-text-stub
-                  modifier="heading-serif-600"
-                  space=""
-                  tag="h1"
-                >
+                <h1>
                   Label is the modal title
-                </cdr-text-stub>
+                </h1>
               </div>
-              <cdr-button-stub
+              <button
                 aria-label="Close"
-                class="cdr-modal__close-button"
-                icononly="true"
-                size="medium"
-                space=""
-                tag="button"
+                class="cdr-button cdr-button--primary cdr-button--icon-only cdr-button--with-background cdr-modal__close-button"
                 type="button"
-                withbackground="true"
               >
-                <iconxlg-stub
-                  inheritcolor="true"
-                  size="medium"
-                  space=""
-                />
-              </cdr-button-stub>
+                <svg
+                  aria-hidden="true"
+                  class="cdr-icon cdr-icon--inherit-color"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M13.415 12.006l5.295-5.292a1 1 0 00-1.414-1.415L12 10.591 6.71 5.296A1 1 0 005.295 6.71l5.292 5.295-5.295 5.292a1 1 0 101.414 1.414l5.295-5.292 5.292 5.295a1 1 0 001.414-1.414l-5.292-5.294z"
+                    role="presentation"
+                  />
+                </svg>
+              </button>
             </div>
             <div
               class="cdr-modal__text"

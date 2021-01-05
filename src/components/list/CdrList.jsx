@@ -1,13 +1,11 @@
 import clsx from 'clsx';
 import modifier from '../../mixins/modifier';
-import space from '../../mixins/space';
 import style from './styles/CdrList.scss';
 
 export default {
   name: 'CdrList',
   mixins: [
     modifier,
-    space,
   ],
   props: {
     /**
@@ -35,7 +33,6 @@ export default {
       class={clsx(
         this.style[this.baseClass],
         this.modifierClass,
-        this.space,
       )}
     >
       {this.$slots.default}

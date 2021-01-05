@@ -21,7 +21,6 @@
 
         <cdr-list
           modifier="unordered"
-          space="cdr-mb-space-two-x"
         >
           <li>Tuckaway, spacer-mesh shoulder straps and integrated handle make carrying a breeze</li>
           <li>Back pocket holds a hydration reservoir (sold separately)</li>

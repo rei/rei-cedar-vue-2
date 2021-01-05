@@ -74,6 +74,7 @@ $modal-animation-duration: 150ms;
 
   &__title {
     flex: auto;
+    @include cdr-text-heading-serif-600;
   }
 
   &__close-button {

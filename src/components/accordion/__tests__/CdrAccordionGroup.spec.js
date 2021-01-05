@@ -11,7 +11,7 @@ const propsData = {
 
 describe('CdrAccordionGroup', () => {
   it('renders correctly', () => {
-    const wrapper = shallowMount(CdrAccordionGroup, {
+    const wrapper = mount(CdrAccordionGroup, {
       stubs: {
         'cdr-accordion': CdrAccordion,
       },

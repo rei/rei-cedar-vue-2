@@ -13,7 +13,7 @@
       modifier="subheading"
     >Content Resilience, too much content</cdr-text>
     <div class="anchor-example">
-      <cdr-link space="cdr-space-inset-one-x">
+      <cdr-link>
         Lorem ipsum dolor sit amet consectetur adipisicing elit.
         Officia inventore, quis ducimus itaque rerum id animi accusantium porro ex numquam.
         Dolorum ducimus illo doloremque ullam quas. Vel similique laudantium error!
@@ -43,7 +43,7 @@
       modifier="subheading"
     >Content Resilience, too little content</cdr-text>
     <div class="anchor-example">
-      <cdr-link space="cdr-space-inset-one-x">
+      <cdr-link>
         K
       </cdr-link>
     </div>
@@ -60,7 +60,7 @@
       :key="`link-p1-${p1}`"
       :modifier="`body-${p1}`"
     >
-      <cdr-link space="cdr-mb-space-half-x">
+      <cdr-link>
         item text
         <cdr-text
           tag="span"
@@ -76,7 +76,7 @@
       :key="`link-u1-${u1}`"
       :modifier="`utility-sans-${u1}`"
     >
-      <cdr-link space="cdr-mb-space-half-x">
+      <cdr-link>
         item text
         <cdr-text
           tag="span"
@@ -97,7 +97,6 @@
           inherit-color
           use="#mail"
           modifier="inherit-color"
-          space="cdr-mr-space-half-x"
         />
         text element wrapping link with nested icon
       </cdr-link>
@@ -105,7 +104,7 @@
 
     <cdr-list>
       <li
-        space="cdr-space-inset-one-x"
+
         v-for="u1 in utilities"
         :key="`list-link-left-icon-${u1}`"
       >
@@ -114,7 +113,6 @@
             inherit-color
             use="#mail"
             modifier="inherit-color"
-            space="cdr-mr-space-half-x"
           />
           <cdr-text
             tag="span"
@@ -125,7 +123,7 @@
         </cdr-link>
       </li>
       <li
-        space="cdr-space-inset-one-x"
+
         v-for="u1 in utilities"
         :key="`list-link-right-icon-${u1}`"
       >
@@ -140,12 +138,11 @@
             inherit-color
             use="#download"
             modifier="inherit-color"
-            space="cdr-ml-space-half-x"
           />
         </cdr-link>
       </li>
       <li
-        space="cdr-space-inset-one-x"
+
         v-for="u1 in utilities"
         :key="`list-link-both-icon-${u1}`"
       >
@@ -154,7 +151,6 @@
             inherit-color
             use="#twitter"
             modifier="inherit-color"
-            space="cdr-mr-space-half-x"
           />
           <cdr-text
             tag="span"
@@ -166,7 +162,6 @@
             inherit-color
             use="#external-link"
             modifier="inherit-color"
-            space="cdr-ml-space-half-x"
           />
         </cdr-link>
       </li>

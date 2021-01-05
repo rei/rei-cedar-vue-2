@@ -9,7 +9,7 @@
       </cdr-text>
       <cdr-button
         size="small large@xs large@sm"
-        space="cdr-mb-space-one-x cdr-mr-space-one-x@sm"
+
         :full-width="true"
       >
         Full width + responsive sizes
