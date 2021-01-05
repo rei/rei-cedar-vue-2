@@ -17184,18 +17184,6 @@ var cedar = (function () {
     }
   };
 
-  /**
-   * @mixin
-   */
-  var space = {
-    props: {
-      space: {
-        type: String,
-        default: ''
-      }
-    }
-  };
-
   function styleInject(css, ref) {
     if ( ref === void 0 ) ref = {};
     var insertAt = ref.insertAt;
@@ -17229,7 +17217,7 @@ var cedar = (function () {
 
   var CdrIcon = {
     name: 'CdrIcon',
-    mixins: [size, space],
+    mixins: [size],
     props: {
       /**
       * The href attribute passed to the use element. Will be prefixed with # automatically
@@ -17286,7 +17274,7 @@ var cedar = (function () {
       }
 
       return h("svg", helper([{}, slotDataObj, {}, defaultDataObj, {
-        "class": clsx(this.style[this.baseClass], this.sizeClass, this.inheritColorClass, this.space)
+        "class": clsx(this.style[this.baseClass], this.sizeClass, this.inheritColorClass)
       }]), [this.$slots.default, this.use ? h("use", {
         "attrs": {
           "href": this.use,
@@ -17907,7 +17895,7 @@ var cedar = (function () {
   function _objectSpread$1(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context3; forEach$2(_context3 = ownKeys$2(Object(source), true)).call(_context3, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context4; forEach$2(_context4 = ownKeys$2(Object(source))).call(_context4, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
   var CdrButton = {
     name: 'CdrButton',
-    mixins: [modifier, size, space, fullWidth],
+    mixins: [modifier, size, fullWidth],
     props: {
       /**
        * Controls render as button or anchor. {button, a}
@@ -18013,7 +18001,7 @@ var cedar = (function () {
       var h = arguments[0];
       var Component = this.tag;
       return h(Component, {
-        "class": clsx(this.style[this.baseClass], this.defaultClass, this.modifierClass, this.buttonSizeClass, this.fullWidthClass, this.iconClass, this.space),
+        "class": clsx(this.style[this.baseClass], this.defaultClass, this.modifierClass, this.buttonSizeClass, this.fullWidthClass, this.iconClass),
         "attrs": {
           "type": this.tag === 'button' ? this.type : null
         },
@@ -18236,7 +18224,7 @@ var cedar = (function () {
 
   var CdrLabelWrapper = {
     name: 'CdrLabelWrapper',
-    mixins: [modifier, space, size],
+    mixins: [modifier, size],
     props: {
       labelClass: String,
       contentClass: String,
@@ -18290,7 +18278,7 @@ var cedar = (function () {
     components: {
       CdrLabelWrapper
     },
-    mixins: [modifier, space, size],
+    mixins: [modifier, size],
     inheritAttrs: false,
     props: {
       /**
@@ -18391,7 +18379,7 @@ var cedar = (function () {
 
       var h = arguments[0];
       return h("cdr-label-wrapper", {
-        "class": clsx(this.space, this.style['cdr-checkbox']),
+        "class": this.style['cdr-checkbox'],
         "ref": "label",
         "attrs": {
           "size": this.size,
@@ -24197,7 +24185,7 @@ var cedar = (function () {
       CdrLabelStandalone,
       CdrFormError
     },
-    mixins: [size, space],
+    mixins: [size],
     inheritAttrs: false,
     props: {
       /**
@@ -24337,7 +24325,7 @@ var cedar = (function () {
               "required": this.required,
               "aria-label": this.hideLabel ? this.label : null
             }, this.$attrs),
-            "class": clsx(this.inputClass, this.sizeClass, this.space),
+            "class": clsx(this.inputClass, this.sizeClass),
             "ref": "input",
             "domProps": {
               "value": _this.value
@@ -24365,7 +24353,7 @@ var cedar = (function () {
             "required": this.required,
             "aria-label": this.hideLabel ? this.label : null
           }, this.$attrs),
-          "class": clsx(this.inputClass, this.sizeClass, this.space),
+          "class": clsx(this.inputClass, this.sizeClass),
           "ref": "input",
           "domProps": {
             "value": _this.value
@@ -24428,7 +24416,7 @@ var cedar = (function () {
   function _objectSpread$2T(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$2U(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$2U(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
   var CdrLink = {
     name: 'CdrLink',
-    mixins: [modifier, space],
+    mixins: [modifier],
     props: {
       tag: {
         type: String,
@@ -24479,7 +24467,7 @@ var cedar = (function () {
       var h = arguments[0];
       var Component = this.tag;
       return h(Component, {
-        "class": clsx(this.style[this.baseClass], this.modifierClass, this.space, this.inheritColorClass),
+        "class": clsx(this.style[this.baseClass], this.modifierClass, this.inheritColorClass),
         "attrs": {
           "target": this.target,
           "rel": this.computedRel,
@@ -24497,7 +24485,7 @@ var cedar = (function () {
 
   var CdrList = {
     name: 'CdrList',
-    mixins: [modifier, space],
+    mixins: [modifier],
     props: {
       /**
        * Tag accepts a user defined element and expects either: 'ul' = Unordered List or 'ol' = Ordered List.
@@ -24530,7 +24518,7 @@ var cedar = (function () {
       var h = arguments[0];
       var Component = this.tag;
       return h(Component, {
-        "class": clsx(this.style[this.baseClass], this.modifierClass, this.space)
+        "class": clsx(this.style[this.baseClass], this.modifierClass)
       }, [this.$slots.default]);
     }
 
@@ -26640,7 +26628,7 @@ var cedar = (function () {
     CdrTextStrongWeight: CdrTextStrongWeight
   });
 
-  var css_248z$k = ".cdr-modal_8\\.0\\.0-alpha\\.0 {\n  bottom: 0;\n  height: 100%;\n  left: 0;\n  overflow-y: scroll;\n  position: fixed;\n  right: 0;\n  top: 0;\n  visibility: visible;\n  z-index: 1000; }\n  .cdr-modal__overlay_8\\.0\\.0-alpha\\.0 {\n    background-color: rgba(244, 242, 237, 0.85);\n    -webkit-backdrop-filter: blur(1.6rem);\n            backdrop-filter: blur(1.6rem);\n    bottom: 0;\n    left: 0;\n    opacity: 1;\n    position: fixed;\n    right: 0;\n    top: 0;\n    transition: opacity 150ms;\n    z-index: 0; }\n  .cdr-modal__outerWrap_8\\.0\\.0-alpha\\.0 {\n    display: flex;\n    box-sizing: border-box;\n    min-height: 100%;\n    position: static;\n    z-index: -1; }\n  .cdr-modal__contentWrap_8\\.0\\.0-alpha\\.0 {\n    align-items: flex-start;\n    background-color: #ffffff;\n    display: flex;\n    flex-direction: column;\n    margin: auto;\n    min-height: 100%;\n    opacity: 1;\n    position: absolute;\n    top: 0;\n    left: 0;\n    right: 0;\n    transition: opacity 150ms 150ms;\n    width: 100%;\n    z-index: 0; }\n  .cdr-modal__contentWrap_8\\.0\\.0-alpha\\.0:focus {\n      outline: 0; }\n  .cdr-modal__innerWrap_8\\.0\\.0-alpha\\.0 {\n    width: 100%;\n    padding: 1.6rem; }\n  .cdr-modal__dialog_8\\.0\\.0-alpha\\.0 {\n    width: 100%; }\n  .cdr-modal__content_8\\.0\\.0-alpha\\.0 {\n    position: relative; }\n  .cdr-modal__header_8\\.0\\.0-alpha\\.0 {\n    display: flex;\n    padding-bottom: 1.6rem; }\n  .cdr-modal__title_8\\.0\\.0-alpha\\.0 {\n    flex: auto; }\n  .cdr-modal__close-button_8\\.0\\.0-alpha\\.0 {\n    align-self: flex-start;\n    border: 0.1rem solid #928b80;\n    flex: none;\n    margin-left: 0.8rem;\n    padding: 0.7rem;\n    position: relative;\n    top: -0.2rem;\n    right: -0.4rem; }\n  .cdr-modal__close-button_8\\.0\\.0-alpha\\.0:hover, .cdr-modal__close-button_8\\.0\\.0-alpha\\.0:focus {\n      border: 0.1rem solid #928b80; }\n  .cdr-modal__text_8\\.0\\.0-alpha\\.0 {\n    padding: 0;\n    position: relative; }\n  .cdr-modal__text-content_8\\.0\\.0-alpha\\.0 {\n    overflow: auto;\n    padding-right: 2.4rem;\n    position: relative; }\n  .cdr-modal__text-fade_8\\.0\\.0-alpha\\.0 {\n    position: absolute;\n    bottom: 0;\n    left: 0;\n    height: 3.2rem;\n    /* full transparency doesn't fly on safari */\n    background: linear-gradient(rgba(255, 255, 255, 0.001), white);\n    background-attachment: scroll;\n    width: 100%; }\n  @media (min-width: 768px) {\n    .cdr-modal__outerWrap_8\\.0\\.0-alpha\\.0 {\n      padding: 1.6rem; }\n    .cdr-modal__innerWrap_8\\.0\\.0-alpha\\.0 {\n      padding: 2.4rem; }\n    .cdr-modal__contentWrap_8\\.0\\.0-alpha\\.0 {\n      border-radius: 0.4rem;\n      box-shadow: 0 1.6rem 1.6rem 0 rgba(12, 11, 8, 0.2);\n      min-height: auto;\n      position: relative;\n      top: auto;\n      left: auto;\n      right: auto; }\n    .cdr-modal__dialog_8\\.0\\.0-alpha\\.0 {\n      max-width: 64rem; }\n    .cdr-modal__close-button_8\\.0\\.0-alpha\\.0 {\n      margin-left: 1.2rem;\n      right: -0.8rem;\n      top: -0.5rem; }\n    .cdr-modal__text-content_8\\.0\\.0-alpha\\.0 {\n      padding-right: 3.2rem; } }\n  .closed_8\\.0\\.0-alpha\\.0 {\n  transition: z-index 0s 300ms, visibility 0s 300ms;\n  visibility: hidden;\n  z-index: -1; }\n  .closed_8\\.0\\.0-alpha\\.0 .cdr-modal__overlay_8\\.0\\.0-alpha\\.0 {\n    opacity: 0;\n    transition: opacity 150ms 150ms; }\n  .closed_8\\.0\\.0-alpha\\.0 .cdr-modal__contentWrap_8\\.0\\.0-alpha\\.0 {\n    opacity: 0;\n    transition: opacity 150ms; }\n  .cdr-modal__noscroll_8\\.0\\.0-alpha\\.0 {\n  overflow: hidden !important;\n  position: fixed !important;\n  width: 100%; }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9jb21wb25lbnRzL21vZGFsL3N0eWxlcy9DZHJNb2RhbC5zY3NzIiwibm9kZV9tb2R1bGVzL0ByZWkvY2RyLXRva2Vucy9kaXN0L3Njc3MvY2RyLXRva2Vucy5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUlBO0VBQ0UsU0FBUztFQUNULFlBQVk7RUFDWixPQUFPO0VBQ1Asa0JBQWtCO0VBQ2xCLGVBQWU7RUFDZixRQUFRO0VBQ1IsTUFBTTtFQUNOLG1CQUFtQjtFQUNuQixhQUFhLEVBQUE7RUFFYjtJQUNFLDJDQ2t3QzBEO0lEandDMUQscUNBQXVDO1lBQXZDLDZCQUF1QztJQUN2QyxTQUFTO0lBQ1QsT0FBTztJQUNQLFVBQVU7SUFDVixlQUFlO0lBQ2YsUUFBUTtJQUNSLE1BQU07SUFDTix5QkF0QjRCO0lBdUI1QixVQUFVLEVBQUE7RUFHWjtJQUNFLGFBQWE7SUFDYixzQkFBc0I7SUFDdEIsZ0JBQWdCO0lBQ2hCLGdCQUFnQjtJQUNoQixXQUFXLEVBQUE7RUFHYjtJQUNFLHVCQUF1QjtJQUN2Qix5QkM0ckNrQztJRDNyQ2xDLGFBQWE7SUFDYixzQkFBc0I7SUFDdEIsWUFBWTtJQUNaLGdCQUFnQjtJQUNoQixVQUFVO0lBQ1Ysa0JBQWtCO0lBQ2xCLE1BQU07SUFDTixPQUFPO0lBQ1AsUUFBUTtJQUNSLCtCQTlDNEI7SUErQzVCLFdBQVc7SUFDWCxVQUFVLEVBQUE7RUFkWDtNQWdCRyxVQUFVLEVBQUE7RUFJZDtJQUNFLFdBQVc7SUFDWCxlQ2czQ29CLEVBQUE7RUQ3MkN0QjtJQUNFLFdBQVcsRUFBQTtFQUdiO0lBQ0Usa0JBQWtCLEVBQUE7RUFHcEI7SUFDRSxhQUFhO0lBQ2Isc0JDbTJDb0IsRUFBQTtFRGgyQ3RCO0lBQ0UsVUFBVSxFQUFBO0VBR1o7SUFDRSxzQkFBc0I7SUFDdEIsNEJDMm9DNEI7SUQxb0M1QixVQUFVO0lBQ1YsbUJDczFDcUI7SURyMUNyQixlQUFZO0lBQ1osa0JBQWtCO0lBQ2xCLFlBQVM7SUFDVCxjQUFXLEVBQUE7RUFSWjtNQVdHLDRCQ2tvQzBCLEVBQUE7RUQ5bkM5QjtJQUNFLFVBQVU7SUFDVixrQkFBa0IsRUFBQTtFQUdwQjtJQUNFLGNBQWM7SUFDZCxxQkN1MEMrQjtJRHQwQy9CLGtCQUFrQixFQUFBO0VBR3BCO0lBQ0Usa0JBQWtCO0lBQ2xCLFNBQVM7SUFDVCxPQUFPO0lBQ1AsY0NnMENvQjtJRC96Q3BCLDRDQUFBO0lBQ0EsOERBQXlFO0lBQ3pFLDZCQUE2QjtJQUM3QixXQUFXLEVBQUE7RUFHYjtJQUNFO01BQ0UsZUNxekNrQixFQUFBO0lEbHpDcEI7TUFDRSxlQ2t6QzZCLEVBQUE7SUQveUMvQjtNQUNFLHFCQ3V5Q29CO01EdHlDcEIsa0RDbXlDd0Q7TURseUN4RCxnQkFBZ0I7TUFDaEIsa0JBQWtCO01BQ2xCLFNBQVM7TUFDVCxVQUFVO01BQ1YsV0FBVyxFQUFBO0lBR2I7TUFDRSxnQkFBZ0IsRUFBQTtJQUdsQjtNQUNFLG1CQzh4QzRCO01EN3hDNUIsY0FBVztNQUNYLFlBQVMsRUFBQTtJQUdYO01BQ0UscUJDMnhDa0IsRUFBQSxFRDF4Q25CO0VBSUw7RUFDRSxpREFDMkM7RUFDM0Msa0JBQWtCO0VBQ2xCLFdBQVcsRUFBQTtFQUpiO0lBT0ksVUFBVTtJQUNWLCtCQTVKNEIsRUFBQTtFQW9KaEM7SUFZSSxVQUFVO0lBQ1YseUJBaks0QixFQUFBO0VBcUtoQztFQUNFLDJCQUEyQjtFQUMzQiwwQkFBMEI7RUFDMUIsV0FBVyxFQUFBIiwiZmlsZSI6IkNkck1vZGFsLnNjc3MifQ== */";
+  var css_248z$k = ".cdr-modal_8\\.0\\.0-alpha\\.0 {\n  bottom: 0;\n  height: 100%;\n  left: 0;\n  overflow-y: scroll;\n  position: fixed;\n  right: 0;\n  top: 0;\n  visibility: visible;\n  z-index: 1000; }\n  .cdr-modal__overlay_8\\.0\\.0-alpha\\.0 {\n    background-color: rgba(244, 242, 237, 0.85);\n    -webkit-backdrop-filter: blur(1.6rem);\n            backdrop-filter: blur(1.6rem);\n    bottom: 0;\n    left: 0;\n    opacity: 1;\n    position: fixed;\n    right: 0;\n    top: 0;\n    transition: opacity 150ms;\n    z-index: 0; }\n  .cdr-modal__outerWrap_8\\.0\\.0-alpha\\.0 {\n    display: flex;\n    box-sizing: border-box;\n    min-height: 100%;\n    position: static;\n    z-index: -1; }\n  .cdr-modal__contentWrap_8\\.0\\.0-alpha\\.0 {\n    align-items: flex-start;\n    background-color: #ffffff;\n    display: flex;\n    flex-direction: column;\n    margin: auto;\n    min-height: 100%;\n    opacity: 1;\n    position: absolute;\n    top: 0;\n    left: 0;\n    right: 0;\n    transition: opacity 150ms 150ms;\n    width: 100%;\n    z-index: 0; }\n  .cdr-modal__contentWrap_8\\.0\\.0-alpha\\.0:focus {\n      outline: 0; }\n  .cdr-modal__innerWrap_8\\.0\\.0-alpha\\.0 {\n    width: 100%;\n    padding: 1.6rem; }\n  .cdr-modal__dialog_8\\.0\\.0-alpha\\.0 {\n    width: 100%; }\n  .cdr-modal__content_8\\.0\\.0-alpha\\.0 {\n    position: relative; }\n  .cdr-modal__header_8\\.0\\.0-alpha\\.0 {\n    display: flex;\n    padding-bottom: 1.6rem; }\n  .cdr-modal__title_8\\.0\\.0-alpha\\.0 {\n    flex: auto;\n    font-family: Stuart, Georgia, serif;\n    font-style: normal;\n    font-weight: 500;\n    letter-spacing: -0.016rem;\n    font-size: 2.4rem;\n    line-height: 3rem; }\n  .cdr-modal__close-button_8\\.0\\.0-alpha\\.0 {\n    align-self: flex-start;\n    border: 0.1rem solid #928b80;\n    flex: none;\n    margin-left: 0.8rem;\n    padding: 0.7rem;\n    position: relative;\n    top: -0.2rem;\n    right: -0.4rem; }\n  .cdr-modal__close-button_8\\.0\\.0-alpha\\.0:hover, .cdr-modal__close-button_8\\.0\\.0-alpha\\.0:focus {\n      border: 0.1rem solid #928b80; }\n  .cdr-modal__text_8\\.0\\.0-alpha\\.0 {\n    padding: 0;\n    position: relative; }\n  .cdr-modal__text-content_8\\.0\\.0-alpha\\.0 {\n    overflow: auto;\n    padding-right: 2.4rem;\n    position: relative; }\n  .cdr-modal__text-fade_8\\.0\\.0-alpha\\.0 {\n    position: absolute;\n    bottom: 0;\n    left: 0;\n    height: 3.2rem;\n    /* full transparency doesn't fly on safari */\n    background: linear-gradient(rgba(255, 255, 255, 0.001), white);\n    background-attachment: scroll;\n    width: 100%; }\n  @media (min-width: 768px) {\n    .cdr-modal__outerWrap_8\\.0\\.0-alpha\\.0 {\n      padding: 1.6rem; }\n    .cdr-modal__innerWrap_8\\.0\\.0-alpha\\.0 {\n      padding: 2.4rem; }\n    .cdr-modal__contentWrap_8\\.0\\.0-alpha\\.0 {\n      border-radius: 0.4rem;\n      box-shadow: 0 1.6rem 1.6rem 0 rgba(12, 11, 8, 0.2);\n      min-height: auto;\n      position: relative;\n      top: auto;\n      left: auto;\n      right: auto; }\n    .cdr-modal__dialog_8\\.0\\.0-alpha\\.0 {\n      max-width: 64rem; }\n    .cdr-modal__close-button_8\\.0\\.0-alpha\\.0 {\n      margin-left: 1.2rem;\n      right: -0.8rem;\n      top: -0.5rem; }\n    .cdr-modal__text-content_8\\.0\\.0-alpha\\.0 {\n      padding-right: 3.2rem; } }\n  .closed_8\\.0\\.0-alpha\\.0 {\n  transition: z-index 0s 300ms, visibility 0s 300ms;\n  visibility: hidden;\n  z-index: -1; }\n  .closed_8\\.0\\.0-alpha\\.0 .cdr-modal__overlay_8\\.0\\.0-alpha\\.0 {\n    opacity: 0;\n    transition: opacity 150ms 150ms; }\n  .closed_8\\.0\\.0-alpha\\.0 .cdr-modal__contentWrap_8\\.0\\.0-alpha\\.0 {\n    opacity: 0;\n    transition: opacity 150ms; }\n  .cdr-modal__noscroll_8\\.0\\.0-alpha\\.0 {\n  overflow: hidden !important;\n  position: fixed !important;\n  width: 100%; }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9jb21wb25lbnRzL21vZGFsL3N0eWxlcy9DZHJNb2RhbC5zY3NzIiwibm9kZV9tb2R1bGVzL0ByZWkvY2RyLXRva2Vucy9kaXN0L3Njc3MvY2RyLXRva2Vucy5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUlBO0VBQ0UsU0FBUztFQUNULFlBQVk7RUFDWixPQUFPO0VBQ1Asa0JBQWtCO0VBQ2xCLGVBQWU7RUFDZixRQUFRO0VBQ1IsTUFBTTtFQUNOLG1CQUFtQjtFQUNuQixhQUFhLEVBQUE7RUFFYjtJQUNFLDJDQ2t3QzBEO0lEandDMUQscUNBQXVDO1lBQXZDLDZCQUF1QztJQUN2QyxTQUFTO0lBQ1QsT0FBTztJQUNQLFVBQVU7SUFDVixlQUFlO0lBQ2YsUUFBUTtJQUNSLE1BQU07SUFDTix5QkF0QjRCO0lBdUI1QixVQUFVLEVBQUE7RUFHWjtJQUNFLGFBQWE7SUFDYixzQkFBc0I7SUFDdEIsZ0JBQWdCO0lBQ2hCLGdCQUFnQjtJQUNoQixXQUFXLEVBQUE7RUFHYjtJQUNFLHVCQUF1QjtJQUN2Qix5QkM0ckNrQztJRDNyQ2xDLGFBQWE7SUFDYixzQkFBc0I7SUFDdEIsWUFBWTtJQUNaLGdCQUFnQjtJQUNoQixVQUFVO0lBQ1Ysa0JBQWtCO0lBQ2xCLE1BQU07SUFDTixPQUFPO0lBQ1AsUUFBUTtJQUNSLCtCQTlDNEI7SUErQzVCLFdBQVc7SUFDWCxVQUFVLEVBQUE7RUFkWDtNQWdCRyxVQUFVLEVBQUE7RUFJZDtJQUNFLFdBQVc7SUFDWCxlQ2czQ29CLEVBQUE7RUQ3MkN0QjtJQUNFLFdBQVcsRUFBQTtFQUdiO0lBQ0Usa0JBQWtCLEVBQUE7RUFHcEI7SUFDRSxhQUFhO0lBQ2Isc0JDbTJDb0IsRUFBQTtFRGgyQ3RCO0lBQ0UsVUFBVTtJQzhPWixtQ0FBbUM7SUFDbkMsa0JBQWtCO0lBQ2xCLGdCQUFnQjtJQUNoQix5QkFBdUI7SUFDdkIsaUJBQWlCO0lBQ2pCLGlCQUFpQixFQUFBO0VEL09qQjtJQUNFLHNCQUFzQjtJQUN0Qiw0QkMwb0M0QjtJRHpvQzVCLFVBQVU7SUFDVixtQkNxMUNxQjtJRHAxQ3JCLGVBQVk7SUFDWixrQkFBa0I7SUFDbEIsWUFBUztJQUNULGNBQVcsRUFBQTtFQVJaO01BV0csNEJDaW9DMEIsRUFBQTtFRDduQzlCO0lBQ0UsVUFBVTtJQUNWLGtCQUFrQixFQUFBO0VBR3BCO0lBQ0UsY0FBYztJQUNkLHFCQ3MwQytCO0lEcjBDL0Isa0JBQWtCLEVBQUE7RUFHcEI7SUFDRSxrQkFBa0I7SUFDbEIsU0FBUztJQUNULE9BQU87SUFDUCxjQyt6Q29CO0lEOXpDcEIsNENBQUE7SUFDQSw4REFBeUU7SUFDekUsNkJBQTZCO0lBQzdCLFdBQVcsRUFBQTtFQUdiO0lBQ0U7TUFDRSxlQ296Q2tCLEVBQUE7SURqekNwQjtNQUNFLGVDaXpDNkIsRUFBQTtJRDl5Qy9CO01BQ0UscUJDc3lDb0I7TURyeUNwQixrRENreUN3RDtNRGp5Q3hELGdCQUFnQjtNQUNoQixrQkFBa0I7TUFDbEIsU0FBUztNQUNULFVBQVU7TUFDVixXQUFXLEVBQUE7SUFHYjtNQUNFLGdCQUFnQixFQUFBO0lBR2xCO01BQ0UsbUJDNnhDNEI7TUQ1eEM1QixjQUFXO01BQ1gsWUFBUyxFQUFBO0lBR1g7TUFDRSxxQkMweENrQixFQUFBLEVEenhDbkI7RUFJTDtFQUNFLGlEQUMyQztFQUMzQyxrQkFBa0I7RUFDbEIsV0FBVyxFQUFBO0VBSmI7SUFPSSxVQUFVO0lBQ1YsK0JBN0o0QixFQUFBO0VBcUpoQztJQVlJLFVBQVU7SUFDVix5QkFsSzRCLEVBQUE7RUFzS2hDO0VBQ0UsMkJBQTJCO0VBQzNCLDBCQUEwQjtFQUMxQixXQUFXLEVBQUEiLCJmaWxlIjoiQ2RyTW9kYWwuc2NzcyJ9 */";
   var style$m = {"cdr-modal":"cdr-modal_8.0.0-alpha.0","cdr-modal__overlay":"cdr-modal__overlay_8.0.0-alpha.0","cdr-modal__outerWrap":"cdr-modal__outerWrap_8.0.0-alpha.0","cdr-modal__contentWrap":"cdr-modal__contentWrap_8.0.0-alpha.0","cdr-modal__innerWrap":"cdr-modal__innerWrap_8.0.0-alpha.0","cdr-modal__dialog":"cdr-modal__dialog_8.0.0-alpha.0","cdr-modal__content":"cdr-modal__content_8.0.0-alpha.0","cdr-modal__header":"cdr-modal__header_8.0.0-alpha.0","cdr-modal__title":"cdr-modal__title_8.0.0-alpha.0","cdr-modal__close-button":"cdr-modal__close-button_8.0.0-alpha.0","cdr-modal__text":"cdr-modal__text_8.0.0-alpha.0","cdr-modal__text-content":"cdr-modal__text-content_8.0.0-alpha.0","cdr-modal__text-fade":"cdr-modal__text-fade_8.0.0-alpha.0","closed":"closed_8.0.0-alpha.0","cdr-modal__noscroll":"cdr-modal__noscroll_8.0.0-alpha.0"};
   styleInject(css_248z$k);
 
@@ -26685,40 +26673,6 @@ var cedar = (function () {
     };
   });
 
-  /**
-   * Cedar 2 component for text styles
-   * Accepts typography modifiers.
-   * @version 0.0.1
-   * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
-   */
-
-  var CdrText = {
-    name: 'CdrText',
-    mixins: [modifier, space],
-    props: {
-      /** Any valid HTML tag */
-      tag: {
-        type: String,
-        default: 'p'
-      }
-    },
-    computed: {
-      baseClass() {
-        return 'cdr-text';
-      }
-
-    },
-
-    render() {
-      var h = arguments[0];
-      var Component = this.tag;
-      return h(Component, {
-        "class": clsx(this.baseClass, this.modifierClass, this.space)
-      }, [this.$slots.default]);
-    }
-
-  };
-
   function ownKeys$2V(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$2U(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context3; forEach$2(_context3 = ownKeys$2V(Object(source), true)).call(_context3, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context4; forEach$2(_context4 = ownKeys$2V(Object(source))).call(_context4, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
@@ -26726,8 +26680,7 @@ var cedar = (function () {
     name: 'CdrModal',
     components: {
       CdrButton,
-      IconXLg,
-      CdrText
+      IconXLg
     },
     props: {
       opened: {
@@ -27033,12 +26986,7 @@ var cedar = (function () {
         "ref": "header"
       }, [h("div", {
         "class": this.style['cdr-modal__title']
-      }, [this.showTitle && this.$slots.title, this.showTitle && !this.$slots.title && h("cdr-text", {
-        "attrs": {
-          "tag": "h1",
-          "modifier": "heading-serif-600"
-        }
-      }, [this.label])]), h("cdr-button", {
+      }, [this.showTitle && this.$slots.title, this.showTitle && !this.$slots.title && h("h1", [this.label])]), h("cdr-button", {
         "class": this.style['cdr-modal__close-button'],
         "attrs": {
           "icon-only": true,
@@ -28076,7 +28024,7 @@ var cedar = (function () {
       CdrLabelStandalone,
       CdrFormError
     },
-    mixins: [size, space],
+    mixins: [size],
     inheritAttrs: false,
     model: {
       prop: 'value',
@@ -28281,9 +28229,7 @@ var cedar = (function () {
 
     render() {
       var h = arguments[0];
-      return h("div", {
-        "class": this.space
-      }, [h("cdr-label-standalone", {
+      return h("div", [h("cdr-label-standalone", {
         "attrs": {
           "for-id": "".concat(this.selectId),
           "label": this.label,
@@ -29244,6 +29190,40 @@ var cedar = (function () {
 
   };
 
+  /**
+   * Cedar 2 component for text styles
+   * Accepts typography modifiers.
+   * @version 0.0.1
+   * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
+   */
+
+  var CdrText = {
+    name: 'CdrText',
+    mixins: [modifier],
+    props: {
+      /** Any valid HTML tag */
+      tag: {
+        type: String,
+        default: 'p'
+      }
+    },
+    computed: {
+      baseClass() {
+        return 'cdr-text';
+      }
+
+    },
+
+    render() {
+      var h = arguments[0];
+      var Component = this.tag;
+      return h(Component, {
+        "class": clsx(this.baseClass, this.modifierClass)
+      }, [this.$slots.default]);
+    }
+
+  };
+
   var css_248z$p = "/* ==========================================================================\n  # Cdrquote\n\n  TOC:\n\n    :Base - Cdrquote\n========================================================================== */\n.cdr-quote_8\\.0\\.0-alpha\\.0 {\n  margin: 0;\n  padding: 2.4rem 1.6rem;\n  line-height: 1; }\n.cdr-quote_8\\.0\\.0-alpha\\.0 cite {\n    font-family: Graphik, \"Helvetica Neue\", sans-serif;\n    font-style: normal;\n    font-weight: 400;\n    letter-spacing: -0.008rem;\n    font-size: 1.2rem;\n    line-height: 1.6rem;\n    color: rgba(66, 59, 47, 0.75);\n    display: block; }\n.cdr-quote__summary_8\\.0\\.0-alpha\\.0 {\n    font-family: Stuart, Georgia, serif;\n    font-weight: 400;\n    font-size: 2.4rem;\n    line-height: 3.6rem;\n    letter-spacing: -.08rem;\n    color: rgba(12, 11, 8, 0.75);\n    margin: 0; }\n@media (min-width: 0) and (max-width: 767px) {\n      .cdr-quote__summary_8\\.0\\.0-alpha\\.0 {\n        font-size: 1.8rem;\n        line-height: 2.8rem; } }\n.cdr-quote__summary_8\\.0\\.0-alpha\\.0 + cite {\n      padding-top: 1.6rem; }\n.cdr-quote--pull_8\\.0\\.0-alpha\\.0 {\n    border-style: solid;\n    border-color: #dcd6cb; }\n@media (min-width: 0) {\n      .cdr-quote--pull_8\\.0\\.0-alpha\\.0 {\n        border-width: 0 0 0.1rem 0;\n        padding: 2.4rem 1.6rem;\n        margin: 0 0 1.6rem; } }\n@media (min-width: 768px) {\n      .cdr-quote--pull_8\\.0\\.0-alpha\\.0 {\n        border-width: 0 0 0 0.1rem;\n        padding: 0.8rem 1.6rem 0.8rem 3.2rem;\n        margin: 1.6rem 0; } }\n.cdr-quote--pull_8\\.0\\.0-alpha\\.0 .cdr-quote__summary_8\\.0\\.0-alpha\\.0 {\n      font-weight: 600; }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9jb21wb25lbnRzL3F1b3RlL3N0eWxlcy9DZHJRdW90ZS5zY3NzIiwiQ2RyUXVvdGUuc2NzcyIsInNyYy9jb21wb25lbnRzL3F1b3RlL3N0eWxlcy92YXJzL0NkclF1b3RlLnZhcnMuc2NzcyIsIm5vZGVfbW9kdWxlcy9AcmVpL2Nkci10b2tlbnMvZGlzdC9zY3NzL2Nkci10b2tlbnMuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFHQTs7Ozs7OzRFQ0c0RTtBREs1RTtFRVZFLFNBQVM7RUFDVCxzQkNtK0MyQztFRGwrQzNDLGNBQWMsRUFBQTtBRlFoQjtJR2tuQkUsa0RBQWtEO0lBQ2xELGtCQUFrQjtJQUNsQixnQkFBZ0I7SUFDaEIseUJBQXVCO0lBQ3ZCLGlCQUFpQjtJQUNqQixtQkFBbUI7SUQ1bkJqQiw2QkNxcUM2QztJRHBxQzdDLGNBQWMsRUFBQTtBRk9oQjtJRUZBLG1DQ3UrQzRDO0lEdCtDNUMsZ0JBQWdCO0lBQ2hCLGlCQUFlO0lBQ2YsbUJBQWlCO0lBQ2pCLHVCQUF1QjtJQUN2Qiw0QkN5cEM0QztJRHhwQzVDLFNBQVMsRUFBQTtBQzY3RFQ7TUhqOERBO1FFT0UsaUJBQWU7UUFDZixtQkFBaUIsRUFBQSxFRk5sQjtBQUZBO01FWUMsbUJDZzVDb0IsRUFBQTtBSHg1Q3RCO0lFYUEsbUJBQW1CO0lBQ25CLHFCQ212Q2dDLEVBQUE7QUE2dkJoQztNSDkvREE7UUVpQkUsMEJBQXVCO1FBQ3ZCLHNCQ2k4Q3lDO1FEaDhDekMsa0JDcTRDb0IsRUFBQSxFSG41Q3JCO0FHZ2dFRDtNSHJnRUE7UUV1QkUsMEJBQXVCO1FBQ3ZCLG9DQ2s0Q29CO1FEajRDcEIsZ0JBQTBCLEVBQUEsRUZwQjNCO0FBTEE7TUU4QkQsZ0JBQWdCLEVBQUEiLCJmaWxlIjoiQ2RyUXVvdGUuc2NzcyJ9 */";
   var style$s = {"cdr-quote":"cdr-quote_8.0.0-alpha.0","cdr-quote__summary":"cdr-quote__summary_8.0.0-alpha.0","cdr-quote--pull":"cdr-quote--pull_8.0.0-alpha.0"};
   styleInject(css_248z$p);
@@ -29253,7 +29233,7 @@ var cedar = (function () {
     components: {
       CdrText
     },
-    mixins: [modifier, space],
+    mixins: [modifier],
     props: {
       tag: {
         type: String,
@@ -29307,7 +29287,7 @@ var cedar = (function () {
       var h = arguments[0];
       var Component = this.tag;
       return h(Component, {
-        "class": clsx(this.style[this.baseClass], this.modifierClass, this.space)
+        "class": clsx(this.style[this.baseClass], this.modifierClass)
       }, [this.summaryBlock, this.$slots.default, this.citationBlock]);
     }
 
@@ -29325,7 +29305,7 @@ var cedar = (function () {
     components: {
       CdrLabelWrapper
     },
-    mixins: [modifier, space, size],
+    mixins: [modifier, size],
     inheritAttrs: false,
     props: {
       /**
@@ -29417,7 +29397,7 @@ var cedar = (function () {
 
       var h = arguments[0];
       return h("cdr-label-wrapper", {
-        "class": clsx(this.space, this.style['cdr-radio']),
+        "class": this.style['cdr-radio'],
         "ref": "label",
         "attrs": {
           "size": this.size,
@@ -29507,7 +29487,7 @@ var cedar = (function () {
 
   var CdrRating = {
     name: 'CdrRating',
-    mixins: [size, space],
+    mixins: [size],
     props: {
       /**
        * Rating value (out of 5)
@@ -29659,7 +29639,7 @@ var cedar = (function () {
         "attrs": {
           "href": this.href
         },
-        "class": clsx(this.style[this.baseClass], this.sizeClass, this.space, this.href ? this.style['cdr-rating--linked'] : '')
+        "class": clsx(this.style[this.baseClass], this.sizeClass, this.href ? this.style['cdr-rating--linked'] : '')
       }, [h("div", {
         "class": this.style['cdr-rating__ratings']
       }, [map$2(_context3 = toConsumableArray(keys$8(_context4 = Array(this.whole)).call(_context4))).call(_context3, function (n) {
@@ -32020,7 +32000,6 @@ var cedar = (function () {
                     key: index2,
                     attrs: {
                       size: button.size,
-                      space: button.space,
                       "full-width": button.fullWidth,
                       type: button.type,
                       disabled: button.disabled
@@ -32225,7 +32204,6 @@ var cedar = (function () {
                     key: index2,
                     attrs: {
                       size: button.size,
-                      space: "cdr-mr-space-one-x",
                       "full-width": button.fullWidth,
                       modifier: button.modifier,
                       type: button.type,
@@ -32549,7 +32527,6 @@ var cedar = (function () {
                   key: index2,
                   attrs: {
                     size: button.size,
-                    space: button.space,
                     "full-width": button.fullWidth,
                     disabled: button.disabled,
                     modifier: button.modifier,
@@ -32630,12 +32607,7 @@ var cedar = (function () {
           _vm._v(" "),
           _c(
             "cdr-button",
-            {
-              attrs: {
-                size: "large",
-                space: "cdr-mr-space-one-x cdr-mb-space-one-x"
-              }
-            },
+            { attrs: { size: "large" } },
             [
               _c("icon-check-lg", {
                 attrs: { slot: "icon-left", "inherit-color": "" },
@@ -32648,14 +32620,7 @@ var cedar = (function () {
           _vm._v(" "),
           _c(
             "cdr-button",
-            {
-              attrs: {
-                tag: "a",
-                href: "https://rei.com",
-                size: "large",
-                space: "cdr-mr-space-one-x cdr-mb-space-one-x"
-              }
-            },
+            { attrs: { tag: "a", href: "https://rei.com", size: "large" } },
             [
               _c("icon-check-lg", {
                 attrs: { slot: "icon-left", "inherit-color": "" },
@@ -32668,12 +32633,7 @@ var cedar = (function () {
           _vm._v(" "),
           _c(
             "cdr-button",
-            {
-              attrs: {
-                size: "medium",
-                space: "cdr-mr-space-one-x cdr-mb-space-one-x"
-              }
-            },
+            { attrs: { size: "medium" } },
             [
               _c("icon-check-lg", {
                 attrs: { slot: "icon-left", "inherit-color": "" },
@@ -32686,12 +32646,7 @@ var cedar = (function () {
           _vm._v(" "),
           _c(
             "cdr-button",
-            {
-              attrs: {
-                size: "small",
-                space: "cdr-mr-space-one-x cdr-mb-space-one-x"
-              }
-            },
+            { attrs: { size: "small" } },
             [
               _c("icon-check-lg", {
                 attrs: { slot: "icon-left", "inherit-color": "", size: "small" },
@@ -32704,12 +32659,7 @@ var cedar = (function () {
           _vm._v(" "),
           _c(
             "cdr-button",
-            {
-              attrs: {
-                size: "small",
-                space: "cdr-mr-space-one-x cdr-mb-space-one-x"
-              }
-            },
+            { attrs: { size: "small" } },
             [
               _c("icon-check-sm", {
                 attrs: { slot: "icon-left", "inherit-color": "" },
@@ -32724,12 +32674,7 @@ var cedar = (function () {
           _vm._v(" "),
           _c(
             "cdr-button",
-            {
-              attrs: {
-                size: "large",
-                space: "cdr-mr-space-one-x cdr-mb-space-one-x"
-              }
-            },
+            { attrs: { size: "large" } },
             [
               _c("icon-check-lg", {
                 attrs: { slot: "icon-right", "inherit-color": "" },
@@ -32742,14 +32687,7 @@ var cedar = (function () {
           _vm._v(" "),
           _c(
             "cdr-button",
-            {
-              attrs: {
-                tag: "a",
-                href: "https://rei.com",
-                size: "large",
-                space: "cdr-mr-space-one-x cdr-mb-space-one-x"
-              }
-            },
+            { attrs: { tag: "a", href: "https://rei.com", size: "large" } },
             [
               _c("icon-check-lg", {
                 attrs: { slot: "icon-right", "inherit-color": "" },
@@ -32762,12 +32700,7 @@ var cedar = (function () {
           _vm._v(" "),
           _c(
             "cdr-button",
-            {
-              attrs: {
-                size: "medium",
-                space: "cdr-mr-space-one-x cdr-mb-space-one-x"
-              }
-            },
+            { attrs: { size: "medium" } },
             [
               _c("icon-check-lg", {
                 attrs: { slot: "icon-right", "inherit-color": "" },
@@ -32780,12 +32713,7 @@ var cedar = (function () {
           _vm._v(" "),
           _c(
             "cdr-button",
-            {
-              attrs: {
-                size: "small",
-                space: "cdr-mr-space-one-x cdr-mb-space-one-x"
-              }
-            },
+            { attrs: { size: "small" } },
             [
               _c("icon-check-lg", {
                 attrs: { slot: "icon-right", "inherit-color": "", size: "small" },
@@ -32798,12 +32726,7 @@ var cedar = (function () {
           _vm._v(" "),
           _c(
             "cdr-button",
-            {
-              attrs: {
-                size: "small",
-                space: "cdr-mr-space-one-x cdr-mb-space-one-x"
-              }
-            },
+            { attrs: { size: "small" } },
             [
               _c("icon-check-sm", {
                 attrs: { slot: "icon-right", "inherit-color": "" },
@@ -32818,12 +32741,7 @@ var cedar = (function () {
           _vm._v(" "),
           _c(
             "cdr-button",
-            {
-              attrs: {
-                size: "large",
-                space: "cdr-mr-space-one-x cdr-mb-space-one-x"
-              }
-            },
+            { attrs: { size: "large" } },
             [
               _c("icon-check-lg", {
                 attrs: { slot: "icon-left", "inherit-color": "" },
@@ -32836,12 +32754,7 @@ var cedar = (function () {
           _vm._v(" "),
           _c(
             "cdr-button",
-            {
-              attrs: {
-                size: "large",
-                space: "cdr-mr-space-one-x cdr-mb-space-one-x"
-              }
-            },
+            { attrs: { size: "large" } },
             [
               _c("icon-check-lg", {
                 attrs: { slot: "icon-right", "inherit-color": "" },
@@ -32865,13 +32778,7 @@ var cedar = (function () {
           _vm._v(" "),
           _c(
             "cdr-button",
-            {
-              attrs: {
-                size: "large",
-                space: "cdr-mr-space-one-x",
-                modifier: "secondary"
-              }
-            },
+            { attrs: { size: "large", modifier: "secondary" } },
             [
               _c("cdr-icon", {
                 attrs: { slot: "icon", "inherit-color": "", use: "#download" },
@@ -32884,14 +32791,7 @@ var cedar = (function () {
           _vm._v(" "),
           _c(
             "cdr-button",
-            {
-              attrs: {
-                size: "large",
-                space: "cdr-mr-space-one-x",
-                modifier: "secondary",
-                disabled: ""
-              }
-            },
+            { attrs: { size: "large", modifier: "secondary", disabled: "" } },
             [
               _c("cdr-icon", {
                 attrs: { slot: "icon", "inherit-color": "", use: "#download" },
@@ -32904,13 +32804,7 @@ var cedar = (function () {
           _vm._v(" "),
           _c(
             "cdr-button",
-            {
-              attrs: {
-                size: "medium",
-                space: "cdr-mr-space-one-x",
-                modifier: "secondary"
-              }
-            },
+            { attrs: { size: "medium", modifier: "secondary" } },
             [
               _c("cdr-icon", {
                 attrs: { slot: "icon", "inherit-color": "", use: "#twitter" },
@@ -33331,13 +33225,7 @@ var cedar = (function () {
           _vm._v(" "),
           _c(
             "cdr-button",
-            {
-              attrs: {
-                size: "small large@xs large@sm",
-                space: "cdr-mb-space-one-x cdr-mr-space-one-x@sm",
-                "full-width": true
-              }
-            },
+            { attrs: { size: "small large@xs large@sm", "full-width": true } },
             [_vm._v("\n      Full width + responsive sizes\n    ")]
           ),
           _vm._v(" "),
@@ -41505,16 +41393,9 @@ var cedar = (function () {
           [_vm._v("Link, href set, spacing class applied")]
         ),
         _vm._v(" "),
-        _c(
-          "cdr-link",
-          {
-            attrs: {
-              href: "https://www.rei.com/",
-              space: "cdr-space-inset-one-x"
-            }
-          },
-          [_vm._v("\n    REI.com\n  ")]
-        ),
+        _c("cdr-link", { attrs: { href: "https://www.rei.com/" } }, [
+          _vm._v("\n    REI.com\n  ")
+        ]),
         _vm._v(" "),
         _c(
           "cdr-text",
@@ -41537,7 +41418,6 @@ var cedar = (function () {
           {
             attrs: {
               modifier: "standalone",
-              space: "cdr-space-inset-one-x",
               "data-backstop": "cdr-link--standalone"
             }
           },
@@ -41550,7 +41430,7 @@ var cedar = (function () {
           [_vm._v("Links, with icon")]
         ),
         _vm._v(" "),
-        _c("cdr-list", { attrs: { space: "cdr-space-inset-one-x" } }, [
+        _c("cdr-list", [
           _c(
             "li",
             [
@@ -41561,8 +41441,7 @@ var cedar = (function () {
                     attrs: {
                       "inherit-color": "",
                       use: "#mail",
-                      modifier: "inherit-color",
-                      space: "cdr-mr-space-half-x"
+                      modifier: "inherit-color"
                     }
                   }),
                   _vm._v("\n        Icon on the left\n      ")
@@ -41584,8 +41463,7 @@ var cedar = (function () {
                     attrs: {
                       "inherit-color": "",
                       use: "#download",
-                      modifier: "inherit-color",
-                      space: "cdr-ml-space-half-x"
+                      modifier: "inherit-color"
                     }
                   })
                 ],
@@ -41605,8 +41483,7 @@ var cedar = (function () {
                     attrs: {
                       "inherit-color": "",
                       use: "#twitter",
-                      modifier: "inherit-color",
-                      space: "cdr-mr-space-half-x"
+                      modifier: "inherit-color"
                     }
                   }),
                   _vm._v("\n        Icons on both sides\n        "),
@@ -41614,8 +41491,7 @@ var cedar = (function () {
                     attrs: {
                       "inherit-color": "",
                       use: "#external-link",
-                      modifier: "inherit-color",
-                      space: "cdr-ml-space-half-x"
+                      modifier: "inherit-color"
                     }
                   })
                 ],
@@ -41650,8 +41526,7 @@ var cedar = (function () {
                   attrs: {
                     "inherit-color": "",
                     use: "#mail",
-                    modifier: "inherit-color",
-                    space: "cdr-mr-space-half-x"
+                    modifier: "inherit-color"
                   }
                 }),
                 _vm._v("\n      cdr-link icon inherit\n    ")
@@ -41704,7 +41579,7 @@ var cedar = (function () {
     /* style */
     const __vue_inject_styles__$s = function (inject) {
       if (!inject) return
-      inject("data-v-cf1123f0_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/** normalize line-height for consistent testing because links inherit it */\n.link-examples {\n  line-height: 1;\n}\n.button-padding-override {\n  padding-left: 0;\n  padding-right: 0;\n}\n\n", map: {"version":3,"sources":["/home/runner/work/rei-cedar/rei-cedar/src/components/link/examples/demo/Standard.vue"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AA0KA,2EAAA;AAEA;EACA,cAAA;AACA;AAEA;EACA,eAAA;EACA,gBAAA;AACA","file":"Standard.vue","sourcesContent":["<template>\n  <!-- eslint-disable max-len -->\n  <div\n    class=\"link-examples\"\n    data-backstop=\"all-links\"\n  >\n    <cdr-text\n      tag=\"h2\"\n      modifier=\"heading-sans-400 heading-sans-500@md heading-sans-500@lg\"\n    >\n      Links\n    </cdr-text>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-300\"\n    >\n      Default Link, No props\n    </cdr-text>\n    <div class=\"anchor-example\">\n      <cdr-link data-backstop=\"cdr-link\">\n        REI.com\n      </cdr-link>\n    </div>\n    <div class=\"anchor-example\">\n      <cdr-link />\n    </div>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-300\"\n    >Link, href set, spacing class applied</cdr-text>\n    <cdr-link\n      href=\"https://www.rei.com/\"\n      space=\"cdr-space-inset-one-x\"\n    >\n      REI.com\n    </cdr-link>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-300\"\n    >Link, href set</cdr-text>\n    <cdr-link\n      href=\"https://www.example.com/\"\n    >\n      example.com\n    </cdr-link>\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-300\"\n    >Standalone Link (No underline)</cdr-text>\n    <cdr-link\n      modifier=\"standalone\"\n      space=\"cdr-space-inset-one-x\"\n      data-backstop=\"cdr-link--standalone\"\n    >\n      REI.com\n    </cdr-link>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-300\"\n    >Links, with icon</cdr-text>\n\n    <cdr-list\n      space=\"cdr-space-inset-one-x\"\n    >\n      <li>\n        <cdr-link>\n          <cdr-icon\n            inherit-color\n            use=\"#mail\"\n            modifier=\"inherit-color\"\n            space=\"cdr-mr-space-half-x\"\n          />\n          Icon on the left\n        </cdr-link>\n      </li>\n      <li>\n        <cdr-link>\n          Icon on the right\n          <cdr-icon\n            inherit-color\n            use=\"#download\"\n            modifier=\"inherit-color\"\n            space=\"cdr-ml-space-half-x\"\n          />\n        </cdr-link>\n      </li>\n      <li>\n        <cdr-link>\n          <cdr-icon\n            inherit-color\n            use=\"#twitter\"\n            modifier=\"inherit-color\"\n            space=\"cdr-mr-space-half-x\"\n          />\n          Icons on both sides\n          <cdr-icon\n            inherit-color\n            use=\"#external-link\"\n            modifier=\"inherit-color\"\n            space=\"cdr-ml-space-half-x\"\n          />\n        </cdr-link>\n      </li>\n    </cdr-list>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-300\"\n    >Links, with inherited color</cdr-text>\n    <div style=\"color: darkgreen; fill: darkgreen;\">\n      <cdr-link\n        inherit-color\n        href=\"rei.com\"\n      >\n        inherit-color plain example\n      </cdr-link>\n      <br>\n      <cdr-link inherit-color>\n        <cdr-icon\n          inherit-color\n          use=\"#mail\"\n          modifier=\"inherit-color\"\n          space=\"cdr-mr-space-half-x\"\n        />\n        cdr-link icon inherit\n      </cdr-link>\n    </div>\n    <br><br>\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-500\"\n    >Button Links</cdr-text>\n\n    <cdr-text\n      tag=\"h4\"\n      modifier=\"subheading-sans-300\"\n    >Link using a &lt;button&gt; element inline</cdr-text>\n    <div class=\"anchor-example cdr-py-space-one-x\">\n      hey there <cdr-link\n        tag=\"button\"\n        data-backstop=\"cdr-link--button\"\n        @click=\"clicked\"\n      >I'm a button!</cdr-link> wow!\n    </div>\n\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\nexport default {\n  name: 'StandardLinks',\n  components: {\n    ...Components,\n  },\n  methods: {\n    clicked() {\n      // eslint-disable-next-line no-console\n      console.log('link clicked!');\n    },\n  },\n};\n</script>\n\n<style>\n/** normalize line-height for consistent testing because links inherit it */\n\n.link-examples {\n  line-height: 1;\n}\n\n.button-padding-override {\n  padding-left: 0;\n  padding-right: 0;\n}\n\n</style>\n"]}, media: undefined });
+      inject("data-v-7364df1a_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/** normalize line-height for consistent testing because links inherit it */\n.link-examples {\n  line-height: 1;\n}\n.button-padding-override {\n  padding-left: 0;\n  padding-right: 0;\n}\n\n", map: {"version":3,"sources":["/home/runner/work/rei-cedar/rei-cedar/src/components/link/examples/demo/Standard.vue"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAkKA,2EAAA;AAEA;EACA,cAAA;AACA;AAEA;EACA,eAAA;EACA,gBAAA;AACA","file":"Standard.vue","sourcesContent":["<template>\n  <!-- eslint-disable max-len -->\n  <div\n    class=\"link-examples\"\n    data-backstop=\"all-links\"\n  >\n    <cdr-text\n      tag=\"h2\"\n      modifier=\"heading-sans-400 heading-sans-500@md heading-sans-500@lg\"\n    >\n      Links\n    </cdr-text>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-300\"\n    >\n      Default Link, No props\n    </cdr-text>\n    <div class=\"anchor-example\">\n      <cdr-link data-backstop=\"cdr-link\">\n        REI.com\n      </cdr-link>\n    </div>\n    <div class=\"anchor-example\">\n      <cdr-link />\n    </div>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-300\"\n    >Link, href set, spacing class applied</cdr-text>\n    <cdr-link\n      href=\"https://www.rei.com/\"\n    >\n      REI.com\n    </cdr-link>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-300\"\n    >Link, href set</cdr-text>\n    <cdr-link\n      href=\"https://www.example.com/\"\n    >\n      example.com\n    </cdr-link>\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-300\"\n    >Standalone Link (No underline)</cdr-text>\n    <cdr-link\n      modifier=\"standalone\"\n\n      data-backstop=\"cdr-link--standalone\"\n    >\n      REI.com\n    </cdr-link>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-300\"\n    >Links, with icon</cdr-text>\n\n    <cdr-list>\n      <li>\n        <cdr-link>\n          <cdr-icon\n            inherit-color\n            use=\"#mail\"\n            modifier=\"inherit-color\"\n          />\n          Icon on the left\n        </cdr-link>\n      </li>\n      <li>\n        <cdr-link>\n          Icon on the right\n          <cdr-icon\n            inherit-color\n            use=\"#download\"\n            modifier=\"inherit-color\"\n          />\n        </cdr-link>\n      </li>\n      <li>\n        <cdr-link>\n          <cdr-icon\n            inherit-color\n            use=\"#twitter\"\n            modifier=\"inherit-color\"\n          />\n          Icons on both sides\n          <cdr-icon\n            inherit-color\n            use=\"#external-link\"\n            modifier=\"inherit-color\"\n          />\n        </cdr-link>\n      </li>\n    </cdr-list>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-300\"\n    >Links, with inherited color</cdr-text>\n    <div style=\"color: darkgreen; fill: darkgreen;\">\n      <cdr-link\n        inherit-color\n        href=\"rei.com\"\n      >\n        inherit-color plain example\n      </cdr-link>\n      <br>\n      <cdr-link inherit-color>\n        <cdr-icon\n          inherit-color\n          use=\"#mail\"\n          modifier=\"inherit-color\"\n        />\n        cdr-link icon inherit\n      </cdr-link>\n    </div>\n    <br><br>\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-500\"\n    >Button Links</cdr-text>\n\n    <cdr-text\n      tag=\"h4\"\n      modifier=\"subheading-sans-300\"\n    >Link using a &lt;button&gt; element inline</cdr-text>\n    <div class=\"anchor-example cdr-py-space-one-x\">\n      hey there <cdr-link\n        tag=\"button\"\n        data-backstop=\"cdr-link--button\"\n        @click=\"clicked\"\n      >I'm a button!</cdr-link> wow!\n    </div>\n\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\nexport default {\n  name: 'StandardLinks',\n  components: {\n    ...Components,\n  },\n  methods: {\n    clicked() {\n      // eslint-disable-next-line no-console\n      console.log('link clicked!');\n    },\n  },\n};\n</script>\n\n<style>\n/** normalize line-height for consistent testing because links inherit it */\n\n.link-examples {\n  line-height: 1;\n}\n\n.button-padding-override {\n  padding-left: 0;\n  padding-right: 0;\n}\n\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
@@ -41784,7 +41659,7 @@ var cedar = (function () {
           "div",
           { staticClass: "anchor-example" },
           [
-            _c("cdr-link", { attrs: { space: "cdr-space-inset-one-x" } }, [
+            _c("cdr-link", [
               _vm._v(
                 "\n      Lorem ipsum dolor sit amet consectetur adipisicing elit.\n      Officia inventore, quis ducimus itaque rerum id animi accusantium porro ex numquam.\n      Dolorum ducimus illo doloremque ullam quas. Vel similique laudantium error!\n      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore,\n      quis ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus\n      illo doloremque ullam quas. Vel similique laudantium error!\n      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore,\n      quis ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus\n      illo doloremque ullam quas. Vel similique laudantium error!\n      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore, quis\n      ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus illo\n      doloremque ullam quas. Vel similique laudantium error!\n      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore, quis\n      ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus illo\n      doloremque ullam quas. Vel similique laudantium error!\n      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore, quis ducimus\n      itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus illo doloremque ullam\n      quas. Vel similique laudantium error!\n      Lorem ipsum dolor sit amet consectetur adipisicing elit.\n      Officia inventore, quis ducimus itaque rerum id animi accusantium porro ex numquam.\n      Dolorum ducimus illo doloremque ullam quas. Vel similique laudantium error!\n    "
               )
@@ -41800,11 +41675,7 @@ var cedar = (function () {
         _c(
           "div",
           { staticClass: "anchor-example" },
-          [
-            _c("cdr-link", { attrs: { space: "cdr-space-inset-one-x" } }, [
-              _vm._v("\n      K\n    ")
-            ])
-          ],
+          [_c("cdr-link", [_vm._v("\n      K\n    ")])],
           1
         ),
         _vm._v(" "),
@@ -41827,7 +41698,6 @@ var cedar = (function () {
             [
               _c(
                 "cdr-link",
-                { attrs: { space: "cdr-mb-space-half-x" } },
                 [
                   _vm._v("\n      item text\n      "),
                   _c(
@@ -41850,7 +41720,6 @@ var cedar = (function () {
             [
               _c(
                 "cdr-link",
-                { attrs: { space: "cdr-mb-space-half-x" } },
                 [
                   _vm._v("\n      item text\n      "),
                   _c(
@@ -41886,8 +41755,7 @@ var cedar = (function () {
                     attrs: {
                       "inherit-color": "",
                       use: "#mail",
-                      modifier: "inherit-color",
-                      space: "cdr-mr-space-half-x"
+                      modifier: "inherit-color"
                     }
                   }),
                   _vm._v(
@@ -41907,10 +41775,7 @@ var cedar = (function () {
             _vm._l(_vm.utilities, function(u1) {
               return _c(
                 "li",
-                {
-                  key: "list-link-left-icon-" + u1,
-                  attrs: { space: "cdr-space-inset-one-x" }
-                },
+                { key: "list-link-left-icon-" + u1 },
                 [
                   _c(
                     "cdr-link",
@@ -41919,8 +41784,7 @@ var cedar = (function () {
                         attrs: {
                           "inherit-color": "",
                           use: "#mail",
-                          modifier: "inherit-color",
-                          space: "cdr-mr-space-half-x"
+                          modifier: "inherit-color"
                         }
                       }),
                       _vm._v(" "),
@@ -41945,10 +41809,7 @@ var cedar = (function () {
             _vm._l(_vm.utilities, function(u1) {
               return _c(
                 "li",
-                {
-                  key: "list-link-right-icon-" + u1,
-                  attrs: { space: "cdr-space-inset-one-x" }
-                },
+                { key: "list-link-right-icon-" + u1 },
                 [
                   _c(
                     "cdr-link",
@@ -41968,8 +41829,7 @@ var cedar = (function () {
                         attrs: {
                           "inherit-color": "",
                           use: "#download",
-                          modifier: "inherit-color",
-                          space: "cdr-ml-space-half-x"
+                          modifier: "inherit-color"
                         }
                       })
                     ],
@@ -41983,10 +41843,7 @@ var cedar = (function () {
             _vm._l(_vm.utilities, function(u1) {
               return _c(
                 "li",
-                {
-                  key: "list-link-both-icon-" + u1,
-                  attrs: { space: "cdr-space-inset-one-x" }
-                },
+                { key: "list-link-both-icon-" + u1 },
                 [
                   _c(
                     "cdr-link",
@@ -41995,8 +41852,7 @@ var cedar = (function () {
                         attrs: {
                           "inherit-color": "",
                           use: "#twitter",
-                          modifier: "inherit-color",
-                          space: "cdr-mr-space-half-x"
+                          modifier: "inherit-color"
                         }
                       }),
                       _vm._v(" "),
@@ -42015,8 +41871,7 @@ var cedar = (function () {
                         attrs: {
                           "inherit-color": "",
                           use: "#external-link",
-                          modifier: "inherit-color",
-                          space: "cdr-ml-space-half-x"
+                          modifier: "inherit-color"
                         }
                       })
                     ],
@@ -42039,7 +41894,7 @@ var cedar = (function () {
     /* style */
     const __vue_inject_styles__$t = function (inject) {
       if (!inject) return
-      inject("data-v-7f5f99ca_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"Resilience.vue"}, media: undefined });
+      inject("data-v-13e79f30_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"Resilience.vue"}, media: undefined });
 
     };
     /* scoped */
@@ -42170,41 +42025,37 @@ var cedar = (function () {
           [_vm._v("\n    Unordered list\n  ")]
         ),
         _vm._v(" "),
-        _c(
-          "cdr-list",
-          { attrs: { modifier: "unordered", space: "cdr-mb-space-two-x" } },
-          [
-            _c("li", [_vm._v("List item text")]),
-            _vm._v(" "),
-            _c(
-              "li",
-              [
-                _vm._v(
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodList ordered\n      "
-                ),
-                _c("cdr-list", [
-                  _c("li", [_vm._v("List item text")]),
-                  _vm._v(" "),
-                  _c(
-                    "li",
-                    [
-                      _vm._v("List item text\n          "),
-                      _c("cdr-list", [
-                        _c("li", [_vm._v("List item text")]),
-                        _vm._v(" "),
-                        _c("li", [_vm._v("List item text")])
-                      ])
-                    ],
-                    1
-                  )
-                ])
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c("li", [_vm._v("List item text")])
-          ]
-        ),
+        _c("cdr-list", { attrs: { modifier: "unordered" } }, [
+          _c("li", [_vm._v("List item text")]),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _vm._v(
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodList ordered\n      "
+              ),
+              _c("cdr-list", [
+                _c("li", [_vm._v("List item text")]),
+                _vm._v(" "),
+                _c(
+                  "li",
+                  [
+                    _vm._v("List item text\n          "),
+                    _c("cdr-list", [
+                      _c("li", [_vm._v("List item text")]),
+                      _vm._v(" "),
+                      _c("li", [_vm._v("List item text")])
+                    ])
+                  ],
+                  1
+                )
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c("li", [_vm._v("List item text")])
+        ]),
         _vm._v(" "),
         _c(
           "cdr-text",
@@ -42218,30 +42069,26 @@ var cedar = (function () {
           [_vm._v("\n    Compact Unordered list\n  ")]
         ),
         _vm._v(" "),
-        _c(
-          "cdr-list",
-          { attrs: { modifier: "unordered", space: "cdr-mb-space-two-x" } },
-          [
-            _c("li", [_vm._v("List item text")]),
-            _vm._v(" "),
-            _c(
-              "li",
-              [
-                _vm._v(
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodList ordered\n      "
-                ),
-                _c("cdr-list", [
-                  _c("li", [_vm._v("List item text")]),
-                  _vm._v(" "),
-                  _c("li", [_vm._v("List item text")])
-                ])
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c("li", [_vm._v("List item text")])
-          ]
-        ),
+        _c("cdr-list", { attrs: { modifier: "unordered" } }, [
+          _c("li", [_vm._v("List item text")]),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _vm._v(
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodList ordered\n      "
+              ),
+              _c("cdr-list", [
+                _c("li", [_vm._v("List item text")]),
+                _vm._v(" "),
+                _c("li", [_vm._v("List item text")])
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c("li", [_vm._v("List item text")])
+        ]),
         _vm._v(" "),
         _c(
           "cdr-text",
@@ -42255,57 +42102,45 @@ var cedar = (function () {
           [_vm._v("\n    Inline unordered list\n  ")]
         ),
         _vm._v(" "),
-        _c(
-          "cdr-list",
-          {
-            attrs: { modifier: "inline unordered", space: "cdr-mb-space-two-x" }
-          },
-          [
-            _c("li", [_vm._v("List item text")]),
-            _vm._v(" "),
-            _c("li", [_vm._v("List item text")]),
-            _vm._v(" "),
-            _c("li", [_vm._v("List item text")])
-          ]
-        ),
+        _c("cdr-list", { attrs: { modifier: "inline unordered" } }, [
+          _c("li", [_vm._v("List item text")]),
+          _vm._v(" "),
+          _c("li", [_vm._v("List item text")]),
+          _vm._v(" "),
+          _c("li", [_vm._v("List item text")])
+        ]),
         _vm._v(" "),
-        _c(
-          "cdr-list",
-          {
-            attrs: { modifier: "inline unordered", space: "cdr-mb-space-two-x" }
-          },
-          [
-            _c("li", [_vm._v("List item text")]),
-            _vm._v(" "),
-            _c("li", [_vm._v("List item text")]),
-            _vm._v(" "),
-            _c("li", [_vm._v("List item text")]),
-            _vm._v(" "),
-            _c("li", [_vm._v("List item text")]),
-            _vm._v(" "),
-            _c("li", [_vm._v("List item text")]),
-            _vm._v(" "),
-            _c("li", [_vm._v("List item text")]),
-            _vm._v(" "),
-            _c("li", [_vm._v("List item text")]),
-            _vm._v(" "),
-            _c("li", [_vm._v("List item text")]),
-            _vm._v(" "),
-            _c("li", [_vm._v("List item text")]),
-            _vm._v(" "),
-            _c("li", [_vm._v("List item text")]),
-            _vm._v(" "),
-            _c("li", [_vm._v("List item text")]),
-            _vm._v(" "),
-            _c("li", [_vm._v("List item text")]),
-            _vm._v(" "),
-            _c("li", [_vm._v("List item text")]),
-            _vm._v(" "),
-            _c("li", [_vm._v("List item text")]),
-            _vm._v(" "),
-            _c("li", [_vm._v("List item text")])
-          ]
-        ),
+        _c("cdr-list", { attrs: { modifier: "inline unordered" } }, [
+          _c("li", [_vm._v("List item text")]),
+          _vm._v(" "),
+          _c("li", [_vm._v("List item text")]),
+          _vm._v(" "),
+          _c("li", [_vm._v("List item text")]),
+          _vm._v(" "),
+          _c("li", [_vm._v("List item text")]),
+          _vm._v(" "),
+          _c("li", [_vm._v("List item text")]),
+          _vm._v(" "),
+          _c("li", [_vm._v("List item text")]),
+          _vm._v(" "),
+          _c("li", [_vm._v("List item text")]),
+          _vm._v(" "),
+          _c("li", [_vm._v("List item text")]),
+          _vm._v(" "),
+          _c("li", [_vm._v("List item text")]),
+          _vm._v(" "),
+          _c("li", [_vm._v("List item text")]),
+          _vm._v(" "),
+          _c("li", [_vm._v("List item text")]),
+          _vm._v(" "),
+          _c("li", [_vm._v("List item text")]),
+          _vm._v(" "),
+          _c("li", [_vm._v("List item text")]),
+          _vm._v(" "),
+          _c("li", [_vm._v("List item text")]),
+          _vm._v(" "),
+          _c("li", [_vm._v("List item text")])
+        ]),
         _vm._v(" "),
         _c(
           "cdr-text",
@@ -42336,7 +42171,7 @@ var cedar = (function () {
     /* style */
     const __vue_inject_styles__$v = function (inject) {
       if (!inject) return
-      inject("data-v-065baf14_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"Unordered.vue"}, media: undefined });
+      inject("data-v-f89cef6c_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"Unordered.vue"}, media: undefined });
 
     };
     /* scoped */
@@ -42401,54 +42236,48 @@ var cedar = (function () {
           [_vm._v("\n    Ordered list\n  ")]
         ),
         _vm._v(" "),
-        _c(
-          "cdr-list",
-          {
-            attrs: { tag: "ol", modifier: "ordered", space: "cdr-mb-space-two-x" }
-          },
-          [
-            _c("li", [_vm._v("List item text")]),
-            _vm._v(" "),
-            _c(
-              "li",
-              [
-                _vm._v(
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodList ordered\n      "
-                ),
-                _c("cdr-list", { attrs: { tag: "ol", modifier: "ordered" } }, [
-                  _c("li", [_vm._v("List item text")]),
-                  _vm._v(" "),
-                  _c(
-                    "li",
-                    [
-                      _vm._v("List item text\n          "),
-                      _c("cdr-list", [
-                        _c("li", [_vm._v("List item text")]),
-                        _vm._v(" "),
-                        _c(
-                          "li",
-                          [
-                            _vm._v("List item text\n              "),
-                            _c("cdr-list", [
-                              _c("li", [_vm._v("List item text")]),
-                              _vm._v(" "),
-                              _c("li", [_vm._v("List item text")])
-                            ])
-                          ],
-                          1
-                        )
-                      ])
-                    ],
-                    1
-                  )
-                ])
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c("li", [_vm._v("List item text")])
-          ]
-        ),
+        _c("cdr-list", { attrs: { tag: "ol", modifier: "ordered" } }, [
+          _c("li", [_vm._v("List item text")]),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _vm._v(
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodList ordered\n      "
+              ),
+              _c("cdr-list", { attrs: { tag: "ol", modifier: "ordered" } }, [
+                _c("li", [_vm._v("List item text")]),
+                _vm._v(" "),
+                _c(
+                  "li",
+                  [
+                    _vm._v("List item text\n          "),
+                    _c("cdr-list", [
+                      _c("li", [_vm._v("List item text")]),
+                      _vm._v(" "),
+                      _c(
+                        "li",
+                        [
+                          _vm._v("List item text\n              "),
+                          _c("cdr-list", [
+                            _c("li", [_vm._v("List item text")]),
+                            _vm._v(" "),
+                            _c("li", [_vm._v("List item text")])
+                          ])
+                        ],
+                        1
+                      )
+                    ])
+                  ],
+                  1
+                )
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c("li", [_vm._v("List item text")])
+        ]),
         _vm._v(" "),
         _c(
           "cdr-text",
@@ -42559,7 +42388,7 @@ var cedar = (function () {
     /* style */
     const __vue_inject_styles__$w = function (inject) {
       if (!inject) return
-      inject("data-v-9ff28908_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"Ordered.vue"}, media: undefined });
+      inject("data-v-0352d986_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"Ordered.vue"}, media: undefined });
 
     };
     /* scoped */
@@ -42616,7 +42445,7 @@ var cedar = (function () {
           [_vm._v("\n    Bare list\n  ")]
         ),
         _vm._v(" "),
-        _c("cdr-list", { attrs: { space: "cdr-mb-space-two-x" } }, [
+        _c("cdr-list", [
           _c("li", [_vm._v("List item text")]),
           _vm._v(" "),
           _c(
@@ -42645,7 +42474,7 @@ var cedar = (function () {
           "cdr-text",
           { attrs: { tag: "h4", modifier: "body--400" } },
           [
-            _c("cdr-list", { attrs: { space: "cdr-mb-space-two-x" } }, [
+            _c("cdr-list", [
               _c("li", [_vm._v("List item text")]),
               _vm._v(" "),
               _c(
@@ -42681,30 +42510,26 @@ var cedar = (function () {
           [_vm._v("\n    Compact bare list\n  ")]
         ),
         _vm._v(" "),
-        _c(
-          "cdr-list",
-          { attrs: { modifier: "compact", space: "cdr-mb-space-two-x" } },
-          [
-            _c("li", [_vm._v("List item text")]),
-            _vm._v(" "),
-            _c(
-              "li",
-              [
-                _vm._v(
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodList ordered\n      "
-                ),
-                _c("cdr-list", [
-                  _c("li", [_vm._v("List item text")]),
-                  _vm._v(" "),
-                  _c("li", [_vm._v("List item text")])
-                ])
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c("li", [_vm._v("List item text")])
-          ]
-        ),
+        _c("cdr-list", { attrs: { modifier: "compact" } }, [
+          _c("li", [_vm._v("List item text")]),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _vm._v(
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodList ordered\n      "
+              ),
+              _c("cdr-list", [
+                _c("li", [_vm._v("List item text")]),
+                _vm._v(" "),
+                _c("li", [_vm._v("List item text")])
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c("li", [_vm._v("List item text")])
+        ]),
         _vm._v(" "),
         _c(
           "cdr-text",
@@ -42718,17 +42543,13 @@ var cedar = (function () {
           [_vm._v("\n    Inline bare list\n  ")]
         ),
         _vm._v(" "),
-        _c(
-          "cdr-list",
-          { attrs: { modifier: "inline", space: "cdr-mb-space-two-x" } },
-          [
-            _c("li", [_vm._v("List item text")]),
-            _vm._v(" "),
-            _c("li", [_vm._v("List item text")]),
-            _vm._v(" "),
-            _c("li", [_vm._v("List item text")])
-          ]
-        ),
+        _c("cdr-list", { attrs: { modifier: "inline" } }, [
+          _c("li", [_vm._v("List item text")]),
+          _vm._v(" "),
+          _c("li", [_vm._v("List item text")]),
+          _vm._v(" "),
+          _c("li", [_vm._v("List item text")])
+        ]),
         _vm._v(" "),
         _c(
           "cdr-text",
@@ -42759,7 +42580,7 @@ var cedar = (function () {
     /* style */
     const __vue_inject_styles__$x = function (inject) {
       if (!inject) return
-      inject("data-v-1ceaa491_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"Bare.vue"}, media: undefined });
+      inject("data-v-061b3b02_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"Bare.vue"}, media: undefined });
 
     };
     /* scoped */
@@ -42882,7 +42703,7 @@ var cedar = (function () {
             "cdr-text",
             { key: p1, attrs: { modifier: "body-" + p1 } },
             [
-              _c("cdr-list", { attrs: { space: "cdr-mb-space-two-x" } }, [
+              _c("cdr-list", [
                 _c("li", [_vm._v("List item text")]),
                 _vm._v(" "),
                 _c(
@@ -42918,41 +42739,34 @@ var cedar = (function () {
             "cdr-text",
             { key: utility, attrs: { modifier: "utility-sans-" + utility } },
             _vm._l(_vm.lists, function(l1) {
-              return _c(
-                "cdr-list",
-                {
-                  key: l1,
-                  attrs: { modifier: "" + l1, space: "cdr-mb-space-two-x" }
-                },
-                [
-                  _c("li", [
+              return _c("cdr-list", { key: l1, attrs: { modifier: "" + l1 } }, [
+                _c("li", [
+                  _vm._v(
+                    "utility-sans " +
+                      _vm._s(utility) +
+                      " in list " +
+                      _vm._s(l1) +
+                      " "
+                  )
+                ]),
+                _vm._v(" "),
+                _c(
+                  "li",
+                  [
                     _vm._v(
-                      "utility-sans " +
-                        _vm._s(utility) +
-                        " in list " +
-                        _vm._s(l1) +
-                        " "
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "li",
-                    [
-                      _vm._v(
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodList ordered\n        "
-                      ),
-                      _c("cdr-list", [
-                        _c("li", [_vm._v("List item text")]),
-                        _vm._v(" "),
-                        _c("li", [_vm._v("List item text")])
-                      ])
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c("li", [_vm._v("List item text")])
-                ]
-              )
+                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodList ordered\n        "
+                    ),
+                    _c("cdr-list", [
+                      _c("li", [_vm._v("List item text")]),
+                      _vm._v(" "),
+                      _c("li", [_vm._v("List item text")])
+                    ])
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c("li", [_vm._v("List item text")])
+              ])
             }),
             1
           )
@@ -43155,7 +42969,7 @@ var cedar = (function () {
     /* style */
     const __vue_inject_styles__$y = function (inject) {
       if (!inject) return
-      inject("data-v-32746ea0_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"Resilience.vue"}, media: undefined });
+      inject("data-v-2525ae1c_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"Resilience.vue"}, media: undefined });
 
     };
     /* scoped */
@@ -44607,7 +44421,6 @@ var cedar = (function () {
         _vm._v(" "),
         _c("cdr-quote", {
           attrs: {
-            space: "cdr-mb-space-four-x",
             cite: "http://github.com/rei/rei-cedar",
             summary:
               "Blockquote Summary:\n    Lorem ipsum dolor sit amet consectetur adipisicing elit.\n    At perferendis reiciendis sapiente delectus commodi eaque sunt aperiam\n    ex aliquam. Temporibus, veritatis laudantium molestiae accusamus\n    asperiores odio fuga reiciendis blanditiis magni?",
@@ -44672,7 +44485,7 @@ var cedar = (function () {
     /* style */
     const __vue_inject_styles__$D = function (inject) {
       if (!inject) return
-      inject("data-v-5536ce33_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"Blockquotes.vue"}, media: undefined });
+      inject("data-v-79f083a8_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"Blockquotes.vue"}, media: undefined });
 
     };
     /* scoped */
@@ -45253,12 +45066,7 @@ var cedar = (function () {
         _c(
           "cdr-radio",
           {
-            attrs: {
-              space: "cdr-ml-space-one-x cdr-mt-space-half-x",
-              id: "test2",
-              name: "examplespacing",
-              "custom-value": "a1"
-            },
+            attrs: { id: "test2", name: "examplespacing", "custom-value": "a1" },
             model: {
               value: _vm.ex1spacing,
               callback: function($$v) {
@@ -45273,11 +45081,7 @@ var cedar = (function () {
         _c(
           "cdr-radio",
           {
-            attrs: {
-              space: "cdr-ml-space-one-x cdr-mt-space-half-x",
-              name: "examplespacing",
-              "custom-value": "a2"
-            },
+            attrs: { name: "examplespacing", "custom-value": "a2" },
             model: {
               value: _vm.ex1spacing,
               callback: function($$v) {
@@ -45292,11 +45096,7 @@ var cedar = (function () {
         _c(
           "cdr-radio",
           {
-            attrs: {
-              space: "cdr-ml-space-one-x cdr-mt-space-half-x",
-              name: "examplespacing",
-              "custom-value": { val: "a3" }
-            },
+            attrs: { name: "examplespacing", "custom-value": { val: "a3" } },
             model: {
               value: _vm.ex1spacing,
               callback: function($$v) {
@@ -45509,7 +45309,7 @@ var cedar = (function () {
     /* style */
     const __vue_inject_styles__$G = function (inject) {
       if (!inject) return
-      inject("data-v-8a955318_0", { source: ".wrap {\n  width: 180px;\n}\n.no-box:checked ~ .no-box__content {\n  color: green;\n}\n.no-box:checked ~ .no-box__content::after {\n  content: \"(checked)\";\n}\n\n/*# sourceMappingURL=Radios.vue.map */", map: {"version":3,"sources":["/home/runner/work/rei-cedar/rei-cedar/src/components/radio/examples/Radios.vue","Radios.vue"],"names":[],"mappings":"AAsPA;ECrPE,YAAY;AACd;ADwPA;ECrPE,YAAY;AACd;ADwPA;ECrPE,oBAAoB;AACtB;;AAEA,qCAAqC","file":"Radios.vue","sourcesContent":["<template>\n  <div>\n    <cdr-text\n      tag=\"h2\"\n      modifier=\"heading-serif-600 heading-serif-700@md heading-serif-700@lg\"\n    >\n      Radios\n    </cdr-text>\n    <div data-backstop=\"radio-focus\">\n      <cdr-radio\n        name=\"example\"\n        custom-value=\"a1\"\n        v-model=\"size\"\n        size=\"small\"\n      >small</cdr-radio>\n      <cdr-radio\n        name=\"example\"\n        custom-value=\"a2\"\n        v-model=\"size\"\n        size=\"medium\"\n      >medium</cdr-radio>\n      <cdr-radio\n        name=\"example\"\n        :custom-value=\"{val:'a3'}\"\n        v-model=\"size\"\n        size=\"large\"\n      >large</cdr-radio>\n      <div data-backstop=\"radio-responsive\">\n        <cdr-radio\n          name=\"example\"\n          custom-value=\"a4\"\n          v-model=\"size\"\n          size=\"small@lg medium@sm large@xs\"\n        >responsive</cdr-radio>\n      </div>\n    </div>\n    <div data-backstop=\"radio-focus\">\n      <fieldset>\n        <legend id=\"legend-a\">\n          Group A\n        </legend>\n        <cdr-list\n          aria-labelledby=\"legend-a\"\n          role=\"radiogroup\"\n        >\n          <li>\n            <cdr-radio\n              id=\"test1\"\n              name=\"example\"\n              custom-value=\"a1\"\n              v-model=\"ex1\"\n            >A1</cdr-radio>\n          </li>\n          <li>\n            <cdr-radio\n              name=\"example\"\n              custom-value=\"a2\"\n              v-model=\"ex1\"\n            >A2</cdr-radio>\n          </li>\n          <li>\n            <cdr-radio\n              name=\"example\"\n              :custom-value=\"{val:'a3'}\"\n              v-model=\"ex1\"\n            >A3</cdr-radio>\n          </li>\n          <li>\n            <cdr-radio\n              name=\"example\"\n              custom-value=\"a4\"\n              v-model=\"ex1\"\n              disabled\n            >A4 (disabled)</cdr-radio>\n          </li>\n        </cdr-list>\n      </fieldset>\n      <cdr-text>Group A Picked: {{ ex1 }}</cdr-text>\n    </div>\n    <hr>\n    <fieldset>\n      <legend id=\"group-a-compact\">\n        Group A compact\n      </legend>\n      <cdr-list\n        aria-labelledby=\"group-a-compact\"\n        role=\"radiogroup\"\n      >\n        <li>\n          <cdr-radio\n            modifier=\"compact\"\n            name=\"examplecompact\"\n            custom-value=\"a1\"\n            v-model=\"ex1compact\"\n          >A1 compact</cdr-radio>\n        </li>\n        <li>\n          <cdr-radio\n            modifier=\"compact\"\n            name=\"examplecompact\"\n            custom-value=\"a2\"\n            v-model=\"ex1compact\"\n          >A2 compact</cdr-radio>\n        </li>\n        <li>\n          <cdr-radio\n            modifier=\"compact\"\n            name=\"examplecompact\"\n            :custom-value=\"{val:'a3'}\"\n            v-model=\"ex1compact\"\n          >A3 compact</cdr-radio>\n        </li>\n        <li>\n          <cdr-radio\n            modifier=\"compact\"\n            name=\"examplecompact\"\n            custom-value=\"a4\"\n            v-model=\"ex1compact\"\n            disabled\n          >A4 compact (disabled)</cdr-radio>\n        </li>\n      </cdr-list>\n    </fieldset>\n\n    <cdr-text>Group A compact Picked: {{ ex1compact }}</cdr-text>\n    <hr>\n\n    <cdr-text>\n      Radios with spacing\n    </cdr-text>\n    <cdr-radio\n      space=\"cdr-ml-space-one-x cdr-mt-space-half-x\"\n      id=\"test2\"\n      name=\"examplespacing\"\n      custom-value=\"a1\"\n      v-model=\"ex1spacing\"\n    >A1</cdr-radio>\n    <cdr-radio\n      space=\"cdr-ml-space-one-x cdr-mt-space-half-x\"\n      name=\"examplespacing\"\n      custom-value=\"a2\"\n      v-model=\"ex1spacing\"\n    >A2</cdr-radio>\n    <cdr-radio\n      space=\"cdr-ml-space-one-x cdr-mt-space-half-x\"\n      name=\"examplespacing\"\n      :custom-value=\"{val:'a3'}\"\n      v-model=\"ex1spacing\"\n    >A3</cdr-radio>\n    <cdr-text>Spacing Picked: {{ ex1spacing }}</cdr-text>\n    <hr>\n    <div style=\"max-width: 200px;\">\n      <cdr-radio\n        name=\"example2\"\n        custom-value=\"b1\"\n        v-model=\"ex2\"\n      >B1</cdr-radio>\n      <cdr-radio\n        name=\"example2\"\n        custom-value=\"b2\"\n        v-model=\"ex2\"\n      >B2</cdr-radio>\n      <cdr-text>Group B Picked: {{ ex2 }}</cdr-text>\n    </div>\n    <hr>\n    <cdr-radio\n      modifier=\"compact\"\n      name=\"example2compact\"\n      custom-value=\"b1\"\n      v-model=\"ex2compact\"\n    >B1 compact</cdr-radio>\n    <cdr-radio\n      modifier=\"compact\"\n      name=\"example2compact\"\n      custom-value=\"b2\"\n      v-model=\"ex2compact\"\n    >B2 compact</cdr-radio>\n    <cdr-text>Group B compact Picked: {{ ex2compact }}</cdr-text>\n    <hr>\n    <cdr-radio\n      name=\"example3\"\n      custom-value=\"c1\"\n      v-model=\"ex3\"\n      disabled\n    >C1 (selected + disabled)</cdr-radio>\n\n    <cdr-radio\n      modifier=\"compact\"\n      name=\"example3compact\"\n      custom-value=\"c1\"\n      v-model=\"ex3compact\"\n      disabled\n    >C1 compact (selected + disabled)</cdr-radio>\n\n    <cdr-radio\n      name=\"custom\"\n      custom-value=\"customA\"\n      v-model=\"custom\"\n      modifier=\"hide-figure\"\n    >Custom A (hide-figure)</cdr-radio>\n\n    <cdr-radio\n      name=\"custom\"\n      custom-value=\"customB\"\n      v-model=\"custom\"\n      modifier=\"hide-figure\"\n      input-class=\"no-box\"\n      content-class=\"no-box__content\"\n    >Custom B</cdr-radio>\n    <hr>\n    <div class=\"wrap\">\n      <cdr-radio\n        name=\"example3\"\n        custom-value=\"c2\"\n        v-model=\"ex3\"\n      >A longer label text to make things wrap for testing\n      </cdr-radio>\n    </div>\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\nexport default {\n  name: 'Radios',\n  components: Components,\n  data() {\n    return {\n      size: '',\n      ex1: '',\n      ex1compact: '',\n      ex1spacing: '',\n      ex2: 'b2',\n      ex2compact: 'b2',\n      ex3: 'c1',\n      ex3compact: 'c1',\n      custom: 'customB',\n    };\n  },\n};\n</script>\n\n<style lang=\"scss\">\n  .wrap {\n    width: 180px;\n  }\n\n  .no-box:checked ~ .no-box__content {\n    color: green;\n  }\n\n  .no-box:checked ~ .no-box__content::after {\n    content: '(checked)';\n  }\n</style>\n",".wrap {\n  width: 180px;\n}\n\n.no-box:checked ~ .no-box__content {\n  color: green;\n}\n\n.no-box:checked ~ .no-box__content::after {\n  content: \"(checked)\";\n}\n\n/*# sourceMappingURL=Radios.vue.map */"]}, media: undefined });
+      inject("data-v-b0994cb8_0", { source: ".wrap {\n  width: 180px;\n}\n.no-box:checked ~ .no-box__content {\n  color: green;\n}\n.no-box:checked ~ .no-box__content::after {\n  content: \"(checked)\";\n}\n\n/*# sourceMappingURL=Radios.vue.map */", map: {"version":3,"sources":["/home/runner/work/rei-cedar/rei-cedar/src/components/radio/examples/Radios.vue","Radios.vue"],"names":[],"mappings":"AAsPA;ECrPE,YAAY;AACd;ADwPA;ECrPE,YAAY;AACd;ADwPA;ECrPE,oBAAoB;AACtB;;AAEA,qCAAqC","file":"Radios.vue","sourcesContent":["<template>\n  <div>\n    <cdr-text\n      tag=\"h2\"\n      modifier=\"heading-serif-600 heading-serif-700@md heading-serif-700@lg\"\n    >\n      Radios\n    </cdr-text>\n    <div data-backstop=\"radio-focus\">\n      <cdr-radio\n        name=\"example\"\n        custom-value=\"a1\"\n        v-model=\"size\"\n        size=\"small\"\n      >small</cdr-radio>\n      <cdr-radio\n        name=\"example\"\n        custom-value=\"a2\"\n        v-model=\"size\"\n        size=\"medium\"\n      >medium</cdr-radio>\n      <cdr-radio\n        name=\"example\"\n        :custom-value=\"{val:'a3'}\"\n        v-model=\"size\"\n        size=\"large\"\n      >large</cdr-radio>\n      <div data-backstop=\"radio-responsive\">\n        <cdr-radio\n          name=\"example\"\n          custom-value=\"a4\"\n          v-model=\"size\"\n          size=\"small@lg medium@sm large@xs\"\n        >responsive</cdr-radio>\n      </div>\n    </div>\n    <div data-backstop=\"radio-focus\">\n      <fieldset>\n        <legend id=\"legend-a\">\n          Group A\n        </legend>\n        <cdr-list\n          aria-labelledby=\"legend-a\"\n          role=\"radiogroup\"\n        >\n          <li>\n            <cdr-radio\n              id=\"test1\"\n              name=\"example\"\n              custom-value=\"a1\"\n              v-model=\"ex1\"\n            >A1</cdr-radio>\n          </li>\n          <li>\n            <cdr-radio\n              name=\"example\"\n              custom-value=\"a2\"\n              v-model=\"ex1\"\n            >A2</cdr-radio>\n          </li>\n          <li>\n            <cdr-radio\n              name=\"example\"\n              :custom-value=\"{val:'a3'}\"\n              v-model=\"ex1\"\n            >A3</cdr-radio>\n          </li>\n          <li>\n            <cdr-radio\n              name=\"example\"\n              custom-value=\"a4\"\n              v-model=\"ex1\"\n              disabled\n            >A4 (disabled)</cdr-radio>\n          </li>\n        </cdr-list>\n      </fieldset>\n      <cdr-text>Group A Picked: {{ ex1 }}</cdr-text>\n    </div>\n    <hr>\n    <fieldset>\n      <legend id=\"group-a-compact\">\n        Group A compact\n      </legend>\n      <cdr-list\n        aria-labelledby=\"group-a-compact\"\n        role=\"radiogroup\"\n      >\n        <li>\n          <cdr-radio\n            modifier=\"compact\"\n            name=\"examplecompact\"\n            custom-value=\"a1\"\n            v-model=\"ex1compact\"\n          >A1 compact</cdr-radio>\n        </li>\n        <li>\n          <cdr-radio\n            modifier=\"compact\"\n            name=\"examplecompact\"\n            custom-value=\"a2\"\n            v-model=\"ex1compact\"\n          >A2 compact</cdr-radio>\n        </li>\n        <li>\n          <cdr-radio\n            modifier=\"compact\"\n            name=\"examplecompact\"\n            :custom-value=\"{val:'a3'}\"\n            v-model=\"ex1compact\"\n          >A3 compact</cdr-radio>\n        </li>\n        <li>\n          <cdr-radio\n            modifier=\"compact\"\n            name=\"examplecompact\"\n            custom-value=\"a4\"\n            v-model=\"ex1compact\"\n            disabled\n          >A4 compact (disabled)</cdr-radio>\n        </li>\n      </cdr-list>\n    </fieldset>\n\n    <cdr-text>Group A compact Picked: {{ ex1compact }}</cdr-text>\n    <hr>\n\n    <cdr-text>\n      Radios with spacing\n    </cdr-text>\n    <cdr-radio\n\n      id=\"test2\"\n      name=\"examplespacing\"\n      custom-value=\"a1\"\n      v-model=\"ex1spacing\"\n    >A1</cdr-radio>\n    <cdr-radio\n\n      name=\"examplespacing\"\n      custom-value=\"a2\"\n      v-model=\"ex1spacing\"\n    >A2</cdr-radio>\n    <cdr-radio\n\n      name=\"examplespacing\"\n      :custom-value=\"{val:'a3'}\"\n      v-model=\"ex1spacing\"\n    >A3</cdr-radio>\n    <cdr-text>Spacing Picked: {{ ex1spacing }}</cdr-text>\n    <hr>\n    <div style=\"max-width: 200px;\">\n      <cdr-radio\n        name=\"example2\"\n        custom-value=\"b1\"\n        v-model=\"ex2\"\n      >B1</cdr-radio>\n      <cdr-radio\n        name=\"example2\"\n        custom-value=\"b2\"\n        v-model=\"ex2\"\n      >B2</cdr-radio>\n      <cdr-text>Group B Picked: {{ ex2 }}</cdr-text>\n    </div>\n    <hr>\n    <cdr-radio\n      modifier=\"compact\"\n      name=\"example2compact\"\n      custom-value=\"b1\"\n      v-model=\"ex2compact\"\n    >B1 compact</cdr-radio>\n    <cdr-radio\n      modifier=\"compact\"\n      name=\"example2compact\"\n      custom-value=\"b2\"\n      v-model=\"ex2compact\"\n    >B2 compact</cdr-radio>\n    <cdr-text>Group B compact Picked: {{ ex2compact }}</cdr-text>\n    <hr>\n    <cdr-radio\n      name=\"example3\"\n      custom-value=\"c1\"\n      v-model=\"ex3\"\n      disabled\n    >C1 (selected + disabled)</cdr-radio>\n\n    <cdr-radio\n      modifier=\"compact\"\n      name=\"example3compact\"\n      custom-value=\"c1\"\n      v-model=\"ex3compact\"\n      disabled\n    >C1 compact (selected + disabled)</cdr-radio>\n\n    <cdr-radio\n      name=\"custom\"\n      custom-value=\"customA\"\n      v-model=\"custom\"\n      modifier=\"hide-figure\"\n    >Custom A (hide-figure)</cdr-radio>\n\n    <cdr-radio\n      name=\"custom\"\n      custom-value=\"customB\"\n      v-model=\"custom\"\n      modifier=\"hide-figure\"\n      input-class=\"no-box\"\n      content-class=\"no-box__content\"\n    >Custom B</cdr-radio>\n    <hr>\n    <div class=\"wrap\">\n      <cdr-radio\n        name=\"example3\"\n        custom-value=\"c2\"\n        v-model=\"ex3\"\n      >A longer label text to make things wrap for testing\n      </cdr-radio>\n    </div>\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\nexport default {\n  name: 'Radios',\n  components: Components,\n  data() {\n    return {\n      size: '',\n      ex1: '',\n      ex1compact: '',\n      ex1spacing: '',\n      ex2: 'b2',\n      ex2compact: 'b2',\n      ex3: 'c1',\n      ex3compact: 'c1',\n      custom: 'customB',\n    };\n  },\n};\n</script>\n\n<style lang=\"scss\">\n  .wrap {\n    width: 180px;\n  }\n\n  .no-box:checked ~ .no-box__content {\n    color: green;\n  }\n\n  .no-box:checked ~ .no-box__content::after {\n    content: '(checked)';\n  }\n</style>\n",".wrap {\n  width: 180px;\n}\n\n.no-box:checked ~ .no-box__content {\n  color: green;\n}\n\n.no-box:checked ~ .no-box__content::after {\n  content: \"(checked)\";\n}\n\n/*# sourceMappingURL=Radios.vue.map */"]}, media: undefined });
 
     };
     /* scoped */
@@ -45836,9 +45636,7 @@ var cedar = (function () {
           {
             attrs: {
               tag: "h2",
-              modifier:
-                "heading-sans-400 heading-sans-500@md heading-sans-500@lg",
-              space: "cdr-my-space-two-x"
+              modifier: "heading-sans-400 heading-sans-500@md heading-sans-500@lg"
             }
           },
           [_vm._v("\n    Selects\n  ")]
@@ -45856,8 +45654,7 @@ var cedar = (function () {
                 attrs: {
                   label: "Default",
                   background: _vm.backgroundColor,
-                  prompt: "Choose one",
-                  space: "cdr-my-space-two-x"
+                  prompt: "Choose one"
                 },
                 on: { "select-change": _vm.doExternal },
                 model: {
@@ -45898,8 +45695,7 @@ var cedar = (function () {
                   label: "Required with Prompt",
                   background: _vm.backgroundColor,
                   prompt: "Choose one",
-                  required: "",
-                  space: "cdr-my-space-two-x"
+                  required: ""
                 },
                 model: {
                   value: _vm.selectedB,
@@ -45941,8 +45737,7 @@ var cedar = (function () {
             attrs: {
               label: "Disabled select",
               background: _vm.backgroundColor,
-              disabled: "",
-              space: "cdr-my-space-two-x"
+              disabled: ""
             },
             model: {
               value: _vm.selectedDisabled,
@@ -45966,8 +45761,7 @@ var cedar = (function () {
               label: "Hidden label text",
               "hide-label": "",
               background: _vm.backgroundColor,
-              prompt: "Hidden label",
-              space: "cdr-my-space-two-x"
+              prompt: "Hidden label"
             },
             model: {
               value: _vm.selectedC,
@@ -45995,11 +45789,7 @@ var cedar = (function () {
         _c(
           "cdr-select",
           {
-            attrs: {
-              label: "No Prompt",
-              space: "cdr-my-space-two-x",
-              background: _vm.backgroundColor
-            },
+            attrs: { label: "No Prompt", background: _vm.backgroundColor },
             model: {
               value: _vm.selectedD,
               callback: function($$v) {
@@ -46040,7 +45830,6 @@ var cedar = (function () {
             label: "Dynamic",
             background: _vm.backgroundColor,
             options: _vm.dynamicData,
-            space: "cdr-my-space-two-x",
             prompt: "Choose One"
           },
           model: {
@@ -46063,7 +45852,6 @@ var cedar = (function () {
               label: "Example with Helper Text",
               background: _vm.backgroundColor,
               options: _vm.dynamicData,
-              space: "cdr-my-space-two-x",
               prompt: "Choose One"
             },
             model: {
@@ -46108,7 +45896,6 @@ var cedar = (function () {
               label: "Example with Info Link",
               background: _vm.backgroundColor,
               options: _vm.dynamicData,
-              space: "cdr-my-space-two-x",
               prompt: "Choose One"
             },
             model: {
@@ -46147,7 +45934,6 @@ var cedar = (function () {
               label: "Example with Info Icon",
               background: _vm.backgroundColor,
               options: _vm.dynamicData,
-              space: "cdr-my-space-two-x",
               prompt: "Choose One"
             },
             model: {
@@ -46194,7 +45980,6 @@ var cedar = (function () {
               label: "Example with Pre Icon",
               background: _vm.backgroundColor,
               options: _vm.dynamicData,
-              space: "cdr-my-space-two-x",
               prompt: "Choose One"
             },
             model: {
@@ -46227,7 +46012,6 @@ var cedar = (function () {
               label: "Example with error",
               background: _vm.backgroundColor,
               options: _vm.dynamicData,
-              space: "cdr-my-space-two-x",
               prompt: "Choose One",
               error: true
             },
@@ -46255,7 +46039,6 @@ var cedar = (function () {
             background: _vm.backgroundColor,
             size: "large",
             options: _vm.dynamicData,
-            space: "cdr-my-space-two-x",
             prompt: "Choose One"
           },
           model: {
@@ -46344,7 +46127,7 @@ var cedar = (function () {
     /* style */
     const __vue_inject_styles__$I = function (inject) {
       if (!inject) return
-      inject("data-v-fed9178e_0", { source: "\n.standard-select {\n  width: 25%;\n}\n", map: {"version":3,"sources":["/home/runner/work/rei-cedar/rei-cedar/src/components/select/examples/Selects.vue"],"names":[],"mappings":";AA0WA;EACA,UAAA;AACA","file":"Selects.vue","sourcesContent":["<template>\n  <div>\n    <cdr-text\n      tag=\"h2\"\n      modifier=\"heading-sans-400 heading-sans-500@md heading-sans-500@lg\"\n      space=\"cdr-my-space-two-x\"\n    >\n      Selects\n    </cdr-text>\n    <hr class=\"icon-hr\">\n\n    <div data-backstop=\"select-target\">\n      <!-- Default Example -->\n      <cdr-select\n        label=\"Default\"\n        v-model=\"selectedA\"\n        :background=\"backgroundColor\"\n        prompt=\"Choose one\"\n        space=\"cdr-my-space-two-x\"\n        @select-change=\"doExternal\"\n      >\n        <option value=\"1\">\n          1\n        </option>\n        <option value=\"2\">\n          2\n        </option>\n        <option value=\"3\">\n          3\n        </option>\n        <option value=\"4\">\n          4\n        </option>\n      </cdr-select>\n      <cdr-text>Selected Value: {{ selectedA }}</cdr-text>\n\n      <hr class=\"icon-hr\">\n\n      <!-- Required with Prompt Example -->\n      <cdr-select\n        label=\"Required with Prompt\"\n        v-model=\"selectedB\"\n        :background=\"backgroundColor\"\n        prompt=\"Choose one\"\n        required\n        space=\"cdr-my-space-two-x\"\n      >\n        <option value=\"1\">\n          1\n        </option>\n        <option value=\"2\">\n          2\n        </option>\n        <option value=\"3\">\n          3\n        </option>\n        <option value=\"4\">\n          4\n        </option>\n      </cdr-select>\n      <cdr-text>Selected Value: {{ selectedB }}</cdr-text>\n    </div>\n    <hr class=\"icon-hr\">\n\n    <!-- Disabled Select -->\n    <cdr-select\n      label=\"Disabled select\"\n      v-model=\"selectedDisabled\"\n      :background=\"backgroundColor\"\n      disabled\n      space=\"cdr-my-space-two-x\"\n    >\n      <option value=\"1\">\n        1\n      </option>\n    </cdr-select>\n    <cdr-text>Selected: {{ selectedDisabled }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <!-- Hidden Label Example -->\n    <cdr-select\n      label=\"Hidden label text\"\n      hide-label\n      v-model=\"selectedC\"\n      :background=\"backgroundColor\"\n      prompt=\"Hidden label\"\n      space=\"cdr-my-space-two-x\"\n    >\n      <option value=\"1\">\n        1\n      </option>\n      <option value=\"2\">\n        2\n      </option>\n      <option value=\"3\">\n        3\n      </option>\n      <option value=\"4\">\n        4\n      </option>\n    </cdr-select>\n    <cdr-text>Selected Value: {{ selectedC }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <!-- No Prompt Example -->\n    <cdr-select\n      label=\"No Prompt\"\n      space=\"cdr-my-space-two-x\"\n      v-model=\"selectedD\"\n      :background=\"backgroundColor\"\n    >\n      <option value=\"1\">\n        1\n      </option>\n      <option value=\"2\">\n        2\n      </option>\n      <option value=\"3\">\n        3\n      </option>\n      <option value=\"REALLY REALLY LONG VALUE REALLY REALLY LONG VALUE\">\n        REALLY REALLY LONG VALUE REALLY REALLY LONG VALUE\n      </option>\n    </cdr-select>\n    <cdr-text>Selected Value: {{ selectedD }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <!-- Dynamic Data Example -->\n    <cdr-select\n      label=\"Dynamic\"\n      v-model=\"dynamic\"\n      :background=\"backgroundColor\"\n      :options=\"dynamicData\"\n      space=\"cdr-my-space-two-x\"\n      prompt=\"Choose One\"\n    />\n    <cdr-text>Selected: {{ dynamic }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <!-- Helper Text Example -->\n    <cdr-select\n      label=\"Example with Helper Text\"\n      v-model=\"helperTextModel\"\n      :background=\"backgroundColor\"\n      :options=\"dynamicData\"\n      space=\"cdr-my-space-two-x\"\n      prompt=\"Choose One\"\n    >\n      <template slot=\"helper-text\">\n        This is helper text.\n      </template>\n\n      <template slot=\"info\">\n        <cdr-link\n          href=\"#/selects\"\n          modifier=\"standalone\"\n        >\n          Info Link/Icon\n        </cdr-link>\n      </template>\n    </cdr-select>\n    <cdr-text>Selected Value: {{ helperTextModel }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <!-- Info Link Example -->\n    <cdr-select\n      label=\"Example with Info Link\"\n      v-model=\"infoLinkModel\"\n      :background=\"backgroundColor\"\n      :options=\"dynamicData\"\n      space=\"cdr-my-space-two-x\"\n      prompt=\"Choose One\"\n    >\n      <template slot=\"info\">\n        <cdr-link\n          href=\"#/selects\"\n          modifier=\"standalone\"\n        >\n          Info Link/Icon\n        </cdr-link>\n      </template>\n    </cdr-select>\n    <cdr-text>Selected: {{ infoLinkModel }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <!-- Info Icon Example -->\n    <cdr-select\n      label=\"Example with Info Icon\"\n      v-model=\"infoIconModel\"\n      :background=\"backgroundColor\"\n      :options=\"dynamicData\"\n      space=\"cdr-my-space-two-x\"\n      prompt=\"Choose One\"\n    >\n      <template slot=\"info-action\">\n        <cdr-link>\n          <icon-information-stroke inherit-color />\n          <span class=\"cdr-display-sr-only\">Information!</span>\n        </cdr-link>\n      </template>\n    </cdr-select>\n    <cdr-text>Selected Value: {{ infoIconModel }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <!-- Pre Icon Example -->\n    <cdr-select\n      label=\"Example with Pre Icon\"\n      v-model=\"preIconModel\"\n      :background=\"backgroundColor\"\n      :options=\"dynamicData\"\n      space=\"cdr-my-space-two-x\"\n      prompt=\"Choose One\"\n    >\n      <template slot=\"pre-icon\">\n        <icon-lock-locked-stroke />\n      </template>\n    </cdr-select>\n    <cdr-text>Selected Value: {{ preIconModel }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <!-- Error Example -->\n    <cdr-select\n      label=\"Example with error\"\n      v-model=\"preIconModel\"\n      :background=\"backgroundColor\"\n      :options=\"dynamicData\"\n      space=\"cdr-my-space-two-x\"\n      prompt=\"Choose One\"\n      :error=\"true\"\n    >\n      <template slot=\"error\">\n        error message goes here\n      </template>\n    </cdr-select>\n    <hr class=\"icon-hr\">\n\n    <!-- Large Select Example -->\n    <cdr-select\n      label=\"Size = Large\"\n      v-model=\"dynamic\"\n      :background=\"backgroundColor\"\n      size=\"large\"\n      :options=\"dynamicData\"\n      space=\"cdr-my-space-two-x\"\n      prompt=\"Choose One\"\n    />\n    <cdr-text>Selected Value: {{ dynamic }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <cdr-text class=\"cdr-my-space-two-x\">\n      Multiple Select with size\n    </cdr-text>\n\n    <cdr-select\n      label=\"Multiple Prompt\"\n      v-model=\"multiple\"\n      :background=\"backgroundColor\"\n      :multiple-size=\"6\"\n      multiple\n    >\n      <option\n        value=\"1\"\n      >\n        1\n      </option>\n      <option value=\"2\">\n        2\n      </option>\n      <option\n        value=\"3\"\n      >\n        3\n      </option>\n      <option value=\"4\">\n        4\n      </option>\n      <option value=\"5\">\n        5\n      </option>\n      <option value=\"6\">\n        6\n      </option>\n    </cdr-select>\n    <cdr-text>Selected Values: {{ multiple }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <cdr-text class=\"cdr-my-space-two-x\">\n      Multiple Select\n    </cdr-text>\n\n    <cdr-select\n      label=\"Multiple Prompt\"\n      v-model=\"multiple2\"\n      :background=\"backgroundColor\"\n      multiple\n      :options=\"multiple2Data\"\n    />\n    <cdr-text>Selected Values: {{ multiple2 }}</cdr-text>\n    <hr class=\"icon-hr\">\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\nexport default {\n  name: 'Selects',\n  components: Components,\n  data() {\n    return {\n      selectedDisabled: '',\n      selectedA: '',\n      selectedB: '2',\n      selectedC: '',\n      selectedD: '',\n      dynamic: '',\n      dynamicData: [{ value: 'a', text: 'a' }, { value: 'b', text: 'b' }],\n      helperTextModel: '',\n      infoLinkModel: '',\n      infoIconModel: '',\n      preIconModel: '',\n      multiple: ['1', '2'],\n      multiple2: ['-1'],\n      multiple2Data: ['a', 'b', 'c', 'd'],\n      backgroundColor: 'primary',\n    };\n  },\n  watch: {\n    $route(to) {\n      this.setBackground(to.query.background);\n    },\n  },\n  mounted() {\n    this.setBackground(this.$router.currentRoute.query.background);\n  },\n  methods: {\n    inputEventHandler(selectedValue, event) {\n      console.log('input Event event = ', event, ' selectedValue = ', selectedValue); // eslint-disable-line\n    },\n    inputChange(selectedValue, event) {\n      console.log('change Event event = ', event, ' selectedValue = ', selectedValue); // eslint-disable-line\n    },\n    doExternal(v, e) {\n      console.log('EXTERNAL', v, e); // eslint-disable-line\n    },\n    setBackground(background) {\n      switch (background) {\n        case 'primary':\n          this.backgroundColor = 'primary';\n          break;\n        case 'secondary':\n          this.backgroundColor = 'secondary';\n          break;\n        default:\n          this.backgroundColor = 'primary';\n      }\n    },\n  },\n};\n</script>\n\n<style>\n  .standard-select {\n    width: 25%;\n  }\n</style>\n"]}, media: undefined });
+      inject("data-v-244a9db3_0", { source: "\n.standard-select {\n  width: 25%;\n}\n", map: {"version":3,"sources":["/home/runner/work/rei-cedar/rei-cedar/src/components/select/examples/Selects.vue"],"names":[],"mappings":";AAsWA;EACA,UAAA;AACA","file":"Selects.vue","sourcesContent":["<template>\n  <div>\n    <cdr-text\n      tag=\"h2\"\n      modifier=\"heading-sans-400 heading-sans-500@md heading-sans-500@lg\"\n    >\n      Selects\n    </cdr-text>\n    <hr class=\"icon-hr\">\n\n    <div data-backstop=\"select-target\">\n      <!-- Default Example -->\n      <cdr-select\n        label=\"Default\"\n        v-model=\"selectedA\"\n        :background=\"backgroundColor\"\n        prompt=\"Choose one\"\n\n        @select-change=\"doExternal\"\n      >\n        <option value=\"1\">\n          1\n        </option>\n        <option value=\"2\">\n          2\n        </option>\n        <option value=\"3\">\n          3\n        </option>\n        <option value=\"4\">\n          4\n        </option>\n      </cdr-select>\n      <cdr-text>Selected Value: {{ selectedA }}</cdr-text>\n\n      <hr class=\"icon-hr\">\n\n      <!-- Required with Prompt Example -->\n      <cdr-select\n        label=\"Required with Prompt\"\n        v-model=\"selectedB\"\n        :background=\"backgroundColor\"\n        prompt=\"Choose one\"\n        required\n      >\n        <option value=\"1\">\n          1\n        </option>\n        <option value=\"2\">\n          2\n        </option>\n        <option value=\"3\">\n          3\n        </option>\n        <option value=\"4\">\n          4\n        </option>\n      </cdr-select>\n      <cdr-text>Selected Value: {{ selectedB }}</cdr-text>\n    </div>\n    <hr class=\"icon-hr\">\n\n    <!-- Disabled Select -->\n    <cdr-select\n      label=\"Disabled select\"\n      v-model=\"selectedDisabled\"\n      :background=\"backgroundColor\"\n      disabled\n    >\n      <option value=\"1\">\n        1\n      </option>\n    </cdr-select>\n    <cdr-text>Selected: {{ selectedDisabled }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <!-- Hidden Label Example -->\n    <cdr-select\n      label=\"Hidden label text\"\n      hide-label\n      v-model=\"selectedC\"\n      :background=\"backgroundColor\"\n      prompt=\"Hidden label\"\n    >\n      <option value=\"1\">\n        1\n      </option>\n      <option value=\"2\">\n        2\n      </option>\n      <option value=\"3\">\n        3\n      </option>\n      <option value=\"4\">\n        4\n      </option>\n    </cdr-select>\n    <cdr-text>Selected Value: {{ selectedC }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <!-- No Prompt Example -->\n    <cdr-select\n      label=\"No Prompt\"\n\n      v-model=\"selectedD\"\n      :background=\"backgroundColor\"\n    >\n      <option value=\"1\">\n        1\n      </option>\n      <option value=\"2\">\n        2\n      </option>\n      <option value=\"3\">\n        3\n      </option>\n      <option value=\"REALLY REALLY LONG VALUE REALLY REALLY LONG VALUE\">\n        REALLY REALLY LONG VALUE REALLY REALLY LONG VALUE\n      </option>\n    </cdr-select>\n    <cdr-text>Selected Value: {{ selectedD }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <!-- Dynamic Data Example -->\n    <cdr-select\n      label=\"Dynamic\"\n      v-model=\"dynamic\"\n      :background=\"backgroundColor\"\n      :options=\"dynamicData\"\n\n      prompt=\"Choose One\"\n    />\n    <cdr-text>Selected: {{ dynamic }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <!-- Helper Text Example -->\n    <cdr-select\n      label=\"Example with Helper Text\"\n      v-model=\"helperTextModel\"\n      :background=\"backgroundColor\"\n      :options=\"dynamicData\"\n\n      prompt=\"Choose One\"\n    >\n      <template slot=\"helper-text\">\n        This is helper text.\n      </template>\n\n      <template slot=\"info\">\n        <cdr-link\n          href=\"#/selects\"\n          modifier=\"standalone\"\n        >\n          Info Link/Icon\n        </cdr-link>\n      </template>\n    </cdr-select>\n    <cdr-text>Selected Value: {{ helperTextModel }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <!-- Info Link Example -->\n    <cdr-select\n      label=\"Example with Info Link\"\n      v-model=\"infoLinkModel\"\n      :background=\"backgroundColor\"\n      :options=\"dynamicData\"\n\n      prompt=\"Choose One\"\n    >\n      <template slot=\"info\">\n        <cdr-link\n          href=\"#/selects\"\n          modifier=\"standalone\"\n        >\n          Info Link/Icon\n        </cdr-link>\n      </template>\n    </cdr-select>\n    <cdr-text>Selected: {{ infoLinkModel }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <!-- Info Icon Example -->\n    <cdr-select\n      label=\"Example with Info Icon\"\n      v-model=\"infoIconModel\"\n      :background=\"backgroundColor\"\n      :options=\"dynamicData\"\n\n      prompt=\"Choose One\"\n    >\n      <template slot=\"info-action\">\n        <cdr-link>\n          <icon-information-stroke inherit-color />\n          <span class=\"cdr-display-sr-only\">Information!</span>\n        </cdr-link>\n      </template>\n    </cdr-select>\n    <cdr-text>Selected Value: {{ infoIconModel }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <!-- Pre Icon Example -->\n    <cdr-select\n      label=\"Example with Pre Icon\"\n      v-model=\"preIconModel\"\n      :background=\"backgroundColor\"\n      :options=\"dynamicData\"\n\n      prompt=\"Choose One\"\n    >\n      <template slot=\"pre-icon\">\n        <icon-lock-locked-stroke />\n      </template>\n    </cdr-select>\n    <cdr-text>Selected Value: {{ preIconModel }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <!-- Error Example -->\n    <cdr-select\n      label=\"Example with error\"\n      v-model=\"preIconModel\"\n      :background=\"backgroundColor\"\n      :options=\"dynamicData\"\n\n      prompt=\"Choose One\"\n      :error=\"true\"\n    >\n      <template slot=\"error\">\n        error message goes here\n      </template>\n    </cdr-select>\n    <hr class=\"icon-hr\">\n\n    <!-- Large Select Example -->\n    <cdr-select\n      label=\"Size = Large\"\n      v-model=\"dynamic\"\n      :background=\"backgroundColor\"\n      size=\"large\"\n      :options=\"dynamicData\"\n\n      prompt=\"Choose One\"\n    />\n    <cdr-text>Selected Value: {{ dynamic }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <cdr-text class=\"cdr-my-space-two-x\">\n      Multiple Select with size\n    </cdr-text>\n\n    <cdr-select\n      label=\"Multiple Prompt\"\n      v-model=\"multiple\"\n      :background=\"backgroundColor\"\n      :multiple-size=\"6\"\n      multiple\n    >\n      <option\n        value=\"1\"\n      >\n        1\n      </option>\n      <option value=\"2\">\n        2\n      </option>\n      <option\n        value=\"3\"\n      >\n        3\n      </option>\n      <option value=\"4\">\n        4\n      </option>\n      <option value=\"5\">\n        5\n      </option>\n      <option value=\"6\">\n        6\n      </option>\n    </cdr-select>\n    <cdr-text>Selected Values: {{ multiple }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <cdr-text class=\"cdr-my-space-two-x\">\n      Multiple Select\n    </cdr-text>\n\n    <cdr-select\n      label=\"Multiple Prompt\"\n      v-model=\"multiple2\"\n      :background=\"backgroundColor\"\n      multiple\n      :options=\"multiple2Data\"\n    />\n    <cdr-text>Selected Values: {{ multiple2 }}</cdr-text>\n    <hr class=\"icon-hr\">\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\nexport default {\n  name: 'Selects',\n  components: Components,\n  data() {\n    return {\n      selectedDisabled: '',\n      selectedA: '',\n      selectedB: '2',\n      selectedC: '',\n      selectedD: '',\n      dynamic: '',\n      dynamicData: [{ value: 'a', text: 'a' }, { value: 'b', text: 'b' }],\n      helperTextModel: '',\n      infoLinkModel: '',\n      infoIconModel: '',\n      preIconModel: '',\n      multiple: ['1', '2'],\n      multiple2: ['-1'],\n      multiple2Data: ['a', 'b', 'c', 'd'],\n      backgroundColor: 'primary',\n    };\n  },\n  watch: {\n    $route(to) {\n      this.setBackground(to.query.background);\n    },\n  },\n  mounted() {\n    this.setBackground(this.$router.currentRoute.query.background);\n  },\n  methods: {\n    inputEventHandler(selectedValue, event) {\n      console.log('input Event event = ', event, ' selectedValue = ', selectedValue); // eslint-disable-line\n    },\n    inputChange(selectedValue, event) {\n      console.log('change Event event = ', event, ' selectedValue = ', selectedValue); // eslint-disable-line\n    },\n    doExternal(v, e) {\n      console.log('EXTERNAL', v, e); // eslint-disable-line\n    },\n    setBackground(background) {\n      switch (background) {\n        case 'primary':\n          this.backgroundColor = 'primary';\n          break;\n        case 'secondary':\n          this.backgroundColor = 'secondary';\n          break;\n        default:\n          this.backgroundColor = 'primary';\n      }\n    },\n  },\n};\n</script>\n\n<style>\n  .standard-select {\n    width: 25%;\n  }\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
@@ -47219,49 +47002,43 @@ var cedar = (function () {
                   [_vm._v("\n        Details\n      ")]
                 ),
                 _vm._v(" "),
-                _c(
-                  "cdr-list",
-                  {
-                    attrs: { modifier: "unordered", space: "cdr-mb-space-two-x" }
-                  },
-                  [
-                    _c("li", [
-                      _vm._v(
-                        "Tuckaway, spacer-mesh shoulder straps and integrated handle make carrying a breeze"
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _vm._v(
-                        "Back pocket holds a hydration reservoir (sold separately)"
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _vm._v(
-                        "Large main compartment has padded interior sleeve to hold a tablet or other device"
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _vm._v(
-                        "Zippered mesh organizer pocket with key fob; 2 side mesh pockets; open-topped stash pocket for jacket or other quick-use items; small front zip pocket"
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _vm._v(
-                        "Mesh-covered back panel has slotted foam for ventilation and breathability"
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _vm._v(
-                        "Attaches to a variety of compatible Osprey packs (sold separately)"
-                      )
-                    ])
-                  ]
-                )
+                _c("cdr-list", { attrs: { modifier: "unordered" } }, [
+                  _c("li", [
+                    _vm._v(
+                      "Tuckaway, spacer-mesh shoulder straps and integrated handle make carrying a breeze"
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _vm._v(
+                      "Back pocket holds a hydration reservoir (sold separately)"
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _vm._v(
+                      "Large main compartment has padded interior sleeve to hold a tablet or other device"
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _vm._v(
+                      "Zippered mesh organizer pocket with key fob; 2 side mesh pockets; open-topped stash pocket for jacket or other quick-use items; small front zip pocket"
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _vm._v(
+                      "Mesh-covered back panel has slotted foam for ventilation and breathability"
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _vm._v(
+                      "Attaches to a variety of compatible Osprey packs (sold separately)"
+                    )
+                  ])
+                ])
               ],
               1
             ),
@@ -47480,7 +47257,7 @@ var cedar = (function () {
     /* style */
     const __vue_inject_styles__$K = function (inject) {
       if (!inject) return
-      inject("data-v-da5ce5b6_0", { source: "\n.tabs-demo-default {\n  max-width: 800px;\n}\nh3.tab-title {\n  margin: 20px 0;\n}\n", map: {"version":3,"sources":["/home/runner/work/rei-cedar/rei-cedar/src/components/tabs/examples/demo/TabsDefault.vue"],"names":[],"mappings":";AA6KA;EACA,gBAAA;AACA;AAEA;EACA,cAAA;AACA","file":"TabsDefault.vue","sourcesContent":["<template>\n  <!-- eslint-disable max-len -->\n  <div class=\"tab-demo-section tabs-demo-default\">\n    <cdr-tabs\n      height=\"500px\"\n      data-backstop=\"tab-default\"\n      :background-color=\"backgroundColor\"\n    >\n      <cdr-tab-panel\n        name=\"Details\"\n        aria-labelledby=\"tab-default-defails\"\n        id=\"tab-panel-default-details\"\n      >\n        <cdr-text\n          tag=\"h3\"\n          modifier=\"heading-serif-400\"\n          class=\"tab-title\"\n        >\n          Details\n        </cdr-text>\n\n        <cdr-list\n          modifier=\"unordered\"\n          space=\"cdr-mb-space-two-x\"\n        >\n          <li>Tuckaway, spacer-mesh shoulder straps and integrated handle make carrying a breeze</li>\n          <li>Back pocket holds a hydration reservoir (sold separately)</li>\n          <li>Large main compartment has padded interior sleeve to hold a tablet or other device</li>\n          <li>Zippered mesh organizer pocket with key fob; 2 side mesh pockets; open-topped stash pocket for jacket or other quick-use items; small front zip pocket</li>\n          <li>Mesh-covered back panel has slotted foam for ventilation and breathability</li>\n          <li>Attaches to a variety of compatible Osprey packs (sold separately)</li>\n        </cdr-list>\n      </cdr-tab-panel>\n      <cdr-tab-panel\n        name=\"Specs\"\n        aria-labelledby=\"tab-default-specs\"\n        id=\"tab-panel-default-specs\"\n      >\n        <cdr-text\n          tag=\"h3\"\n          modifier=\"heading-serif-400\"\n          class=\"tab-title\"\n        >\n          Specs\n        </cdr-text>\n        <cdr-table\n          modifier=\"compact borderless\"\n        >\n          <template slot=\"tbody\">\n            <tr>\n              <th>Best Use</th>\n              <td>Hiking, Travel</td>\n            </tr>\n            <tr>\n              <th>Bag Style</th>\n              <td>Backpack</td>\n            </tr>\n            <tr>\n              <th>Frame Type</th>\n              <td>Frameless</td>\n            </tr>\n            <tr>\n              <th>Gear Capacity (cu. in.)</th>\n              <td>1,220 cubic inches</td>\n            </tr>\n            <tr>\n              <th>Weight</th>\n              <td>1 lb. 3.8 oz</td>\n            </tr>\n            <tr>\n              <th>Pack ACcess</th>\n              <td>2 + main compartments</td>\n            </tr>\n            <tr>\n              <th>Hipbelt</th>\n              <td>Yes</td>\n            </tr>\n            <tr>\n              <th>Dimensions</th>\n              <td>18 x 10 x 9 inches</td>\n            </tr>\n            <tr>\n              <th>Gender</th>\n              <td>Unisex</td>\n            </tr>\n          </template>\n        </cdr-table>\n      </cdr-tab-panel>\n      <cdr-tab-panel\n        name=\"Reviews\"\n        aria-labelledby=\"tab-default-reviews\"\n        id=\"tab-panel-default-reviews\"\n        :disabled=\"true\"\n      />\n      <cdr-tab-panel\n        name=\"Q&A\"\n        aria-labelledby=\"tab-default-Q&A\"\n        id=\"tab-panel-default-Q&A\"\n      >\n        <cdr-text\n          tag=\"h3\"\n          modifier=\"heading-serif-400\"\n          class=\"tab-title\"\n        >\n          Q&A\n        </cdr-text>\n\n        <cdr-accordion\n          id=\"tabs-accordion-default\"\n          :opened=\"accordion1\"\n          @accordion-toggle=\"accordion1 = !accordion1\"\n          level=\"4\"\n        >\n          <template slot=\"label\">\n            A short label\n          </template>\n          <cdr-text\n            modifier=\"body-300\"\n          >\n            This is some text. It's in a\n            <cdr-text\n              tag=\"strong\"\n              modifier=\"body-strong-300\"\n            >cdr-text paragraph with a modifier of <code>body-300</code></cdr-text> element as\n            thats how you assign the correct font and line-height for text dislpay on REI.\n            does not include margin or add space to the container. Lorem ipsum dolor\n          </cdr-text>\n        </cdr-accordion>\n        <cdr-accordion\n          id=\"tabs-accordion-default-long-label\"\n          :opened=\"accordion2\"\n          @accordion-toggle=\"accordion2 = !accordion2\"\n          level=\"4\"\n        >\n          <template slot=\"label\">\n            Label with multiple words, so many words in fact that this content may wrap to several lines\n          </template>\n          <cdr-list modifier=\"unordered\">\n            <li>This is a cdr-list item inside an accordion.</li>\n            <li>It includes no extra styling</li>\n            <li>I'm adding a bunch of items</li>\n            <li>to this list because</li>\n            <li>I want to see what it's like</li>\n            <li>when animated!</li>\n          </cdr-list>\n        </cdr-accordion>\n      </cdr-tab-panel>\n    </cdr-tabs>\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\nexport default {\n  name: 'TabsDefault',\n  components: { ...Components },\n  props: {\n    backgroundColor: {\n      type: String,\n      default: '#ffffff',\n    },\n  },\n  data() {\n    return {\n      accordion1: false,\n      accordion2: false,\n    };\n  },\n};\n</script>\n\n<style>\n  .tabs-demo-default {\n    max-width: 800px;\n  }\n\n  h3.tab-title {\n    margin: 20px 0;\n  }\n</style>\n"]}, media: undefined });
+      inject("data-v-59ad96e4_0", { source: "\n.tabs-demo-default {\n  max-width: 800px;\n}\nh3.tab-title {\n  margin: 20px 0;\n}\n", map: {"version":3,"sources":["/home/runner/work/rei-cedar/rei-cedar/src/components/tabs/examples/demo/TabsDefault.vue"],"names":[],"mappings":";AA4KA;EACA,gBAAA;AACA;AAEA;EACA,cAAA;AACA","file":"TabsDefault.vue","sourcesContent":["<template>\n  <!-- eslint-disable max-len -->\n  <div class=\"tab-demo-section tabs-demo-default\">\n    <cdr-tabs\n      height=\"500px\"\n      data-backstop=\"tab-default\"\n      :background-color=\"backgroundColor\"\n    >\n      <cdr-tab-panel\n        name=\"Details\"\n        aria-labelledby=\"tab-default-defails\"\n        id=\"tab-panel-default-details\"\n      >\n        <cdr-text\n          tag=\"h3\"\n          modifier=\"heading-serif-400\"\n          class=\"tab-title\"\n        >\n          Details\n        </cdr-text>\n\n        <cdr-list\n          modifier=\"unordered\"\n        >\n          <li>Tuckaway, spacer-mesh shoulder straps and integrated handle make carrying a breeze</li>\n          <li>Back pocket holds a hydration reservoir (sold separately)</li>\n          <li>Large main compartment has padded interior sleeve to hold a tablet or other device</li>\n          <li>Zippered mesh organizer pocket with key fob; 2 side mesh pockets; open-topped stash pocket for jacket or other quick-use items; small front zip pocket</li>\n          <li>Mesh-covered back panel has slotted foam for ventilation and breathability</li>\n          <li>Attaches to a variety of compatible Osprey packs (sold separately)</li>\n        </cdr-list>\n      </cdr-tab-panel>\n      <cdr-tab-panel\n        name=\"Specs\"\n        aria-labelledby=\"tab-default-specs\"\n        id=\"tab-panel-default-specs\"\n      >\n        <cdr-text\n          tag=\"h3\"\n          modifier=\"heading-serif-400\"\n          class=\"tab-title\"\n        >\n          Specs\n        </cdr-text>\n        <cdr-table\n          modifier=\"compact borderless\"\n        >\n          <template slot=\"tbody\">\n            <tr>\n              <th>Best Use</th>\n              <td>Hiking, Travel</td>\n            </tr>\n            <tr>\n              <th>Bag Style</th>\n              <td>Backpack</td>\n            </tr>\n            <tr>\n              <th>Frame Type</th>\n              <td>Frameless</td>\n            </tr>\n            <tr>\n              <th>Gear Capacity (cu. in.)</th>\n              <td>1,220 cubic inches</td>\n            </tr>\n            <tr>\n              <th>Weight</th>\n              <td>1 lb. 3.8 oz</td>\n            </tr>\n            <tr>\n              <th>Pack ACcess</th>\n              <td>2 + main compartments</td>\n            </tr>\n            <tr>\n              <th>Hipbelt</th>\n              <td>Yes</td>\n            </tr>\n            <tr>\n              <th>Dimensions</th>\n              <td>18 x 10 x 9 inches</td>\n            </tr>\n            <tr>\n              <th>Gender</th>\n              <td>Unisex</td>\n            </tr>\n          </template>\n        </cdr-table>\n      </cdr-tab-panel>\n      <cdr-tab-panel\n        name=\"Reviews\"\n        aria-labelledby=\"tab-default-reviews\"\n        id=\"tab-panel-default-reviews\"\n        :disabled=\"true\"\n      />\n      <cdr-tab-panel\n        name=\"Q&A\"\n        aria-labelledby=\"tab-default-Q&A\"\n        id=\"tab-panel-default-Q&A\"\n      >\n        <cdr-text\n          tag=\"h3\"\n          modifier=\"heading-serif-400\"\n          class=\"tab-title\"\n        >\n          Q&A\n        </cdr-text>\n\n        <cdr-accordion\n          id=\"tabs-accordion-default\"\n          :opened=\"accordion1\"\n          @accordion-toggle=\"accordion1 = !accordion1\"\n          level=\"4\"\n        >\n          <template slot=\"label\">\n            A short label\n          </template>\n          <cdr-text\n            modifier=\"body-300\"\n          >\n            This is some text. It's in a\n            <cdr-text\n              tag=\"strong\"\n              modifier=\"body-strong-300\"\n            >cdr-text paragraph with a modifier of <code>body-300</code></cdr-text> element as\n            thats how you assign the correct font and line-height for text dislpay on REI.\n            does not include margin or add space to the container. Lorem ipsum dolor\n          </cdr-text>\n        </cdr-accordion>\n        <cdr-accordion\n          id=\"tabs-accordion-default-long-label\"\n          :opened=\"accordion2\"\n          @accordion-toggle=\"accordion2 = !accordion2\"\n          level=\"4\"\n        >\n          <template slot=\"label\">\n            Label with multiple words, so many words in fact that this content may wrap to several lines\n          </template>\n          <cdr-list modifier=\"unordered\">\n            <li>This is a cdr-list item inside an accordion.</li>\n            <li>It includes no extra styling</li>\n            <li>I'm adding a bunch of items</li>\n            <li>to this list because</li>\n            <li>I want to see what it's like</li>\n            <li>when animated!</li>\n          </cdr-list>\n        </cdr-accordion>\n      </cdr-tab-panel>\n    </cdr-tabs>\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\nexport default {\n  name: 'TabsDefault',\n  components: { ...Components },\n  props: {\n    backgroundColor: {\n      type: String,\n      default: '#ffffff',\n    },\n  },\n  data() {\n    return {\n      accordion1: false,\n      accordion2: false,\n    };\n  },\n};\n</script>\n\n<style>\n  .tabs-demo-default {\n    max-width: 800px;\n  }\n\n  h3.tab-title {\n    margin: 20px 0;\n  }\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
