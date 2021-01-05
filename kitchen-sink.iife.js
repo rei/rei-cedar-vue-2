@@ -23652,16 +23652,320 @@ var cedar = (function () {
     IconZoomOut: zoomOut
   });
 
-  var css_248z$f = "/* ==========================================================================\n  # CdrImg\n  \n  All values should map to variables in\n  vars/CdrImg.vars.pcss\n  in order to allow for theming\n\n  TOC:\n\n    :Base - Image\n      :Modifiers\n        :Style Variants\n    :Base - Media Frame\n      :Modifiers\n        :Aspect Ratios\n          :normal\n          :@small\n          :@medium\n          :@large\n        :Cropping\n      :Elements\n========================================================================== */\n/* ==========================================================================\n   # Image\n   ========================================================================== */\n.cdr-image_8\\.0\\.0-alpha\\.0 {\n  max-width: 100%;\n  vertical-align: middle;\n  border-style: none;\n  /* Style variants\n    ========================================================================== */\n  /* responsive\n    ========== */\n  /* rounded\n    ========== */\n  /* circle\n    ========== */ }\n.cdr-image--responsive_8\\.0\\.0-alpha\\.0 {\n    display: block;\n    height: auto;\n    width: 100%; }\n.cdr-image--rounded_8\\.0\\.0-alpha\\.0 {\n    border-radius: 0.4rem; }\n.cdr-image--circle_8\\.0\\.0-alpha\\.0 {\n    border-radius: 999.9rem; }\n/* ==========================================================================\n   # MEDIA FRAME\n   ========================================================================== */\n.cdr-media-frame_8\\.0\\.0-alpha\\.0 {\n  position: relative;\n  overflow: hidden;\n  /* Aspect ratios\n    ========================================================================== */\n  /* Aspect ratios @ small\n    ========== */\n  /* Aspect ratios @ medium\n    ========== */\n  /* Aspect ratios @ large\n    ========== */\n  /* Cropping variants\n    ========================================================================== */\n  /* Block elements\n    ========================================================================== */ }\n.cdr-media-frame_8\\.0\\.0-alpha\\.0::before {\n    content: '';\n    height: 0;\n    display: block; }\n.cdr-media-frame--auto_8\\.0\\.0-alpha\\.0::before {\n    padding-bottom: 0; }\n.cdr-media-frame--square_8\\.0\\.0-alpha\\.0::before {\n    padding-bottom: 100%; }\n.cdr-media-frame--1-2_8\\.0\\.0-alpha\\.0::before {\n    padding-bottom: 200%; }\n.cdr-media-frame--2-3_8\\.0\\.0-alpha\\.0::before {\n    padding-bottom: 150%; }\n.cdr-media-frame--3-4_8\\.0\\.0-alpha\\.0::before {\n    padding-bottom: 133.33333333333%; }\n.cdr-media-frame--9-16_8\\.0\\.0-alpha\\.0::before {\n    padding-bottom: 177.77777777778%; }\n.cdr-media-frame--2-1_8\\.0\\.0-alpha\\.0::before {\n    padding-bottom: 50%; }\n.cdr-media-frame--3-2_8\\.0\\.0-alpha\\.0::before {\n    padding-bottom: 66.6666666667%; }\n.cdr-media-frame--4-3_8\\.0\\.0-alpha\\.0::before {\n    padding-bottom: 75%; }\n.cdr-media-frame--16-9_8\\.0\\.0-alpha\\.0::before {\n    padding-bottom: 56.25%; }\n@media (min-width: 768px) {\n    .cdr-media-frame--auto\\@sm_8\\.0\\.0-alpha\\.0::before {\n      padding-bottom: 0; }\n    .cdr-media-frame--square\\@sm_8\\.0\\.0-alpha\\.0::before {\n      padding-bottom: 100%; }\n    .cdr-media-frame--1-2\\@sm_8\\.0\\.0-alpha\\.0::before {\n      padding-bottom: 200%; }\n    .cdr-media-frame--2-3\\@sm_8\\.0\\.0-alpha\\.0::before {\n      padding-bottom: 150%; }\n    .cdr-media-frame--3-4\\@sm_8\\.0\\.0-alpha\\.0::before {\n      padding-bottom: 133.33333333333%; }\n    .cdr-media-frame--9-16\\@sm_8\\.0\\.0-alpha\\.0::before {\n      padding-bottom: 177.77777777778%; }\n    .cdr-media-frame--2-1\\@sm_8\\.0\\.0-alpha\\.0::before {\n      padding-bottom: 50%; }\n    .cdr-media-frame--3-2\\@sm_8\\.0\\.0-alpha\\.0::before {\n      padding-bottom: 66.6666666667%; }\n    .cdr-media-frame--4-3\\@sm_8\\.0\\.0-alpha\\.0::before {\n      padding-bottom: 75%; }\n    .cdr-media-frame--16-9\\@sm_8\\.0\\.0-alpha\\.0::before {\n      padding-bottom: 56.25%; } }\n@media (min-width: 992px) {\n    .cdr-media-frame--auto\\@md_8\\.0\\.0-alpha\\.0::before {\n      padding-bottom: 0; }\n    .cdr-media-frame--square\\@md_8\\.0\\.0-alpha\\.0::before {\n      padding-bottom: 100%; }\n    .cdr-media-frame--1-2\\@md_8\\.0\\.0-alpha\\.0::before {\n      padding-bottom: 200%; }\n    .cdr-media-frame--2-3\\@md_8\\.0\\.0-alpha\\.0::before {\n      padding-bottom: 150%; }\n    .cdr-media-frame--3-4\\@md_8\\.0\\.0-alpha\\.0::before {\n      padding-bottom: 133.33333333333%; }\n    .cdr-media-frame--9-16\\@md_8\\.0\\.0-alpha\\.0::before {\n      padding-bottom: 177.77777777778%; }\n    .cdr-media-frame--2-1\\@md_8\\.0\\.0-alpha\\.0::before {\n      padding-bottom: 50%; }\n    .cdr-media-frame--3-2\\@md_8\\.0\\.0-alpha\\.0::before {\n      padding-bottom: 66.6666666667%; }\n    .cdr-media-frame--4-3\\@md_8\\.0\\.0-alpha\\.0::before {\n      padding-bottom: 75%; }\n    .cdr-media-frame--16-9\\@md_8\\.0\\.0-alpha\\.0::before {\n      padding-bottom: 56.25%; } }\n@media (min-width: 1232px) {\n    .cdr-media-frame--auto\\@lg_8\\.0\\.0-alpha\\.0::before {\n      padding-bottom: 0; }\n    .cdr-media-frame--square\\@lg_8\\.0\\.0-alpha\\.0::before {\n      padding-bottom: 100%; }\n    .cdr-media-frame--1-2\\@lg_8\\.0\\.0-alpha\\.0::before {\n      padding-bottom: 200%; }\n    .cdr-media-frame--2-3\\@lg_8\\.0\\.0-alpha\\.0::before {\n      padding-bottom: 150%; }\n    .cdr-media-frame--3-4\\@lg_8\\.0\\.0-alpha\\.0::before {\n      padding-bottom: 133.33333333333%; }\n    .cdr-media-frame--9-16\\@lg_8\\.0\\.0-alpha\\.0::before {\n      padding-bottom: 177.77777777778%; }\n    .cdr-media-frame--2-1\\@lg_8\\.0\\.0-alpha\\.0::before {\n      padding-bottom: 50%; }\n    .cdr-media-frame--3-2\\@lg_8\\.0\\.0-alpha\\.0::before {\n      padding-bottom: 66.6666666667%; }\n    .cdr-media-frame--4-3\\@lg_8\\.0\\.0-alpha\\.0::before {\n      padding-bottom: 75%; }\n    .cdr-media-frame--16-9\\@lg_8\\.0\\.0-alpha\\.0::before {\n      padding-bottom: 56.25%; } }\n.cdr-media-frame--x-center_8\\.0\\.0-alpha\\.0 > .cdr-media-frame__cover_8\\.0\\.0-alpha\\.0 {\n    background-position-x: center; }\n.cdr-media-frame--y-center_8\\.0\\.0-alpha\\.0 > .cdr-media-frame__cover_8\\.0\\.0-alpha\\.0 {\n    background-position-y: center; }\n.cdr-media-frame--left_8\\.0\\.0-alpha\\.0 > .cdr-media-frame__cover_8\\.0\\.0-alpha\\.0 {\n    background-position-x: left; }\n.cdr-media-frame--right_8\\.0\\.0-alpha\\.0 > .cdr-media-frame__cover_8\\.0\\.0-alpha\\.0 {\n    background-position-x: right; }\n.cdr-media-frame--top_8\\.0\\.0-alpha\\.0 > .cdr-media-frame__cover_8\\.0\\.0-alpha\\.0 {\n    background-position-y: top; }\n.cdr-media-frame--bottom_8\\.0\\.0-alpha\\.0 > .cdr-media-frame__cover_8\\.0\\.0-alpha\\.0 {\n    background-position-y: bottom; }\n.cdr-media-frame__image_8\\.0\\.0-alpha\\.0 {\n    z-index: -1;\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    /* Hide image when only used for a11y */ }\n.cdr-media-frame__image--hidden_8\\.0\\.0-alpha\\.0 {\n      opacity: 0; }\n.cdr-media-frame__cover_8\\.0\\.0-alpha\\.0 {\n    position: absolute;\n    top: 0;\n    left: 0;\n    height: 100%;\n    width: 100%;\n    background-size: contain;\n    background-repeat: no-repeat;\n    background-position: center; }\n.cdr-media-frame__cover--crop_8\\.0\\.0-alpha\\.0 {\n      background-size: auto; }\n.cdr-media-frame__cover--cover_8\\.0\\.0-alpha\\.0 {\n      background-size: cover; }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9jb21wb25lbnRzL2ltYWdlL3N0eWxlcy9DZHJJbWcuc2NzcyIsIkNkckltZy5zY3NzIiwibm9kZV9tb2R1bGVzL0ByZWkvY2RyLXRva2Vucy9kaXN0L3Njc3MvY2RyLXRva2Vucy5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUNBOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7NEVDb0I0RTtBREc1RTs7K0VDQStFO0FESS9FO0VBQ0UsZUFBZTtFQUNmLHNCQUFzQjtFQUN0QixrQkFBa0I7RUFFbEI7Z0ZDSDhFO0VETTlFO2dCQ0pjO0VEWWQ7Z0JDVmM7RURpQmQ7Z0JDZmMsRURnQkM7QUFkZjtJQUNFLGNBQWM7SUFDZCxZQUFZO0lBQ1osV0FBVyxFQUFBO0FBTWI7SUFDRSxxQkVvM0NzQixFQUFBO0FGOTJDeEI7SUFDRSx1QkU4MkN1QixFQUFBO0FGMTJDM0I7OytFQ1grRTtBRGUvRTtFQUNFLGtCQUFrQjtFQUNsQixnQkFBZ0I7RUFRaEI7Z0ZDcEI4RTtFRCtEOUU7Z0JDN0RjO0VEeUdkO2dCQ3ZHYztFRG1KZDtnQkNqSmM7RUQ2TGQ7Z0ZDM0w4RTtFRHNOOUU7Z0ZDcE44RSxFRHFOQztBQXJOakY7SUFLSSxXQUFXO0lBQ1gsU0FBUztJQUNULGNBQWMsRUFBQTtBQU1oQjtJQUNFLGlCQUFpQixFQUFBO0FBR25CO0lBQ0Usb0JBQW9CLEVBQUE7QUFHdEI7SUFDRSxvQkFBb0IsRUFBQTtBQUd0QjtJQUNFLG9CQUFvQixFQUFBO0FBR3RCO0lBQ0UsZ0NBQWdDLEVBQUE7QUFHbEM7SUFDRSxnQ0FBZ0MsRUFBQTtBQUdsQztJQUNFLG1CQUFtQixFQUFBO0FBR3JCO0lBQ0UsOEJBQThCLEVBQUE7QUFHaEM7SUFDRSxtQkFBbUIsRUFBQTtBQUdyQjtJQUNFLHNCQUFzQixFQUFBO0FFczZEeEI7SUZoNkRFO01BQ0UsaUJBQWlCLEVBQUE7SUFHbkI7TUFDRSxvQkFBb0IsRUFBQTtJQUd0QjtNQUNFLG9CQUFvQixFQUFBO0lBR3RCO01BQ0Usb0JBQW9CLEVBQUE7SUFHdEI7TUFDRSxnQ0FBZ0MsRUFBQTtJQUdsQztNQUNFLGdDQUFnQyxFQUFBO0lBR2xDO01BQ0UsbUJBQW1CLEVBQUE7SUFHckI7TUFDRSw4QkFBOEIsRUFBQTtJQUdoQztNQUNFLG1CQUFtQixFQUFBO0lBR3JCO01BQ0Usc0JBQXNCLEVBQUEsRUFDdkI7QUVpNERIO0lGMzNERTtNQUNFLGlCQUFpQixFQUFBO0lBR25CO01BQ0Usb0JBQW9CLEVBQUE7SUFHdEI7TUFDRSxvQkFBb0IsRUFBQTtJQUd0QjtNQUNFLG9CQUFvQixFQUFBO0lBR3RCO01BQ0UsZ0NBQWdDLEVBQUE7SUFHbEM7TUFDRSxnQ0FBZ0MsRUFBQTtJQUdsQztNQUNFLG1CQUFtQixFQUFBO0lBR3JCO01BQ0UsOEJBQThCLEVBQUE7SUFHaEM7TUFDRSxtQkFBbUIsRUFBQTtJQUdyQjtNQUNFLHNCQUFzQixFQUFBLEVBQ3ZCO0FFNDFESDtJRnQxREU7TUFDRSxpQkFBaUIsRUFBQTtJQUduQjtNQUNFLG9CQUFvQixFQUFBO0lBR3RCO01BQ0Usb0JBQW9CLEVBQUE7SUFHdEI7TUFDRSxvQkFBb0IsRUFBQTtJQUd0QjtNQUNFLGdDQUFnQyxFQUFBO0lBR2xDO01BQ0UsZ0NBQWdDLEVBQUE7SUFHbEM7TUFDRSxtQkFBbUIsRUFBQTtJQUdyQjtNQUNFLDhCQUE4QixFQUFBO0lBR2hDO01BQ0UsbUJBQW1CLEVBQUE7SUFHckI7TUFDRSxzQkFBc0IsRUFBQSxFQUN2QjtBQU1IO0lBQ0UsNkJBQTZCLEVBQUE7QUFHL0I7SUFDRSw2QkFBNkIsRUFBQTtBQUcvQjtJQUNFLDJCQUEyQixFQUFBO0FBRzdCO0lBQ0UsNEJBQTRCLEVBQUE7QUFHOUI7SUFDRSwwQkFBMEIsRUFBQTtBQUc1QjtJQUNFLDZCQUE2QixFQUFBO0FBTS9CO0lBQ0UsV0FBVztJQUNYLGtCQUFrQjtJQUNsQixNQUFNO0lBQ04sT0FBTztJQUNQLFdBQVc7SUFDWCxZQUFZO0lBRVosdUNBQUEsRUFBd0M7QUFDeEM7TUFDRSxVQUFVLEVBQUE7QUFJZDtJQUNFLGtCQUFrQjtJQUNsQixNQUFNO0lBQ04sT0FBTztJQUNQLFlBQVk7SUFDWixXQUFXO0lBQ1gsd0JBQXdCO0lBQ3hCLDRCQUE0QjtJQUM1QiwyQkFBMkIsRUFBQTtBQUUzQjtNQUNFLHFCQUFxQixFQUFBO0FBR3ZCO01BQ0Usc0JBQXNCLEVBQUEiLCJmaWxlIjoiQ2RySW1nLnNjc3MifQ== */";
-  var style$h = {"cdr-image":"cdr-image_8.0.0-alpha.0","cdr-image--responsive":"cdr-image--responsive_8.0.0-alpha.0","cdr-image--rounded":"cdr-image--rounded_8.0.0-alpha.0","cdr-image--circle":"cdr-image--circle_8.0.0-alpha.0","cdr-media-frame":"cdr-media-frame_8.0.0-alpha.0","cdr-media-frame--auto":"cdr-media-frame--auto_8.0.0-alpha.0","cdr-media-frame--square":"cdr-media-frame--square_8.0.0-alpha.0","cdr-media-frame--1-2":"cdr-media-frame--1-2_8.0.0-alpha.0","cdr-media-frame--2-3":"cdr-media-frame--2-3_8.0.0-alpha.0","cdr-media-frame--3-4":"cdr-media-frame--3-4_8.0.0-alpha.0","cdr-media-frame--9-16":"cdr-media-frame--9-16_8.0.0-alpha.0","cdr-media-frame--2-1":"cdr-media-frame--2-1_8.0.0-alpha.0","cdr-media-frame--3-2":"cdr-media-frame--3-2_8.0.0-alpha.0","cdr-media-frame--4-3":"cdr-media-frame--4-3_8.0.0-alpha.0","cdr-media-frame--16-9":"cdr-media-frame--16-9_8.0.0-alpha.0","cdr-media-frame--auto@sm":"cdr-media-frame--auto@sm_8.0.0-alpha.0","cdr-media-frame--square@sm":"cdr-media-frame--square@sm_8.0.0-alpha.0","cdr-media-frame--1-2@sm":"cdr-media-frame--1-2@sm_8.0.0-alpha.0","cdr-media-frame--2-3@sm":"cdr-media-frame--2-3@sm_8.0.0-alpha.0","cdr-media-frame--3-4@sm":"cdr-media-frame--3-4@sm_8.0.0-alpha.0","cdr-media-frame--9-16@sm":"cdr-media-frame--9-16@sm_8.0.0-alpha.0","cdr-media-frame--2-1@sm":"cdr-media-frame--2-1@sm_8.0.0-alpha.0","cdr-media-frame--3-2@sm":"cdr-media-frame--3-2@sm_8.0.0-alpha.0","cdr-media-frame--4-3@sm":"cdr-media-frame--4-3@sm_8.0.0-alpha.0","cdr-media-frame--16-9@sm":"cdr-media-frame--16-9@sm_8.0.0-alpha.0","cdr-media-frame--auto@md":"cdr-media-frame--auto@md_8.0.0-alpha.0","cdr-media-frame--square@md":"cdr-media-frame--square@md_8.0.0-alpha.0","cdr-media-frame--1-2@md":"cdr-media-frame--1-2@md_8.0.0-alpha.0","cdr-media-frame--2-3@md":"cdr-media-frame--2-3@md_8.0.0-alpha.0","cdr-media-frame--3-4@md":"cdr-media-frame--3-4@md_8.0.0-alpha.0","cdr-media-frame--9-16@md":"cdr-media-frame--9-16@md_8.0.0-alpha.0","cdr-media-frame--2-1@md":"cdr-media-frame--2-1@md_8.0.0-alpha.0","cdr-media-frame--3-2@md":"cdr-media-frame--3-2@md_8.0.0-alpha.0","cdr-media-frame--4-3@md":"cdr-media-frame--4-3@md_8.0.0-alpha.0","cdr-media-frame--16-9@md":"cdr-media-frame--16-9@md_8.0.0-alpha.0","cdr-media-frame--auto@lg":"cdr-media-frame--auto@lg_8.0.0-alpha.0","cdr-media-frame--square@lg":"cdr-media-frame--square@lg_8.0.0-alpha.0","cdr-media-frame--1-2@lg":"cdr-media-frame--1-2@lg_8.0.0-alpha.0","cdr-media-frame--2-3@lg":"cdr-media-frame--2-3@lg_8.0.0-alpha.0","cdr-media-frame--3-4@lg":"cdr-media-frame--3-4@lg_8.0.0-alpha.0","cdr-media-frame--9-16@lg":"cdr-media-frame--9-16@lg_8.0.0-alpha.0","cdr-media-frame--2-1@lg":"cdr-media-frame--2-1@lg_8.0.0-alpha.0","cdr-media-frame--3-2@lg":"cdr-media-frame--3-2@lg_8.0.0-alpha.0","cdr-media-frame--4-3@lg":"cdr-media-frame--4-3@lg_8.0.0-alpha.0","cdr-media-frame--16-9@lg":"cdr-media-frame--16-9@lg_8.0.0-alpha.0","cdr-media-frame--x-center":"cdr-media-frame--x-center_8.0.0-alpha.0","cdr-media-frame__cover":"cdr-media-frame__cover_8.0.0-alpha.0","cdr-media-frame--y-center":"cdr-media-frame--y-center_8.0.0-alpha.0","cdr-media-frame--left":"cdr-media-frame--left_8.0.0-alpha.0","cdr-media-frame--right":"cdr-media-frame--right_8.0.0-alpha.0","cdr-media-frame--top":"cdr-media-frame--top_8.0.0-alpha.0","cdr-media-frame--bottom":"cdr-media-frame--bottom_8.0.0-alpha.0","cdr-media-frame__image":"cdr-media-frame__image_8.0.0-alpha.0","cdr-media-frame__image--hidden":"cdr-media-frame__image--hidden_8.0.0-alpha.0","cdr-media-frame__cover--crop":"cdr-media-frame__cover--crop_8.0.0-alpha.0","cdr-media-frame__cover--cover":"cdr-media-frame__cover--cover_8.0.0-alpha.0"};
+  var isArray$4 = isArray$1;
+
+  var isArray$5 = isArray$4;
+
+  function _arrayWithHoles(arr) {
+    if (isArray$5(arr)) return arr;
+  }
+
+  var arrayWithHoles = _arrayWithHoles;
+
+  // `String.prototype.{ codePointAt, at }` methods implementation
+  var createMethod$2 = function (CONVERT_TO_STRING) {
+    return function ($this, pos) {
+      var S = String(requireObjectCoercible($this));
+      var position = toInteger(pos);
+      var size = S.length;
+      var first, second;
+      if (position < 0 || position >= size) return CONVERT_TO_STRING ? '' : undefined;
+      first = S.charCodeAt(position);
+      return first < 0xD800 || first > 0xDBFF || position + 1 === size
+        || (second = S.charCodeAt(position + 1)) < 0xDC00 || second > 0xDFFF
+          ? CONVERT_TO_STRING ? S.charAt(position) : first
+          : CONVERT_TO_STRING ? S.slice(position, position + 2) : (first - 0xD800 << 10) + (second - 0xDC00) + 0x10000;
+    };
+  };
+
+  var stringMultibyte = {
+    // `String.prototype.codePointAt` method
+    // https://tc39.github.io/ecma262/#sec-string.prototype.codepointat
+    codeAt: createMethod$2(false),
+    // `String.prototype.at` method
+    // https://github.com/mathiasbynens/String.prototype.at
+    charAt: createMethod$2(true)
+  };
+
+  var charAt = stringMultibyte.charAt;
+
+
+
+  var STRING_ITERATOR = 'String Iterator';
+  var setInternalState$2 = internalState.set;
+  var getInternalState$2 = internalState.getterFor(STRING_ITERATOR);
+
+  // `String.prototype[@@iterator]` method
+  // https://tc39.github.io/ecma262/#sec-string.prototype-@@iterator
+  defineIterator(String, 'String', function (iterated) {
+    setInternalState$2(this, {
+      type: STRING_ITERATOR,
+      string: String(iterated),
+      index: 0
+    });
+  // `%StringIteratorPrototype%.next` method
+  // https://tc39.github.io/ecma262/#sec-%stringiteratorprototype%.next
+  }, function next() {
+    var state = getInternalState$2(this);
+    var string = state.string;
+    var index = state.index;
+    var point;
+    if (index >= string.length) return { value: undefined, done: true };
+    point = charAt(string, index);
+    state.index += point.length;
+    return { value: point, done: false };
+  });
+
+  var ITERATOR$2 = wellKnownSymbol('iterator');
+
+  var getIteratorMethod = function (it) {
+    if (it != undefined) return it[ITERATOR$2]
+      || it['@@iterator']
+      || iterators[classof(it)];
+  };
+
+  var getIterator = function (it) {
+    var iteratorMethod = getIteratorMethod(it);
+    if (typeof iteratorMethod != 'function') {
+      throw TypeError(String(it) + ' is not iterable');
+    } return anObject(iteratorMethod.call(it));
+  };
+
+  var getIterator_1 = getIterator;
+
+  var getIterator$1 = getIterator_1;
+
+  var ITERATOR$3 = wellKnownSymbol('iterator');
+
+  var isIterable = function (it) {
+    var O = Object(it);
+    return O[ITERATOR$3] !== undefined
+      || '@@iterator' in O
+      // eslint-disable-next-line no-prototype-builtins
+      || iterators.hasOwnProperty(classof(O));
+  };
+
+  var isIterable_1 = isIterable;
+
+  var isIterable$1 = isIterable_1;
+
+  // `Symbol.asyncDispose` well-known symbol
+  // https://github.com/tc39/proposal-using-statement
+  defineWellKnownSymbol('asyncDispose');
+
+  // `Symbol.dispose` well-known symbol
+  // https://github.com/tc39/proposal-using-statement
+  defineWellKnownSymbol('dispose');
+
+  // `Symbol.observable` well-known symbol
+  // https://github.com/tc39/proposal-observable
+  defineWellKnownSymbol('observable');
+
+  // `Symbol.patternMatch` well-known symbol
+  // https://github.com/tc39/proposal-pattern-matching
+  defineWellKnownSymbol('patternMatch');
+
+  // TODO: remove from `core-js@4`
+
+
+  defineWellKnownSymbol('replaceAll');
+
+  // TODO: Remove from `core-js@4`
+
+
+  var symbol$3 = symbol;
+
+  var symbol$4 = symbol$3;
+
+  function _iterableToArrayLimit(arr, i) {
+    if (typeof symbol$4 === "undefined" || !isIterable$1(Object(arr))) return;
+    var _arr = [];
+    var _n = true;
+    var _d = false;
+    var _e = undefined;
+
+    try {
+      for (var _i = getIterator$1(arr), _s; !(_n = (_s = _i.next()).done); _n = true) {
+        _arr.push(_s.value);
+
+        if (i && _arr.length === i) break;
+      }
+    } catch (err) {
+      _d = true;
+      _e = err;
+    } finally {
+      try {
+        if (!_n && _i["return"] != null) _i["return"]();
+      } finally {
+        if (_d) throw _e;
+      }
+    }
+
+    return _arr;
+  }
+
+  var iterableToArrayLimit = _iterableToArrayLimit;
+
+  // call something on iterator step with safe closing on error
+  var callWithSafeIterationClosing = function (iterator, fn, value, ENTRIES) {
+    try {
+      return ENTRIES ? fn(anObject(value)[0], value[1]) : fn(value);
+    // 7.4.6 IteratorClose(iterator, completion)
+    } catch (error) {
+      var returnMethod = iterator['return'];
+      if (returnMethod !== undefined) anObject(returnMethod.call(iterator));
+      throw error;
+    }
+  };
+
+  var ITERATOR$4 = wellKnownSymbol('iterator');
+  var ArrayPrototype$8 = Array.prototype;
+
+  // check on default Array iterator
+  var isArrayIteratorMethod = function (it) {
+    return it !== undefined && (iterators.Array === it || ArrayPrototype$8[ITERATOR$4] === it);
+  };
+
+  // `Array.from` method implementation
+  // https://tc39.github.io/ecma262/#sec-array.from
+  var arrayFrom = function from(arrayLike /* , mapfn = undefined, thisArg = undefined */) {
+    var O = toObject$1(arrayLike);
+    var C = typeof this == 'function' ? this : Array;
+    var argumentsLength = arguments.length;
+    var mapfn = argumentsLength > 1 ? arguments[1] : undefined;
+    var mapping = mapfn !== undefined;
+    var iteratorMethod = getIteratorMethod(O);
+    var index = 0;
+    var length, result, step, iterator, next, value;
+    if (mapping) mapfn = functionBindContext(mapfn, argumentsLength > 2 ? arguments[2] : undefined, 2);
+    // if the target is not iterable or it's an array with the default iterator - use a simple case
+    if (iteratorMethod != undefined && !(C == Array && isArrayIteratorMethod(iteratorMethod))) {
+      iterator = iteratorMethod.call(O);
+      next = iterator.next;
+      result = new C();
+      for (;!(step = next.call(iterator)).done; index++) {
+        value = mapping ? callWithSafeIterationClosing(iterator, mapfn, [step.value, index], true) : step.value;
+        createProperty(result, index, value);
+      }
+    } else {
+      length = toLength(O.length);
+      result = new C(length);
+      for (;length > index; index++) {
+        value = mapping ? mapfn(O[index], index) : O[index];
+        createProperty(result, index, value);
+      }
+    }
+    result.length = index;
+    return result;
+  };
+
+  var ITERATOR$5 = wellKnownSymbol('iterator');
+  var SAFE_CLOSING = false;
+
+  try {
+    var called = 0;
+    var iteratorWithReturn = {
+      next: function () {
+        return { done: !!called++ };
+      },
+      'return': function () {
+        SAFE_CLOSING = true;
+      }
+    };
+    iteratorWithReturn[ITERATOR$5] = function () {
+      return this;
+    };
+    // eslint-disable-next-line no-throw-literal
+    Array.from(iteratorWithReturn, function () { throw 2; });
+  } catch (error) { /* empty */ }
+
+  var checkCorrectnessOfIteration = function (exec, SKIP_CLOSING) {
+    if (!SKIP_CLOSING && !SAFE_CLOSING) return false;
+    var ITERATION_SUPPORT = false;
+    try {
+      var object = {};
+      object[ITERATOR$5] = function () {
+        return {
+          next: function () {
+            return { done: ITERATION_SUPPORT = true };
+          }
+        };
+      };
+      exec(object);
+    } catch (error) { /* empty */ }
+    return ITERATION_SUPPORT;
+  };
+
+  var INCORRECT_ITERATION = !checkCorrectnessOfIteration(function (iterable) {
+    Array.from(iterable);
+  });
+
+  // `Array.from` method
+  // https://tc39.github.io/ecma262/#sec-array.from
+  _export({ target: 'Array', stat: true, forced: INCORRECT_ITERATION }, {
+    from: arrayFrom
+  });
+
+  var from_1 = path.Array.from;
+
+  var from_1$1 = from_1;
+
+  var from_1$2 = from_1$1;
+
+  var slice$4 = slice_1;
+
+  var slice$5 = slice$4;
+
+  function _arrayLikeToArray(arr, len) {
+    if (len == null || len > arr.length) len = arr.length;
+
+    for (var i = 0, arr2 = new Array(len); i < len; i++) {
+      arr2[i] = arr[i];
+    }
+
+    return arr2;
+  }
+
+  var arrayLikeToArray = _arrayLikeToArray;
+
+  function _unsupportedIterableToArray(o, minLen) {
+    var _context;
+
+    if (!o) return;
+    if (typeof o === "string") return arrayLikeToArray(o, minLen);
+
+    var n = slice$5(_context = Object.prototype.toString.call(o)).call(_context, 8, -1);
+
+    if (n === "Object" && o.constructor) n = o.constructor.name;
+    if (n === "Map" || n === "Set") return from_1$2(o);
+    if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return arrayLikeToArray(o, minLen);
+  }
+
+  var unsupportedIterableToArray = _unsupportedIterableToArray;
+
+  function _nonIterableRest() {
+    throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+  }
+
+  var nonIterableRest = _nonIterableRest;
+
+  function _slicedToArray(arr, i) {
+    return arrayWithHoles(arr) || iterableToArrayLimit(arr, i) || unsupportedIterableToArray(arr, i) || nonIterableRest();
+  }
+
+  var slicedToArray = _slicedToArray;
+
+  var css_248z$f = ".cdr-image_8\\.0\\.0-alpha\\.0 {\n  max-width: 100%;\n  vertical-align: middle;\n  border-style: none;\n  /* Style variants\n    ========================================================================== */\n  /* responsive\n    ========== */\n  /* rounded\n    ========== */\n  /* circle\n    ========== */ }\n  .cdr-image--responsive_8\\.0\\.0-alpha\\.0 {\n    display: block;\n    height: auto;\n    width: 100%; }\n  .cdr-image--rounded_8\\.0\\.0-alpha\\.0 {\n    border-radius: 0.4rem; }\n  .cdr-image--circle_8\\.0\\.0-alpha\\.0 {\n    border-radius: 999.9rem; }\n  /* ==========================================================================\n   # MEDIA FRAME\n   ========================================================================== */\n  .cdr-image-ratio_8\\.0\\.0-alpha\\.0 {\n  position: relative;\n  overflow: hidden; }\n  .cdr-image-ratio_8\\.0\\.0-alpha\\.0::before {\n    content: '';\n    height: 0;\n    display: block;\n    padding-bottom: var(--ratio); }\n  .cdr-image-ratio__cover_8\\.0\\.0-alpha\\.0 {\n    position: absolute;\n    top: 0;\n    left: 0;\n    height: 100%;\n    width: 100%;\n    object-fit: contain; }\n  .cdr-image-ratio__cover--crop_8\\.0\\.0-alpha\\.0 {\n      object-fit: none; }\n  .cdr-image-ratio__cover--cover_8\\.0\\.0-alpha\\.0 {\n      object-fit: cover; }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9jb21wb25lbnRzL2ltYWdlL3N0eWxlcy9DZHJJbWcuc2NzcyIsIkNkckltZy5zY3NzIiwibm9kZV9tb2R1bGVzL0ByZWkvY2RyLXRva2Vucy9kaXN0L3Njc3MvY2RyLXRva2Vucy5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUVBO0VBQ0UsZUFBZTtFQUNmLHNCQUFzQjtFQUN0QixrQkFBa0I7RUFFbEI7Z0ZDRjhFO0VESzlFO2dCQ0hjO0VEV2Q7Z0JDVGM7RURnQmQ7Z0JDZGMsRURlQztFQWRmO0lBQ0UsY0FBYztJQUNkLFlBQVk7SUFDWixXQUFXLEVBQUE7RUFNYjtJQUNFLHFCRTg0Q3NCLEVBQUE7RUZ4NEN4QjtJQUNFLHVCRXc0Q3VCLEVBQUE7RUZwNEMzQjs7K0VDVitFO0VEYy9FO0VBQ0Usa0JBQWtCO0VBQ2xCLGdCQUFnQixFQUFBO0VBRmxCO0lBS0ksV0FBVztJQUNYLFNBQVM7SUFDVCxjQUFjO0lBQ2QsNEJBQTRCLEVBQUE7RUFHOUI7SUFDRSxrQkFBa0I7SUFDbEIsTUFBTTtJQUNOLE9BQU87SUFDUCxZQUFZO0lBQ1osV0FBVztJQUNYLG1CQUFtQixFQUFBO0VBRW5CO01BQ0UsZ0JBQWdCLEVBQUE7RUFHbEI7TUFDRSxpQkFBaUIsRUFBQSIsImZpbGUiOiJDZHJJbWcuc2NzcyJ9 */";
+  var style$h = {"cdr-image":"cdr-image_8.0.0-alpha.0","cdr-image--responsive":"cdr-image--responsive_8.0.0-alpha.0","cdr-image--rounded":"cdr-image--rounded_8.0.0-alpha.0","cdr-image--circle":"cdr-image--circle_8.0.0-alpha.0","cdr-image-ratio":"cdr-image-ratio_8.0.0-alpha.0","cdr-image-ratio__cover":"cdr-image-ratio__cover_8.0.0-alpha.0","cdr-image-ratio__cover--crop":"cdr-image-ratio__cover--crop_8.0.0-alpha.0","cdr-image-ratio__cover--cover":"cdr-image-ratio__cover--cover_8.0.0-alpha.0"};
   styleInject(css_248z$f);
 
   function ownKeys$2S(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-  function _objectSpread$2R(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context7; forEach$2(_context7 = ownKeys$2S(Object(source), true)).call(_context7, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context8; forEach$2(_context8 = ownKeys$2S(Object(source))).call(_context8, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
+  function _objectSpread$2R(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context3; forEach$2(_context3 = ownKeys$2S(Object(source), true)).call(_context3, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context4; forEach$2(_context4 = ownKeys$2S(Object(source))).call(_context4, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
   var CdrImg = {
     name: 'CdrImg',
     mixins: [modifier],
+    inheritAttrs: false,
     props: {
       /**
        * Required. Image source url.
@@ -23680,21 +23984,6 @@ var cedar = (function () {
       },
 
       /**
-       * Enable lazy loading.
-       */
-      lazy: {
-        type: Boolean
-      },
-
-      /**
-       * Object of lazy options
-       */
-      lazyOpts: {
-        type: Object,
-        default: function _default() {}
-      },
-
-      /**
        * Aspect ratio of the media container. {auto, square, 1-2, 2-3, 3-4, 9-16, 2-1, 3-2, 4-3, 16-9}
        */
       ratio: {
@@ -23707,43 +23996,7 @@ var cedar = (function () {
       },
 
       /**
-       * sm breakpoint and above
-       */
-      ratioSm: {
-        type: String,
-        validator: function validator(value) {
-          var _context2;
-
-          return indexOf$3(_context2 = ['auto', 'square', '1-2', '2-3', '3-4', '9-16', '2-1', '3-2', '4-3', '16-9']).call(_context2, value) >= 0 || false;
-        }
-      },
-
-      /**
-       * md breakpoint and above
-       */
-      ratioMd: {
-        type: String,
-        validator: function validator(value) {
-          var _context3;
-
-          return indexOf$3(_context3 = ['auto', 'square', '1-2', '2-3', '3-4', '9-16', '2-1', '3-2', '4-3', '16-9']).call(_context3, value) >= 0 || false;
-        }
-      },
-
-      /**
-       * lg breakpoint and above
-       */
-      ratioLg: {
-        type: String,
-        validator: function validator(value) {
-          var _context4;
-
-          return indexOf$3(_context4 = ['auto', 'square', '1-2', '2-3', '3-4', '9-16', '2-1', '3-2', '4-3', '16-9']).call(_context4, value) >= 0 || false;
-        }
-      },
-
-      /**
-       * Requires a `ratio`. Area to crop the image overflow to. {top, y-center, bottom} {left, x-center, right}
+       * Requires a `ratio`. Area to crop the image overflow to. {left, center, right} {top, center, bottom}
        */
       crop: {
         type: String
@@ -23762,9 +24015,9 @@ var cedar = (function () {
       radius: {
         type: String,
         validator: function validator(value) {
-          var _context5;
+          var _context2;
 
-          return indexOf$3(_context5 = ['circle', 'rounded']).call(_context5, value) >= 0 || false;
+          return indexOf$3(_context2 = ['circle', 'rounded']).call(_context2, value) >= 0 || false;
         }
       }
     },
@@ -23780,67 +24033,39 @@ var cedar = (function () {
         return 'cdr-image';
       },
 
-      lazyClass() {
-        var classObj = {};
-        classObj['lazy-image'] = this.lazy;
-        return classObj;
-      },
-
       radiusClass() {
-        var classObj = {};
-        classObj[this.style["cdr-image--".concat(this.radius)]] = this.radius;
-        return classObj;
-      },
-
-      ratioClass() {
-        var classObj = {};
-        classObj[this.style["cdr-media-frame--".concat(this.ratio)]] = this.ratio;
-        classObj[this.style["cdr-media-frame--".concat(this.ratioSm, "@sm")]] = this.ratioSm;
-        classObj[this.style["cdr-media-frame--".concat(this.ratioMd, "@md")]] = this.ratioMd;
-        classObj[this.style["cdr-media-frame--".concat(this.ratioLg, "@lg")]] = this.ratioLg;
-        return classObj;
+        return this.radius ? this.style["cdr-image--".concat(this.radius)] : '';
       },
 
       coverClass() {
         var classObj = {};
-        classObj[this.style['cdr-media-frame__cover']] = true;
-        classObj[this.style['cdr-media-frame__cover--crop']] = this.crop;
-        classObj[this.style['cdr-media-frame__cover--cover']] = this.cover;
+        classObj[this.style['cdr-image-ratio__cover']] = true;
+        classObj[this.style['cdr-image-ratio__cover--crop']] = this.crop;
+        classObj[this.style['cdr-image-ratio__cover--cover']] = this.cover;
         return classObj;
       },
 
-      cropClass() {
-        var _this = this;
-
-        var base = 'cdr-media-frame';
-        var cropArr = this.crop ? this.crop.split(' ') : [];
-        var final = [];
-        final = concat$3(final).call(final, map$2(cropArr).call(cropArr, function (mod) {
-          return _this.modifyClassName(base, mod);
-        }));
-        return final.join(' ');
-      },
-
-      styleObject() {
+      cropObject() {
         return {
-          backgroundImage: "url(".concat(this.src, ")")
+          objectPosition: this.crop
         };
       },
 
-      lazyAttrs() {
-        var _this2 = this;
-
-        var attrObj = {};
-
-        if (this.lazy) {
-          var _context6;
-
-          forEach$2(_context6 = keys$3(this.lazyOpts)).call(_context6, function (opt) {
-            attrObj["data-".concat(opt)] = _this2.lazyOpts[opt];
-          });
+      ratioPct() {
+        if (this.ratio === 'square') {
+          return '100%';
         }
 
-        return attrObj;
+        if (this.ratio) {
+          var _this$ratio$split = this.ratio.split('-'),
+              _this$ratio$split2 = slicedToArray(_this$ratio$split, 2),
+              x = _this$ratio$split2[0],
+              y = _this$ratio$split2[1];
+
+          return "".concat(y / x * 100, "%");
+        }
+
+        return '0%';
       }
 
     },
@@ -23850,19 +24075,17 @@ var cedar = (function () {
 
       if (this.ratio) {
         return h("div", {
-          "class": clsx(this.style['cdr-media-frame'], this.ratioClass, this.cropClass)
-        }, [h("div", {
-          "class": clsx(this.coverClass, this.lazyClass, this.radiusClass),
-          "style": this.styleObject,
+          "style": {
+            '--ratio': this.ratioPct
+          },
+          "class": this.style['cdr-image-ratio']
+        }, [h("img", {
+          "style": this.cropObject,
+          "class": clsx(this.style[this.baseClass], this.modifierClass, this.radiusClass, this.coverClass),
           "attrs": _objectSpread$2R({
-            "aria-hidden": "true"
-          }, this.lazyAttrs)
-        }), h("img", {
-          "class": clsx(this.style['cdr-media-frame__image'], this.style['cdr-media-frame__image--hidden'], this.style[this.baseClass], this.modifierClass, this.radiusClass),
-          "attrs": {
             "src": this.src,
             "alt": this.alt
-          },
+          }, this.$attrs),
           "on": _objectSpread$2R({}, this.$listeners)
         })]);
       }
@@ -23872,7 +24095,7 @@ var cedar = (function () {
         "attrs": _objectSpread$2R({
           "src": this.src,
           "alt": this.alt
-        }, this.lazyAttrs),
+        }, this.$attrs),
         "on": _objectSpread$2R({}, this.$listeners)
       });
     }
@@ -24313,7 +24536,7 @@ var cedar = (function () {
 
   };
 
-  var slice$4 = [].slice;
+  var slice$6 = [].slice;
   var factories = {};
 
   var construct = function (C, argsLength, args) {
@@ -24328,9 +24551,9 @@ var cedar = (function () {
   // https://tc39.github.io/ecma262/#sec-function.prototype.bind
   var functionBind = Function.bind || function bind(that /* , ...args */) {
     var fn = aFunction(this);
-    var partArgs = slice$4.call(arguments, 1);
+    var partArgs = slice$6.call(arguments, 1);
     var boundFunction = function bound(/* args... */) {
-      var args = partArgs.concat(slice$4.call(arguments));
+      var args = partArgs.concat(slice$6.call(arguments));
       return this instanceof boundFunction ? construct(fn, args.length, args) : fn.apply(that, args);
     };
     if (isObject$1(fn.prototype)) boundFunction.prototype = fn.prototype;
@@ -27170,7 +27393,7 @@ var cedar = (function () {
    * _.isArray(_.noop);
    * // => false
    */
-  var isArray$4 = Array.isArray;
+  var isArray$6 = Array.isArray;
 
   /** `Object#toString` result references. */
   var stringTag = '[object String]';
@@ -27194,7 +27417,7 @@ var cedar = (function () {
    */
   function isString(value) {
     return typeof value == 'string' ||
-      (!isArray$4(value) && isObjectLike(value) && baseGetTag(value) == stringTag);
+      (!isArray$6(value) && isObjectLike(value) && baseGetTag(value) == stringTag);
   }
 
   /**
@@ -27644,7 +27867,7 @@ var cedar = (function () {
    * @returns {Array} Returns the array of property names.
    */
   function arrayLikeKeys(value, inherited) {
-    var isArr = isArray$4(value),
+    var isArr = isArray$6(value),
         isArg = !isArr && isArguments(value),
         isBuff = !isArr && !isArg && isBuffer(value),
         isType = !isArr && !isArg && !isBuff && isTypedArray(value),
@@ -28549,309 +28772,6 @@ var cedar = (function () {
   var style$q = {"cdr-popover--position":"cdr-popover--position_8.0.0-alpha.0","cdr-popover--wrapper":"cdr-popover--wrapper_8.0.0-alpha.0","cdr-popup--closed":"cdr-popup--closed_8.0.0-alpha.0","cdr-popover__title":"cdr-popover__title_8.0.0-alpha.0","cdr-popover__container":"cdr-popover__container_8.0.0-alpha.0","cdr-popover__content":"cdr-popover__content_8.0.0-alpha.0","cdr-popover__close-button":"cdr-popover__close-button_8.0.0-alpha.0"};
   styleInject(css_248z$n);
 
-  var isArray$5 = isArray$1;
-
-  var isArray$6 = isArray$5;
-
-  function _arrayWithHoles(arr) {
-    if (isArray$6(arr)) return arr;
-  }
-
-  var arrayWithHoles = _arrayWithHoles;
-
-  // `String.prototype.{ codePointAt, at }` methods implementation
-  var createMethod$2 = function (CONVERT_TO_STRING) {
-    return function ($this, pos) {
-      var S = String(requireObjectCoercible($this));
-      var position = toInteger(pos);
-      var size = S.length;
-      var first, second;
-      if (position < 0 || position >= size) return CONVERT_TO_STRING ? '' : undefined;
-      first = S.charCodeAt(position);
-      return first < 0xD800 || first > 0xDBFF || position + 1 === size
-        || (second = S.charCodeAt(position + 1)) < 0xDC00 || second > 0xDFFF
-          ? CONVERT_TO_STRING ? S.charAt(position) : first
-          : CONVERT_TO_STRING ? S.slice(position, position + 2) : (first - 0xD800 << 10) + (second - 0xDC00) + 0x10000;
-    };
-  };
-
-  var stringMultibyte = {
-    // `String.prototype.codePointAt` method
-    // https://tc39.github.io/ecma262/#sec-string.prototype.codepointat
-    codeAt: createMethod$2(false),
-    // `String.prototype.at` method
-    // https://github.com/mathiasbynens/String.prototype.at
-    charAt: createMethod$2(true)
-  };
-
-  var charAt = stringMultibyte.charAt;
-
-
-
-  var STRING_ITERATOR = 'String Iterator';
-  var setInternalState$2 = internalState.set;
-  var getInternalState$2 = internalState.getterFor(STRING_ITERATOR);
-
-  // `String.prototype[@@iterator]` method
-  // https://tc39.github.io/ecma262/#sec-string.prototype-@@iterator
-  defineIterator(String, 'String', function (iterated) {
-    setInternalState$2(this, {
-      type: STRING_ITERATOR,
-      string: String(iterated),
-      index: 0
-    });
-  // `%StringIteratorPrototype%.next` method
-  // https://tc39.github.io/ecma262/#sec-%stringiteratorprototype%.next
-  }, function next() {
-    var state = getInternalState$2(this);
-    var string = state.string;
-    var index = state.index;
-    var point;
-    if (index >= string.length) return { value: undefined, done: true };
-    point = charAt(string, index);
-    state.index += point.length;
-    return { value: point, done: false };
-  });
-
-  var ITERATOR$2 = wellKnownSymbol('iterator');
-
-  var getIteratorMethod = function (it) {
-    if (it != undefined) return it[ITERATOR$2]
-      || it['@@iterator']
-      || iterators[classof(it)];
-  };
-
-  var getIterator = function (it) {
-    var iteratorMethod = getIteratorMethod(it);
-    if (typeof iteratorMethod != 'function') {
-      throw TypeError(String(it) + ' is not iterable');
-    } return anObject(iteratorMethod.call(it));
-  };
-
-  var getIterator_1 = getIterator;
-
-  var getIterator$1 = getIterator_1;
-
-  var ITERATOR$3 = wellKnownSymbol('iterator');
-
-  var isIterable = function (it) {
-    var O = Object(it);
-    return O[ITERATOR$3] !== undefined
-      || '@@iterator' in O
-      // eslint-disable-next-line no-prototype-builtins
-      || iterators.hasOwnProperty(classof(O));
-  };
-
-  var isIterable_1 = isIterable;
-
-  var isIterable$1 = isIterable_1;
-
-  // `Symbol.asyncDispose` well-known symbol
-  // https://github.com/tc39/proposal-using-statement
-  defineWellKnownSymbol('asyncDispose');
-
-  // `Symbol.dispose` well-known symbol
-  // https://github.com/tc39/proposal-using-statement
-  defineWellKnownSymbol('dispose');
-
-  // `Symbol.observable` well-known symbol
-  // https://github.com/tc39/proposal-observable
-  defineWellKnownSymbol('observable');
-
-  // `Symbol.patternMatch` well-known symbol
-  // https://github.com/tc39/proposal-pattern-matching
-  defineWellKnownSymbol('patternMatch');
-
-  // TODO: remove from `core-js@4`
-
-
-  defineWellKnownSymbol('replaceAll');
-
-  // TODO: Remove from `core-js@4`
-
-
-  var symbol$3 = symbol;
-
-  var symbol$4 = symbol$3;
-
-  function _iterableToArrayLimit(arr, i) {
-    if (typeof symbol$4 === "undefined" || !isIterable$1(Object(arr))) return;
-    var _arr = [];
-    var _n = true;
-    var _d = false;
-    var _e = undefined;
-
-    try {
-      for (var _i = getIterator$1(arr), _s; !(_n = (_s = _i.next()).done); _n = true) {
-        _arr.push(_s.value);
-
-        if (i && _arr.length === i) break;
-      }
-    } catch (err) {
-      _d = true;
-      _e = err;
-    } finally {
-      try {
-        if (!_n && _i["return"] != null) _i["return"]();
-      } finally {
-        if (_d) throw _e;
-      }
-    }
-
-    return _arr;
-  }
-
-  var iterableToArrayLimit = _iterableToArrayLimit;
-
-  // call something on iterator step with safe closing on error
-  var callWithSafeIterationClosing = function (iterator, fn, value, ENTRIES) {
-    try {
-      return ENTRIES ? fn(anObject(value)[0], value[1]) : fn(value);
-    // 7.4.6 IteratorClose(iterator, completion)
-    } catch (error) {
-      var returnMethod = iterator['return'];
-      if (returnMethod !== undefined) anObject(returnMethod.call(iterator));
-      throw error;
-    }
-  };
-
-  var ITERATOR$4 = wellKnownSymbol('iterator');
-  var ArrayPrototype$8 = Array.prototype;
-
-  // check on default Array iterator
-  var isArrayIteratorMethod = function (it) {
-    return it !== undefined && (iterators.Array === it || ArrayPrototype$8[ITERATOR$4] === it);
-  };
-
-  // `Array.from` method implementation
-  // https://tc39.github.io/ecma262/#sec-array.from
-  var arrayFrom = function from(arrayLike /* , mapfn = undefined, thisArg = undefined */) {
-    var O = toObject$1(arrayLike);
-    var C = typeof this == 'function' ? this : Array;
-    var argumentsLength = arguments.length;
-    var mapfn = argumentsLength > 1 ? arguments[1] : undefined;
-    var mapping = mapfn !== undefined;
-    var iteratorMethod = getIteratorMethod(O);
-    var index = 0;
-    var length, result, step, iterator, next, value;
-    if (mapping) mapfn = functionBindContext(mapfn, argumentsLength > 2 ? arguments[2] : undefined, 2);
-    // if the target is not iterable or it's an array with the default iterator - use a simple case
-    if (iteratorMethod != undefined && !(C == Array && isArrayIteratorMethod(iteratorMethod))) {
-      iterator = iteratorMethod.call(O);
-      next = iterator.next;
-      result = new C();
-      for (;!(step = next.call(iterator)).done; index++) {
-        value = mapping ? callWithSafeIterationClosing(iterator, mapfn, [step.value, index], true) : step.value;
-        createProperty(result, index, value);
-      }
-    } else {
-      length = toLength(O.length);
-      result = new C(length);
-      for (;length > index; index++) {
-        value = mapping ? mapfn(O[index], index) : O[index];
-        createProperty(result, index, value);
-      }
-    }
-    result.length = index;
-    return result;
-  };
-
-  var ITERATOR$5 = wellKnownSymbol('iterator');
-  var SAFE_CLOSING = false;
-
-  try {
-    var called = 0;
-    var iteratorWithReturn = {
-      next: function () {
-        return { done: !!called++ };
-      },
-      'return': function () {
-        SAFE_CLOSING = true;
-      }
-    };
-    iteratorWithReturn[ITERATOR$5] = function () {
-      return this;
-    };
-    // eslint-disable-next-line no-throw-literal
-    Array.from(iteratorWithReturn, function () { throw 2; });
-  } catch (error) { /* empty */ }
-
-  var checkCorrectnessOfIteration = function (exec, SKIP_CLOSING) {
-    if (!SKIP_CLOSING && !SAFE_CLOSING) return false;
-    var ITERATION_SUPPORT = false;
-    try {
-      var object = {};
-      object[ITERATOR$5] = function () {
-        return {
-          next: function () {
-            return { done: ITERATION_SUPPORT = true };
-          }
-        };
-      };
-      exec(object);
-    } catch (error) { /* empty */ }
-    return ITERATION_SUPPORT;
-  };
-
-  var INCORRECT_ITERATION = !checkCorrectnessOfIteration(function (iterable) {
-    Array.from(iterable);
-  });
-
-  // `Array.from` method
-  // https://tc39.github.io/ecma262/#sec-array.from
-  _export({ target: 'Array', stat: true, forced: INCORRECT_ITERATION }, {
-    from: arrayFrom
-  });
-
-  var from_1 = path.Array.from;
-
-  var from_1$1 = from_1;
-
-  var from_1$2 = from_1$1;
-
-  var slice$5 = slice_1;
-
-  var slice$6 = slice$5;
-
-  function _arrayLikeToArray(arr, len) {
-    if (len == null || len > arr.length) len = arr.length;
-
-    for (var i = 0, arr2 = new Array(len); i < len; i++) {
-      arr2[i] = arr[i];
-    }
-
-    return arr2;
-  }
-
-  var arrayLikeToArray = _arrayLikeToArray;
-
-  function _unsupportedIterableToArray(o, minLen) {
-    var _context;
-
-    if (!o) return;
-    if (typeof o === "string") return arrayLikeToArray(o, minLen);
-
-    var n = slice$6(_context = Object.prototype.toString.call(o)).call(_context, 8, -1);
-
-    if (n === "Object" && o.constructor) n = o.constructor.name;
-    if (n === "Map" || n === "Set") return from_1$2(o);
-    if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return arrayLikeToArray(o, minLen);
-  }
-
-  var unsupportedIterableToArray = _unsupportedIterableToArray;
-
-  function _nonIterableRest() {
-    throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
-  }
-
-  var nonIterableRest = _nonIterableRest;
-
-  function _slicedToArray(arr, i) {
-    return arrayWithHoles(arr) || iterableToArrayLimit(arr, i) || unsupportedIterableToArray(arr, i) || nonIterableRest();
-  }
-
-  var slicedToArray = _slicedToArray;
-
   var test$1 = [];
   var nativeSort = test$1.sort;
 
@@ -29558,7 +29478,7 @@ var cedar = (function () {
   var keys$8 = keys_1;
 
   function _arrayWithoutHoles(arr) {
-    if (isArray$6(arr)) return arrayLikeToArray(arr);
+    if (isArray$5(arr)) return arrayLikeToArray(arr);
   }
 
   var arrayWithoutHoles = _arrayWithoutHoles;
@@ -40042,7 +39962,7 @@ var cedar = (function () {
                     attrs: {
                       ratio: "square",
                       cover: "",
-                      crop: "x-center",
+                      crop: "center",
                       alt: "crop x-center",
                       src: "http://placehold.it/1920x1080"
                     }
@@ -40126,7 +40046,7 @@ var cedar = (function () {
                     attrs: {
                       ratio: "square",
                       cover: "",
-                      crop: "y-center",
+                      crop: "center",
                       alt: "crop y-center",
                       src: "http://placehold.it/1080x1920"
                     }
@@ -40231,7 +40151,7 @@ var cedar = (function () {
                   _c("cdr-img", {
                     attrs: {
                       ratio: "16-9",
-                      crop: "top x-center",
+                      crop: "top center",
                       alt: "crop top x-center",
                       src: _vm.testImage
                     }
@@ -40273,7 +40193,7 @@ var cedar = (function () {
                   _c("cdr-img", {
                     attrs: {
                       ratio: "16-9",
-                      crop: "y-center left",
+                      crop: "center left",
                       alt: "crop y-center left",
                       src: _vm.testImage
                     }
@@ -40294,7 +40214,7 @@ var cedar = (function () {
                   _c("cdr-img", {
                     attrs: {
                       ratio: "16-9",
-                      crop: "y-center x-center",
+                      crop: "center center",
                       alt: "crop y-center x-center",
                       src: _vm.testImage
                     }
@@ -40315,7 +40235,7 @@ var cedar = (function () {
                   _c("cdr-img", {
                     attrs: {
                       ratio: "16-9",
-                      crop: "y-center right",
+                      crop: "center right",
                       alt: "crop y-center right",
                       src: _vm.testImage
                     }
@@ -40336,7 +40256,7 @@ var cedar = (function () {
                   _c("cdr-img", {
                     attrs: {
                       ratio: "16-9",
-                      crop: "bottom left",
+                      crop: "left bottom",
                       alt: "crop bottom left",
                       src: _vm.testImage
                     }
@@ -40357,7 +40277,7 @@ var cedar = (function () {
                   _c("cdr-img", {
                     attrs: {
                       ratio: "16-9",
-                      crop: "bottom x-center",
+                      crop: "center bottom",
                       alt: "crop bottom x-center",
                       src: _vm.testImage
                     }
@@ -40378,7 +40298,7 @@ var cedar = (function () {
                   _c("cdr-img", {
                     attrs: {
                       ratio: "16-9",
-                      crop: "bottom right",
+                      crop: "right bottom",
                       alt: "crop bottom right",
                       src: _vm.testImage
                     }
@@ -40471,6 +40391,7 @@ var cedar = (function () {
                     attrs: {
                       ratio: "4-3",
                       modifier: "responsive",
+                      loading: "lazy",
                       alt: "ratio responsive",
                       src: "http://placehold.it/200x200"
                     }
