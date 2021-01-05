@@ -1,13 +1,37 @@
 <template>
-  <cdr-grid class="custom-grid">
-    <div
-      v-for="item in items"
-      class="grid-item"
-      :key="item"
-    >
-      {{ item }}
-    </div>
-  </cdr-grid>
+  <div>
+    <cdr-grid class="custom-grid">
+      <div
+        v-for="item in items"
+        class="grid-item"
+        :key="item"
+      >
+        {{ item }}
+      </div>
+    </cdr-grid>
+
+    <h2>Gutter Example</h2>
+    <cdr-grid class="custom-grid" gutter="none@xs small@sm medium@md large@lg">
+      <div
+        v-for="item in items"
+        class="grid-item"
+        :key="item"
+      >
+        {{ item }}
+      </div>
+    </cdr-grid>
+
+    <h2>List Based Example</h2>
+    <cdr-grid class="custom-grid" tag="ul">
+      <li
+        v-for="item in items"
+        class="grid-item"
+        :key="item"
+      >
+        {{ item }}
+      </li>
+    </cdr-grid>
+  </div>
 </template>
 
 <script>

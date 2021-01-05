@@ -1,5 +1,8 @@
 @mixin cdr-grid-two-base-mixin() {
   display: grid;
+  list-style: none;
+  margin: 0;
+  padding: 0;
   gap: $cdr-space-one-x $cdr-space-one-x;
 }
 

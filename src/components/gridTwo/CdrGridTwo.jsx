@@ -18,6 +18,10 @@ export default {
       ),
       default: 'medium@xs medium@sm large@md large@lg',
     },
+    tag: {
+      type: String,
+      default: 'div',
+    },
   },
   data() {
     return {
@@ -36,10 +40,11 @@ export default {
     },
   },
   render() {
+    const Component = this.tag;
     return (
-      <div class={clsx(this.style['cdr-grid-two'], this.gutterClass)}>
+      <Component class={clsx(this.style['cdr-grid-two'], this.gutterClass)}>
         {this.$slots.default}
-      </div>
+      </Component>
     );
   },
 };
