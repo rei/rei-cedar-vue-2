@@ -74,9 +74,6 @@ export default {
         id: this.id,
       };
     },
-    dialogClass() {
-      return `${this.style['cdr-modal__dialog']}`;
-    },
     verticalSpace() {
       // contentWrap vertical padding
       const fullscreen = Number(CdrSpaceTwoX);
@@ -253,12 +250,10 @@ export default {
   render() {
     const {
       onClick,
-      modalId,
       opened,
       label,
       wrapperClass,
       overlayClass,
-      dialogClass,
       contentClass,
       reallyClosed,
     } = this;
@@ -285,15 +280,14 @@ export default {
           */}
           <div
             ref="modal"
-            class={clsx(this.style['cdr-modal__contentWrap'], dialogClass)}
-            id={modalId}
+            class={clsx(this.style['cdr-modal__contentWrap'], this.style['cdr-modal__dialog'])}
             tabIndex="-1"
             role="dialog"
             aria-modal={!!opened}
             aria-label={label}
             {...{ attrs: this.dialogAttrs }}
           >
-            <div
+            {this.$slots.modal || (<div
               class={clsx(this.style['cdr-modal__innerWrap'], contentClass)}
               style={reallyClosed
                 ? { display: 'none' }
@@ -356,7 +350,7 @@ export default {
                   </div>
                 </div>
               </section>
-            </div>
+            </div>)}
           </div>
           <div tabIndex={opened ? '0' : undefined} />
         </div>
