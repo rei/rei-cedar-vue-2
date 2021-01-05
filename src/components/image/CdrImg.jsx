@@ -5,6 +5,7 @@ import style from './styles/CdrImg.scss';
 export default {
   name: 'CdrImg',
   mixins: [modifier],
+  inheritAttrs: false,
   props: {
     /**
      * Required. Image source url.
@@ -19,19 +20,6 @@ export default {
     alt: {
       type: String,
       default: '',
-    },
-    /**
-     * Enable lazy loading.
-     */
-    lazy: {
-      type: Boolean,
-    },
-    /**
-     * Object of lazy options
-     */
-    lazyOpts: {
-      type: Object,
-      default: () => {},
     },
     /**
      * Aspect ratio of the media container. {auto, square, 1-2, 2-3, 3-4, 9-16, 2-1, 3-2, 4-3, 16-9}
@@ -51,34 +39,7 @@ export default {
         '16-9'].indexOf(value) >= 0) || false,
     },
     /**
-     * sm breakpoint and above
-     */
-    ratioSm: {
-      type: String,
-      validator: (value) => ([
-        'auto', 'square', '1-2', '2-3', '3-4', '9-16', '2-1', '3-2', '4-3',
-        '16-9'].indexOf(value) >= 0) || false,
-    },
-    /**
-     * md breakpoint and above
-     */
-    ratioMd: {
-      type: String,
-      validator: (value) => ([
-        'auto', 'square', '1-2', '2-3', '3-4', '9-16', '2-1', '3-2', '4-3',
-        '16-9'].indexOf(value) >= 0) || false,
-    },
-    /**
-     * lg breakpoint and above
-     */
-    ratioLg: {
-      type: String,
-      validator: (value) => ([
-        'auto', 'square', '1-2', '2-3', '3-4', '9-16', '2-1', '3-2', '4-3',
-        '16-9'].indexOf(value) >= 0) || false,
-    },
-    /**
-     * Requires a `ratio`. Area to crop the image overflow to. {top, y-center, bottom} {left, x-center, right}
+     * Requires a `ratio`. Area to crop the image overflow to. {left, center, right} {top, center, bottom}
      */
     crop: {
       type: String,
@@ -108,78 +69,50 @@ export default {
     baseClass() {
       return 'cdr-image';
     },
-    lazyClass() {
-      const classObj = {};
-      classObj['lazy-image'] = this.lazy;
-      return classObj;
-    },
     radiusClass() {
-      const classObj = {};
-      classObj[this.style[`cdr-image--${this.radius}`]] = this.radius;
-      return classObj;
-    },
-    ratioClass() {
-      const classObj = {};
-      classObj[this.style[`cdr-media-frame--${this.ratio}`]] = this.ratio;
-      classObj[this.style[`cdr-media-frame--${this.ratioSm}@sm`]] = this.ratioSm;
-      classObj[this.style[`cdr-media-frame--${this.ratioMd}@md`]] = this.ratioMd;
-      classObj[this.style[`cdr-media-frame--${this.ratioLg}@lg`]] = this.ratioLg;
-      return classObj;
+      return this.radius ? this.style[`cdr-image--${this.radius}`] : '';
     },
     coverClass() {
       const classObj = {};
-      classObj[this.style['cdr-media-frame__cover']] = true;
-      classObj[this.style['cdr-media-frame__cover--crop']] = this.crop;
-      classObj[this.style['cdr-media-frame__cover--cover']] = this.cover;
+      classObj[this.style['cdr-image-ratio__cover']] = true;
+      classObj[this.style['cdr-image-ratio__cover--crop']] = this.crop;
+      classObj[this.style['cdr-image-ratio__cover--cover']] = this.cover;
       return classObj;
     },
-    cropClass() {
-      const base = 'cdr-media-frame';
-      const cropArr = this.crop ? this.crop.split(' ') : [];
-      let final = [];
-
-      final = final.concat(cropArr.map((mod) => this.modifyClassName(base, mod)));
-
-      return final.join(' ');
-    },
-    styleObject() {
+    cropObject() {
       return {
-        backgroundImage: `url(${this.src})`,
+        objectPosition: this.crop,
       };
     },
-    lazyAttrs() {
-      const attrObj = {};
-      if (this.lazy) {
-        Object.keys(this.lazyOpts).forEach((opt) => {
-          attrObj[`data-${opt}`] = this.lazyOpts[opt];
-        });
+    ratioPct() {
+      if (this.ratio === 'square') {
+        return '100%';
       }
-      return attrObj;
+      if (this.ratio) {
+        const [x, y] = this.ratio.split('-');
+        return `${(y / x) * 100}%`;
+      }
+      return '0%';
     },
   },
   render() {
     if (this.ratio) {
       return (
         <div
-          class={clsx(this.style['cdr-media-frame'], this.ratioClass, this.cropClass)}
+          style={{ '--ratio': this.ratioPct }}
+          class={this.style['cdr-image-ratio']}
         >
-          <div
-            class={clsx(this.coverClass, this.lazyClass, this.radiusClass)}
-            style={this.styleObject}
-            aria-hidden="true"
-            {...{ attrs: this.lazyAttrs }}
-          />
           <img
+            style={this.cropObject}
             class={clsx(
-              this.style['cdr-media-frame__image'],
-              this.style['cdr-media-frame__image--hidden'],
               this.style[this.baseClass],
               this.modifierClass,
               this.radiusClass,
+              this.coverClass,
             )}
             src={this.src}
             alt={this.alt}
-            {...{ on: this.$listeners }}
+            {...{ attrs: this.$attrs, on: this.$listeners }}
           />
         </div>
       );
@@ -191,7 +124,7 @@ export default {
             this.lazyClass)}
           src={this.src}
           alt={this.alt}
-          {...{ attrs: this.lazyAttrs, on: this.$listeners }}
+          {...{ attrs: this.$attrs, on: this.$listeners }}
         />);
   },
 };
