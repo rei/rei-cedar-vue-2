@@ -19008,7 +19008,7 @@ var cedar = (function () {
 
   };
 
-  var css_248z$e = ".cdr-grid-two_8\\.0\\.0-alpha\\.0 {\n  display: grid;\n  gap: 1.6rem 1.6rem; }\n  .cdr-grid-two--gutter-none_8\\.0\\.0-alpha\\.0 {\n    gap: 0 0; }\n  .cdr-grid-two--gutter-small_8\\.0\\.0-alpha\\.0 {\n    gap: 0.2rem 0.2rem; }\n  .cdr-grid-two--gutter-medium_8\\.0\\.0-alpha\\.0 {\n    gap: 1.6rem 1.6rem; }\n  .cdr-grid-two--gutter-large_8\\.0\\.0-alpha\\.0 {\n    gap: 3.2rem 3.2rem; }\n  @media (min-width: 0) and (max-width: 767px) {\n    .cdr-grid-two--gutter-none\\@xs_8\\.0\\.0-alpha\\.0 {\n      gap: 0 0; }\n    .cdr-grid-two--gutter-small\\@xs_8\\.0\\.0-alpha\\.0 {\n      gap: 0.2rem 0.2rem; }\n    .cdr-grid-two--gutter-medium\\@xs_8\\.0\\.0-alpha\\.0 {\n      gap: 1.6rem 1.6rem; }\n    .cdr-grid-two--gutter-large\\@xs_8\\.0\\.0-alpha\\.0 {\n      gap: 3.2rem 3.2rem; } }\n  @media (min-width: 768px) and (max-width: 991px) {\n    .cdr-grid-two--gutter-none\\@sm_8\\.0\\.0-alpha\\.0 {\n      gap: 0 0; }\n    .cdr-grid-two--gutter-small\\@sm_8\\.0\\.0-alpha\\.0 {\n      gap: 0.2rem 0.2rem; }\n    .cdr-grid-two--gutter-medium\\@sm_8\\.0\\.0-alpha\\.0 {\n      gap: 1.6rem 1.6rem; }\n    .cdr-grid-two--gutter-large\\@sm_8\\.0\\.0-alpha\\.0 {\n      gap: 3.2rem 3.2rem; } }\n  @media (min-width: 992px) and (max-width: 1231px) {\n    .cdr-grid-two--gutter-none\\@md_8\\.0\\.0-alpha\\.0 {\n      gap: 0 0; }\n    .cdr-grid-two--gutter-small\\@md_8\\.0\\.0-alpha\\.0 {\n      gap: 0.2rem 0.2rem; }\n    .cdr-grid-two--gutter-medium\\@md_8\\.0\\.0-alpha\\.0 {\n      gap: 1.6rem 1.6rem; }\n    .cdr-grid-two--gutter-large\\@md_8\\.0\\.0-alpha\\.0 {\n      gap: 3.2rem 3.2rem; } }\n  @media (min-width: 1232px) {\n    .cdr-grid-two--gutter-none\\@lg_8\\.0\\.0-alpha\\.0 {\n      gap: 0 0; }\n    .cdr-grid-two--gutter-small\\@lg_8\\.0\\.0-alpha\\.0 {\n      gap: 0.2rem 0.2rem; }\n    .cdr-grid-two--gutter-medium\\@lg_8\\.0\\.0-alpha\\.0 {\n      gap: 1.6rem 1.6rem; }\n    .cdr-grid-two--gutter-large\\@lg_8\\.0\\.0-alpha\\.0 {\n      gap: 3.2rem 3.2rem; } }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9jb21wb25lbnRzL2dyaWRUd28vc3R5bGVzL0NkckdyaWRUd28uc2NzcyIsInNyYy9jb21wb25lbnRzL2dyaWRUd28vc3R5bGVzL3ZhcnMvQ2RyR3JpZFR3by52YXJzLnNjc3MiLCJub2RlX21vZHVsZXMvQHJlaS9jZHItdG9rZW5zL2Rpc3Qvc2Nzcy9jZHItdG9rZW5zLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBR0E7RUNGRSxhQUFhO0VBQ2Isa0JDdzZDc0IsRUFBQTtFRm42Q3RCO0lDREEsUUFBUSxFQUFBO0VES1I7SUNEQSxrQkM0NUN5QixFQUFBO0VGdjVDekI7SUNEQSxrQkM0NUNzQixFQUFBO0VGdjVDdEI7SUNEQSxrQkMwNUNzQixFQUFBO0VBbWlCdEI7SUZ2N0RFO01DbEJGLFFBQVEsRUFBQTtJRHNCTjtNQ2xCRixrQkM0NUN5QixFQUFBO0lGdDRDdkI7TUNsQkYsa0JDNDVDc0IsRUFBQTtJRnQ0Q3BCO01DbEJGLGtCQzA1Q3NCLEVBQUEsRUZ0NENuQjtFRTQ3REg7SUZ6N0RFO01DbkNGLFFBQVEsRUFBQTtJRHVDTjtNQ25DRixrQkM0NUN5QixFQUFBO0lGcjNDdkI7TUNuQ0Ysa0JDNDVDc0IsRUFBQTtJRnIzQ3BCO01DbkNGLGtCQzA1Q3NCLEVBQUEsRUZyM0NuQjtFRTg3REg7SUYzN0RFO01DcERGLFFBQVEsRUFBQTtJRHdETjtNQ3BERixrQkM0NUN5QixFQUFBO0lGcDJDdkI7TUNwREYsa0JDNDVDc0IsRUFBQTtJRnAyQ3BCO01DcERGLGtCQzA1Q3NCLEVBQUEsRUZwMkNuQjtFRWc4REg7SUY3N0RFO01DckVGLFFBQVEsRUFBQTtJRHlFTjtNQ3JFRixrQkM0NUN5QixFQUFBO0lGbjFDdkI7TUNyRUYsa0JDNDVDc0IsRUFBQTtJRm4xQ3BCO01DckVGLGtCQzA1Q3NCLEVBQUEsRUZuMUNuQiIsImZpbGUiOiJDZHJHcmlkVHdvLnNjc3MifQ== */";
+  var css_248z$e = ".cdr-grid-two_8\\.0\\.0-alpha\\.0 {\n  display: grid;\n  list-style: none;\n  margin: 0;\n  padding: 0;\n  gap: 1.6rem 1.6rem; }\n  .cdr-grid-two--gutter-none_8\\.0\\.0-alpha\\.0 {\n    gap: 0 0; }\n  .cdr-grid-two--gutter-small_8\\.0\\.0-alpha\\.0 {\n    gap: 0.2rem 0.2rem; }\n  .cdr-grid-two--gutter-medium_8\\.0\\.0-alpha\\.0 {\n    gap: 1.6rem 1.6rem; }\n  .cdr-grid-two--gutter-large_8\\.0\\.0-alpha\\.0 {\n    gap: 3.2rem 3.2rem; }\n  @media (min-width: 0) and (max-width: 767px) {\n    .cdr-grid-two--gutter-none\\@xs_8\\.0\\.0-alpha\\.0 {\n      gap: 0 0; }\n    .cdr-grid-two--gutter-small\\@xs_8\\.0\\.0-alpha\\.0 {\n      gap: 0.2rem 0.2rem; }\n    .cdr-grid-two--gutter-medium\\@xs_8\\.0\\.0-alpha\\.0 {\n      gap: 1.6rem 1.6rem; }\n    .cdr-grid-two--gutter-large\\@xs_8\\.0\\.0-alpha\\.0 {\n      gap: 3.2rem 3.2rem; } }\n  @media (min-width: 768px) and (max-width: 991px) {\n    .cdr-grid-two--gutter-none\\@sm_8\\.0\\.0-alpha\\.0 {\n      gap: 0 0; }\n    .cdr-grid-two--gutter-small\\@sm_8\\.0\\.0-alpha\\.0 {\n      gap: 0.2rem 0.2rem; }\n    .cdr-grid-two--gutter-medium\\@sm_8\\.0\\.0-alpha\\.0 {\n      gap: 1.6rem 1.6rem; }\n    .cdr-grid-two--gutter-large\\@sm_8\\.0\\.0-alpha\\.0 {\n      gap: 3.2rem 3.2rem; } }\n  @media (min-width: 992px) and (max-width: 1231px) {\n    .cdr-grid-two--gutter-none\\@md_8\\.0\\.0-alpha\\.0 {\n      gap: 0 0; }\n    .cdr-grid-two--gutter-small\\@md_8\\.0\\.0-alpha\\.0 {\n      gap: 0.2rem 0.2rem; }\n    .cdr-grid-two--gutter-medium\\@md_8\\.0\\.0-alpha\\.0 {\n      gap: 1.6rem 1.6rem; }\n    .cdr-grid-two--gutter-large\\@md_8\\.0\\.0-alpha\\.0 {\n      gap: 3.2rem 3.2rem; } }\n  @media (min-width: 1232px) {\n    .cdr-grid-two--gutter-none\\@lg_8\\.0\\.0-alpha\\.0 {\n      gap: 0 0; }\n    .cdr-grid-two--gutter-small\\@lg_8\\.0\\.0-alpha\\.0 {\n      gap: 0.2rem 0.2rem; }\n    .cdr-grid-two--gutter-medium\\@lg_8\\.0\\.0-alpha\\.0 {\n      gap: 1.6rem 1.6rem; }\n    .cdr-grid-two--gutter-large\\@lg_8\\.0\\.0-alpha\\.0 {\n      gap: 3.2rem 3.2rem; } }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9jb21wb25lbnRzL2dyaWRUd28vc3R5bGVzL0NkckdyaWRUd28uc2NzcyIsInNyYy9jb21wb25lbnRzL2dyaWRUd28vc3R5bGVzL3ZhcnMvQ2RyR3JpZFR3by52YXJzLnNjc3MiLCJub2RlX21vZHVsZXMvQHJlaS9jZHItdG9rZW5zL2Rpc3Qvc2Nzcy9jZHItdG9rZW5zLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBR0E7RUNGRSxhQUFhO0VBQ2IsZ0JBQWdCO0VBQ2hCLFNBQVM7RUFDVCxVQUFVO0VBQ1Ysa0JDcTZDc0IsRUFBQTtFRm42Q3RCO0lDRUEsUUFBUSxFQUFBO0VERVI7SUNFQSxrQkN5NUN5QixFQUFBO0VGdjVDekI7SUNFQSxrQkN5NUNzQixFQUFBO0VGdjVDdEI7SUNFQSxrQkN1NUNzQixFQUFBO0VBbWlCdEI7SUZ2N0RFO01DZkYsUUFBUSxFQUFBO0lEbUJOO01DZkYsa0JDeTVDeUIsRUFBQTtJRnQ0Q3ZCO01DZkYsa0JDeTVDc0IsRUFBQTtJRnQ0Q3BCO01DZkYsa0JDdTVDc0IsRUFBQSxFRnQ0Q25CO0VFNDdESDtJRno3REU7TUNoQ0YsUUFBUSxFQUFBO0lEb0NOO01DaENGLGtCQ3k1Q3lCLEVBQUE7SUZyM0N2QjtNQ2hDRixrQkN5NUNzQixFQUFBO0lGcjNDcEI7TUNoQ0Ysa0JDdTVDc0IsRUFBQSxFRnIzQ25CO0VFODdESDtJRjM3REU7TUNqREYsUUFBUSxFQUFBO0lEcUROO01DakRGLGtCQ3k1Q3lCLEVBQUE7SUZwMkN2QjtNQ2pERixrQkN5NUNzQixFQUFBO0lGcDJDcEI7TUNqREYsa0JDdTVDc0IsRUFBQSxFRnAyQ25CO0VFZzhESDtJRjc3REU7TUNsRUYsUUFBUSxFQUFBO0lEc0VOO01DbEVGLGtCQ3k1Q3lCLEVBQUE7SUZuMUN2QjtNQ2xFRixrQkN5NUNzQixFQUFBO0lGbjFDcEI7TUNsRUYsa0JDdTVDc0IsRUFBQSxFRm4xQ25CIiwiZmlsZSI6IkNkckdyaWRUd28uc2NzcyJ9 */";
   var style$g = {"cdr-grid-two":"cdr-grid-two_8.0.0-alpha.0","cdr-grid-two--gutter-none":"cdr-grid-two--gutter-none_8.0.0-alpha.0","cdr-grid-two--gutter-small":"cdr-grid-two--gutter-small_8.0.0-alpha.0","cdr-grid-two--gutter-medium":"cdr-grid-two--gutter-medium_8.0.0-alpha.0","cdr-grid-two--gutter-large":"cdr-grid-two--gutter-large_8.0.0-alpha.0","cdr-grid-two--gutter-none@xs":"cdr-grid-two--gutter-none@xs_8.0.0-alpha.0","cdr-grid-two--gutter-small@xs":"cdr-grid-two--gutter-small@xs_8.0.0-alpha.0","cdr-grid-two--gutter-medium@xs":"cdr-grid-two--gutter-medium@xs_8.0.0-alpha.0","cdr-grid-two--gutter-large@xs":"cdr-grid-two--gutter-large@xs_8.0.0-alpha.0","cdr-grid-two--gutter-none@sm":"cdr-grid-two--gutter-none@sm_8.0.0-alpha.0","cdr-grid-two--gutter-small@sm":"cdr-grid-two--gutter-small@sm_8.0.0-alpha.0","cdr-grid-two--gutter-medium@sm":"cdr-grid-two--gutter-medium@sm_8.0.0-alpha.0","cdr-grid-two--gutter-large@sm":"cdr-grid-two--gutter-large@sm_8.0.0-alpha.0","cdr-grid-two--gutter-none@md":"cdr-grid-two--gutter-none@md_8.0.0-alpha.0","cdr-grid-two--gutter-small@md":"cdr-grid-two--gutter-small@md_8.0.0-alpha.0","cdr-grid-two--gutter-medium@md":"cdr-grid-two--gutter-medium@md_8.0.0-alpha.0","cdr-grid-two--gutter-large@md":"cdr-grid-two--gutter-large@md_8.0.0-alpha.0","cdr-grid-two--gutter-none@lg":"cdr-grid-two--gutter-none@lg_8.0.0-alpha.0","cdr-grid-two--gutter-small@lg":"cdr-grid-two--gutter-small@lg_8.0.0-alpha.0","cdr-grid-two--gutter-medium@lg":"cdr-grid-two--gutter-medium@lg_8.0.0-alpha.0","cdr-grid-two--gutter-large@lg":"cdr-grid-two--gutter-large@lg_8.0.0-alpha.0"};
   styleInject(css_248z$e);
 
@@ -19026,6 +19026,10 @@ var cedar = (function () {
           return validateProp$1(value, ['none', 'small', 'medium', 'large']);
         },
         default: 'medium@xs medium@sm large@md large@lg'
+      },
+      tag: {
+        type: String,
+        default: 'div'
       }
     },
 
@@ -19056,7 +19060,8 @@ var cedar = (function () {
 
     render() {
       var h = arguments[0];
-      return h("div", {
+      var Component = this.tag;
+      return h(Component, {
         "class": clsx(this.style['cdr-grid-two'], this.gutterClass)
       }, [this.$slots.default]);
     }
@@ -35324,14 +35329,49 @@ var cedar = (function () {
     var _h = _vm.$createElement;
     var _c = _vm._self._c || _h;
     return _c(
-      "cdr-grid",
-      { staticClass: "custom-grid" },
-      _vm._l(_vm.items, function(item) {
-        return _c("div", { key: item, staticClass: "grid-item" }, [
-          _vm._v("\n    " + _vm._s(item) + "\n  ")
-        ])
-      }),
-      0
+      "div",
+      [
+        _c(
+          "cdr-grid",
+          { staticClass: "custom-grid" },
+          _vm._l(_vm.items, function(item) {
+            return _c("div", { key: item, staticClass: "grid-item" }, [
+              _vm._v("\n      " + _vm._s(item) + "\n    ")
+            ])
+          }),
+          0
+        ),
+        _vm._v(" "),
+        _c("h2", [_vm._v("Gutter Example")]),
+        _vm._v(" "),
+        _c(
+          "cdr-grid",
+          {
+            staticClass: "custom-grid",
+            attrs: { gutter: "none@xs small@sm medium@md large@lg" }
+          },
+          _vm._l(_vm.items, function(item) {
+            return _c("div", { key: item, staticClass: "grid-item" }, [
+              _vm._v("\n      " + _vm._s(item) + "\n    ")
+            ])
+          }),
+          0
+        ),
+        _vm._v(" "),
+        _c("h2", [_vm._v("List Based Example")]),
+        _vm._v(" "),
+        _c(
+          "cdr-grid",
+          { staticClass: "custom-grid", attrs: { tag: "ul" } },
+          _vm._l(_vm.items, function(item) {
+            return _c("li", { key: item, staticClass: "grid-item" }, [
+              _vm._v("\n      " + _vm._s(item) + "\n    ")
+            ])
+          }),
+          0
+        )
+      ],
+      1
     )
   };
   var __vue_staticRenderFns__$j = [];
@@ -35340,7 +35380,7 @@ var cedar = (function () {
     /* style */
     const __vue_inject_styles__$j = function (inject) {
       if (!inject) return
-      inject("data-v-5467a026_0", { source: ".custom-grid {\n  grid-template-columns: 1fr 1fr 1fr;\n}\n@media (max-width: calc(768px - 1px)) {\n.custom-grid {\n    grid-template-columns: 1fr;\n}\n}\n.grid-item {\n  border: 1px solid black;\n  text-align: center;\n  padding: 1.6rem;\n}\n\n/*# sourceMappingURL=GridTwo.vue.map */", map: {"version":3,"sources":["/home/runner/work/rei-cedar/rei-cedar/src/components/gridTwo/examples/GridTwo.vue","GridTwo.vue"],"names":[],"mappings":"AA+BA;EAEA,kCAAA;AC/BA;AACA;AD4BA;IAMA,0BAAA;AC/BE;AACF;ADkCA;EACA,uBAAA;EACA,kBAAA;EC/BE,eAAe;AACjB;;AAEA,sCAAsC","file":"GridTwo.vue","sourcesContent":["<template>\n  <cdr-grid class=\"custom-grid\">\n    <div\n      v-for=\"item in items\"\n      class=\"grid-item\"\n      :key=\"item\"\n    >\n      {{ item }}\n    </div>\n  </cdr-grid>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\nexport default {\n  name: 'GridTwo',\n  components: {\n    ...Components,\n  },\n  data() {\n    return {\n      items: [1, 2, 3, 4, 5, 6, 7, 8, 9],\n    };\n  },\n};\n</script>\n\n<style lang=\"scss\">\n.custom-grid {\n  // 3 column at md or lg\n  grid-template-columns: 1fr 1fr 1fr;\n\n  @include cdr-sm-mq-down {\n    // 1 column at xs or sm\n    grid-template-columns: 1fr;\n  }\n}\n\n.grid-item {\n  border: 1px solid black;\n  text-align: center;\n  padding: $cdr-space-one-x;\n}\n</style>\n",".custom-grid {\n  grid-template-columns: 1fr 1fr 1fr;\n}\n@media (max-width: calc(768px - 1px)) {\n  .custom-grid {\n    grid-template-columns: 1fr;\n  }\n}\n\n.grid-item {\n  border: 1px solid black;\n  text-align: center;\n  padding: 1.6rem;\n}\n\n/*# sourceMappingURL=GridTwo.vue.map */"]}, media: undefined });
+      inject("data-v-fc3d29da_0", { source: ".custom-grid {\n  grid-template-columns: 1fr 1fr 1fr;\n}\n@media (max-width: calc(768px - 1px)) {\n.custom-grid {\n    grid-template-columns: 1fr;\n}\n}\n.grid-item {\n  border: 1px solid black;\n  text-align: center;\n  padding: 1.6rem;\n}\n\n/*# sourceMappingURL=GridTwo.vue.map */", map: {"version":3,"sources":["/home/runner/work/rei-cedar/rei-cedar/src/components/gridTwo/examples/GridTwo.vue","GridTwo.vue"],"names":[],"mappings":"AAuDA;EAEA,kCAAA;ACvDA;AACA;ADoDA;IAMA,0BAAA;ACvDE;AACF;AD0DA;EACA,uBAAA;EACA,kBAAA;ECvDE,eAAe;AACjB;;AAEA,sCAAsC","file":"GridTwo.vue","sourcesContent":["<template>\n  <div>\n    <cdr-grid class=\"custom-grid\">\n      <div\n        v-for=\"item in items\"\n        class=\"grid-item\"\n        :key=\"item\"\n      >\n        {{ item }}\n      </div>\n    </cdr-grid>\n\n    <h2>Gutter Example</h2>\n    <cdr-grid class=\"custom-grid\" gutter=\"none@xs small@sm medium@md large@lg\">\n      <div\n        v-for=\"item in items\"\n        class=\"grid-item\"\n        :key=\"item\"\n      >\n        {{ item }}\n      </div>\n    </cdr-grid>\n\n    <h2>List Based Example</h2>\n    <cdr-grid class=\"custom-grid\" tag=\"ul\">\n      <li\n        v-for=\"item in items\"\n        class=\"grid-item\"\n        :key=\"item\"\n      >\n        {{ item }}\n      </li>\n    </cdr-grid>\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\nexport default {\n  name: 'GridTwo',\n  components: {\n    ...Components,\n  },\n  data() {\n    return {\n      items: [1, 2, 3, 4, 5, 6, 7, 8, 9],\n    };\n  },\n};\n</script>\n\n<style lang=\"scss\">\n.custom-grid {\n  // 3 column at md or lg\n  grid-template-columns: 1fr 1fr 1fr;\n\n  @include cdr-sm-mq-down {\n    // 1 column at xs or sm\n    grid-template-columns: 1fr;\n  }\n}\n\n.grid-item {\n  border: 1px solid black;\n  text-align: center;\n  padding: $cdr-space-one-x;\n}\n</style>\n",".custom-grid {\n  grid-template-columns: 1fr 1fr 1fr;\n}\n@media (max-width: calc(768px - 1px)) {\n  .custom-grid {\n    grid-template-columns: 1fr;\n  }\n}\n\n.grid-item {\n  border: 1px solid black;\n  text-align: center;\n  padding: 1.6rem;\n}\n\n/*# sourceMappingURL=GridTwo.vue.map */"]}, media: undefined });
 
     };
     /* scoped */
