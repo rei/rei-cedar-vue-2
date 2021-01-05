@@ -1,1 +1,12 @@
-@import url('@rei/cedar/dist/style/text.css');
+@import '../../../css/settings/index.scss';
+
+.cdr-text,
+h1.cdr-text,
+h2.cdr-text,
+h3.cdr-text,
+h4.cdr-text,
+h5.cdr-text,
+h6.cdr-text {
+  @include cdr-text-default;
+  margin: 0;
+}
