@@ -42,7 +42,6 @@ $modal-animation-duration: 150ms;
     margin: auto;
     min-height: 100%;
     opacity: 1;
-    padding: 16px;
     position: absolute;
     top: 0;
     left: 0;
@@ -57,6 +56,7 @@ $modal-animation-duration: 150ms;
 
   &__innerWrap {
     width: 100%; // IE 11
+    padding: $cdr-space-one-x;
   }
 
   &__dialog {
@@ -118,11 +118,14 @@ $modal-animation-duration: 150ms;
       padding: $cdr-space-one-x;
     }
 
+    &__innerWrap {
+      padding: $cdr-space-one-and-a-half-x;
+    }
+
     &__contentWrap {
       border-radius: $cdr-radius-softer;
       box-shadow: $cdr-prominence-lifted;
       min-height: auto;
-      padding: $cdr-space-one-and-a-half-x;
       position: relative;
       top: auto;
       left: auto;

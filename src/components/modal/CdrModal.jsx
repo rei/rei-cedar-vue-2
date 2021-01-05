@@ -57,6 +57,7 @@ export default {
       lastActive: null,
       focusHandler: null,
       reallyClosed: !this.opened,
+      isOpening: false,
       offset: null,
       headerHeight: 0,
       totalHeight: 0,
@@ -72,9 +73,6 @@ export default {
         'aria-modal': 'true',
         id: this.id,
       };
-    },
-    dialogClass() {
-      return `${this.style['cdr-modal__dialog']}`;
     },
     verticalSpace() {
       // contentWrap vertical padding
@@ -154,8 +152,8 @@ export default {
     },
     handleOpened() {
       const { activeElement } = document;
-
       this.addNoScroll();
+      this.isOpening = true;
       this.reallyClosed = false;
       this.lastActive = activeElement;
 
@@ -178,10 +176,13 @@ export default {
     handleClosed() {
       const { documentElement } = document;
       document.removeEventListener('keydown', this.keyHandler);
+      document.removeEventListener('focusin', this.focusHandler, true);
+      this.isOpening = false;
 
       this.unsubscribe = onTransitionEnd(
         this.$refs.wrapper,
         () => {
+          if (this.isOpening) return;
           this.unsubscribe();
           this.removeNoScroll();
           this.unsubscribe = null;
@@ -192,8 +193,6 @@ export default {
           // restore previous scroll position
           window.scrollTo(this.offset.x, this.offset.y);
           if (documentElement) documentElement.style.scrollBehavior = '';
-
-          document.removeEventListener('focusin', this.focusHandler, true);
 
           if (this.lastActive) this.lastActive.focus();
         },
@@ -251,12 +250,10 @@ export default {
   render() {
     const {
       onClick,
-      modalId,
       opened,
       label,
       wrapperClass,
       overlayClass,
-      dialogClass,
       contentClass,
       reallyClosed,
     } = this;
@@ -283,15 +280,14 @@ export default {
           */}
           <div
             ref="modal"
-            class={clsx(this.style['cdr-modal__contentWrap'], dialogClass)}
-            id={modalId}
+            class={clsx(this.style['cdr-modal__contentWrap'], this.style['cdr-modal__dialog'])}
             tabIndex="-1"
             role="dialog"
             aria-modal={!!opened}
             aria-label={label}
             {...{ attrs: this.dialogAttrs }}
           >
-            <div
+            {this.$slots.modal || (<div
               class={clsx(this.style['cdr-modal__innerWrap'], contentClass)}
               style={reallyClosed
                 ? { display: 'none' }
@@ -354,7 +350,7 @@ export default {
                   </div>
                 </div>
               </section>
-            </div>
+            </div>)}
           </div>
           <div tabIndex={opened ? '0' : undefined} />
         </div>
