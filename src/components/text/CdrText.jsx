@@ -25,12 +25,12 @@ export default {
   },
   data() {
     return {
-      style,
+      s: style, // named `s` not `style` so that modifierClass works for text utils
     }
   },
   render() {
     const Component = this.tag;
-    return (<Component class={clsx(this.style[this.baseClass], this.modifierClass)}>
+    return (<Component class={clsx(this.s[this.baseClass], this.modifierClass)}>
       {this.$slots.default}
     </Component>);
   },
