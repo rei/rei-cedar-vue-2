@@ -2,14 +2,14 @@
 
 import fullSprite from '@rei/cedar-icons/dist/all-icons.svg';
 import SinkWrapper from './SinkWrapper.vue'; // eslint-disable-line
-import { CdrLink } from '../index';
+// import { CdrLink } from '../index';
 import cedarcss from '../css/main.scss';
 import routes from './router';
 
 export default {
   components: {
     SinkWrapper,
-    CdrLink,
+    // CdrLink,
   },
   data() {
     return {
@@ -52,11 +52,11 @@ export default {
       to="#content"
       append
       v-slot="{ href, route, navigate }"
-    ><cdr-link
+    ><a
       :href="href"
       @click="navigate"
       class="cdr-display-sr-focusable"
-    >Skip to content</cdr-link></router-link>
+    >Skip to content</a></router-link>
     <!-- NOTE: For dev environment only, do not load icon sprites in JS in production -->
     <!-- eslint-disable vue/no-v-html -->
     <div

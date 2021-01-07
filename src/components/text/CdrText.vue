@@ -1,14 +1,14 @@
 <template>
-  <Component
+  <component
     :is="tag"
     :class="`cdr-text ${modifierClass}`"
   >
-    {{ this.$slots.default && this.$slots.default() }}
-  </Component>
+    <slot/>
+  </component>
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from 'vue'
+import { defineComponent, computed, h } from 'vue'
 
 export default defineComponent({
   name: 'CdrText',
@@ -27,6 +27,7 @@ export default defineComponent({
     return {
       modifierClass,
       tag: props.tag,
+      h
     }
   },
 });

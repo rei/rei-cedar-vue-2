@@ -1,6 +1,6 @@
 <template>
   <div :class="alertClass">
-    {{ this.$slots.default && this.$slots.default() }}
+    <slot/>
   </div>
 </template>
 

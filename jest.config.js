@@ -15,6 +15,7 @@ const config = {
     'js',
     'json',
     'vue',
+    'ts'
   ],
   moduleNameMapper: {
     'componentdir(.*)$': '<rootDir>/src/components/$1',

@@ -63,12 +63,12 @@ const plugins = [
       mixinsdir: resolve('src/mixins'),
     },
     customResolver: nodeResolve({
-      extensions: ['.json', '.js', '.scss', '.vue'],
+      extensions: ['.json', '.js', , '.ts', '.scss', '.vue'],
     }),
   }),
   nodeResolve({
     mainFields: ['module', 'jsnext:main', 'main'],
-    extensions: ['.mjs', '.js', '.vue', '.json'],
+    extensions: ['.mjs', '.js', '.ts', '.vue', '.json'],
   }),
   vue({
     // style: {
@@ -112,7 +112,7 @@ const plugins = [
     runtimeHelpers: true, // ????
   }),
   commonjs({
-      extensions: ['.js', '.vue']
+      extensions: ['.js', '.vue', '.ts']
   }),
   copyPlugin({
     targets: copyTargets,

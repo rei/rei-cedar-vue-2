@@ -1,5 +1,5 @@
 // import accordion from 'componentsdir/accordion/examples/Accordion';
-// import alert from 'componentsdir/alert/examples/Alert';
+import alert from 'componentsdir/alert/examples/Alert';
 // import breadcrumb from 'componentsdir/breadcrumb/examples/Breadcrumb';
 // import buttons from 'componentsdir/button/examples/Buttons';
 // import captions from 'componentsdir/caption/examples/Caption';
@@ -28,7 +28,7 @@ import texts from 'componentsdir/text/examples/Text';
 // import forms from 'componentsdir/Form/Form';
 
 export default {
-  // alert,
+  alert,
   // accordion,
   // breadcrumb,
   // buttons,

@@ -24,7 +24,7 @@ const ext = babelEnv === 'cjs' ? 'js' : 'mjs';
 
 const config = [
   {
-    input: 'src/main.js',
+    input: 'src/main.ts',
     output: [
       {
         file: `dist/cedar.${ext}`,
