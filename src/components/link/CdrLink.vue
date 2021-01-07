@@ -55,7 +55,7 @@ export default defineComponent({
 
     const inheritColorClass = computed(() => props.inheritColor ? style['cdr-link--inherit-color'] : '');
 
-    const componentClass = computed(() => clsx(style['cdr-link'], modifierClass, inheritColorClass));
+    const componentClass = computed(() => clsx(style['cdr-link'], modifierClass.value, inheritColorClass.value));
 
     return {
       tag: props.tag,

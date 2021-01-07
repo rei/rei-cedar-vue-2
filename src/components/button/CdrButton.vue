@@ -131,7 +131,7 @@ export default defineComponent({
     const iconClass = computed(() => );
     // )
 // TODO: can default/base/modifier be cleaned? seems like 1 too many!!!
-    const componentClass = computed(() => clsx(baseClass, modifierClass, buttonSizeClass, fullWidthClass, iconClass));
+    const componentClass = computed(() => clsx(baseClass, modifierClass.value, buttonSizeClass.value, fullWidthClass.value, iconClass.value));
     // TYPE
 
 

@@ -26,7 +26,7 @@ export default defineComponent({
   },
   setup(props) {
     const typeClass = computed(() => props.type && buildClass('cdr-alert', props.type, style))
-    const componentClass = computed(() => clsx(style['cdr-alert'], typeClass))
+    const componentClass = computed(() => clsx(style['cdr-alert'], typeClass.value))
     return {
       componentClass,
     }

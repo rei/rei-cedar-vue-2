@@ -44,7 +44,7 @@ export default defineComponent({
     const hideSr = !ctx.attrs['aria-label'] && ! ctx.attrs['aria-labelledby']
     const inheritColorClass = computed(() => props.inheritColor && style['cdr-icon--inherit-color']);
     const sizeClass = computed(() => props.size && buildClass('cdr-icon', props.size, style));
-    const componentClass = computed(() => clsx(baseClass, sizeClass, inheritColorClass))
+    const componentClass = computed(() => clsx(baseClass, sizeClass.value, inheritColorClass.value))
     return {
       componentClass,
       use: props.use,

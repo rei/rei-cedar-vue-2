@@ -53,12 +53,13 @@ export default defineComponent({
   },
   setup(props) {
     const baseClass = style['cdr-table'];
+    // Performance? one big class computed or multiple? just use clsx in the template to bind them?
     const sizeClass = computed(() => props.size && buildClass('cdr-table', props.size, style));
     const stripedClass = computed(() => props.striped && modifyClassName('cdr-table', 'striped'));
     const hoverClass = computed(() => props.hover && modifyClassName('cdr-table', 'hover'));
     const borderClass = computed(() => props.border && !props.striped && modifyClassName('cdr-table', 'border'));
     const fullWidthClass = computed(() => props.fullWidth && responsiveModifyClass('cdr-table', 'full-width', this.fullWidth));
-    const componentClass = computed(() => clsx(baseClass, sizeClass, stripedClass, hoverClass, borderClass, fullWidthClass));
+    const componentClass = computed(() => clsx(baseClass, sizeClass.value, stripedClass.value, hoverClass.value, borderClass.value, fullWidthClass.value));
     const wrapperClass = computed(() => props.responsive && modifyClassName('cdr-table', 'responsive'));
 
     return {
