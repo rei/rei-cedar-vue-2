@@ -1,12 +1,14 @@
 <template>
-  <Component :is="tag" class={this.style[this.baseClass]}>
-    {this.$slots.default}
-  </Component>
+  <component :is="tag" :class="componentClass">
+    <slot />
+  </component>
 </template>
-<script>
+<script lang="ts">
+
+import { defineComponent } from 'vue'
 import style from './styles/CdrCard.scss';
 
-export default {
+export default defineComponent({
   name: 'CdrCard',
   props: {
     tag: {
@@ -14,19 +16,11 @@ export default {
       default: 'article',
     },
   },
-  data() {
+  setup(props) {
     return {
-      style,
+      tag: props.tag,
+      componentClass: style['cdr-card'],
     };
   },
-  computed: {
-    baseClass() {
-      return 'cdr-card';
-    },
-  },
-  setup() {
-    const Component = this.tag;
-    return ();
-  },
-};
+});
 </script>

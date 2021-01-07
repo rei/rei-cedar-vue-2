@@ -1,13 +1,16 @@
 <template>
-  <div :class="alertClass">
+  <div :class="componentClass">
     <slot/>
   </div>
 </template>
 
 
 <script lang="ts">
-import { defineComponent, computed } from 'vue'
+import { defineComponent, computed } from 'vue';
+import clsx from 'clsx';
 import propValidator from '../../utils/propValidator';
+import { buildClass } from '../../utils/buildClass';
+import style from './styles/CdrAlert.scss';
 
 export default defineComponent({
   name: 'CdrAlert',
@@ -22,9 +25,10 @@ export default defineComponent({
     },
   },
   setup(props) {
-    const alertClass = computed(() => props.type && `cdr-alert cdr-alert--${props.type}`)
+    const typeClass = computed(() => props.type && buildClass('cdr-alert', props.type, style))
+    const componentClass = computed(() => clsx(style['cdr-alert'], typeClass))
     return {
-      alertClass,
+      componentClass,
     }
   }
 });

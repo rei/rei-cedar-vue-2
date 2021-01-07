@@ -28,19 +28,16 @@ const config = {
     '<rootDir>/src/components/breadcrumb',
     '<rootDir>/src/components/button',
     '<rootDir>/src/components/caption',
-    '<rootDir>/src/components/card',
     '<rootDir>/src/components/checkbox',
     '<rootDir>/src/components/Form',
     '<rootDir>/src/components/formError',
     '<rootDir>/src/components/formGroup',
     '<rootDir>/src/components/grid',
     '<rootDir>/src/components/gridTwo',
-    '<rootDir>/src/components/icon',
     '<rootDir>/src/components/image',
     '<rootDir>/src/components/input',
     '<rootDir>/src/components/labelStandalone',
     '<rootDir>/src/components/labelWrapper',
-    '<rootDir>/src/components/link',
     '<rootDir>/src/components/list',
     '<rootDir>/src/components/modal',
     '<rootDir>/src/components/pagination',
@@ -57,13 +54,21 @@ const config = {
 
   ],
   transform: {
-    ".*\\.(vue)$": "vue-jest",
+    ".*\\.(vue|ts)$": "vue-jest",
     '^.+\\.(js|vue)?$': 'babel-jest',
-    // '.+\\.(css|styl|less|sass|scss)$': '<rootDir>/node_modules/jest-css-modules-transform',
+    '.+\\.(css|styl|less|sass|scss)$': '<rootDir>/node_modules/jest-css-modules-transform',
   },
   transformIgnorePatterns: [
     '<rootDir>/node_modules/(?!(lodash-es|@rei\/cdr-tokens)/.*)', // https://stackoverflow.com/questions/42260218/jest-setup-syntaxerror-unexpected-token-export
   ],
+  "globals": {
+    "vue-jest": {
+      "babelConfig": {
+          "configFile": "./babel.config.js"
+        },
+        "tsConfig": "./tsconfig.json"
+    }
+  }
 };
 
 module.exports = config;

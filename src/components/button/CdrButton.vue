@@ -1,13 +1,25 @@
+<template>
+  <component
+    :is="tag"
+    :class="componentClass"
+    :type="type"
+  >
+    <slot name="icon-left"/>
+    <slot/>
+    <slot name="icon-right"/>
+  </component>
+</template>
+
+<!-- NOTE: REMOVED icon slot. use icon-left -->
+<script lang="ts">
+import { defineComponent, computed } from 'vue';
 import clsx from 'clsx';
-import modifier from '../../mixins/modifier';
 import fullWidth from '../../mixins/fullWidth';
-import size from '../../mixins/size';
-import space from '../../mixins/space';
+import propValidator from '../../utils/propValidator';
 import style from './styles/CdrButton.scss';
 
-export default {
+export default defineComponent({
   name: 'CdrButton',
-  mixins: [modifier, size, space, fullWidth],
   props: {
     /**
      * Controls render as button or anchor. {button, a}
@@ -15,7 +27,7 @@ export default {
     tag: {
       type: String,
       default: 'button',
-      validator: (value) => (['button', 'a'].indexOf(value) >= 0) || false,
+      validator: (value) => propValidator(value, ['button', 'a']),
     },
     /**
      * Sets the button type. {button, submit, reset}
@@ -23,7 +35,23 @@ export default {
     type: {
       type: String,
       default: 'button',
-      validator: (value) => (['button', 'submit', 'reset'].indexOf(value) >= 0) || false,
+      validator: (value) => propValidator(value, ['button', 'submit', 'reset']),
+    },
+    /**
+     * Sets the button style
+     */
+    modifier: {
+      type: String,
+      default: 'primary',
+      validator: (value) => propValidator(value, ['primary', 'secondary', 'sale', 'dark']),
+    },
+    size: {
+      type: String,
+      default: 'medium',
+      validator: (value) => propValidator(
+        value,
+        ['small', 'medium', 'large'],
+      ),
     },
     /**
      * Increases box-shadow around button to enhance contrast against background
@@ -47,67 +75,70 @@ export default {
       default: false,
     },
   },
-  data() {
+  // data() {
+  //   return {
+  //     style,
+  //   };
+  // },
+  // computed: {
+
+  //   iconClass() {
+  //     const classes = [];
+  //
+  //     if ((this.$slots['icon-left'] || this.$slots.icon) && this.$slots.default) {
+  //       /* only add class for buttons with text + icon on left */
+  //       classes.push(this.modifyClassName(this.baseClass, 'has-icon-left'));
+  //     }
+  //
+  //     if (this.$slots['icon-right'] && this.$slots.default) {
+  //       /* only add class for buttons with text + icon on right */
+  //       classes.push(this.modifyClassName(this.baseClass, 'has-icon-right'));
+  //     }
+  //
+  //     if (this.elevated) {
+  //       classes.push(this.modifyClassName(this.baseClass, 'elevated'));
+  //     }
+  //
+  //     if (this.iconOnly) {
+  //       classes.push(this.modifyClassName(this.baseClass, 'icon-only'));
+  //     }
+  //
+  //     if (this.iconOnly && this.withBackground) {
+  //       classes.push(this.modifyClassName(this.baseClass, 'with-background'));
+  //     }
+  //
+  //     return classes.join(' ');
+  //   },
+  // },
+  setup(props) {
+
+
+    //   baseClass() {
+    //     return 'cdr-button';
+    //   },
+    //   defaultClass() {
+    //     return this.modifier ? undefined : this.modifyClassName(this.baseClass, 'primary');
+    //   },
+    //   buttonSizeClass() {
+    //     return !this.iconOnly ? this.sizeClass : this.style[`cdr-button--icon-only-${this.size}`];
+    //   },
+    // \clsx(
+    //   this.style[this.baseClass],
+    const baseClass = style['cdr-button']
+    const modifierClass = computed(() => );
+    const buttonSizeClass = computed(() => ); // !!! SIZELCASS
+    const fullWidthClass = computed(() => );
+    const iconClass = computed(() => );
+    // )
+// TODO: can default/base/modifier be cleaned? seems like 1 too many!!!
+    const componentClass = computed(() => clsx(baseClass, modifierClass, buttonSizeClass, fullWidthClass, iconClass));
+    // TYPE
+
+
     return {
-      style,
-    };
-  },
-  computed: {
-    baseClass() {
-      return 'cdr-button';
-    },
-    defaultClass() {
-      return this.modifier ? undefined : this.modifyClassName(this.baseClass, 'primary');
-    },
-    buttonSizeClass() {
-      return !this.iconOnly ? this.sizeClass : this.style[`cdr-button--icon-only-${this.size}`];
-    },
-    iconClass() {
-      const classes = [];
-
-      if ((this.$slots['icon-left'] || this.$slots.icon) && this.$slots.default) {
-        /* only add class for buttons with text + icon on left */
-        classes.push(this.modifyClassName(this.baseClass, 'has-icon-left'));
-      }
-
-      if (this.$slots['icon-right'] && this.$slots.default) {
-        /* only add class for buttons with text + icon on right */
-        classes.push(this.modifyClassName(this.baseClass, 'has-icon-right'));
-      }
-
-      if (this.elevated) {
-        classes.push(this.modifyClassName(this.baseClass, 'elevated'));
-      }
-
-      if (this.iconOnly) {
-        classes.push(this.modifyClassName(this.baseClass, 'icon-only'));
-      }
-
-      if (this.iconOnly && this.withBackground) {
-        classes.push(this.modifyClassName(this.baseClass, 'with-background'));
-      }
-
-      return classes.join(' ');
-    },
-  },
-  render() {
-    const Component = this.tag;
-    return (<Component
-      class={clsx(
-        this.style[this.baseClass],
-        this.defaultClass,
-        this.modifierClass,
-        this.buttonSizeClass,
-        this.fullWidthClass,
-        this.iconClass,
-        this.space,
-      )}
-      type={this.tag === 'button' ? this.type : null}
-      {...{ on: this.$listeners }}
-    >
-      {this.$slots['icon-left'] || this.$slots.icon}
-      {this.$slots.default}
-      {this.$slots['icon-right']}
-    </Component>);
-  },
-};
+      componentClass,
+      type: props.tag === 'button' ? props.type : null
+    }
+  }
+});
+</script>

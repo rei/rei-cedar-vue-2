@@ -76,17 +76,21 @@ const plugins = [
     //     generateScopedName,
     //   },
     // },
-    data: {
-      // this gets prepended in all components <style>
-      scss() {
-        return `$cdr-warn: false;
-        @import "${resolve('node_modules/@rei/cdr-tokens/dist/scss/cdr-tokens.scss')}";
-        @import "${resolve('src/css/settings/_index.scss')}";`;
-      },
-    },
-    template: {
-      isProduction: env === 'prod',
-    },
+    // data: {
+    //   // this gets prepended in all components <style>
+    //   scss() {
+    //     return `$cdr-warn: false;
+    //     @import "${resolve('node_modules/@rei/cdr-tokens/dist/scss/cdr-tokens.scss')}";
+    //     @import "${resolve('src/css/settings/_index.scss')}";`;
+    //   },
+    // },
+    // preprocessStyles: false,
+    cssModulesOptions: {
+      generateScopedName,
+    }
+    // template: {
+    //   isProduction: env === 'prod',
+    // },
   }),
   typescript({
     include: 'src/components/**/*.vue'

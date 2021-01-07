@@ -8,7 +8,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed, h } from 'vue'
+import { defineComponent, computed} from 'vue'
 
 export default defineComponent({
   name: 'CdrText',
@@ -27,7 +27,6 @@ export default defineComponent({
     return {
       modifierClass,
       tag: props.tag,
-      h
     }
   },
 });

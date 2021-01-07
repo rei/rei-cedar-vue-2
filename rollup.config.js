@@ -1,8 +1,8 @@
 import process from 'process';
-import renameExtensions from '@betit/rollup-plugin-rename-extensions';
+// import renameExtensions from '@betit/rollup-plugin-rename-extensions';
 import plugins from './build/rollup-plugins';
 import packageJson from './package.json';
-
+console.log("WHAT")
 const env = process.env.NODE_ENV;
 const babelEnv = process.env.BABEL_ENV;
 const { dependencies = {}, peerDependencies = {} } = packageJson;
@@ -12,11 +12,11 @@ let externals = Object.keys({
   ...peerDependencies,
 });
 
-if (babelEnv === 'cjs') {
-  // don't externalize ES modules in CJS build
-  // TODO: figure out config change needed in @rei/vunit
-  externals = externals.filter((x) => x !== 'lodash-es' && x !== 'clsx' && x !== '@rei/cdr-tokens');
-}
+// if (babelEnv === 'cjs') {
+//   // don't externalize ES modules in CJS build
+//   // TODO: figure out config change needed in @rei/vunit
+//   externals = externals.filter((x) => x !== 'lodash-es' && x !== 'clsx' && x !== '@rei/cdr-tokens');
+// }
 
 const externalFn = (id) => externals.some((dep) => dep === id || id.startsWith(`${dep}/`));
 
@@ -32,7 +32,7 @@ const config = [
       },
     ],
     plugins,
-    external: env === 'prod' ? externalFn : undefined,
+    // external: env === 'prod' ? externalFn : undefined,
   },
 
 ];
