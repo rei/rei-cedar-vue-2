@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import style from './styles/CdrText.scss';
 import modifier from '../../mixins/modifier';
 
 /**
@@ -22,9 +23,14 @@ export default {
       return 'cdr-text';
     },
   },
+  data() {
+    return {
+      s: style, // named `s` not `style` so that modifierClass works for text utils
+    };
+  },
   render() {
     const Component = this.tag;
-    return (<Component class={clsx(this.baseClass, this.modifierClass)}>
+    return (<Component class={clsx(this.s[this.baseClass], this.modifierClass)}>
       {this.$slots.default}
     </Component>);
   },
