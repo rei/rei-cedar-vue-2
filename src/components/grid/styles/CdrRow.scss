@@ -56,7 +56,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
   /* Row elements
     ========================================================================== */
 
-  &_row1 {
+  &_row--1 {
     & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
       flex-basis: $rowPct1;
       width: $rowPct1;
@@ -64,7 +64,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
     }
   }
 
-  &_row2 {
+  &_row--2 {
     & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
       flex-basis: $rowPct2;
       width: $rowPct2;
@@ -72,7 +72,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
     }
   }
 
-  &_row3 {
+  &_row--3 {
     & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
       flex-basis: $rowPct3;
       width: $rowPct3;
@@ -80,7 +80,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
     }
   }
 
-  &_row4 {
+  &_row--4 {
     & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
       flex-basis: $rowPct4;
       width: $rowPct4;
@@ -88,7 +88,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
     }
   }
 
-  &_row5 {
+  &_row--5 {
     & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
       flex-basis: $rowPct5;
       width: $rowPct5;
@@ -96,7 +96,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
     }
   }
 
-  &_row6 {
+  &_row--6 {
     & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
       flex-basis: $rowPct6;
       width: $rowPct6;
@@ -104,7 +104,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
     }
   }
 
-  &_row7 {
+  &_row--7 {
     & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
       flex-basis: $rowPct7;
       width: $rowPct7;
@@ -112,7 +112,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
     }
   }
 
-  &_row8 {
+  &_row--8 {
     & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
       flex-basis: $rowPct8;
       width: $rowPct8;
@@ -120,7 +120,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
     }
   }
 
-  &_row9 {
+  &_row--9 {
     & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
       flex-basis: $rowPct9;
       width: $rowPct9;
@@ -128,7 +128,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
     }
   }
 
-  &_row10 {
+  &_row--10 {
     & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
       flex-basis: $rowPct10;
       width: $rowPct10;
@@ -136,7 +136,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
     }
   }
 
-  &_row11 {
+  &_row--11 {
     & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
       flex-basis: $rowPct11;
       width: $rowPct11;
@@ -144,7 +144,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
     }
   }
 
-  &_row12 {
+  &_row--12 {
     & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
       flex-basis: $rowPct12;
       width: $rowPct12;
@@ -152,7 +152,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
     }
   }
 
-  &_rowauto {
+  &_row--auto {
     & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
       flex: none;
       width: auto;
@@ -163,7 +163,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
   /* Row modifiers
   ========================================================================== */
 
-  &--gutter-none {
+  &__gutter--none {
     margin: 0 !important;
 
     & > .cdr-col {
@@ -171,7 +171,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
     }
   }
 
-  &--gutter-small {
+  &__gutter--small {
     margin-top: calc(#{$rowGutter-sm} * -1) !important;
     margin-left: calc(#{$rowGutter-sm} * -1) !important;
 
@@ -181,7 +181,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
     }
   }
 
-  &--gutter-medium {
+  &__gutter--medium {
     margin-top: calc(#{$rowGutter-md} * -1) !important;
     margin-left: calc(#{$rowGutter-md} * -1) !important;
 
@@ -191,7 +191,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
     }
   }
 
-  &--gutter-xxs {
+  &__gutter--xxs {
     margin-top: calc(#{$cdr-space-eighth-x} * -1) !important;
     margin-left: calc(#{$cdr-space-eighth-x} * -1) !important;
 
@@ -276,7 +276,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
 
     /* Row small elements
     ========================================================================== */
-    &_row1\@sm {
+    &_row--1\@sm {
       & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
         flex-basis: $rowPct1;
         width: $rowPct1;
@@ -284,7 +284,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
       }
     }
 
-    &_row2\@sm {
+    &_row--2\@sm {
       & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
         flex-basis: $rowPct2;
         width: $rowPct2;
@@ -292,7 +292,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
       }
     }
 
-    &_row3\@sm {
+    &_row--3\@sm {
       & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
         flex-basis: $rowPct3;
         width: $rowPct3;
@@ -300,7 +300,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
       }
     }
 
-    &_row4\@sm {
+    &_row--4\@sm {
       & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
         flex-basis: $rowPct4;
         width: $rowPct4;
@@ -308,7 +308,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
       }
     }
 
-    &_row5\@sm {
+    &_row--5\@sm {
       & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
         flex-basis: $rowPct5;
         width: $rowPct5;
@@ -316,7 +316,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
       }
     }
 
-    &_row6\@sm {
+    &_row--6\@sm {
       & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
         flex-basis: $rowPct6;
         width: $rowPct6;
@@ -324,7 +324,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
       }
     }
 
-    &_row7\@sm {
+    &_row--7\@sm {
       & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
         flex-basis: $rowPct7;
         width: $rowPct7;
@@ -332,7 +332,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
       }
     }
 
-    &_row8\@sm {
+    &_row--8\@sm {
       & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
         flex-basis: $rowPct8;
         width: $rowPct8;
@@ -340,7 +340,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
       }
     }
 
-    &_row9\@sm {
+    &_row--9\@sm {
       & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
         flex-basis: $rowPct9;
         width: $rowPct9;
@@ -348,7 +348,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
       }
     }
 
-    &_row10\@sm {
+    &_row--10\@sm {
       & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
         flex-basis: $rowPct10;
         width: $rowPct10;
@@ -356,7 +356,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
       }
     }
 
-    &_row11\@sm {
+    &_row--11\@sm {
       & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
         flex-basis: $rowPct11;
         width: $rowPct11;
@@ -364,7 +364,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
       }
     }
 
-    &_row12\@sm {
+    &_row--12\@sm {
       & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
         flex-basis: $rowPct12;
         width: $rowPct12;
@@ -372,7 +372,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
       }
     }
 
-    &_rowauto\@sm {
+    &_row--auto\@sm {
       & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
         flex: 0 0 auto;
         width: auto;
@@ -382,7 +382,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
 
     /* Row small modifiers
     ========================================================================== */
-    &--gutter-none\@sm {
+    &__gutter--none\@sm {
       margin: 0 !important;
 
       & > .cdr-col {
@@ -390,7 +390,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
       }
     }
 
-    &--gutter-small\@sm {
+    &__gutter--small\@sm {
       margin-top: calc(#{$rowGutter-sm} * -1) !important;
       margin-left: calc(#{$rowGutter-sm} * -1) !important;
 
@@ -400,7 +400,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
       }
     }
 
-    &--gutter-medium\@sm {
+    &__gutter--medium\@sm {
       margin-top: calc(#{$rowGutter-md} * -1) !important;
       margin-left: calc(#{$rowGutter-md} * -1) !important;
 
@@ -410,7 +410,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
       }
     }
 
-    &--gutter-xxs\@sm {
+    &__gutter--xxs\@sm {
       margin-top: calc(#{$cdr-space-eighth-x} * -1) !important;
       margin-left: calc(#{$cdr-space-eighth-x} * -1) !important;
 
@@ -497,7 +497,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
     /* Row medium elements
     ========================================================================== */
 
-    &_row1\@md {
+    &_row--1\@md {
       & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
         flex-basis: $rowPct1;
         width: $rowPct1;
@@ -505,7 +505,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
       }
     }
 
-    &_row2\@md {
+    &_row--2\@md {
       & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
         flex-basis: $rowPct2;
         width: $rowPct2;
@@ -513,7 +513,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
       }
     }
 
-    &_row3\@md {
+    &_row--3\@md {
       & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
         flex-basis: $rowPct3;
         width: $rowPct3;
@@ -521,7 +521,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
       }
     }
 
-    &_row4\@md {
+    &_row--4\@md {
       & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
         flex-basis: $rowPct4;
         width: $rowPct4;
@@ -529,7 +529,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
       }
     }
 
-    &_row5\@md {
+    &_row--5\@md {
       & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
         flex-basis: $rowPct5;
         width: $rowPct5;
@@ -537,7 +537,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
       }
     }
 
-    &_row6\@md {
+    &_row--6\@md {
       & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
         flex-basis: $rowPct6;
         width: $rowPct6;
@@ -545,7 +545,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
       }
     }
 
-    &_row7\@md {
+    &_row--7\@md {
       & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
         flex-basis: $rowPct7;
         width: $rowPct7;
@@ -553,7 +553,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
       }
     }
 
-    &_row8\@md {
+    &_row--8\@md {
       & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
         flex-basis: $rowPct8;
         width: $rowPct8;
@@ -561,7 +561,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
       }
     }
 
-    &_row9\@md {
+    &_row--9\@md {
       & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
         flex-basis: $rowPct9;
         width: $rowPct9;
@@ -569,7 +569,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
       }
     }
 
-    &_row10\@md {
+    &_row--10\@md {
       & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
         flex-basis: $rowPct10;
         width: $rowPct10;
@@ -577,7 +577,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
       }
     }
 
-    &_row11\@md {
+    &_row--11\@md {
       & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
         flex-basis: $rowPct11;
         width: $rowPct11;
@@ -585,7 +585,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
       }
     }
 
-    &_row12\@md {
+    &_row--12\@md {
       & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
         flex-basis: $rowPct12;
         width: $rowPct12;
@@ -593,7 +593,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
       }
     }
 
-    &_rowauto\@md {
+    &_row--auto\@md {
       & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
         flex: 0 0 auto;
         width: auto;
@@ -604,7 +604,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
     /* Row medium modifiers
     ========================================================================== */
 
-    &--gutter-none\@md {
+    &__gutter--none\@md {
       margin: 0 !important;
 
       & > .cdr-col {
@@ -612,7 +612,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
       }
     }
 
-    &--gutter-small\@md {
+    &__gutter--small\@md {
       margin-top: calc(#{$rowGutter-sm} * -1) !important;
       margin-left: calc(#{$rowGutter-sm} * -1) !important;
 
@@ -622,7 +622,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
       }
     }
 
-    &--gutter-medium\@md {
+    &__gutter--medium\@md {
       margin-top: calc(#{$rowGutter-md} * -1) !important;
       margin-left: calc(#{$rowGutter-md} * -1) !important;
 
@@ -632,7 +632,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
       }
     }
 
-    &--gutter-xxs\@md {
+    &__gutter--xxs\@md {
       margin-top: calc(#{$cdr-space-eighth-x} * -1) !important;
       margin-left: calc(#{$cdr-space-eighth-x} * -1) !important;
 
@@ -719,7 +719,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
     /* Row large elements
     ========================================================================== */
 
-    &_row1\@lg {
+    &_row--1\@lg {
       & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
         flex-basis: $rowPct1;
         width: $rowPct1;
@@ -727,7 +727,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
       }
     }
 
-    &_row2\@lg {
+    &_row--2\@lg {
       & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
         flex-basis: $rowPct2;
         width: $rowPct2;
@@ -735,7 +735,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
       }
     }
 
-    &_row3\@lg {
+    &_row--3\@lg {
       & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
         flex-basis: $rowPct3;
         width: $rowPct3;
@@ -743,7 +743,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
       }
     }
 
-    &_row4\@lg {
+    &_row--4\@lg {
       & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
         flex-basis: $rowPct4;
         width: $rowPct4;
@@ -751,7 +751,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
       }
     }
 
-    &_row5\@lg {
+    &_row--5\@lg {
       & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
         flex-basis: $rowPct5;
         width: $rowPct5;
@@ -759,7 +759,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
       }
     }
 
-    &_row6\@lg {
+    &_row--6\@lg {
       & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
         flex-basis: $rowPct6;
         width: $rowPct6;
@@ -767,7 +767,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
       }
     }
 
-    &_row7\@lg {
+    &_row--7\@lg {
       & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
         flex-basis: $rowPct7;
         width: $rowPct7;
@@ -775,7 +775,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
       }
     }
 
-    &_row8\@lg {
+    &_row--8\@lg {
       & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
         flex-basis: $rowPct8;
         width: $rowPct8;
@@ -783,7 +783,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
       }
     }
 
-    &_row9\@lg {
+    &_row--9\@lg {
       & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
         flex-basis: $rowPct9;
         width: $rowPct9;
@@ -791,7 +791,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
       }
     }
 
-    &_row10\@lg {
+    &_row--10\@lg {
       & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
         flex-basis: $rowPct10;
         width: $rowPct10;
@@ -799,7 +799,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
       }
     }
 
-    &_row11\@lg {
+    &_row--11\@lg {
       & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
         flex-basis: $rowPct11;
         width: $rowPct11;
@@ -807,7 +807,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
       }
     }
 
-    &_row12\@lg {
+    &_row--12\@lg {
       & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
         flex-basis: $rowPct12;
         width: $rowPct12;
@@ -815,7 +815,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
       }
     }
 
-    &_rowauto\@lg {
+    &_row--auto\@lg {
       & > [class^="cdr-col"]:not([class*="cdr-col_span"]) {
         flex: 0 0 auto;
         width: auto;
@@ -826,7 +826,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
     /* Row large modifiers
     ========================================================================== */
 
-    &--gutter-none\@lg {
+    &__gutter--none\@lg {
       margin: 0 !important;
 
       & > .cdr-col {
@@ -834,7 +834,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
       }
     }
 
-    &--gutter-small\@lg {
+    &__gutter--small\@lg {
       margin-top: calc(#{$rowGutter-sm} * -1) !important;
       margin-left: calc(#{$rowGutter-sm} * -1) !important;
 
@@ -844,7 +844,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
       }
     }
 
-    &--gutter-medium\@lg {
+    &__gutter--medium\@lg {
       margin-top: calc(#{$rowGutter-md} * -1) !important;
       margin-left: calc(#{$rowGutter-md} * -1) !important;
 
@@ -854,7 +854,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
       }
     }
 
-    &--gutter-xxs\@lg {
+    &__gutter--xxs\@lg {
       margin-top: calc(#{$cdr-space-eighth-x} * -1) !important;
       margin-left: calc(#{$cdr-space-eighth-x} * -1) !important;
 

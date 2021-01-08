@@ -9,6 +9,7 @@
   &:active,
   &:focus {
     color: $cdr-color-text-link-hover;
+    text-decoration: underline;
   }
 }
 

@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import {
   CdrColorBackgroundPrimary, CdrSpaceOneX, CdrSpaceHalfX,
 } from '@rei/cdr-tokens/dist/js/cdr-tokens.esm';
-import modifier from '../../mixins/modifier';
+// import modifier from '../../mixins/modifier';
 import size from '../../mixins/size';
 import style from './styles/CdrTabs.scss';
 
@@ -63,6 +63,8 @@ export default {
     },
   },
   mounted() {
+    // TODO: DO something like accordion group here?
+    // hrmmmm
     this.tabs = (this.$slots.default || [])
       .map((vnode) => vnode.componentInstance)
       .filter((tab) => tab); // get vue component children in the slot

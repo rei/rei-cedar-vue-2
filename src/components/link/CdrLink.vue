@@ -15,6 +15,7 @@
 import {defineComponent, computed} from 'vue';
 import clsx from 'clsx';
 import { buildClass } from '../../utils/buildClass';
+import propValidator from '../../utils/propValidator';
 import style from './styles/CdrLink.scss';
 
 export default defineComponent({

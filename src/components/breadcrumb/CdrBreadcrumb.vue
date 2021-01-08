@@ -1,14 +1,93 @@
+<template>
+  <nav
+    ref="container"
+    class={clsx(this.style[this.baseClass], this.modifierClass)}
+    aria-label="breadcrumbs"
+    >
+    <ol
+      id={`${this.componentID}List`}
+      ref="cdrBreadcrumbList"
+      class={this.style['cdr-breadcrumb__list']}
+    >
+
+<!-- ELLIPSIS -->
+      return this.truncate ? (<li
+        class={this.style['cdr-breadcrumb__item']}
+      >
+        <button
+          onClick={this.handleEllipsisClick}
+          ref="ellipse"
+          aria-expanded="false"
+          class={this.style['cdr-breadcrumb__ellipses']}
+          aria-controls={`${this.componentID}List`}
+          aria-label={`show ${this.items.length - 2} more navigation level${(this.items.length - 2) > 1 ? 's' : ''}`} // eslint-disable-line max-len
+        >
+          <span
+            class={this.style['cdr-breadcrumb__ellipses-icon']}
+            aria-hidden="true"
+          >
+            . . .
+          </span>
+        </button>
+        <span
+          class={this.style['cdr-breadcrumb__delimiter']}
+          aria-hidden="true"
+        >
+          /
+        </span>
+      </li>) : '';
+
+
+<!-- ITEMS -->
+return this.items.map((breadcrumb, index) => {
+  const delimiter = index < this.items.length - 1 ? (<span
+    class={this.style['cdr-breadcrumb__delimiter']}
+    aria-hidden="true"
+  >
+    /
+  </span>) : '';
+
+  return (<li
+    class={clsx(
+      this.style['cdr-breadcrumb__item'],
+    )}
+    key={breadcrumb.item.id || breadcrumb.item.name.replace(/ /g, '-').toLowerCase()}
+    v-show={!this.truncate || (index >= this.items.length - 2)}
+  >
+    {this.$scopedSlots.link
+      ? this.$scopedSlots.link({
+        class: this.style['cdr-breadcrumb__link'],
+        href: breadcrumb.item.url,
+        content: breadcrumb.item.name,
+      })
+      : (<a
+        class={this.style['cdr-breadcrumb__link']}
+        href={breadcrumb.item.url}
+      >
+        { breadcrumb.item.name }
+      </a>)
+    }
+    {delimiter}
+  </li>);
+});
+
+
+    </ol>
+  </nav>
+</template>
+<script lang="ts">
+import { defineComponent, computed, ref } from 'vue';
+
 import clsx from 'clsx';
 import CdrIcon from '../icon/CdrIcon';
-import modifier from '../../mixins/modifier';
+import {buildClass} from '../../utils/buildClass';
 import style from './styles/CdrBreadcrumb.scss';
 
-export default {
+export default defineComponent({
   name: 'CdrBreadcrumb',
   components: {
     CdrIcon,
   },
-  mixins: [modifier],
   props: {
     /**
      * Required. List of source breadcrumb property objects
@@ -44,106 +123,42 @@ export default {
       type: Boolean,
       default: true,
     },
-  },
-  data() {
-    return {
-      truncate: this.truncationEnabled && this.items.length > 2,
-      style,
-      componentID: Math.random().toString(36).substr(2, 9),
-    };
-  },
-  computed: {
-    baseClass() {
-      return 'cdr-breadcrumb';
+    id: {
+      type: String,
+      required: true,
     },
-    ellipsis() {
-      return this.truncate ? (<li
-        class={this.style['cdr-breadcrumb__item']}
-      >
-        <button
-          onClick={this.handleEllipsisClick}
-          ref="ellipse"
-          aria-expanded="false"
-          class={this.style['cdr-breadcrumb__ellipses']}
-          aria-controls={`${this.componentID}List`}
-          aria-label={`show ${this.items.length - 2} more navigation level${(this.items.length - 2) > 1 ? 's' : ''}`} // eslint-disable-line max-len
-        >
-          <span
-            class={this.style['cdr-breadcrumb__ellipses-icon']}
-            aria-hidden="true"
-          >
-            . . .
-          </span>
-        </button>
-        <span
-          class={this.style['cdr-breadcrumb__delimiter']}
-          aria-hidden="true"
-        >
-          /
-        </span>
-      </li>) : '';
-    },
-    listItems() {
-      return this.items.map((breadcrumb, index) => {
-        const delimiter = index < this.items.length - 1 ? (<span
-          class={this.style['cdr-breadcrumb__delimiter']}
-          aria-hidden="true"
-        >
-          /
-        </span>) : '';
+  },
+  setup(props, ctx) {
 
-        return (<li
-          class={clsx(
-            this.style['cdr-breadcrumb__item'],
-          )}
-          key={breadcrumb.item.id || breadcrumb.item.name.replace(/ /g, '-').toLowerCase()}
-          v-show={!this.truncate || (index >= this.items.length - 2)}
-        >
-          {this.$scopedSlots.link
-            ? this.$scopedSlots.link({
-              class: this.style['cdr-breadcrumb__link'],
-              href: breadcrumb.item.url,
-              content: breadcrumb.item.name,
-            })
-            : (<a
-              class={this.style['cdr-breadcrumb__link']}
-              href={breadcrumb.item.url}
-            >
-              { breadcrumb.item.name }
-            </a>)
-          }
-          {delimiter}
-        </li>);
-      });
-    },
-  },
-  watch: {
-    items() {
-      this.truncate = this.truncationEnabled && this.items.length > 2;
-    },
-  },
-  methods: {
-    handleEllipsisClick() {
-      this.truncate = false;
-      this.$nextTick(() => {
-        this.$el.querySelector('li *').focus();
-      });
-    },
-  },
-  render() {
-    return (<nav
-      ref="container"
-      class={clsx(this.style[this.baseClass], this.modifierClass)}
-      aria-label="breadcrumbs"
-      >
-      <ol
-        id={`${this.componentID}List`}
-        ref="cdrBreadcrumbList"
-        class={this.style['cdr-breadcrumb__list']}
-      >
-        {this.ellipsis}
-        {this.listItems}
-      </ol>
-    </nav>);
-  },
-};
+
+
+    // data() {
+    //   return {
+    //     truncate: this.truncationEnabled && this.items.length > 2,
+    //     style,
+    //     // componentID: Math.random().toString(36).substr(2, 9),
+    //   };
+    // },
+    // computed: {
+    //   baseClass() {
+    //     return 'cdr-breadcrumb';
+    //   },
+    // },
+    // watch: {
+    //   items() {
+    //     this.truncate = this.truncationEnabled && this.items.length > 2;
+    //   },
+    // },
+    // methods: {
+    //   handleEllipsisClick() {
+    //     this.truncate = false;
+    //     this.$nextTick(() => {
+    //       this.$el.querySelector('li *').focus();
+    //     });
+    //   },
+    // },
+
+
+  }
+});
+</script>

@@ -1,11 +1,21 @@
+<template>
+  <component
+    :is="tag"
+    :class="componentClass"
+  >
+    <slot/>
+  </component>
+</template>
+<script lang="ts">
+import { defineComponent, computed } from 'vue';
+
 import clsx from 'clsx';
-import modifier from '../../mixins/modifier';
 import propValidator from '../../utils/propValidator';
+import { buildClass } from '../../utils/buildClass';
 import style from './styles/CdrRow.scss';
 
 export default {
   name: 'CdrRow',
-  mixins: [modifier],
   props: {
     /**
      * Number of equal-width columns in the row. A value of ‘auto’ will size columns as wide as their content.
@@ -105,112 +115,38 @@ export default {
       ),
     },
   },
-  data() {
+  // provide() { ??????
+  //   return {
+  //     rowType: this.type,
+  //   };
+  // },
+
+  // whoa provide/inject are actually kinda neat?
+
+  setup(props) {
+    const tag = this.type === 'list' ? 'ul' : 'div';
+    const baseClass = style['cdr-row'];
+    const colsClass = computed(() => buildClass('cdr-row_row', props.cols, style));
+    const justifyClass = computed(() => buildClass('cdr-row', props.justify, style));
+    const alignClass = computed(() => buildClass('cdr-row', props.align, style));
+    const verticalClass = computed(() => buildClass('cdr-row', props.vertical, style));
+    const gutterClass = computed(() => buildClass('cdr-row__gutter', props.gutter, style));
+    const wrapClass = computed(() => buildClass('cdr-row', props.wrap, style));
+    const nowrapClass = computed(() => buildClass('cdr-row', props.nowrap, style));
+
     return {
-      style,
+      clsx,
+      tag,
+      baseClass,
+      colsClass,
+      justifyClass,
+      alignClass,
+      verticalClass,
+      gutterClass,
+      wrapClass,
+      nowrapClass,
     };
-  },
-  provide() {
-    return {
-      rowType: this.type,
-    };
-  },
-  computed: {
-    colsClass() {
-      const classStr = [];
-
-      if (this.cols) {
-        this.cols.split(' ').forEach((val) => {
-          classStr.push(this.style[`cdr-row_row${val}`]);
-        });
-      }
-
-      return classStr.join(' ');
-    },
-    justifyClass() {
-      const classStr = [];
-
-      if (this.justify) {
-        this.justify.split(' ').forEach((val) => {
-          classStr.push(this.modifyClassName('cdr-row', val));
-        });
-      }
-
-      return classStr.join(' ');
-    },
-    alignClass() {
-      const classStr = [];
-
-      if (this.align) {
-        this.align.split(' ').forEach((val) => {
-          classStr.push(this.modifyClassName('cdr-row', val));
-        });
-      }
-
-      return classStr.join(' ');
-    },
-    gutterClass() {
-      const classStr = [];
-
-      if (this.gutter) {
-        this.gutter.split(' ').forEach((val) => {
-          classStr.push(this.style[`cdr-row--gutter-${val}`]);
-        });
-      }
-
-      return classStr.join(' ');
-    },
-    verticalClass() {
-      const classStr = [];
-
-      if (this.vertical) {
-        this.vertical.split(' ').forEach((val) => {
-          classStr.push(this.modifyClassName('cdr-row', val));
-        });
-      }
-
-      return classStr.join(' ');
-    },
-    wrapClass() {
-      const classStr = [];
-
-      if (this.wrap) {
-        this.wrap.split(' ').forEach((val) => {
-          classStr.push(this.modifyClassName('cdr-row', val));
-        });
-      }
-
-      return classStr.join(' ');
-    },
-    nowrapClass() {
-      const classStr = [];
-
-      if (this.nowrap) {
-        this.nowrap.split(' ').forEach((val) => {
-          classStr.push(this.modifyClassName('cdr-row', val));
-        });
-      }
-
-      return classStr.join(' ');
-    },
-  },
-  render() {
-    const Component = this.type === 'list' ? 'ul' : 'div';
-    return (
-      <Component
-        class={clsx(
-          this.style['cdr-row'],
-          this.colsClass,
-          this.justifyClass,
-          this.alignClass,
-          this.gutterClass,
-          this.verticalClass,
-          this.wrapClass,
-          this.nowrapClass,
-        )}
-      >
-        {this.$slots.default}
-      </Component>
-    );
   },
 };
+
+</script>
