@@ -22,7 +22,6 @@ export default {
       hasErrorSlot,
       componentClass,
       iconClass,
-      error: props.error,
     };
   },
 };

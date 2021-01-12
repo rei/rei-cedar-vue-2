@@ -35,7 +35,6 @@ export default {
     const modifierClass = computed(() => buildClass('cdr-list', props.modifier, style));
     const componentClass = computed(() => clsx(style['cdr-list'], modifierClass.value);
     return {
-      tag: props.tag,
       componentClass,
     }
   }

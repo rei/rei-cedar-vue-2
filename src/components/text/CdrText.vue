@@ -25,11 +25,10 @@ export default defineComponent({
   },
   setup(props) {
     const modifierClass = computed(() => props.modifier && `cdr-text--${props.modifier}`);
-    // TODO: use clsx here 
+    // TODO: use clsx here
     return {
       baseClass: style['cdr-text'],
       modifierClass,
-      tag: props.tag,
     }
   },
 });

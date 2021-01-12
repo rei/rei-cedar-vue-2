@@ -47,7 +47,6 @@ export default defineComponent({
     const componentClass = computed(() => clsx(baseClass, sizeClass.value, inheritColorClass.value))
     return {
       componentClass,
-      use: props.use,
       dataObj: {
         xmlns: 'http://www.w3.org/2000/svg',
         viewBox: '0 0 24 24',

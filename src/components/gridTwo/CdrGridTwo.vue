@@ -1,4 +1,15 @@
+<template>
+  <component
+    :is="tag"
+    :class="componentClass">
+    <slot />
+  </component>
+</template>
+<script lang="ts">
+import { defineComponent, computed } from 'vue';
 import clsx from 'clsx';
+import { buildClass } from '../../utils/buildClass'
+
 import propValidator from '../../utils/propValidator';
 import style from './styles/CdrGridTwo.scss';
 
@@ -23,12 +34,14 @@ export default {
       default: 'div',
     },
   },
-  data() {
-    return {
-      style,
-    };
-  },
-  computed: {
+  setup(props) {
+    // const Component = this.tag;
+    // {clsx(this.style['cdr-grid-two'], this.gutterClass)}
+
+
+
+
+
     gutterClass() {
       const classStr = [];
       if (this.gutter) {
@@ -38,13 +51,10 @@ export default {
       }
       return classStr.join(' ');
     },
-  },
-  render() {
-    const Component = this.tag;
     return (
-      <Component class={clsx(this.style['cdr-grid-two'], this.gutterClass)}>
-        {this.$slots.default}
-      </Component>
+
     );
   },
 };
+
+</script>

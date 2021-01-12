@@ -48,7 +48,6 @@ export default defineComponent({
   setup(props) {
     const modifierClass = computed(() => buildClass('cdr-quote', props.modifier, style));
     return {
-      tag: props.tag,
       modifierClass,
       summaryClass: style['cdr-quote__summary'],
       citationClass: style['cdr-quote__citation'],

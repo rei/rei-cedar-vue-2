@@ -18,7 +18,6 @@ export default defineComponent({
   },
   setup(props) {
     return {
-      tag: props.tag,
       componentClass: style['cdr-card'],
     };
   },
