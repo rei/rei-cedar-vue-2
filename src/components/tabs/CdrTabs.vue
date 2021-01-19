@@ -1,10 +1,101 @@
+<template>
+  <div
+    class={clsx(this.style[this.baseClass], this.modifierClass, this.sizeClass)}
+    ref="cdrTabsContainer"
+    style={{ height: this.height }}
+  >
+    <div
+      class={this.style['cdr-tabs__gradient-container']}
+      vOn:keyup_right={this.rightArrowNav}
+      vOn:keyup_left={this.leftArrowNav}
+      vOn:keydown_down_prevent={this.handleDownArrowNav}
+    >
+      <div class={clsx(
+        this.style['cdr-tabs__gradient'],
+        this.style['cdr-tabs__gradient--left'],
+        this.overflowLeft ? this.style['cdr-tabs__gradient--active'] : '',
+      )}
+        style={this.gradientLeftStyle}
+      ></div>
+      <nav
+        class={this.style['cdr-tabs__header-container']}
+      >
+        <div
+          class={this.style['cdr-tabs__header']}
+          role="tablist"
+          ref="cdrTabsHeader"
+        >
+          {this.tabs.map((tab) => this.getTabEl(tab))}
+
+          <!-- return tab.disabled ? (
+            <button
+              class={clsx(
+                this.style['cdr-tabs__header-item'],
+                this.style['cdr-tabs__header-item--disabled'],
+              )}
+              disabled
+            >
+              {tab.name}
+            </button>
+          ) : (
+            <button
+              role="tab"
+              aria-selected={tab.active}
+              aria-controls={tab.id}
+              id={tab.ariaLabelledby}
+              key={tab.id}
+              class={clsx(
+                tab.active ? this.style['cdr-tabs__header-item-active'] : '',
+                this.style['cdr-tabs__header-item'],
+              )}
+              tabIndex={tab.active ? 0 : -1}
+              vOn:click_prevent={(e) => this.handleClick(tab, e)}
+              js-name={ tab.name }
+            >
+              { tab.name }
+            </button> -->
+
+
+
+        </div>
+      </nav>
+      <div class={clsx(
+        this.style['cdr-tabs__gradient'],
+        this.style['cdr-tabs__gradient--right'],
+        this.overflowRight ? this.style['cdr-tabs__gradient--active'] : '',
+      )}
+        style={this.gradientRightStyle}
+      ></div>
+      <div
+        class={this.style['cdr-tabs__underline']}
+        style={this.underlineStyle}
+      />
+    </div>
+    <div
+      class={this.style['cdr-tabs__content-container']}
+      ref="slotWrapper"
+    >
+      {this.$slots.default}
+    </div>
+  </div>
+</template>
+<script lang="ts">
+import { defineComponent, computed } from 'vue';
+import { buildClass } from '../../utils/buildClass'
+import propValidator from '../../utils/propValidator';
+
+const modifierClass = computed(() => buildClass('cdr-radio', props.modifier, style));
+const sizeClass = computed(() => props.size && buildClass('cdr-radio', props.size, style));
+
+
+
 import debounce from 'lodash-es/debounce';
 import clsx from 'clsx';
 import {
   CdrColorBackgroundPrimary, CdrSpaceOneX, CdrSpaceHalfX,
 } from '@rei/cdr-tokens/dist/js/cdr-tokens.esm';
 // import modifier from '../../mixins/modifier';
-import size from '../../mixins/size';
+// import size from '../../mixins/size';
 import style from './styles/CdrTabs.scss';
 
 export default {
@@ -22,44 +113,6 @@ export default {
     backgroundColor: {
       type: String,
       default: CdrColorBackgroundPrimary,
-    },
-  },
-  data() {
-    return {
-      tabs: [],
-      underlineOffsetX: 0,
-      underlineWidth: 0,
-      underlineScrollX: 0,
-      activeTabIndex: 0,
-      headerWidth: 0,
-      headerOverflow: false,
-      overflowLeft: false,
-      overflowRight: false,
-      animationInProgress: false,
-      style,
-    };
-  },
-  computed: {
-    baseClass() {
-      return 'cdr-tabs';
-    },
-    underlineStyle() {
-      return {
-        transform: `translateX(${this.underlineOffsetX}px)`,
-        width: `${this.underlineWidth}px`,
-      };
-    },
-    gradientLeftStyle() {
-      const gradient = `linear-gradient(to left, rgba(255, 255, 255, 0), ${this.backgroundColor})`;
-      return {
-        background: gradient,
-      };
-    },
-    gradientRightStyle() {
-      const gradient = `linear-gradient(to right, rgba(255, 255, 255, 0), ${this.backgroundColor})`;
-      return {
-        background: gradient,
-      };
     },
   },
   mounted() {
@@ -239,87 +292,45 @@ export default {
       containerRef.setProperty('overflow-x', 'hidden');
       slotRef.setProperty('overflow-y', 'hidden');
     },
-    getTabEl(tab) {
-      return tab.disabled ? (
-        <button
-          class={clsx(
-            this.style['cdr-tabs__header-item'],
-            this.style['cdr-tabs__header-item--disabled'],
-          )}
-          disabled
-        >
-          {tab.name}
-        </button>
-      ) : (
-        <button
-          role="tab"
-          aria-selected={tab.active}
-          aria-controls={tab.id}
-          id={tab.ariaLabelledby}
-          key={tab.id}
-          class={clsx(
-            tab.active ? this.style['cdr-tabs__header-item-active'] : '',
-            this.style['cdr-tabs__header-item'],
-          )}
-          tabIndex={tab.active ? 0 : -1}
-          vOn:click_prevent={(e) => this.handleClick(tab, e)}
-          js-name={ tab.name }
-        >
-          { tab.name }
-        </button>
-      );
-    },
   },
-  render() {
-    return (
-      <div
-        class={clsx(this.style[this.baseClass], this.modifierClass, this.sizeClass)}
-        ref="cdrTabsContainer"
-        style={{ height: this.height }}
-      >
-        <div
-          class={this.style['cdr-tabs__gradient-container']}
-          vOn:keyup_right={this.rightArrowNav}
-          vOn:keyup_left={this.leftArrowNav}
-          vOn:keydown_down_prevent={this.handleDownArrowNav}
-        >
-          <div class={clsx(
-            this.style['cdr-tabs__gradient'],
-            this.style['cdr-tabs__gradient--left'],
-            this.overflowLeft ? this.style['cdr-tabs__gradient--active'] : '',
-          )}
-            style={this.gradientLeftStyle}
-          ></div>
-          <nav
-            class={this.style['cdr-tabs__header-container']}
-          >
-            <div
-              class={this.style['cdr-tabs__header']}
-              role="tablist"
-              ref="cdrTabsHeader"
-            >
-              {this.tabs.map((tab) => this.getTabEl(tab))}
-            </div>
-          </nav>
-          <div class={clsx(
-            this.style['cdr-tabs__gradient'],
-            this.style['cdr-tabs__gradient--right'],
-            this.overflowRight ? this.style['cdr-tabs__gradient--active'] : '',
-          )}
-            style={this.gradientRightStyle}
-          ></div>
-          <div
-            class={this.style['cdr-tabs__underline']}
-            style={this.underlineStyle}
-          />
-        </div>
-        <div
-          class={this.style['cdr-tabs__content-container']}
-          ref="slotWrapper"
-        >
-          {this.$slots.default}
-        </div>
-      </div>
-    );
+  setup(props, ctx) {
+    const tabs = ref([]);
+    const underlineOffsetX = ref(0);
+    const underlineWidth = ref(0);
+    const underlineScrollX = ref(0);
+    const activeTabIndex = ref(0);
+    const headerWidth = ref(0);
+    const headerOverflow = ref(false);
+    const overflowLeft = ref(false);
+    const overflowRight = ref(false);
+    const animationInProgress = ref(false);
+
+
+    const baseClass = style['cdr-tabs'];
+    const underlineStyle = computed(() => {
+      return {
+        transform: `translateX(${this.underlineOffsetX}px)`,
+        width: `${this.underlineWidth}px`,
+      };
+    });
+    const gradientLeftStyle = computed(() => {
+      const gradient = `linear-gradient(to left, rgba(255, 255, 255, 0), ${this.backgroundColor})`;
+      return {
+        background: gradient,
+      };
+    });
+    const gradientRightStyle = computed(() => {
+      const gradient = `linear-gradient(to right, rgba(255, 255, 255, 0), ${this.backgroundColor})`;
+      return {
+        background: gradient,
+      };
+    });
+
+
+
+    return {
+
+    };
   },
 };
+</script>

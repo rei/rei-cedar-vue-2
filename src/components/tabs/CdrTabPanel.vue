@@ -5,11 +5,10 @@
     :class="componentClass"
     :hidden="hidden"
     :id="id"
-    ref="cdrTabPanelContainer"
     tabindex="0"
     role="tabpanel"
-    vOn:keydown_up_prevent="handleUpArrowNav"
-    vOn:animationend="animationEnd"
+    @keydown_up_prevent="handleUpArrowNav"
+    @animationend="animationEnd"
     :key="name"
   >
     <slot />
@@ -55,20 +54,17 @@ export default {
   },
 
   setup(props, ctx) {
+    const active = ref(false);
+    const hidden = ref(true);
+    const offsetX = ref(0);
+    const animationDirection = ref(null);
+    
     return {
 
 
-<!-- componentClass: clsx(this.style[this.baseClass], this.modifierClass, this.animationClass) -->
+// <!-- componentClass: clsx(this.style[this.baseClass], this.modifierClass, this.animationClass) -->
 
-      // data() {
-      //   return {
-      //     active: false,
-      //     hidden: true,
-      //     offsetX: 0,
-      //     animationDirection: null,
-      //     style,
-      //   };
-      // },
+
       // computed: {
       //   baseClass() {
       //     return 'cdr-tab-panel';

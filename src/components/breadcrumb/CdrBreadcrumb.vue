@@ -1,9 +1,8 @@
 <template>
   <nav
-    ref="container"
     class={clsx(this.style[this.baseClass], this.modifierClass)}
     aria-label="breadcrumbs"
-    >
+  >
     <ol
       id={`${this.componentID}List`}
       ref="cdrBreadcrumbList"
@@ -76,11 +75,11 @@ return this.items.map((breadcrumb, index) => {
   </nav>
 </template>
 <script lang="ts">
-import { defineComponent, computed, ref } from 'vue';
+import { defineComponent, computed, ref, watch, nextTick } from 'vue';
 
 import clsx from 'clsx';
 import CdrIcon from '../icon/CdrIcon';
-import {buildClass} from '../../utils/buildClass';
+import { buildClass } from '../../utils/buildClass';
 import style from './styles/CdrBreadcrumb.scss';
 
 export default defineComponent({
@@ -129,35 +128,20 @@ export default defineComponent({
     },
   },
   setup(props, ctx) {
+    // TODO: need watcheffect or does this handle it?
+    const truncate = ref(props.truncationEnabled && props.items.length > 2);
 
+    watch(props.items, (items) => {
+      truncat.value = props.truncationEnabled && items.length > 2;
+    });
 
-
-    // data() {
-    //   return {
-    //     truncate: this.truncationEnabled && this.items.length > 2,
-    //     style,
-    //     // componentID: Math.random().toString(36).substr(2, 9),
-    //   };
-    // },
-    // computed: {
-    //   baseClass() {
-    //     return 'cdr-breadcrumb';
-    //   },
-    // },
-    // watch: {
-    //   items() {
-    //     this.truncate = this.truncationEnabled && this.items.length > 2;
-    //   },
-    // },
-    // methods: {
-    //   handleEllipsisClick() {
-    //     this.truncate = false;
-    //     this.$nextTick(() => {
-    //       this.$el.querySelector('li *').focus();
-    //     });
-    //   },
-    // },
-
+    const handleEllipsisClick() {
+      truncate.value = false;
+      nextTick(() => {
+        // ????? TODO: how to get $el?
+        this.$el.querySelector('li *').focus();
+      });
+    }
 
   }
 });

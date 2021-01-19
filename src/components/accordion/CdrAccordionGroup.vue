@@ -1,14 +1,14 @@
 <template>
   <ul
     :class="componentClass"
-    onFocusin={this.focusin}
-    onKeydown={this.handleKeyDown}
+    @focusin="focusin"
+    @keydown="handleKeyDown"
   >
-      <slot/>
+    <slot/>
   </ul>
 </template>
 <script lang="ts">
-import { defineComponent, computed, ref } from 'vue';
+import { defineComponent, computed, ref, onMounted } from 'vue';
 import clsx from 'clsx';
 import style from './styles/CdrAccordionGroup.scss';
 
@@ -16,67 +16,63 @@ export default {
   name: 'CdrAccordionGroup',
 
   setup(props, ctx) {
-    const componeentClass = style['cdr-accordion-group'];
+    const componentClass = style['cdr-accordion-group'];
+    const currentIdx = ref(0);
+    const accordionButtons = ref([]);
 
+    const nextIdx = computed(() => {
+      const idx = currentIdx.value + 1;
+      return idx >= accordionButtons.value.length ? 0 : idx;
+    });
 
-    // data() {
-    //   return {
-    //     style,
-    //     accordionButtons: [],
-    //     currentIdx: 0,
-    //   };
-    // },
-    // computed: {
-    //   nextIdx() {
-    //     const idx = this.currentIdx + 1;
-    //     return idx >= this.accordionButtons.length ? 0 : idx; // if at the last, go to first
-    //   },
-    //   prevIdx() {
-    //     const idx = this.currentIdx - 1;
-    //     return idx <= -1 ? (this.accordionButtons.length - 1) : idx; // if at first, go to last
-    //   },
-    // },
-    // mounted() {
-    //   // get all of the buttons in the group
-    //   this.accordionButtons = this.$el.querySelectorAll('.js-cdr-accordion-button');
-    // },
-    // methods: {
-    //   handleKeyDown(e) {
-    //     // something besides the button is focused
-    //     if (this.currentIdx === -1) return;
-    //
-    //     const { key } = e;
-    //     switch (key) {
-    //       case 'Home':
-    //         e.preventDefault();
-    //         this.accordionButtons[0].focus();
-    //         break;
-    //       case 'End':
-    //         e.preventDefault();
-    //         this.accordionButtons[this.accordionButtons.length - 1].focus();
-    //         break;
-    //       case 'ArrowDown':
-    //       case 'Down':
-    //         e.preventDefault();
-    //         this.accordionButtons[this.nextIdx].focus();
-    //         break;
-    //       case 'ArrowUp':
-    //       case 'Up':
-    //         e.preventDefault();
-    //         this.accordionButtons[this.prevIdx].focus();
-    //         break;
-    //       default: break;
-    //     }
-    //   },
-    //   focusin(e) {
-    //     // find out which, if any, button is focused
-    //     this.currentIdx = Array.prototype.indexOf.call(this.accordionButtons, e.target);
-    //   },
-    // },
+    const prevIdx = computed(() => {
+      const idx = currentIdx.value - 1;
+      return idx <= -1 ? accordionButtons.value.length - 1 : idx;
+    });
 
+    // TODO: how to handle $el?
+    onMounted(() => accordionButtons.value = this.$el.querySelectorAll('.js-cdr-accordion-button'))
+
+    const handleKeyDown = (e) =>{
+      // something besides the button is focused
+      if (currentIdx === -1) return;
+
+      const { key } = e;
+      switch (key) {
+        case 'Home':
+          e.preventDefault();
+          accordionButtons[0].focus();
+          break;
+        case 'End':
+          e.preventDefault();
+          accordionButtons[accordionButtons.length - 1].focus();
+          break;
+        case 'ArrowDown':
+        case 'Down':
+          e.preventDefault();
+          accordionButtons[nextIdx].focus();
+          break;
+        case 'ArrowUp':
+        case 'Up':
+          e.preventDefault();
+          accordionButtons[prevIdx].focus();
+          break;
+        default: break;
+      }
+    }
+    const focusin = (e) => {
+      // find out which, if any, button is focused
+      currentIdx = Array.prototype.indexOf.call(accordionButtons, e.target);
+    }
 
     return {
-
+      handleKeyDown,
+      focusin,
+      componentClass,
+      // currentIdx,
+      // prevIdx,
+      // nextIdx,
+      // accordionButtons,
     };
   },
 };
