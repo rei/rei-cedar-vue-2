@@ -18,12 +18,12 @@
       Default Link, No props
     </cdr-text>
     <div class="anchor-example">
-      <cdr-link data-backstop="cdr-link">
+      <cdr-link href="#baz" data-backstop="cdr-link">
         REI.com
       </cdr-link>
     </div>
     <div class="anchor-example">
-      <cdr-link />
+      <cdr-link href="#foo" aria-label="baz"/>
     </div>
 
     <cdr-text
@@ -51,7 +51,7 @@
     >Standalone Link (No underline)</cdr-text>
     <cdr-link
       modifier="standalone"
-
+      href="#bar"
       data-backstop="cdr-link--standalone"
     >
       REI.com
@@ -64,7 +64,7 @@
 
     <cdr-list>
       <li>
-        <cdr-link>
+        <cdr-link href="#baz">
           <cdr-icon
             inherit-color
             use="#mail"
@@ -74,7 +74,7 @@
         </cdr-link>
       </li>
       <li>
-        <cdr-link>
+        <cdr-link href="#baz">
           Icon on the right
           <cdr-icon
             inherit-color
@@ -84,7 +84,7 @@
         </cdr-link>
       </li>
       <li>
-        <cdr-link>
+        <cdr-link href="#baz">
           <cdr-icon
             inherit-color
             use="#twitter"
@@ -112,7 +112,7 @@
         inherit-color plain example
       </cdr-link>
       <br>
-      <cdr-link inherit-color>
+      <cdr-link inherit-color href="#qux">
         <cdr-icon
           inherit-color
           use="#mail"

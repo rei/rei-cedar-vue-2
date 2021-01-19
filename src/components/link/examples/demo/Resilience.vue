@@ -13,7 +13,7 @@
       modifier="subheading"
     >Content Resilience, too much content</cdr-text>
     <div class="anchor-example">
-      <cdr-link>
+      <cdr-link href="#foo">
         Lorem ipsum dolor sit amet consectetur adipisicing elit.
         Officia inventore, quis ducimus itaque rerum id animi accusantium porro ex numquam.
         Dolorum ducimus illo doloremque ullam quas. Vel similique laudantium error!
@@ -43,7 +43,7 @@
       modifier="subheading"
     >Content Resilience, too little content</cdr-text>
     <div class="anchor-example">
-      <cdr-link>
+      <cdr-link href="#foo">
         K
       </cdr-link>
     </div>
@@ -60,7 +60,7 @@
       :key="`link-p1-${p1}`"
       :modifier="`body-${p1}`"
     >
-      <cdr-link>
+      <cdr-link href="#foo">
         item text
         <cdr-text
           tag="span"
@@ -76,7 +76,7 @@
       :key="`link-u1-${u1}`"
       :modifier="`utility-sans-${u1}`"
     >
-      <cdr-link>
+      <cdr-link href="#foo">
         item text
         <cdr-text
           tag="span"
@@ -92,7 +92,7 @@
       :key="`link-u2-${u2}`"
       :modifier="`utility-sans-strong-${u2}`"
     >
-      <cdr-link>
+      <cdr-link href="#foo">
         <cdr-icon
           inherit-color
           use="#mail"
@@ -108,7 +108,7 @@
         v-for="u1 in utilities"
         :key="`list-link-left-icon-${u1}`"
       >
-        <cdr-link>
+        <cdr-link href="#foo">
           <cdr-icon
             inherit-color
             use="#mail"
@@ -127,7 +127,7 @@
         v-for="u1 in utilities"
         :key="`list-link-right-icon-${u1}`"
       >
-        <cdr-link>
+        <cdr-link href="#foo">
           <cdr-text
             tag="span"
             :modifier="`utility-sans-strong-${u1}`"
@@ -146,7 +146,7 @@
         v-for="u1 in utilities"
         :key="`list-link-both-icon-${u1}`"
       >
-        <cdr-link>
+        <cdr-link href="#foo">
           <cdr-icon
             inherit-color
             use="#twitter"

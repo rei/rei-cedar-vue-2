@@ -12,7 +12,7 @@ function runA11yTests(browser, path, target) {
       reporter: 'v2',
       runOnly: {
         type: 'tag',
-        values: ['wcag2a', 'wcag2aa', 'section508'],
+        values: ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'ACT', 'best-practice', 'section508'],
       },
     })
     .end();
