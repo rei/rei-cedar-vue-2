@@ -140,7 +140,7 @@ export default {
     },
   },
   setup(props,ctx) {
-    const modifierClass = computed(() => buildClass('cdr-radio', props.modifier, style));
+    const modifierClass = computed(() => buildClass('cdr-col', props.modifier, style));
 
     // isList() {
     //   return this.rowType === 'list';

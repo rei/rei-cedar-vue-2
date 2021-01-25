@@ -9,7 +9,7 @@
           :class="componentClass"
           :src="src"
           :alt="alt"
-          <!-- {...{ attrs: this.$attrs, on: this.$listeners }} -->
+          {...{ attrs: this.$attrs, on: this.$listeners }}
         />
       </div>
       <img

@@ -1,76 +1,68 @@
 <template>
   <nav
-    class={clsx(this.style[this.baseClass], this.modifierClass)}
+    :class="style['cdr-breadcrumb']"
+    :id="id"
     aria-label="breadcrumbs"
   >
     <ol
-      id={`${this.componentID}List`}
-      ref="cdrBreadcrumbList"
-      class={this.style['cdr-breadcrumb__list']}
+      :id="`${id}List`"
+      :class="style['cdr-breadcrumb__list']"
     >
-
-<!-- ELLIPSIS -->
-      return this.truncate ? (<li
-        class={this.style['cdr-breadcrumb__item']}
+      <li
+        :class="style['cdr-breadcrumb__item']"
+        v-if="truncate"
       >
         <button
-          onClick={this.handleEllipsisClick}
-          ref="ellipse"
+          @click="handleEllipsisClick"
           aria-expanded="false"
-          class={this.style['cdr-breadcrumb__ellipses']}
-          aria-controls={`${this.componentID}List`}
-          aria-label={`show ${this.items.length - 2} more navigation level${(this.items.length - 2) > 1 ? 's' : ''}`} // eslint-disable-line max-len
+          :class="style['cdr-breadcrumb__ellipses']"
+          :aria-controls="`${id}List`"
+          :aria-label="ellipsisLabel"
         >
           <span
-            class={this.style['cdr-breadcrumb__ellipses-icon']}
+            :class="style['cdr-breadcrumb__ellipses-icon']"
             aria-hidden="true"
           >
             . . .
           </span>
         </button>
         <span
-          class={this.style['cdr-breadcrumb__delimiter']}
+          :class="this.style['cdr-breadcrumb__delimiter']"
           aria-hidden="true"
         >
           /
         </span>
-      </li>) : '';
+      </li>
 
-
-<!-- ITEMS -->
-return this.items.map((breadcrumb, index) => {
-  const delimiter = index < this.items.length - 1 ? (<span
-    class={this.style['cdr-breadcrumb__delimiter']}
-    aria-hidden="true"
-  >
-    /
-  </span>) : '';
-
-  return (<li
-    class={clsx(
-      this.style['cdr-breadcrumb__item'],
-    )}
-    key={breadcrumb.item.id || breadcrumb.item.name.replace(/ /g, '-').toLowerCase()}
-    v-show={!this.truncate || (index >= this.items.length - 2)}
-  >
-    {this.$scopedSlots.link
-      ? this.$scopedSlots.link({
-        class: this.style['cdr-breadcrumb__link'],
-        href: breadcrumb.item.url,
-        content: breadcrumb.item.name,
-      })
-      : (<a
-        class={this.style['cdr-breadcrumb__link']}
-        href={breadcrumb.item.url}
+      <li
+        v-for="(breadcrumb, index) in items"
+        :class="style['cdr-breadcrumb__item']"
+        :key="breadcrumb.item.id || breadcrumb.item.name.replace(/ /g, '-').toLowerCase()"
+        v-show="!truncate || (index >= items.length - 2)"
       >
-        { breadcrumb.item.name }
-      </a>)
-    }
-    {delimiter}
-  </li>);
-});
+        <slot
+          name="link"
+          :class="style['cdr-breadcrumb__link']"
+          :href="breadcrumb.item.url"
+          :content="breadcrumb.item.name"
+        >
+          <a
+            :class="style['cdr-breadcrumb__link']"
+            :href="breadcrumb.item.url"
+            :ref="index ? null : firstItem"
+          >
+            {{ breadcrumb.item.name }}
+          </a>
+        </slot>
 
-
+        <span
+          v-if="index < items.length - 1"
+          :class="style['cdr-breadcrumb__delimiter']"
+          aria-hidden="true"
+        >
+          /
+        </span>
+      </li>
     </ol>
   </nav>
 </template>
@@ -78,24 +70,12 @@ return this.items.map((breadcrumb, index) => {
 import { defineComponent, computed, ref, watch, nextTick } from 'vue';
 
 import clsx from 'clsx';
-import CdrIcon from '../icon/CdrIcon';
 import { buildClass } from '../../utils/buildClass';
-import style from './styles/CdrBreadcrumb.scss';
+// import style from './styles/CdrBreadcrumb.scss';
 
 export default defineComponent({
   name: 'CdrBreadcrumb',
-  components: {
-    CdrIcon,
-  },
   props: {
-    /**
-     * Required. List of source breadcrumb property objects
-     *
-     * {
-     *   displayText: Breadcrumb Display Text
-     *   url: location breadcrumb should navigate on click
-     * }
-     */
     items: {
       type: Array,
       default: () => [],
@@ -135,14 +115,30 @@ export default defineComponent({
       truncat.value = props.truncationEnabled && items.length > 2;
     });
 
-    const handleEllipsisClick() {
-      truncate.value = false;
-      nextTick(() => {
-        // ????? TODO: how to get $el?
-        this.$el.querySelector('li *').focus();
-      });
-    }
 
+    const firstItem = ref(null);
+    const handleEllipsisClick = () => {
+      truncate.value = false;
+      setTimeout(() => {
+        // ????? TODO: how to get $el?
+        console.log(firstItem)
+        firstItem.value.focus();
+      }, 1000);
+    };
+    const ellipsisLabel = computed(() =>
+      `show ${props.items.length - 2} more navigation level${(props.items.length - 2) > 1 ? 's' : ''}`);
+    const baseClass = style['cdr-breadcrumb'];
+
+
+    return {
+      truncate,
+      handleEllipsisClick,
+      baseClass,
+      firstItem,
+      clsx,
+      ellipsisLabel,
+      // style,
+    };
   }
 });
 </script>
