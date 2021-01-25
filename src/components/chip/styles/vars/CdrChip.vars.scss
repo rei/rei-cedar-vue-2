@@ -1,0 +1,16 @@
+@mixin cdr-chip-base-mixin() {
+  width: max-content;
+  padding: $cdr-space-half-x;
+  border-radius: 16px; // TODO: cdr-radius-softest?
+  border: 1px solid $cdr-color-border-primary;
+  color: $cdr-color-text-primary;
+  background-color: $cdr-color-background-primary;
+
+  &:hover {
+    border: 2px solid $cdr-color-border-primary;
+  }
+
+  &:active {
+    background-color: $cdr-color-background-secondary;
+  }
+}
