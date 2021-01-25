@@ -5,6 +5,7 @@ import buttons from 'componentsdir/button/examples/Buttons';
 import captions from 'componentsdir/caption/examples/Caption';
 import card from 'componentsdir/card/examples/Cards';
 import checkbox from 'componentsdir/checkbox/examples/checkboxes';
+import chip from 'componentsdir/chip/examples/Chip';
 import formGroup from 'componentsdir/formGroup/examples/FormGroup';
 import gridTwo from 'componentsdir/gridTwo/examples/GridTwo';
 import grid from 'componentsdir/grid/examples/Grid';
@@ -35,6 +36,7 @@ export default {
   captions,
   card,
   checkbox,
+  chip,
   formGroup,
   grid,
   gridTwo,
