@@ -33473,7 +33473,7 @@ var cedar = (function () {
             [
               _c(
                 "cdr-link",
-                { staticClass: "cdr-card__link", attrs: { href: "#" } },
+                { staticClass: "cdr-card__link", attrs: { href: "#bar" } },
                 [_vm._v("A simple card")]
               )
             ],
@@ -33490,7 +33490,7 @@ var cedar = (function () {
     /* style */
     const __vue_inject_styles__$b = function (inject) {
       if (!inject) return
-      inject("data-v-5af1ab25_0", { source: "\n.card-example {\n  max-width: 250px;\n  width: 250px;\n}\n", map: {"version":3,"sources":["/home/runner/work/rei-cedar/rei-cedar/src/components/card/examples/demo/simpleCard.vue"],"names":[],"mappings":";AAyBA;EACA,gBAAA;EACA,YAAA;AACA","file":"simpleCard.vue","sourcesContent":["<template>\n  <div>\n    <a href=\"rei.com\">\n      <cdr-card\n        class=\"card-example\"\n      >\n        <cdr-link\n          href=\"#\"\n          class=\"cdr-card__link\"\n        >A simple card</cdr-link>\n      </cdr-card>\n    </a>\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\nexport default {\n  name: 'SimpleCard',\n  components: Components,\n};\n</script>\n\n<style>\n  .card-example {\n    max-width: 250px;\n    width: 250px;\n  }\n</style>\n"]}, media: undefined });
+      inject("data-v-2783efa6_0", { source: "\n.card-example {\n  max-width: 250px;\n  width: 250px;\n}\n", map: {"version":3,"sources":["/home/runner/work/rei-cedar/rei-cedar/src/components/card/examples/demo/simpleCard.vue"],"names":[],"mappings":";AAyBA;EACA,gBAAA;EACA,YAAA;AACA","file":"simpleCard.vue","sourcesContent":["<template>\n  <div>\n    <a href=\"rei.com\">\n      <cdr-card\n        class=\"card-example\"\n      >\n        <cdr-link\n          href=\"#bar\"\n          class=\"cdr-card__link\"\n        >A simple card</cdr-link>\n      </cdr-card>\n    </a>\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\nexport default {\n  name: 'SimpleCard',\n  components: Components,\n};\n</script>\n\n<style>\n  .card-example {\n    max-width: 250px;\n    width: 250px;\n  }\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
@@ -33557,7 +33557,7 @@ var cedar = (function () {
               [
                 _c(
                   "cdr-link",
-                  { staticClass: "cdr-card__link", attrs: { href: "#" } },
+                  { staticClass: "cdr-card__link", attrs: { href: "#foo" } },
                   [
                     _c(
                       "cdr-text",
@@ -33590,7 +33590,7 @@ var cedar = (function () {
     /* style */
     const __vue_inject_styles__$c = function (inject) {
       if (!inject) return
-      inject("data-v-21758d93_0", { source: "\n.card-example {\n  max-width: 250px;\n  width: 250px;\n}\n", map: {"version":3,"sources":["/home/runner/work/rei-cedar/rei-cedar/src/components/card/examples/demo/complexCard.vue"],"names":[],"mappings":";AA+CA;EACA,gBAAA;EACA,YAAA;AACA","file":"complexCard.vue","sourcesContent":["<template>\n  <div>\n    <cdr-card class=\"card-example\">\n      <section>\n        <div>\n          <cdr-img\n            alt=\"card test image\"\n            src=\"test-image.png\"\n            modifier=\"responsive\"\n          />\n        </div>\n        <div class=\"cdr-space-inset-one-x\">\n          <cdr-link\n            class=\"cdr-card__link\"\n            href=\"#\"\n          >\n            <cdr-text\n              tag=\"h2\"\n              modifier=\"heading-serif-500\"\n            >\n              Complex Card Title\n            </cdr-text>\n          </cdr-link>\n          <cdr-rating\n            rating=\"4.2\"\n            count=\"12\"\n            size=\"small\"\n          />\n          <cdr-text modifier=\"body-300\">\n            Card content\n          </cdr-text>\n        </div>\n      </section>\n    </cdr-card>\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\nexport default {\n  name: 'ComplexCard',\n  components: Components,\n};\n</script>\n\n<style>\n.card-example {\n  max-width: 250px;\n  width: 250px;\n}\n</style>\n"]}, media: undefined });
+      inject("data-v-21adaf1b_0", { source: "\n.card-example {\n  max-width: 250px;\n  width: 250px;\n}\n", map: {"version":3,"sources":["/home/runner/work/rei-cedar/rei-cedar/src/components/card/examples/demo/complexCard.vue"],"names":[],"mappings":";AA+CA;EACA,gBAAA;EACA,YAAA;AACA","file":"complexCard.vue","sourcesContent":["<template>\n  <div>\n    <cdr-card class=\"card-example\">\n      <section>\n        <div>\n          <cdr-img\n            alt=\"card test image\"\n            src=\"test-image.png\"\n            modifier=\"responsive\"\n          />\n        </div>\n        <div class=\"cdr-space-inset-one-x\">\n          <cdr-link\n            class=\"cdr-card__link\"\n            href=\"#foo\"\n          >\n            <cdr-text\n              tag=\"h2\"\n              modifier=\"heading-serif-500\"\n            >\n              Complex Card Title\n            </cdr-text>\n          </cdr-link>\n          <cdr-rating\n            rating=\"4.2\"\n            count=\"12\"\n            size=\"small\"\n          />\n          <cdr-text modifier=\"body-300\">\n            Card content\n          </cdr-text>\n        </div>\n      </section>\n    </cdr-card>\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\nexport default {\n  name: 'ComplexCard',\n  components: Components,\n};\n</script>\n\n<style>\n.card-example {\n  max-width: 250px;\n  width: 250px;\n}\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
@@ -34268,7 +34268,11 @@ var cedar = (function () {
                       "cdr-checkbox",
                       {
                         staticClass: "cdr-ml-space-one-x",
-                        attrs: { "custom-value": c, name: "toppings" },
+                        attrs: {
+                          "custom-value": c,
+                          name: "toppings",
+                          "aria-labelledby": "toppings"
+                        },
                         model: {
                           value: _vm.selected,
                           callback: function($$v) {
@@ -34298,7 +34302,7 @@ var cedar = (function () {
     /* style */
     const __vue_inject_styles__$e = function (inject) {
       if (!inject) return
-      inject("data-v-0b479478_0", { source: ".wrap {\n  width: 180px;\n}\n.no-box:checked ~ .no-box__content {\n  color: green;\n}\n.no-box:checked ~ .no-box__content::after {\n  content: \"(checked)\";\n}\n\n/*# sourceMappingURL=checkboxes.vue.map */", map: {"version":3,"sources":["/home/runner/work/rei-cedar/rei-cedar/src/components/checkbox/examples/checkboxes.vue","checkboxes.vue"],"names":[],"mappings":"AAoQA;ECnQE,YAAY;AACd;AAEA;EDqQA,YAAA;ACnQA;ADqQA;EACA,oBAAA;ACnQA;;AAEA,yCAAyC","file":"checkboxes.vue","sourcesContent":["<template>\n  <div>\n    <cdr-text\n      tag=\"h2\"\n      modifier=\"heading-sans-400 heading-sans-500@md heading-sans-500@lg\"\n    >\n      Checkboxes\n    </cdr-text>\n    <cdr-checkbox\n      v-model=\"sizeEx\"\n      size=\"small\"\n    >small</cdr-checkbox>\n    <cdr-checkbox\n      v-model=\"sizeEx\"\n      size=\"medium\"\n    >medium</cdr-checkbox>\n    <cdr-checkbox\n      v-model=\"sizeEx\"\n      size=\"large\"\n    >large</cdr-checkbox>\n    <div data-backstop=\"checkbox-responsive\">\n      <cdr-checkbox\n        v-model=\"sizeEx\"\n        size=\"small@lg medium@sm large@xs\"\n      >responsive</cdr-checkbox>\n    </div>\n    <cdr-checkbox\n      v-model=\"sizeEx2\"\n      size=\"small\"\n    >small</cdr-checkbox>\n    <cdr-checkbox\n      v-model=\"sizeEx2\"\n      size=\"medium\"\n    >medium</cdr-checkbox>\n    <cdr-checkbox\n      v-model=\"sizeEx2\"\n      size=\"large\"\n    >large</cdr-checkbox>\n    <cdr-checkbox\n      v-model=\"sizeEx2\"\n      size=\"small@lg medium@sm large@xs\"\n    >responsive</cdr-checkbox>\n    <cdr-checkbox\n      v-model=\"ex1\"\n      @change=\"logChange\"\n    >single</cdr-checkbox>\n    <cdr-checkbox\n      modifier=\"compact\"\n      v-model=\"ex1\"\n    >single compact</cdr-checkbox>\n    <cdr-text>single: {{ ex1 }}</cdr-text>\n\n    <div data-backstop=\"checkbox-checked\">\n      <cdr-checkbox\n        v-model=\"ex2\"\n        true-value=\"checked\"\n        false-value=\"unchecked\"\n      >checked</cdr-checkbox>\n      <cdr-checkbox\n        modifier=\"compact\"\n        v-model=\"ex2\"\n        true-value=\"checked\"\n        false-value=\"unchecked\"\n      >checked compact</cdr-checkbox>\n    </div>\n    <cdr-text>checked: {{ ex2 }}</cdr-text>\n\n    <cdr-checkbox\n      v-model=\"ex3\"\n      true-value=\"checked\"\n    >custom true</cdr-checkbox>\n    <cdr-text>custom true: {{ ex3 }}</cdr-text>\n\n    <cdr-checkbox\n      custom-value=\"A\"\n      v-model=\"exGroup\"\n    >A</cdr-checkbox>\n    <cdr-checkbox\n      custom-value=\"B\"\n      v-model=\"exGroup\"\n    >B</cdr-checkbox>\n    <cdr-checkbox\n      custom-value=\"C\"\n      v-model=\"exGroup\"\n    >C</cdr-checkbox>\n    <cdr-checkbox\n      :custom-value=\"{value:'D'}\"\n      v-model=\"exGroup\"\n    >D</cdr-checkbox>\n    <cdr-checkbox\n      :custom-value=\"testVal\"\n      v-model=\"exGroup\"\n    >E</cdr-checkbox>\n    <cdr-checkbox\n      :custom-value=\"testVal2\"\n      v-model=\"exGroup\"\n    >F</cdr-checkbox>\n\n    <cdr-checkbox\n      custom-value=\"A\"\n      modifier=\"compact\"\n      v-model=\"exGroup\"\n    >A compact</cdr-checkbox>\n    <cdr-checkbox\n      custom-value=\"B\"\n      modifier=\"compact\"\n      v-model=\"exGroup\"\n    >B compact</cdr-checkbox>\n    <cdr-checkbox\n      custom-value=\"C\"\n      modifier=\"compact\"\n      v-model=\"exGroup\"\n    >C compact</cdr-checkbox>\n    <cdr-text>group: {{ exGroup }}</cdr-text>\n\n    <cdr-checkbox disabled>\n      disabled checkbox\n    </cdr-checkbox>\n    <cdr-checkbox\n      v-model=\"checked\"\n      disabled\n    >disabled and checked checkbox</cdr-checkbox>\n    <cdr-checkbox\n      disabled\n      modifier=\"compact\"\n    >disabled checkbox compact</cdr-checkbox>\n    <cdr-checkbox\n      v-model=\"checked\"\n      disabled\n      modifier=\"compact\"\n    >disabled and checked checkbox compact</cdr-checkbox>\n\n    <div class=\"wrap\">\n      <cdr-checkbox\n        name=\"complex1\"\n        v-model=\"complex1\"\n      >A longer label text to make things wrap for testing\n      </cdr-checkbox>\n    </div>\n\n    <cdr-checkbox\n      indeterminate\n    >indeterminate (not functional)</cdr-checkbox>\n    <cdr-checkbox\n      indeterminate\n      disabled\n    >indeterminate (not functional)</cdr-checkbox>\n    <cdr-checkbox\n      indeterminate\n      modifier=\"compact\"\n    >indeterminate compact (not functional)</cdr-checkbox>\n    <cdr-checkbox\n      indeterminate\n      disabled\n      modifier=\"compact\"\n    >indeterminate compact (not functional)</cdr-checkbox>\n\n    <cdr-checkbox modifier=\"hide-figure\">\n      Hidden box\n    </cdr-checkbox>\n    <cdr-checkbox\n      modifier=\"hide-figure\"\n      v-model=\"complex2\"\n      input-class=\"no-box\"\n      content-class=\"no-box__content\"\n    >Hidden box + custom checked state\n    </cdr-checkbox>\n\n    <cdr-text\n      class=\"cdr-my-space-one-x\"\n      tag=\"h3\"\n    >\n      Checkbox group with indeterminate state:\n    </cdr-text>\n\n    <cdr-form-group label=\"Choose your toppings\">\n      <cdr-checkbox\n        v-model=\"allSelected\"\n        :indeterminate=\"isIndeterminate\"\n        @change=\"selectAll\"\n        aria-controls=\"toppings\"\n      >\n        Select All\n      </cdr-checkbox>\n      <cdr-list\n        role=\"group\"\n        id=\"toppings\"\n        aria-label=\"Individual toppings\"\n      >\n        <li\n          v-for=\"c in toppings\"\n          :key=\"`checkbox-${c}`\"\n        >\n          <cdr-checkbox\n            v-model=\"selected\"\n            :custom-value=\"c\"\n            class=\"cdr-ml-space-one-x\"\n            name=\"toppings\"\n          >{{ c }}</cdr-checkbox>\n        </li>\n      </cdr-list>\n    </cdr-form-group>\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\nexport default {\n  name: 'Checkboxes',\n  components: Components,\n  data() {\n    return {\n      checked: true,\n      sizeEx: false,\n      sizeEx2: true,\n      ex1: false,\n      ex2: 'checked',\n      ex3: 'checked',\n      exGroup: ['A', { value: 'D' }, [9, 8]],\n      testVal: {\n        value: 'X',\n        more: {\n          things: [1, 2, 3],\n        },\n      },\n      testVal2: [9, 8],\n      complex1: false,\n      complex2: true,\n      toppings: ['Cheese', 'Pepperoni', 'Mushroom', 'Peppers'],\n      selected: ['Cheese'],\n      allSelected: false,\n    };\n  },\n  computed: {\n    isIndeterminate() {\n      this.allSelected = false; // eslint-disable-line vue/no-side-effects-in-computed-properties\n      if (this.selected.length === 0) {\n        return false;\n      } if (this.selected.length === this.toppings.length) {\n        this.allSelected = true; // eslint-disable-line vue/no-side-effects-in-computed-properties\n        return false;\n      }\n      return true;\n    },\n  },\n  methods: {\n    selectAll(isChecked) {\n      this.selected = isChecked ? this.toppings.slice() : [];\n    },\n    logChange(val, e) {\n      console.log('log', val, e); // eslint-disable-line\n    },\n  },\n};\n</script>\n\n<style lang=\"scss\">\n  .wrap {\n    width: 180px;\n  }\n\n  .no-box:checked ~ .no-box__content {\n    color: green;\n\n    &::after {\n      content: '(checked)';\n    }\n  }\n</style>\n",".wrap {\n  width: 180px;\n}\n\n.no-box:checked ~ .no-box__content {\n  color: green;\n}\n.no-box:checked ~ .no-box__content::after {\n  content: \"(checked)\";\n}\n\n/*# sourceMappingURL=checkboxes.vue.map */"]}, media: undefined });
+      inject("data-v-102d871b_0", { source: ".wrap {\n  width: 180px;\n}\n.no-box:checked ~ .no-box__content {\n  color: green;\n}\n.no-box:checked ~ .no-box__content::after {\n  content: \"(checked)\";\n}\n\n/*# sourceMappingURL=checkboxes.vue.map */", map: {"version":3,"sources":["/home/runner/work/rei-cedar/rei-cedar/src/components/checkbox/examples/checkboxes.vue","checkboxes.vue"],"names":[],"mappings":"AAqQA;ECpQE,YAAY;AACd;AAEA;EDsQA,YAAA;ACpQA;ADsQA;EACA,oBAAA;ACpQA;;AAEA,yCAAyC","file":"checkboxes.vue","sourcesContent":["<template>\n  <div>\n    <cdr-text\n      tag=\"h2\"\n      modifier=\"heading-sans-400 heading-sans-500@md heading-sans-500@lg\"\n    >\n      Checkboxes\n    </cdr-text>\n    <cdr-checkbox\n      v-model=\"sizeEx\"\n      size=\"small\"\n    >small</cdr-checkbox>\n    <cdr-checkbox\n      v-model=\"sizeEx\"\n      size=\"medium\"\n    >medium</cdr-checkbox>\n    <cdr-checkbox\n      v-model=\"sizeEx\"\n      size=\"large\"\n    >large</cdr-checkbox>\n    <div data-backstop=\"checkbox-responsive\">\n      <cdr-checkbox\n        v-model=\"sizeEx\"\n        size=\"small@lg medium@sm large@xs\"\n      >responsive</cdr-checkbox>\n    </div>\n    <cdr-checkbox\n      v-model=\"sizeEx2\"\n      size=\"small\"\n    >small</cdr-checkbox>\n    <cdr-checkbox\n      v-model=\"sizeEx2\"\n      size=\"medium\"\n    >medium</cdr-checkbox>\n    <cdr-checkbox\n      v-model=\"sizeEx2\"\n      size=\"large\"\n    >large</cdr-checkbox>\n    <cdr-checkbox\n      v-model=\"sizeEx2\"\n      size=\"small@lg medium@sm large@xs\"\n    >responsive</cdr-checkbox>\n    <cdr-checkbox\n      v-model=\"ex1\"\n      @change=\"logChange\"\n    >single</cdr-checkbox>\n    <cdr-checkbox\n      modifier=\"compact\"\n      v-model=\"ex1\"\n    >single compact</cdr-checkbox>\n    <cdr-text>single: {{ ex1 }}</cdr-text>\n\n    <div data-backstop=\"checkbox-checked\">\n      <cdr-checkbox\n        v-model=\"ex2\"\n        true-value=\"checked\"\n        false-value=\"unchecked\"\n      >checked</cdr-checkbox>\n      <cdr-checkbox\n        modifier=\"compact\"\n        v-model=\"ex2\"\n        true-value=\"checked\"\n        false-value=\"unchecked\"\n      >checked compact</cdr-checkbox>\n    </div>\n    <cdr-text>checked: {{ ex2 }}</cdr-text>\n\n    <cdr-checkbox\n      v-model=\"ex3\"\n      true-value=\"checked\"\n    >custom true</cdr-checkbox>\n    <cdr-text>custom true: {{ ex3 }}</cdr-text>\n\n    <cdr-checkbox\n      custom-value=\"A\"\n      v-model=\"exGroup\"\n    >A</cdr-checkbox>\n    <cdr-checkbox\n      custom-value=\"B\"\n      v-model=\"exGroup\"\n    >B</cdr-checkbox>\n    <cdr-checkbox\n      custom-value=\"C\"\n      v-model=\"exGroup\"\n    >C</cdr-checkbox>\n    <cdr-checkbox\n      :custom-value=\"{value:'D'}\"\n      v-model=\"exGroup\"\n    >D</cdr-checkbox>\n    <cdr-checkbox\n      :custom-value=\"testVal\"\n      v-model=\"exGroup\"\n    >E</cdr-checkbox>\n    <cdr-checkbox\n      :custom-value=\"testVal2\"\n      v-model=\"exGroup\"\n    >F</cdr-checkbox>\n\n    <cdr-checkbox\n      custom-value=\"A\"\n      modifier=\"compact\"\n      v-model=\"exGroup\"\n    >A compact</cdr-checkbox>\n    <cdr-checkbox\n      custom-value=\"B\"\n      modifier=\"compact\"\n      v-model=\"exGroup\"\n    >B compact</cdr-checkbox>\n    <cdr-checkbox\n      custom-value=\"C\"\n      modifier=\"compact\"\n      v-model=\"exGroup\"\n    >C compact</cdr-checkbox>\n    <cdr-text>group: {{ exGroup }}</cdr-text>\n\n    <cdr-checkbox disabled>\n      disabled checkbox\n    </cdr-checkbox>\n    <cdr-checkbox\n      v-model=\"checked\"\n      disabled\n    >disabled and checked checkbox</cdr-checkbox>\n    <cdr-checkbox\n      disabled\n      modifier=\"compact\"\n    >disabled checkbox compact</cdr-checkbox>\n    <cdr-checkbox\n      v-model=\"checked\"\n      disabled\n      modifier=\"compact\"\n    >disabled and checked checkbox compact</cdr-checkbox>\n\n    <div class=\"wrap\">\n      <cdr-checkbox\n        name=\"complex1\"\n        v-model=\"complex1\"\n      >A longer label text to make things wrap for testing\n      </cdr-checkbox>\n    </div>\n\n    <cdr-checkbox\n      indeterminate\n    >indeterminate (not functional)</cdr-checkbox>\n    <cdr-checkbox\n      indeterminate\n      disabled\n    >indeterminate (not functional)</cdr-checkbox>\n    <cdr-checkbox\n      indeterminate\n      modifier=\"compact\"\n    >indeterminate compact (not functional)</cdr-checkbox>\n    <cdr-checkbox\n      indeterminate\n      disabled\n      modifier=\"compact\"\n    >indeterminate compact (not functional)</cdr-checkbox>\n\n    <cdr-checkbox modifier=\"hide-figure\">\n      Hidden box\n    </cdr-checkbox>\n    <cdr-checkbox\n      modifier=\"hide-figure\"\n      v-model=\"complex2\"\n      input-class=\"no-box\"\n      content-class=\"no-box__content\"\n    >Hidden box + custom checked state\n    </cdr-checkbox>\n\n    <cdr-text\n      class=\"cdr-my-space-one-x\"\n      tag=\"h3\"\n    >\n      Checkbox group with indeterminate state:\n    </cdr-text>\n\n    <cdr-form-group label=\"Choose your toppings\">\n      <cdr-checkbox\n        v-model=\"allSelected\"\n        :indeterminate=\"isIndeterminate\"\n        @change=\"selectAll\"\n        aria-controls=\"toppings\"\n      >\n        Select All\n      </cdr-checkbox>\n      <cdr-list\n        role=\"group\"\n        id=\"toppings\"\n        aria-label=\"Individual toppings\"\n      >\n        <li\n          v-for=\"c in toppings\"\n          :key=\"`checkbox-${c}`\"\n        >\n          <cdr-checkbox\n            v-model=\"selected\"\n            :custom-value=\"c\"\n            class=\"cdr-ml-space-one-x\"\n            name=\"toppings\"\n            aria-labelledby=\"toppings\"\n          >{{ c }}</cdr-checkbox>\n        </li>\n      </cdr-list>\n    </cdr-form-group>\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\nexport default {\n  name: 'Checkboxes',\n  components: Components,\n  data() {\n    return {\n      checked: true,\n      sizeEx: false,\n      sizeEx2: true,\n      ex1: false,\n      ex2: 'checked',\n      ex3: 'checked',\n      exGroup: ['A', { value: 'D' }, [9, 8]],\n      testVal: {\n        value: 'X',\n        more: {\n          things: [1, 2, 3],\n        },\n      },\n      testVal2: [9, 8],\n      complex1: false,\n      complex2: true,\n      toppings: ['Cheese', 'Pepperoni', 'Mushroom', 'Peppers'],\n      selected: ['Cheese'],\n      allSelected: false,\n    };\n  },\n  computed: {\n    isIndeterminate() {\n      this.allSelected = false; // eslint-disable-line vue/no-side-effects-in-computed-properties\n      if (this.selected.length === 0) {\n        return false;\n      } if (this.selected.length === this.toppings.length) {\n        this.allSelected = true; // eslint-disable-line vue/no-side-effects-in-computed-properties\n        return false;\n      }\n      return true;\n    },\n  },\n  methods: {\n    selectAll(isChecked) {\n      this.selected = isChecked ? this.toppings.slice() : [];\n    },\n    logChange(val, e) {\n      console.log('log', val, e); // eslint-disable-line\n    },\n  },\n};\n</script>\n\n<style lang=\"scss\">\n  .wrap {\n    width: 180px;\n  }\n\n  .no-box:checked ~ .no-box__content {\n    color: green;\n\n    &::after {\n      content: '(checked)';\n    }\n  }\n</style>\n",".wrap {\n  width: 180px;\n}\n\n.no-box:checked ~ .no-box__content {\n  color: green;\n}\n.no-box:checked ~ .no-box__content::after {\n  content: \"(checked)\";\n}\n\n/*# sourceMappingURL=checkboxes.vue.map */"]}, media: undefined });
 
     };
     /* scoped */
@@ -40921,6 +40925,7 @@ var cedar = (function () {
               [
                 _c(
                   "cdr-link",
+                  { attrs: { tag: "button", type: "button" } },
                   [
                     _c("icon-information-stroke", {
                       attrs: { "inherit-color": "" }
@@ -41125,9 +41130,11 @@ var cedar = (function () {
               "template",
               { slot: "info" },
               [
-                _c("cdr-link", { attrs: { href: "#", modifier: "standalone" } }, [
-                  _vm._v("\n        Hey im also on top of the input!\n      ")
-                ])
+                _c(
+                  "cdr-link",
+                  { attrs: { href: "#baz", modifier: "standalone" } },
+                  [_vm._v("\n        Hey im also on top of the input!\n      ")]
+                )
               ],
               1
             ),
@@ -41336,7 +41343,7 @@ var cedar = (function () {
     /* style */
     const __vue_inject_styles__$s = function (inject) {
       if (!inject) return
-      inject("data-v-5eec019c_0", { source: "\n.demo-input {\n  margin: 10px;\n  /*line-height: 1;*/\n}\n", map: {"version":3,"sources":["/home/runner/work/rei-cedar/rei-cedar/src/components/input/examples/Inputs.vue"],"names":[],"mappings":";AAqYA;EACA,YAAA;EACA,kBAAA;AACA","file":"Inputs.vue","sourcesContent":["<template>\n  <div>\n    <cdr-text\n      tag=\"h2\"\n      modifier=\"heading-sans-400 heading-sans-500@md heading-sans-500@lg\"\n    >\n      Text Inputs\n    </cdr-text>\n    <div data-backstop=\"input-target\">\n      <cdr-input\n        class=\"demo-input\"\n        v-model=\"defaultModel\"\n        label=\"Default\"\n        :background=\"backgroundColor\"\n      />\n\n      <cdr-input\n        class=\"demo-input\"\n        v-model=\"requiredModel\"\n        label=\"Required\"\n        required\n        :background=\"backgroundColor\"\n      />\n\n      <cdr-input\n        class=\"demo-input\"\n        v-model=\"optionalModel\"\n        label=\"Optional\"\n        optional\n        :background=\"backgroundColor\"\n      />\n    </div>\n\n    <cdr-input\n      class=\"demo-input\"\n      v-model=\"hiddenModel\"\n      label=\"This has no label\"\n      hide-label\n      placeholder=\"hidden-label\"\n      :background=\"backgroundColor\"\n    />\n\n    <cdr-input\n      class=\"demo-input\"\n      v-model=\"disabledModel\"\n      label=\"Disabled Input\"\n      placeholder=\"I am disabled\"\n      data-backstop=\"input-disabled\"\n      disabled\n      :background=\"backgroundColor\"\n    />\n\n    <cdr-input\n      class=\"demo-input\"\n      v-model=\"sizeModel\"\n      label=\"Large Input\"\n      placeholder=\"Large Input\"\n      size=\"large\"\n      :background=\"backgroundColor\"\n    />\n    <cdr-input\n      class=\"demo-input\"\n      v-model=\"sizeModel\"\n      label=\"Large@xs Input\"\n      placeholder=\"Large@xs Input\"\n      size=\"large@xs\"\n      :background=\"backgroundColor\"\n    />\n    <cdr-input\n      class=\"demo-input\"\n      v-model=\"sizeModel\"\n      label=\"Large@sm Input\"\n      placeholder=\"Large@sm Input\"\n      size=\"large@sm\"\n      :background=\"backgroundColor\"\n    />\n    <cdr-input\n      class=\"demo-input\"\n      v-model=\"sizeModel\"\n      label=\"Large@md Input\"\n      placeholder=\"Large@md Input\"\n      size=\"large@md\"\n      :background=\"backgroundColor\"\n    />\n    <cdr-input\n      class=\"demo-input\"\n      v-model=\"sizeModel\"\n      label=\"Large@lg Input\"\n      placeholder=\"Large@lg Input\"\n      size=\"large@lg\"\n      :background=\"backgroundColor\"\n    />\n\n    <cdr-input\n      class=\"demo-input\"\n      v-model=\"requiredWithIcons\"\n      id=\"required-with-icon\"\n      placeholder=\"Required with Icon\"\n      label=\"Required with Icon\"\n      required\n      type=\"email\"\n      :background=\"backgroundColor\"\n    >\n      <template slot=\"info-action\">\n        <cdr-link>\n          <icon-information-stroke inherit-color />\n          <span class=\"cdr-display-sr-only\">Information!</span>\n        </cdr-link>\n      </template>\n      <template slot=\"pre-icon\">\n        <cdr-icon\n          use=\"#twitter\"\n        />\n      </template>\n      <template slot=\"post-icon\">\n        <cdr-icon\n          use=\"#check-lg\"\n        />\n      </template>\n      <template slot=\"helper-text\">\n        This is helper text. Input length: {{ requiredWithIcons.length }}\n      </template>\n    </cdr-input>\n\n    <form>\n      <cdr-input\n        class=\"demo-input\"\n        v-model=\"formWithButtons\"\n        id=\"form-example\"\n        placeholder=\"For testing icon/button placement with autofill\"\n        label=\"Form with Two Buttons\"\n        required\n        type=\"email\"\n        autocomplete=\"username\"\n        :background=\"backgroundColor\"\n      >\n        <template slot=\"pre-icon\">\n          <cdr-icon\n            use=\"#twitter\"\n          />\n        </template>\n        <template slot=\"post-icon\">\n          <cdr-tooltip\n            class=\"cdr-input__button\"\n            id=\"input-tooltip\"\n          >\n            <cdr-button\n              :icon-only=\"true\"\n              slot=\"trigger\"\n              aria-label=\"navigate\"\n            >\n              <icon-map />\n            </cdr-button>\n\n            hey where am i?\n          </cdr-tooltip>\n          <cdr-button\n            :icon-only=\"true\"\n            class=\"cdr-input__button\"\n            aria-label=\"close\"\n          >\n            <icon-x-lg />\n          </cdr-button>\n        </template>\n      </cdr-input>\n    </form>\n\n    <cdr-input\n      class=\"demo-input\"\n      v-model=\"helperValidationModel\"\n      placeholder=\"\"\n      :error=\"helperValidationError\"\n      @blur=\"validate\"\n      label=\"Top helper with validation\"\n      :background=\"backgroundColor\"\n    >\n      <template slot=\"helper-text-top\">\n        Must be 4 or less characters\n      </template>\n\n      <template\n        slot=\"error\"\n        v-if=\"helperValidationError\"\n      >\n        ERROR ERROR\n      </template>\n\n      <template slot=\"info\">\n        <cdr-link\n          modifier=\"standalone\"\n          href=\"#/inputs\"\n        >\n          Support link\n        </cdr-link>\n      </template>\n    </cdr-input>\n\n    <cdr-input\n      class=\"demo-input\"\n      :required=\"true\"\n      v-model=\"megaModel\"\n      :error=\"megaErr\"\n      label=\"Everything at the same time\"\n      @blur=\"megaErr = false\"\n      size=\"large\"\n    >\n      <icon-map slot=\"pre-icon\" />\n      <template slot=\"helper-text-top\">\n        Hey im on top of the input!\n      </template>\n      <template slot=\"helper-text-bottom\">\n        Hey im below the input!\n      </template>\n      <template slot=\"info\">\n        <cdr-link\n          href=\"#\"\n          modifier=\"standalone\"\n        >\n          Hey im also on top of the input!\n        </cdr-link>\n      </template>\n      <template slot=\"info-action\">\n        <cdr-link\n          tag=\"button\"\n          type=\"button\"\n        >\n          <span class=\"cdr-display-sr-only\">I trigger some sort of action!</span>\n          <icon-check-stroke inherit-color />\n        </cdr-link>\n      </template>\n      <template slot=\"post-icon\">\n        <cdr-tooltip\n          class=\"cdr-input__button\"\n          id=\"mega-tooltip\"\n        >\n          <cdr-button\n            slot=\"trigger\"\n            :icon-only=\"true\"\n            @click=\"megaErr = 'An error has occurred please fix it'\"\n            size=\"large\"\n            aria-label=\"Click me to cause an error\"\n          >\n            <icon-x-stroke />\n          </cdr-button>\n          I put the input into an error state!\n        </cdr-tooltip>\n        <cdr-popover\n          class=\"cdr-input__button\"\n          id=\"mega-popover\"\n        >\n          <cdr-button\n            slot=\"trigger\"\n            :icon-only=\"true\"\n            size=\"large\"\n            aria-label=\"Hello\"\n          >\n            <icon-information-stroke />\n          </cdr-button>\n          Hey What's Up?\n        </cdr-popover>\n      </template>\n    </cdr-input>\n\n    <cdr-input\n      class=\"demo-input \"\n      v-model=\"multiRowModel\"\n      :rows=\"10\"\n      placeholder=\"Multi Line Input/TextArea\"\n      label=\"Multi Line Input/TextArea\"\n      :background=\"backgroundColor\"\n    />\n    <cdr-input\n      class=\"demo-input \"\n      v-model=\"masterModel\"\n      @input=\"onMasterInput\"\n      placeholder=\"What would you like to set all input values to?\"\n      label=\"Master input that overwrites all other inputs on this page\"\n      :background=\"backgroundColor\"\n    />\n\n    <div class=\"demo-input\">\n      Default Input Value = {{ defaultModel }}\n    </div>\n    <div class=\"demo-input\">\n      Required Input Value = {{ requiredModel }}\n    </div>\n    <div class=\"demo-input\">\n      Optional Input Value = {{ optionalModel }}\n    </div>\n    <div class=\"demo-input\">\n      Hidden Input Value = {{ hiddenModel }}\n    </div>\n    <div class=\"demo-input\">\n      Disabled Input Value = {{ disabledModel }}\n    </div>\n    <div class=\"demo-input\">\n      With Icons Input Value = {{ requiredWithIcons }}\n    </div>\n    <div class=\"demo-input\">\n      Form With Buttons Value = {{ formWithButtons }}\n    </div>\n    <div class=\"demo-input\">\n      Helper/Validation Input Value = {{ helperValidationModel }}\n    </div>\n    <div class=\"demo-input\">\n      Multi Row Input Value = {{ multiRowModel }}\n    </div>\n    <div class=\"demo-input\">\n      Size Inputs Value = {{ sizeModel }}\n    </div>\n\n    <div class=\"demo-input\">\n      Mega Input Value = {{ megaModel }}\n    </div>\n    <div class=\"demo-input\">\n      Master Inputs Value = {{ masterModel }}\n    </div>\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\nexport default {\n  name: 'Inputs',\n  components: {\n    ...Components,\n  },\n  data() {\n    return {\n      defaultModel: '',\n      requiredModel: '',\n      optionalModel: '',\n      hiddenModel: '',\n      disabledModel: '',\n      helperValidationModel: '',\n      helperValidationError: false,\n      requiredWithIcons: '',\n      multiRowModel: '',\n      sizeModel: '',\n      formWithButtons: '',\n      masterModel: '',\n      megaModel: '',\n      megaErr: false,\n      backgroundColor: 'primary',\n    };\n  },\n  watch: {\n    $route(to) {\n      this.setBackground(to.query.background);\n    },\n  },\n  mounted() {\n    this.setBackground(this.$router.currentRoute.query.background);\n  },\n  methods: {\n    validate() {\n      this.helperValidationError = this.helperValidationModel.length > 4;\n    },\n    onMasterInput(value, e) {\n      console.log('On Master Input value = ', value, ' e = ', e); // eslint-disable-line\n      this.defaultModel = value;\n      this.requiredModel = value;\n      this.optionalModel = value;\n      this.hiddenModel = value;\n      this.disabledModel = value;\n      this.formWithButtons = value;\n      this.requiredWithIcons = value;\n      this.helperValidationModel = value;\n      this.multiRowModel = value;\n      this.sizeModel = value;\n      this.megaModel = value;\n    },\n    setBackground(background) {\n      switch (background) {\n        case 'primary':\n          this.backgroundColor = 'primary';\n          break;\n        case 'secondary':\n          this.backgroundColor = 'secondary';\n          break;\n        default:\n          this.backgroundColor = 'primary';\n      }\n    },\n  },\n};\n</script>\n<style>\n  .demo-input {\n    margin: 10px;\n    /*line-height: 1;*/\n  }\n</style>\n"]}, media: undefined });
+      inject("data-v-66b6dbde_0", { source: "\n.demo-input {\n  margin: 10px;\n  /*line-height: 1;*/\n}\n", map: {"version":3,"sources":["/home/runner/work/rei-cedar/rei-cedar/src/components/input/examples/Inputs.vue"],"names":[],"mappings":";AAqYA;EACA,YAAA;EACA,kBAAA;AACA","file":"Inputs.vue","sourcesContent":["<template>\n  <div>\n    <cdr-text\n      tag=\"h2\"\n      modifier=\"heading-sans-400 heading-sans-500@md heading-sans-500@lg\"\n    >\n      Text Inputs\n    </cdr-text>\n    <div data-backstop=\"input-target\">\n      <cdr-input\n        class=\"demo-input\"\n        v-model=\"defaultModel\"\n        label=\"Default\"\n        :background=\"backgroundColor\"\n      />\n\n      <cdr-input\n        class=\"demo-input\"\n        v-model=\"requiredModel\"\n        label=\"Required\"\n        required\n        :background=\"backgroundColor\"\n      />\n\n      <cdr-input\n        class=\"demo-input\"\n        v-model=\"optionalModel\"\n        label=\"Optional\"\n        optional\n        :background=\"backgroundColor\"\n      />\n    </div>\n\n    <cdr-input\n      class=\"demo-input\"\n      v-model=\"hiddenModel\"\n      label=\"This has no label\"\n      hide-label\n      placeholder=\"hidden-label\"\n      :background=\"backgroundColor\"\n    />\n\n    <cdr-input\n      class=\"demo-input\"\n      v-model=\"disabledModel\"\n      label=\"Disabled Input\"\n      placeholder=\"I am disabled\"\n      data-backstop=\"input-disabled\"\n      disabled\n      :background=\"backgroundColor\"\n    />\n\n    <cdr-input\n      class=\"demo-input\"\n      v-model=\"sizeModel\"\n      label=\"Large Input\"\n      placeholder=\"Large Input\"\n      size=\"large\"\n      :background=\"backgroundColor\"\n    />\n    <cdr-input\n      class=\"demo-input\"\n      v-model=\"sizeModel\"\n      label=\"Large@xs Input\"\n      placeholder=\"Large@xs Input\"\n      size=\"large@xs\"\n      :background=\"backgroundColor\"\n    />\n    <cdr-input\n      class=\"demo-input\"\n      v-model=\"sizeModel\"\n      label=\"Large@sm Input\"\n      placeholder=\"Large@sm Input\"\n      size=\"large@sm\"\n      :background=\"backgroundColor\"\n    />\n    <cdr-input\n      class=\"demo-input\"\n      v-model=\"sizeModel\"\n      label=\"Large@md Input\"\n      placeholder=\"Large@md Input\"\n      size=\"large@md\"\n      :background=\"backgroundColor\"\n    />\n    <cdr-input\n      class=\"demo-input\"\n      v-model=\"sizeModel\"\n      label=\"Large@lg Input\"\n      placeholder=\"Large@lg Input\"\n      size=\"large@lg\"\n      :background=\"backgroundColor\"\n    />\n\n    <cdr-input\n      class=\"demo-input\"\n      v-model=\"requiredWithIcons\"\n      id=\"required-with-icon\"\n      placeholder=\"Required with Icon\"\n      label=\"Required with Icon\"\n      required\n      type=\"email\"\n      :background=\"backgroundColor\"\n    >\n      <template slot=\"info-action\">\n        <cdr-link tag=\"button\" type=\"button\">\n          <icon-information-stroke inherit-color />\n          <span class=\"cdr-display-sr-only\">Information!</span>\n        </cdr-link>\n      </template>\n      <template slot=\"pre-icon\">\n        <cdr-icon\n          use=\"#twitter\"\n        />\n      </template>\n      <template slot=\"post-icon\">\n        <cdr-icon\n          use=\"#check-lg\"\n        />\n      </template>\n      <template slot=\"helper-text\">\n        This is helper text. Input length: {{ requiredWithIcons.length }}\n      </template>\n    </cdr-input>\n\n    <form>\n      <cdr-input\n        class=\"demo-input\"\n        v-model=\"formWithButtons\"\n        id=\"form-example\"\n        placeholder=\"For testing icon/button placement with autofill\"\n        label=\"Form with Two Buttons\"\n        required\n        type=\"email\"\n        autocomplete=\"username\"\n        :background=\"backgroundColor\"\n      >\n        <template slot=\"pre-icon\">\n          <cdr-icon\n            use=\"#twitter\"\n          />\n        </template>\n        <template slot=\"post-icon\">\n          <cdr-tooltip\n            class=\"cdr-input__button\"\n            id=\"input-tooltip\"\n          >\n            <cdr-button\n              :icon-only=\"true\"\n              slot=\"trigger\"\n              aria-label=\"navigate\"\n            >\n              <icon-map />\n            </cdr-button>\n\n            hey where am i?\n          </cdr-tooltip>\n          <cdr-button\n            :icon-only=\"true\"\n            class=\"cdr-input__button\"\n            aria-label=\"close\"\n          >\n            <icon-x-lg />\n          </cdr-button>\n        </template>\n      </cdr-input>\n    </form>\n\n    <cdr-input\n      class=\"demo-input\"\n      v-model=\"helperValidationModel\"\n      placeholder=\"\"\n      :error=\"helperValidationError\"\n      @blur=\"validate\"\n      label=\"Top helper with validation\"\n      :background=\"backgroundColor\"\n    >\n      <template slot=\"helper-text-top\">\n        Must be 4 or less characters\n      </template>\n\n      <template\n        slot=\"error\"\n        v-if=\"helperValidationError\"\n      >\n        ERROR ERROR\n      </template>\n\n      <template slot=\"info\">\n        <cdr-link\n          modifier=\"standalone\"\n          href=\"#/inputs\"\n        >\n          Support link\n        </cdr-link>\n      </template>\n    </cdr-input>\n\n    <cdr-input\n      class=\"demo-input\"\n      :required=\"true\"\n      v-model=\"megaModel\"\n      :error=\"megaErr\"\n      label=\"Everything at the same time\"\n      @blur=\"megaErr = false\"\n      size=\"large\"\n    >\n      <icon-map slot=\"pre-icon\" />\n      <template slot=\"helper-text-top\">\n        Hey im on top of the input!\n      </template>\n      <template slot=\"helper-text-bottom\">\n        Hey im below the input!\n      </template>\n      <template slot=\"info\">\n        <cdr-link\n          href=\"#baz\"\n          modifier=\"standalone\"\n        >\n          Hey im also on top of the input!\n        </cdr-link>\n      </template>\n      <template slot=\"info-action\">\n        <cdr-link\n          tag=\"button\"\n          type=\"button\"\n        >\n          <span class=\"cdr-display-sr-only\">I trigger some sort of action!</span>\n          <icon-check-stroke inherit-color />\n        </cdr-link>\n      </template>\n      <template slot=\"post-icon\">\n        <cdr-tooltip\n          class=\"cdr-input__button\"\n          id=\"mega-tooltip\"\n        >\n          <cdr-button\n            slot=\"trigger\"\n            :icon-only=\"true\"\n            @click=\"megaErr = 'An error has occurred please fix it'\"\n            size=\"large\"\n            aria-label=\"Click me to cause an error\"\n          >\n            <icon-x-stroke />\n          </cdr-button>\n          I put the input into an error state!\n        </cdr-tooltip>\n        <cdr-popover\n          class=\"cdr-input__button\"\n          id=\"mega-popover\"\n        >\n          <cdr-button\n            slot=\"trigger\"\n            :icon-only=\"true\"\n            size=\"large\"\n            aria-label=\"Hello\"\n          >\n            <icon-information-stroke />\n          </cdr-button>\n          Hey What's Up?\n        </cdr-popover>\n      </template>\n    </cdr-input>\n\n    <cdr-input\n      class=\"demo-input \"\n      v-model=\"multiRowModel\"\n      :rows=\"10\"\n      placeholder=\"Multi Line Input/TextArea\"\n      label=\"Multi Line Input/TextArea\"\n      :background=\"backgroundColor\"\n    />\n    <cdr-input\n      class=\"demo-input \"\n      v-model=\"masterModel\"\n      @input=\"onMasterInput\"\n      placeholder=\"What would you like to set all input values to?\"\n      label=\"Master input that overwrites all other inputs on this page\"\n      :background=\"backgroundColor\"\n    />\n\n    <div class=\"demo-input\">\n      Default Input Value = {{ defaultModel }}\n    </div>\n    <div class=\"demo-input\">\n      Required Input Value = {{ requiredModel }}\n    </div>\n    <div class=\"demo-input\">\n      Optional Input Value = {{ optionalModel }}\n    </div>\n    <div class=\"demo-input\">\n      Hidden Input Value = {{ hiddenModel }}\n    </div>\n    <div class=\"demo-input\">\n      Disabled Input Value = {{ disabledModel }}\n    </div>\n    <div class=\"demo-input\">\n      With Icons Input Value = {{ requiredWithIcons }}\n    </div>\n    <div class=\"demo-input\">\n      Form With Buttons Value = {{ formWithButtons }}\n    </div>\n    <div class=\"demo-input\">\n      Helper/Validation Input Value = {{ helperValidationModel }}\n    </div>\n    <div class=\"demo-input\">\n      Multi Row Input Value = {{ multiRowModel }}\n    </div>\n    <div class=\"demo-input\">\n      Size Inputs Value = {{ sizeModel }}\n    </div>\n\n    <div class=\"demo-input\">\n      Mega Input Value = {{ megaModel }}\n    </div>\n    <div class=\"demo-input\">\n      Master Inputs Value = {{ masterModel }}\n    </div>\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\nexport default {\n  name: 'Inputs',\n  components: {\n    ...Components,\n  },\n  data() {\n    return {\n      defaultModel: '',\n      requiredModel: '',\n      optionalModel: '',\n      hiddenModel: '',\n      disabledModel: '',\n      helperValidationModel: '',\n      helperValidationError: false,\n      requiredWithIcons: '',\n      multiRowModel: '',\n      sizeModel: '',\n      formWithButtons: '',\n      masterModel: '',\n      megaModel: '',\n      megaErr: false,\n      backgroundColor: 'primary',\n    };\n  },\n  watch: {\n    $route(to) {\n      this.setBackground(to.query.background);\n    },\n  },\n  mounted() {\n    this.setBackground(this.$router.currentRoute.query.background);\n  },\n  methods: {\n    validate() {\n      this.helperValidationError = this.helperValidationModel.length > 4;\n    },\n    onMasterInput(value, e) {\n      console.log('On Master Input value = ', value, ' e = ', e); // eslint-disable-line\n      this.defaultModel = value;\n      this.requiredModel = value;\n      this.optionalModel = value;\n      this.hiddenModel = value;\n      this.disabledModel = value;\n      this.formWithButtons = value;\n      this.requiredWithIcons = value;\n      this.helperValidationModel = value;\n      this.multiRowModel = value;\n      this.sizeModel = value;\n      this.megaModel = value;\n    },\n    setBackground(background) {\n      switch (background) {\n        case 'primary':\n          this.backgroundColor = 'primary';\n          break;\n        case 'secondary':\n          this.backgroundColor = 'secondary';\n          break;\n        default:\n          this.backgroundColor = 'primary';\n      }\n    },\n  },\n};\n</script>\n<style>\n  .demo-input {\n    margin: 10px;\n    /*line-height: 1;*/\n  }\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
@@ -41412,14 +41419,21 @@ var cedar = (function () {
           "div",
           { staticClass: "anchor-example" },
           [
-            _c("cdr-link", { attrs: { "data-backstop": "cdr-link" } }, [
-              _vm._v("\n      REI.com\n    ")
-            ])
+            _c(
+              "cdr-link",
+              { attrs: { href: "#baz", "data-backstop": "cdr-link" } },
+              [_vm._v("\n      REI.com\n    ")]
+            )
           ],
           1
         ),
         _vm._v(" "),
-        _c("div", { staticClass: "anchor-example" }, [_c("cdr-link")], 1),
+        _c(
+          "div",
+          { staticClass: "anchor-example" },
+          [_c("cdr-link", { attrs: { href: "#foo", "aria-label": "baz" } })],
+          1
+        ),
         _vm._v(" "),
         _c(
           "cdr-text",
@@ -41452,6 +41466,7 @@ var cedar = (function () {
           {
             attrs: {
               modifier: "standalone",
+              href: "#bar",
               "data-backstop": "cdr-link--standalone"
             }
           },
@@ -41470,6 +41485,7 @@ var cedar = (function () {
             [
               _c(
                 "cdr-link",
+                { attrs: { href: "#baz" } },
                 [
                   _c("cdr-icon", {
                     attrs: {
@@ -41491,6 +41507,7 @@ var cedar = (function () {
             [
               _c(
                 "cdr-link",
+                { attrs: { href: "#baz" } },
                 [
                   _vm._v("\n        Icon on the right\n        "),
                   _c("cdr-icon", {
@@ -41512,6 +41529,7 @@ var cedar = (function () {
             [
               _c(
                 "cdr-link",
+                { attrs: { href: "#baz" } },
                 [
                   _c("cdr-icon", {
                     attrs: {
@@ -41554,7 +41572,7 @@ var cedar = (function () {
             _vm._v(" "),
             _c(
               "cdr-link",
-              { attrs: { "inherit-color": "" } },
+              { attrs: { "inherit-color": "", href: "#qux" } },
               [
                 _c("cdr-icon", {
                   attrs: {
@@ -41613,7 +41631,7 @@ var cedar = (function () {
     /* style */
     const __vue_inject_styles__$t = function (inject) {
       if (!inject) return
-      inject("data-v-7364df1a_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/** normalize line-height for consistent testing because links inherit it */\n.link-examples {\n  line-height: 1;\n}\n.button-padding-override {\n  padding-left: 0;\n  padding-right: 0;\n}\n\n", map: {"version":3,"sources":["/home/runner/work/rei-cedar/rei-cedar/src/components/link/examples/demo/Standard.vue"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAkKA,2EAAA;AAEA;EACA,cAAA;AACA;AAEA;EACA,eAAA;EACA,gBAAA;AACA","file":"Standard.vue","sourcesContent":["<template>\n  <!-- eslint-disable max-len -->\n  <div\n    class=\"link-examples\"\n    data-backstop=\"all-links\"\n  >\n    <cdr-text\n      tag=\"h2\"\n      modifier=\"heading-sans-400 heading-sans-500@md heading-sans-500@lg\"\n    >\n      Links\n    </cdr-text>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-300\"\n    >\n      Default Link, No props\n    </cdr-text>\n    <div class=\"anchor-example\">\n      <cdr-link data-backstop=\"cdr-link\">\n        REI.com\n      </cdr-link>\n    </div>\n    <div class=\"anchor-example\">\n      <cdr-link />\n    </div>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-300\"\n    >Link, href set, spacing class applied</cdr-text>\n    <cdr-link\n      href=\"https://www.rei.com/\"\n    >\n      REI.com\n    </cdr-link>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-300\"\n    >Link, href set</cdr-text>\n    <cdr-link\n      href=\"https://www.example.com/\"\n    >\n      example.com\n    </cdr-link>\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-300\"\n    >Standalone Link (No underline)</cdr-text>\n    <cdr-link\n      modifier=\"standalone\"\n\n      data-backstop=\"cdr-link--standalone\"\n    >\n      REI.com\n    </cdr-link>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-300\"\n    >Links, with icon</cdr-text>\n\n    <cdr-list>\n      <li>\n        <cdr-link>\n          <cdr-icon\n            inherit-color\n            use=\"#mail\"\n            modifier=\"inherit-color\"\n          />\n          Icon on the left\n        </cdr-link>\n      </li>\n      <li>\n        <cdr-link>\n          Icon on the right\n          <cdr-icon\n            inherit-color\n            use=\"#download\"\n            modifier=\"inherit-color\"\n          />\n        </cdr-link>\n      </li>\n      <li>\n        <cdr-link>\n          <cdr-icon\n            inherit-color\n            use=\"#twitter\"\n            modifier=\"inherit-color\"\n          />\n          Icons on both sides\n          <cdr-icon\n            inherit-color\n            use=\"#external-link\"\n            modifier=\"inherit-color\"\n          />\n        </cdr-link>\n      </li>\n    </cdr-list>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-300\"\n    >Links, with inherited color</cdr-text>\n    <div style=\"color: darkgreen; fill: darkgreen;\">\n      <cdr-link\n        inherit-color\n        href=\"rei.com\"\n      >\n        inherit-color plain example\n      </cdr-link>\n      <br>\n      <cdr-link inherit-color>\n        <cdr-icon\n          inherit-color\n          use=\"#mail\"\n          modifier=\"inherit-color\"\n        />\n        cdr-link icon inherit\n      </cdr-link>\n    </div>\n    <br><br>\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-500\"\n    >Button Links</cdr-text>\n\n    <cdr-text\n      tag=\"h4\"\n      modifier=\"subheading-sans-300\"\n    >Link using a &lt;button&gt; element inline</cdr-text>\n    <div class=\"anchor-example cdr-py-space-one-x\">\n      hey there <cdr-link\n        tag=\"button\"\n        data-backstop=\"cdr-link--button\"\n        @click=\"clicked\"\n      >I'm a button!</cdr-link> wow!\n    </div>\n\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\nexport default {\n  name: 'StandardLinks',\n  components: {\n    ...Components,\n  },\n  methods: {\n    clicked() {\n      // eslint-disable-next-line no-console\n      console.log('link clicked!');\n    },\n  },\n};\n</script>\n\n<style>\n/** normalize line-height for consistent testing because links inherit it */\n\n.link-examples {\n  line-height: 1;\n}\n\n.button-padding-override {\n  padding-left: 0;\n  padding-right: 0;\n}\n\n</style>\n"]}, media: undefined });
+      inject("data-v-5b4d077f_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/** normalize line-height for consistent testing because links inherit it */\n.link-examples {\n  line-height: 1;\n}\n.button-padding-override {\n  padding-left: 0;\n  padding-right: 0;\n}\n\n", map: {"version":3,"sources":["/home/runner/work/rei-cedar/rei-cedar/src/components/link/examples/demo/Standard.vue"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAkKA,2EAAA;AAEA;EACA,cAAA;AACA;AAEA;EACA,eAAA;EACA,gBAAA;AACA","file":"Standard.vue","sourcesContent":["<template>\n  <!-- eslint-disable max-len -->\n  <div\n    class=\"link-examples\"\n    data-backstop=\"all-links\"\n  >\n    <cdr-text\n      tag=\"h2\"\n      modifier=\"heading-sans-400 heading-sans-500@md heading-sans-500@lg\"\n    >\n      Links\n    </cdr-text>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-300\"\n    >\n      Default Link, No props\n    </cdr-text>\n    <div class=\"anchor-example\">\n      <cdr-link href=\"#baz\" data-backstop=\"cdr-link\">\n        REI.com\n      </cdr-link>\n    </div>\n    <div class=\"anchor-example\">\n      <cdr-link href=\"#foo\" aria-label=\"baz\"/>\n    </div>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-300\"\n    >Link, href set, spacing class applied</cdr-text>\n    <cdr-link\n      href=\"https://www.rei.com/\"\n    >\n      REI.com\n    </cdr-link>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-300\"\n    >Link, href set</cdr-text>\n    <cdr-link\n      href=\"https://www.example.com/\"\n    >\n      example.com\n    </cdr-link>\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-300\"\n    >Standalone Link (No underline)</cdr-text>\n    <cdr-link\n      modifier=\"standalone\"\n      href=\"#bar\"\n      data-backstop=\"cdr-link--standalone\"\n    >\n      REI.com\n    </cdr-link>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-300\"\n    >Links, with icon</cdr-text>\n\n    <cdr-list>\n      <li>\n        <cdr-link href=\"#baz\">\n          <cdr-icon\n            inherit-color\n            use=\"#mail\"\n            modifier=\"inherit-color\"\n          />\n          Icon on the left\n        </cdr-link>\n      </li>\n      <li>\n        <cdr-link href=\"#baz\">\n          Icon on the right\n          <cdr-icon\n            inherit-color\n            use=\"#download\"\n            modifier=\"inherit-color\"\n          />\n        </cdr-link>\n      </li>\n      <li>\n        <cdr-link href=\"#baz\">\n          <cdr-icon\n            inherit-color\n            use=\"#twitter\"\n            modifier=\"inherit-color\"\n          />\n          Icons on both sides\n          <cdr-icon\n            inherit-color\n            use=\"#external-link\"\n            modifier=\"inherit-color\"\n          />\n        </cdr-link>\n      </li>\n    </cdr-list>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-300\"\n    >Links, with inherited color</cdr-text>\n    <div style=\"color: darkgreen; fill: darkgreen;\">\n      <cdr-link\n        inherit-color\n        href=\"rei.com\"\n      >\n        inherit-color plain example\n      </cdr-link>\n      <br>\n      <cdr-link inherit-color href=\"#qux\">\n        <cdr-icon\n          inherit-color\n          use=\"#mail\"\n          modifier=\"inherit-color\"\n        />\n        cdr-link icon inherit\n      </cdr-link>\n    </div>\n    <br><br>\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-500\"\n    >Button Links</cdr-text>\n\n    <cdr-text\n      tag=\"h4\"\n      modifier=\"subheading-sans-300\"\n    >Link using a &lt;button&gt; element inline</cdr-text>\n    <div class=\"anchor-example cdr-py-space-one-x\">\n      hey there <cdr-link\n        tag=\"button\"\n        data-backstop=\"cdr-link--button\"\n        @click=\"clicked\"\n      >I'm a button!</cdr-link> wow!\n    </div>\n\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\nexport default {\n  name: 'StandardLinks',\n  components: {\n    ...Components,\n  },\n  methods: {\n    clicked() {\n      // eslint-disable-next-line no-console\n      console.log('link clicked!');\n    },\n  },\n};\n</script>\n\n<style>\n/** normalize line-height for consistent testing because links inherit it */\n\n.link-examples {\n  line-height: 1;\n}\n\n.button-padding-override {\n  padding-left: 0;\n  padding-right: 0;\n}\n\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
@@ -41693,7 +41711,7 @@ var cedar = (function () {
           "div",
           { staticClass: "anchor-example" },
           [
-            _c("cdr-link", [
+            _c("cdr-link", { attrs: { href: "#foo" } }, [
               _vm._v(
                 "\n      Lorem ipsum dolor sit amet consectetur adipisicing elit.\n      Officia inventore, quis ducimus itaque rerum id animi accusantium porro ex numquam.\n      Dolorum ducimus illo doloremque ullam quas. Vel similique laudantium error!\n      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore,\n      quis ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus\n      illo doloremque ullam quas. Vel similique laudantium error!\n      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore,\n      quis ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus\n      illo doloremque ullam quas. Vel similique laudantium error!\n      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore, quis\n      ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus illo\n      doloremque ullam quas. Vel similique laudantium error!\n      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore, quis\n      ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus illo\n      doloremque ullam quas. Vel similique laudantium error!\n      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore, quis ducimus\n      itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus illo doloremque ullam\n      quas. Vel similique laudantium error!\n      Lorem ipsum dolor sit amet consectetur adipisicing elit.\n      Officia inventore, quis ducimus itaque rerum id animi accusantium porro ex numquam.\n      Dolorum ducimus illo doloremque ullam quas. Vel similique laudantium error!\n    "
               )
@@ -41709,7 +41727,11 @@ var cedar = (function () {
         _c(
           "div",
           { staticClass: "anchor-example" },
-          [_c("cdr-link", [_vm._v("\n      K\n    ")])],
+          [
+            _c("cdr-link", { attrs: { href: "#foo" } }, [
+              _vm._v("\n      K\n    ")
+            ])
+          ],
           1
         ),
         _vm._v(" "),
@@ -41732,6 +41754,7 @@ var cedar = (function () {
             [
               _c(
                 "cdr-link",
+                { attrs: { href: "#foo" } },
                 [
                   _vm._v("\n      item text\n      "),
                   _c(
@@ -41754,6 +41777,7 @@ var cedar = (function () {
             [
               _c(
                 "cdr-link",
+                { attrs: { href: "#foo" } },
                 [
                   _vm._v("\n      item text\n      "),
                   _c(
@@ -41784,6 +41808,7 @@ var cedar = (function () {
             [
               _c(
                 "cdr-link",
+                { attrs: { href: "#foo" } },
                 [
                   _c("cdr-icon", {
                     attrs: {
@@ -41813,6 +41838,7 @@ var cedar = (function () {
                 [
                   _c(
                     "cdr-link",
+                    { attrs: { href: "#foo" } },
                     [
                       _c("cdr-icon", {
                         attrs: {
@@ -41847,6 +41873,7 @@ var cedar = (function () {
                 [
                   _c(
                     "cdr-link",
+                    { attrs: { href: "#foo" } },
                     [
                       _c(
                         "cdr-text",
@@ -41881,6 +41908,7 @@ var cedar = (function () {
                 [
                   _c(
                     "cdr-link",
+                    { attrs: { href: "#foo" } },
                     [
                       _c("cdr-icon", {
                         attrs: {
@@ -41928,7 +41956,7 @@ var cedar = (function () {
     /* style */
     const __vue_inject_styles__$u = function (inject) {
       if (!inject) return
-      inject("data-v-13e79f30_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"Resilience.vue"}, media: undefined });
+      inject("data-v-76221f1c_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"Resilience.vue"}, media: undefined });
 
     };
     /* scoped */
@@ -44727,7 +44755,6 @@ var cedar = (function () {
         size: '',
         ex1: '',
         ex1compact: '',
-        ex1spacing: '',
         ex2: 'b2',
         ex2compact: 'b2',
         ex3: 'c1',
@@ -44761,87 +44788,96 @@ var cedar = (function () {
           [_vm._v("\n    Radios\n  ")]
         ),
         _vm._v(" "),
-        _c(
-          "div",
-          { attrs: { "data-backstop": "radio-focus" } },
-          [
-            _c(
-              "cdr-radio",
-              {
-                attrs: { name: "example", "custom-value": "a1", size: "small" },
-                model: {
-                  value: _vm.size,
-                  callback: function($$v) {
-                    _vm.size = $$v;
-                  },
-                  expression: "size"
-                }
-              },
-              [_vm._v("small")]
-            ),
-            _vm._v(" "),
-            _c(
-              "cdr-radio",
-              {
-                attrs: { name: "example", "custom-value": "a2", size: "medium" },
-                model: {
-                  value: _vm.size,
-                  callback: function($$v) {
-                    _vm.size = $$v;
-                  },
-                  expression: "size"
-                }
-              },
-              [_vm._v("medium")]
-            ),
-            _vm._v(" "),
-            _c(
-              "cdr-radio",
-              {
-                attrs: {
-                  name: "example",
-                  "custom-value": { val: "a3" },
-                  size: "large"
-                },
-                model: {
-                  value: _vm.size,
-                  callback: function($$v) {
-                    _vm.size = $$v;
-                  },
-                  expression: "size"
-                }
-              },
-              [_vm._v("large")]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { attrs: { "data-backstop": "radio-responsive" } },
-              [
-                _c(
-                  "cdr-radio",
-                  {
-                    attrs: {
-                      name: "example",
-                      "custom-value": "a4",
-                      size: "small@lg medium@sm large@xs"
+        _c("div", { attrs: { "data-backstop": "radio-focus" } }, [
+          _c(
+            "fieldset",
+            [
+              _c("legend", { attrs: { id: "legend-z" } }, [
+                _vm._v("\n        Group A\n      ")
+              ]),
+              _vm._v(" "),
+              _c(
+                "cdr-radio",
+                {
+                  attrs: { name: "example", "custom-value": "a1", size: "small" },
+                  model: {
+                    value: _vm.size,
+                    callback: function($$v) {
+                      _vm.size = $$v;
                     },
-                    model: {
-                      value: _vm.size,
-                      callback: function($$v) {
-                        _vm.size = $$v;
-                      },
-                      expression: "size"
-                    }
+                    expression: "size"
+                  }
+                },
+                [_vm._v("small")]
+              ),
+              _vm._v(" "),
+              _c(
+                "cdr-radio",
+                {
+                  attrs: {
+                    name: "example",
+                    "custom-value": "a2",
+                    size: "medium"
                   },
-                  [_vm._v("responsive")]
-                )
-              ],
-              1
-            )
-          ],
-          1
-        ),
+                  model: {
+                    value: _vm.size,
+                    callback: function($$v) {
+                      _vm.size = $$v;
+                    },
+                    expression: "size"
+                  }
+                },
+                [_vm._v("medium")]
+              ),
+              _vm._v(" "),
+              _c(
+                "cdr-radio",
+                {
+                  attrs: {
+                    name: "example",
+                    "custom-value": { val: "a3" },
+                    size: "large"
+                  },
+                  model: {
+                    value: _vm.size,
+                    callback: function($$v) {
+                      _vm.size = $$v;
+                    },
+                    expression: "size"
+                  }
+                },
+                [_vm._v("large")]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { attrs: { "data-backstop": "radio-responsive" } },
+                [
+                  _c(
+                    "cdr-radio",
+                    {
+                      attrs: {
+                        name: "example",
+                        "custom-value": "a4",
+                        size: "small@lg medium@sm large@xs"
+                      },
+                      model: {
+                        value: _vm.size,
+                        callback: function($$v) {
+                          _vm.size = $$v;
+                        },
+                        expression: "size"
+                      }
+                    },
+                    [_vm._v("responsive")]
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ]),
         _vm._v(" "),
         _c(
           "div",
@@ -44850,7 +44886,7 @@ var cedar = (function () {
             _c(
               "fieldset",
               [
-                _c("legend", { attrs: { id: "legend-a" } }, [
+                _c("legend", { attrs: { id: "legend-x" } }, [
                   _vm._v("\n        Group A\n      ")
                 ]),
                 _vm._v(" "),
@@ -45095,139 +45131,105 @@ var cedar = (function () {
         _vm._v(" "),
         _c("hr"),
         _vm._v(" "),
-        _c("cdr-text", [_vm._v("\n    Radios with spacing\n  ")]),
+        _c("hr"),
         _vm._v(" "),
-        _c(
-          "cdr-radio",
-          {
-            attrs: { id: "test2", name: "examplespacing", "custom-value": "a1" },
-            model: {
-              value: _vm.ex1spacing,
-              callback: function($$v) {
-                _vm.ex1spacing = $$v;
-              },
-              expression: "ex1spacing"
-            }
-          },
-          [_vm._v("A1")]
-        ),
-        _vm._v(" "),
-        _c(
-          "cdr-radio",
-          {
-            attrs: { name: "examplespacing", "custom-value": "a2" },
-            model: {
-              value: _vm.ex1spacing,
-              callback: function($$v) {
-                _vm.ex1spacing = $$v;
-              },
-              expression: "ex1spacing"
-            }
-          },
-          [_vm._v("A2")]
-        ),
-        _vm._v(" "),
-        _c(
-          "cdr-radio",
-          {
-            attrs: { name: "examplespacing", "custom-value": { val: "a3" } },
-            model: {
-              value: _vm.ex1spacing,
-              callback: function($$v) {
-                _vm.ex1spacing = $$v;
-              },
-              expression: "ex1spacing"
-            }
-          },
-          [_vm._v("A3")]
-        ),
-        _vm._v(" "),
-        _c("cdr-text", [_vm._v("Spacing Picked: " + _vm._s(_vm.ex1spacing))]),
+        _c("div", { staticStyle: { "max-width": "200px" } }, [
+          _c(
+            "fieldset",
+            [
+              _c("legend", { attrs: { id: "legend-b" } }, [
+                _vm._v("\n        Group A\n      ")
+              ]),
+              _vm._v(" "),
+              _c(
+                "cdr-radio",
+                {
+                  attrs: { name: "example2", "custom-value": "b1" },
+                  model: {
+                    value: _vm.ex2,
+                    callback: function($$v) {
+                      _vm.ex2 = $$v;
+                    },
+                    expression: "ex2"
+                  }
+                },
+                [_vm._v("B1")]
+              ),
+              _vm._v(" "),
+              _c(
+                "cdr-radio",
+                {
+                  attrs: { name: "example2", "custom-value": "b2" },
+                  model: {
+                    value: _vm.ex2,
+                    callback: function($$v) {
+                      _vm.ex2 = $$v;
+                    },
+                    expression: "ex2"
+                  }
+                },
+                [_vm._v("B2")]
+              ),
+              _vm._v(" "),
+              _c("cdr-text", [_vm._v("Group B Picked: " + _vm._s(_vm.ex2))])
+            ],
+            1
+          )
+        ]),
         _vm._v(" "),
         _c("hr"),
         _vm._v(" "),
         _c(
-          "div",
-          { staticStyle: { "max-width": "200px" } },
+          "fieldset",
           [
+            _c("legend", { attrs: { id: "legend-a" } }, [
+              _vm._v("\n      Group A\n    ")
+            ]),
+            _vm._v(" "),
             _c(
               "cdr-radio",
               {
-                attrs: { name: "example2", "custom-value": "b1" },
+                attrs: {
+                  modifier: "compact",
+                  name: "example2compact",
+                  "custom-value": "b1"
+                },
                 model: {
-                  value: _vm.ex2,
+                  value: _vm.ex2compact,
                   callback: function($$v) {
-                    _vm.ex2 = $$v;
+                    _vm.ex2compact = $$v;
                   },
-                  expression: "ex2"
+                  expression: "ex2compact"
                 }
               },
-              [_vm._v("B1")]
+              [_vm._v("B1 compact")]
             ),
             _vm._v(" "),
             _c(
               "cdr-radio",
               {
-                attrs: { name: "example2", "custom-value": "b2" },
+                attrs: {
+                  modifier: "compact",
+                  name: "example2compact",
+                  "custom-value": "b2"
+                },
                 model: {
-                  value: _vm.ex2,
+                  value: _vm.ex2compact,
                   callback: function($$v) {
-                    _vm.ex2 = $$v;
+                    _vm.ex2compact = $$v;
                   },
-                  expression: "ex2"
+                  expression: "ex2compact"
                 }
               },
-              [_vm._v("B2")]
+              [_vm._v("B2 compact")]
             ),
             _vm._v(" "),
-            _c("cdr-text", [_vm._v("Group B Picked: " + _vm._s(_vm.ex2))])
+            _c("cdr-text", [
+              _vm._v("Group B compact Picked: " + _vm._s(_vm.ex2compact))
+            ])
           ],
           1
         ),
-        _vm._v(" "),
-        _c("hr"),
-        _vm._v(" "),
-        _c(
-          "cdr-radio",
-          {
-            attrs: {
-              modifier: "compact",
-              name: "example2compact",
-              "custom-value": "b1"
-            },
-            model: {
-              value: _vm.ex2compact,
-              callback: function($$v) {
-                _vm.ex2compact = $$v;
-              },
-              expression: "ex2compact"
-            }
-          },
-          [_vm._v("B1 compact")]
-        ),
-        _vm._v(" "),
-        _c(
-          "cdr-radio",
-          {
-            attrs: {
-              modifier: "compact",
-              name: "example2compact",
-              "custom-value": "b2"
-            },
-            model: {
-              value: _vm.ex2compact,
-              callback: function($$v) {
-                _vm.ex2compact = $$v;
-              },
-              expression: "ex2compact"
-            }
-          },
-          [_vm._v("B2 compact")]
-        ),
-        _vm._v(" "),
-        _c("cdr-text", [
-          _vm._v("Group B compact Picked: " + _vm._s(_vm.ex2compact))
-        ]),
         _vm._v(" "),
         _c("hr"),
         _vm._v(" "),
@@ -45270,7 +45272,7 @@ var cedar = (function () {
           "cdr-radio",
           {
             attrs: {
-              name: "custom",
+              name: "custom2",
               "custom-value": "customA",
               modifier: "hide-figure"
             },
@@ -45289,7 +45291,7 @@ var cedar = (function () {
           "cdr-radio",
           {
             attrs: {
-              name: "custom",
+              name: "custom3",
               "custom-value": "customB",
               modifier: "hide-figure",
               "input-class": "no-box",
@@ -45315,7 +45317,7 @@ var cedar = (function () {
             _c(
               "cdr-radio",
               {
-                attrs: { name: "example3", "custom-value": "c2" },
+                attrs: { name: "custom4", "custom-value": "c2" },
                 model: {
                   value: _vm.ex3,
                   callback: function($$v) {
@@ -45343,7 +45345,7 @@ var cedar = (function () {
     /* style */
     const __vue_inject_styles__$H = function (inject) {
       if (!inject) return
-      inject("data-v-b0994cb8_0", { source: ".wrap {\n  width: 180px;\n}\n.no-box:checked ~ .no-box__content {\n  color: green;\n}\n.no-box:checked ~ .no-box__content::after {\n  content: \"(checked)\";\n}\n\n/*# sourceMappingURL=Radios.vue.map */", map: {"version":3,"sources":["/home/runner/work/rei-cedar/rei-cedar/src/components/radio/examples/Radios.vue","Radios.vue"],"names":[],"mappings":"AAsPA;ECrPE,YAAY;AACd;ADwPA;ECrPE,YAAY;AACd;ADwPA;ECrPE,oBAAoB;AACtB;;AAEA,qCAAqC","file":"Radios.vue","sourcesContent":["<template>\n  <div>\n    <cdr-text\n      tag=\"h2\"\n      modifier=\"heading-serif-600 heading-serif-700@md heading-serif-700@lg\"\n    >\n      Radios\n    </cdr-text>\n    <div data-backstop=\"radio-focus\">\n      <cdr-radio\n        name=\"example\"\n        custom-value=\"a1\"\n        v-model=\"size\"\n        size=\"small\"\n      >small</cdr-radio>\n      <cdr-radio\n        name=\"example\"\n        custom-value=\"a2\"\n        v-model=\"size\"\n        size=\"medium\"\n      >medium</cdr-radio>\n      <cdr-radio\n        name=\"example\"\n        :custom-value=\"{val:'a3'}\"\n        v-model=\"size\"\n        size=\"large\"\n      >large</cdr-radio>\n      <div data-backstop=\"radio-responsive\">\n        <cdr-radio\n          name=\"example\"\n          custom-value=\"a4\"\n          v-model=\"size\"\n          size=\"small@lg medium@sm large@xs\"\n        >responsive</cdr-radio>\n      </div>\n    </div>\n    <div data-backstop=\"radio-focus\">\n      <fieldset>\n        <legend id=\"legend-a\">\n          Group A\n        </legend>\n        <cdr-list\n          aria-labelledby=\"legend-a\"\n          role=\"radiogroup\"\n        >\n          <li>\n            <cdr-radio\n              id=\"test1\"\n              name=\"example\"\n              custom-value=\"a1\"\n              v-model=\"ex1\"\n            >A1</cdr-radio>\n          </li>\n          <li>\n            <cdr-radio\n              name=\"example\"\n              custom-value=\"a2\"\n              v-model=\"ex1\"\n            >A2</cdr-radio>\n          </li>\n          <li>\n            <cdr-radio\n              name=\"example\"\n              :custom-value=\"{val:'a3'}\"\n              v-model=\"ex1\"\n            >A3</cdr-radio>\n          </li>\n          <li>\n            <cdr-radio\n              name=\"example\"\n              custom-value=\"a4\"\n              v-model=\"ex1\"\n              disabled\n            >A4 (disabled)</cdr-radio>\n          </li>\n        </cdr-list>\n      </fieldset>\n      <cdr-text>Group A Picked: {{ ex1 }}</cdr-text>\n    </div>\n    <hr>\n    <fieldset>\n      <legend id=\"group-a-compact\">\n        Group A compact\n      </legend>\n      <cdr-list\n        aria-labelledby=\"group-a-compact\"\n        role=\"radiogroup\"\n      >\n        <li>\n          <cdr-radio\n            modifier=\"compact\"\n            name=\"examplecompact\"\n            custom-value=\"a1\"\n            v-model=\"ex1compact\"\n          >A1 compact</cdr-radio>\n        </li>\n        <li>\n          <cdr-radio\n            modifier=\"compact\"\n            name=\"examplecompact\"\n            custom-value=\"a2\"\n            v-model=\"ex1compact\"\n          >A2 compact</cdr-radio>\n        </li>\n        <li>\n          <cdr-radio\n            modifier=\"compact\"\n            name=\"examplecompact\"\n            :custom-value=\"{val:'a3'}\"\n            v-model=\"ex1compact\"\n          >A3 compact</cdr-radio>\n        </li>\n        <li>\n          <cdr-radio\n            modifier=\"compact\"\n            name=\"examplecompact\"\n            custom-value=\"a4\"\n            v-model=\"ex1compact\"\n            disabled\n          >A4 compact (disabled)</cdr-radio>\n        </li>\n      </cdr-list>\n    </fieldset>\n\n    <cdr-text>Group A compact Picked: {{ ex1compact }}</cdr-text>\n    <hr>\n\n    <cdr-text>\n      Radios with spacing\n    </cdr-text>\n    <cdr-radio\n\n      id=\"test2\"\n      name=\"examplespacing\"\n      custom-value=\"a1\"\n      v-model=\"ex1spacing\"\n    >A1</cdr-radio>\n    <cdr-radio\n\n      name=\"examplespacing\"\n      custom-value=\"a2\"\n      v-model=\"ex1spacing\"\n    >A2</cdr-radio>\n    <cdr-radio\n\n      name=\"examplespacing\"\n      :custom-value=\"{val:'a3'}\"\n      v-model=\"ex1spacing\"\n    >A3</cdr-radio>\n    <cdr-text>Spacing Picked: {{ ex1spacing }}</cdr-text>\n    <hr>\n    <div style=\"max-width: 200px;\">\n      <cdr-radio\n        name=\"example2\"\n        custom-value=\"b1\"\n        v-model=\"ex2\"\n      >B1</cdr-radio>\n      <cdr-radio\n        name=\"example2\"\n        custom-value=\"b2\"\n        v-model=\"ex2\"\n      >B2</cdr-radio>\n      <cdr-text>Group B Picked: {{ ex2 }}</cdr-text>\n    </div>\n    <hr>\n    <cdr-radio\n      modifier=\"compact\"\n      name=\"example2compact\"\n      custom-value=\"b1\"\n      v-model=\"ex2compact\"\n    >B1 compact</cdr-radio>\n    <cdr-radio\n      modifier=\"compact\"\n      name=\"example2compact\"\n      custom-value=\"b2\"\n      v-model=\"ex2compact\"\n    >B2 compact</cdr-radio>\n    <cdr-text>Group B compact Picked: {{ ex2compact }}</cdr-text>\n    <hr>\n    <cdr-radio\n      name=\"example3\"\n      custom-value=\"c1\"\n      v-model=\"ex3\"\n      disabled\n    >C1 (selected + disabled)</cdr-radio>\n\n    <cdr-radio\n      modifier=\"compact\"\n      name=\"example3compact\"\n      custom-value=\"c1\"\n      v-model=\"ex3compact\"\n      disabled\n    >C1 compact (selected + disabled)</cdr-radio>\n\n    <cdr-radio\n      name=\"custom\"\n      custom-value=\"customA\"\n      v-model=\"custom\"\n      modifier=\"hide-figure\"\n    >Custom A (hide-figure)</cdr-radio>\n\n    <cdr-radio\n      name=\"custom\"\n      custom-value=\"customB\"\n      v-model=\"custom\"\n      modifier=\"hide-figure\"\n      input-class=\"no-box\"\n      content-class=\"no-box__content\"\n    >Custom B</cdr-radio>\n    <hr>\n    <div class=\"wrap\">\n      <cdr-radio\n        name=\"example3\"\n        custom-value=\"c2\"\n        v-model=\"ex3\"\n      >A longer label text to make things wrap for testing\n      </cdr-radio>\n    </div>\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\nexport default {\n  name: 'Radios',\n  components: Components,\n  data() {\n    return {\n      size: '',\n      ex1: '',\n      ex1compact: '',\n      ex1spacing: '',\n      ex2: 'b2',\n      ex2compact: 'b2',\n      ex3: 'c1',\n      ex3compact: 'c1',\n      custom: 'customB',\n    };\n  },\n};\n</script>\n\n<style lang=\"scss\">\n  .wrap {\n    width: 180px;\n  }\n\n  .no-box:checked ~ .no-box__content {\n    color: green;\n  }\n\n  .no-box:checked ~ .no-box__content::after {\n    content: '(checked)';\n  }\n</style>\n",".wrap {\n  width: 180px;\n}\n\n.no-box:checked ~ .no-box__content {\n  color: green;\n}\n\n.no-box:checked ~ .no-box__content::after {\n  content: \"(checked)\";\n}\n\n/*# sourceMappingURL=Radios.vue.map */"]}, media: undefined });
+      inject("data-v-579faab4_0", { source: ".wrap {\n  width: 180px;\n}\n.no-box:checked ~ .no-box__content {\n  color: green;\n}\n.no-box:checked ~ .no-box__content::after {\n  content: \"(checked)\";\n}\n\n/*# sourceMappingURL=Radios.vue.map */", map: {"version":3,"sources":["/home/runner/work/rei-cedar/rei-cedar/src/components/radio/examples/Radios.vue","Radios.vue"],"names":[],"mappings":"AA6OA;EC5OE,YAAY;AACd;AD+OA;EC5OE,YAAY;AACd;AD+OA;EC5OE,oBAAoB;AACtB;;AAEA,qCAAqC","file":"Radios.vue","sourcesContent":["<template>\n  <div>\n    <cdr-text\n      tag=\"h2\"\n      modifier=\"heading-serif-600 heading-serif-700@md heading-serif-700@lg\"\n    >\n      Radios\n    </cdr-text>\n    <div data-backstop=\"radio-focus\">\n      <fieldset>\n        <legend id=\"legend-z\">\n          Group A\n        </legend>\n        <cdr-radio\n          name=\"example\"\n          custom-value=\"a1\"\n          v-model=\"size\"\n          size=\"small\"\n        >small</cdr-radio>\n        <cdr-radio\n          name=\"example\"\n          custom-value=\"a2\"\n          v-model=\"size\"\n          size=\"medium\"\n        >medium</cdr-radio>\n        <cdr-radio\n          name=\"example\"\n          :custom-value=\"{val:'a3'}\"\n          v-model=\"size\"\n          size=\"large\"\n        >large</cdr-radio>\n        <div data-backstop=\"radio-responsive\">\n          <cdr-radio\n            name=\"example\"\n            custom-value=\"a4\"\n            v-model=\"size\"\n            size=\"small@lg medium@sm large@xs\"\n          >responsive</cdr-radio>\n        </div>\n      </fieldset>\n    </div>\n    <div data-backstop=\"radio-focus\">\n      <fieldset>\n        <legend id=\"legend-x\">\n          Group A\n        </legend>\n        <cdr-list\n          aria-labelledby=\"legend-a\"\n          role=\"radiogroup\"\n        >\n          <li>\n            <cdr-radio\n              id=\"test1\"\n              name=\"example\"\n              custom-value=\"a1\"\n              v-model=\"ex1\"\n            >A1</cdr-radio>\n          </li>\n          <li>\n            <cdr-radio\n              name=\"example\"\n              custom-value=\"a2\"\n              v-model=\"ex1\"\n            >A2</cdr-radio>\n          </li>\n          <li>\n            <cdr-radio\n              name=\"example\"\n              :custom-value=\"{val:'a3'}\"\n              v-model=\"ex1\"\n            >A3</cdr-radio>\n          </li>\n          <li>\n            <cdr-radio\n              name=\"example\"\n              custom-value=\"a4\"\n              v-model=\"ex1\"\n              disabled\n            >A4 (disabled)</cdr-radio>\n          </li>\n        </cdr-list>\n      </fieldset>\n      <cdr-text>Group A Picked: {{ ex1 }}</cdr-text>\n    </div>\n    <hr>\n    <fieldset>\n      <legend id=\"group-a-compact\">\n        Group A compact\n      </legend>\n      <cdr-list\n        aria-labelledby=\"group-a-compact\"\n        role=\"radiogroup\"\n      >\n        <li>\n          <cdr-radio\n            modifier=\"compact\"\n            name=\"examplecompact\"\n            custom-value=\"a1\"\n            v-model=\"ex1compact\"\n          >A1 compact</cdr-radio>\n        </li>\n        <li>\n          <cdr-radio\n            modifier=\"compact\"\n            name=\"examplecompact\"\n            custom-value=\"a2\"\n            v-model=\"ex1compact\"\n          >A2 compact</cdr-radio>\n        </li>\n        <li>\n          <cdr-radio\n            modifier=\"compact\"\n            name=\"examplecompact\"\n            :custom-value=\"{val:'a3'}\"\n            v-model=\"ex1compact\"\n          >A3 compact</cdr-radio>\n        </li>\n        <li>\n          <cdr-radio\n            modifier=\"compact\"\n            name=\"examplecompact\"\n            custom-value=\"a4\"\n            v-model=\"ex1compact\"\n            disabled\n          >A4 compact (disabled)</cdr-radio>\n        </li>\n      </cdr-list>\n    </fieldset>\n\n    <cdr-text>Group A compact Picked: {{ ex1compact }}</cdr-text>\n    <hr>\n\n    <hr>\n    <div style=\"max-width: 200px;\">\n      <fieldset>\n        <legend id=\"legend-b\">\n          Group A\n        </legend>\n        <cdr-radio\n          name=\"example2\"\n          custom-value=\"b1\"\n          v-model=\"ex2\"\n        >B1</cdr-radio>\n        <cdr-radio\n          name=\"example2\"\n          custom-value=\"b2\"\n          v-model=\"ex2\"\n        >B2</cdr-radio>\n        <cdr-text>Group B Picked: {{ ex2 }}</cdr-text>\n      </fieldset>\n    </div>\n    <hr>\n    <fieldset>\n      <legend id=\"legend-a\">\n        Group A\n      </legend>\n      <cdr-radio\n        modifier=\"compact\"\n        name=\"example2compact\"\n        custom-value=\"b1\"\n        v-model=\"ex2compact\"\n      >B1 compact</cdr-radio>\n      <cdr-radio\n        modifier=\"compact\"\n        name=\"example2compact\"\n        custom-value=\"b2\"\n        v-model=\"ex2compact\"\n      >B2 compact</cdr-radio>\n      <cdr-text>Group B compact Picked: {{ ex2compact }}</cdr-text>\n    </fieldset>\n    <hr>\n    <cdr-radio\n      name=\"example3\"\n      custom-value=\"c1\"\n      v-model=\"ex3\"\n      disabled\n    >C1 (selected + disabled)</cdr-radio>\n\n    <cdr-radio\n      modifier=\"compact\"\n      name=\"example3compact\"\n      custom-value=\"c1\"\n      v-model=\"ex3compact\"\n      disabled\n    >C1 compact (selected + disabled)</cdr-radio>\n\n    <cdr-radio\n      name=\"custom2\"\n      custom-value=\"customA\"\n      v-model=\"custom\"\n      modifier=\"hide-figure\"\n    >Custom A (hide-figure)</cdr-radio>\n\n    <cdr-radio\n      name=\"custom3\"\n      custom-value=\"customB\"\n      v-model=\"custom\"\n      modifier=\"hide-figure\"\n      input-class=\"no-box\"\n      content-class=\"no-box__content\"\n    >Custom B</cdr-radio>\n    <hr>\n    <div class=\"wrap\">\n      <cdr-radio\n        name=\"custom4\"\n        custom-value=\"c2\"\n        v-model=\"ex3\"\n      >A longer label text to make things wrap for testing\n      </cdr-radio>\n    </div>\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\nexport default {\n  name: 'Radios',\n  components: Components,\n  data() {\n    return {\n      size: '',\n      ex1: '',\n      ex1compact: '',\n      ex2: 'b2',\n      ex2compact: 'b2',\n      ex3: 'c1',\n      ex3compact: 'c1',\n      custom: 'customB',\n    };\n  },\n};\n</script>\n\n<style lang=\"scss\">\n  .wrap {\n    width: 180px;\n  }\n\n  .no-box:checked ~ .no-box__content {\n    color: green;\n  }\n\n  .no-box:checked ~ .no-box__content::after {\n    content: '(checked)';\n  }\n</style>\n",".wrap {\n  width: 180px;\n}\n\n.no-box:checked ~ .no-box__content {\n  color: green;\n}\n\n.no-box:checked ~ .no-box__content::after {\n  content: \"(checked)\";\n}\n\n/*# sourceMappingURL=Radios.vue.map */"]}, media: undefined });
 
     };
     /* scoped */
@@ -45985,6 +45987,7 @@ var cedar = (function () {
               [
                 _c(
                   "cdr-link",
+                  { attrs: { tag: "button", type: "button" } },
                   [
                     _c("icon-information-stroke", {
                       attrs: { "inherit-color": "" }
@@ -46161,7 +46164,7 @@ var cedar = (function () {
     /* style */
     const __vue_inject_styles__$J = function (inject) {
       if (!inject) return
-      inject("data-v-244a9db3_0", { source: "\n.standard-select {\n  width: 25%;\n}\n", map: {"version":3,"sources":["/home/runner/work/rei-cedar/rei-cedar/src/components/select/examples/Selects.vue"],"names":[],"mappings":";AAsWA;EACA,UAAA;AACA","file":"Selects.vue","sourcesContent":["<template>\n  <div>\n    <cdr-text\n      tag=\"h2\"\n      modifier=\"heading-sans-400 heading-sans-500@md heading-sans-500@lg\"\n    >\n      Selects\n    </cdr-text>\n    <hr class=\"icon-hr\">\n\n    <div data-backstop=\"select-target\">\n      <!-- Default Example -->\n      <cdr-select\n        label=\"Default\"\n        v-model=\"selectedA\"\n        :background=\"backgroundColor\"\n        prompt=\"Choose one\"\n\n        @select-change=\"doExternal\"\n      >\n        <option value=\"1\">\n          1\n        </option>\n        <option value=\"2\">\n          2\n        </option>\n        <option value=\"3\">\n          3\n        </option>\n        <option value=\"4\">\n          4\n        </option>\n      </cdr-select>\n      <cdr-text>Selected Value: {{ selectedA }}</cdr-text>\n\n      <hr class=\"icon-hr\">\n\n      <!-- Required with Prompt Example -->\n      <cdr-select\n        label=\"Required with Prompt\"\n        v-model=\"selectedB\"\n        :background=\"backgroundColor\"\n        prompt=\"Choose one\"\n        required\n      >\n        <option value=\"1\">\n          1\n        </option>\n        <option value=\"2\">\n          2\n        </option>\n        <option value=\"3\">\n          3\n        </option>\n        <option value=\"4\">\n          4\n        </option>\n      </cdr-select>\n      <cdr-text>Selected Value: {{ selectedB }}</cdr-text>\n    </div>\n    <hr class=\"icon-hr\">\n\n    <!-- Disabled Select -->\n    <cdr-select\n      label=\"Disabled select\"\n      v-model=\"selectedDisabled\"\n      :background=\"backgroundColor\"\n      disabled\n    >\n      <option value=\"1\">\n        1\n      </option>\n    </cdr-select>\n    <cdr-text>Selected: {{ selectedDisabled }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <!-- Hidden Label Example -->\n    <cdr-select\n      label=\"Hidden label text\"\n      hide-label\n      v-model=\"selectedC\"\n      :background=\"backgroundColor\"\n      prompt=\"Hidden label\"\n    >\n      <option value=\"1\">\n        1\n      </option>\n      <option value=\"2\">\n        2\n      </option>\n      <option value=\"3\">\n        3\n      </option>\n      <option value=\"4\">\n        4\n      </option>\n    </cdr-select>\n    <cdr-text>Selected Value: {{ selectedC }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <!-- No Prompt Example -->\n    <cdr-select\n      label=\"No Prompt\"\n\n      v-model=\"selectedD\"\n      :background=\"backgroundColor\"\n    >\n      <option value=\"1\">\n        1\n      </option>\n      <option value=\"2\">\n        2\n      </option>\n      <option value=\"3\">\n        3\n      </option>\n      <option value=\"REALLY REALLY LONG VALUE REALLY REALLY LONG VALUE\">\n        REALLY REALLY LONG VALUE REALLY REALLY LONG VALUE\n      </option>\n    </cdr-select>\n    <cdr-text>Selected Value: {{ selectedD }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <!-- Dynamic Data Example -->\n    <cdr-select\n      label=\"Dynamic\"\n      v-model=\"dynamic\"\n      :background=\"backgroundColor\"\n      :options=\"dynamicData\"\n\n      prompt=\"Choose One\"\n    />\n    <cdr-text>Selected: {{ dynamic }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <!-- Helper Text Example -->\n    <cdr-select\n      label=\"Example with Helper Text\"\n      v-model=\"helperTextModel\"\n      :background=\"backgroundColor\"\n      :options=\"dynamicData\"\n\n      prompt=\"Choose One\"\n    >\n      <template slot=\"helper-text\">\n        This is helper text.\n      </template>\n\n      <template slot=\"info\">\n        <cdr-link\n          href=\"#/selects\"\n          modifier=\"standalone\"\n        >\n          Info Link/Icon\n        </cdr-link>\n      </template>\n    </cdr-select>\n    <cdr-text>Selected Value: {{ helperTextModel }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <!-- Info Link Example -->\n    <cdr-select\n      label=\"Example with Info Link\"\n      v-model=\"infoLinkModel\"\n      :background=\"backgroundColor\"\n      :options=\"dynamicData\"\n\n      prompt=\"Choose One\"\n    >\n      <template slot=\"info\">\n        <cdr-link\n          href=\"#/selects\"\n          modifier=\"standalone\"\n        >\n          Info Link/Icon\n        </cdr-link>\n      </template>\n    </cdr-select>\n    <cdr-text>Selected: {{ infoLinkModel }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <!-- Info Icon Example -->\n    <cdr-select\n      label=\"Example with Info Icon\"\n      v-model=\"infoIconModel\"\n      :background=\"backgroundColor\"\n      :options=\"dynamicData\"\n\n      prompt=\"Choose One\"\n    >\n      <template slot=\"info-action\">\n        <cdr-link>\n          <icon-information-stroke inherit-color />\n          <span class=\"cdr-display-sr-only\">Information!</span>\n        </cdr-link>\n      </template>\n    </cdr-select>\n    <cdr-text>Selected Value: {{ infoIconModel }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <!-- Pre Icon Example -->\n    <cdr-select\n      label=\"Example with Pre Icon\"\n      v-model=\"preIconModel\"\n      :background=\"backgroundColor\"\n      :options=\"dynamicData\"\n\n      prompt=\"Choose One\"\n    >\n      <template slot=\"pre-icon\">\n        <icon-lock-locked-stroke />\n      </template>\n    </cdr-select>\n    <cdr-text>Selected Value: {{ preIconModel }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <!-- Error Example -->\n    <cdr-select\n      label=\"Example with error\"\n      v-model=\"preIconModel\"\n      :background=\"backgroundColor\"\n      :options=\"dynamicData\"\n\n      prompt=\"Choose One\"\n      :error=\"true\"\n    >\n      <template slot=\"error\">\n        error message goes here\n      </template>\n    </cdr-select>\n    <hr class=\"icon-hr\">\n\n    <!-- Large Select Example -->\n    <cdr-select\n      label=\"Size = Large\"\n      v-model=\"dynamic\"\n      :background=\"backgroundColor\"\n      size=\"large\"\n      :options=\"dynamicData\"\n\n      prompt=\"Choose One\"\n    />\n    <cdr-text>Selected Value: {{ dynamic }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <cdr-text class=\"cdr-my-space-two-x\">\n      Multiple Select with size\n    </cdr-text>\n\n    <cdr-select\n      label=\"Multiple Prompt\"\n      v-model=\"multiple\"\n      :background=\"backgroundColor\"\n      :multiple-size=\"6\"\n      multiple\n    >\n      <option\n        value=\"1\"\n      >\n        1\n      </option>\n      <option value=\"2\">\n        2\n      </option>\n      <option\n        value=\"3\"\n      >\n        3\n      </option>\n      <option value=\"4\">\n        4\n      </option>\n      <option value=\"5\">\n        5\n      </option>\n      <option value=\"6\">\n        6\n      </option>\n    </cdr-select>\n    <cdr-text>Selected Values: {{ multiple }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <cdr-text class=\"cdr-my-space-two-x\">\n      Multiple Select\n    </cdr-text>\n\n    <cdr-select\n      label=\"Multiple Prompt\"\n      v-model=\"multiple2\"\n      :background=\"backgroundColor\"\n      multiple\n      :options=\"multiple2Data\"\n    />\n    <cdr-text>Selected Values: {{ multiple2 }}</cdr-text>\n    <hr class=\"icon-hr\">\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\nexport default {\n  name: 'Selects',\n  components: Components,\n  data() {\n    return {\n      selectedDisabled: '',\n      selectedA: '',\n      selectedB: '2',\n      selectedC: '',\n      selectedD: '',\n      dynamic: '',\n      dynamicData: [{ value: 'a', text: 'a' }, { value: 'b', text: 'b' }],\n      helperTextModel: '',\n      infoLinkModel: '',\n      infoIconModel: '',\n      preIconModel: '',\n      multiple: ['1', '2'],\n      multiple2: ['-1'],\n      multiple2Data: ['a', 'b', 'c', 'd'],\n      backgroundColor: 'primary',\n    };\n  },\n  watch: {\n    $route(to) {\n      this.setBackground(to.query.background);\n    },\n  },\n  mounted() {\n    this.setBackground(this.$router.currentRoute.query.background);\n  },\n  methods: {\n    inputEventHandler(selectedValue, event) {\n      console.log('input Event event = ', event, ' selectedValue = ', selectedValue); // eslint-disable-line\n    },\n    inputChange(selectedValue, event) {\n      console.log('change Event event = ', event, ' selectedValue = ', selectedValue); // eslint-disable-line\n    },\n    doExternal(v, e) {\n      console.log('EXTERNAL', v, e); // eslint-disable-line\n    },\n    setBackground(background) {\n      switch (background) {\n        case 'primary':\n          this.backgroundColor = 'primary';\n          break;\n        case 'secondary':\n          this.backgroundColor = 'secondary';\n          break;\n        default:\n          this.backgroundColor = 'primary';\n      }\n    },\n  },\n};\n</script>\n\n<style>\n  .standard-select {\n    width: 25%;\n  }\n</style>\n"]}, media: undefined });
+      inject("data-v-fa961e0e_0", { source: "\n.standard-select {\n  width: 25%;\n}\n", map: {"version":3,"sources":["/home/runner/work/rei-cedar/rei-cedar/src/components/select/examples/Selects.vue"],"names":[],"mappings":";AAsWA;EACA,UAAA;AACA","file":"Selects.vue","sourcesContent":["<template>\n  <div>\n    <cdr-text\n      tag=\"h2\"\n      modifier=\"heading-sans-400 heading-sans-500@md heading-sans-500@lg\"\n    >\n      Selects\n    </cdr-text>\n    <hr class=\"icon-hr\">\n\n    <div data-backstop=\"select-target\">\n      <!-- Default Example -->\n      <cdr-select\n        label=\"Default\"\n        v-model=\"selectedA\"\n        :background=\"backgroundColor\"\n        prompt=\"Choose one\"\n\n        @select-change=\"doExternal\"\n      >\n        <option value=\"1\">\n          1\n        </option>\n        <option value=\"2\">\n          2\n        </option>\n        <option value=\"3\">\n          3\n        </option>\n        <option value=\"4\">\n          4\n        </option>\n      </cdr-select>\n      <cdr-text>Selected Value: {{ selectedA }}</cdr-text>\n\n      <hr class=\"icon-hr\">\n\n      <!-- Required with Prompt Example -->\n      <cdr-select\n        label=\"Required with Prompt\"\n        v-model=\"selectedB\"\n        :background=\"backgroundColor\"\n        prompt=\"Choose one\"\n        required\n      >\n        <option value=\"1\">\n          1\n        </option>\n        <option value=\"2\">\n          2\n        </option>\n        <option value=\"3\">\n          3\n        </option>\n        <option value=\"4\">\n          4\n        </option>\n      </cdr-select>\n      <cdr-text>Selected Value: {{ selectedB }}</cdr-text>\n    </div>\n    <hr class=\"icon-hr\">\n\n    <!-- Disabled Select -->\n    <cdr-select\n      label=\"Disabled select\"\n      v-model=\"selectedDisabled\"\n      :background=\"backgroundColor\"\n      disabled\n    >\n      <option value=\"1\">\n        1\n      </option>\n    </cdr-select>\n    <cdr-text>Selected: {{ selectedDisabled }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <!-- Hidden Label Example -->\n    <cdr-select\n      label=\"Hidden label text\"\n      hide-label\n      v-model=\"selectedC\"\n      :background=\"backgroundColor\"\n      prompt=\"Hidden label\"\n    >\n      <option value=\"1\">\n        1\n      </option>\n      <option value=\"2\">\n        2\n      </option>\n      <option value=\"3\">\n        3\n      </option>\n      <option value=\"4\">\n        4\n      </option>\n    </cdr-select>\n    <cdr-text>Selected Value: {{ selectedC }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <!-- No Prompt Example -->\n    <cdr-select\n      label=\"No Prompt\"\n\n      v-model=\"selectedD\"\n      :background=\"backgroundColor\"\n    >\n      <option value=\"1\">\n        1\n      </option>\n      <option value=\"2\">\n        2\n      </option>\n      <option value=\"3\">\n        3\n      </option>\n      <option value=\"REALLY REALLY LONG VALUE REALLY REALLY LONG VALUE\">\n        REALLY REALLY LONG VALUE REALLY REALLY LONG VALUE\n      </option>\n    </cdr-select>\n    <cdr-text>Selected Value: {{ selectedD }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <!-- Dynamic Data Example -->\n    <cdr-select\n      label=\"Dynamic\"\n      v-model=\"dynamic\"\n      :background=\"backgroundColor\"\n      :options=\"dynamicData\"\n\n      prompt=\"Choose One\"\n    />\n    <cdr-text>Selected: {{ dynamic }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <!-- Helper Text Example -->\n    <cdr-select\n      label=\"Example with Helper Text\"\n      v-model=\"helperTextModel\"\n      :background=\"backgroundColor\"\n      :options=\"dynamicData\"\n\n      prompt=\"Choose One\"\n    >\n      <template slot=\"helper-text\">\n        This is helper text.\n      </template>\n\n      <template slot=\"info\">\n        <cdr-link\n          href=\"#/selects\"\n          modifier=\"standalone\"\n        >\n          Info Link/Icon\n        </cdr-link>\n      </template>\n    </cdr-select>\n    <cdr-text>Selected Value: {{ helperTextModel }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <!-- Info Link Example -->\n    <cdr-select\n      label=\"Example with Info Link\"\n      v-model=\"infoLinkModel\"\n      :background=\"backgroundColor\"\n      :options=\"dynamicData\"\n\n      prompt=\"Choose One\"\n    >\n      <template slot=\"info\">\n        <cdr-link\n          href=\"#/selects\"\n          modifier=\"standalone\"\n        >\n          Info Link/Icon\n        </cdr-link>\n      </template>\n    </cdr-select>\n    <cdr-text>Selected: {{ infoLinkModel }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <!-- Info Icon Example -->\n    <cdr-select\n      label=\"Example with Info Icon\"\n      v-model=\"infoIconModel\"\n      :background=\"backgroundColor\"\n      :options=\"dynamicData\"\n\n      prompt=\"Choose One\"\n    >\n      <template slot=\"info-action\">\n        <cdr-link tag=\"button\" type=\"button\">\n          <icon-information-stroke inherit-color />\n          <span class=\"cdr-display-sr-only\">Information!</span>\n        </cdr-link>\n      </template>\n    </cdr-select>\n    <cdr-text>Selected Value: {{ infoIconModel }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <!-- Pre Icon Example -->\n    <cdr-select\n      label=\"Example with Pre Icon\"\n      v-model=\"preIconModel\"\n      :background=\"backgroundColor\"\n      :options=\"dynamicData\"\n\n      prompt=\"Choose One\"\n    >\n      <template slot=\"pre-icon\">\n        <icon-lock-locked-stroke />\n      </template>\n    </cdr-select>\n    <cdr-text>Selected Value: {{ preIconModel }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <!-- Error Example -->\n    <cdr-select\n      label=\"Example with error\"\n      v-model=\"preIconModel\"\n      :background=\"backgroundColor\"\n      :options=\"dynamicData\"\n\n      prompt=\"Choose One\"\n      :error=\"true\"\n    >\n      <template slot=\"error\">\n        error message goes here\n      </template>\n    </cdr-select>\n    <hr class=\"icon-hr\">\n\n    <!-- Large Select Example -->\n    <cdr-select\n      label=\"Size = Large\"\n      v-model=\"dynamic\"\n      :background=\"backgroundColor\"\n      size=\"large\"\n      :options=\"dynamicData\"\n\n      prompt=\"Choose One\"\n    />\n    <cdr-text>Selected Value: {{ dynamic }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <cdr-text class=\"cdr-my-space-two-x\">\n      Multiple Select with size\n    </cdr-text>\n\n    <cdr-select\n      label=\"Multiple Prompt\"\n      v-model=\"multiple\"\n      :background=\"backgroundColor\"\n      :multiple-size=\"6\"\n      multiple\n    >\n      <option\n        value=\"1\"\n      >\n        1\n      </option>\n      <option value=\"2\">\n        2\n      </option>\n      <option\n        value=\"3\"\n      >\n        3\n      </option>\n      <option value=\"4\">\n        4\n      </option>\n      <option value=\"5\">\n        5\n      </option>\n      <option value=\"6\">\n        6\n      </option>\n    </cdr-select>\n    <cdr-text>Selected Values: {{ multiple }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <cdr-text class=\"cdr-my-space-two-x\">\n      Multiple Select\n    </cdr-text>\n\n    <cdr-select\n      label=\"Multiple Prompt\"\n      v-model=\"multiple2\"\n      :background=\"backgroundColor\"\n      multiple\n      :options=\"multiple2Data\"\n    />\n    <cdr-text>Selected Values: {{ multiple2 }}</cdr-text>\n    <hr class=\"icon-hr\">\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\nexport default {\n  name: 'Selects',\n  components: Components,\n  data() {\n    return {\n      selectedDisabled: '',\n      selectedA: '',\n      selectedB: '2',\n      selectedC: '',\n      selectedD: '',\n      dynamic: '',\n      dynamicData: [{ value: 'a', text: 'a' }, { value: 'b', text: 'b' }],\n      helperTextModel: '',\n      infoLinkModel: '',\n      infoIconModel: '',\n      preIconModel: '',\n      multiple: ['1', '2'],\n      multiple2: ['-1'],\n      multiple2Data: ['a', 'b', 'c', 'd'],\n      backgroundColor: 'primary',\n    };\n  },\n  watch: {\n    $route(to) {\n      this.setBackground(to.query.background);\n    },\n  },\n  mounted() {\n    this.setBackground(this.$router.currentRoute.query.background);\n  },\n  methods: {\n    inputEventHandler(selectedValue, event) {\n      console.log('input Event event = ', event, ' selectedValue = ', selectedValue); // eslint-disable-line\n    },\n    inputChange(selectedValue, event) {\n      console.log('change Event event = ', event, ' selectedValue = ', selectedValue); // eslint-disable-line\n    },\n    doExternal(v, e) {\n      console.log('EXTERNAL', v, e); // eslint-disable-line\n    },\n    setBackground(background) {\n      switch (background) {\n        case 'primary':\n          this.backgroundColor = 'primary';\n          break;\n        case 'secondary':\n          this.backgroundColor = 'secondary';\n          break;\n        default:\n          this.backgroundColor = 'primary';\n      }\n    },\n  },\n};\n</script>\n\n<style>\n  .standard-select {\n    width: 25%;\n  }\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
