@@ -196,6 +196,7 @@
             :custom-value="c"
             class="cdr-ml-space-one-x"
             name="toppings"
+            aria-labelledby="toppings"
           >{{ c }}</cdr-checkbox>
         </li>
       </cdr-list>

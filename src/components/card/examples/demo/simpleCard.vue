@@ -5,7 +5,7 @@
         class="card-example"
       >
         <cdr-link
-          href="#"
+          href="#bar"
           class="cdr-card__link"
         >A simple card</cdr-link>
       </cdr-card>

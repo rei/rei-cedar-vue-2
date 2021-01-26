@@ -12,7 +12,7 @@
         <div class="cdr-space-inset-one-x">
           <cdr-link
             class="cdr-card__link"
-            href="#"
+            href="#foo"
           >
             <cdr-text
               tag="h2"

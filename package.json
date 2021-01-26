@@ -36,7 +36,7 @@
     "lint": "npm-run-all lint:js lint:styles",
     "lint:js": "eslint --ext .js,.vue,.jsx src",
     "lint:styles": "stylelint src/**/*.scss",
-    "prepush": "#npm-run-all lint unit",
+    "prepush": "npm-run-all lint unit",
     "reference": "backstop reference --configPath=backstop.js",
     "compare": "backstop test --configPath=backstop.js",
     "approve": "backstop approve --configPath=backstop.js",
