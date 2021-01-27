@@ -1,17 +1,17 @@
 // import accordion from 'componentsdir/accordion/examples/Accordion';
-import alert from 'componentsdir/alert/examples/Alert';
-// import breadcrumb from 'componentsdir/breadcrumb/examples/Breadcrumb';
+// import alert from 'componentsdir/alert/examples/Alert';
+import breadcrumb from 'componentsdir/breadcrumb/examples/Breadcrumb';
 // import buttons from 'componentsdir/button/examples/Buttons';
 // import captions from 'componentsdir/caption/examples/Caption';
-import card from 'componentsdir/card/examples/Cards';
+// import card from 'componentsdir/card/examples/Cards';
 // import checkbox from 'componentsdir/checkbox/examples/checkboxes';
 // import formGroup from 'componentsdir/formGroup/examples/FormGroup';
 // import gridTwo from 'componentsdir/gridTwo/examples/GridTwo';
 // import grid from 'componentsdir/grid/examples/Grid';
-import icon from 'componentsdir/icon/examples/Icons';
+// import icon from 'componentsdir/icon/examples/Icons';
 // import images from 'componentsdir/image/examples/Images';
 // import inputs from 'componentsdir/input/examples/Inputs';
-import links from 'componentsdir/link/examples/Links';
+// import links from 'componentsdir/link/examples/Links';
 // import list from 'componentsdir/list/examples/Lists';
 // import modal from 'componentsdir/modal/examples/Modal';
 // import pagination from 'componentsdir/pagination/examples/Pagination';
@@ -22,26 +22,26 @@ import links from 'componentsdir/link/examples/Links';
 // import selects from 'componentsdir/select/examples/Selects';
 // import tables from 'componentsdir/table/examples/Table';
 // import tabs from 'componentsdir/tabs/examples/Tabs';
-import texts from 'componentsdir/text/examples/Text';
+// import texts from 'componentsdir/text/examples/Text';
 // import tooltip from 'componentsdir/tooltip/examples/Tooltip';
 // import utilities from 'componentsdir/Utilities/Utilities';
 // import forms from 'componentsdir/Form/Form';
 
 export default {
-  alert,
+  // alert,
   // accordion,
-  // breadcrumb,
+  breadcrumb,
   // buttons,
   // captions,
-  card,
+  // card,
   // checkbox,
   // formGroup,
   // grid,
   // gridTwo,
-  icon,
+  // icon,
   // images,
   // inputs,
-  links,
+  // links,
   // list,
   // modal,
   // pagination,
@@ -52,7 +52,7 @@ export default {
   // selects,
   // tables,
   // tabs,
-  texts,
+  // texts,
   // tooltip,
   // utilities,
   // forms,

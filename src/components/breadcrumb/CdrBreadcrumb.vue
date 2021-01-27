@@ -1,33 +1,33 @@
 <template>
   <nav
-    :class="style['cdr-breadcrumb']"
+    :class="$style['cdr-breadcrumb']"
     :id="id"
     aria-label="breadcrumbs"
   >
     <ol
       :id="`${id}List`"
-      :class="style['cdr-breadcrumb__list']"
+      :class="$style['cdr-breadcrumb__list']"
     >
       <li
-        :class="style['cdr-breadcrumb__item']"
+        :class="$style['cdr-breadcrumb__item']"
         v-if="truncate"
       >
         <button
           @click="handleEllipsisClick"
           aria-expanded="false"
-          :class="style['cdr-breadcrumb__ellipses']"
+          :class="$style['cdr-breadcrumb__ellipses']"
           :aria-controls="`${id}List`"
           :aria-label="ellipsisLabel"
         >
           <span
-            :class="style['cdr-breadcrumb__ellipses-icon']"
+            :class="$style['cdr-breadcrumb__ellipses-icon']"
             aria-hidden="true"
           >
             . . .
           </span>
         </button>
         <span
-          :class="this.style['cdr-breadcrumb__delimiter']"
+          :class="$style['cdr-breadcrumb__delimiter']"
           aria-hidden="true"
         >
           /
@@ -36,18 +36,18 @@
 
       <li
         v-for="(breadcrumb, index) in items"
-        :class="style['cdr-breadcrumb__item']"
+        :class="$style['cdr-breadcrumb__item']"
         :key="breadcrumb.item.id || breadcrumb.item.name.replace(/ /g, '-').toLowerCase()"
         v-show="!truncate || (index >= items.length - 2)"
       >
         <slot
           name="link"
-          :class="style['cdr-breadcrumb__link']"
+          :class="$style['cdr-breadcrumb__link']"
           :href="breadcrumb.item.url"
           :content="breadcrumb.item.name"
         >
           <a
-            :class="style['cdr-breadcrumb__link']"
+            :class="$style['cdr-breadcrumb__link']"
             :href="breadcrumb.item.url"
             :ref="index ? null : firstItem"
           >
@@ -57,7 +57,7 @@
 
         <span
           v-if="index < items.length - 1"
-          :class="style['cdr-breadcrumb__delimiter']"
+          :class="$style['cdr-breadcrumb__delimiter']"
           aria-hidden="true"
         >
           /
@@ -71,7 +71,7 @@ import { defineComponent, computed, ref, watch, nextTick } from 'vue';
 
 import clsx from 'clsx';
 import { buildClass } from '../../utils/buildClass';
-// import style from './styles/CdrBreadcrumb.scss';
+// import $style from './$styles/CdrBreadcrumb.scss';
 
 export default defineComponent({
   name: 'CdrBreadcrumb',
@@ -127,18 +127,21 @@ export default defineComponent({
     };
     const ellipsisLabel = computed(() =>
       `show ${props.items.length - 2} more navigation level${(props.items.length - 2) > 1 ? 's' : ''}`);
-    const baseClass = style['cdr-breadcrumb'];
+    // const baseClass = ;
 
 
     return {
       truncate,
       handleEllipsisClick,
-      baseClass,
+      // baseClass,
       firstItem,
       clsx,
       ellipsisLabel,
-      // style,
+      // $style,
     };
   }
 });
 </script>
+
+<style lang="scss" module src="./styles/CdrBreadcrumb.scss">
+</style>

@@ -9,6 +9,7 @@ import copyPlugin from 'rollup-plugin-copy';
 import vue from 'rollup-plugin-vue';
 import babel from 'rollup-plugin-babel';
 import postcssImport from 'postcss-import';
+import postcssModules from 'postcss-modules';
 import packageJson from '../package.json';
 
 const env = process.env.NODE_ENV;
@@ -21,11 +22,11 @@ function generateScopedName(name, filename, css) {
   // don't scope anything in the `css/main.scss` (reset, utils, type, etc.)
   if (filename.match(/main\.scss/) || env === 'test') return name;
   // scope classes for components
-  return `${name}_${packageJson.version}`;
+  return `${name}_${packageJson.version.replace(/\./g, '-')}`;
 }
 
 // plugin configs
-let postcssExtract = false;
+let postcssExtract = 'dist/cedar-compiled.css';
 let copyOutput = 'public';
 const copyTargets = [
   { src: 'static/star-null.svg', dest: 'dist/svg' },
@@ -39,7 +40,6 @@ const copyTargets = [
 
 // prod only options
 if (env === 'prod') {
-  postcssExtract = 'dist/cedar-compiled.css';
   copyOutput = 'dist';
 }
 
@@ -49,9 +49,25 @@ if (env !== 'test') {
     {
       src: 'static/cdr-fonts.css',
       dest: `${copyOutput}`,
+    },
+
+  );
+}
+
+if (env === 'dev') {
+  copyTargets.push(
+    {
+      src: 'dist/cedar-compiled.css',
+      dest: 'public/',
+    },
+    {
+      src: 'dist/style/reset.css',
+      dest: 'public/',
     }
   );
 }
+
+
 
 const plugins = [
   (env == 'test' || env == 'dev') && alias({
@@ -84,13 +100,13 @@ const plugins = [
     //     @import "${resolve('src/css/settings/_index.scss')}";`;
     //   },
     // },
-    // preprocessStyles: false,
+    preprocessStyles: true,
     cssModulesOptions: {
       generateScopedName,
-    }
-    // template: {
-    //   isProduction: env === 'prod',
-    // },
+    },
+    template: {
+      isProduction: env === 'prod',
+    },
   }),
   typescript({
     include: 'src/components/**/*.vue'
@@ -107,9 +123,9 @@ const plugins = [
     extract: postcssExtract,
     extensions: ['.scss', '.css'],
     sourceMap: env === 'dev' ? 'inline' : false,
-    modules: {
-      generateScopedName,
-    },
+    // modules: {
+    //   generateScopedName,
+    // },
   }),
   babel({
     exclude: 'node_modules/**',

@@ -2,7 +2,6 @@ import process from 'process';
 // import renameExtensions from '@betit/rollup-plugin-rename-extensions';
 import plugins from './build/rollup-plugins';
 import packageJson from './package.json';
-console.log("WHAT")
 const env = process.env.NODE_ENV;
 const babelEnv = process.env.BABEL_ENV;
 const { dependencies = {}, peerDependencies = {} } = packageJson;
@@ -60,7 +59,7 @@ if (env === 'prod' && babelEnv === 'esm') {
         // }),
       ],
       external: env === 'prod' ? externalFn : undefined,
-      // preserveModules: true,
+      preserveModules: true,
     },
   );
 }

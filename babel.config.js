@@ -1,7 +1,6 @@
 /* eslint-disable */
 
 module.exports = function (api) {
-  console.log('HEYY')
   const env = process.env.NODE_ENV;
   const babelEnv = process.env.BABEL_ENV;
 
