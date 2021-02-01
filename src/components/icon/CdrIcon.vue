@@ -1,6 +1,6 @@
 <template>
   <svg v-bind="dataObj"
-    :class="componentClass"
+    :class="clsx($stylee[baseClass], $stylee[sizeClass], $stylee[inheritColorClass])"
   >
     <slot/>
     <use
@@ -15,7 +15,6 @@ import { defineComponent, computed } from 'vue';
 import clsx from 'clsx';
 import { buildClass } from '../../utils/buildClass';
 import propValidator from '../../utils/propValidator';
-import style from './styles/CdrIcon.scss';
 
 export default defineComponent({
   name: 'CdrIcon',
@@ -39,14 +38,15 @@ export default defineComponent({
     },
   },
   setup(props, ctx) {
-    console.log(clsx, 'TOOOOOOOO')
     const baseClass = style['cdr-icon'];
     const hideSr = !ctx.attrs['aria-label'] && ! ctx.attrs['aria-labelledby']
-    const inheritColorClass = computed(() => props.inheritColor && style['cdr-icon--inherit-color']);
-    const sizeClass = computed(() => props.size && buildClass('cdr-icon', props.size, style));
-    const componentClass = computed(() => clsx(baseClass, sizeClass.value, inheritColorClass.value))
+    const inheritColorClass = computed(() => props.inheritColor && buildCLass(baseClass,'inherit-color'));
+    const sizeClass = computed(() => props.size && buildClass('cdr-icon', props.size));
     return {
-      componentClass,
+      baseClass,
+      inheritColorClass,
+      sizeClass,
+      clsx,
       dataObj: {
         xmlns: 'http://www.w3.org/2000/svg',
         viewBox: '0 0 24 24',
@@ -55,4 +55,5 @@ export default defineComponent({
     }
   }
 });
-</script>
+</script><style lang="scss" module src="./styles/CdrIcon.scss">
+</style>

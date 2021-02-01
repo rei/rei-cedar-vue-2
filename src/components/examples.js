@@ -9,7 +9,7 @@ import breadcrumb from 'componentsdir/breadcrumb/examples/Breadcrumb';
 // import gridTwo from 'componentsdir/gridTwo/examples/GridTwo';
 // import grid from 'componentsdir/grid/examples/Grid';
 // import icon from 'componentsdir/icon/examples/Icons';
-// import images from 'componentsdir/image/examples/Images';
+import images from 'componentsdir/image/examples/Images';
 // import inputs from 'componentsdir/input/examples/Inputs';
 // import links from 'componentsdir/link/examples/Links';
 // import list from 'componentsdir/list/examples/Lists';
@@ -22,7 +22,7 @@ import breadcrumb from 'componentsdir/breadcrumb/examples/Breadcrumb';
 // import selects from 'componentsdir/select/examples/Selects';
 // import tables from 'componentsdir/table/examples/Table';
 // import tabs from 'componentsdir/tabs/examples/Tabs';
-// import texts from 'componentsdir/text/examples/Text';
+import texts from 'componentsdir/text/examples/Text';
 // import tooltip from 'componentsdir/tooltip/examples/Tooltip';
 // import utilities from 'componentsdir/Utilities/Utilities';
 // import forms from 'componentsdir/Form/Form';
@@ -39,7 +39,7 @@ export default {
   // grid,
   // gridTwo,
   // icon,
-  // images,
+  images,
   // inputs,
   // links,
   // list,
@@ -52,7 +52,7 @@ export default {
   // selects,
   // tables,
   // tabs,
-  // texts,
+  texts,
   // tooltip,
   // utilities,
   // forms,

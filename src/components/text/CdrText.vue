@@ -1,7 +1,7 @@
 <template>
   <component
     :is="tag"
-    :class="`${baseClass} ${modifierClass}`"
+    :class="clsx($style[baseClass], modifierClass)"
   >
     <slot/>
   </component>
@@ -9,6 +9,7 @@
 
 <script lang="ts">
 import { defineComponent, computed} from 'vue';
+import clsx from 'clsx';
 import style from './styles/CdrText.scss';
 
 export default defineComponent({
@@ -23,13 +24,18 @@ export default defineComponent({
       required: false,
     }
   },
-  setup(props) {
-    const modifierClass = computed(() => props.modifier && `cdr-text--${props.modifier}`);
-    // TODO: use clsx here
+  setup(props, ctx) {
+    const baseClass = 'cdr-text';
+    const modifierClass = computed(() => buildClass(baseClass, props.modifier));
+
     return {
-      baseClass: style['cdr-text'],
+      baseClass,
       modifierClass,
+      clsx,
     }
   },
 });
 </script>
+
+<style lang="scss" module src="./styles/CdrText.scss">
+</style>

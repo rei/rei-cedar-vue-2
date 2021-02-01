@@ -1,32 +1,42 @@
 <template>
-      <div
-        v-if="ratio"
-        :style="{ '--ratio': this.ratioPct }"
-        :class="wrapperClass"
-      >
-        <img
-          style={this.cropObject}
-          :class="componentClass"
-          :src="src"
-          :alt="alt"
-          {...{ attrs: this.$attrs, on: this.$listeners }}
-        />
-      </div>
-      <img
-        v-else
-        :class="componentClass"
-        :src="src"
-        :alt="alt"
-      />);
+  <div
+    v-if="ratio"
+    :style="{ '--ratio': ratioPct }"
+    :class="$style[ratioClass]"
+  >
+    <img
+      :style="cropObject"
+      :class="clsx(
+        $style[baseClass],
+        $style[modifierClass],
+        $style[radiusClass],
+        $style[coverWrapperClass],
+        $style[cropClass],
+        $style[coverClass],
+      )"
+      :src="src"
+      :alt="alt"
+      v-bind="$attrs"
+    />
+  </div>
+  <img
+    v-else
+    :class="clsx(
+      $style[baseClass],
+      $style[modifierClass],
+      $style[radiusClass],
+    )"
+    :src="src"
+    :alt="alt"
+  />
 </template>
 <script lang="ts">
 import { defineComponent, computed } from 'vue';
 import clsx from 'clsx';
 import { buildClass } from '../../utils/buildClass';
 import propValidator from '../../utils/propValidator';
-import style from './styles/CdrImg.scss';
 
-export default {
+export default defineComponent({
   name: 'CdrImg',
   inheritAttrs: false,
   props: {
@@ -90,69 +100,44 @@ export default {
     },
   },
 
-  render() {
+  setup(props, ctx) {
+    const baseClass = 'cdr-img';
+    const ratioClass = 'cdr-image-ratio';
+    const coverWrapperClass = 'cdr-image-ratio__cover';
+    const modifierClass = computed(() => buildClass(baseClass, props.modifier));
+    const radiusClass = computed(() => buildClass(baseClass, props.radius));
 
 
-    // wrapperClass this.style['cdr-image-ratio']
+    const cropObject = computed(() => { objectPosition: props.crop });
+    const ratioPct = computed(() => {
+      if (props.ratio === 'square') {
+        return '100%';
+      }
+      if (props.ratio) {
+        const [x, y] = props.ratio.split('-');
+        return `${(y / x) * 100}%`;
+      }
+      return '0%';
+    })
 
-//
-//     <!-- class={clsx(
-//       this.style[this.baseClass],
-//       this.modifierClass,
-//       this.radiusClass,
-//       this.coverClass,
-//     )} -->
-// <!-- componentClass clsx(this.style[this.baseClass],
-//   this.modifierClass,
-//   this.radiusClass,
-//   this.lazyClass) -->
-
-
-
-// data() {
-//   return {
-//     style,
-//   };
-// },
-// computed: {
-//   baseClass() {
-//     return 'cdr-image';
-//   },
-//   radiusClass() {
-//     return this.radius ? this.style[`cdr-image--${this.radius}`] : '';
-//   },
-//   coverClass() {
-//     const classObj = {};
-//     classObj[this.style['cdr-image-ratio__cover']] = true;
-//     classObj[this.style['cdr-image-ratio__cover--crop']] = this.crop;
-//     classObj[this.style['cdr-image-ratio__cover--cover']] = this.cover;
-//     return classObj;
-//   },
-//   cropObject() {
-//     return {
-//       objectPosition: this.crop,
-//     };
-//   },
-//   ratioPct() {
-//     if (this.ratio === 'square') {
-//       return '100%';
-//     }
-//     if (this.ratio) {
-//       const [x, y] = this.ratio.split('-');
-//       return `${(y / x) * 100}%`;
-//     }
-//     return '0%';
-//   },
-// },
-const modifierClass = computed(() => buildClass('cdr-img', props.modifier, style));
-
-
-
-
+    const cropClass = computed(() => props.crop && buildClass(coverWrapperClass, 'crop'));
+    const coverClass = computed(() => props.cover && buildClass(coverWrapperClass, 'cover'));
 
     return {
-
+      baseClass,
+      ratioClass,
+      coverWrapperClass,
+      modifierClass,
+      radiusClass,
+      cropObject,
+      ratioPct,
+      cropClass,
+      coverClass,
+      clsx,
     }
   },
-};
+});
 </script>
+
+<style lang="scss" module src="./styles/CdrImg.scss">
+</style>

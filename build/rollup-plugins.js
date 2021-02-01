@@ -9,7 +9,7 @@ import copyPlugin from 'rollup-plugin-copy';
 import vue from 'rollup-plugin-vue';
 import babel from 'rollup-plugin-babel';
 import postcssImport from 'postcss-import';
-import postcssModules from 'postcss-modules';
+// import postcssModules from 'postcss-modules';
 import packageJson from '../package.json';
 
 const env = process.env.NODE_ENV;
@@ -100,6 +100,8 @@ const plugins = [
     //     @import "${resolve('src/css/settings/_index.scss')}";`;
     //   },
     // },
+    // https://github.com/vuejs/rollup-plugin-vue/blob/cd652cd92e7d21bda00f32e47530a8946963a1cc/docs/migrating.md
+    // css: false, // TODO: THIS WILL auto inject styles!!!!! might make dev simpler!!!!
     preprocessStyles: true,
     cssModulesOptions: {
       generateScopedName,

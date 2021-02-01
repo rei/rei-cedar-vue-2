@@ -1,7 +1,18 @@
 <template>
   <component
     :is="tag"
-    :class="componentClass"
+    :class="clsx(
+      $style[baseClass],
+      $style[modifierClass],
+      $style[sizeClass],
+      $style[fullWidthClass],
+      $style[iconOnlyClass],
+      $style[iconLeftClass],
+      $style[iconRightClass],
+      $style[elevatedClass],
+      $style[iconOnlyClass],
+      $style[withBackgroundClass],
+    )"
     :type="type"
   >
     <slot name="icon-left"/>
@@ -14,9 +25,9 @@
 <script lang="ts">
 import { defineComponent, computed } from 'vue';
 import clsx from 'clsx';
-import fullWidth from '../../mixins/fullWidth';
+
+import { buildClass, buildBooleanClass } from '../../utils/buildClass';
 import propValidator from '../../utils/propValidator';
-import style from './styles/CdrButton.scss';
 
 export default defineComponent({
   name: 'CdrButton',
@@ -75,70 +86,48 @@ export default defineComponent({
       default: false,
     },
   },
-  // data() {
-  //   return {
-  //     style,
-  //   };
-  // },
-  // computed: {
+  setup(props, ctx) {
+    const baseClass = 'cdr-button';
+    const modifierClass = computed(() => buildClass(baseClass, props.modifier));
+    const elevatedClass = computed(() => props.elevated && buildClass(baseClass, 'elevated'));
+    const fullWidthClass = computed(() => {
+      return !props.iconOnly && props.fullWidth &&
+        buildBooleanClass(baseClass, props.fullWidth, 'full-width');
+    });
+    const sizeClass = computed(() => {
+      return !props.iconOnly ?
+        buildClass(baseClass, props.size) :
+        `cdr-button--icon-only-${props.size}`;
+    });
+    const iconLeftClass = computed(() =>
+      ctx.slots['icon-left'] && ctx.slots.default &&
+        buildClass(baseClass, 'has-icon-left')
+    );
+    const iconRightClass = computed(() =>
+      ctx.slots['icon-right'] && ctx.slots.default &&
+        buildClass(baseClass, 'has-icon-right')
+    );
 
-  //   iconClass() {
-  //     const classes = [];
-  //
-  //     if ((this.$slots['icon-left'] || this.$slots.icon) && this.$slots.default) {
-  //       /* only add class for buttons with text + icon on left */
-  //       classes.push(this.modifyClassName(this.baseClass, 'has-icon-left'));
-  //     }
-  //
-  //     if (this.$slots['icon-right'] && this.$slots.default) {
-  //       /* only add class for buttons with text + icon on right */
-  //       classes.push(this.modifyClassName(this.baseClass, 'has-icon-right'));
-  //     }
-  //
-  //     if (this.elevated) {
-  //       classes.push(this.modifyClassName(this.baseClass, 'elevated'));
-  //     }
-  //
-  //     if (this.iconOnly) {
-  //       classes.push(this.modifyClassName(this.baseClass, 'icon-only'));
-  //     }
-  //
-  //     if (this.iconOnly && this.withBackground) {
-  //       classes.push(this.modifyClassName(this.baseClass, 'with-background'));
-  //     }
-  //
-  //     return classes.join(' ');
-  //   },
-  // },
-  setup(props) {
-
-
-    //   baseClass() {
-    //     return 'cdr-button';
-    //   },
-    //   defaultClass() {
-    //     return this.modifier ? undefined : this.modifyClassName(this.baseClass, 'primary');
-    //   },
-    //   buttonSizeClass() {
-    //     return !this.iconOnly ? this.sizeClass : this.style[`cdr-button--icon-only-${this.size}`];
-    //   },
-    // \clsx(
-    //   this.style[this.baseClass],
-    const baseClass = style['cdr-button']
-    const modifierClass = computed(() => );
-    const buttonSizeClass = computed(() => ); // !!! SIZELCASS
-    const fullWidthClass = computed(() => );
-    const iconClass = computed(() => );
-    // )
-// TODO: can default/base/modifier be cleaned? seems like 1 too many!!!
-    const componentClass = computed(() => clsx(baseClass, modifierClass.value, buttonSizeClass.value, fullWidthClass.value, iconClass.value));
-    // TYPE
-
+    const iconOnlyClass = computed(() => props.iconOnly && buildClass(baseClass, 'icon-only'));
+    const withBackgroundClass = computed(() => props.iconOnly && props.withBackground && buildClass(baseClass, 'with-background'));
 
     return {
-      componentClass,
-      type: props.tag === 'button' ? props.type : null
+      clsx,
+      type: props.tag === 'button' ? props.type : null,
+      baseClass,
+      modifierClass,
+      fullWidthClass,
+      sizeClass,
+      iconOnlyClass,
+      iconLeftClass,
+      iconRightClass,
+      elevatedClass,
+      iconOnlyClass,
+      withBackgroundClass,
     }
   }
 });
 </script>
+
+<style lang="scss" module src="./styles/CdrButton.scss">
+</style>

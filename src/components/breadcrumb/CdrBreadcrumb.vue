@@ -70,8 +70,6 @@
 import { defineComponent, computed, ref, watch, nextTick } from 'vue';
 
 import clsx from 'clsx';
-import { buildClass } from '../../utils/buildClass';
-// import $style from './$styles/CdrBreadcrumb.scss';
 
 export default defineComponent({
   name: 'CdrBreadcrumb',
@@ -127,17 +125,14 @@ export default defineComponent({
     };
     const ellipsisLabel = computed(() =>
       `show ${props.items.length - 2} more navigation level${(props.items.length - 2) > 1 ? 's' : ''}`);
-    // const baseClass = ;
 
 
     return {
       truncate,
       handleEllipsisClick,
-      // baseClass,
       firstItem,
       clsx,
       ellipsisLabel,
-      // $style,
     };
   }
 });

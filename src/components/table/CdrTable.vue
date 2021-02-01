@@ -1,8 +1,15 @@
 <template>
-  <div :class="wrapperClass">
+  <div :class="$style[wrapperClass]">
     <table
       v-bind="$attrs"
-      :class="componentClass"
+      :class="clsx(
+        $style[baseClass],
+        $style[sizeClass],
+        $style[stripedClass],
+        $style[hoverClass],
+        $style[borderClass],
+        $style[fullWidthClass],
+      )"
     >
       <slot />
     </table>
@@ -13,9 +20,8 @@
 <script lang="ts">
 import { defineComponent, computed } from 'vue';
 import clsx from 'clsx';
-import { buildClass, modifyClassName, responsiveModifyClass } from '../../utils/buildClass';
+import { buildClass, buildBooleanClass } from '../../utils/buildClass';
 import propValidator from '../../utils/propValidator';
-import style from './styles/CdrTable.scss';
 
 export default defineComponent({
   name: 'CdrTable',
@@ -51,21 +57,28 @@ export default defineComponent({
   },
   setup(props) {
     const baseClass = style['cdr-table'];
-    // Performance? one big class computed or multiple? just use clsx in the template to bind them?
     const sizeClass = computed(() => props.size && buildClass('cdr-table', props.size, style));
-    const stripedClass = computed(() => props.striped && modifyClassName('cdr-table', 'striped'));
-    const hoverClass = computed(() => props.hover && modifyClassName('cdr-table', 'hover'));
-    const borderClass = computed(() => props.border && !props.striped && modifyClassName('cdr-table', 'border'));
-    const fullWidthClass = computed(() => props.fullWidth && responsiveModifyClass('cdr-table', 'full-width', this.fullWidth));
-
-    const componentClass = computed(() => clsx(baseClass, sizeClass.value, stripedClass.value, hoverClass.value, borderClass.value, fullWidthClass.value));
-    const wrapperClass = computed(() => props.responsive && modifyClassName('cdr-table', 'responsive'));
+    const stripedClass = computed(() => props.striped && buildClass('cdr-table', 'striped'));
+    const hoverClass = computed(() => props.hover && buildClass('cdr-table', 'hover'));
+    const borderClass = computed(() => props.border && !props.striped && buildClass('cdr-table', 'border'));
+    const fullWidthClass = computed(() => props.fullWidth &&
+      buildBooleanClass(baseClass, props.fullWidth, 'full-width')
+    );
+    const wrapperClass = computed(() => props.responsive && buildClass('cdr-table', 'responsive'));
 
     return {
       wrapperClass,
-      componentClass,
+      baseClass,
+      sizeClass,
+      stripedClass,
+      hoverClass,
+      borderClass,
+      fullWidthClass,
     };
   },
 });
 
 </script>
+
+<style lang="scss" module src="./styles/CdrTable.scss">
+</style>

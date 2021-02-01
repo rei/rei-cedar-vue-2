@@ -3,17 +3,18 @@
 /**
  * Returns a modified base class
  */
-const modifyClassName = (base, modifier, style) => {
-  return style
-    ? style[`${base}--${modifier}`]
-    : `${base}--${modifier}`;
+const modifyClassName = (base, modifier) => {
+  return `${base}--${modifier}`;
 };
 
 /**
  *
  * @param {String} prop -- the prop to build classes from
  */
-const buildClass = (baseClass, prop, style, propNamePrefix = false) => {
+
+ // TODO PULL FULLWIDTH UTILITY INTO THIS!!!!!
+const buildClass = (baseClass, prop, propNamePrefix = false) => {
+  if (!prop) return;
   let propArgsArr = prop.split(' ').filter((x) => x);
   let builtClasses = [];
 
@@ -25,7 +26,7 @@ const buildClass = (baseClass, prop, style, propNamePrefix = false) => {
   }
 
   builtClasses = builtClasses
-    .concat(propArgsArr.map((mod) => modifyClassName(baseClass, mod, style)));
+    .concat(propArgsArr.map((mod) => modifyClassName(baseClass, mod)));
 
   return builtClasses.join(' ');
 };
@@ -44,18 +45,30 @@ const buildClass = (baseClass, prop, style, propNamePrefix = false) => {
  *
  * This takes that and returns classes of "cdr-table--full-width@sm cdr-table--full-width@lg"
  */
-const responsiveModifyClass = (base, modifier, prop, style) => {
+const responsiveModifyClass = (base, modifier, prop) => {
   if (typeof prop === 'string') {
     return prop.split(' ')
-      .map((bp) => modifyClassName(base, `${modifier}${bp}`, style))
+      .map((bp) => modifyClassName(base, `${modifier}${bp}`))
       .join(' ');
   }
-  return modifyClassName(base, modifier, style);
+  return modifyClassName(base, modifier);
 };
 
+const buildBooleanClass = (baseClass, prop, name) => {
+  if (typeof prop === 'boolean') {
+    return prop && modifyClassName(baseClass, name);
+  }
+
+  return buildClass(baseClass, prop, true);
+}
 
 export {
   buildClass,
   modifyClassName,
   responsiveModifyClass,
+  buildBooleanClass,
 }
+
+
+// TODO: REFACTOR this stuff to make more sense!!!!!
+// buildclass name should reflect the prop type!!!!
