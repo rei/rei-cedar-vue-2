@@ -20,8 +20,7 @@
 //   render: (app) => app(Dev),
 // });
 
-
-
 import KitchenSink from 'srcdir/dev/KitchenSink';
-import {createApp} from 'vue';
-createApp(KitchenSink).mount("#main")
+import { createApp } from 'vue';
+
+createApp(KitchenSink).mount('#main');

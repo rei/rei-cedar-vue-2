@@ -67,7 +67,10 @@
   </nav>
 </template>
 <script lang="ts">
-import { defineComponent, computed, ref, watch, nextTick } from 'vue';
+import {
+  defineComponent, computed, ref, watch,
+  // nextTick,
+} from 'vue';
 
 import clsx from 'clsx';
 
@@ -105,27 +108,27 @@ export default defineComponent({
       required: true,
     },
   },
-  setup(props, ctx) {
+  setup(props) {
     // TODO: need watcheffect or does this handle it?
     const truncate = ref(props.truncationEnabled && props.items.length > 2);
 
     watch(props.items, (items) => {
-      truncat.value = props.truncationEnabled && items.length > 2;
+      truncate.value = props.truncationEnabled && items.length > 2;
     });
-
 
     const firstItem = ref(null);
     const handleEllipsisClick = () => {
       truncate.value = false;
       setTimeout(() => {
         // ????? TODO: how to get $el?
-        console.log(firstItem)
+        console.log(firstItem);
         firstItem.value.focus();
       }, 1000);
     };
-    const ellipsisLabel = computed(() =>
-      `show ${props.items.length - 2} more navigation level${(props.items.length - 2) > 1 ? 's' : ''}`);
-
+    const ellipsisLabel = computed(() => {
+      const s = (props.items.length - 2) > 1 ? 's' : '';
+      return `show ${props.items.length - 2} more navigation level${s}`;
+    });
 
     return {
       truncate,
@@ -134,7 +137,7 @@ export default defineComponent({
       clsx,
       ellipsisLabel,
     };
-  }
+  },
 });
 </script>
 

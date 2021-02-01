@@ -3,18 +3,16 @@
 /**
  * Returns a modified base class
  */
-const modifyClassName = (base, modifier) => {
-  return `${base}--${modifier}`;
-};
+const modifyClassName = (base, modifier) => `${base}--${modifier}`;
 
 /**
  *
  * @param {String} prop -- the prop to build classes from
  */
 
- // TODO PULL FULLWIDTH UTILITY INTO THIS!!!!!
+// TODO PULL FULLWIDTH UTILITY INTO THIS!!!!!
 const buildClass = (baseClass, prop, propNamePrefix = false) => {
-  if (!prop) return;
+  if (!prop) return undefined;
   let propArgsArr = prop.split(' ').filter((x) => x);
   let builtClasses = [];
 
@@ -60,15 +58,14 @@ const buildBooleanClass = (baseClass, prop, name) => {
   }
 
   return buildClass(baseClass, prop, true);
-}
+};
 
 export {
   buildClass,
   modifyClassName,
   responsiveModifyClass,
   buildBooleanClass,
-}
-
+};
 
 // TODO: REFACTOR this stuff to make more sense!!!!!
 // buildclass name should reflect the prop type!!!!

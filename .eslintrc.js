@@ -35,7 +35,7 @@ module.exports = {
           ['compositionsdir', resolve('src/compositions')],
           ['mixinsdir', resolve('src/mixins')],
         ],
-        extensions: ['.vue', '.json', '.js']
+        extensions: ['.vue', '.json', '.js', '.ts']
       },
     },
   },
@@ -44,7 +44,8 @@ module.exports = {
     // don't require .vue extension when importing
     'import/extensions': ['error', 'always', {
       js: 'never',
-      vue: 'never'
+      vue: 'never',
+      ts: 'never',
     }],
     // allow optionalDependencies
     'import/no-extraneous-dependencies': ['error', {

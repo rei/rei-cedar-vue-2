@@ -17,7 +17,7 @@
       :src="src"
       :alt="alt"
       v-bind="$attrs"
-    />
+    >
   </div>
   <img
     v-else
@@ -28,7 +28,7 @@
     )"
     :src="src"
     :alt="alt"
-  />
+  >
 </template>
 <script lang="ts">
 import { defineComponent, computed } from 'vue';
@@ -100,15 +100,14 @@ export default defineComponent({
     },
   },
 
-  setup(props, ctx) {
+  setup(props) {
     const baseClass = 'cdr-img';
     const ratioClass = 'cdr-image-ratio';
     const coverWrapperClass = 'cdr-image-ratio__cover';
     const modifierClass = computed(() => buildClass(baseClass, props.modifier));
     const radiusClass = computed(() => buildClass(baseClass, props.radius));
 
-
-    const cropObject = computed(() => { objectPosition: props.crop });
+    const cropObject = computed(() => ({ objectPosition: props.crop }));
     const ratioPct = computed(() => {
       if (props.ratio === 'square') {
         return '100%';
@@ -118,7 +117,7 @@ export default defineComponent({
         return `${(y / x) * 100}%`;
       }
       return '0%';
-    })
+    });
 
     const cropClass = computed(() => props.crop && buildClass(coverWrapperClass, 'crop'));
     const coverClass = computed(() => props.cover && buildClass(coverWrapperClass, 'cover'));
@@ -134,7 +133,7 @@ export default defineComponent({
       cropClass,
       coverClass,
       clsx,
-    }
+    };
   },
 });
 </script>

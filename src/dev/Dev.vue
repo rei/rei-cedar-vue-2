@@ -48,7 +48,8 @@ export default {
     class="cdr-container-fluid"
     ref="focusWrapper"
   >
-    <router-link
+    <!-- TODO: remove this! -->
+    <!-- <router-link
       to="#content"
       append
       v-slot="{ href, route, navigate }"
@@ -56,7 +57,7 @@ export default {
       :href="href"
       @click="navigate"
       class="cdr-display-sr-focusable"
-    >Skip to content</a></router-link>
+    >Skip to content</a></router-link> -->
     <!-- NOTE: For dev environment only, do not load icon sprites in JS in production -->
     <!-- eslint-disable vue/no-v-html -->
     <div

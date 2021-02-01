@@ -1,8 +1,9 @@
 <template>
-  <svg v-bind="dataObj"
-    :class="clsx($stylee[baseClass], $stylee[sizeClass], $stylee[inheritColorClass])"
+  <svg
+    v-bind="dataObj"
+    :class="clsx($style[baseClass], $style[sizeClass], $style[inheritColorClass])"
   >
-    <slot/>
+    <slot />
     <use
       v-if="use"
       :href="use"
@@ -38,9 +39,10 @@ export default defineComponent({
     },
   },
   setup(props, ctx) {
-    const baseClass = style['cdr-icon'];
-    const hideSr = !ctx.attrs['aria-label'] && ! ctx.attrs['aria-labelledby']
-    const inheritColorClass = computed(() => props.inheritColor && buildCLass(baseClass,'inherit-color'));
+    const baseClass = 'cdr-icon';
+    const hideSr = !ctx.attrs['aria-label'] && !ctx.attrs['aria-labelledby'];
+    const inheritColorClass = computed(() => props.inheritColor
+      && buildClass(baseClass, 'inherit-color'));
     const sizeClass = computed(() => props.size && buildClass('cdr-icon', props.size));
     return {
       baseClass,
@@ -51,9 +53,9 @@ export default defineComponent({
         xmlns: 'http://www.w3.org/2000/svg',
         viewBox: '0 0 24 24',
         'aria-hidden': hideSr,
-      }
-    }
-  }
+      },
+    };
+  },
 });
 </script><style lang="scss" module src="./styles/CdrIcon.scss">
 </style>

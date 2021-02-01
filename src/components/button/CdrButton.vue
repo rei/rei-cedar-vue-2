@@ -13,11 +13,11 @@
       $style[iconOnlyClass],
       $style[withBackgroundClass],
     )"
-    :type="type"
+    :type="buttonType"
   >
-    <slot name="icon-left"/>
-    <slot/>
-    <slot name="icon-right"/>
+    <slot name="icon-left" />
+    <slot />
+    <slot name="icon-right" />
   </component>
 </template>
 
@@ -90,30 +90,23 @@ export default defineComponent({
     const baseClass = 'cdr-button';
     const modifierClass = computed(() => buildClass(baseClass, props.modifier));
     const elevatedClass = computed(() => props.elevated && buildClass(baseClass, 'elevated'));
-    const fullWidthClass = computed(() => {
-      return !props.iconOnly && props.fullWidth &&
-        buildBooleanClass(baseClass, props.fullWidth, 'full-width');
-    });
-    const sizeClass = computed(() => {
-      return !props.iconOnly ?
-        buildClass(baseClass, props.size) :
-        `cdr-button--icon-only-${props.size}`;
-    });
-    const iconLeftClass = computed(() =>
-      ctx.slots['icon-left'] && ctx.slots.default &&
-        buildClass(baseClass, 'has-icon-left')
-    );
-    const iconRightClass = computed(() =>
-      ctx.slots['icon-right'] && ctx.slots.default &&
-        buildClass(baseClass, 'has-icon-right')
-    );
+    const fullWidthClass = computed(() => !props.iconOnly && props.fullWidth
+        && buildBooleanClass(baseClass, props.fullWidth, 'full-width'));
+    const sizeClass = computed(() => (!props.iconOnly
+      ? buildClass(baseClass, props.size)
+      : `cdr-button--icon-only-${props.size}`));
+    const iconLeftClass = computed(() => ctx.slots['icon-left'] && ctx.slots.default
+        && buildClass(baseClass, 'has-icon-left'));
+    const iconRightClass = computed(() => ctx.slots['icon-right'] && ctx.slots.default
+        && buildClass(baseClass, 'has-icon-right'));
 
     const iconOnlyClass = computed(() => props.iconOnly && buildClass(baseClass, 'icon-only'));
-    const withBackgroundClass = computed(() => props.iconOnly && props.withBackground && buildClass(baseClass, 'with-background'));
+    const withBackgroundClass = computed(() => props.iconOnly
+      && props.withBackground && buildClass(baseClass, 'with-background'));
 
     return {
       clsx,
-      type: props.tag === 'button' ? props.type : null,
+      buttonType: props.tag === 'button' ? props.type : null,
       baseClass,
       modifierClass,
       fullWidthClass,
@@ -122,10 +115,9 @@ export default defineComponent({
       iconLeftClass,
       iconRightClass,
       elevatedClass,
-      iconOnlyClass,
       withBackgroundClass,
-    }
-  }
+    };
+  },
 });
 </script>
 

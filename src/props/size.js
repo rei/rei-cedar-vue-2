@@ -1,4 +1,4 @@
-import propValidator from '../../utils/propValidator';
+import propValidator from '../utils/propValidator';
 
 export default {
   type: String,
@@ -7,4 +7,4 @@ export default {
     value,
     ['small', 'medium', 'large'],
   ),
-}
+};
