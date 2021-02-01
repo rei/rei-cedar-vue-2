@@ -31,7 +31,7 @@ const config = [
       },
     ],
     plugins,
-    // external: env === 'prod' ? externalFn : undefined,
+    external: env === 'prod' ? externalFn : undefined,
   },
 
 ];
