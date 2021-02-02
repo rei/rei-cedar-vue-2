@@ -9,11 +9,9 @@
 
 <script lang="ts">
 import { defineComponent, computed } from 'vue';
-
-import { buildClass } from '../../utils/buildClass'
 import propValidator from '../../utils/propValidator';
 
-export default {
+export default defineComponent({
   name: 'CdrGridTwo',
   props: {
     /**
@@ -44,9 +42,9 @@ export default {
 
       baseClass,
       gutterClass,
-    }
+    };
   },
-};
+});
 
 </script>
 

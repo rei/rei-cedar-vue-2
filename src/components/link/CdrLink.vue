@@ -6,12 +6,12 @@
     :rel="computedRel"
     :href="computtedHref"
   >
-    <slot/>
+    <slot />
   </component>
 </template>
 
 <script lang="ts">
-import {defineComponent, computed} from 'vue';
+import { defineComponent, computed } from 'vue';
 
 import { buildClass } from '../../utils/buildClass';
 import propValidator from '../../utils/propValidator';
@@ -42,7 +42,7 @@ export default defineComponent({
     rel: String,
   },
   setup(props) {
-    const computedHref = computed(() => props.tag === 'a' ? props.href : null);
+    const computedHref = computed(() => (props.tag === 'a' ? props.href : null));
     const computedRel = computed(() => {
       if (props.target === '_blank') {
         return props.rel || 'noopener noreferrer';
@@ -51,7 +51,7 @@ export default defineComponent({
     });
     const baseClass = 'cdr-link';
     const modifierClass = computed(() => buildClass(baseClass, props.modifier));
-    const inheritColorClass = computed(() => props.inheritColor && style['cdr-link--inherit-color']);
+    const inheritColorClass = computed(() => props.inheritColor && 'cdr-link--inherit-color');
 
     return {
       computedHref,
@@ -60,8 +60,8 @@ export default defineComponent({
       modifierClass,
       inheritColorClass,
     };
-  }
-})
+  },
+});
 </script>
 
 <style lang="scss" module src="./styles/CdrLink.scss">

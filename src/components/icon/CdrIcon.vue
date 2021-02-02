@@ -1,7 +1,7 @@
 <template>
   <svg
     v-bind="dataObj"
-    :class="clsx($style[baseClass], $style[sizeClass], $style[inheritColorClass])"
+    :class="[$style[baseClass], $style[sizeClass], $style[inheritColorClass]]"
   >
     <slot />
     <use
@@ -13,7 +13,7 @@
 </template>
 <script lang="ts">
 import { defineComponent, computed } from 'vue';
-import clsx from 'clsx';
+
 import { buildClass } from '../../utils/buildClass';
 import propValidator from '../../utils/propValidator';
 
@@ -48,7 +48,7 @@ export default defineComponent({
       baseClass,
       inheritColorClass,
       sizeClass,
-      clsx,
+
       dataObj: {
         xmlns: 'http://www.w3.org/2000/svg',
         viewBox: '0 0 24 24',

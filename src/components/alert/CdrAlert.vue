@@ -1,9 +1,8 @@
 <template>
   <div :class="[$style[baseClass], $style[typeClass]]">
-    <slot/>
+    <slot />
   </div>
 </template>
-
 
 <script lang="ts">
 import { defineComponent, computed } from 'vue';
@@ -24,15 +23,14 @@ export default defineComponent({
   },
   setup(props) {
     const baseClass = 'cdr-alert';
-    const typeClass = computed(() => props.type && buildClass(baseClass, props.type))
+    const typeClass = computed(() => props.type && buildClass(baseClass, props.type));
     return {
       baseClass,
       typeClass,
-    }
-  }
+    };
+  },
 });
 </script>
-
 
 <style lang="scss" module src="./styles/CdrAlert.scss">
 </style>

@@ -18,6 +18,7 @@
 <script lang="ts">
 
 import { defineComponent } from 'vue';
+
 export default defineComponent({
   name: 'CdrCaption',
   props: {
@@ -34,7 +35,6 @@ export default defineComponent({
   },
 });
 </script>
-
 
 <style lang="scss" module src="./styles/CdrCaption.scss">
 </style>

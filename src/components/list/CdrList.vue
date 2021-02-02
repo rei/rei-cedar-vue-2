@@ -27,7 +27,7 @@ export default defineComponent({
     modifier: {
       type: String,
       default: '',
-      validator: (value) => propValidator(value, ["ordered", "unordered", "compact", "inline"]),
+      validator: (value) => propValidator(value, ['ordered', 'unordered', 'compact', 'inline']),
     },
   },
   setup(props) {
@@ -36,8 +36,8 @@ export default defineComponent({
     return {
       baseClass,
       modifierClass,
-    }
-  }
+    };
+  },
 });
 </script>
 

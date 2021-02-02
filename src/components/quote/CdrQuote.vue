@@ -23,7 +23,7 @@
 <script lang="ts">
 import { defineComponent, computed } from 'vue';
 
-import { buildClass, modifyClassName, responsiveModifyClass } from '../../utils/buildClass';
+import { buildClass } from '../../utils/buildClass';
 import propValidator from '../../utils/propValidator';
 
 export default defineComponent({
@@ -45,19 +45,15 @@ export default defineComponent({
     citation: String,
   },
   setup(props) {
-    const modifierClass = computed(() => buildClass('cdr-quote', props.modifier, style));
+    const modifierClass = computed(() => buildClass('cdr-quote', props.modifier));
     return {
       modifierClass,
-      summaryClass: style['cdr-quote__summary'],
-      citationClass: style['cdr-quote__citation'],
-    }
-  }
+      summaryClass: 'cdr-quote__summary',
+      citationClass: 'cdr-quote__citation',
+    };
+  },
 });
 </script>
-
-
-
-
 
 <style lang="scss" module src="./styles/CdrQuote.scss">
 </style>

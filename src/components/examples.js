@@ -8,7 +8,7 @@ import card from 'componentsdir/card/examples/Cards';
 // import formGroup from 'componentsdir/formGroup/examples/FormGroup';
 import gridTwo from 'componentsdir/gridTwo/examples/GridTwo';
 // import grid from 'componentsdir/grid/examples/Grid';
-// import icon from 'componentsdir/icon/examples/Icons';
+import icon from 'componentsdir/icon/examples/Icons';
 import images from 'componentsdir/image/examples/Images';
 // import inputs from 'componentsdir/input/examples/Inputs';
 import links from 'componentsdir/link/examples/Links';

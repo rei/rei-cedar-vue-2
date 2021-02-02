@@ -11,7 +11,10 @@
     </cdr-grid>
 
     <h2>Gutter Example</h2>
-    <cdr-grid class="custom-grid" gutter="none@xs small@sm medium@md large@lg">
+    <cdr-grid
+      class="custom-grid"
+      gutter="none@xs small@sm medium@md large@lg"
+    >
       <div
         v-for="item in items"
         class="grid-item"
@@ -22,7 +25,10 @@
     </cdr-grid>
 
     <h2>List Based Example</h2>
-    <cdr-grid class="custom-grid" tag="ul">
+    <cdr-grid
+      class="custom-grid"
+      tag="ul"
+    >
       <li
         v-for="item in items"
         class="grid-item"

@@ -1,11 +1,14 @@
 <template>
-  <component :is="tag" :class="$style[componentClass]">
+  <component
+    :is="tag"
+    :class="$style[componentClass]"
+  >
     <slot />
   </component>
 </template>
 <script lang="ts">
 
-import { defineComponent } from 'vue'
+import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'CdrCard',
@@ -15,7 +18,7 @@ export default defineComponent({
       default: 'article',
     },
   },
-  setup(props) {
+  setup() {
     return {
       baseClass: 'cdr-card',
     };
