@@ -1,20 +1,19 @@
 <template>
   <component
     :is="tag"
-    :class="componentClass"
+    :class="[$style[baseClass], $style[modifierClass]]"
   >
-    {this.$slots.default}
+    <slot />
   </component>
 </template>
 
 <script lang="ts">
 import { defineComponent, computed } from 'vue';
-import clsx from 'clsx';
+
 import { buildClass } from '../../utils/buildClass';
 import propValidator from '../../utils/propValidator';
-import style from './styles/CdrList.scss';
 
-export default {
+export default defineComponent({
   name: 'CdrList',
   props: {
     /**
@@ -32,11 +31,15 @@ export default {
     },
   },
   setup(props) {
-    const modifierClass = computed(() => buildClass('cdr-list', props.modifier, style));
-    const componentClass = computed(() => clsx(style['cdr-list'], modifierClass.value);
+    const baseClass = 'cdr-list';
+    const modifierClass = computed(() => buildClass(baseClass, props.modifier));
     return {
-      componentClass,
+      baseClass,
+      modifierClass,
     }
   }
-};
+});
 </script>
+
+<style lang="scss" module src="./styles/CdrList.scss">
+</style>

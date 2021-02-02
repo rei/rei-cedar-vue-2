@@ -1,7 +1,7 @@
 <template>
   <component
     :is="tag"
-    :class="clsx(
+    :class="[
       $style[baseClass],
       $style[modifierClass],
       $style[sizeClass],
@@ -12,7 +12,7 @@
       $style[elevatedClass],
       $style[iconOnlyClass],
       $style[withBackgroundClass],
-    )"
+    ]"
     :type="buttonType"
   >
     <slot name="icon-left" />
@@ -24,7 +24,6 @@
 <!-- NOTE: REMOVED icon slot. use icon-left -->
 <script lang="ts">
 import { defineComponent, computed } from 'vue';
-import clsx from 'clsx';
 
 import { buildClass, buildBooleanClass } from '../../utils/buildClass';
 import propValidator from '../../utils/propValidator';
@@ -105,7 +104,7 @@ export default defineComponent({
       && props.withBackground && buildClass(baseClass, 'with-background'));
 
     return {
-      clsx,
+
       buttonType: props.tag === 'button' ? props.type : null,
       baseClass,
       modifierClass,

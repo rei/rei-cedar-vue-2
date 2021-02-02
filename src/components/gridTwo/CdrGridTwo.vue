@@ -1,17 +1,17 @@
 <template>
   <component
     :is="tag"
-    :class="componentClass">
+    :class="[$style[componentClass], $style[gutterClass]]"
+  >
     <slot />
   </component>
 </template>
+
 <script lang="ts">
 import { defineComponent, computed } from 'vue';
-import clsx from 'clsx';
-import { buildClass } from '../../utils/buildClass'
 
+import { buildClass } from '../../utils/buildClass'
 import propValidator from '../../utils/propValidator';
-import style from './styles/CdrGridTwo.scss';
 
 export default {
   name: 'CdrGridTwo',
@@ -35,26 +35,20 @@ export default {
     },
   },
   setup(props) {
-    // const Component = this.tag;
-    // {clsx(this.style['cdr-grid-two'], this.gutterClass)}
+    const baseClass = 'cdr-grid-two';
+    // TODO: buildClass refactor
+    const gutterClass = computed(() => props.gutter
+      && props.gutter.split(' ').map((val) => `cdr-grid-two--gutter-${val}`).join(' '));
 
+    return {
 
-
-
-
-    gutterClass() {
-      const classStr = [];
-      if (this.gutter) {
-        this.gutter.split(' ').forEach((val) => {
-          classStr.push(this.style[`cdr-grid-two--gutter-${val}`]);
-        });
-      }
-      return classStr.join(' ');
-    },
-    return (
-
-    );
+      baseClass,
+      gutterClass,
+    }
   },
 };
 
 </script>
+
+<style lang="scss" module src="./styles/CdrGridTwo.scss">
+</style>

@@ -6,14 +6,14 @@
   >
     <img
       :style="cropObject"
-      :class="clsx(
+      :class="[
         $style[baseClass],
         $style[modifierClass],
         $style[radiusClass],
         $style[coverWrapperClass],
         $style[cropClass],
         $style[coverClass],
-      )"
+      ]"
       :src="src"
       :alt="alt"
       v-bind="$attrs"
@@ -21,18 +21,18 @@
   </div>
   <img
     v-else
-    :class="clsx(
+    :class="[
       $style[baseClass],
       $style[modifierClass],
       $style[radiusClass],
-    )"
+    ]"
     :src="src"
     :alt="alt"
   >
 </template>
 <script lang="ts">
 import { defineComponent, computed } from 'vue';
-import clsx from 'clsx';
+
 import { buildClass } from '../../utils/buildClass';
 import propValidator from '../../utils/propValidator';
 
@@ -96,7 +96,7 @@ export default defineComponent({
     modifier: {
       type: String,
       default: '',
-      validator: (value) => propValidator(value, ['responsive']),
+      validator: (value) => propValidator(value, ['', 'responsive']),
     },
   },
 
@@ -132,7 +132,7 @@ export default defineComponent({
       ratioPct,
       cropClass,
       coverClass,
-      clsx,
+
     };
   },
 });

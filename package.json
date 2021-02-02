@@ -1,6 +1,6 @@
 {
   "name": "@rei/cedar",
-  "version": "9.0.0-alpha.0",
+  "version": "9.0.0-alpha.1",
   "description": "REI Cedar Component Library",
   "homepage": "https://rei.github.io/rei-cedar/",
   "license": "MIT",
@@ -165,7 +165,6 @@
   "dependencies": {
     "@babel/runtime": "^7.12.5",
     "@babel/runtime-corejs3": "^7.12.5",
-    "clsx": "^1.1.1",
     "lodash-es": "^4.17.20",
     "tabbable": "^4.0.0"
   },

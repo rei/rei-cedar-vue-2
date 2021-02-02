@@ -1,14 +1,14 @@
 <template>
-  <div :class="baseClass">
+  <div :class="$style[baseClass]">
     <p
       v-if="summary"
-      :class="summaryClass"
+      :class="$style[summaryClass]"
     >
       {{ summary }}
     </p>
     <cite
       v-if="cite"
-      :class="citeClass"
+      :class="$style[citeClass]"
     >
       {{ credit }}
     </cite>
@@ -16,19 +16,25 @@
 </template>
 
 <script lang="ts">
-import style from './styles/CdrCaption.scss';
-export default {
+
+import { defineComponent } from 'vue';
+export default defineComponent({
   name: 'CdrCaption',
   props: {
     summary: String,
     credit: String,
   },
   setup() {
-    return (
-      baseClass: style['cdr-caption'],
-      summaryClass: style['cdr-caption__summary'],
-      citeClass: style['cdr-caption__cite'],
-    );
+    // TODO: build class for sub items. only really does mods?
+    return {
+      baseClass: 'cdr-caption',
+      summaryClass: 'cdr-caption__summary',
+      citeClass: 'cdr-caption__cite',
+    };
   },
-};
+});
 </script>
+
+
+<style lang="scss" module src="./styles/CdrCaption.scss">
+</style>

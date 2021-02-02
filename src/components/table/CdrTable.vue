@@ -2,14 +2,14 @@
   <div :class="$style[wrapperClass]">
     <table
       v-bind="$attrs"
-      :class="clsx(
+      :class="[
         $style[baseClass],
         $style[sizeClass],
         $style[stripedClass],
         $style[hoverClass],
         $style[borderClass],
         $style[fullWidthClass],
-      )"
+      ]"
     >
       <slot />
     </table>
@@ -19,7 +19,7 @@
 <!-- TODO: class and style are now part of attrs, which breaks stuff? -->
 <script lang="ts">
 import { defineComponent, computed } from 'vue';
-import clsx from 'clsx';
+
 import { buildClass, buildBooleanClass } from '../../utils/buildClass';
 import propValidator from '../../utils/propValidator';
 
@@ -67,7 +67,7 @@ export default defineComponent({
     const wrapperClass = computed(() => props.responsive && buildClass('cdr-table', 'responsive'));
 
     return {
-      clsx,
+
       wrapperClass,
       baseClass,
       sizeClass,

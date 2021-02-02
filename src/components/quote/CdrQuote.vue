@@ -22,10 +22,9 @@
 
 <script lang="ts">
 import { defineComponent, computed } from 'vue';
-import clsx from 'clsx';
+
 import { buildClass, modifyClassName, responsiveModifyClass } from '../../utils/buildClass';
 import propValidator from '../../utils/propValidator';
-import style from './styles/CdrQuote.scss';
 
 export default defineComponent({
   name: 'CdrQuote',
@@ -54,4 +53,11 @@ export default defineComponent({
     }
   }
 });
-<script>
+</script>
+
+
+
+
+
+<style lang="scss" module src="./styles/CdrQuote.scss">
+</style>

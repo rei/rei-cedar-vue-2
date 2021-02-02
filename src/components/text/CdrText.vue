@@ -1,7 +1,7 @@
 <template>
   <component
     :is="tag"
-    :class="clsx($style[baseClass], modifierClass)"
+    :class="[$style[baseClass], modifierClass]"
   >
     <slot />
   </component>
@@ -9,7 +9,7 @@
 
 <script lang="ts">
 import { defineComponent, computed } from 'vue';
-import clsx from 'clsx';
+
 import { buildClass } from '../../utils/buildClass';
 
 export default defineComponent({
@@ -31,7 +31,7 @@ export default defineComponent({
     return {
       baseClass,
       modifierClass,
-      clsx,
+
     };
   },
 });

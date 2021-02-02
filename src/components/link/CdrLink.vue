@@ -1,22 +1,20 @@
 <template>
   <component
     :is="tag"
-    :class="componentClass"
+    :class="[$style[baseClass], $style[modifierClass], $style[inheritColorClass]]"
     :target="target"
     :rel="computedRel"
-    :href="href"
+    :href="computtedHref"
   >
     <slot/>
   </component>
 </template>
 
-
 <script lang="ts">
 import {defineComponent, computed} from 'vue';
-import clsx from 'clsx';
+
 import { buildClass } from '../../utils/buildClass';
 import propValidator from '../../utils/propValidator';
-import style from './styles/CdrLink.scss';
 
 export default defineComponent({
   name: 'CdrLink',
@@ -44,27 +42,27 @@ export default defineComponent({
     rel: String,
   },
   setup(props) {
-    const href = computed(() => props.tag === 'a' ? props.href : null);
+    const computedHref = computed(() => props.tag === 'a' ? props.href : null);
     const computedRel = computed(() => {
       if (props.target === '_blank') {
         return props.rel || 'noopener noreferrer';
       }
       return props.rel;
     });
-
-    const modifierClass = computed(() => buildClass('cdr-link', props.modifier, style));
-
-    const inheritColorClass = computed(() => props.inheritColor ? style['cdr-link--inherit-color'] : '');
-
-    const componentClass = computed(() => clsx(style['cdr-link'], modifierClass.value, inheritColorClass.value));
+    const baseClass = 'cdr-link';
+    const modifierClass = computed(() => buildClass(baseClass, props.modifier));
+    const inheritColorClass = computed(() => props.inheritColor && style['cdr-link--inherit-color']);
 
     return {
-      tag: props.tag,
-      href: props.href,
-      target: props.target,
+      computedHref,
       computedRel,
-      componentClass,
+      baseClass,
+      modifierClass,
+      inheritColorClass,
     };
   }
 })
 </script>
+
+<style lang="scss" module src="./styles/CdrLink.scss">
+</style>

@@ -68,11 +68,9 @@
 </template>
 <script lang="ts">
 import {
-  defineComponent, computed, ref, watch,
+  defineComponent, computed, ref, watchEffect,
   // nextTick,
 } from 'vue';
-
-import clsx from 'clsx';
 
 export default defineComponent({
   name: 'CdrBreadcrumb',
@@ -112,7 +110,7 @@ export default defineComponent({
     // TODO: need watcheffect or does this handle it?
     const truncate = ref(props.truncationEnabled && props.items.length > 2);
 
-    watch(props.items, (items) => {
+    watchEffect((items) => {
       truncate.value = props.truncationEnabled && items.length > 2;
     });
 
@@ -134,7 +132,6 @@ export default defineComponent({
       truncate,
       handleEllipsisClick,
       firstItem,
-      clsx,
       ellipsisLabel,
     };
   },

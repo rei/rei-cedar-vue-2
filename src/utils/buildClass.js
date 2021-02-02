@@ -51,7 +51,7 @@ const responsiveModifyClass = (base, modifier, prop) => {
   }
   return modifyClassName(base, modifier);
 };
-
+// TODO: combine these?
 const buildBooleanClass = (baseClass, prop, name) => {
   if (typeof prop === 'boolean') {
     return prop && modifyClassName(baseClass, name);
