@@ -1,7 +1,7 @@
 <template>
   <component
     :is="tag"
-    :class="componentClass"
+    :class="baseClass"
   >
     <p
       :class="summaryClass"
@@ -45,8 +45,10 @@ export default defineComponent({
     citation: String,
   },
   setup(props) {
-    const modifierClass = computed(() => buildClass('cdr-quote', props.modifier));
+    const baseClass = 'cdr-quote';
+    const modifierClass = computed(() => buildClass(baseClass, props.modifier));
     return {
+      baseClass,
       modifierClass,
       summaryClass: 'cdr-quote__summary',
       citationClass: 'cdr-quote__citation',

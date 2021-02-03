@@ -1,7 +1,7 @@
 <template>
   <component
     :is="tag"
-    :class="$style[componentClass]"
+    :class="$style[baseClass]"
   >
     <slot />
   </component>

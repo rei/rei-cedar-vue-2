@@ -4,7 +4,7 @@
     :class="[$style[baseClass], $style[modifierClass], $style[inheritColorClass]]"
     :target="target"
     :rel="computedRel"
-    :href="computtedHref"
+    :href="computedHref"
   >
     <slot />
   </component>

@@ -1,4 +1,4 @@
-import { shallowMount } from '@vue/test-utils';
+import { shallowMount } from '../../../../test/vue-jest-style-workaround.js';
 import CdrGridTwo from 'componentdir/gridTwo/CdrGridTwo';
 
 describe('CdrGridTwo', () => {

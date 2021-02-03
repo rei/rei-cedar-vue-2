@@ -19,12 +19,11 @@ const config = {
   ],
   moduleNameMapper: {
     'componentdir(.*)$': '<rootDir>/src/components/$1',
-    // "./styles/(.*).scss": "<rootDir>/test/blank.json",
   },
-  // globalSetup: './test/unit-setup.js',
   modulePathIgnorePatterns: [
     'rollup.config.test.js',
     '<rootDir>/test/e2e/',
+    '<rootDir>/unmigrated/',
     '<rootDir>/templates/__tests__',
     '<rootDir>/src/components/accordion',
     '<rootDir>/src/components/checkbox',
@@ -47,9 +46,9 @@ const config = {
 
   ],
   transform: {
+  '.+\\.(css|styl|less|sass|scss)$': '<rootDir>/node_modules/jest-css-modules-transform',
     ".*\\.(vue|ts)$": "vue-jest",
     '^.+\\.(js|vue)?$': 'babel-jest',
-    '.+\\.(css|styl|less|sass|scss)$': '<rootDir>/node_modules/jest-css-modules-transform',
   },
   transformIgnorePatterns: [
     '<rootDir>/node_modules/(?!(lodash-es|@rei\/cdr-tokens)/.*)', // https://stackoverflow.com/questions/42260218/jest-setup-syntaxerror-unexpected-token-export

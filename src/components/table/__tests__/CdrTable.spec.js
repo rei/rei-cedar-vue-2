@@ -1,4 +1,4 @@
-import { shallowMount } from '@vue/test-utils';
+import { shallowMount } from '../../../../test/vue-jest-style-workaround.js';
 import CdrTable from 'componentdir/table/CdrTable';
 
 const basicContent = `<thead>
