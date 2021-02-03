@@ -66,7 +66,7 @@ export default {
     modifier: {
       type: String,
       default: '',
-      validator: (value) => propValidator(value, ['hide-figure']),
+      validator: (value) => propValidator(value, ['', 'hide-figure']),
     },
 
 

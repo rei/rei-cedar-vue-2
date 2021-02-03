@@ -27,12 +27,12 @@ export default defineComponent({
     modifier: {
       type: String,
       default: '',
-      validator: (value) => propValidator(value, ['ordered', 'unordered', 'compact', 'inline']),
+      validator: (value) => propValidator(value, ['', 'ordered', 'unordered', 'compact', 'inline']),
     },
   },
   setup(props) {
     const baseClass = 'cdr-list';
-    const modifierClass = computed(() => buildClass(baseClass, props.modifier));
+    const modifierClass = computed(() => props.modifier && buildClass(baseClass, props.modifier));
     return {
       baseClass,
       modifierClass,

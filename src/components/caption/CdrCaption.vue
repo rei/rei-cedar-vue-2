@@ -7,7 +7,7 @@
       {{ summary }}
     </p>
     <cite
-      v-if="cite"
+      v-if="credit"
       :class="$style[citeClass]"
     >
       {{ credit }}

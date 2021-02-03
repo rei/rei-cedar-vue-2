@@ -37,7 +37,7 @@ export default defineComponent({
     modifier: {
       type: String,
       default: '',
-      validator: (value) => propValidator(value, ['pull']),
+      validator: (value) => propValidator(value, ['', 'pull']),
     },
     /** Caption summary text */
     summary: String,

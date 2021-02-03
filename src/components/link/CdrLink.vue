@@ -34,7 +34,7 @@ export default defineComponent({
     modifier: {
       type: String,
       default: '',
-      validator: (value) => propValidator(value, ['standalone']),
+      validator: (value) => propValidator(value, ['', 'standalone']),
     },
     /** @ignore */
     target: String,
@@ -50,7 +50,7 @@ export default defineComponent({
       return props.rel;
     });
     const baseClass = 'cdr-link';
-    const modifierClass = computed(() => buildClass(baseClass, props.modifier));
+    const modifierClass = computed(() => props.modifier && buildClass(baseClass, props.modifier));
     const inheritColorClass = computed(() => props.inheritColor && 'cdr-link--inherit-color');
 
     return {
