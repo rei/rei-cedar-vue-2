@@ -19,7 +19,7 @@ describe('CdrRadio', () => {
         name: 'testName',
       }
     });
-    expect(wrapper.vm.$refs.radio.hasAttribute('type', 'radio')).toBe(true);
+    expect(wrapper.find('radio').hasAttribute('type', 'radio')).toBe(true);
   });
 
   it('adds a custom label class correctly', () => {
@@ -47,7 +47,7 @@ describe('CdrRadio', () => {
         default: 'Label Test',
       },
     });
-    expect(wrapper.vm.$refs.radio.classList.contains('custom-input-class')).toBe(true);
+    expect(wrapper.find('radio').classList.contains('custom-input-class')).toBe(true);
   });
 
   it('adds a custom content class correctly', () => {
@@ -71,7 +71,7 @@ describe('CdrRadio', () => {
         name: 'testName',
       }
     });
-    expect(wrapper.vm.$refs.radio.hasAttribute('name', 'testName')).toBe(true);
+    expect(wrapper.find('radio').hasAttribute('name', 'testName')).toBe(true);
   });
 
   it('evaluates simple not checked state correctly', () => {
@@ -82,7 +82,7 @@ describe('CdrRadio', () => {
         value: 'AA',
       },
     });
-    expect(wrapper.vm.$refs.radio.checked).toBe(false);
+    expect(wrapper.find('radio').checked).toBe(false);
   });
 
   it('evaluates simple checked state correctly', () => {
@@ -93,7 +93,7 @@ describe('CdrRadio', () => {
         value: 'A',
       },
     });
-    expect(wrapper.vm.$refs.radio.checked).toBe(true);
+    expect(wrapper.find('radio').checked).toBe(true);
   });
 
   it('evaluates complex group not checked state correctly', () => {
@@ -104,7 +104,7 @@ describe('CdrRadio', () => {
         value: {test: 'B'},
       },
     });
-    expect(wrapper.vm.$refs.radio.checked).toBe(false);
+    expect(wrapper.find('radio').checked).toBe(false);
   });
 
   it('evaluates complex group checked state correctly', () => {
@@ -115,7 +115,7 @@ describe('CdrRadio', () => {
         value: {test: 'B', arr: [1,2,3]},
       },
     });
-    expect(wrapper.vm.$refs.radio.checked).toBe(true);
+    expect(wrapper.find('radio').checked).toBe(true);
   });
 
   it('emits a change event with correct value', () => {

@@ -1,28 +1,27 @@
 <template>
-  <div :class="componentClass">
-    <span :class="iconClass"/> <slot v-if="hasErrorSlot" name="error"/>{{!hasErrorSlot && error}}
+  <div :class="$style[baseClass]">
+    <span :class="$style[iconClass]" /> <slot name="error" />
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, computed } from 'vue';
-import style from './styles/CdrFormError.scss';
+import { defineComponent } from 'vue';
 
-export default {
+export default defineComponent({
   name: 'CdrFormError',
   props: {
     error: [Boolean, String],
   },
-  setup(props, ctx) {
-    const componentClass = style['cdr-form-error'];
-    const iconClass = style['cdr-form-error__icon'];
+  setup() {
+    const baseClass = 'cdr-form-error';
+    const iconClass = 'cdr-form-error__icon';
 
-    // TODO: does this neeed to be computed?
-    const hasErrorSlot = ctx.slots.error;
     return {
-      hasErrorSlot,
-      componentClass,
+      baseClass,
       iconClass,
     };
   },
-};
+});
 </script>
+
+<style lang="scss" module src="./styles/CdrFormError.scss">
+</style>

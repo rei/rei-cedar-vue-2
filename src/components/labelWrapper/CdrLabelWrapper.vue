@@ -1,60 +1,50 @@
 <template>
-<div class={this.style['cdr-label-wrapper__container']}>
-  <label class={clsx(
-    this.style['cdr-label-wrapper'],
-    this.style[`cdr-label-wrapper--${this.background}`],
-    this.disabledClass,
-    this.modifierClass,
-    this.sizeClass,
-    this.labelClass,
-  )}>
-    <slot name="input"/>
-    <span class={this.style['cdr-label-wrapper__figure']}/>
-    <div class={clsx(this.style['cdr-label-wrapper__content'], this.contentClass)}>
-      <slot/>
-    </div>
-  </label>
-</div>
+  <div :class="$style['cdr-label-wrapper__container']">
+    <label
+      :class="[
+        $style['cdr-label-wrapper'],
+        $style[`cdr-label-wrapper--${background}`],
+        $style[disabledClass],
+        $style[modifierClass],
+        $style[sizeClass],
+        labelClass, // TODO: not scoped?!?!?!?!
+      ]"
+    >
+      <slot name="input" />
+      <span :class="$style['cdr-label-wrapper__figure']" />
+      <div :class="[$style['cdr-label-wrapper__content'], contentClass]">
+        <slot />
+      </div>
+    </label>
+  </div>
 </template>
 <script lang="ts">
 import { defineComponent, computed } from 'vue';
-import clsx from 'clsx';
-import { buildClass } from '../../utils/buildClass'
-import propValidator from '../../utils/propValidator';
-import style from './styles/CdrLabelWrapper.scss';
+import { buildClass } from '../../utils/buildClass';
+import backgroundProps from '../../props/background';
 
-export default {
+export default defineComponent({
   name: 'CdrLabelWrapper',
   props: {
     labelClass: String,
     contentClass: String,
-    background: {
-      type: [String],
-      default: 'primary',
-      validator: (value) => propValidator(
-        value,
-        ['primary', 'secondary'],
-      ),
-    },
+    background: backgroundProps,
     disabled: Boolean,
   },
-  data() {
+  setup(props) {
+    const baseClass = 'cdr-label-wrapper';
+    const modifierClass = computed(() => buildClass(baseClass, props.modifier));
+    const sizeClass = computed(() => props.size && buildClass(baseClass, props.size));
+    const disabledClass = computed(() => props.disabled && buildClass(baseClass, 'disabled')); // TODO: this works right?
     return {
-      style,
+      baseClass,
+      modifierClass,
+      sizeClass,
+      disabledClass,
     };
   },
-  computed: {
-    baseClass() {
-      return 'cdr-label-wrapper';
-    },
-    disabledClass() {
-      return this.disabled ? this.style['cdr-label-wrapper--disabled'] : '';
-    },
-  },
-  setup(props) {
-    const modifierClass = computed(() => buildClass('cdr-radio', props.modifier, style));
-    const sizeClass = computed(() => props.size && buildClass('cdr-radio', props.size, style));
-    return {};
-  },
-};
+});
 </script>
+
+<style lang="scss" module src="./styles/CdrLabelWrapper.scss">
+</style>

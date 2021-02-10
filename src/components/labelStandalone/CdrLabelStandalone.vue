@@ -1,49 +1,44 @@
 <template>
-  <div :class="wrapperClass">
-      <label
-        v-if="!hideLabel"
-        :class="labelClass"
-        :for="forId"
-        ref="label"
-      >
-        {{ label }}{{ required || optional ? ' ' : ''}}
-        <span v-if="required" aria-label="required">
-          *
-        </span>
-
-        <span
-          v-else-if="optional"
-          :class="optionalClass"
-        >
-          (optional)
-        </span>
-      </label>
-
-<!-- TODO: ??? -->
-    {{ this.labelEl && this.$slots.helper && (<br/>) }}
-
-
-<!-- need to make booleans in setup for whether slots exist? -->
-    { this.$slots.helper && (
+  <div :class="[$style[baseClass], $style[wrapperClass]]">
+    <label
+      v-if="!hideLabel"
+      :class="[$style['cdr-label-standalone__label'], $style[disabledLabelClass]]"
+      :for="forId"
+    >
+      {{ label }}{{ required || optional ? ' ' : '' }}
       <span
-        class={this.style['cdr-label-standalone__helper']}
+        v-if="required"
+        aria-label="required"
       >
-        <slot name="helper"/>
+        *
       </span>
-    )}
 
-    {this.$slots.info && (
       <span
-        class={this.style['cdr-label-standalone__info']}
+        v-else-if="optional"
+        :class="$style['cdr-label-standalone__optional']"
       >
-        <slot name="info"/>
+        (optional)
       </span>
-    )}
+    </label>
+
+    <br v-if="!hideLabel && hasHelper">
+    <span
+      :class="$style['cdr-label-standalone__helper']"
+      v-if="hasHelper"
+    >
+      <slot name="helper" />
+    </span>
+
+    <span
+      v-if="hasInfo"
+      :class="$style['cdr-label-standalone__info']"
+    >
+      <slot name="info" />
+    </span>
   </div>
 </template>
 <script lang="ts">
 import { defineComponent, computed } from 'vue';
-import style from './styles/CdrLabelStandalone.scss';
 
 export default defineComponent({
   name: 'CdrLabelStandalone',
@@ -59,29 +54,24 @@ export default defineComponent({
     hideLabel: Boolean,
   },
   setup(props, ctx) {
-    // optionalClass
-    // helper class
-    // info class
-    // labelClass() {
-    //   return {
-    //     [this.style['cdr-label-standalone__label']]: true,
-    //     [this.style['cdr-label-standalone__label--disabled']]: this.disabled,
-    //   };
-    // },
-    // wrapperClass() {
-    //   const hasContent = !this.hideLabel || this.$slots.helper || this.$slots.info;
-    //   return {
-    //     [this.style['cdr-label-standalone']]: true,
-    //     [this.style['cdr-label-standalone--spacing']]: hasContent,
-    //   };
-    // },
+    const baseClass = 'cdr-label-standalone';
+    const hasHelper = ctx.slots.helper;
+    const hasInfo = ctx.slots.info;
+    const disabledLabelClass = computed(() => props.disabled
+      && 'cdr-label-standalone__label--disabled');
+    const wrapperClass = computed(() => (!props.hideLabel || hasHelper || hasInfo)
+      && 'cdr-label-standalone--spacing');
     return {
-
-      hasLabel: ctx.slots.label,
-      hasHelpeer: ctx.slots.helper,
-      hasInfo: ctx.slots.info,
+      hasHelper,
+      hasInfo,
+      baseClass,
+      disabledLabelClass,
+      wrapperClass,
     };
   },
 });
 
 </script>
+
+<style lang="scss" module src="./styles/CdrLabelStandalone.scss">
+</style>

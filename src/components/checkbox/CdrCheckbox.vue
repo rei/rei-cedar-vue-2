@@ -9,32 +9,32 @@
     :disabled="$attrs.disabled"
   >
     <input
-      :class="[$style['cdr-radio__input'], inputClass]"
-      type="radio"
-      :name="name"
-      slot="input"
-      :checked="modelValue === customValue"
-      :value="customValue"
+      :class="[$style['cdr-checkbox__input'], inputClass]"
+      type="checkbox"
       v-bind="$attrs"
-      @change="$emit('update:modelValue', value)"
+
+      :checked="modelValue"
+      @change="$emit('update:modelValue', $event.target.checked)"
+      :true-value="customValue ? null : trueValue"
+      :false-value="customValue ? null : falseValue"
+      :value="customValue"
+      :indeterminate="indeterminate"
+      slot="input"
     >
     <slot />
   </cdr-label-wrapper>
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue';
-
-import propValidator from '../../utils/propValidator';
 import CdrLabelWrapper from '../labelWrapper/CdrLabelWrapper';
 import sizeProps from '../../props/size';
 import backgroundProps from '../../props/background';
 
 export default defineComponent({
-  name: 'CdrRadio',
+  name: 'CdrCheckbox',
   components: {
     CdrLabelWrapper,
   },
-  // mixins: [modifier, size],
   inheritAttrs: false,
   props: {
     /**
@@ -50,45 +50,46 @@ export default defineComponent({
      */
     contentClass: String,
     /**
-     * Sets the name of the radio. Required.
+     * Show checkbox in indeterminate state. (NOTE: this is a visual-only state and there is no logic for when to show it)
     */
-    name: {
-      type: String,
-      required: true,
+    indeterminate: {
+      type: Boolean,
+      default: false,
     },
-
-    modifier: {
-      type: String,
-      default: '',
-      validator: (value) => propValidator(value, ['', 'hide-figure']),
+    /**
+     * The value when checked.
+    */
+    trueValue: {
+      type: [String, Number, Boolean, Object, Array, Symbol, Function],
+      default: true,
     },
-
-    size: sizeProps,
-
+    /**
+     * The value when unchecked.
+    */
+    falseValue: {
+      type: [String, Number, Boolean, Object, Array, Symbol, Function],
+      default: false,
+    },
+    /**
+     * The value when used in a checkbox group. Replaces `trueValue` and `falseValue`.
+    */
+    customValue: [String, Number, Boolean, Object, Array, Symbol, Function],
     // Set which background type the input renders on
     background: backgroundProps,
-
-    /**
-     * Sets the value of the radio. Required.
-    */
-    customValue: {
-      type: [String, Number, Boolean, Object, Array, Symbol, Function],
-    },
-
-    /** @ignore v-model binding */
+    size: sizeProps,
+    /** @ignore */
     modelValue: {
       type: [String, Number, Boolean, Object, Array, Symbol, Function],
     },
   },
-
   setup() {
-    const baseClass = 'cdr-radio';
+    const baseClass = 'cdr-checkbox';
+
     return {
       baseClass,
     };
   },
 });
 </script>
-
-<style lang="scss" module src="./styles/CdrRadio.scss">
+<style lang="scss" module src="./styles/CdrCheckbox.scss">
 </style>

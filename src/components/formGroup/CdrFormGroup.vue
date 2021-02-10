@@ -1,60 +1,36 @@
 <template>
-<fieldset
-  class={clsx(this.style[this.baseClass], this.disabledClass)}
-  disabled={this.disabled}
->
-  <legend>
-    {this.$slots.label || this.label}
-    {requiredEl || optionalEl ? ' ' : ''}
-    {requiredEl || optionalEl}
-
-
-
-      const requiredEl = this.required ? (
-        <span aria-label="required">
-          *
-        </span>
-      ) : '';
-
-      const optionalEl = this.optional ? (
-        <span
-          class={this.style['cdr-form-group__optional']}
-        >
-          (optional)
-        </span>
-      ) : '';
-
-
-
-
-  </legend>
-  <div class={clsx(this.style['cdr-form-group__wrapper'], this.errorClass)}>
-    {this.$slots.default}
-  </div>
-  {this.error && (
-    <cdr-form-error error={this.error}>
+  <fieldset
+    :class="[$style[baseClass], $style[disabledClass]]"
+    :disabled="disabled"
+  >
+    <legend>
+      <slot name="label" /><span v-if="!hasLabelSlot">{{ label }}</span>
+      <span v-if="required || optional" />
+      <span aria-label="required">*</span>
+      <span :class="$style['cdr-form-group__optional']">
+        (optional)
+      </span>
+    </legend>
+    <div :class="[$style['cdr-form-group__wrapper'], $style[errorClass]]">
+      <slot />
+    </div>
+    <cdr-form-error
+      :error="error"
+      v-if="error"
+    >
       <template slot="error">
-        {this.$slots.error}
+        <slot name="error" />
       </template>
     </cdr-form-error>
-  )}
-</fieldset>
+  </fieldset>
 </template>
 <script lang="ts">
 import { defineComponent, computed } from 'vue';
-import clsx from 'clsx';
-import style from './styles/CdrFormGroup.scss';
-import IconErrorStroke from '../icon/comps/error-stroke';
 import CdrFormError from '../formError/CdrFormError';
-import { buildClass } from '../../utils/buildClass'
-import propValidator from '../../utils/propValidator';
 
-
-
-export default {
+export default defineComponent({
   name: 'CdrFormGroup',
   components: {
-    IconErrorStroke,
     CdrFormError,
   },
   props: {
@@ -72,17 +48,20 @@ export default {
     optional: Boolean,
     disabled: Boolean,
   },
-  setup(props) {
-    // baseClass() {
-    //   return 'cdr-form-group';
-    // },
-    // errorClass() {
-    //   return this.error ? this.style['cdr-form-group--error'] : '';
-    // },
-    // disabledClass() {
-    //   return this.disabled ? this.style['cdr-form-group--disabled'] : '';
-    // },
-    return {};
+  setup(props, ctx) {
+    const baseClass = 'cdr-form-group';
+    const errorClass = computed(() => props.error && 'cdr-form-group--error');
+    const disabledClass = computed(() => props.disabled && 'cdr-form-group--disabled');
+    const hasLabelSlot = ctx.slots.label;
+    return {
+      baseClass,
+      errorClass,
+      disabledClass,
+      hasLabelSlot,
+    };
   },
-};
+});
 </script>
+
+<style lang="scss" module src="./styles/CdrFormGroup.scss">
+</style>

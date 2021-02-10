@@ -16,7 +16,7 @@ describe('CdrCheckbox', () => {
 
   it('is type checkbox', () => {
     const wrapper = shallowMount(CdrCheckbox);
-    expect(wrapper.vm.$refs.checkbox.hasAttribute('type', 'checkbox')).toBe(true);
+    expect(wrapper.find('input').hasAttribute('type', 'checkbox')).toBe(true);
   });
 
   it('renders a label element', () => {
@@ -45,7 +45,7 @@ describe('CdrCheckbox', () => {
         default: 'Label Test',
       },
     });
-    expect(wrapper.vm.$refs.checkbox.classList.contains('custom-input-class')).toBe(true);
+    expect(wrapper.find('input').classList.contains('custom-input-class')).toBe(true);
   });
 
   it('adds a custom content class correctly', () => {
