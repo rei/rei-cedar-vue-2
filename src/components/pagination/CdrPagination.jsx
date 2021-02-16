@@ -46,6 +46,14 @@ export default {
         return result;
       },
     },
+    nested: {
+      type: Boolean,
+      default: false,
+    },
+    forLabel: {
+      type: String,
+      default: '',
+    },
     /** @ignore used for binding v-model, represents the current page */
     value: {
       type: Number,
@@ -59,6 +67,9 @@ export default {
     };
   },
   computed: {
+    linkTag() {
+      return this.nested ? 'button' : 'a';
+    },
     // track value internally (for use with select vmodel) and update external value when internal changes
     innerValue: {
       get() {
@@ -80,6 +91,9 @@ export default {
     },
     nextPageIdx() {
       return this.currentIdx + 1;
+    },
+    ariaLabel() {
+      return this.forLabel || 'Pagination';
     },
     /**
      * Creates an array of the pages that should be shown as links with logic for truncation.
@@ -165,13 +179,14 @@ export default {
       };
     },
     prevEl() {
+      const LinkTag = this.linkTag;
       return this.innerValue > this.pages[0].page ? (
         <li>
           {this.$scopedSlots.prevLink
             ? this.$scopedSlots.prevLink(this.prevElAttrs)
-            : (<a
+            : (<LinkTag
               {... { attrs: this.prevElAttrs.attrs }}
-              href={this.prevElAttrs.href}
+              href={LinkTag === 'a' && this.prevElAttrs.href}
               ref={this.prevElAttrs.attrs.ref}
               onClick={this.prevElAttrs.click}
             >
@@ -179,7 +194,7 @@ export default {
                 class={this.prevElAttrs.iconClass}
               />
               {this.prevElAttrs.content}
-            </a>)
+            </LinkTag>)
           }
         </li>
       ) : (
@@ -220,13 +235,14 @@ export default {
       };
     },
     nextEl() {
+      const LinkTag = this.linkTag;
       return this.innerValue < this.pages[this.totalPageData - 1].page ? (
         <li>
           {this.$scopedSlots.nextLink
             ? this.$scopedSlots.nextLink(this.nextElAttrs)
-            : (<a
+            : (<LinkTag
               {... { attrs: this.nextElAttrs.attrs }}
-              href={this.nextElAttrs.href}
+              href={LinkTag === 'a' && this.nextElAttrs.href}
               ref={this.nextElAttrs.attrs.ref}
               onClick={this.nextElAttrs.click}
             >
@@ -234,7 +250,7 @@ export default {
               <this.nextElAttrs.iconComponent
                 class={this.nextElAttrs.iconClass}
               />
-            </a>)
+            </LinkTag>)
           }
 
         </li>
@@ -368,19 +384,20 @@ export default {
         content: n.page,
       };
 
+      const LinkTag = this.linkTag;
       return (this.$scopedSlots.link ? this.$scopedSlots.link(linkData)
-        : <a
+        : <LinkTag
           {... { attrs: linkData.attrs } }
-          href={linkData.href}
+          href={LinkTag === 'a' && linkData.href}
           onClick={linkData.click}
           ref={linkData.attrs.ref}
-        >{ linkData.content }</a>
+        >{ linkData.content }</LinkTag>
       );
     },
   },
   render() {
     return (
-      <nav aria-label="Pagination">
+      <nav aria-label={this.ariaLabel}>
         <ol class={this.style['cdr-pagination']}>
           {this.prevEl}
           {this.desktopEl}
