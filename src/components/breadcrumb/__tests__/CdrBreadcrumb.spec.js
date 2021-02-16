@@ -133,7 +133,7 @@ describe('CdrBreadcrumb', () => {
     expect(wrapper.text()).toBe('http://rei.com TEST Scoped cdr-breadcrumb__link');
   });
 
-  it('applies focus to first breadcrumb on ellipsis click', async () => {
+  it('applies focus to first breadcrumb on ellipsis click', async (done) => {
     const elem = document.createElement('div')
     if (document.body) {
       document.body.appendChild(elem)
@@ -145,9 +145,12 @@ describe('CdrBreadcrumb', () => {
       attachTo: elem, // enables focus testing
     });
     wrapper.vm.handleEllipsisClick();
-    await wrapper.vm.$nextTick();
-    expect(document.activeElement.textContent).toBe(itemsA[0].item.name);
-    wrapper.destroy();
+    return setTimeout(function() {
+
+      expect(document.activeElement.textContent).toBe(itemsA[0].item.name);
+      wrapper.destroy();
+      done();
+    }, 2)
   });
 
 });
