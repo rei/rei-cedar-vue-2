@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CdrCol renders as list type correctly 1`] = `
+<ul
+  class="cdr-row"
+>
+  <li
+    class="cdr-col"
+  >
+    <div
+      class="cdr-col__content"
+    />
+  </li>
+</ul>
+`;
+
+exports[`CdrCol renders as list type correctly when isRow 1`] = `
+<ul
+  class="cdr-row"
+>
+  <li
+    class="cdr-row cdr-col"
+  >
+    <div
+      class="cdr-row cdr-col"
+    >
+      column
+    </div>
+  </li>
+</ul>
+`;
+
+exports[`CdrCol renders default correctly 1`] = `
+<div
+  class="cdr-col"
+>
+  <div
+    class="cdr-col__content"
+  />
+</div>
+`;
