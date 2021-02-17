@@ -14,12 +14,12 @@
     />
 
     <hr>
-    <p>nested/intra-page pagination using buttons</p>
+    <p>intra-page pagination using buttons</p>
     <cdr-pagination
       v-model="page"
       :pages="pages"
       :total-pages="10"
-      :nested="true"
+      link-tag="button"
       for-label="potatoes"
       data-backstop="pagination-default"
       @navigate="preventNavigate"

@@ -43,12 +43,12 @@ describe('CdrPagination', () => {
     expect(wrapper.element).toMatchSnapshot();
   });
 
-  it('renders nested pagination correctly', async () => {
+  it('renders button pagination correctly', async () => {
     const wrapper = mount(CdrPagination, {
       propsData: {
         pages: makePages(20),
         value: 1,
-        nested: true,
+        linkTag: 'button',
       },
     });
     wrapper.setData({ componentID: 'test1' });
@@ -135,12 +135,12 @@ describe('CdrPagination', () => {
     expect(wrapper.attributes('aria-label')).toBe('Pagination for reviews');
   });
 
-  it('renders links instead of buttons when nested', () => {
+  it('can render buttons instead of links', () => {
     const wrapper = shallowMount(CdrPagination, {
       propsData: {
         pages: makePages(20),
         value: 1,
-        nested: true,
+        linkTag: 'button',
       },
     });
     expect(wrapper.findAll('li a').length).toBe(0);

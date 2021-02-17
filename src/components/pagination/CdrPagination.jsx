@@ -2,6 +2,7 @@ import clsx from 'clsx';
 import IconCaretLeft from '../icon/comps/caret-left';
 import IconCaretRight from '../icon/comps/caret-right';
 import CdrSelect from '../select/CdrSelect';
+import propValidator from '../../utils/propValidator';
 import style from './styles/CdrPagination.scss';
 
 export default {
@@ -46,9 +47,13 @@ export default {
         return result;
       },
     },
-    nested: {
-      type: Boolean,
-      default: false,
+    linkTag: {
+      type: String,
+      default: 'a',
+      validator: (value) => propValidator(
+        value,
+        ['a', 'button'],
+      ),
     },
     forLabel: {
       type: String,
@@ -67,9 +72,6 @@ export default {
     };
   },
   computed: {
-    linkTag() {
-      return this.nested ? 'button' : 'a';
-    },
     // track value internally (for use with select vmodel) and update external value when internal changes
     innerValue: {
       get() {
