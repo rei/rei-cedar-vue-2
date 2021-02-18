@@ -5,7 +5,7 @@ import Vue from 'vue';
 import CdrButton from 'componentdir/button/CdrButton';
 
 describe('CdrModal.vue', () => {
-  it('default open, scrolling', async () => {
+  it('default open', async () => {
     const elem = document.createElement('div')
     if (document.body) {
       document.body.appendChild(elem)
@@ -18,22 +18,10 @@ describe('CdrModal.vue', () => {
       slots: {
         default: 'Sticky content',
       },
-      computed: {
-        scrolling: () => true,
-      },
       attachTo: elem,
     });
 
     expect(wrapper.element).toMatchSnapshot();
-    expect(wrapper.find('.cdr-modal__text-fade').exists()).toBe(true);
-
-    wrapper.setProps({ opened: false });
-    await wrapper.vm.$nextTick();
-
-    setTimeout(() => {
-      expect(wrapper.vm.reallyClosed).toBe(true);
-      wrapper.destroy();
-    }, 500);
   });
 
   it('leaves optional slots empty, handleOpened', async () => {
@@ -105,7 +93,7 @@ describe('CdrModal.vue', () => {
     wrapper.destroy();
   });
 
-  it('scrolling and fullscreen snapshot', () => {
+  it('fullscreen snapshot', () => {
     const elem = document.createElement('div')
     if (document.body) {
       document.body.appendChild(elem)
@@ -118,8 +106,6 @@ describe('CdrModal.vue', () => {
       },
       data() {
         return {
-          offsetHeight: 400,
-          scrollHeight: 500,
           fullscreen: true,
         };
       },
@@ -132,7 +118,6 @@ describe('CdrModal.vue', () => {
       attachTo: elem,
     });
 
-    expect(wrapper.vm.scrolling).toBe(true);
     expect(wrapper.element).toMatchSnapshot();
     wrapper.destroy();
   });
@@ -226,7 +211,6 @@ describe('CdrModal.vue', () => {
     await wrapper.vm.$nextTick();
 
     setTimeout(() => {
-      expect(wrapper.vm.reallyClosed).toBe(true);
       expect(wrapper.vm.unsubscribe).toBe(null);
       wrapper.destroy();
     }, 500);

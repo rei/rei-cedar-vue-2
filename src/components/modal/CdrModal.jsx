@@ -9,6 +9,9 @@ import onTransitionEnd from './onTransitionEnd';
 import CdrButton from '../button/CdrButton';
 import IconXLg from '../icon/comps/x-lg';
 
+// TODO: simplify transitionEnd logic
+// DO NOT manipulate open/close in transitionend use another variable
+
 export default {
   name: 'CdrModal',
   components: {
@@ -54,13 +57,10 @@ export default {
       keyHandler: null,
       lastActive: null,
       focusHandler: null,
-      reallyClosed: !this.opened,
       isOpening: false,
       offset: null,
       headerHeight: 0,
       totalHeight: 0,
-      scrollHeight: 0,
-      offsetHeight: 0,
       fullscreen: false,
     };
   },
@@ -85,9 +85,6 @@ export default {
       return this.totalHeight
         - this.headerHeight
         - this.verticalSpace;
-    },
-    scrolling() {
-      return this.scrollHeight > this.offsetHeight;
     },
   },
   watch: {
@@ -121,8 +118,6 @@ export default {
         this.totalHeight = window.innerHeight;
         this.fullscreen = window.innerWidth < CdrBreakpointSm;
         this.headerHeight = this.$refs.header.offsetHeight;
-        this.scrollHeight = this.$refs.content.scrollHeight;
-        this.offsetHeight = this.$refs.content.offsetHeight;
       });
     },
     handleKeyDown({ key }) {
@@ -152,7 +147,6 @@ export default {
       const { activeElement } = document;
       this.addNoScroll();
       this.isOpening = true;
-      this.reallyClosed = false;
       this.lastActive = activeElement;
 
       this.$nextTick(() => {
@@ -184,7 +178,6 @@ export default {
           this.unsubscribe();
           this.removeNoScroll();
           this.unsubscribe = null;
-          this.reallyClosed = true;
 
           // handle scroll-behavior: smooth
           if (documentElement) documentElement.style.scrollBehavior = 'auto';
@@ -253,7 +246,6 @@ export default {
       wrapperClass,
       overlayClass,
       contentClass,
-      reallyClosed,
     } = this;
     return (
       <div
@@ -287,7 +279,7 @@ export default {
           >
             {this.$slots.modal || (<div
               class={clsx(this.style['cdr-modal__innerWrap'], contentClass)}
-              style={reallyClosed
+              style={!opened
                 ? { display: 'none' }
                 : undefined
               }
@@ -335,13 +327,6 @@ export default {
                     >
                       {this.$slots.default}
                     </div>
-                    {
-                      this.scrolling && (
-                        <div
-                        class={this.style['cdr-modal__text-fade']}
-                      />
-                      )
-                    }
                   </div>
                 </div>
               </section>

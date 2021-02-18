@@ -26,6 +26,9 @@
   &__link {
     @include cdr-text-utility-sans-300;
 
+    background-color: transparent;
+    border: none;
+    padding: 0;
     color: $cdr-color-text-primary;
     fill: $cdr-color-text-primary;
     display: block;

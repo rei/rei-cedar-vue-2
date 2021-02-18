@@ -43,6 +43,19 @@ describe('CdrPagination', () => {
     expect(wrapper.element).toMatchSnapshot();
   });
 
+  it('renders button pagination correctly', async () => {
+    const wrapper = mount(CdrPagination, {
+      propsData: {
+        pages: makePages(20),
+        value: 1,
+        linkTag: 'button',
+      },
+    });
+    wrapper.setData({ componentID: 'test1' });
+    await wrapper.vm.$nextTick();
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
   it('renders scoped slot correctly', async () => {
     const wrapper = mount(CdrPagination, {
       propsData: {
@@ -99,6 +112,39 @@ describe('CdrPagination', () => {
       },
     });
     expect(wrapper.element.tagName).toBe('NAV');
+  });
+
+  it('sets default pagination aria-label', () => {
+    const wrapper = shallowMount(CdrPagination, {
+      propsData: {
+        pages: makePages(20),
+        value: 1,
+      },
+    });
+    expect(wrapper.attributes('aria-label')).toBe('Pagination');
+  });
+
+  it('allows for aria-label override', () => {
+    const wrapper = shallowMount(CdrPagination, {
+      propsData: {
+        pages: makePages(20),
+        value: 1,
+        forLabel: 'Pagination for reviews'
+      },
+    });
+    expect(wrapper.attributes('aria-label')).toBe('Pagination for reviews');
+  });
+
+  it('can render buttons instead of links', () => {
+    const wrapper = shallowMount(CdrPagination, {
+      propsData: {
+        pages: makePages(20),
+        value: 1,
+        linkTag: 'button',
+      },
+    });
+    expect(wrapper.findAll('li a').length).toBe(0);
+    expect(wrapper.findAll('li button').length).toBe(7);
   });
 
   it('sorts 20 pages correctly', async () => {
