@@ -1,16 +1,157 @@
+// TODO: move to cdr-tokens once finalized;
+$cdr-color-border-chip-default-rest: #B8B8B8;
+$cdr-color-border-chip-default-hover: #999999;
+$cdr-color-border-chip-default-focus: #4E4D49;
+$cdr-color-border-chip-default-active: #616161;
+$cdr-color-border-chip-default-active-inset: #B8B8B8;
+
+$cdr-color-border-chip-default-selected-rest: #4E4D49;
+$cdr-color-border-chip-default-selected-rest-inset: #B8B8B8;
+$cdr-color-border-chip-default-selected-hover-focus: #616161;
+$cdr-color-border-chip-default-selected-hover-focus-inset: #B8B8B8;
+
+$cdr-color-background-chip-default-rest: #F7F7F7;
+$cdr-color-background-chip-default-active: #616161;
+$cdr-color-background-chip-default-selected: #4E4D49;
+$cdr-color-background-chip-default-selected-hover-focus: #616161;
+
+$cdr-color-text-chip-default-rest: #4E4D49;
+$cdr-color-text-chip-default-active: #F7F7F7;
+$cdr-color-text-chip-default-selected: #F7F7F7;
+
+
+$cdr-color-border-chip-emphasis-rest: #B8B8B8;
+$cdr-color-border-chip-emphasis-hover: #4E4D49;
+$cdr-color-border-chip-emphasis-focus: #292929;
+$cdr-color-border-chip-emphasis-active: #B8B8B8;
+
+$cdr-color-border-chip-emphasis-selected-rest: #999999;
+$cdr-color-border-chip-emphasis-selected-hover: #B8B8B8;
+$cdr-color-border-chip-emphasis-selected-focus: #616161;
+
+$cdr-color-background-chip-emphasis-rest: #4E4D49;
+$cdr-color-background-chip-emphasis-active: #F7F7F7;
+
+$cdr-color-background-chip-emphasis-selected-rest: #F9F8F6;
+$cdr-color-background-chip-emphasis-selected-hover-focus: #F7F7F7;
+
+$cdr-color-text-chip-emphasis-rest: #FFFFFF;
+$cdr-color-text-chip-emphasis-active: #616161;
+$cdr-color-text-chip-emphasis-selected: #616161;
+$cdr-color-text-chip-emphasis-selected-hover-focus: #4E4D49;
+
+
+
+
+
+
 @mixin cdr-chip-base-mixin() {
+  margin: $cdr-space-half-x;
   width: max-content;
-  padding: $cdr-space-half-x;
-  border-radius: 16px; // TODO: cdr-radius-softest?
-  border: 1px solid $cdr-color-border-primary;
-  color: $cdr-color-text-primary;
-  background-color: $cdr-color-background-primary;
+  padding: $cdr-space-half-x $cdr-space-three-quarter-x;
+  border-radius: 30px; // TODO: cdr-radius-softest? cdr-radius-chip?
+  border: 0;
+
+  // TODO: use tokens here or make a new mixin
+  font-family: Graphik App;
+  font-size: 14px;
+  line-height: 15px;
+  letter-spacing: -0.08px;
+
+  transition: color $cdr-duration-2-x $cdr-timing-function-ease, fill $cdr-duration-2-x $cdr-timing-function-ease, background-color $cdr-duration-2-x $cdr-timing-function-ease, border $cdr-duration-2-x $cdr-timing-function-ease;
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
+
+@mixin cdr-chip-icon-left-mixin() {
+  margin-right: $cdr-space-eighth-x;
+}
+
+@mixin cdr-chip-icon-right-mixin() {
+  margin-left: $cdr-space-eighth-x;
+}
+
+@mixin cdr-chip-default-mixin() {
+  color: $cdr-color-text-chip-default-rest;
+  fill: $cdr-color-text-chip-default-rest;
+  background-color: $cdr-color-background-chip-default-rest;
+  box-shadow: inset 0 0 0 1px $cdr-color-border-chip-default-rest;
 
   &:hover {
-    border: 2px solid $cdr-color-border-primary;
+    box-shadow: inset 0 0 0 2px $cdr-color-border-chip-default-hover, $cdr-prominence-raised;
+  }
+
+  &:focus {
+    box-shadow: inset 0 0 0 2px $cdr-color-border-chip-default-focus, $cdr-prominence-raised;
   }
 
   &:active {
-    background-color: $cdr-color-background-secondary;
+    background-color: $cdr-color-background-chip-default-active;
+    box-shadow: inset 0 0 0 2px $cdr-color-border-chip-default-active, inset 0 0 0 4px $cdr-color-border-chip-default-active-inset;
+    color: $cdr-color-text-chip-default-active;
+    fill: $cdr-color-text-chip-default-active;
   }
+
+  &[aria-checked="true"] {
+    background-color: $cdr-color-background-chip-default-selected;
+    box-shadow: inset 0 0 0 2px $cdr-color-border-chip-default-selected-rest, inset 0 0 0 4px $cdr-color-border-chip-default-selected-rest-inset;
+    color: $cdr-color-text-chip-default-selected;
+    fill: $cdr-color-text-chip-default-selected;
+  }
+
+  &[aria-checked="true"]:hover, &[aria-checked="true"]:focus  {
+    box-shadow: inset 0 0 0 2px $cdr-color-border-chip-default-selected-hover-focus, inset 0 0 0 4px $cdr-color-border-chip-default-selected-hover-focus-inset, $cdr-prominence-elevated;
+  }
+
+}
+
+@mixin cdr-chip-emphasis-mixin() {
+  color: $cdr-color-text-chip-emphasis-rest;
+  fill: $cdr-color-text-chip-emphasis-rest;
+  background-color: $cdr-color-background-chip-emphasis-rest;
+  box-shadow: inset 0 0 0 1px $cdr-color-border-chip-emphasis-rest;
+
+  &:hover {
+    box-shadow: inset 0 0 0 2px $cdr-color-border-chip-emphasis-hover, $cdr-prominence-raised;
+  }
+
+  &:focus {
+    box-shadow: inset 0 0 0 2px $cdr-color-border-chip-emphasis-focus, $cdr-prominence-raised;
+  }
+
+  &:active {
+    background-color: $cdr-color-background-chip-emphasis-active;
+    box-shadow: inset 0 0 0 2px $cdr-color-border-chip-emphasis-active;
+    color: $cdr-color-text-chip-emphasis-active;
+    fill: $cdr-color-text-chip-emphasis-active;
+  }
+
+  // $cdr-color-text-chip-emphasis: #FFFFFF;
+  // $cdr-color-text-chip-emphasis-active: #616161;
+  // $cdr-color-text-chip-emphasis-selected: #4E4D49;
+  // : #616161;
+  &[aria-checked="true"] {
+    // TODO: checked rest state
+    background-color: $cdr-color-background-chip-emphasis-selected-rest;
+    box-shadow: inset 0 0 0 2px $cdr-color-border-chip-emphasis-selected-rest;
+    color: $cdr-color-text-chip-emphasis-selected;
+    fill: $cdr-color-text-chip-emphasis-selected;
+  }
+
+  &[aria-checked="true"]:hover, &[aria-checked="true"]:focus {
+    box-shadow: inset 0 0 0 2px $cdr-color-border-chip-emphasis-selected-focus, $cdr-prominence-raised;
+    color: $cdr-color-text-chip-emphasis-selected-hover-focus;
+  }
+
+  &[aria-checked="true"]:hover {
+    box-shadow: inset 0 0 0 2px $cdr-color-border-chip-emphasis-selected-hover, $cdr-prominence-raised;
+  }
+
+  &[aria-checked="true"]:focus {
+    box-shadow: inset 0 0 0 2px $cdr-color-border-chip-emphasis-selected-focus, $cdr-prominence-raised;
+  }
+
 }

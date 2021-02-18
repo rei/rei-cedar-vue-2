@@ -1,33 +1,20 @@
+import clsx from 'clsx';
 import style from './styles/CdrChip.scss';
-// import propValidator from '../../utils/propValidator';
-//
-// Possible behaviors:
-// link
-// button
-// radio
-// checkbox
-//
-// states:
-// unselected
-// selected
-// focus
-// hover
-// pass icon in (alignment?)
-// delete-able
-// fade in fade out animation
-// color animation on state change
+import modifier from '../../mixins/modifier';
+import propValidator from '../../utils/propValidator';
 
 export default {
   name: 'CdrChip',
+  mixins: [modifier],
   props: {
-    // tag: {
-    //   type: String,
-    //   validator: (value) => propValidator(
-    //     value,
-    //     ['a', 'button', 'input'],
-    //   ),
-    //   default: 'button',
-    // },
+    modifier: {
+      type: String,
+      validator: (value) => propValidator(
+        value,
+        ['default', 'emphasis'],
+      ),
+      default: 'default',
+    },
   },
   data() {
     return {
@@ -35,15 +22,23 @@ export default {
       baseClass: 'cdr-chip',
     };
   },
-  computed: {
-    // baseClass() {
-    //   return this.style['cdr-chip'];
-    // }
-  },
   render() {
     return (
-      <button class={this.style[this.baseClass]}>
+      <button
+        class={clsx(this.style[this.baseClass], this.modifierClass)}
+        {...{ on: this.$listeners }}
+      >
+        { this.$slots['icon-left'] && (
+          <span class={this.style['cdr-chip__icon-left']}>
+            { this.$slots['icon-left'] }
+          </span>
+        )}
         { this.$slots.default }
+        { this.$slots['icon-right'] && (
+          <span class={this.style['cdr-chip__icon-right']}>
+            { this.$slots['icon-right'] }
+          </span>
+        )}
       </button>
     );
   },
