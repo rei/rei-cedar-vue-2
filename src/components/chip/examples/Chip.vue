@@ -13,7 +13,7 @@
       modifier="default"
       @click="toggle"
       role="switch"
-      :aria-checked="toggled"
+      :aria-checked="toggled ? 'true' : 'false'"
     >
       <icon-heart-stroke
         slot="icon-left"
