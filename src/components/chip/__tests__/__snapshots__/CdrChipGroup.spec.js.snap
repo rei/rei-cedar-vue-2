@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CdrChipGroup renders correctly 1`] = `
+<div
+  role="radiogroup"
+>
+  <button
+    aria-checked="true"
+    class="cdr-chip cdr-chip--default"
+    role="radio"
+    tabindex="0"
+  >
+    chip 1
+  </button>
+  <button
+    aria-checked="false"
+    class="cdr-chip cdr-chip--default"
+    role="radio"
+    tabindex="-1"
+  >
+    chip 2
+  </button>
+</div>
+`;
