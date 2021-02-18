@@ -1,7 +1,6 @@
 import clsx from 'clsx';
 import size from '../../mixins/size';
 import propValidator from '../../utils/propValidator';
-import IconErrorStroke from '../icon/comps/error-stroke';
 import CdrLabelStandalone from '../labelStandalone/CdrLabelStandalone';
 import CdrFormError from '../formError/CdrFormError';
 import style from './styles/CdrInput.scss';
@@ -14,7 +13,6 @@ import style from './styles/CdrInput.scss';
 export default {
   name: 'CdrInput',
   components: {
-    IconErrorStroke,
     CdrLabelStandalone,
     CdrFormError,
   },

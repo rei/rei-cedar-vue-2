@@ -4,3 +4,19 @@
 .cdr-chip {
   @include cdr-chip-base-mixin;
 }
+
+.cdr-chip--default {
+  @include cdr-chip-default-mixin;
+}
+
+.cdr-chip--emphasis {
+  @include cdr-chip-emphasis-mixin;
+}
+
+.cdr-chip__icon-left {
+  @include cdr-chip-icon-left-mixin;
+}
+
+.cdr-chip__icon-right {
+  @include cdr-chip-icon-right-mixin;
+}
