@@ -2,7 +2,6 @@ import clsx from 'clsx';
 import toArray from 'lodash-es/toArray';
 import propValidator from '../../utils/propValidator';
 import IconCaretDown from '../icon/comps/caret-down';
-import IconErrorStroke from '../icon/comps/error-stroke';
 import CdrLabelStandalone from '../labelStandalone/CdrLabelStandalone';
 import CdrFormError from '../formError/CdrFormError';
 import size from '../../mixins/size';
@@ -12,7 +11,6 @@ export default {
   name: 'CdrSelect',
   components: {
     IconCaretDown,
-    IconErrorStroke,
     CdrLabelStandalone,
     CdrFormError,
   },
