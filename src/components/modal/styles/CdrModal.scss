@@ -99,7 +99,6 @@ $modal-animation-duration: 150ms;
 
   &__text-content {
     overflow: auto;
-    padding-right: $cdr-space-one-and-a-half-x;
     position: relative;
   }
 
@@ -130,10 +129,6 @@ $modal-animation-duration: 150ms;
       margin-left: $cdr-space-three-quarter-x;
       right: -8px;
       top: -5px;
-    }
-
-    &__text-content {
-      padding-right: $cdr-space-two-x;
     }
   }
 }
