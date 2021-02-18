@@ -17817,9 +17817,10 @@ var cedar = (function () {
         var _this2 = this;
 
         this.truncate = false;
-        this.$nextTick(function () {
+
+        setTimeout$2(function () {
           _this2.$el.querySelector('li *').focus();
-        });
+        }, 1);
       }
 
     },
@@ -26590,8 +26591,8 @@ var cedar = (function () {
     CdrTextStrongWeight: CdrTextStrongWeight
   });
 
-  var css_248z$l = ".cdr-modal_8\\.0\\.0-alpha\\.1 {\n  bottom: 0;\n  height: 100%;\n  left: 0;\n  overflow-y: scroll;\n  position: fixed;\n  right: 0;\n  top: 0;\n  visibility: visible;\n  z-index: 1000; }\n  .cdr-modal__overlay_8\\.0\\.0-alpha\\.1 {\n    background-color: rgba(244, 242, 237, 0.85);\n    -webkit-backdrop-filter: blur(1.6rem);\n            backdrop-filter: blur(1.6rem);\n    bottom: 0;\n    left: 0;\n    opacity: 1;\n    position: fixed;\n    right: 0;\n    top: 0;\n    transition: opacity 150ms;\n    z-index: 0; }\n  .cdr-modal__outerWrap_8\\.0\\.0-alpha\\.1 {\n    display: flex;\n    box-sizing: border-box;\n    min-height: 100%;\n    position: static;\n    z-index: -1; }\n  .cdr-modal__contentWrap_8\\.0\\.0-alpha\\.1 {\n    align-items: flex-start;\n    background-color: #ffffff;\n    display: flex;\n    flex-direction: column;\n    margin: auto;\n    min-height: 100%;\n    opacity: 1;\n    position: absolute;\n    top: 0;\n    left: 0;\n    right: 0;\n    transition: opacity 150ms 150ms;\n    width: 100%;\n    z-index: 0; }\n  .cdr-modal__contentWrap_8\\.0\\.0-alpha\\.1:focus {\n      outline: 0; }\n  .cdr-modal__innerWrap_8\\.0\\.0-alpha\\.1 {\n    width: 100%;\n    padding: 1.6rem; }\n  .cdr-modal__dialog_8\\.0\\.0-alpha\\.1 {\n    width: 100%; }\n  .cdr-modal__content_8\\.0\\.0-alpha\\.1 {\n    position: relative; }\n  .cdr-modal__header_8\\.0\\.0-alpha\\.1 {\n    display: flex;\n    padding-bottom: 1.6rem; }\n  .cdr-modal__title_8\\.0\\.0-alpha\\.1 {\n    flex: auto;\n    font-family: Stuart, Georgia, serif;\n    font-style: normal;\n    font-weight: 500;\n    letter-spacing: -0.016rem;\n    font-size: 2.4rem;\n    line-height: 3rem; }\n  .cdr-modal__close-button_8\\.0\\.0-alpha\\.1 {\n    align-self: flex-start;\n    border: 0.1rem solid #928b80;\n    flex: none;\n    margin-left: 0.8rem;\n    padding: 0.7rem;\n    position: relative;\n    top: -0.2rem;\n    right: -0.4rem; }\n  .cdr-modal__close-button_8\\.0\\.0-alpha\\.1:hover, .cdr-modal__close-button_8\\.0\\.0-alpha\\.1:focus {\n      border: 0.1rem solid #928b80; }\n  .cdr-modal__text_8\\.0\\.0-alpha\\.1 {\n    padding: 0;\n    position: relative; }\n  .cdr-modal__text-content_8\\.0\\.0-alpha\\.1 {\n    overflow: auto;\n    padding-right: 2.4rem;\n    position: relative; }\n  .cdr-modal__text-fade_8\\.0\\.0-alpha\\.1 {\n    position: absolute;\n    bottom: 0;\n    left: 0;\n    height: 3.2rem;\n    /* full transparency doesn't fly on safari */\n    background: linear-gradient(rgba(255, 255, 255, 0.001), white);\n    background-attachment: scroll;\n    width: 100%; }\n  @media (min-width: 768px) {\n    .cdr-modal__outerWrap_8\\.0\\.0-alpha\\.1 {\n      padding: 1.6rem; }\n    .cdr-modal__innerWrap_8\\.0\\.0-alpha\\.1 {\n      padding: 2.4rem; }\n    .cdr-modal__contentWrap_8\\.0\\.0-alpha\\.1 {\n      border-radius: 0.4rem;\n      box-shadow: 0 1.6rem 1.6rem 0 rgba(12, 11, 8, 0.2);\n      min-height: auto;\n      position: relative;\n      top: auto;\n      left: auto;\n      right: auto; }\n    .cdr-modal__dialog_8\\.0\\.0-alpha\\.1 {\n      max-width: 64rem; }\n    .cdr-modal__close-button_8\\.0\\.0-alpha\\.1 {\n      margin-left: 1.2rem;\n      right: -0.8rem;\n      top: -0.5rem; }\n    .cdr-modal__text-content_8\\.0\\.0-alpha\\.1 {\n      padding-right: 3.2rem; } }\n  .closed_8\\.0\\.0-alpha\\.1 {\n  transition: z-index 0s 300ms, visibility 0s 300ms;\n  visibility: hidden;\n  z-index: -1; }\n  .closed_8\\.0\\.0-alpha\\.1 .cdr-modal__overlay_8\\.0\\.0-alpha\\.1 {\n    opacity: 0;\n    transition: opacity 150ms 150ms; }\n  .closed_8\\.0\\.0-alpha\\.1 .cdr-modal__contentWrap_8\\.0\\.0-alpha\\.1 {\n    opacity: 0;\n    transition: opacity 150ms; }\n  .cdr-modal__noscroll_8\\.0\\.0-alpha\\.1 {\n  overflow: hidden !important;\n  position: fixed !important;\n  width: 100%; }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9jb21wb25lbnRzL21vZGFsL3N0eWxlcy9DZHJNb2RhbC5zY3NzIiwibm9kZV9tb2R1bGVzL0ByZWkvY2RyLXRva2Vucy9kaXN0L3Njc3MvY2RyLXRva2Vucy5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUlBO0VBQ0UsU0FBUztFQUNULFlBQVk7RUFDWixPQUFPO0VBQ1Asa0JBQWtCO0VBQ2xCLGVBQWU7RUFDZixRQUFRO0VBQ1IsTUFBTTtFQUNOLG1CQUFtQjtFQUNuQixhQUFhLEVBQUE7RUFFYjtJQUNFLDJDQ213QzBEO0lEbHdDMUQscUNBQXVDO1lBQXZDLDZCQUF1QztJQUN2QyxTQUFTO0lBQ1QsT0FBTztJQUNQLFVBQVU7SUFDVixlQUFlO0lBQ2YsUUFBUTtJQUNSLE1BQU07SUFDTix5QkF0QjRCO0lBdUI1QixVQUFVLEVBQUE7RUFHWjtJQUNFLGFBQWE7SUFDYixzQkFBc0I7SUFDdEIsZ0JBQWdCO0lBQ2hCLGdCQUFnQjtJQUNoQixXQUFXLEVBQUE7RUFHYjtJQUNFLHVCQUF1QjtJQUN2Qix5QkM0ckNrQztJRDNyQ2xDLGFBQWE7SUFDYixzQkFBc0I7SUFDdEIsWUFBWTtJQUNaLGdCQUFnQjtJQUNoQixVQUFVO0lBQ1Ysa0JBQWtCO0lBQ2xCLE1BQU07SUFDTixPQUFPO0lBQ1AsUUFBUTtJQUNSLCtCQTlDNEI7SUErQzVCLFdBQVc7SUFDWCxVQUFVLEVBQUE7RUFkWDtNQWdCRyxVQUFVLEVBQUE7RUFJZDtJQUNFLFdBQVc7SUFDWCxlQ2swQ29CLEVBQUE7RUQvekN0QjtJQUNFLFdBQVcsRUFBQTtFQUdiO0lBQ0Usa0JBQWtCLEVBQUE7RUFHcEI7SUFDRSxhQUFhO0lBQ2Isc0JDcXpDb0IsRUFBQTtFRGx6Q3RCO0lBQ0UsVUFBVTtJQzhPWixtQ0FBbUM7SUFDbkMsa0JBQWtCO0lBQ2xCLGdCQUFnQjtJQUNoQix5QkFBdUI7SUFDdkIsaUJBQWlCO0lBQ2pCLGlCQUFpQixFQUFBO0VEL09qQjtJQUNFLHNCQUFzQjtJQUN0Qiw0QkMwb0M0QjtJRHpvQzVCLFVBQVU7SUFDVixtQkN1eUNxQjtJRHR5Q3JCLGVBQVk7SUFDWixrQkFBa0I7SUFDbEIsWUFBUztJQUNULGNBQVcsRUFBQTtFQVJaO01BV0csNEJDaW9DMEIsRUFBQTtFRDduQzlCO0lBQ0UsVUFBVTtJQUNWLGtCQUFrQixFQUFBO0VBR3BCO0lBQ0UsY0FBYztJQUNkLHFCQ3d4QytCO0lEdnhDL0Isa0JBQWtCLEVBQUE7RUFHcEI7SUFDRSxrQkFBa0I7SUFDbEIsU0FBUztJQUNULE9BQU87SUFDUCxjQ2l4Q29CO0lEaHhDcEIsNENBQUE7SUFDQSw4REFBeUU7SUFDekUsNkJBQTZCO0lBQzdCLFdBQVcsRUFBQTtFQUdiO0lBQ0U7TUFDRSxlQ3N3Q2tCLEVBQUE7SURud0NwQjtNQUNFLGVDbXdDNkIsRUFBQTtJRGh3Qy9CO01BQ0UscUJDd3ZDb0I7TUR2dkNwQixrRENvdkN3RDtNRG52Q3hELGdCQUFnQjtNQUNoQixrQkFBa0I7TUFDbEIsU0FBUztNQUNULFVBQVU7TUFDVixXQUFXLEVBQUE7SUFHYjtNQUNFLGdCQUFnQixFQUFBO0lBR2xCO01BQ0UsbUJDK3VDNEI7TUQ5dUM1QixjQUFXO01BQ1gsWUFBUyxFQUFBO0lBR1g7TUFDRSxxQkM0dUNrQixFQUFBLEVEM3VDbkI7RUFJTDtFQUNFLGlEQUMyQztFQUMzQyxrQkFBa0I7RUFDbEIsV0FBVyxFQUFBO0VBSmI7SUFPSSxVQUFVO0lBQ1YsK0JBN0o0QixFQUFBO0VBcUpoQztJQVlJLFVBQVU7SUFDVix5QkFsSzRCLEVBQUE7RUFzS2hDO0VBQ0UsMkJBQTJCO0VBQzNCLDBCQUEwQjtFQUMxQixXQUFXLEVBQUEiLCJmaWxlIjoiQ2RyTW9kYWwuc2NzcyJ9 */";
-  var style$n = {"cdr-modal":"cdr-modal_8.0.0-alpha.1","cdr-modal__overlay":"cdr-modal__overlay_8.0.0-alpha.1","cdr-modal__outerWrap":"cdr-modal__outerWrap_8.0.0-alpha.1","cdr-modal__contentWrap":"cdr-modal__contentWrap_8.0.0-alpha.1","cdr-modal__innerWrap":"cdr-modal__innerWrap_8.0.0-alpha.1","cdr-modal__dialog":"cdr-modal__dialog_8.0.0-alpha.1","cdr-modal__content":"cdr-modal__content_8.0.0-alpha.1","cdr-modal__header":"cdr-modal__header_8.0.0-alpha.1","cdr-modal__title":"cdr-modal__title_8.0.0-alpha.1","cdr-modal__close-button":"cdr-modal__close-button_8.0.0-alpha.1","cdr-modal__text":"cdr-modal__text_8.0.0-alpha.1","cdr-modal__text-content":"cdr-modal__text-content_8.0.0-alpha.1","cdr-modal__text-fade":"cdr-modal__text-fade_8.0.0-alpha.1","closed":"closed_8.0.0-alpha.1","cdr-modal__noscroll":"cdr-modal__noscroll_8.0.0-alpha.1"};
+  var css_248z$l = ".cdr-modal_8\\.0\\.0-alpha\\.1 {\n  bottom: 0;\n  height: 100%;\n  left: 0;\n  overflow-y: scroll;\n  position: fixed;\n  right: 0;\n  top: 0;\n  visibility: visible;\n  z-index: 1000; }\n  .cdr-modal__overlay_8\\.0\\.0-alpha\\.1 {\n    background-color: rgba(244, 242, 237, 0.85);\n    -webkit-backdrop-filter: blur(1.6rem);\n            backdrop-filter: blur(1.6rem);\n    bottom: 0;\n    left: 0;\n    opacity: 1;\n    position: fixed;\n    right: 0;\n    top: 0;\n    transition: opacity 150ms;\n    z-index: 0; }\n  .cdr-modal__outerWrap_8\\.0\\.0-alpha\\.1 {\n    display: flex;\n    box-sizing: border-box;\n    min-height: 100%;\n    position: static;\n    z-index: -1; }\n  .cdr-modal__contentWrap_8\\.0\\.0-alpha\\.1 {\n    align-items: flex-start;\n    background-color: #ffffff;\n    display: flex;\n    flex-direction: column;\n    margin: auto;\n    min-height: 100%;\n    opacity: 1;\n    position: absolute;\n    top: 0;\n    left: 0;\n    right: 0;\n    transition: opacity 150ms 150ms;\n    width: 100%;\n    z-index: 0; }\n  .cdr-modal__contentWrap_8\\.0\\.0-alpha\\.1:focus {\n      outline: 0; }\n  .cdr-modal__innerWrap_8\\.0\\.0-alpha\\.1 {\n    width: 100%;\n    padding: 1.6rem; }\n  .cdr-modal__dialog_8\\.0\\.0-alpha\\.1 {\n    width: 100%; }\n  .cdr-modal__content_8\\.0\\.0-alpha\\.1 {\n    position: relative; }\n  .cdr-modal__header_8\\.0\\.0-alpha\\.1 {\n    display: flex;\n    padding-bottom: 1.6rem; }\n  .cdr-modal__title_8\\.0\\.0-alpha\\.1 {\n    flex: auto;\n    font-family: Stuart, Georgia, serif;\n    font-style: normal;\n    font-weight: 500;\n    letter-spacing: -0.016rem;\n    font-size: 2.4rem;\n    line-height: 3rem; }\n  .cdr-modal__close-button_8\\.0\\.0-alpha\\.1 {\n    align-self: flex-start;\n    border: 0.1rem solid #928b80;\n    flex: none;\n    margin-left: 0.8rem;\n    padding: 0.7rem;\n    position: relative;\n    top: -0.2rem;\n    right: -0.4rem; }\n  .cdr-modal__close-button_8\\.0\\.0-alpha\\.1:hover, .cdr-modal__close-button_8\\.0\\.0-alpha\\.1:focus {\n      border: 0.1rem solid #928b80; }\n  .cdr-modal__text_8\\.0\\.0-alpha\\.1 {\n    padding: 0;\n    position: relative; }\n  .cdr-modal__text-content_8\\.0\\.0-alpha\\.1 {\n    overflow: auto;\n    padding-right: 2.4rem;\n    position: relative; }\n  @media (min-width: 768px) {\n    .cdr-modal__outerWrap_8\\.0\\.0-alpha\\.1 {\n      padding: 1.6rem; }\n    .cdr-modal__innerWrap_8\\.0\\.0-alpha\\.1 {\n      padding: 2.4rem; }\n    .cdr-modal__contentWrap_8\\.0\\.0-alpha\\.1 {\n      border-radius: 0.4rem;\n      box-shadow: 0 1.6rem 1.6rem 0 rgba(12, 11, 8, 0.2);\n      min-height: auto;\n      position: relative;\n      top: auto;\n      left: auto;\n      right: auto; }\n    .cdr-modal__dialog_8\\.0\\.0-alpha\\.1 {\n      max-width: 64rem; }\n    .cdr-modal__close-button_8\\.0\\.0-alpha\\.1 {\n      margin-left: 1.2rem;\n      right: -0.8rem;\n      top: -0.5rem; }\n    .cdr-modal__text-content_8\\.0\\.0-alpha\\.1 {\n      padding-right: 3.2rem; } }\n  .closed_8\\.0\\.0-alpha\\.1 {\n  transition: z-index 0s 300ms, visibility 0s 300ms;\n  visibility: hidden;\n  z-index: -1; }\n  .closed_8\\.0\\.0-alpha\\.1 .cdr-modal__overlay_8\\.0\\.0-alpha\\.1 {\n    opacity: 0;\n    transition: opacity 150ms 150ms; }\n  .closed_8\\.0\\.0-alpha\\.1 .cdr-modal__contentWrap_8\\.0\\.0-alpha\\.1 {\n    opacity: 0;\n    transition: opacity 150ms; }\n  .cdr-modal__noscroll_8\\.0\\.0-alpha\\.1 {\n  overflow: hidden !important;\n  position: fixed !important;\n  width: 100%; }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9jb21wb25lbnRzL21vZGFsL3N0eWxlcy9DZHJNb2RhbC5zY3NzIiwibm9kZV9tb2R1bGVzL0ByZWkvY2RyLXRva2Vucy9kaXN0L3Njc3MvY2RyLXRva2Vucy5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUlBO0VBQ0UsU0FBUztFQUNULFlBQVk7RUFDWixPQUFPO0VBQ1Asa0JBQWtCO0VBQ2xCLGVBQWU7RUFDZixRQUFRO0VBQ1IsTUFBTTtFQUNOLG1CQUFtQjtFQUNuQixhQUFhLEVBQUE7RUFFYjtJQUNFLDJDQ213QzBEO0lEbHdDMUQscUNBQXVDO1lBQXZDLDZCQUF1QztJQUN2QyxTQUFTO0lBQ1QsT0FBTztJQUNQLFVBQVU7SUFDVixlQUFlO0lBQ2YsUUFBUTtJQUNSLE1BQU07SUFDTix5QkF0QjRCO0lBdUI1QixVQUFVLEVBQUE7RUFHWjtJQUNFLGFBQWE7SUFDYixzQkFBc0I7SUFDdEIsZ0JBQWdCO0lBQ2hCLGdCQUFnQjtJQUNoQixXQUFXLEVBQUE7RUFHYjtJQUNFLHVCQUF1QjtJQUN2Qix5QkM0ckNrQztJRDNyQ2xDLGFBQWE7SUFDYixzQkFBc0I7SUFDdEIsWUFBWTtJQUNaLGdCQUFnQjtJQUNoQixVQUFVO0lBQ1Ysa0JBQWtCO0lBQ2xCLE1BQU07SUFDTixPQUFPO0lBQ1AsUUFBUTtJQUNSLCtCQTlDNEI7SUErQzVCLFdBQVc7SUFDWCxVQUFVLEVBQUE7RUFkWDtNQWdCRyxVQUFVLEVBQUE7RUFJZDtJQUNFLFdBQVc7SUFDWCxlQ2swQ29CLEVBQUE7RUQvekN0QjtJQUNFLFdBQVcsRUFBQTtFQUdiO0lBQ0Usa0JBQWtCLEVBQUE7RUFHcEI7SUFDRSxhQUFhO0lBQ2Isc0JDcXpDb0IsRUFBQTtFRGx6Q3RCO0lBQ0UsVUFBVTtJQzhPWixtQ0FBbUM7SUFDbkMsa0JBQWtCO0lBQ2xCLGdCQUFnQjtJQUNoQix5QkFBdUI7SUFDdkIsaUJBQWlCO0lBQ2pCLGlCQUFpQixFQUFBO0VEL09qQjtJQUNFLHNCQUFzQjtJQUN0Qiw0QkMwb0M0QjtJRHpvQzVCLFVBQVU7SUFDVixtQkN1eUNxQjtJRHR5Q3JCLGVBQVk7SUFDWixrQkFBa0I7SUFDbEIsWUFBUztJQUNULGNBQVcsRUFBQTtFQVJaO01BV0csNEJDaW9DMEIsRUFBQTtFRDduQzlCO0lBQ0UsVUFBVTtJQUNWLGtCQUFrQixFQUFBO0VBR3BCO0lBQ0UsY0FBYztJQUNkLHFCQ3d4QytCO0lEdnhDL0Isa0JBQWtCLEVBQUE7RUFHcEI7SUFDRTtNQUNFLGVDaXhDa0IsRUFBQTtJRDl3Q3BCO01BQ0UsZUM4d0M2QixFQUFBO0lEM3dDL0I7TUFDRSxxQkNtd0NvQjtNRGx3Q3BCLGtEQyt2Q3dEO01EOXZDeEQsZ0JBQWdCO01BQ2hCLGtCQUFrQjtNQUNsQixTQUFTO01BQ1QsVUFBVTtNQUNWLFdBQVcsRUFBQTtJQUdiO01BQ0UsZ0JBQWdCLEVBQUE7SUFHbEI7TUFDRSxtQkMwdkM0QjtNRHp2QzVCLGNBQVc7TUFDWCxZQUFTLEVBQUE7SUFHWDtNQUNFLHFCQ3V2Q2tCLEVBQUEsRUR0dkNuQjtFQUlMO0VBQ0UsaURBQzJDO0VBQzNDLGtCQUFrQjtFQUNsQixXQUFXLEVBQUE7RUFKYjtJQU9JLFVBQVU7SUFDViwrQkFsSjRCLEVBQUE7RUEwSWhDO0lBWUksVUFBVTtJQUNWLHlCQXZKNEIsRUFBQTtFQTJKaEM7RUFDRSwyQkFBMkI7RUFDM0IsMEJBQTBCO0VBQzFCLFdBQVcsRUFBQSIsImZpbGUiOiJDZHJNb2RhbC5zY3NzIn0= */";
+  var style$n = {"cdr-modal":"cdr-modal_8.0.0-alpha.1","cdr-modal__overlay":"cdr-modal__overlay_8.0.0-alpha.1","cdr-modal__outerWrap":"cdr-modal__outerWrap_8.0.0-alpha.1","cdr-modal__contentWrap":"cdr-modal__contentWrap_8.0.0-alpha.1","cdr-modal__innerWrap":"cdr-modal__innerWrap_8.0.0-alpha.1","cdr-modal__dialog":"cdr-modal__dialog_8.0.0-alpha.1","cdr-modal__content":"cdr-modal__content_8.0.0-alpha.1","cdr-modal__header":"cdr-modal__header_8.0.0-alpha.1","cdr-modal__title":"cdr-modal__title_8.0.0-alpha.1","cdr-modal__close-button":"cdr-modal__close-button_8.0.0-alpha.1","cdr-modal__text":"cdr-modal__text_8.0.0-alpha.1","cdr-modal__text-content":"cdr-modal__text-content_8.0.0-alpha.1","closed":"closed_8.0.0-alpha.1","cdr-modal__noscroll":"cdr-modal__noscroll_8.0.0-alpha.1"};
   styleInject(css_248z$l);
 
   /* eslint-env browser */
@@ -26638,6 +26639,8 @@ var cedar = (function () {
   function ownKeys$2V(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$2U(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context3; forEach$2(_context3 = ownKeys$2V(Object(source), true)).call(_context3, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context4; forEach$2(_context4 = ownKeys$2V(Object(source))).call(_context4, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
+  // DO NOT manipulate open/close in transitionend use another variable
+
   var CdrModal = {
     name: 'CdrModal',
     components: {
@@ -26684,13 +26687,10 @@ var cedar = (function () {
         keyHandler: null,
         lastActive: null,
         focusHandler: null,
-        reallyClosed: !this.opened,
         isOpening: false,
         offset: null,
         headerHeight: 0,
         totalHeight: 0,
-        scrollHeight: 0,
-        offsetHeight: 0,
         fullscreen: false
       };
     },
@@ -26713,10 +26713,6 @@ var cedar = (function () {
 
       scrollMaxHeight() {
         return this.totalHeight - this.headerHeight - this.verticalSpace;
-      },
-
-      scrolling() {
-        return this.scrollHeight > this.offsetHeight;
       }
 
     },
@@ -26760,8 +26756,6 @@ var cedar = (function () {
           _this2.totalHeight = window.innerHeight;
           _this2.fullscreen = window.innerWidth < CdrBreakpointSm;
           _this2.headerHeight = _this2.$refs.header.offsetHeight;
-          _this2.scrollHeight = _this2.$refs.content.scrollHeight;
-          _this2.offsetHeight = _this2.$refs.content.offsetHeight;
         });
       },
 
@@ -26800,7 +26794,6 @@ var cedar = (function () {
             activeElement = _document2.activeElement;
         this.addNoScroll();
         this.isOpening = true;
-        this.reallyClosed = false;
         this.lastActive = activeElement;
         this.$nextTick(function () {
           if (_this3.$refs.modal) _this3.$refs.modal.focus(); // wrapped in if so testing error isn't thrown
@@ -26835,8 +26828,7 @@ var cedar = (function () {
 
           _this4.removeNoScroll();
 
-          _this4.unsubscribe = null;
-          _this4.reallyClosed = true; // handle scroll-behavior: smooth
+          _this4.unsubscribe = null; // handle scroll-behavior: smooth
 
           if (documentElement) documentElement.style.scrollBehavior = 'auto'; // restore previous scroll position
 
@@ -26906,8 +26898,7 @@ var cedar = (function () {
           label = this.label,
           wrapperClass = this.wrapperClass,
           overlayClass = this.overlayClass,
-          contentClass = this.contentClass,
-          reallyClosed = this.reallyClosed;
+          contentClass = this.contentClass;
       return h("div", {
         "class": clsx(this.style['cdr-modal'], {
           [this.style.closed]: !opened
@@ -26938,7 +26929,7 @@ var cedar = (function () {
         }, this.dialogAttrs)
       }, [this.$slots.modal || h("div", {
         "class": clsx(this.style['cdr-modal__innerWrap'], contentClass),
-        "style": reallyClosed ? {
+        "style": !opened ? {
           display: 'none'
         } : undefined
       }, [h("section", [h("div", {
@@ -26977,9 +26968,7 @@ var cedar = (function () {
         "attrs": {
           "tabindex": "0"
         }
-      }, [this.$slots.default]), this.scrolling && h("div", {
-        "class": this.style['cdr-modal__text-fade']
-      })])])])])]), h("div", {
+      }, [this.$slots.default])])])])])]), h("div", {
         "attrs": {
           "tabIndex": opened ? '0' : undefined
         }
@@ -28225,7 +28214,7 @@ var cedar = (function () {
 
   };
 
-  var css_248z$n = "/* intentionally empty */\n.cdr-pagination_8\\.0\\.0-alpha\\.1 {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  list-style: none;\n  padding: 0;\n  /* Responsive */ }\n.cdr-pagination__li--links_8\\.0\\.0-alpha\\.1 {\n    display: none; }\n.cdr-pagination__li--links_8\\.0\\.0-alpha\\.1 + .cdr-pagination__li--links_8\\.0\\.0-alpha\\.1 {\n      margin-left: 0.4rem; }\n.cdr-pagination__li--select_8\\.0\\.0-alpha\\.1 {\n    display: block; }\n.cdr-pagination__link_8\\.0\\.0-alpha\\.1 {\n    font-family: Graphik, \"Helvetica Neue\", sans-serif;\n    font-style: normal;\n    font-weight: 400;\n    letter-spacing: -0.016rem;\n    font-size: 1.6rem;\n    line-height: 2.2rem;\n    color: rgba(12, 11, 8, 0.75);\n    fill: rgba(12, 11, 8, 0.75);\n    display: block;\n    padding: 0.6rem 1.2rem;\n    text-decoration: none;\n    border-radius: 0.4rem; }\n.cdr-pagination__link_8\\.0\\.0-alpha\\.1:hover, .cdr-pagination__link_8\\.0\\.0-alpha\\.1:focus, .cdr-pagination__link_8\\.0\\.0-alpha\\.1:active {\n      background-color: #f9f8f6;\n      cursor: pointer; }\n.cdr-pagination__link_8\\.0\\.0-alpha\\.1.current {\n      position: relative; }\n.cdr-pagination__link_8\\.0\\.0-alpha\\.1.current:after {\n        content: '';\n        position: absolute;\n        bottom: 0;\n        left: 50%;\n        transform: translateX(-50%);\n        height: 0.2rem;\n        width: 80%;\n        background-color: #406eb5; }\n.cdr-pagination__link_8\\.0\\.0-alpha\\.1.current:hover, .cdr-pagination__link_8\\.0\\.0-alpha\\.1.current:focus, .cdr-pagination__link_8\\.0\\.0-alpha\\.1.current:active {\n        text-decoration: none; }\n.cdr-pagination__link_8\\.0\\.0-alpha\\.1.cdr-pagination__link--disabled_8\\.0\\.0-alpha\\.1 {\n      color: #d1cbbd;\n      fill: #d1cbbd;\n      cursor: not-allowed; }\n.cdr-pagination__link_8\\.0\\.0-alpha\\.1.cdr-pagination__link--disabled_8\\.0\\.0-alpha\\.1:hover, .cdr-pagination__link_8\\.0\\.0-alpha\\.1.cdr-pagination__link--disabled_8\\.0\\.0-alpha\\.1:focus, .cdr-pagination__link_8\\.0\\.0-alpha\\.1.cdr-pagination__link--disabled_8\\.0\\.0-alpha\\.1:active {\n        color: #d1cbbd;\n        background-color: transparent; }\n.cdr-pagination__ellipse_8\\.0\\.0-alpha\\.1 {\n    display: block;\n    padding: 0.6rem 1.2rem; }\n.cdr-pagination__prev_8\\.0\\.0-alpha\\.1 {\n    display: flex;\n    align-items: center;\n    margin-right: 1.6rem; }\n.cdr-pagination__next_8\\.0\\.0-alpha\\.1 {\n    display: flex;\n    align-items: center;\n    margin-left: 1.6rem; }\n.cdr-pagination__caret--prev_8\\.0\\.0-alpha\\.1 {\n    margin-right: 0.2rem; }\n.cdr-pagination__caret--next_8\\.0\\.0-alpha\\.1 {\n    margin-left: 0.2rem; }\n@media (min-width: 768px) {\n    .cdr-pagination__li--links_8\\.0\\.0-alpha\\.1 {\n      display: block; }\n    .cdr-pagination__li--select_8\\.0\\.0-alpha\\.1 {\n      display: none; } }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uL2J1aWxkL25vb3AuY3NzIiwic3JjL2NvbXBvbmVudHMvcGFnaW5hdGlvbi9zdHlsZXMvQ2RyUGFnaW5hdGlvbi5zY3NzIiwibm9kZV9tb2R1bGVzL0ByZWkvY2RyLXRva2Vucy9kaXN0L3Njc3MvY2RyLXRva2Vucy5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLHdCQUF3QjtBQ0l4QjtFQUNFLGFBQWE7RUFDYix1QkFBdUI7RUFDdkIsbUJBQW1CO0VBQ25CLGdCQUFnQjtFQUNoQixVQUFVO0VBK0ZWLGVBQUEsRUFBZ0I7QUE1RmQ7SUFDRSxhQUFhLEVBQUE7QUFEZDtNQUlHLG1CQ3kyQ29CLEVBQUE7QURyMkN4QjtJQUNFLGNBQWMsRUFBQTtBQUlsQjtJQ3dvQkEsa0RBQWtEO0lBQ2xELGtCQUFrQjtJQUNsQixnQkFBZ0I7SUFDaEIseUJBQXVCO0lBQ3ZCLGlCQUFpQjtJQUNqQixtQkFBbUI7SUQxb0JqQiw0QkM4b0MwQztJRDdvQzFDLDJCQzZvQzBDO0lENW9DMUMsY0FBYztJQUNkLHNCQ3E1Q2tEO0lEcDVDbEQscUJBQXFCO0lBQ3JCLHFCQ3ExQ3NCLEVBQUE7QUQ3MUN2QjtNQWFHLHlCQ3d1Q3lDO01EdnVDekMsZUFBZSxFQUFBO0FBZGxCO01Ba0JHLGtCQUFrQixFQUFBO0FBbEJyQjtRQXFCSyxXQUFXO1FBQ1gsa0JBQWtCO1FBQ2xCLFNBQVM7UUFDVCxTQUFTO1FBQ1QsMkJBQTJCO1FBQzNCLGNBQVc7UUFDWCxVQUFVO1FBQ1YseUJDMHRDeUMsRUFBQTtBRHR2QzlDO1FBa0NLLHFCQUFxQixFQUFBO0FBbEMxQjtNQXVDRyxjQyttQzJCO01EOW1DM0IsYUM4bUMyQjtNRDdtQzNCLG1CQUFtQixFQUFBO0FBekN0QjtRQThDSyxjQ3dtQ3lCO1FEdm1DekIsNkJBQTZCLEVBQUE7QUFLbkM7SUFDRSxjQUFjO0lBQ2Qsc0JDcTJDa0QsRUFBQTtBRGwyQ3BEO0lBQ0UsYUFBYTtJQUNiLG1CQUFtQjtJQUNuQixvQkN1eUNvQixFQUFBO0FEcHlDdEI7SUFDRSxhQUFhO0lBQ2IsbUJBQW1CO0lBQ25CLG1CQ2l5Q29CLEVBQUE7QUQ3eENwQjtJQUNFLG9CQ3d4Q3FCLEVBQUE7QURyeEN2QjtJQUNFLG1CQ294Q3FCLEVBQUE7QUFpbkJ6QjtJRC8zREU7TUFDRSxjQUFjLEVBQUE7SUFHaEI7TUFDRSxhQUFhLEVBQUEsRUFDZCIsImZpbGUiOiJDZHJQYWdpbmF0aW9uLnNjc3MifQ== */";
+  var css_248z$n = "/* intentionally empty */\n.cdr-pagination_8\\.0\\.0-alpha\\.1 {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  list-style: none;\n  padding: 0;\n  /* Responsive */ }\n.cdr-pagination__li--links_8\\.0\\.0-alpha\\.1 {\n    display: none; }\n.cdr-pagination__li--links_8\\.0\\.0-alpha\\.1 + .cdr-pagination__li--links_8\\.0\\.0-alpha\\.1 {\n      margin-left: 0.4rem; }\n.cdr-pagination__li--select_8\\.0\\.0-alpha\\.1 {\n    display: block; }\n.cdr-pagination__link_8\\.0\\.0-alpha\\.1 {\n    font-family: Graphik, \"Helvetica Neue\", sans-serif;\n    font-style: normal;\n    font-weight: 400;\n    letter-spacing: -0.016rem;\n    font-size: 1.6rem;\n    line-height: 2.2rem;\n    background-color: transparent;\n    border: none;\n    padding: 0;\n    color: rgba(12, 11, 8, 0.75);\n    fill: rgba(12, 11, 8, 0.75);\n    display: block;\n    padding: 0.6rem 1.2rem;\n    text-decoration: none;\n    border-radius: 0.4rem; }\n.cdr-pagination__link_8\\.0\\.0-alpha\\.1:hover, .cdr-pagination__link_8\\.0\\.0-alpha\\.1:focus, .cdr-pagination__link_8\\.0\\.0-alpha\\.1:active {\n      background-color: #f9f8f6;\n      cursor: pointer; }\n.cdr-pagination__link_8\\.0\\.0-alpha\\.1.current {\n      position: relative; }\n.cdr-pagination__link_8\\.0\\.0-alpha\\.1.current:after {\n        content: '';\n        position: absolute;\n        bottom: 0;\n        left: 50%;\n        transform: translateX(-50%);\n        height: 0.2rem;\n        width: 80%;\n        background-color: #406eb5; }\n.cdr-pagination__link_8\\.0\\.0-alpha\\.1.current:hover, .cdr-pagination__link_8\\.0\\.0-alpha\\.1.current:focus, .cdr-pagination__link_8\\.0\\.0-alpha\\.1.current:active {\n        text-decoration: none; }\n.cdr-pagination__link_8\\.0\\.0-alpha\\.1.cdr-pagination__link--disabled_8\\.0\\.0-alpha\\.1 {\n      color: #d1cbbd;\n      fill: #d1cbbd;\n      cursor: not-allowed; }\n.cdr-pagination__link_8\\.0\\.0-alpha\\.1.cdr-pagination__link--disabled_8\\.0\\.0-alpha\\.1:hover, .cdr-pagination__link_8\\.0\\.0-alpha\\.1.cdr-pagination__link--disabled_8\\.0\\.0-alpha\\.1:focus, .cdr-pagination__link_8\\.0\\.0-alpha\\.1.cdr-pagination__link--disabled_8\\.0\\.0-alpha\\.1:active {\n        color: #d1cbbd;\n        background-color: transparent; }\n.cdr-pagination__ellipse_8\\.0\\.0-alpha\\.1 {\n    display: block;\n    padding: 0.6rem 1.2rem; }\n.cdr-pagination__prev_8\\.0\\.0-alpha\\.1 {\n    display: flex;\n    align-items: center;\n    margin-right: 1.6rem; }\n.cdr-pagination__next_8\\.0\\.0-alpha\\.1 {\n    display: flex;\n    align-items: center;\n    margin-left: 1.6rem; }\n.cdr-pagination__caret--prev_8\\.0\\.0-alpha\\.1 {\n    margin-right: 0.2rem; }\n.cdr-pagination__caret--next_8\\.0\\.0-alpha\\.1 {\n    margin-left: 0.2rem; }\n@media (min-width: 768px) {\n    .cdr-pagination__li--links_8\\.0\\.0-alpha\\.1 {\n      display: block; }\n    .cdr-pagination__li--select_8\\.0\\.0-alpha\\.1 {\n      display: none; } }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uL2J1aWxkL25vb3AuY3NzIiwic3JjL2NvbXBvbmVudHMvcGFnaW5hdGlvbi9zdHlsZXMvQ2RyUGFnaW5hdGlvbi5zY3NzIiwibm9kZV9tb2R1bGVzL0ByZWkvY2RyLXRva2Vucy9kaXN0L3Njc3MvY2RyLXRva2Vucy5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLHdCQUF3QjtBQ0l4QjtFQUNFLGFBQWE7RUFDYix1QkFBdUI7RUFDdkIsbUJBQW1CO0VBQ25CLGdCQUFnQjtFQUNoQixVQUFVO0VBa0dWLGVBQUEsRUFBZ0I7QUEvRmQ7SUFDRSxhQUFhLEVBQUE7QUFEZDtNQUlHLG1CQ3kyQ29CLEVBQUE7QURyMkN4QjtJQUNFLGNBQWMsRUFBQTtBQUlsQjtJQ3dvQkEsa0RBQWtEO0lBQ2xELGtCQUFrQjtJQUNsQixnQkFBZ0I7SUFDaEIseUJBQXVCO0lBQ3ZCLGlCQUFpQjtJQUNqQixtQkFBbUI7SUQxb0JqQiw2QkFBNkI7SUFDN0IsWUFBWTtJQUNaLFVBQVU7SUFDViw0QkMyb0MwQztJRDFvQzFDLDJCQzBvQzBDO0lEem9DMUMsY0FBYztJQUNkLHNCQ2s1Q2tEO0lEajVDbEQscUJBQXFCO0lBQ3JCLHFCQ2sxQ3NCLEVBQUE7QUQ3MUN2QjtNQWdCRyx5QkNxdUN5QztNRHB1Q3pDLGVBQWUsRUFBQTtBQWpCbEI7TUFxQkcsa0JBQWtCLEVBQUE7QUFyQnJCO1FBd0JLLFdBQVc7UUFDWCxrQkFBa0I7UUFDbEIsU0FBUztRQUNULFNBQVM7UUFDVCwyQkFBMkI7UUFDM0IsY0FBVztRQUNYLFVBQVU7UUFDVix5QkN1dEN5QyxFQUFBO0FEdHZDOUM7UUFxQ0sscUJBQXFCLEVBQUE7QUFyQzFCO01BMENHLGNDNG1DMkI7TUQzbUMzQixhQzJtQzJCO01EMW1DM0IsbUJBQW1CLEVBQUE7QUE1Q3RCO1FBaURLLGNDcW1DeUI7UURwbUN6Qiw2QkFBNkIsRUFBQTtBQUtuQztJQUNFLGNBQWM7SUFDZCxzQkNrMkNrRCxFQUFBO0FELzFDcEQ7SUFDRSxhQUFhO0lBQ2IsbUJBQW1CO0lBQ25CLG9CQ295Q29CLEVBQUE7QURqeUN0QjtJQUNFLGFBQWE7SUFDYixtQkFBbUI7SUFDbkIsbUJDOHhDb0IsRUFBQTtBRDF4Q3BCO0lBQ0Usb0JDcXhDcUIsRUFBQTtBRGx4Q3ZCO0lBQ0UsbUJDaXhDcUIsRUFBQTtBQWluQnpCO0lENTNERTtNQUNFLGNBQWMsRUFBQTtJQUdoQjtNQUNFLGFBQWEsRUFBQSxFQUNkIiwiZmlsZSI6IkNkclBhZ2luYXRpb24uc2NzcyJ9 */";
   var style$q = {"cdr-pagination":"cdr-pagination_8.0.0-alpha.1","cdr-pagination__li--links":"cdr-pagination__li--links_8.0.0-alpha.1","cdr-pagination__li--select":"cdr-pagination__li--select_8.0.0-alpha.1","cdr-pagination__link":"cdr-pagination__link_8.0.0-alpha.1","cdr-pagination__link--disabled":"cdr-pagination__link--disabled_8.0.0-alpha.1","cdr-pagination__ellipse":"cdr-pagination__ellipse_8.0.0-alpha.1","cdr-pagination__prev":"cdr-pagination__prev_8.0.0-alpha.1","cdr-pagination__next":"cdr-pagination__next_8.0.0-alpha.1","cdr-pagination__caret--prev":"cdr-pagination__caret--prev_8.0.0-alpha.1","cdr-pagination__caret--next":"cdr-pagination__caret--next_8.0.0-alpha.1"};
   styleInject(css_248z$n);
 
@@ -28279,6 +28268,17 @@ var cedar = (function () {
           return result;
         }
       },
+      linkTag: {
+        type: String,
+        default: 'a',
+        validator: function validator(value) {
+          return validateProp$1(value, ['a', 'button']);
+        }
+      },
+      forLabel: {
+        type: String,
+        default: ''
+      },
 
       /** @ignore used for binding v-model, represents the current page */
       value: {
@@ -28322,6 +28322,10 @@ var cedar = (function () {
 
       nextPageIdx() {
         return this.currentIdx + 1;
+      },
+
+      ariaLabel() {
+        return this.forLabel || 'Pagination';
       },
 
       /**
@@ -28415,9 +28419,10 @@ var cedar = (function () {
 
       prevEl() {
         var h = this.$createElement;
-        return this.innerValue > this.pages[0].page ? h("li", [this.$scopedSlots.prevLink ? this.$scopedSlots.prevLink(this.prevElAttrs) : h("a", {
+        var LinkTag = this.linkTag;
+        return this.innerValue > this.pages[0].page ? h("li", [this.$scopedSlots.prevLink ? this.$scopedSlots.prevLink(this.prevElAttrs) : h(LinkTag, {
           "attrs": _objectSpread$2W(_objectSpread$2W({}, this.prevElAttrs.attrs), {}, {
-            "href": this.prevElAttrs.href
+            "href": LinkTag === 'a' && this.prevElAttrs.href
           }),
           "ref": this.prevElAttrs.attrs.ref,
           "on": {
@@ -28468,9 +28473,10 @@ var cedar = (function () {
 
       nextEl() {
         var h = this.$createElement;
-        return this.innerValue < this.pages[this.totalPageData - 1].page ? h("li", [this.$scopedSlots.nextLink ? this.$scopedSlots.nextLink(this.nextElAttrs) : h("a", {
+        var LinkTag = this.linkTag;
+        return this.innerValue < this.pages[this.totalPageData - 1].page ? h("li", [this.$scopedSlots.nextLink ? this.$scopedSlots.nextLink(this.nextElAttrs) : h(LinkTag, {
           "attrs": _objectSpread$2W(_objectSpread$2W({}, this.nextElAttrs.attrs), {}, {
-            "href": this.nextElAttrs.href
+            "href": LinkTag === 'a' && this.nextElAttrs.href
           }),
           "ref": this.nextElAttrs.attrs.ref,
           "on": {
@@ -28650,9 +28656,10 @@ var cedar = (function () {
           page: n.page,
           content: n.page
         };
-        return this.$scopedSlots.link ? this.$scopedSlots.link(linkData) : h("a", {
+        var LinkTag = this.linkTag;
+        return this.$scopedSlots.link ? this.$scopedSlots.link(linkData) : h(LinkTag, {
           "attrs": _objectSpread$2W(_objectSpread$2W({}, linkData.attrs), {}, {
-            "href": linkData.href
+            "href": LinkTag === 'a' && linkData.href
           }),
           "on": {
             "click": linkData.click
@@ -28667,7 +28674,7 @@ var cedar = (function () {
       var h = arguments[0];
       return h("nav", {
         "attrs": {
-          "aria-label": "Pagination"
+          "aria-label": this.ariaLabel
         }
       }, [h("ol", {
         "class": this.style['cdr-pagination']
@@ -43864,6 +43871,28 @@ var cedar = (function () {
         _vm._v(" "),
         _c("hr"),
         _vm._v(" "),
+        _c("p", [_vm._v("intra-page pagination using buttons")]),
+        _vm._v(" "),
+        _c("cdr-pagination", {
+          attrs: {
+            pages: _vm.pages,
+            "total-pages": 10,
+            "link-tag": "button",
+            "for-label": "potatoes",
+            "data-backstop": "pagination-default"
+          },
+          on: { navigate: _vm.preventNavigate },
+          model: {
+            value: _vm.page,
+            callback: function($$v) {
+              _vm.page = $$v;
+            },
+            expression: "page"
+          }
+        }),
+        _vm._v(" "),
+        _c("hr"),
+        _vm._v(" "),
         _vm._l(_vm.paginationData.example1[_vm.ex1Page], function(datam) {
           return _c("div", { key: datam.title }, [
             _c("h1", [_vm._v(_vm._s(datam.title))]),
@@ -44031,7 +44060,7 @@ var cedar = (function () {
     /* style */
     const __vue_inject_styles__$C = function (inject) {
       if (!inject) return
-      inject("data-v-2e48325c_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"Pagination.vue"}, media: undefined });
+      inject("data-v-586e52b3_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"Pagination.vue"}, media: undefined });
 
     };
     /* scoped */
