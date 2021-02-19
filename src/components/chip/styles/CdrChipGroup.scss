@@ -1,0 +1,6 @@
+@import '../../../css/settings/index.scss';
+@import './vars/CdrChipGroup.vars.scss';
+
+.cdr-chip-group {
+  @include cdr-chip-group-base-mixin;
+}

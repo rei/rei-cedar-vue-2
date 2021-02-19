@@ -54,7 +54,7 @@
     <hr>
     <h3>chip group</h3>
     <!-- TODO: chip group wrapper for keydown/tabindex?? -->
-    <div role="radiogroup">
+    <cdr-chip-group>
       <cdr-chip
         modifier="default"
         v-for="month in months"
@@ -62,10 +62,11 @@
         @click="selectMonth(month)"
         :aria-checked="selectedMonth === month"
         role="radio"
+        :tabindex="selectedMonth === month ? '0' : '-1'"
       >
         {{ month }}
       </cdr-chip>
-    </div>
+    </cdr-chip-group>
 
     <hr>
 
