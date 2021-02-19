@@ -1,24 +1,41 @@
+import debounce from 'lodash-es/debounce';
 import clsx from 'clsx';
+import propValidator from '../../utils/propValidator';
+import breakpoints from '../../mixins/breakpoints';
 import style from './styles/CdrAccordionGroup.scss';
 
 export default {
   name: 'CdrAccordionGroup',
+  props: {
+    unwrap: {
+      type: [String, Boolean],
+      default: false,
+      validator: (value) => {
+        if (typeof value === 'string') {
+          return propValidator(
+            value,
+            ['@xs', '@sm', '@md', '@lg'],
+            false,
+          );
+        }
+        return typeof value === 'boolean';
+      },
+    },
+  },
+  mixins: [breakpoints],
   data() {
     return {
       style,
       accordionButtons: [],
       currentIdx: 0,
+      isUnwrapped: {
+        value: this.unwrap.indexOf(this.getCurrentBreakpoint()) !== -1
+      },
     };
-  },
-  props: {
-    unwrap: {
-      type: [String, Boolean],
-      default: false,
-    }
   },
   provide() {
     return {
-      unwrap: this.unwrap,
+      unwrap: this.isUnwrapped,
     };
   },
   computed: {
@@ -34,6 +51,12 @@ export default {
   mounted() {
     // get all of the buttons in the group
     this.accordionButtons = this.$el.querySelectorAll('.js-cdr-accordion-button');
+    if (typeof this.unwrap === 'string') {
+      this.isUnwrapped.value = this.unwrap.indexOf(this.getCurrentBreakpoint()) !== -1;
+      window.addEventListener('resize', debounce(() => {
+        this.isUnwrapped.value = this.unwrap.indexOf(this.getCurrentBreakpoint()) !== -1;
+      }, 300));
+    }
   },
   methods: {
     handleKeyDown(e) {
