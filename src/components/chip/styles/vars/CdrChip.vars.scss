@@ -94,14 +94,17 @@ $cdr-color-text-chip-emphasis-selected-hover-focus: #4E4D49;
     fill: $cdr-color-text-chip-default-active;
   }
 
-  &[aria-checked="true"] {
+  &[aria-pressed="true"], &[aria-checked="true"] {
     background-color: $cdr-color-background-chip-default-selected;
     box-shadow: inset 0 0 0 2px $cdr-color-border-chip-default-selected-rest, inset 0 0 0 4px $cdr-color-border-chip-default-selected-rest-inset;
     color: $cdr-color-text-chip-default-selected;
     fill: $cdr-color-text-chip-default-selected;
   }
 
-  &[aria-checked="true"]:hover, &[aria-checked="true"]:focus  {
+  &[aria-pressed="true"]:hover,
+  &[aria-pressed="true"]:focus,
+  &[aria-checked="true"]:hover,
+  &[aria-checked="true"]:focus  {
     box-shadow: inset 0 0 0 2px $cdr-color-border-chip-default-selected-hover-focus, inset 0 0 0 4px $cdr-color-border-chip-default-selected-hover-focus-inset, $cdr-prominence-elevated;
   }
 
@@ -128,11 +131,7 @@ $cdr-color-text-chip-emphasis-selected-hover-focus: #4E4D49;
     fill: $cdr-color-text-chip-emphasis-active;
   }
 
-  // $cdr-color-text-chip-emphasis: #FFFFFF;
-  // $cdr-color-text-chip-emphasis-active: #616161;
-  // $cdr-color-text-chip-emphasis-selected: #4E4D49;
-  // : #616161;
-  &[aria-checked="true"] {
+  &[aria-pressed="true"], &[aria-checked="true"] {
     // TODO: checked rest state
     background-color: $cdr-color-background-chip-emphasis-selected-rest;
     box-shadow: inset 0 0 0 2px $cdr-color-border-chip-emphasis-selected-rest;
@@ -140,16 +139,19 @@ $cdr-color-text-chip-emphasis-selected-hover-focus: #4E4D49;
     fill: $cdr-color-text-chip-emphasis-selected;
   }
 
-  &[aria-checked="true"]:hover, &[aria-checked="true"]:focus {
+  &[aria-pressed="true"]:hover,
+  &[aria-pressed="true"]:focus,
+  &[aria-checked="true"]:hover,
+  &[aria-checked="true"]:focus {
     box-shadow: inset 0 0 0 2px $cdr-color-border-chip-emphasis-selected-focus, $cdr-prominence-raised;
     color: $cdr-color-text-chip-emphasis-selected-hover-focus;
   }
 
-  &[aria-checked="true"]:hover {
+  &[aria-pressed="true"]:hover, &[aria-checked="true"]:hover {
     box-shadow: inset 0 0 0 2px $cdr-color-border-chip-emphasis-selected-hover, $cdr-prominence-raised;
   }
 
-  &[aria-checked="true"]:focus {
+  &[aria-pressed="true"]:focus, &[aria-checked="true"]:hover {
     box-shadow: inset 0 0 0 2px $cdr-color-border-chip-emphasis-selected-focus, $cdr-prominence-raised;
   }
 

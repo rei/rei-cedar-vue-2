@@ -12,8 +12,7 @@
     <cdr-chip
       modifier="default"
       @click="toggle"
-      role="switch"
-      :aria-checked="toggled ? 'true' : 'false'"
+      :aria-pressed="toggled ? 'true' : 'false'"
     >
       <icon-heart-stroke
         slot="icon-left"
