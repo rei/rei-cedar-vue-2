@@ -10,12 +10,12 @@ $cdr-color-border-chip-default-selected-rest-inset: #B8B8B8;
 $cdr-color-border-chip-default-selected-hover-focus: #616161;
 $cdr-color-border-chip-default-selected-hover-focus-inset: #B8B8B8;
 
-$cdr-color-background-chip-default-rest: #F7F7F7;
+$cdr-color-background-chip-default: #F7F7F7;
 $cdr-color-background-chip-default-active: #616161;
 $cdr-color-background-chip-default-selected: #4E4D49;
 $cdr-color-background-chip-default-selected-hover-focus: #616161;
 
-$cdr-color-text-chip-default-rest: #4E4D49;
+$cdr-color-text-chip-default: #4E4D49;
 $cdr-color-text-chip-default-active: #F7F7F7;
 $cdr-color-text-chip-default-selected: #F7F7F7;
 
@@ -29,20 +29,16 @@ $cdr-color-border-chip-emphasis-selected-rest: #999999;
 $cdr-color-border-chip-emphasis-selected-hover: #B8B8B8;
 $cdr-color-border-chip-emphasis-selected-focus: #616161;
 
-$cdr-color-background-chip-emphasis-rest: #4E4D49;
+$cdr-color-background-chip-emphasis: #4E4D49;
 $cdr-color-background-chip-emphasis-active: #F7F7F7;
 
 $cdr-color-background-chip-emphasis-selected-rest: #F9F8F6;
 $cdr-color-background-chip-emphasis-selected-hover-focus: #F7F7F7;
 
-$cdr-color-text-chip-emphasis-rest: #FFFFFF;
+$cdr-color-text-chip-emphasis: #FFFFFF;
 $cdr-color-text-chip-emphasis-active: #616161;
 $cdr-color-text-chip-emphasis-selected: #616161;
 $cdr-color-text-chip-emphasis-selected-hover-focus: #4E4D49;
-
-
-
-
 
 
 @mixin cdr-chip-base-mixin() {
@@ -59,7 +55,10 @@ $cdr-color-text-chip-emphasis-selected-hover-focus: #4E4D49;
   letter-spacing: -0.08px;
 
   transition: color $cdr-duration-2-x $cdr-timing-function-ease, fill $cdr-duration-2-x $cdr-timing-function-ease, background-color $cdr-duration-2-x $cdr-timing-function-ease, border $cdr-duration-2-x $cdr-timing-function-ease;
-
+  &:focus {
+    outline: none;
+    outline-offset: 0;
+  }
   &:disabled {
     cursor: not-allowed;
     opacity: 0.5;
@@ -75,9 +74,9 @@ $cdr-color-text-chip-emphasis-selected-hover-focus: #4E4D49;
 }
 
 @mixin cdr-chip-default-mixin() {
-  color: $cdr-color-text-chip-default-rest;
-  fill: $cdr-color-text-chip-default-rest;
-  background-color: $cdr-color-background-chip-default-rest;
+  color: $cdr-color-text-chip-default;
+  fill: $cdr-color-text-chip-default;
+  background-color: $cdr-color-background-chip-default;
   box-shadow: inset 0 0 0 1px $cdr-color-border-chip-default-rest;
 
   &:hover {
@@ -109,9 +108,9 @@ $cdr-color-text-chip-emphasis-selected-hover-focus: #4E4D49;
 }
 
 @mixin cdr-chip-emphasis-mixin() {
-  color: $cdr-color-text-chip-emphasis-rest;
-  fill: $cdr-color-text-chip-emphasis-rest;
-  background-color: $cdr-color-background-chip-emphasis-rest;
+  color: $cdr-color-text-chip-emphasis;
+  fill: $cdr-color-text-chip-emphasis;
+  background-color: $cdr-color-background-chip-emphasis;
   box-shadow: inset 0 0 0 1px $cdr-color-border-chip-emphasis-rest;
 
   &:hover {
