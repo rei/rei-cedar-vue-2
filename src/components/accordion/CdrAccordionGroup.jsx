@@ -49,7 +49,6 @@ export default {
     },
   },
   mounted() {
-    console.log(this.$el);
     // get all of the buttons in the group
     this.accordionButtons = this.$el.querySelectorAll('.js-cdr-accordion-button');
     if (typeof this.unwrap === 'string') {
