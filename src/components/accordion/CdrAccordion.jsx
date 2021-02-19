@@ -10,7 +10,7 @@ export default {
   },
   mixins: [modifier],
   inject: {
-    unwrap: { default: {value: false} }
+    unwrap: { default: { value: false } },
   },
   props: {
     /**
@@ -131,7 +131,10 @@ export default {
     >
       <Heading class={!this.unwrap.value && this.style['cdr-accordion__header']}>
         <HeadingContent
-          class={!this.unwrap.value && [this.style['cdr-accordion__button'], 'js-cdr-accordion-button']}
+          class={[
+            !this.unwrap.value && this.style['cdr-accordion__button'],
+            'js-cdr-accordion-button',
+          ]}
           id={this.id}
           onClick={this.unwrap.value || this.onClick}
           onFocus={this.unwrap.value || this.onFocus}
@@ -156,7 +159,7 @@ export default {
         style={ { maxHeight: this.unwrap.value ? 'auto' : this.maxHeight } }
       >
         <div
-          class={clsx(this.style['cdr-accordion__content'], this.isOpenClass, this.unwrap.valueClass)}
+          class={clsx(this.style['cdr-accordion__content'], this.isOpenClass, this.unwrapClass)}
           aria-hidden={!this.unwrap.value && `${!this.opened}`}
           id={`${this.id}-collapsible`}
           ref="accordion-content"

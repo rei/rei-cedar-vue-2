@@ -110,9 +110,7 @@ exports[`CdrAccordionGroup renders correctly unwrapped 1`] = `
         class=""
       >
         <div
-          aria-controls="tab1-collapsible"
-          aria-expanded="false"
-          class=""
+          class="js-cdr-accordion-button"
           id="tab1"
         >
           <span
@@ -128,7 +126,6 @@ exports[`CdrAccordionGroup renders correctly unwrapped 1`] = `
         style="max-height: auto;"
       >
         <div
-          aria-hidden="true"
           class="cdr-accordion__content open cdr-accordion--unwrap"
           id="tab1-collapsible"
         />
@@ -144,9 +141,7 @@ exports[`CdrAccordionGroup renders correctly unwrapped 1`] = `
         class=""
       >
         <div
-          aria-controls="tab2-collapsible"
-          aria-expanded="false"
-          class=""
+          class="js-cdr-accordion-button"
           id="tab2"
         >
           <span
@@ -162,7 +157,6 @@ exports[`CdrAccordionGroup renders correctly unwrapped 1`] = `
         style="max-height: auto;"
       >
         <div
-          aria-hidden="true"
           class="cdr-accordion__content open cdr-accordion--unwrap"
           id="tab2-collapsible"
         />

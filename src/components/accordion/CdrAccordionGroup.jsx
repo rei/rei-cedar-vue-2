@@ -6,6 +6,7 @@ import style from './styles/CdrAccordionGroup.scss';
 
 export default {
   name: 'CdrAccordionGroup',
+  mixins: [breakpoints],
   props: {
     unwrap: {
       type: [String, Boolean],
@@ -22,14 +23,13 @@ export default {
       },
     },
   },
-  mixins: [breakpoints],
   data() {
     return {
       style,
       accordionButtons: [],
       currentIdx: 0,
       isUnwrapped: {
-        value: this.unwrap.indexOf(this.getCurrentBreakpoint()) !== -1
+        value: this.unwrap || this.unwrap.toString().indexOf(this.getCurrentBreakpoint()) !== -1,
       },
     };
   },
@@ -49,6 +49,7 @@ export default {
     },
   },
   mounted() {
+    console.log(this.$el);
     // get all of the buttons in the group
     this.accordionButtons = this.$el.querySelectorAll('.js-cdr-accordion-button');
     if (typeof this.unwrap === 'string') {
