@@ -29,7 +29,7 @@ export default {
       accordionButtons: [],
       currentIdx: 0,
       isUnwrapped: {
-        value: this.unwrap || this.unwrap.toString().indexOf(this.getCurrentBreakpoint()) !== -1,
+        value: this.unwrap,
       },
     };
   },
