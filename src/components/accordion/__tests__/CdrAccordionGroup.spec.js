@@ -25,6 +25,24 @@ describe('CdrAccordionGroup', () => {
     expect(wrapper.element).toMatchSnapshot()
   });
 
+  it('renders correctly unwrapped', () => {
+    const wrapper = mount(CdrAccordionGroup, {
+      stubs: {
+        'cdr-accordion': CdrAccordion,
+      },
+      propsData: {
+        unwrap: true
+      },
+      slots: {
+        default: [
+          '<cdr-accordion id="tab1" level="2"><template slot="label">label1</template></cdr-accordion>',
+          '<cdr-accordion id="tab2" level="2"><template slot="label">label2</template></cdr-accordion>'
+        ]
+      },
+    });
+    expect(wrapper.element).toMatchSnapshot()
+  });
+
   it('has correct a11y', async () => {
     const elem = document.createElement('div')
     if (document.body) {

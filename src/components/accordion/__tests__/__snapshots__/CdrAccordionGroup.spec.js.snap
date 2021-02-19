@@ -96,3 +96,72 @@ exports[`CdrAccordionGroup renders correctly 1`] = `
   </li>
 </ul>
 `;
+
+exports[`CdrAccordionGroup renders correctly unwrapped 1`] = `
+<ul
+  class="cdr-accordion-group"
+>
+  <li>
+    <div
+      class=""
+      id="tab1-accordion"
+    >
+      <h2
+        class=""
+      >
+        <div
+          class="js-cdr-accordion-button"
+          id="tab1"
+        >
+          <span
+            class="cdr-accordion__label"
+            id="tab1-label"
+          >
+            label1
+          </span>
+        </div>
+      </h2>
+      <div
+        class="cdr-accordion__content-container open"
+        style="max-height: auto;"
+      >
+        <div
+          class="cdr-accordion__content open cdr-accordion--unwrap"
+          id="tab1-collapsible"
+        />
+      </div>
+    </div>
+  </li>
+  <li>
+    <div
+      class=""
+      id="tab2-accordion"
+    >
+      <h2
+        class=""
+      >
+        <div
+          class="js-cdr-accordion-button"
+          id="tab2"
+        >
+          <span
+            class="cdr-accordion__label"
+            id="tab2-label"
+          >
+            label2
+          </span>
+        </div>
+      </h2>
+      <div
+        class="cdr-accordion__content-container open"
+        style="max-height: auto;"
+      >
+        <div
+          class="cdr-accordion__content open cdr-accordion--unwrap"
+          id="tab2-collapsible"
+        />
+      </div>
+    </div>
+  </li>
+</ul>
+`;
