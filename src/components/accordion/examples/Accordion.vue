@@ -7,6 +7,64 @@
       Accordion
     </cdr-text>
 
+
+    <cdr-accordion-group :unwrap="true">
+      <cdr-accordion
+        id="default"
+        level="3"
+        :opened="accordionDefault"
+        @accordion-toggle="accordionDefault = !accordionDefault"
+      >
+        <template slot="label">
+          A short label
+        </template>
+        <cdr-text
+          modifier="body-300"
+        >
+          This is some text. It's in a
+          <cdr-text
+            tag="strong"
+            modifier="body-strong-300"
+          >cdr-text paragraph with a modifier of <code>body-300</code></cdr-text> element as
+          thats how you assign the correct font and line-height for text dislpay on REI.
+          does not include margin or add space to the container. Lorem ipsum dolor
+          sit amet, consectetur adipiscing elit. Sed dictum fermentum tortor posuere
+          fermentum. Sed interdum vel urna at tempor. Nullam vel sapien odio. Class
+          aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
+          himenaeos. Fusce venenatis ex ut ultricies tincidunt. Suspendisse potenti.
+          Sed ut euismod mi, sit amet porta augue. Proin dictum laoreet blandit. Nulla
+          tempus tellus id ligula sodales ultrices. Proin lacus diam, ornare at libero
+          nec, eleifend vulputate mi. Praesent vestibulum accumsan erat id dapibus.
+          Suspendisse ut laoreet nunc, et tempor eros. Etiam vel commodo velit. Proin
+          egestas fringilla elit et lacinia. Praesent et vehicula massa. Fusce ac purus neque.
+        </cdr-text>
+      </cdr-accordion>
+      <cdr-accordion
+        :unwrap="true"
+        id="default-long-label"
+        level="3"
+        :opened="accordionDefault2"
+        @accordion-toggle="accordionDefault2 = !accordionDefault2"
+      >
+        <template slot="label">
+          Label with multiple words, so many words in fact
+          that this content may wrap to several lines
+        </template>
+        <cdr-list modifier="unordered">
+          <li>This is a cdr-list item inside an accordion.</li>
+          <li>It includes no extra styling</li>
+          <li>I'm adding a bunch of items</li>
+          <li>to this list because</li>
+          <li>I want to see what it's like</li>
+          <li>when animated!</li>
+        </cdr-list>
+      </cdr-accordion>
+    </cdr-accordion-group>
+
+
+
+
+
     <cdr-text
       tag="h3"
       modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"

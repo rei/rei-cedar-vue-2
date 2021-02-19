@@ -10,6 +10,17 @@ export default {
       currentIdx: 0,
     };
   },
+  props: {
+    unwrap: {
+      type: [String, Boolean],
+      default: false,
+    }
+  },
+  provide() {
+    return {
+      unwrap: this.unwrap,
+    };
+  },
   computed: {
     nextIdx() {
       const idx = this.currentIdx + 1;

@@ -9,6 +9,7 @@ export default {
     IconCaretDown,
   },
   mixins: [modifier],
+  inject: ['unwrap'],
   props: {
     /**
      * The unique id of an accordion.
@@ -113,22 +114,27 @@ export default {
   },
   render() {
     const Heading = `h${this.level}`;
+    console.log(this.unwrap)
+    const HeadingContent = this.unwrap ? 'div' : 'button'
 
-    return (<div
-      class={clsx(this.style[this.baseClass],
+// WHY does accordion group wrap this in a li rather than just chilling here?!?!?!
+// TODO: remove header/button class when unwrapped.
+// TODO: but...hmmmi guess theey can style text via the slot
+    return (<li
+      class={!this.unwrap && clsx(this.style[this.baseClass],
         this.modifierClass,
         this.styleClass,
         this.focusedClass)}
       id={`${this.id}-accordion`}
       ref="accordion-container"
     >
-      <Heading class={this.style['cdr-accordion__header']}>
-        <button
-          class={[this.style['cdr-accordion__button'], 'js-cdr-accordion-button']} // .js-accordion-button is for group focus management
+      <Heading class={!this.unwrap && this.style['cdr-accordion__header']}>
+        <HeadingContent
+          class={!this.unwrap && [this.style['cdr-accordion__button'], 'js-cdr-accordion-button']}
           id={this.id}
-          onClick={this.onClick}
-          onFocus={this.onFocus}
-          onBlur={this.onBlur}
+          onClick={this.unwrap || this.onClick}
+          onFocus={this.unwrap || this.onFocus}
+          onBlur={this.unwrap || this.onBlur}
           aria-expanded={`${this.opened}`}
           aria-controls={`${this.id}-collapsible`}
           >
@@ -138,15 +144,15 @@ export default {
             >
             { this.$slots.label }
           </span>
-          <icon-caret-down
+          { !this.unwrap && <icon-caret-down
             class={clsx(this.style['cdr-accordion__icon'], this.isOpenClass)}
             size={this.compact ? 'small' : null}
-            />
-        </button>
+          /> }
+        </HeadingContent>
       </Heading>
       <div
         class={clsx(this.style['cdr-accordion__content-container'], this.isOpenClass)}
-        style={ { maxHeight: this.maxHeight } }
+        style={ { maxHeight: this.unwrap ? 'auto' : this.maxHeight } }
       >
         <div
           class={clsx(this.style['cdr-accordion__content'], this.isOpenClass)}
