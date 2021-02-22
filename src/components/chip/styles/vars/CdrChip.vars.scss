@@ -1,46 +1,3 @@
-// TODO: move to cdr-tokens once finalized;
-$cdr-color-border-chip-default-rest: #B8B8B8;
-$cdr-color-border-chip-default-hover: #999999;
-$cdr-color-border-chip-default-focus: #4E4D49;
-$cdr-color-border-chip-default-active: #616161;
-$cdr-color-border-chip-default-active-inset: #B8B8B8;
-
-$cdr-color-border-chip-default-selected-rest: #4E4D49;
-$cdr-color-border-chip-default-selected-rest-inset: #B8B8B8;
-$cdr-color-border-chip-default-selected-hover-focus: #616161;
-$cdr-color-border-chip-default-selected-hover-focus-inset: #B8B8B8;
-
-$cdr-color-background-chip-default: #F7F7F7;
-$cdr-color-background-chip-default-active: #616161;
-$cdr-color-background-chip-default-selected: #4E4D49;
-$cdr-color-background-chip-default-selected-hover-focus: #616161;
-
-$cdr-color-text-chip-default: #4E4D49;
-$cdr-color-text-chip-default-active: #F7F7F7;
-$cdr-color-text-chip-default-selected: #F7F7F7;
-
-
-$cdr-color-border-chip-emphasis-rest: #B8B8B8;
-$cdr-color-border-chip-emphasis-hover: #4E4D49;
-$cdr-color-border-chip-emphasis-focus: #292929;
-$cdr-color-border-chip-emphasis-active: #B8B8B8;
-
-$cdr-color-border-chip-emphasis-selected-rest: #999999;
-$cdr-color-border-chip-emphasis-selected-hover: #B8B8B8;
-$cdr-color-border-chip-emphasis-selected-focus: #616161;
-
-$cdr-color-background-chip-emphasis: #4E4D49;
-$cdr-color-background-chip-emphasis-active: #F7F7F7;
-
-$cdr-color-background-chip-emphasis-selected-rest: #F9F8F6;
-$cdr-color-background-chip-emphasis-selected-hover-focus: #F7F7F7;
-
-$cdr-color-text-chip-emphasis: #FFFFFF;
-$cdr-color-text-chip-emphasis-active: #616161;
-$cdr-color-text-chip-emphasis-selected: #616161;
-$cdr-color-text-chip-emphasis-selected-hover-focus: #4E4D49;
-
-
 @mixin cdr-chip-base-mixin() {
   margin: $cdr-space-half-x;
   width: max-content;
@@ -132,7 +89,6 @@ $cdr-color-text-chip-emphasis-selected-hover-focus: #4E4D49;
   }
 
   &[aria-pressed="true"], &[aria-checked="true"] {
-    // TODO: checked rest state
     background-color: $cdr-color-background-chip-emphasis-selected-rest;
     box-shadow: inset 0 0 0 2px $cdr-color-border-chip-emphasis-selected-rest;
     color: $cdr-color-text-chip-emphasis-selected;

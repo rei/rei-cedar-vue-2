@@ -11,6 +11,7 @@ const SUPPORTED_COMPONENTS = [
   'CdrAlert.vars.scss',
   'CdrButton.vars.scss',
   'CdrCard.vars.scss',
+  'CdrChip.vars.scss',
   'CdrBreadcrumb.vars.scss',
   'CdrFormGroup.vars.scss',
   'CdrFormError.vars.scss',
