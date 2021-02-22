@@ -1,9 +1,9 @@
 import clsx from 'clsx';
 import propValidator from '../../utils/propValidator';
-import style from './styles/CdrGridTwo.scss';
+import style from './styles/CdrGrid.scss';
 
 export default {
-  name: 'CdrGridTwo',
+  name: 'CdrGrid',
   props: {
     /**
      * Defines gutter size.
@@ -33,7 +33,7 @@ export default {
       const classStr = [];
       if (this.gutter) {
         this.gutter.split(' ').forEach((val) => {
-          classStr.push(this.style[`cdr-grid-two--gutter-${val}`]);
+          classStr.push(this.style[`cdr-grid--gutter-${val}`]);
         });
       }
       return classStr.join(' ');
@@ -42,7 +42,7 @@ export default {
   render() {
     const Component = this.tag;
     return (
-      <Component class={clsx(this.style['cdr-grid-two'], this.gutterClass)}>
+      <Component class={clsx(this.style['cdr-grid'], this.gutterClass)}>
         {this.$slots.default}
       </Component>
     );

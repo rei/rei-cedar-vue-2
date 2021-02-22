@@ -7,8 +7,8 @@ import card from 'componentsdir/card/examples/Cards';
 import checkbox from 'componentsdir/checkbox/examples/checkboxes';
 import chip from 'componentsdir/chip/examples/Chip';
 import formGroup from 'componentsdir/formGroup/examples/FormGroup';
-import gridTwo from 'componentsdir/gridTwo/examples/GridTwo';
 import grid from 'componentsdir/grid/examples/Grid';
+import gridFlex from 'componentsdir/flex-grid/examples/Grid';
 import icon from 'componentsdir/icon/examples/Icons';
 import images from 'componentsdir/image/examples/Images';
 import inputs from 'componentsdir/input/examples/Inputs';
@@ -39,7 +39,7 @@ export default {
   chip,
   formGroup,
   grid,
-  gridTwo,
+  gridFlex,
   icon,
   images,
   inputs,
