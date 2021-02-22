@@ -29,7 +29,7 @@ export default {
       accordionButtons: [],
       currentIdx: 0,
       isUnwrapped: {
-        value: this.unwrap || this.unwrap.toString().indexOf(this.getCurrentBreakpoint()) !== -1,
+        value: this.unwrap,
       },
     };
   },
@@ -49,7 +49,6 @@ export default {
     },
   },
   mounted() {
-    console.log(this.$el);
     // get all of the buttons in the group
     this.accordionButtons = this.$el.querySelectorAll('.js-cdr-accordion-button');
     if (typeof this.unwrap === 'string') {
