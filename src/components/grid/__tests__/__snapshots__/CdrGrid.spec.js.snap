@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CdrGrid complex example matches snapshot 1`] = `
+<ul
+  class="cdr-grid cdr-grid--gutter-none@xs cdr-grid--gutter-large@sm cdr-grid--gutter-medium@md cdr-grid--gutter-small@sm"
+>
+  <li>
+    hey
+  </li>
+</ul>
+`;
+
+exports[`CdrGrid matches snapshot 1`] = `
+<div
+  class="cdr-grid cdr-grid--gutter-medium@xs cdr-grid--gutter-medium@sm cdr-grid--gutter-large@md cdr-grid--gutter-large@lg"
+/>
+`;

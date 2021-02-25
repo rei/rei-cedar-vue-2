@@ -18,15 +18,15 @@ export default {
       default: 'p',
     },
   },
-  computed: {
-    baseClass() {
-      return 'cdr-text';
-    },
-  },
   data() {
     return {
       s: style, // named `s` not `style` so that modifierClass works for text utils
     };
+  },
+  computed: {
+    baseClass() {
+      return 'cdr-text';
+    },
   },
   render() {
     const Component = this.tag;

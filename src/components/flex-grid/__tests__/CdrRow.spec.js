@@ -1,5 +1,5 @@
 import { shallowMount, mount } from '@vue/test-utils';
-import CdrRow from 'componentdir/grid/CdrRow';
+import CdrRow from 'componentdir/flex-grid/CdrRow';
 
 describe('CdrRow', () => {
   it('sets type prop correctly', () => {

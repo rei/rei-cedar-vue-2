@@ -8,6 +8,9 @@ describe('CdrChipGroup', () => {
       stubs: {
         'cdr-chip': CdrChip,
       },
+      props: {
+        label: 'test',
+      },
       slots: {
         default: [
           '<cdr-chip aria-checked="true" tabindex="0" role="radio">chip 1</cdr-chip>',
@@ -18,10 +21,52 @@ describe('CdrChipGroup', () => {
     expect(wrapper.element).toMatchSnapshot()
   });
 
+  it('renders correctly with label visible', () => {
+    const wrapper = mount(CdrChipGroup, {
+      stubs: {
+        'cdr-chip': CdrChip,
+      },
+      props: {
+        label: 'test',
+        hideLabel: false,
+      },
+      slots: {
+        default: [
+          '<cdr-chip aria-checked="true" tabindex="0" role="radio">chip 1</cdr-chip>',
+          '<cdr-chip aria-checked="false" tabindex="-1" role="radio">chip 2</cdr-chip>'
+        ]
+      },
+    });
+    expect(wrapper.element).toMatchSnapshot()
+  });
+
+  it('renders label slot', () => {
+    const wrapper = mount(CdrChipGroup, {
+      stubs: {
+        'cdr-chip': CdrChip,
+      },
+      props: {
+        label: 'test',
+        hideLabel: false,
+      },
+      slots: {
+        default: [
+          '<cdr-chip aria-checked="true" tabindex="0" role="radio">chip 1</cdr-chip>',
+          '<cdr-chip aria-checked="false" tabindex="-1" role="radio">chip 2</cdr-chip>'
+        ],
+        label: '<div>hey im overriding here!!!</div>'
+      },
+    });
+    expect(wrapper.element).toMatchSnapshot()
+  });
+
   it('sets current index on mount', () => {
     const wrapper = mount(CdrChipGroup, {
       stubs: {
         'cdr-chip': CdrChip,
+      },
+      props: {
+        label: 'test',
       },
       slots: {
         default: [
@@ -42,6 +87,9 @@ describe('CdrChipGroup', () => {
       stubs: {
         'cdr-chip': CdrChip,
       },
+      props: {
+        label: 'test',
+      },
       slots: {
         default: [
           '<cdr-chip aria-checked="true" tabindex="0" role="radio">chip 1</cdr-chip>',
@@ -52,7 +100,6 @@ describe('CdrChipGroup', () => {
       attachTo: elem,
     });
 
-    expect(wrapper.attributes('role')).toBe('radiogroup');
     /* keyboard nav tests
       `focusin` doesn't fire outside of the browser environment so it's faked by just doing the logic
       manually instead with setData. The proper focus logic is still checked via document.activeElement

@@ -4,3 +4,11 @@
 .cdr-chip-group {
   @include cdr-chip-group-base-mixin;
 }
+
+.cdr-chip-group__legend--hidden {
+  @include cdr-display-sr-only;
+}
+
+.cdr-chip-group__legend {
+  @include cdr-text-heading-sans-300;
+}

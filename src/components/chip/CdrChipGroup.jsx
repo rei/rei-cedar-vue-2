@@ -2,6 +2,16 @@ import style from './styles/CdrChipGroup.scss';
 
 export default {
   name: 'CdrChipGroup',
+  props: {
+    label: {
+      type: String,
+      required: true,
+    },
+    hideLabel: {
+      type: Boolean,
+      default: true,
+    },
+  },
   data() {
     return {
       style,
@@ -18,10 +28,15 @@ export default {
       const idx = this.currentIdx - 1;
       return idx <= -1 ? (this.chips.length - 1) : idx; // if at first, go to last
     },
+    legendClass() {
+      return this.hideLabel
+        ? this.style['cdr-chip-group__legend--hidden']
+        : this.style['cdr-chip-group__legend'];
+    },
   },
   mounted() {
     // get all of the chips in the group
-    this.chips = this.$el.children;
+    this.chips = this.$refs.chips.children;
     this.currentIdx = Array.prototype.findIndex.call(this.chips,
       (chip) => chip.getAttribute('aria-checked') === 'true');
   },
@@ -59,13 +74,17 @@ export default {
     },
   },
   render() {
-    return (<div
+    return (<fieldset
       class={this.style['cdr-chip-group']}
       onFocusin={this.focusin}
       onKeydown={this.handleKeyDown}
-      role="radiogroup"
     >
-      { this.$slots.default }
-    </div>);
+      <legend class={this.legendClass}>
+        {this.$slots.label || this.label}
+      </legend>
+      <div ref="chips">
+        { this.$slots.default }
+      </div>
+    </fieldset>);
   },
 };
