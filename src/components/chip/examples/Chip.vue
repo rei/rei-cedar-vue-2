@@ -10,14 +10,32 @@
 
     <h3>Toggle Chip</h3>
     <cdr-chip
-      modifier="default"
-      @click="toggle"
-      :aria-pressed="toggled ? 'true' : 'false'"
+      modifier="emphasis"
+      @click="toggled1 = !toggled1"
+      :aria-pressed="toggled1 ? 'true' : 'false'"
     >
       <icon-heart-stroke
         slot="icon-left"
         inherit-color
-        v-if="!toggled"
+        v-if="!toggled1"
+      />
+      <icon-heart-fill
+        slot="icon-left"
+        inherit-color
+        v-else
+      />
+      Toggle
+    </cdr-chip>
+
+    <cdr-chip
+      modifier="emphasis"
+      @click="toggled2 = !toggled2"
+      :aria-pressed="toggled2 ? 'true' : 'false'"
+    >
+      <icon-heart-stroke
+        slot="icon-left"
+        inherit-color
+        v-if="!toggled2"
       />
       <icon-heart-fill
         slot="icon-left"
@@ -49,11 +67,10 @@
         />
       </cdr-chip>
     </div>
-
     <hr>
     <h3>chip group</h3>
-    <!-- TODO: chip group wrapper for keydown/tabindex?? -->
-    <cdr-chip-group>
+    <h4>Radio Chip single selection</h4>
+    <cdr-chip-group label="Pick One Month">
       <cdr-chip
         modifier="default"
         v-for="month in months"
@@ -64,6 +81,27 @@
         :tabindex="selectedMonth === month ? '0' : '-1'"
       >
         {{ month }}
+      </cdr-chip>
+    </cdr-chip-group>
+
+    <h4>Checkbox Chip multi selection</h4>
+    <cdr-chip-group label="Pick As Many Months As You Like">
+      <cdr-chip
+        modifier="default"
+        v-for="month in months"
+        :key="month"
+        @click="selectMonths(month)"
+        :aria-checked="selectedMonths.includes(month)"
+        role="checkbox"
+      >
+        {{ month }}
+      </cdr-chip>
+      <cdr-chip
+        modifier="default"
+        disabled
+        role="checkbox"
+      >
+        December
       </cdr-chip>
     </cdr-chip-group>
 
@@ -94,16 +132,17 @@ export default {
   data() {
     return {
       filters: ['Tents'],
-      toggled: false,
+      toggled1: false,
+      toggled2: false,
       tents: true,
+
+      backpacks: true,
       months: ['January', 'February', 'March', 'April'],
       selectedMonth: 'January',
+      selectedMonths: ['February', 'March'],
     };
   },
   methods: {
-    toggle() {
-      this.toggled = !this.toggled;
-    },
     clearFilter() {
       // bad example
       this.filters.pop();
@@ -115,6 +154,14 @@ export default {
     },
     selectMonth(month) {
       this.selectedMonth = month;
+    },
+    selectMonths(month) {
+      const i = this.selectedMonths.indexOf(month);
+      if (i !== -1) {
+        this.selectedMonths.splice(i, 1);
+      } else {
+        this.selectedMonths.push(month);
+      }
     },
   },
 };

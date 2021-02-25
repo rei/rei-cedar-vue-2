@@ -1,24 +1,92 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CdrChipGroup renders correctly 1`] = `
-<div
+<fieldset
+  class="cdr-chip-group"
   role="radiogroup"
 >
-  <button
-    aria-checked="true"
-    class="cdr-chip cdr-chip--default"
-    role="radio"
-    tabindex="0"
+  <legend
+    class="cdr-chip-group__legend--hidden"
+  />
+  <div>
+    <button
+      aria-checked="true"
+      class="cdr-chip cdr-chip--default"
+      role="radio"
+      tabindex="0"
+    >
+      chip 1
+    </button>
+    <button
+      aria-checked="false"
+      class="cdr-chip cdr-chip--default"
+      role="radio"
+      tabindex="-1"
+    >
+      chip 2
+    </button>
+  </div>
+</fieldset>
+`;
+
+exports[`CdrChipGroup renders correctly with label visible 1`] = `
+<fieldset
+  class="cdr-chip-group"
+  role="radiogroup"
+>
+  <legend
+    class="cdr-chip-group__legend"
+  />
+  <div>
+    <button
+      aria-checked="true"
+      class="cdr-chip cdr-chip--default"
+      role="radio"
+      tabindex="0"
+    >
+      chip 1
+    </button>
+    <button
+      aria-checked="false"
+      class="cdr-chip cdr-chip--default"
+      role="radio"
+      tabindex="-1"
+    >
+      chip 2
+    </button>
+  </div>
+</fieldset>
+`;
+
+exports[`CdrChipGroup renders label slot 1`] = `
+<fieldset
+  class="cdr-chip-group"
+  role="radiogroup"
+>
+  <legend
+    class="cdr-chip-group__legend"
   >
-    chip 1
-  </button>
-  <button
-    aria-checked="false"
-    class="cdr-chip cdr-chip--default"
-    role="radio"
-    tabindex="-1"
-  >
-    chip 2
-  </button>
-</div>
+    <div>
+      hey im overriding here!!!
+    </div>
+  </legend>
+  <div>
+    <button
+      aria-checked="true"
+      class="cdr-chip cdr-chip--default"
+      role="radio"
+      tabindex="0"
+    >
+      chip 1
+    </button>
+    <button
+      aria-checked="false"
+      class="cdr-chip cdr-chip--default"
+      role="radio"
+      tabindex="-1"
+    >
+      chip 2
+    </button>
+  </div>
+</fieldset>
 `;
