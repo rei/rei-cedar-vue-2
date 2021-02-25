@@ -3,7 +3,6 @@
 exports[`CdrChipGroup renders correctly 1`] = `
 <fieldset
   class="cdr-chip-group"
-  role="radiogroup"
 >
   <legend
     class="cdr-chip-group__legend--hidden"
@@ -32,7 +31,6 @@ exports[`CdrChipGroup renders correctly 1`] = `
 exports[`CdrChipGroup renders correctly with label visible 1`] = `
 <fieldset
   class="cdr-chip-group"
-  role="radiogroup"
 >
   <legend
     class="cdr-chip-group__legend"
@@ -61,7 +59,6 @@ exports[`CdrChipGroup renders correctly with label visible 1`] = `
 exports[`CdrChipGroup renders label slot 1`] = `
 <fieldset
   class="cdr-chip-group"
-  role="radiogroup"
 >
   <legend
     class="cdr-chip-group__legend"

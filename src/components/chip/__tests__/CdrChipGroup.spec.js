@@ -100,7 +100,6 @@ describe('CdrChipGroup', () => {
       attachTo: elem,
     });
 
-    expect(wrapper.attributes('role')).toBe('radiogroup');
     /* keyboard nav tests
       `focusin` doesn't fire outside of the browser environment so it's faked by just doing the logic
       manually instead with setData. The proper focus logic is still checked via document.activeElement

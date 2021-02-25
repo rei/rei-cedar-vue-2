@@ -78,7 +78,6 @@ export default {
       class={this.style['cdr-chip-group']}
       onFocusin={this.focusin}
       onKeydown={this.handleKeyDown}
-      role="radiogroup"
     >
       <legend class={this.legendClass}>
         {this.$slots.label || this.label}
