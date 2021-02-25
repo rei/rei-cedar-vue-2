@@ -189,7 +189,10 @@
       prompt="Choose One"
     >
       <template slot="info-action">
-        <cdr-link tag="button" type="button">
+        <cdr-link
+          tag="button"
+          type="button"
+        >
           <icon-information-stroke inherit-color />
           <span class="cdr-display-sr-only">Information!</span>
         </cdr-link>
