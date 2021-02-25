@@ -136,9 +136,9 @@ export default {
             'js-cdr-accordion-button',
           ]}
           id={this.id}
-          onClick={this.unwrap.value || this.onClick}
-          onFocus={this.unwrap.value || this.onFocus}
-          onBlur={this.unwrap.value || this.onBlur}
+          onClick={!this.unwrap.value && this.onClick}
+          onFocus={!this.unwrap.value && this.onFocus}
+          onBlur={!this.unwrap.value && this.onBlur}
           aria-expanded={!this.unwrap.value && `${this.opened}`}
           aria-controls={!this.unwrap.value && `${this.id}-collapsible`}
           >
@@ -156,7 +156,7 @@ export default {
       </Heading>
       <div
         class={clsx(this.style['cdr-accordion__content-container'], this.isOpenClass)}
-        style={ { maxHeight: this.unwrap.value ? 'auto' : this.maxHeight } }
+        style={ { maxHeight: this.unwrap.value ? 'none' : this.maxHeight } }
       >
         <div
           class={clsx(this.style['cdr-accordion__content'], this.isOpenClass, this.unwrapClass)}
