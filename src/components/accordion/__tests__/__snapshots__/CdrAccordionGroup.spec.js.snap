@@ -123,7 +123,7 @@ exports[`CdrAccordionGroup renders correctly unwrapped 1`] = `
       </h2>
       <div
         class="cdr-accordion__content-container open"
-        style="max-height: auto;"
+        style="max-height: none;"
       >
         <div
           class="cdr-accordion__content open cdr-accordion--unwrap"
@@ -154,7 +154,7 @@ exports[`CdrAccordionGroup renders correctly unwrapped 1`] = `
       </h2>
       <div
         class="cdr-accordion__content-container open"
-        style="max-height: auto;"
+        style="max-height: none;"
       >
         <div
           class="cdr-accordion__content open cdr-accordion--unwrap"

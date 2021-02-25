@@ -80,6 +80,13 @@ export default {
     isOpenClass() {
       return this.opened || this.unwrap.value ? 'open' : 'closed';
     },
+    listeners() {
+      return this.unwrap.value ? {} : {
+        click: this.onClick,
+        focus: this.onFocus,
+        blur: this.onBlur,
+      };
+    },
   },
   watch: {
     opened() {
@@ -136,9 +143,8 @@ export default {
             'js-cdr-accordion-button',
           ]}
           id={this.id}
-          onClick={!this.unwrap.value && this.onClick}
-          onFocus={!this.unwrap.value && this.onFocus}
-          onBlur={!this.unwrap.value && this.onBlur}
+
+          {...{ on: this.listeners }}
           aria-expanded={!this.unwrap.value && `${this.opened}`}
           aria-controls={!this.unwrap.value && `${this.id}-collapsible`}
           >
