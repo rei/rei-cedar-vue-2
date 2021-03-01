@@ -2,16 +2,26 @@
 
 exports[`CdrChip default matches snapshot 1`] = `
 <button
-  class="cdr-chip cdr-chip--default"
+  class="cdr-chip"
 >
   tortilla chip
 </button>
 `;
 
-exports[`CdrChip emphasis matches snapshot 1`] = `
+exports[`CdrChip renders icon slots 1`] = `
 <button
-  class="cdr-chip cdr-chip--emphasis"
+  class="cdr-chip"
 >
+  <span
+    class="cdr-chip__icon-left"
+  >
+    🌮
+  </span>
   tortilla chip
+  <span
+    class="cdr-chip__icon-right"
+  >
+    🍔
+  </span>
 </button>
 `;

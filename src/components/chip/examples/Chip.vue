@@ -2,15 +2,11 @@
   <div>
     <h2>chips</h2>
     <cdr-chip>Default</cdr-chip>
-    <cdr-chip modifier="emphasis">
-      Emphasis
-    </cdr-chip>
 
     <hr>
 
     <h3>Toggle Chip</h3>
     <cdr-chip
-      modifier="emphasis"
       @click="toggled1 = !toggled1"
       :aria-pressed="toggled1 ? 'true' : 'false'"
     >
@@ -18,24 +14,6 @@
         slot="icon-left"
         inherit-color
         v-if="!toggled1"
-      />
-      <icon-heart-fill
-        slot="icon-left"
-        inherit-color
-        v-else
-      />
-      Toggle
-    </cdr-chip>
-
-    <cdr-chip
-      modifier="emphasis"
-      @click="toggled2 = !toggled2"
-      :aria-pressed="toggled2 ? 'true' : 'false'"
-    >
-      <icon-heart-stroke
-        slot="icon-left"
-        inherit-color
-        v-if="!toggled2"
       />
       <icon-heart-fill
         slot="icon-left"
@@ -55,7 +33,6 @@
       >tents</cdr-checkbox>
 
       <cdr-chip
-        modifier="default"
         v-for="filter in filters"
         :key="filter"
         @click="clearFilter"
@@ -72,7 +49,6 @@
     <h4>Radio Chip single selection</h4>
     <cdr-chip-group label="Pick One Month">
       <cdr-chip
-        modifier="default"
         v-for="month in months"
         :key="month"
         @click="selectMonth(month)"
@@ -87,7 +63,6 @@
     <h4>Checkbox Chip multi selection</h4>
     <cdr-chip-group label="Pick As Many Months As You Like">
       <cdr-chip
-        modifier="default"
         v-for="month in months"
         :key="month"
         @click="selectMonths(month)"
@@ -97,7 +72,6 @@
         {{ month }}
       </cdr-chip>
       <cdr-chip
-        modifier="default"
         disabled
         role="checkbox"
       >
@@ -110,12 +84,6 @@
     <h2>disabled chip</h2>
     <cdr-chip disabled>
       Default
-    </cdr-chip>
-    <cdr-chip
-      modifier="emphasis"
-      disabled
-    >
-      Emphasis
     </cdr-chip>
 
   </div>

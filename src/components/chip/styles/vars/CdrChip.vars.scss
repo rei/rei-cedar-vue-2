@@ -5,6 +5,12 @@
   border-radius: 30px; // TODO: cdr-radius-softest? cdr-radius-chip?
   border: 0;
 
+  color: $cdr-color-text-chip-default;
+  fill: $cdr-color-text-chip-default;
+  background-color: $cdr-color-background-chip-default;
+  box-shadow: inset 0 0 0 1px $cdr-color-border-chip-default-rest;
+
+
   // TODO: use tokens here or make a new mixin
   font-family: Graphik App;
   font-size: 14px;
@@ -12,35 +18,20 @@
   letter-spacing: -0.08px;
 
   transition: color $cdr-duration-2-x $cdr-timing-function-ease, fill $cdr-duration-2-x $cdr-timing-function-ease, background-color $cdr-duration-2-x $cdr-timing-function-ease, border $cdr-duration-2-x $cdr-timing-function-ease;
-  &:focus {
-    outline: none;
-    outline-offset: 0;
-  }
+
+
   &:disabled {
     cursor: not-allowed;
     opacity: 0.65;
   }
-}
-
-@mixin cdr-chip-icon-left-mixin() {
-  margin-right: $cdr-space-eighth-x;
-}
-
-@mixin cdr-chip-icon-right-mixin() {
-  margin-left: $cdr-space-eighth-x;
-}
-
-@mixin cdr-chip-default-mixin() {
-  color: $cdr-color-text-chip-default;
-  fill: $cdr-color-text-chip-default;
-  background-color: $cdr-color-background-chip-default;
-  box-shadow: inset 0 0 0 1px $cdr-color-border-chip-default-rest;
 
   &:hover {
     box-shadow: inset 0 0 0 2px $cdr-color-border-chip-default-hover, $cdr-prominence-raised;
   }
 
   &:focus {
+    outline: none;
+    outline-offset: 0;
     box-shadow: inset 0 0 0 2px $cdr-color-border-chip-default-focus, $cdr-prominence-raised;
   }
 
@@ -64,51 +55,12 @@
   &[aria-checked="true"]:focus  {
     box-shadow: inset 0 0 0 2px $cdr-color-border-chip-default-selected-hover-focus, inset 0 0 0 4px $cdr-color-border-chip-default-selected-hover-focus-inset, $cdr-prominence-elevated;
   }
-
 }
 
-@mixin cdr-chip-emphasis-mixin() {
-  color: $cdr-color-text-chip-emphasis;
-  fill: $cdr-color-text-chip-emphasis;
-  background-color: $cdr-color-background-chip-emphasis;
-  box-shadow: inset 0 0 0 1px $cdr-color-border-chip-emphasis-rest;
+@mixin cdr-chip-icon-left-mixin() {
+  margin-right: $cdr-space-eighth-x;
+}
 
-  &:hover {
-    box-shadow: inset 0 0 0 2px $cdr-color-border-chip-emphasis-hover, $cdr-prominence-raised;
-  }
-
-  &:focus {
-    box-shadow: inset 0 0 0 2px $cdr-color-border-chip-emphasis-focus, $cdr-prominence-raised;
-  }
-
-  &:active {
-    background-color: $cdr-color-background-chip-emphasis-active;
-    box-shadow: inset 0 0 0 2px $cdr-color-border-chip-emphasis-active;
-    color: $cdr-color-text-chip-emphasis-active;
-    fill: $cdr-color-text-chip-emphasis-active;
-  }
-
-  &[aria-pressed="true"], &[aria-checked="true"] {
-    background-color: $cdr-color-background-chip-emphasis-selected-rest;
-    box-shadow: inset 0 0 0 2px $cdr-color-border-chip-emphasis-selected-rest;
-    color: $cdr-color-text-chip-emphasis-selected;
-    fill: $cdr-color-text-chip-emphasis-selected;
-  }
-
-  &[aria-pressed="true"]:hover,
-  &[aria-pressed="true"]:focus,
-  &[aria-checked="true"]:hover,
-  &[aria-checked="true"]:focus {
-    box-shadow: inset 0 0 0 2px $cdr-color-border-chip-emphasis-selected-focus, $cdr-prominence-raised;
-    color: $cdr-color-text-chip-emphasis-selected-hover-focus;
-  }
-
-  &[aria-pressed="true"]:hover, &[aria-checked="true"]:hover {
-    box-shadow: inset 0 0 0 2px $cdr-color-border-chip-emphasis-selected-hover, $cdr-prominence-raised;
-  }
-
-  &[aria-pressed="true"]:focus, &[aria-checked="true"]:hover {
-    box-shadow: inset 0 0 0 2px $cdr-color-border-chip-emphasis-selected-focus, $cdr-prominence-raised;
-  }
-
+@mixin cdr-chip-icon-right-mixin() {
+  margin-left: $cdr-space-eighth-x;
 }
