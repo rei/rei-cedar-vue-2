@@ -21,7 +21,7 @@ export default {
   computed: {
     isBackstop() {
       return this.$router.currentRoute.query.backstop;
-    }
+    },
   },
   watch: {
     // Adapted from https://marcus.io/blog/accessible-routing-vuejs
