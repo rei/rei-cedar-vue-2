@@ -18,6 +18,11 @@ export default {
       fullSprite,
     };
   },
+  computed: {
+    isBackstop() {
+      return this.$router.currentRoute.query.backstop;
+    }
+  },
   watch: {
     // Adapted from https://marcus.io/blog/accessible-routing-vuejs
     $route(to, from) {
@@ -63,7 +68,7 @@ export default {
       style="display:none"
       v-html="fullSprite"
     />
-    <ul style="padding:0">
+    <ul style="padding:0" v-if="!isBackstop">
       <li
         class="cdr-space-inset-quarter-x"
         style="display:inline-flex"
