@@ -16,8 +16,6 @@ $container-x-padding-md: $cdr-space-two-x;
    ========================================================================== */
 
 .cdr-container-fluid {
-  @include cdr-text-default;
-  // TODO: pull text-default into container mixins, remove here
   @include cdr-container-fluid;
 }
 
@@ -26,7 +24,5 @@ $container-x-padding-md: $cdr-space-two-x;
    ========================================================================== */
 
 .cdr-container {
-  @include cdr-text-default;
-  // TODO: pull text-default into container mixins, remove here
   @include cdr-container;
 }
