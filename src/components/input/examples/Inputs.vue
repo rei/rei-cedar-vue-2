@@ -382,8 +382,11 @@ export default {
         case 'secondary':
           this.backgroundColor = 'secondary';
           break;
+        case 'error':
+          this.backgroundColor = 'error';
+          break;
         default:
-          this.backgroundColor = 'primary';
+          this.backgroundColor = 'secondary';
       }
     },
   },
