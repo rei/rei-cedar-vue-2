@@ -37,6 +37,7 @@ const responsiveViewports =[
 // functions for creating scenarios
 function createScenario(def) {
   const finalScenario = Object.assign({}, scenarioDefaults, def);
+  finalScenario.url = `${finalScenario.url}?backstop=true`;
   scenariosArr.push(finalScenario);
 }
 

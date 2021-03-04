@@ -136,7 +136,11 @@ export default {
       id={`${this.id}-accordion`}
       ref="accordion-container"
     >
-      <Heading class={!this.unwrap.value && this.style['cdr-accordion__header']}>
+      <Heading class={
+        this.unwrap.value
+          ? this.style['cdr-accordion__header--unwrapped']
+          : this.style['cdr-accordion__header']
+      }>
         <HeadingContent
           class={[
             !this.unwrap.value && this.style['cdr-accordion__button'],

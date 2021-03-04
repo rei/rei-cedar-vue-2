@@ -10,13 +10,13 @@ describe('CdrChip', () => {
     });
     expect(wrapper.element).toMatchSnapshot();
   });
-  it('emphasis matches snapshot', () => {
+
+  it('renders icon slots', () => {
     const wrapper = shallowMount(CdrChip, {
-      propsData: {
-        modifier: 'emphasis'
-      },
       slots: {
-        default: 'tortilla chip'
+        default: 'tortilla chip',
+        'icon-left': '🌮',
+        'icon-right': '🍔'
       }
     });
     expect(wrapper.element).toMatchSnapshot();

@@ -10,7 +10,7 @@ exports[`CdrChipGroup renders correctly 1`] = `
   <div>
     <button
       aria-checked="true"
-      class="cdr-chip cdr-chip--default"
+      class="cdr-chip"
       role="radio"
       tabindex="0"
     >
@@ -18,7 +18,7 @@ exports[`CdrChipGroup renders correctly 1`] = `
     </button>
     <button
       aria-checked="false"
-      class="cdr-chip cdr-chip--default"
+      class="cdr-chip"
       role="radio"
       tabindex="-1"
     >
@@ -38,7 +38,7 @@ exports[`CdrChipGroup renders correctly with label visible 1`] = `
   <div>
     <button
       aria-checked="true"
-      class="cdr-chip cdr-chip--default"
+      class="cdr-chip"
       role="radio"
       tabindex="0"
     >
@@ -46,7 +46,7 @@ exports[`CdrChipGroup renders correctly with label visible 1`] = `
     </button>
     <button
       aria-checked="false"
-      class="cdr-chip cdr-chip--default"
+      class="cdr-chip"
       role="radio"
       tabindex="-1"
     >
@@ -70,7 +70,7 @@ exports[`CdrChipGroup renders label slot 1`] = `
   <div>
     <button
       aria-checked="true"
-      class="cdr-chip cdr-chip--default"
+      class="cdr-chip"
       role="radio"
       tabindex="0"
     >
@@ -78,7 +78,7 @@ exports[`CdrChipGroup renders label slot 1`] = `
     </button>
     <button
       aria-checked="false"
-      class="cdr-chip cdr-chip--default"
+      class="cdr-chip"
       role="radio"
       tabindex="-1"
     >

@@ -1,21 +1,7 @@
-import clsx from 'clsx';
 import style from './styles/CdrChip.scss';
-import modifier from '../../mixins/modifier';
-import propValidator from '../../utils/propValidator';
 
 export default {
   name: 'CdrChip',
-  mixins: [modifier],
-  props: {
-    modifier: {
-      type: String,
-      validator: (value) => propValidator(
-        value,
-        ['default', 'emphasis'],
-      ),
-      default: 'default',
-    },
-  },
   data() {
     return {
       style,
@@ -25,7 +11,7 @@ export default {
   render() {
     return (
       <button
-        class={clsx(this.style[this.baseClass], this.modifierClass)}
+        class={this.style[this.baseClass]}
         {...{ on: this.$listeners }}
       >
         { this.$slots['icon-left'] && (

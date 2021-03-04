@@ -107,7 +107,7 @@ exports[`CdrAccordionGroup renders correctly unwrapped 1`] = `
       id="tab1-accordion"
     >
       <h2
-        class=""
+        class="cdr-accordion__header--unwrapped"
       >
         <div
           class="js-cdr-accordion-button"
@@ -138,7 +138,7 @@ exports[`CdrAccordionGroup renders correctly unwrapped 1`] = `
       id="tab2-accordion"
     >
       <h2
-        class=""
+        class="cdr-accordion__header--unwrapped"
       >
         <div
           class="js-cdr-accordion-button"
