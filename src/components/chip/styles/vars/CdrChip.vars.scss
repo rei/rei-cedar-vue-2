@@ -7,7 +7,7 @@
 
   color: $cdr-color-text-chip-default;
   fill: $cdr-color-text-chip-default;
-  background-color: $cdr-color-background-chip-default;
+  background-color: $cdr-color-background-chip-default-rest;
   box-shadow: inset 0 0 0 1px $cdr-color-border-chip-default-rest;
 
 
@@ -25,34 +25,38 @@
   }
 
   &:hover {
-    box-shadow: inset 0 0 0 2px $cdr-color-border-chip-default-hover, $cdr-prominence-raised;
+    background-color: $cdr-color-background-chip-default-hover;
+    box-shadow: inset 0 0 0 1px $cdr-color-border-chip-default-hover, $cdr-prominence-elevated;
   }
 
   &:focus {
     outline: none;
     outline-offset: 0;
-    box-shadow: inset 0 0 0 2px $cdr-color-border-chip-default-focus, $cdr-prominence-raised;
+    background-color: $cdr-color-background-chip-default-focus;
+    box-shadow: inset 0 0 0 3px $cdr-color-border-chip-default-focus;
   }
 
   &:active {
     background-color: $cdr-color-background-chip-default-active;
-    box-shadow: inset 0 0 0 2px $cdr-color-border-chip-default-active, inset 0 0 0 4px $cdr-color-border-chip-default-active-inset;
-    color: $cdr-color-text-chip-default-active;
-    fill: $cdr-color-text-chip-default-active;
+    box-shadow: inset 0 0 0 1px $cdr-color-border-chip-default-active, $cdr-prominence-elevated;
   }
 
   &[aria-pressed="true"], &[aria-checked="true"] {
     background-color: $cdr-color-background-chip-default-selected;
-    box-shadow: inset 0 0 0 2px $cdr-color-border-chip-default-selected-rest, inset 0 0 0 4px $cdr-color-border-chip-default-selected-rest-inset;
-    color: $cdr-color-text-chip-default-selected;
-    fill: $cdr-color-text-chip-default-selected;
+    box-shadow: inset 0 0 0 1px $cdr-color-border-chip-default-selected-rest;
   }
 
   &[aria-pressed="true"]:hover,
+  &[aria-checked="true"]:hover {
+    background-color: $cdr-color-background-chip-default-selected-hover;
+    box-shadow: inset 0 0 0 2px $cdr-color-border-chip-default-selected-hover, $cdr-prominence-elevated;
+
+  }
+
   &[aria-pressed="true"]:focus,
-  &[aria-checked="true"]:hover,
   &[aria-checked="true"]:focus  {
-    box-shadow: inset 0 0 0 2px $cdr-color-border-chip-default-selected-hover-focus, inset 0 0 0 4px $cdr-color-border-chip-default-selected-hover-focus-inset, $cdr-prominence-elevated;
+    background-color: $cdr-color-background-chip-default-selected-focus;
+    box-shadow: inset 0 0 0 3px $cdr-color-border-chip-default-selected-focus;
   }
 }
 
