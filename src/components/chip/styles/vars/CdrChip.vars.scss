@@ -25,11 +25,11 @@
   transition: color $cdr-duration-2-x $cdr-timing-function-ease, fill $cdr-duration-2-x $cdr-timing-function-ease, background-color $cdr-duration-2-x $cdr-timing-function-ease, border $cdr-duration-2-x $cdr-timing-function-ease;
 
 
-  &:disabled {
-    cursor: not-allowed;
-    background-color: $cdr-color-background-chip-default-disabled;
-    box-shadow: inset 0 0 0 1px $cdr-color-border-chip-default-disabled;
-    color: $cdr-color-text-chip-disabled;
+  &:disabled, &:disabled:hover, &:disabled:focus  {
+    cursor: not-allowed !important;
+    background-color: $cdr-color-background-chip-default-disabled !important;
+    box-shadow: inset 0 0 0 1px $cdr-color-border-chip-default-disabled !important;
+    color: $cdr-color-text-chip-disabled !important;
   }
 
   &:hover {
