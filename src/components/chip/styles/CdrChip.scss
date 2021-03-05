@@ -12,3 +12,11 @@
 .cdr-chip__icon-right {
   @include cdr-chip-icon-right-mixin;
 }
+
+.cdr-chip__icon-left ~ .cdr-chip__content {
+  @include cdr-chip-content-right-mixin;
+}
+
+.cdr-chip__icon-right ~ .cdr-chip__content {
+  @include cdr-chip-content-left-mixin;
+}

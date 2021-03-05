@@ -4,7 +4,11 @@ exports[`CdrChip default matches snapshot 1`] = `
 <button
   class="cdr-chip"
 >
-  tortilla chip
+  <span
+    class="cdr-chip__content"
+  >
+    tortilla chip
+  </span>
 </button>
 `;
 
@@ -17,11 +21,15 @@ exports[`CdrChip renders icon slots 1`] = `
   >
     🌮
   </span>
-  tortilla chip
   <span
     class="cdr-chip__icon-right"
   >
     🍔
+  </span>
+  <span
+    class="cdr-chip__content"
+  >
+    tortilla chip
   </span>
 </button>
 `;

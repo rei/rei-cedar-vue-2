@@ -14,7 +14,11 @@ exports[`CdrChipGroup renders correctly 1`] = `
       role="radio"
       tabindex="0"
     >
-      chip 1
+      <span
+        class="cdr-chip__content"
+      >
+        chip 1
+      </span>
     </button>
     <button
       aria-checked="false"
@@ -22,7 +26,11 @@ exports[`CdrChipGroup renders correctly 1`] = `
       role="radio"
       tabindex="-1"
     >
-      chip 2
+      <span
+        class="cdr-chip__content"
+      >
+        chip 2
+      </span>
     </button>
   </div>
 </fieldset>
@@ -42,7 +50,11 @@ exports[`CdrChipGroup renders correctly with label visible 1`] = `
       role="radio"
       tabindex="0"
     >
-      chip 1
+      <span
+        class="cdr-chip__content"
+      >
+        chip 1
+      </span>
     </button>
     <button
       aria-checked="false"
@@ -50,7 +62,11 @@ exports[`CdrChipGroup renders correctly with label visible 1`] = `
       role="radio"
       tabindex="-1"
     >
-      chip 2
+      <span
+        class="cdr-chip__content"
+      >
+        chip 2
+      </span>
     </button>
   </div>
 </fieldset>
@@ -74,7 +90,11 @@ exports[`CdrChipGroup renders label slot 1`] = `
       role="radio"
       tabindex="0"
     >
-      chip 1
+      <span
+        class="cdr-chip__content"
+      >
+        chip 1
+      </span>
     </button>
     <button
       aria-checked="false"
@@ -82,7 +102,11 @@ exports[`CdrChipGroup renders label slot 1`] = `
       role="radio"
       tabindex="-1"
     >
-      chip 2
+      <span
+        class="cdr-chip__content"
+      >
+        chip 2
+      </span>
     </button>
   </div>
 </fieldset>
