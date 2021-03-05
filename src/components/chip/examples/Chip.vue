@@ -2,7 +2,25 @@
   <div>
     <h2>chips</h2>
     <cdr-chip>Default</cdr-chip>
-
+    <cdr-chip
+    >
+      <icon-heart-stroke
+        slot="icon-left"
+        inherit-color
+        size="small"
+      />hey
+    </cdr-chip>
+    <cdr-chip
+    >
+      <icon-heart-stroke
+        slot="icon-right"
+        inherit-color
+        size="small"
+      />hey
+    </cdr-chip>
+    <cdr-chip
+    >hey
+    </cdr-chip>
     <hr>
 
     <h3>Toggle Chip</h3>
@@ -13,11 +31,13 @@
       <icon-heart-stroke
         slot="icon-left"
         inherit-color
+        size="small"
         v-if="!toggled1"
       />
       <icon-heart-fill
         slot="icon-left"
         inherit-color
+        size="small"
         v-else
       />
       Toggle
@@ -38,7 +58,8 @@
         @click="clearFilter"
         aria-controls="tents"
       >
-        {{ filter }} <icon-x-sm
+        {{ filter }} <icon-x-lg
+          size="small"
           slot="icon-right"
           inherit-color
         />

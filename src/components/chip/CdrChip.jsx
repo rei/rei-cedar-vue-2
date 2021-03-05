@@ -19,12 +19,14 @@ export default {
             { this.$slots['icon-left'] }
           </span>
         )}
-        { this.$slots.default }
         { this.$slots['icon-right'] && (
           <span class={this.style['cdr-chip__icon-right']}>
             { this.$slots['icon-right'] }
           </span>
         )}
+        <span class={this.style['cdr-chip__content']}>
+          { this.$slots.default }
+        </span>
       </button>
     );
   },
