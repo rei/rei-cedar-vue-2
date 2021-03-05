@@ -1,0 +1,1265 @@
+// file created by generate.js
+/* eslint-disable */
+
+@mixin cdr-icon-base-mixin() {
+  position: relative;
+  width: $cdr-icon-size;
+  height: $cdr-icon-size;
+  display: inline-block;
+
+  &::after {
+    content: '';
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
+@mixin cdr-icon-account-profile-fill() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/account-profile-fill.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-account-profile() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/account-profile.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-arrow-down() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/arrow-down.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-arrow-left() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/arrow-left.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-arrow-right() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/arrow-right.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-arrow-up() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/arrow-up.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-atv() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/atv.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-bed-outline() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/bed-outline.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-bike-shop() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/bike-shop.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-binoculars() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/binoculars.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-birding() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/birding.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-boat() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/boat.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-boating() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/boating.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-bookmark-fill() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/bookmark-fill.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-bookmark-stroke() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/bookmark-stroke.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-brand-abstract() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/brand-abstract.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-brand-code-sandbox() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/brand-code-sandbox.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-brand-github() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/brand-github.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-brand-linkedin() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/brand-linkedin.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-brand-rei-ice-axes() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/brand-rei-ice-axes.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-brand-sketch() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/brand-sketch.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-buddies() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/buddies.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-bus() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/bus.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-calendar() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/calendar.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-camera() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/camera.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-canoe() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/canoe.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-car() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/car.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-caret-down() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/caret-down.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-caret-left() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/caret-left.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-caret-right() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/caret-right.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-caret-up() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/caret-up.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-cart-fill() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/cart-fill.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-cart() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/cart.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-chain-link() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/chain-link.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-chat() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/chat.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-check-fill() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/check-fill.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-check-lg() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/check-lg.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-check-sm() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/check-sm.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-check-stroke() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/check-stroke.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-climb() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/climb.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-clipboard() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/clipboard.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-clock() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/clock.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-code-html() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/code-html.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-code-js() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/code-js.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-compass() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/compass.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-copy() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/copy.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-coupon-fill() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/coupon-fill.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-coupon-stroke() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/coupon-stroke.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-credit-card() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/credit-card.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-curbside-pickup() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/curbside-pickup.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-day() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/day.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-diving() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/diving.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-dog() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/dog.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-download() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/download.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-edit() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/edit.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-elevation() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/elevation.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-error-fill() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/error-fill.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-error-stroke() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/error-stroke.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-expand() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/expand.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-experiences-backpacking() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/experiences-backpacking.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-experiences-camping() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/experiences-camping.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-experiences-climbing() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/experiences-climbing.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-experiences-clothing() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/experiences-clothing.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-experiences-cycling() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/experiences-cycling.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-experiences-family() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/experiences-family.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-experiences-fitness() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/experiences-fitness.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-experiences-hiking() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/experiences-hiking.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-experiences-outdoor-basics() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/experiences-outdoor-basics.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-experiences-paddling() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/experiences-paddling.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-experiences-rentals() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/experiences-rentals.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-experiences-snowsports() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/experiences-snowsports.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-experiences-travel() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/experiences-travel.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-external-link() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/external-link.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-eye-hide() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/eye-hide.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-eye-show() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/eye-show.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-facebook() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/facebook.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-filter-alt() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/filter-alt.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-filter() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/filter.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-find-location() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/find-location.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-fire() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/fire.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-fishing() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/fishing.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-free-product() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/free-product.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-grid-view() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/grid-view.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-heart-fill() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/heart-fill.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-heart-stroke() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/heart-stroke.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-hike() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/hike.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-history() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/history.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-home() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/home.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-horse() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/horse.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-horseshoe() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/horseshoe.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-image() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/image.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-information-fill() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/information-fill.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-information-stroke() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/information-stroke.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-instagram() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/instagram.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-kayak() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/kayak.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-list-ragged() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/list-ragged.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-list-view() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/list-view.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-location-pin-fill() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/location-pin-fill.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-location-pin-stroke() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/location-pin-stroke.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-lock-locked-fill() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/lock-locked-fill.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-lock-locked-stroke() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/lock-locked-stroke.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-lock-unlocked-stroke() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/lock-unlocked-stroke.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-mail() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/mail.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-map() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/map.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-member-card() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/member-card.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-microphone() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/microphone.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-minus-fill() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/minus-fill.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-minus-lg() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/minus-lg.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-minus-sm() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/minus-sm.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-minus-stroke() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/minus-stroke.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-more-functions() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/more-functions.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-my-location() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/my-location.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-navigation-menu() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/navigation-menu.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-night() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/night.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-paddle() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/paddle.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-pause-fill() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/pause-fill.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-pause-stroke() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/pause-stroke.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-pause() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/pause.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-photography() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/photography.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-picnic() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/picnic.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-pinterest() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/pinterest.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-plane() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/plane.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-play-fill() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/play-fill.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-play-stroke() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/play-stroke.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-play() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/play.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-playground() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/playground.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-plugin() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/plugin.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-plus-fill() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/plus-fill.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-plus-lg() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/plus-lg.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-plus-sm() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/plus-sm.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-plus-stroke() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/plus-stroke.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-print() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/print.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-protection-fill() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/protection-fill.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-protection-stroke() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/protection-stroke.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-question-fill() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/question-fill.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-question-stroke() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/question-stroke.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-refresh() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/refresh.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-reload() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/reload.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-returns() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/returns.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-run() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/run.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-scan-barcode() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/scan-barcode.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-search() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/search.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-service-shop() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/service-shop.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-shipping() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/shipping.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-shopping-bag-fill() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/shopping-bag-fill.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-shopping-bag() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/shopping-bag.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-shrink() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/shrink.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-size-chart() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/size-chart.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-ski-boot() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/ski-boot.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-ski() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/ski.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-snow-shop() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/snow-shop.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-snow() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/snow.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-sort() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/sort.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-star-100() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/star-100.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-star-25() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/star-25.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-star-50() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/star-50.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-star-75() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/star-75.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-star-stroke() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/star-stroke.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-storefront() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/storefront.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-swim() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/swim.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-telephone() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/telephone.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-tent() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/tent.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-trash() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/trash.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-twitter() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/twitter.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-upload() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/upload.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-verified-purchaser() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/verified-purchaser.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-virtual-outfitting() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/virtual-outfitting.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-warning-fill() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/warning-fill.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-warning-stroke() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/warning-stroke.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-water() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/water.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-wilderness() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/wilderness.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-x-fill() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/x-fill.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-x-lg() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/x-lg.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-x-sm() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/x-sm.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-x-stroke() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/x-stroke.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-youtube() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/youtube.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-zoom-in() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/zoom-in.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+
+
+@mixin cdr-icon-zoom-out() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/zoom-out.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
