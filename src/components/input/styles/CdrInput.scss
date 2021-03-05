@@ -166,14 +166,11 @@
   }
 
   &__info-action {
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
     width: 40px;
-    & > * {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
   }
 }
 

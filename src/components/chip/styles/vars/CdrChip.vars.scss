@@ -1,4 +1,7 @@
 @mixin cdr-chip-base-mixin() {
+  display: flex;
+  align-items: center;
+
   margin: $cdr-space-half-x;
   width: max-content;
   padding: $cdr-space-half-x $cdr-space-three-quarter-x;
