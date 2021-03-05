@@ -18,8 +18,5 @@ module.exports = {
       paths: [process.cwd()],
     },
     autoprefixer: {},
-    // cssnano: {
-    //   discardUnused: { fontFace: false },
-    // },
   },
 };
