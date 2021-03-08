@@ -19,3 +19,7 @@
     margin-bottom: $cdr-space-half-x;
   }
 }
+
+@mixin cdr-chip-group-legend-mixin() {
+  @include cdr-text-heading-sans-300;
+}

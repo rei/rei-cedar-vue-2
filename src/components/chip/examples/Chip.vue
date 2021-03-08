@@ -134,7 +134,7 @@ export default {
         'September',
         'October',
         'November',
-        'December'
+        'December',
       ],
       selectedMonth: 'January',
       selectedMonths: ['February', 'March'],

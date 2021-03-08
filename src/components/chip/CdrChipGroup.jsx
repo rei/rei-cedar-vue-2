@@ -36,7 +36,8 @@ export default {
   },
   mounted() {
     // get all of the chips in the group
-    this.chips = this.$refs.chips.children;
+    this.chips = Array.prototype.filter.call(this.$refs.chips.children,
+      (chip) => !(chip.getAttribute('disabled') || chip.getAttribute('aria-disabled')));
     this.currentIdx = Array.prototype.findIndex.call(this.chips,
       (chip) => chip.getAttribute('aria-checked') === 'true');
   },
