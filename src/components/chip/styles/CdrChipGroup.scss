@@ -5,6 +5,10 @@
   @include cdr-chip-group-base-mixin;
 }
 
+.cdr-chip-group__content {
+  @include cdr-chip-group-content-mixin;
+}
+
 .cdr-chip-group__legend--hidden {
   @include cdr-display-sr-only;
 }

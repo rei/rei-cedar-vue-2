@@ -82,7 +82,7 @@ export default {
       <legend class={this.legendClass}>
         {this.$slots.label || this.label}
       </legend>
-      <div ref="chips">
+      <div ref="chips" class={this.style['cdr-chip-group__content']}>
         { this.$slots.default }
       </div>
     </fieldset>);

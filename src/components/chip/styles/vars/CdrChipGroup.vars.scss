@@ -13,3 +13,9 @@
     margin-bottom: $cdr-space-half-x;
   }
 }
+@mixin cdr-chip-group-content-mixin() {
+  & > button:not(:last-child)  {
+    margin-right: $cdr-space-half-x;
+    margin-bottom: $cdr-space-half-x;
+  }
+}
