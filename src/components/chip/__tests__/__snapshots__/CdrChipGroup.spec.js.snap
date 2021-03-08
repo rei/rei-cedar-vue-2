@@ -7,7 +7,9 @@ exports[`CdrChipGroup renders correctly 1`] = `
   <legend
     class="cdr-chip-group__legend--hidden"
   />
-  <div>
+  <div
+    class="cdr-chip-group__content"
+  >
     <button
       aria-checked="true"
       class="cdr-chip"
@@ -43,7 +45,9 @@ exports[`CdrChipGroup renders correctly with label visible 1`] = `
   <legend
     class="cdr-chip-group__legend"
   />
-  <div>
+  <div
+    class="cdr-chip-group__content"
+  >
     <button
       aria-checked="true"
       class="cdr-chip"
@@ -83,7 +87,9 @@ exports[`CdrChipGroup renders label slot 1`] = `
       hey im overriding here!!!
     </div>
   </legend>
-  <div>
+  <div
+    class="cdr-chip-group__content"
+  >
     <button
       aria-checked="true"
       class="cdr-chip"
