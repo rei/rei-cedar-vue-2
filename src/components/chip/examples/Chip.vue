@@ -8,7 +8,7 @@
         slot="icon-left"
         inherit-color
         size="small"
-      />hey
+      />Hey
     </cdr-chip>
     <cdr-chip
     >
@@ -16,10 +16,10 @@
         slot="icon-right"
         inherit-color
         size="small"
-      />hey
+      />Hey
     </cdr-chip>
     <cdr-chip
-    >hey
+    >Hey
     </cdr-chip>
     <hr>
 
@@ -70,9 +70,10 @@
     <h4>Radio Chip single selection</h4>
     <cdr-chip-group label="Pick One Month">
       <cdr-chip
-        v-for="month in months"
+        v-for="(month, i) in months"
         :key="month"
         @click="selectMonth(month)"
+        :disabled="i == 4"
         :aria-checked="selectedMonth === month"
         role="radio"
         :tabindex="selectedMonth === month ? '0' : '-1'"
@@ -84,19 +85,14 @@
     <h4>Checkbox Chip multi selection</h4>
     <cdr-chip-group label="Pick As Many Months As You Like">
       <cdr-chip
-        v-for="month in months"
+        v-for="(month, i) in months"
         :key="month"
         @click="selectMonths(month)"
+        :disabled="i == 3"
         :aria-checked="selectedMonths.includes(month)"
         role="checkbox"
       >
         {{ month }}
-      </cdr-chip>
-      <cdr-chip
-        disabled
-        role="checkbox"
-      >
-        December
       </cdr-chip>
     </cdr-chip-group>
 
@@ -126,7 +122,20 @@ export default {
       tents: true,
 
       backpacks: true,
-      months: ['January', 'February', 'March', 'April'],
+      months: [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December'
+      ],
       selectedMonth: 'January',
       selectedMonths: ['February', 'March'],
     };
