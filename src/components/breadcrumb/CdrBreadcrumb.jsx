@@ -1,8 +1,6 @@
 import clsx from 'clsx';
 import style from './styles/CdrBreadcrumb.scss';
 
-// BREADCRUMB ISSUE!!!
-
 export default {
   name: 'CdrBreadcrumb',
   props: {
