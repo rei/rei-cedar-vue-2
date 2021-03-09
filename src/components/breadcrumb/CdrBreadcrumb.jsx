@@ -3,6 +3,8 @@ import CdrIcon from '../icon/CdrIcon';
 import modifier from '../../mixins/modifier';
 import style from './styles/CdrBreadcrumb.scss';
 
+// BREADCRUMB ISSUE!!!
+
 export default {
   name: 'CdrBreadcrumb',
   components: {
@@ -125,9 +127,9 @@ export default {
   methods: {
     handleEllipsisClick() {
       this.truncate = false;
-      this.$nextTick(() => {
+      setTimeout(() => {
         this.$el.querySelector('li *').focus();
-      });
+      }, 1);
     },
   },
   render() {

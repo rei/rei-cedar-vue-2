@@ -25,15 +25,6 @@ describe('CdrModal.vue', () => {
     });
 
     expect(wrapper.element).toMatchSnapshot();
-    expect(wrapper.find('.cdr-modal__text-fade').exists()).toBe(true);
-
-    wrapper.setProps({ opened: false });
-    await wrapper.vm.$nextTick();
-
-    setTimeout(() => {
-      expect(wrapper.vm.reallyClosed).toBe(true);
-      wrapper.destroy();
-    }, 500);
   });
 
   it('leaves optional slots empty, handleOpened', async () => {
@@ -226,7 +217,6 @@ describe('CdrModal.vue', () => {
     await wrapper.vm.$nextTick();
 
     setTimeout(() => {
-      expect(wrapper.vm.reallyClosed).toBe(true);
       expect(wrapper.vm.unsubscribe).toBe(null);
       wrapper.destroy();
     }, 500);

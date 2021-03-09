@@ -3,7 +3,6 @@
 exports[`CdrLabelWrapper matches snapshot 1`] = `
 <div
   class="cdr-label-wrapper__container"
-  name="testName"
 >
   <label
     class="cdr-label-wrapper cdr-label-wrapper--primary cdr-label-wrapper--hide-figure cdr-label-wrapper--medium custom-label-class"
