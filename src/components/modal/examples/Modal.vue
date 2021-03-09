@@ -25,10 +25,7 @@
         </cdr-text>
       </template>
 
-      <template
-        slot="modal"
-        v-if="override"
-      >
+      <template slot="modal" v-if="override">
         Wow i can just take over the whole modal, huh?
       </template>
 
