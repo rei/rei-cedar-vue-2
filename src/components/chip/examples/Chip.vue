@@ -2,24 +2,21 @@
   <div>
     <h2>chips</h2>
     <cdr-chip>Default</cdr-chip>
-    <cdr-chip
-    >
+    <cdr-chip>
       <icon-heart-stroke
         slot="icon-left"
         inherit-color
         size="small"
       />Hey
     </cdr-chip>
-    <cdr-chip
-    >
+    <cdr-chip>
       <icon-heart-stroke
         slot="icon-right"
         inherit-color
         size="small"
       />Hey
     </cdr-chip>
-    <cdr-chip
-    >Hey
+    <cdr-chip>Hey
     </cdr-chip>
     <hr>
 

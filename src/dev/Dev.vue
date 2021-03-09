@@ -68,7 +68,10 @@ export default {
       style="display:none"
       v-html="fullSprite"
     />
-    <ul style="padding:0" v-if="!isBackstop">
+    <ul
+      style="padding:0"
+      v-if="!isBackstop"
+    >
       <li
         class="cdr-space-inset-quarter-x"
         style="display:inline-flex"

@@ -9,9 +9,6 @@ import onTransitionEnd from './onTransitionEnd';
 import CdrButton from '../button/CdrButton';
 import IconXLg from '../icon/comps/x-lg';
 
-// TODO: simplify transitionEnd logic
-// DO NOT manipulate open/close in transitionend use another variable
-
 export default {
   name: 'CdrModal',
   components: {
