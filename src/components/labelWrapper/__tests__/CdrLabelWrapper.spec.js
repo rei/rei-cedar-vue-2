@@ -8,6 +8,8 @@ describe('CdrLabelWrapper', () => {
         labelClass: 'custom-label-class',
         contentClass: 'custom-content-class',
         name: 'testName',
+        class: 'foo',
+        'data-ui': 'wrapper',
         modifier: 'hide-figure',
         size: 'medium'
       },
