@@ -7,6 +7,7 @@ import propValidator from '../../utils/propValidator';
 export default {
   name: 'CdrLabelWrapper',
   mixins: [modifier, size],
+  inheritAttrs: false,
   props: {
     labelClass: String,
     contentClass: String,
