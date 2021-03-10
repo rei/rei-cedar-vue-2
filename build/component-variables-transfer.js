@@ -11,9 +11,11 @@ const SUPPORTED_COMPONENTS = [
   'CdrAlert.vars.scss',
   'CdrButton.vars.scss',
   'CdrCard.vars.scss',
+  'CdrChip.vars.scss',
   'CdrBreadcrumb.vars.scss',
   'CdrFormGroup.vars.scss',
   'CdrFormError.vars.scss',
+  'CdrGrid.vars.scss',
   'CdrLabelStandalone.vars.scss',
   'CdrLabelWrapper.vars.scss',
   'CdrRadio.vars.scss',
@@ -21,7 +23,6 @@ const SUPPORTED_COMPONENTS = [
   'CdrLink.vars.scss',
   'CdrInput.vars.scss',
   'CdrSelect.vars.scss',
-  'CdrCta.vars.scss',
   'CdrList.vars.scss',
   'CdrTable.vars.scss'
 ];

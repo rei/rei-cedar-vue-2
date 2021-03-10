@@ -1,0 +1,23 @@
+@mixin cdr-grid-base-mixin() {
+  display: grid;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: $cdr-space-one-x $cdr-space-one-x;
+}
+
+@mixin cdr-grid-gutter-none-mixin() {
+  gap: 0 0;
+}
+
+@mixin cdr-grid-gutter-small-mixin() {
+  gap: $cdr-space-eighth-x $cdr-space-eighth-x;
+}
+
+@mixin cdr-grid-gutter-medium-mixin() {
+  gap: $cdr-space-one-x $cdr-space-one-x;
+}
+
+@mixin cdr-grid-gutter-large-mixin() {
+  gap: $cdr-space-two-x $cdr-space-two-x;
+}

@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CdrChip default matches snapshot 1`] = `
+<button
+  class="cdr-chip"
+>
+  <span
+    class="cdr-chip__content"
+  >
+    tortilla chip
+  </span>
+</button>
+`;
+
+exports[`CdrChip renders icon slots 1`] = `
+<button
+  class="cdr-chip"
+>
+  <span
+    class="cdr-chip__icon-left"
+  >
+    🌮
+  </span>
+  <span
+    class="cdr-chip__icon-right"
+  >
+    🍔
+  </span>
+  <span
+    class="cdr-chip__content"
+  >
+    tortilla chip
+  </span>
+</button>
+`;

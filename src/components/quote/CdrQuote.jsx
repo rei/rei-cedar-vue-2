@@ -1,7 +1,6 @@
 import clsx from 'clsx';
 import CdrText from '../text/CdrText';
 import modifier from '../../mixins/modifier';
-import space from '../../mixins/space';
 import style from './styles/CdrQuote.scss';
 
 export default {
@@ -9,7 +8,7 @@ export default {
   components: {
     CdrText,
   },
-  mixins: [modifier, space],
+  mixins: [modifier],
   props: {
     tag: {
       type: String,
@@ -55,7 +54,7 @@ export default {
   render() {
     const Component = this.tag;
     return (<Component
-      class={clsx(this.style[this.baseClass], this.modifierClass, this.space)}
+      class={clsx(this.style[this.baseClass], this.modifierClass)}
     >
       {this.summaryBlock}
       {this.$slots.default}

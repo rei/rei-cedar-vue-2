@@ -1,0 +1,22 @@
+@import '../../../css/settings/index.scss';
+@import './vars/CdrChip.vars.scss';
+
+.cdr-chip {
+  @include cdr-chip-base-mixin;
+}
+
+.cdr-chip__icon-left {
+  @include cdr-chip-icon-left-mixin;
+}
+
+.cdr-chip__icon-right {
+  @include cdr-chip-icon-right-mixin;
+}
+
+.cdr-chip__icon-left ~ .cdr-chip__content {
+  @include cdr-chip-content-right-mixin;
+}
+
+.cdr-chip__icon-right ~ .cdr-chip__content {
+  @include cdr-chip-content-left-mixin;
+}

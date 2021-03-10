@@ -5,21 +5,18 @@ import Vue from 'vue';
 import CdrButton from 'componentdir/button/CdrButton';
 
 describe('CdrModal.vue', () => {
-  it('default open, scrolling', async () => {
+  it('default open', async () => {
     const elem = document.createElement('div')
     if (document.body) {
       document.body.appendChild(elem)
     }
-    const wrapper = shallowMount(CdrModal, {
+    const wrapper = mount(CdrModal, {
       propsData: {
         opened: true,
         label: "Label is the modal title"
       },
       slots: {
         default: 'Sticky content',
-      },
-      computed: {
-        scrolling: () => true,
       },
       attachTo: elem,
     });
@@ -33,7 +30,7 @@ describe('CdrModal.vue', () => {
       document.body.appendChild(elem)
     }
     const mockMeasureContent = jest.fn();
-    const wrapper = shallowMount(CdrModal, {
+    const wrapper = mount(CdrModal, {
       propsData: {
         opened: false,
         label: "Label is the modal title"
@@ -96,21 +93,19 @@ describe('CdrModal.vue', () => {
     wrapper.destroy();
   });
 
-  it('scrolling and fullscreen snapshot', () => {
+  it('fullscreen snapshot', () => {
     const elem = document.createElement('div')
     if (document.body) {
       document.body.appendChild(elem)
     }
     const mockMeasureContent = jest.fn();
-    const wrapper = shallowMount(CdrModal, {
+    const wrapper = mount(CdrModal, {
       propsData: {
         opened: true,
         label: "Label is the modal title"
       },
       data() {
         return {
-          offsetHeight: 400,
-          scrollHeight: 500,
           fullscreen: true,
         };
       },
@@ -123,7 +118,6 @@ describe('CdrModal.vue', () => {
       attachTo: elem,
     });
 
-    expect(wrapper.vm.scrolling).toBe(true);
     expect(wrapper.element).toMatchSnapshot();
     wrapper.destroy();
   });

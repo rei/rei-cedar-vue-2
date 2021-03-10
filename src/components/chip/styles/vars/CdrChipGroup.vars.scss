@@ -1,0 +1,25 @@
+@mixin cdr-chip-group-base-mixin() {
+  border: none;
+
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-block-start: 0;
+  padding-inline-start: 0;
+  padding-inline-end: 0;
+  padding-block-end: 0;
+
+  legend {
+    padding-inline-start: 0;
+    margin-bottom: $cdr-space-half-x;
+  }
+}
+@mixin cdr-chip-group-content-mixin() {
+  & > button:not(:last-child)  {
+    margin-right: $cdr-space-half-x;
+    margin-bottom: $cdr-space-half-x;
+  }
+}
+
+@mixin cdr-chip-group-legend-mixin() {
+  @include cdr-text-heading-sans-300;
+}

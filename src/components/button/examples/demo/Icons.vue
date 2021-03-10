@@ -12,7 +12,6 @@
       </cdr-text>
       <cdr-button
         size="large"
-        space="cdr-mr-space-one-x cdr-mb-space-one-x"
       >
         <icon-check-lg
           inherit-color
@@ -24,7 +23,6 @@
         tag="a"
         href="https://rei.com"
         size="large"
-        space="cdr-mr-space-one-x cdr-mb-space-one-x"
       >
         <icon-check-lg
           inherit-color
@@ -35,7 +33,6 @@
 
       <cdr-button
         size="medium"
-        space="cdr-mr-space-one-x cdr-mb-space-one-x"
       >
         <icon-check-lg
           inherit-color
@@ -45,7 +42,6 @@
       </cdr-button>
       <cdr-button
         size="small"
-        space="cdr-mr-space-one-x cdr-mb-space-one-x"
       >
         <icon-check-lg
           inherit-color
@@ -56,7 +52,6 @@
       </cdr-button>
       <cdr-button
         size="small"
-        space="cdr-mr-space-one-x cdr-mb-space-one-x"
       >
         <icon-check-sm
           inherit-color
@@ -69,7 +64,6 @@
 
       <cdr-button
         size="large"
-        space="cdr-mr-space-one-x cdr-mb-space-one-x"
       >
         <icon-check-lg
           inherit-color
@@ -81,7 +75,6 @@
         tag="a"
         href="https://rei.com"
         size="large"
-        space="cdr-mr-space-one-x cdr-mb-space-one-x"
       >
         <icon-check-lg
           inherit-color
@@ -92,7 +85,6 @@
 
       <cdr-button
         size="medium"
-        space="cdr-mr-space-one-x cdr-mb-space-one-x"
       >
         <icon-check-lg
           inherit-color
@@ -102,7 +94,6 @@
       </cdr-button>
       <cdr-button
         size="small"
-        space="cdr-mr-space-one-x cdr-mb-space-one-x"
       >
         <icon-check-lg
           inherit-color
@@ -113,7 +104,6 @@
       </cdr-button>
       <cdr-button
         size="small"
-        space="cdr-mr-space-one-x cdr-mb-space-one-x"
       >
         <icon-check-sm
           inherit-color
@@ -126,7 +116,6 @@
 
       <cdr-button
         size="large"
-        space="cdr-mr-space-one-x cdr-mb-space-one-x"
       >
         <icon-check-lg
           inherit-color
@@ -137,7 +126,6 @@
 
       <cdr-button
         size="large"
-        space="cdr-mr-space-one-x cdr-mb-space-one-x"
       >
         <icon-check-lg
           inherit-color
@@ -155,7 +143,7 @@
       </cdr-text>
       <cdr-button
         size="large"
-        space="cdr-mr-space-one-x"
+
         modifier="secondary"
       >
         <cdr-icon
@@ -167,7 +155,7 @@
       </cdr-button>
       <cdr-button
         size="large"
-        space="cdr-mr-space-one-x"
+
         modifier="secondary"
         disabled
       >
@@ -180,7 +168,7 @@
       </cdr-button>
       <cdr-button
         size="medium"
-        space="cdr-mr-space-one-x"
+
         modifier="secondary"
       >
         <cdr-icon

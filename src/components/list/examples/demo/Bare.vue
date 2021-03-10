@@ -8,7 +8,7 @@
       Bare list
     </cdr-text>
 
-    <cdr-list space="cdr-mb-space-two-x">
+    <cdr-list>
       <li>List item text</li>
       <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodList ordered
         <cdr-list>
@@ -30,7 +30,7 @@
       tag="h4"
       modifier="body--400"
     >
-      <cdr-list space="cdr-mb-space-two-x">
+      <cdr-list>
         <li>List item text</li>
         <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodList ordered
           <cdr-list>
@@ -51,7 +51,6 @@
 
     <cdr-list
       modifier="compact"
-      space="cdr-mb-space-two-x"
     >
       <li>List item text</li>
       <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodList ordered
@@ -72,7 +71,6 @@
 
     <cdr-list
       modifier="inline"
-      space="cdr-mb-space-two-x"
     >
       <li>List item text</li>
       <li>List item text</li>

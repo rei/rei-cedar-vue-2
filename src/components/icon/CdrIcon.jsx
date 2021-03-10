@@ -1,11 +1,10 @@
 import clsx from 'clsx';
 import size from '../../mixins/size';
-import space from '../../mixins/space';
 import style from './styles/CdrIcon.scss';
 
 export default {
   name: 'CdrIcon',
-  mixins: [size, space],
+  mixins: [size],
   props: {
     /**
     * The href attribute passed to the use element. Will be prefixed with # automatically
@@ -60,7 +59,6 @@ export default {
         this.style[this.baseClass],
         this.sizeClass,
         this.inheritColorClass,
-        this.space,
       )}
     >
       {this.$slots.default}

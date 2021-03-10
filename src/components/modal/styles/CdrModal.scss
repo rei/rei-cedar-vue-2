@@ -74,6 +74,7 @@ $modal-animation-duration: 150ms;
 
   &__title {
     flex: auto;
+    @include cdr-text-heading-serif-600;
   }
 
   &__close-button {
@@ -98,19 +99,7 @@ $modal-animation-duration: 150ms;
 
   &__text-content {
     overflow: auto;
-    padding-right: $cdr-space-one-and-a-half-x;
     position: relative;
-  }
-
-  &__text-fade {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: $cdr-space-two-x;
-    /* full transparency doesn't fly on safari */
-    background: linear-gradient(rgba(255,255,255,0.001), rgba(255,255,255,1));
-    background-attachment: scroll;
-    width: 100%;
   }
 
   @media (min-width: $cdr-breakpoint-sm) {
@@ -140,10 +129,6 @@ $modal-animation-duration: 150ms;
       margin-left: $cdr-space-three-quarter-x;
       right: -8px;
       top: -5px;
-    }
-
-    &__text-content {
-      padding-right: $cdr-space-two-x;
     }
   }
 }

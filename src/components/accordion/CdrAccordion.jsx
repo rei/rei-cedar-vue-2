@@ -9,6 +9,9 @@ export default {
     IconCaretDown,
   },
   mixins: [modifier],
+  inject: {
+    unwrap: { default: { value: false } },
+  },
   props: {
     /**
      * The unique id of an accordion.
@@ -68,11 +71,21 @@ export default {
 
       return styles.join(' ');
     },
+    unwrapClass() {
+      return this.unwrap.value ? this.modifyClassName(this.baseClass, 'unwrap') : null;
+    },
     focusedClass() {
       return this.focused ? this.modifyClassName(this.baseClass, 'focused') : null;
     },
     isOpenClass() {
-      return this.opened ? 'open' : 'closed';
+      return this.opened || this.unwrap.value ? 'open' : 'closed';
+    },
+    listeners() {
+      return this.unwrap.value ? {} : {
+        click: this.onClick,
+        focus: this.onFocus,
+        blur: this.onBlur,
+      };
     },
   },
   watch: {
@@ -113,24 +126,31 @@ export default {
   },
   render() {
     const Heading = `h${this.level}`;
+    const HeadingContent = this.unwrap.value ? 'div' : 'button';
 
     return (<div
-      class={clsx(this.style[this.baseClass],
+      class={!this.unwrap.value && clsx(this.style[this.baseClass],
         this.modifierClass,
         this.styleClass,
         this.focusedClass)}
       id={`${this.id}-accordion`}
       ref="accordion-container"
     >
-      <Heading class={this.style['cdr-accordion__header']}>
-        <button
-          class={[this.style['cdr-accordion__button'], 'js-cdr-accordion-button']} // .js-accordion-button is for group focus management
+      <Heading class={
+        this.unwrap.value
+          ? this.style['cdr-accordion__header--unwrapped']
+          : this.style['cdr-accordion__header']
+      }>
+        <HeadingContent
+          class={[
+            !this.unwrap.value && this.style['cdr-accordion__button'],
+            'js-cdr-accordion-button',
+          ]}
           id={this.id}
-          onClick={this.onClick}
-          onFocus={this.onFocus}
-          onBlur={this.onBlur}
-          aria-expanded={`${this.opened}`}
-          aria-controls={`${this.id}-collapsible`}
+
+          {...{ on: this.listeners }}
+          aria-expanded={!this.unwrap.value && `${this.opened}`}
+          aria-controls={!this.unwrap.value && `${this.id}-collapsible`}
           >
           <span
             class={this.style['cdr-accordion__label']}
@@ -138,19 +158,19 @@ export default {
             >
             { this.$slots.label }
           </span>
-          <icon-caret-down
+          { !this.unwrap.value && <icon-caret-down
             class={clsx(this.style['cdr-accordion__icon'], this.isOpenClass)}
             size={this.compact ? 'small' : null}
-            />
-        </button>
+          /> }
+        </HeadingContent>
       </Heading>
       <div
         class={clsx(this.style['cdr-accordion__content-container'], this.isOpenClass)}
-        style={ { maxHeight: this.maxHeight } }
+        style={ { maxHeight: this.unwrap.value ? 'none' : this.maxHeight } }
       >
         <div
-          class={clsx(this.style['cdr-accordion__content'], this.isOpenClass)}
-          aria-hidden={`${!this.opened}`}
+          class={clsx(this.style['cdr-accordion__content'], this.isOpenClass, this.unwrapClass)}
+          aria-hidden={!this.unwrap.value && `${!this.opened}`}
           id={`${this.id}-collapsible`}
           ref="accordion-content"
         >

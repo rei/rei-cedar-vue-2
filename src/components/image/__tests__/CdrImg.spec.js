@@ -47,18 +47,15 @@ describe('CdrImg', () => {
     expect(wrapper.find('img').attributes().alt).toBe('test alt');
   });
 
-  it('adds lazy class and attrs', () => {
-    const wrapper = shallowMount(CdrImg, {
+  it('passes arbitrary HTML attrs through to image', () => {
+    const wrapper = mount(CdrImg, {
       propsData: {
         src: 'http://via.placeholder.com/350x150',
-        lazy: true,
-        lazyOpts: {
-          'src-lazy': 'http://via.placeholder.com/350',
-        },
+        loading: 'lazy',
+        ratio: 'square'
       }
     });
-    expect(wrapper.classes()).toContain('lazy-image');
-    expect(wrapper.attributes()['data-src-lazy']).toBe('http://via.placeholder.com/350');
+    expect(wrapper.find('img').attributes()['loading']).toBe('lazy');
   });
 
 

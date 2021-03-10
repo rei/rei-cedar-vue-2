@@ -1,6 +1,5 @@
 import clsx from 'clsx';
 import modifier from '../../mixins/modifier';
-import space from '../../mixins/space';
 import size from '../../mixins/size';
 import propValidator from '../../utils/propValidator';
 import style from './styles/CdrCheckbox.scss';
@@ -11,7 +10,7 @@ export default {
   components: {
     CdrLabelWrapper,
   },
-  mixins: [modifier, space, size],
+  mixins: [modifier, size],
   inheritAttrs: false,
   props: {
     /**
@@ -97,7 +96,7 @@ export default {
   render() {
     return (
       <cdr-label-wrapper
-        class={clsx(this.space, this.style['cdr-checkbox'])}
+        class={this.style['cdr-checkbox']}
         ref="label"
         size={this.size}
         modifier={this.modifier}

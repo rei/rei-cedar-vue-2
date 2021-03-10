@@ -1,16 +1,8 @@
 import clsx from 'clsx';
-import CdrIcon from '../icon/CdrIcon';
-import modifier from '../../mixins/modifier';
 import style from './styles/CdrBreadcrumb.scss';
-
-// BREADCRUMB ISSUE!!!
 
 export default {
   name: 'CdrBreadcrumb',
-  components: {
-    CdrIcon,
-  },
-  mixins: [modifier],
   props: {
     /**
      * Required. List of source breadcrumb property objects

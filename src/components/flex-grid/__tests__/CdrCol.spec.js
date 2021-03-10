@@ -1,6 +1,6 @@
 import { shallowMount, mount } from '@vue/test-utils';
-import CdrCol from 'componentdir/grid/CdrCol';
-import CdrRow from 'componentdir/grid/CdrRow';
+import CdrCol from 'componentdir/flex-grid/CdrCol';
+import CdrRow from 'componentdir/flex-grid/CdrRow';
 
 describe('CdrCol', () => {
   it('renders as list type correctly', () => {

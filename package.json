@@ -1,6 +1,6 @@
 {
   "name": "@rei/cedar",
-  "version": "7.1.1",
+  "version": "8.0.0",
   "description": "REI Cedar Component Library",
   "homepage": "https://rei.github.io/rei-cedar/",
   "license": "MIT",
@@ -36,6 +36,7 @@
     "lint": "npm-run-all lint:js lint:styles",
     "lint:js": "eslint --ext .js,.vue,.jsx src",
     "lint:styles": "stylelint src/**/*.scss",
+    "prepush": "npm-run-all lint unit",
     "reference": "backstop reference --configPath=backstop.js",
     "compare": "backstop test --configPath=backstop.js",
     "approve": "backstop approve --configPath=backstop.js",
@@ -49,27 +50,27 @@
     "build:icons": "node src/components/icon/build/generate.js"
   },
   "devDependencies": {
-    "@babel/cli": "^7.10.5",
-    "@babel/core": "^7.11.1",
-    "@babel/plugin-syntax-jsx": "^7.10.4",
-    "@babel/plugin-transform-runtime": "^7.11.0",
-    "@babel/preset-env": "^7.11.0",
-    "@babel/register": "^7.10.5",
+    "@babel/cli": "^7.12.17",
+    "@babel/core": "^7.12.17",
+    "@babel/plugin-syntax-jsx": "^7.12.13",
+    "@babel/plugin-transform-runtime": "^7.12.17",
+    "@babel/preset-env": "^7.12.17",
+    "@babel/register": "^7.12.13",
     "@betit/rollup-plugin-rename-extensions": "^0.1.0",
     "@commitlint/cli": "^9.1.2",
     "@commitlint/config-conventional": "^11.0.0",
-    "@rei/cdr-tokens": "^7.0.1",
+    "@rei/cdr-tokens": "^8.0.0",
     "@rei/cedar-icons": "^2.1.0",
     "@rollup/plugin-alias": "^3.1.1",
-    "@vue/babel-preset-jsx": "^1.1.2",
-    "@vue/test-utils": "^1.0.0",
+    "@vue/babel-preset-jsx": "^1.2.4",
+    "@vue/test-utils": "^1.1.3",
     "autoprefixer": "^9.8.6",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.3.0",
     "babel-plugin-istanbul": "^6.0.0",
-    "backstopjs": "^5.0.4",
+    "backstopjs": "^5.1.0",
     "chalk": "^4.1.0",
-    "chromedriver": "^86.0.0",
+    "chromedriver": "^87.0.0",
     "codecov": "^3.7.2",
     "concat": "^1.0.3",
     "cross-env": "^7.0.2",
@@ -96,8 +97,8 @@
     "jsdom": "^16.4.0",
     "jsdom-global": "^3.0.2",
     "klaw-sync": "^6.0.0",
-    "lodash": "^4.17.19",
-    "nightwatch": "^1.3.7",
+    "lodash": "^4.17.20",
+    "nightwatch": "^1.5.1",
     "nightwatch-axe": "^0.1.5",
     "node-cmd": "^3.0.0",
     "node-sass": "^4.14.1",
@@ -126,17 +127,17 @@
     "rollup-plugin-serve": "^1.0.3",
     "rollup-plugin-svg": "^2.0.0",
     "rollup-plugin-vue": "^5.1.9",
-    "sassdoc": "^2.7.2",
+    "sassdoc": "^2.7.3",
     "serve-handler": "^6.1.3",
     "sinon": "^9.0.3",
     "standard-changelog": "^2.0.24",
     "stylelint": "^13.6.1",
     "stylelint-config-recommended-scss": "^4.2.0",
     "stylelint-scss": "^3.18.0",
-    "tinycolor2": "^1.4.1",
-    "vue": "^2.6.11",
-    "vue-router": "^3.4.3",
-    "vue-template-compiler": "^2.6.11"
+    "tinycolor2": "^1.4.2",
+    "vue": "^2.6.12",
+    "vue-router": "^3.5.1",
+    "vue-template-compiler": "^2.6.12"
   },
   "engines": {
     "node": ">= 8.0.0",
@@ -154,12 +155,17 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run prepush"
+    }
+  },
   "dependencies": {
-    "@babel/runtime": "^7.11.2",
-    "@babel/runtime-corejs3": "^7.11.2",
-    "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
+    "@babel/runtime": "^7.12.18",
+    "@babel/runtime-corejs3": "^7.12.18",
+    "@vue/babel-helper-vue-jsx-merge-props": "^1.2.1",
     "clsx": "^1.1.1",
-    "lodash-es": "^4.17.15",
+    "lodash-es": "^4.17.20",
     "tabbable": "^4.0.0"
   }
 }

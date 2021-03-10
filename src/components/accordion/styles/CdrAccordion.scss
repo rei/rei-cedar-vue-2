@@ -35,7 +35,6 @@ $accordion-border: 1px solid $cdr-color-border-primary;
   }
 
   &__label {
-    cursor: pointer;
     margin-bottom: 0;
   }
 
@@ -45,6 +44,10 @@ $accordion-border: 1px solid $cdr-color-border-primary;
     font-weight: unset;
     font-style: unset;
     font-size: unset;
+    &--unwrapped {
+      @include cdr-text-heading-sans-400;
+      margin: $cdr-space-one-x 0;
+    }
   }
 
   &__icon {
@@ -92,7 +95,9 @@ $accordion-border: 1px solid $cdr-color-border-primary;
 
   /* Style variants
     ========================================================================== */
-
+  &--unwrap {
+    padding: 0;
+  }
   /* Border-Aligned
      ========== */
   &--border-aligned {

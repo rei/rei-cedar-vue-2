@@ -1,8 +1,6 @@
 import clsx from 'clsx';
 import size from '../../mixins/size';
-import space from '../../mixins/space';
 import propValidator from '../../utils/propValidator';
-import IconErrorStroke from '../icon/comps/error-stroke';
 import CdrLabelStandalone from '../labelStandalone/CdrLabelStandalone';
 import CdrFormError from '../formError/CdrFormError';
 import style from './styles/CdrInput.scss';
@@ -15,11 +13,10 @@ import style from './styles/CdrInput.scss';
 export default {
   name: 'CdrInput',
   components: {
-    IconErrorStroke,
     CdrLabelStandalone,
     CdrFormError,
   },
-  mixins: [size, space],
+  mixins: [size],
   inheritAttrs: false,
   props: {
     /**
@@ -136,7 +133,6 @@ export default {
             class={clsx(
               this.inputClass,
               this.sizeClass,
-              this.space,
             )}
             id={this.inputId}
             disabled={this.disabled}
@@ -154,7 +150,6 @@ export default {
             class={clsx(
               this.inputClass,
               this.sizeClass,
-              this.space,
             )}
             id={this.inputId}
             disabled={this.disabled}

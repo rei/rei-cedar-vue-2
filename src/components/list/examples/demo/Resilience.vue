@@ -39,7 +39,7 @@
       :key="p1"
       :modifier="`body-${p1}`"
     >
-      <cdr-list space="cdr-mb-space-two-x">
+      <cdr-list>
         <li>List item text</li>
         <li>Lorem ipsum dolor
           <cdr-text
@@ -67,7 +67,6 @@
         v-for="l1 in lists"
         :key="l1"
         :modifier="`${l1}`"
-        space="cdr-mb-space-two-x"
       >
         <li>utility-sans {{ utility }} in list {{ l1 }} </li>
         <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodList ordered

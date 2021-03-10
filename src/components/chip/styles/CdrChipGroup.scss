@@ -1,0 +1,18 @@
+@import '../../../css/settings/index.scss';
+@import './vars/CdrChipGroup.vars.scss';
+
+.cdr-chip-group {
+  @include cdr-chip-group-base-mixin;
+}
+
+.cdr-chip-group__content {
+  @include cdr-chip-group-content-mixin;
+}
+
+.cdr-chip-group__legend--hidden {
+  @include cdr-display-sr-only;
+}
+
+.cdr-chip-group__legend {
+  @include cdr-chip-group-legend-mixin;
+}

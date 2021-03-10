@@ -2,22 +2,19 @@ import clsx from 'clsx';
 import toArray from 'lodash-es/toArray';
 import propValidator from '../../utils/propValidator';
 import IconCaretDown from '../icon/comps/caret-down';
-import IconErrorStroke from '../icon/comps/error-stroke';
 import CdrLabelStandalone from '../labelStandalone/CdrLabelStandalone';
 import CdrFormError from '../formError/CdrFormError';
 import size from '../../mixins/size';
-import space from '../../mixins/space';
 import style from './styles/CdrSelect.scss';
 
 export default {
   name: 'CdrSelect',
   components: {
     IconCaretDown,
-    IconErrorStroke,
     CdrLabelStandalone,
     CdrFormError,
   },
-  mixins: [size, space],
+  mixins: [size],
   inheritAttrs: false,
   model: {
     prop: 'value',
@@ -181,7 +178,7 @@ export default {
   },
   render() {
     return (
-      <div class={this.space}>
+      <div>
         <cdr-label-standalone
           for-id={ `${this.selectId}` }
           label={ this.label }

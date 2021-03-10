@@ -74,15 +74,6 @@ describe('CdrIcon', () => {
     expect(wrapper.find('.cdr-icon--small').exists()).toBe(true);
   });
 
-  it('single icon component passes space prop through to CdrIcon', () => {
-    const wrapper = mount(IconCaretDown, {
-      propsData: {
-        space: 'cdr-mb-space-one-x',
-      },
-    });
-    expect(wrapper.find('.cdr-mb-space-one-x').exists()).toBe(true);
-  });
-
   it('accepts full SVG in slot', () => {
     const wrapper = mount(CdrIcon, {
       slots: {

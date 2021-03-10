@@ -102,7 +102,10 @@
       :background="backgroundColor"
     >
       <template slot="info-action">
-        <cdr-link>
+        <cdr-link
+          tag="button"
+          type="button"
+        >
           <icon-information-stroke inherit-color />
           <span class="cdr-display-sr-only">Information!</span>
         </cdr-link>
@@ -213,7 +216,7 @@
       </template>
       <template slot="info">
         <cdr-link
-          href="#"
+          href="#baz"
           modifier="standalone"
         >
           Hey im also on top of the input!

@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CdrChipGroup renders correctly 1`] = `
+<fieldset
+  class="cdr-chip-group"
+>
+  <legend
+    class="cdr-chip-group__legend--hidden"
+  />
+  <div
+    class="cdr-chip-group__content"
+  >
+    <button
+      aria-checked="true"
+      class="cdr-chip"
+      role="radio"
+      tabindex="0"
+    >
+      <span
+        class="cdr-chip__content"
+      >
+        chip 1
+      </span>
+    </button>
+    <button
+      aria-checked="false"
+      class="cdr-chip"
+      role="radio"
+      tabindex="-1"
+    >
+      <span
+        class="cdr-chip__content"
+      >
+        chip 2
+      </span>
+    </button>
+  </div>
+</fieldset>
+`;
+
+exports[`CdrChipGroup renders correctly with label visible 1`] = `
+<fieldset
+  class="cdr-chip-group"
+>
+  <legend
+    class="cdr-chip-group__legend"
+  />
+  <div
+    class="cdr-chip-group__content"
+  >
+    <button
+      aria-checked="true"
+      class="cdr-chip"
+      role="radio"
+      tabindex="0"
+    >
+      <span
+        class="cdr-chip__content"
+      >
+        chip 1
+      </span>
+    </button>
+    <button
+      aria-checked="false"
+      class="cdr-chip"
+      role="radio"
+      tabindex="-1"
+    >
+      <span
+        class="cdr-chip__content"
+      >
+        chip 2
+      </span>
+    </button>
+  </div>
+</fieldset>
+`;
+
+exports[`CdrChipGroup renders label slot 1`] = `
+<fieldset
+  class="cdr-chip-group"
+>
+  <legend
+    class="cdr-chip-group__legend"
+  >
+    <div>
+      hey im overriding here!!!
+    </div>
+  </legend>
+  <div
+    class="cdr-chip-group__content"
+  >
+    <button
+      aria-checked="true"
+      class="cdr-chip"
+      role="radio"
+      tabindex="0"
+    >
+      <span
+        class="cdr-chip__content"
+      >
+        chip 1
+      </span>
+    </button>
+    <button
+      aria-checked="false"
+      class="cdr-chip"
+      role="radio"
+      tabindex="-1"
+    >
+      <span
+        class="cdr-chip__content"
+      >
+        chip 2
+      </span>
+    </button>
+  </div>
+</fieldset>
+`;

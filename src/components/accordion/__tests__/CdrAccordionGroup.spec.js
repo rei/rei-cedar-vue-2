@@ -11,9 +11,27 @@ const propsData = {
 
 describe('CdrAccordionGroup', () => {
   it('renders correctly', () => {
-    const wrapper = shallowMount(CdrAccordionGroup, {
+    const wrapper = mount(CdrAccordionGroup, {
       stubs: {
         'cdr-accordion': CdrAccordion,
+      },
+      slots: {
+        default: [
+          '<cdr-accordion id="tab1" level="2"><template slot="label">label1</template></cdr-accordion>',
+          '<cdr-accordion id="tab2" level="2"><template slot="label">label2</template></cdr-accordion>'
+        ]
+      },
+    });
+    expect(wrapper.element).toMatchSnapshot()
+  });
+
+  it('renders correctly unwrapped', () => {
+    const wrapper = mount(CdrAccordionGroup, {
+      stubs: {
+        'cdr-accordion': CdrAccordion,
+      },
+      propsData: {
+        unwrap: true
       },
       slots: {
         default: [
