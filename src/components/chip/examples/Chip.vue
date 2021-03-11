@@ -54,6 +54,7 @@
         :key="filter"
         @click="clearFilter"
         aria-controls="tents"
+        aria-pressed="true"
       >
         {{ filter }} <icon-x-lg
           size="small"
