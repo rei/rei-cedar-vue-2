@@ -17,10 +17,10 @@ module.exports = {
   extends: [
     'airbnb-base',
     'plugin:vue/recommended',
+    // "plugin:vue-a11y/base", // currently errors out on form labels
   ],
   plugins: [
-    'vue',
-    'tree-shaking',
+    'vue'
   ],
   // check if imports actually resolve
   settings: {
@@ -61,6 +61,6 @@ module.exports = {
       'ignoreComments': true,
       'ignoreTrailingComments': true
     }],
-    'vue/multiline-html-element-content-newline': 0,
+    'vue/multiline-html-element-content-newline': 0
   }
 }
