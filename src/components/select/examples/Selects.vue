@@ -1,11 +1,8 @@
 <template>
   <div>
-    <cdr-text
-      tag="h2"
-      modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
-    >
+    <h2>
       Selects
-    </cdr-text>
+    </h2>
     <hr class="icon-hr">
 
     <div data-backstop="select-target">
@@ -194,7 +191,7 @@
           type="button"
         >
           <icon-information-stroke inherit-color />
-          <span class="cdr-display-sr-only">Information!</span>
+          <span class="sr-only">Information!</span>
         </cdr-link>
       </template>
     </cdr-select>
@@ -246,9 +243,9 @@
     <cdr-text>Selected Value: {{ dynamic }}</cdr-text>
     <hr class="icon-hr">
 
-    <cdr-text class="cdr-my-space-two-x">
+    <h3 class="stack">
       Multiple Select with size
-    </cdr-text>
+    </h3>
 
     <cdr-select
       label="Multiple Prompt"
@@ -283,9 +280,9 @@
     <cdr-text>Selected Values: {{ multiple }}</cdr-text>
     <hr class="icon-hr">
 
-    <cdr-text class="cdr-my-space-two-x">
+    <h3 class="stack">
       Multiple Select
-    </cdr-text>
+    </h3>
 
     <cdr-select
       label="Multiple Prompt"

@@ -1,11 +1,8 @@
 <template>
   <div>
-    <cdr-text
-      tag="h2"
-      modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
-    >
+    <h2>
       Text Inputs
-    </cdr-text>
+    </h2>
     <div data-backstop="input-target">
       <cdr-input
         class="demo-input"
@@ -107,7 +104,7 @@
           type="button"
         >
           <icon-information-stroke inherit-color />
-          <span class="cdr-display-sr-only">Information!</span>
+          <span class="sr-only">Information!</span>
         </cdr-link>
       </template>
       <template slot="pre-icon">
@@ -227,7 +224,7 @@
           tag="button"
           type="button"
         >
-          <span class="cdr-display-sr-only">I trigger some sort of action!</span>
+          <span class="sr-only">I trigger some sort of action!</span>
           <icon-check-stroke inherit-color />
         </cdr-link>
       </template>

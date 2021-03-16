@@ -1,11 +1,8 @@
 <template>
   <div>
-    <cdr-text
-      tag="h2"
-      modifier="heading-serif-600 heading-serif-700@md heading-serif-700@lg"
-    >
+    <h2>
       Radios
-    </cdr-text>
+    </h2>
     <div data-backstop="radio-focus">
       <fieldset>
         <legend id="legend-z">

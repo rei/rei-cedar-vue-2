@@ -2,12 +2,9 @@
   <div
     class="rating-reset"
   >
-    <cdr-text
-      tag="h2"
-      modifier="heading-serif-600 heading-serif-700@md heading-serif-700@lg"
-    >
+    <h2>
       Ratings
-    </cdr-text>
+    </h2>
     <cdr-rating
       rating="3.3"
       count="16"
@@ -137,17 +134,17 @@
     />
 
     <!-- Responsive Size -->
-    <cdr-text tag="h3">
+    <h3>
       Responsive Growing
-    </cdr-text>
+    </h3>
     <cdr-rating
       rating="2"
       count="9"
       size="small@xs medium@md large@lg"
     />
-    <cdr-text tag="h3">
+    <h3>
       Responsive Inverse
-    </cdr-text>
+    </h3>
     <cdr-rating
       rating="3"
       count="100"

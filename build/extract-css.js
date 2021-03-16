@@ -11,43 +11,11 @@ const packageJson = require('../package.json')
 
 const env = process.env.NODE_ENV;
 
-buildCss({
-  srcPath: './src/css/utilities.scss',
-  outPath: './dist/utilities-compiled.css',
-  scopeClasses: false,
-});
 
 buildCss({
   srcPath: './src/css/reset.scss',
   outPath: './dist/style/reset.css',
   scopeClasses: false,
-});
-
-buildCss({
-  srcPath: './src/css/deprecated/_index.scss',
-  outPath: './dist/style/deprecated-utilities.css',
-  scopeClasses: false,
-});
-
-// Create individual utility outputs
-const utilities = glob.sync('./src/css/utility/*.scss')
-  .map((path) => {
-    const name = path.split('utility/_')[1];
-    return {
-      srcPath: path,
-      outPath: `./dist/style/${name.replace('scss', 'css')}`,
-      scopeClasses: false,
-    }
-  }
-);
-
-utilities.forEach(buildCss);
-// Create utilities index file which imports all of the individual utility outputs
-const utilsFile = utilities.map(createImport).join('\n');
-fs.outputFile('./dist/style/utilities-full.css', utilsFile, function(err) {
-  if (!err) {
-    console.log(chalk.green(`success! created utilities.css`));
-  }
 });
 
 const components = glob.sync('./src/components/**/styles/*.scss')
@@ -65,7 +33,6 @@ const components = glob.sync('./src/components/**/styles/*.scss')
 components.forEach(buildCss);
 
 const outFile = [{outPath: './dist/style/reset.css'}]
-  .concat(utilities)
   .concat(components)
   .map(createImport)
   .join('\n');

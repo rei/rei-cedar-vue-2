@@ -43,7 +43,6 @@ export default {
       return this.citation ? (
         <cdr-text
           tag="cite"
-          modifier="citation"
           class={this.style['cdr-quote__citation']}
         >
           { this.citation }

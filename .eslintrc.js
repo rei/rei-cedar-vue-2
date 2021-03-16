@@ -33,7 +33,6 @@ module.exports = {
           ['assetsdir', resolve('src/assets')],
           ['componentsdir', resolve('src/components')],
           ['compositionsdir', resolve('src/compositions')],
-          ['directivesdir', resolve('src/directives')],
           ['mixinsdir', resolve('src/mixins')],
         ],
         extensions: ['.vue', '.json', '.js', '.jsx']

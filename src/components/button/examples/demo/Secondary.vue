@@ -1,17 +1,14 @@
 <template>
   <div data-backstop="buttons">
     <div
-      class="button-example cdr-space-inset-one-x"
+      class="button-example inset"
       v-for="(section, index) in data"
       :key="index"
       :data-backstop="section.backstop ? section.backstop : null"
     >
-      <cdr-text
-        tag="h3"
-        modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
-      >
+      <h3>
         {{ section.title }}
-      </cdr-text>
+      </h3>
       <cdr-button
         v-for="(button, index2) in section.buttons"
         :key="index2"
@@ -24,13 +21,10 @@
         :data-backstop="button.backstop ? button.backstop : null"
       >{{ button.label }}</cdr-button>
     </div>
-    <div class="button-example cdr-space-inset-one-x">
-      <cdr-text
-        tag="h3"
-        modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
-      >
+    <div class="button-example inset">
+      <h3>
         Secondary Anchor
-      </cdr-text>
+      </h3>
       <cdr-button
         tag="a"
         href="https://rei.com"
