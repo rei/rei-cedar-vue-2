@@ -4,22 +4,18 @@
     data-backstop="lists"
   >
 
-    <cdr-text
-      tag="h2"
-      modifier="display-600 display-700@md display-900@lg"
-    >
+    <h2>
       List
-    </cdr-text>
+    </h2>
 
-    <unordered-list class="cdr-mb-space-four-x" />
-    <ordered-list class="cdr-mb-space-four-x" />
-    <bare-list class="cdr-mb-space-four-x" />
-    <resilience-test class="cdr-mb-space-four-x" />
+    <unordered-list class="mega-stack" />
+    <ordered-list class="mega-stack" />
+    <bare-list class="mega-stack" />
+    <resilience-test class="mega-stack" />
   </div>
 </template>
 
 <script>
-import { CdrText } from 'srcdir/index';
 import unorderedList from 'componentsdir/list/examples/demo/Unordered';
 import orderedList from 'componentsdir/list/examples/demo/Ordered';
 import bareList from 'componentsdir/list/examples/demo/Bare';
@@ -32,7 +28,6 @@ export default {
     orderedList,
     bareList,
     resilienceTest,
-    CdrText,
   },
 };
 </script>

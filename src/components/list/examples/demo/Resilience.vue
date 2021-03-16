@@ -1,19 +1,13 @@
 <template>
   <div>
 
-    <cdr-text
-      tag="h3"
-      modifier="heading-serif-600 heading-serif-700@md heading-serif-700@lg"
-    >
+    <h3>
       Resilience Tests
-    </cdr-text>
+    </h3>
 
-    <cdr-text
-      tag="h4"
-      modifier="heading-serif-500 heading-serif-600@md heading-serif-600@lg"
-    >
+    <h4>
       List in small container
-    </cdr-text>
+    </h4>
     <div style="width: 50px;">
       <cdr-list modifier="unordered">
         <li>foofofofofofofofofofofofofo</li>
@@ -27,12 +21,9 @@
         <li>zoo</li>
       </cdr-list>
     </div>
-    <cdr-text
-      tag="h4"
-      modifier="heading-serif-500 heading-serif-600@md heading-serif-600@lg"
-    >
+    <h4>
       Typography validation - text wrapping lists
-    </cdr-text>
+    </h4>
 
     <cdr-text
       v-for="p1 in paragraphs"
@@ -82,7 +73,7 @@
     <cdr-list
       tag="ol"
       modifier="ordered"
-      class="cdr-mt-space-one-x"
+      class="stack"
     >
       <li
         v-for="paragraph in paragraphs"
@@ -115,7 +106,7 @@
 
     <cdr-list
       modifier="unordered"
-      class="cdr-mt-space-one-x"
+      class="stack"
     >
       <li
         v-for="utility in utilities"
@@ -148,7 +139,7 @@
     </cdr-list>
 
     NON Cedar list
-    <ul class="cdr-mt-space-one-x">
+    <ul class="stack">
       <li
         v-for="utility in utilities"
         :key="utility"

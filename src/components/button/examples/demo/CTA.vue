@@ -1,22 +1,18 @@
 <template>
   <div data-backstop="cta-buttons">
     <div
-      class="cdr-space-inset-one-x"
+      style="inset"
       v-for="(section, index) in data"
       :key="index"
       :data-backstop="section.backstop ? section.backstop : null"
     >
-      <cdr-text
-        tag="h3"
-        modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
-      >
+      <h3>
         {{ section.title }}
-      </cdr-text>
+      </h3>
       <cdr-button
         v-for="(button, index2) in section.buttons"
         :key="index2"
         :size="button.size"
-
         :full-width="button.fullWidth"
         :disabled="button.disabled"
         :modifier="button.modifier"
@@ -49,7 +45,6 @@ export default {
               label: 'Large Link',
               disabled: false,
               size: 'large',
-              space: 'cdr-mr-space-one-x',
               fullWidth: false,
               modifier: 'link',
             },
@@ -57,7 +52,6 @@ export default {
               label: 'Medium Link',
               disabled: false,
               size: 'medium',
-              space: 'cdr-mr-space-one-x',
               fullWidth: false,
               modifier: 'link',
             },
@@ -65,7 +59,6 @@ export default {
               label: 'Small Link',
               disabled: false,
               size: 'small',
-              space: 'cdr-mr-space-one-x',
               fullWidth: false,
               modifier: 'link',
             },
@@ -73,7 +66,6 @@ export default {
               label: 'Full-Width Link',
               disabled: false,
               size: 'medium',
-              space: 'cdr-mt-space-one-x',
               fullWidth: true,
               modifier: 'link',
             },
@@ -87,7 +79,6 @@ export default {
               label: 'Large Dark',
               disabled: false,
               size: 'large',
-              space: 'cdr-mr-space-one-x',
               fullWidth: false,
               modifier: 'dark',
             },
@@ -95,7 +86,6 @@ export default {
               label: 'Medium Dark',
               disabled: false,
               size: 'medium',
-              space: 'cdr-mr-space-one-x',
               fullWidth: false,
               modifier: 'dark',
             },
@@ -103,7 +93,6 @@ export default {
               label: 'Small Dark',
               disabled: false,
               size: 'small',
-              space: 'cdr-mr-space-one-x',
               fullWidth: false,
               modifier: 'dark',
             },
@@ -111,7 +100,6 @@ export default {
               label: 'Full-Width Dark',
               disabled: false,
               size: 'medium',
-              space: 'cdr-mt-space-one-x',
               fullWidth: true,
               modifier: 'dark',
             },
@@ -119,7 +107,6 @@ export default {
               label: 'Elevated Dark',
               disabled: false,
               size: 'medium',
-              space: 'cdr-mt-space-one-x',
               elevated: true,
               modifier: 'dark',
             },
@@ -134,7 +121,6 @@ export default {
               label: 'Large Sale',
               disabled: false,
               size: 'large',
-              space: 'cdr-mr-space-one-x',
               fullWidth: false,
               modifier: 'sale',
             },
@@ -142,7 +128,6 @@ export default {
               label: 'Medium Sale',
               disabled: false,
               size: 'medium',
-              space: 'cdr-mr-space-one-x',
               fullWidth: false,
               modifier: 'sale',
             },
@@ -150,7 +135,6 @@ export default {
               label: 'Small Sale',
               disabled: false,
               size: 'small',
-              space: 'cdr-mr-space-one-x',
               fullWidth: false,
               modifier: 'sale',
             },
@@ -158,7 +142,6 @@ export default {
               label: 'Full-Width Sale',
               disabled: false,
               size: 'medium',
-              space: 'cdr-mt-space-one-x',
               fullWidth: true,
               modifier: 'sale',
             },
@@ -166,7 +149,6 @@ export default {
               label: 'Elevated Sale',
               disabled: false,
               size: 'medium',
-              space: 'cdr-mt-space-one-x',
               elevated: true,
               modifier: 'sale',
             },
@@ -181,7 +163,6 @@ export default {
               label: 'Large Primary',
               disabled: false,
               size: 'large',
-              space: 'cdr-mr-space-one-x',
               fullWidth: false,
               modifier: 'primary',
             },
@@ -189,7 +170,6 @@ export default {
               label: 'Medium Primary',
               disabled: false,
               size: 'medium',
-              space: 'cdr-mr-space-one-x',
               fullWidth: false,
               modifier: 'primary',
             },
@@ -197,7 +177,6 @@ export default {
               label: 'Small Primary',
               disabled: false,
               size: 'small',
-              space: 'cdr-mr-space-one-x',
               fullWidth: false,
               modifier: 'primary',
             },
@@ -205,7 +184,6 @@ export default {
               label: 'Full-Width Primary',
               disabled: false,
               size: 'medium',
-              space: 'cdr-mt-space-one-x',
               fullWidth: true,
               modifier: 'primary',
             },
@@ -213,7 +191,6 @@ export default {
               label: 'Elevated Primary',
               disabled: false,
               size: 'medium',
-              space: 'cdr-mt-space-one-x',
               elevated: true,
               modifier: 'primary',
             },
@@ -228,7 +205,6 @@ export default {
               label: 'Large Secondary',
               disabled: false,
               size: 'large',
-              space: 'cdr-mr-space-one-x',
               fullWidth: false,
               modifier: 'secondary',
             },
@@ -236,7 +212,6 @@ export default {
               label: 'Medium Secondary',
               disabled: false,
               size: 'medium',
-              space: 'cdr-mr-space-one-x',
               fullWidth: false,
               modifier: 'secondary',
             },
@@ -244,7 +219,6 @@ export default {
               label: 'Small Secondary',
               disabled: false,
               size: 'small',
-              space: 'cdr-mr-space-one-x',
               fullWidth: false,
               modifier: 'secondary',
             },
@@ -252,7 +226,6 @@ export default {
               label: 'Full-Width Secondary',
               disabled: false,
               size: 'medium',
-              space: 'cdr-mt-space-one-x',
               fullWidth: true,
               modifier: 'secondary',
             },
@@ -260,7 +233,6 @@ export default {
               label: 'Elevated Secondary',
               disabled: false,
               size: 'medium',
-              space: 'cdr-mt-space-one-x',
               elevated: true,
               modifier: 'secondary',
             },

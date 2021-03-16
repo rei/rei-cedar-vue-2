@@ -4,20 +4,16 @@
     class="link-examples"
     data-backstop="all-links"
   >
-    <cdr-text
-      tag="h2"
-      modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
-    >
+    <h2>
       Links
-    </cdr-text>
-    <standard-links class="cdr-mb-space-four-x" />
-    <resilience-test class="cdr-mb-space-four-x" />
+    </h2>
+    <standard-links class="mega-stack" />
+    <resilience-test class="mega-stack" />
 
   </div>
 </template>
 
 <script>
-import { CdrText } from 'srcdir/index';
 import standardLinks from 'componentsdir/link/examples/demo/Standard';
 import resilienceTest from 'componentsdir/link/examples/demo/Resilience';
 
@@ -26,7 +22,6 @@ export default {
   components: {
     standardLinks,
     resilienceTest,
-    CdrText,
   },
 };
 </script>

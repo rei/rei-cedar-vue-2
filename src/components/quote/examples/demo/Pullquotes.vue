@@ -1,11 +1,8 @@
 <template>
   <div>
-    <cdr-text
-      tag="h2"
-      modifier="heading-serif-600 heading-serif-700@md heading-serif-700@lg"
-    >
+    <h2>
       Pullquote
-    </cdr-text>
+    </h2>
     <cdr-text modifier="body">
       Body paragraph: Lorem ipsum dolor sit amet consectetur adipisicing elit.
       At perferendis reiciendis sapiente delectus commodi eaque sunt aperiam

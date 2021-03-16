@@ -12,13 +12,6 @@ import FullWidthButtons from 'componentsdir/button/examples/demo/FullWidth';
 import IconButtons from 'componentsdir/button/examples/demo/Icons';
 import SecondaryButtons from 'componentsdir/button/examples/demo/Secondary';
 
-import InsetUtilities from 'componentsdir/Utilities/demos/inset';
-import PaddingSpacingUtilities from 'componentsdir/Utilities/demos/paddingSpacing';
-import MarginSpacingUtilities from 'componentsdir/Utilities/demos/marginSpacing';
-import ContainerUtilities from 'componentsdir/Utilities/demos/container';
-import AlignUtilities from 'componentsdir/Utilities/demos/align';
-import VisibilityUtilities from 'componentsdir/Utilities/demos/visibility';
-
 import AddressForm from 'componentsdir/Form/AddressForm';
 import LoginForm from 'componentsdir/Form/LoginForm';
 import PaymentForm from 'componentsdir/Form/PaymentForm';
@@ -62,13 +55,6 @@ const routes = [
   { path: '/secondary-buttons', component: SecondaryButtons },
   { path: '/full-width-buttons', component: FullWidthButtons },
   { path: '/icon-buttons', component: IconButtons },
-  { path: '/padding-spacing-utilities', component: PaddingSpacingUtilities },
-  { path: '/margin-spacing-utilities', component: MarginSpacingUtilities },
-  { path: '/inset-utilities', component: InsetUtilities },
-  { path: '/container-utilities', component: ContainerUtilities },
-  { path: '/align-utilities', component: AlignUtilities },
-  { path: '/visibility-utilities', component: VisibilityUtilities },
-
   // form examples
   { path: '/address-form', component: AddressForm },
   { path: '/login-form', component: LoginForm },

@@ -8,7 +8,6 @@ import checkbox from 'componentsdir/checkbox/examples/checkboxes';
 import chip from 'componentsdir/chip/examples/Chip';
 import formGroup from 'componentsdir/formGroup/examples/FormGroup';
 import grid from 'componentsdir/grid/examples/Grid';
-import gridFlex from 'componentsdir/flex-grid/examples/Grid';
 import icon from 'componentsdir/icon/examples/Icons';
 import images from 'componentsdir/image/examples/Images';
 import inputs from 'componentsdir/input/examples/Inputs';
@@ -25,7 +24,6 @@ import tables from 'componentsdir/table/examples/Table';
 import tabs from 'componentsdir/tabs/examples/Tabs';
 import texts from 'componentsdir/text/examples/Text';
 import tooltip from 'componentsdir/tooltip/examples/Tooltip';
-import utilities from 'componentsdir/Utilities/Utilities';
 import forms from 'componentsdir/Form/Form';
 
 export default {
@@ -39,7 +37,6 @@ export default {
   chip,
   formGroup,
   grid,
-  gridFlex,
   icon,
   images,
   inputs,
@@ -56,6 +53,5 @@ export default {
   tabs,
   texts,
   tooltip,
-  utilities,
   forms,
 };
