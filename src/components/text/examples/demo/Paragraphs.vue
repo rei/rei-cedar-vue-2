@@ -1,21 +1,21 @@
 <template>
   <!-- eslint-disable max-len -->
   <div>
-    <cdr-text modifier="eyebrow-100">
+    <h2>
       default
-    </cdr-text>
+    </h2>
     <div data-backstop="body">
       <cdr-text>
         non modified and un-taged
       </cdr-text>
 
-      <cdr-text modifier="eyebrow-100">
+      <h2>
         body
-      </cdr-text>
+      </h2>
       <cdr-text
         v-for="paragraph in paragraphs"
         :key="paragraph"
-        :modifier="`body-${paragraph}`"
+        :class="`cdr-text-dev--body-${paragraph}`"
       >
         body-{{ paragraph }}: <br> Lorem ipsum dolor sit amet, orci tristique enim condimentum pellentesque amet
         congue. Suspendisse pulvinar. Consectetuer curabitur id, laoreet dolor sapien libero,
@@ -24,13 +24,13 @@
         vestibulum.
       </cdr-text>
 
-      <cdr-text modifier="eyebrow-100">
+      <h2>
         body strong
-      </cdr-text>
+      </h2>
       <cdr-text
         v-for="strongaragraph in paragraphs"
         :key="strongaragraph"
-        :modifier="`body-strong-${strongaragraph}`"
+        :class="`cdr-text-dev--body-strong-${strongaragraph}`"
       >
         body-strong-{{ paragraph }}: <br> Lorem ipsum dolor sit amet, orci tristique enim condimentum pellentesque amet
         congue. Suspendisse pulvinar. Consectetuer curabitur id, laoreet dolor sapien libero,
@@ -39,14 +39,14 @@
         vestibulum.
       </cdr-text>
     </div>
-    <cdr-text modifier="eyebrow-100">
+    <h2>
       Utility
-    </cdr-text>
+    </h2>
     <div data-backstop="utility">
       <cdr-text
         v-for="utility in utilities"
         :key="`utility-${utility}`"
-        :modifier="`utility-sans-${utility}`"
+        :class="`cdr-text-dev--utility-sans-${utility}`"
       >
         utility-sans-{{ utility }}: <br> Lorem ipsum dolor sit amet, orci tristique enim condimentum pellentesque amet
         congue. Suspendisse pulvinar. Consectetuer curabitur id, laoreet dolor sapien libero,
@@ -55,13 +55,13 @@
         vestibulum.
       </cdr-text>
 
-      <cdr-text modifier="eyebrow-100">
+      <h2>
         Utility strong
-      </cdr-text>
+      </h2>
       <cdr-text
         v-for="utilitystrong in utilities"
         :key="`utility-sans-strong-${utilitystrong}`"
-        :modifier="`utility-sans-strong-${utilitystrong}`"
+        :class="`cdr-text-dev--utility-sans-strong-${utilitystrong}`"
       >
         utility-sans-strong-{{ utilitystrong }}: <br> Lorem ipsum dolor sit amet, orci tristique enim condimentum pellentesque amet
         congue. Suspendisse pulvinar. Consectetuer curabitur id, laoreet dolor sapien libero,
@@ -70,13 +70,13 @@
         vestibulum.
       </cdr-text>
 
-      <cdr-text modifier="eyebrow-100">
+      <h2>
         Utility serif
-      </cdr-text>
+      </h2>
       <cdr-text
         v-for="utilityserif in utilities"
         :key="utilityserif"
-        :modifier="`utility-serif-${utilityserif}`"
+        :class="`cdr-text-dev--utility-serif-${utilityserif}`"
       >
         utility-serif-{{ utilityserif }}: <br> Lorem ipsum dolor sit amet, orci tristique enim condimentum pellentesque amet
         congue. Suspendisse pulvinar. Consectetuer curabitur id, laoreet dolor sapien libero,
@@ -85,13 +85,13 @@
         vestibulum.
       </cdr-text>
 
-      <cdr-text modifier="eyebrow-100">
+      <h2>
         Utility serif strong
-      </cdr-text>
+      </h2>
       <cdr-text
         v-for="utilityserifstrong in utilities"
         :key="utilityserifstrong"
-        :modifier="`utility-serif-strong-${utilityserifstrong}`"
+        :class="`cdr-text-dev--utility-serif-strong-${utilityserifstrong}`"
       >
         utility-serif-strong-{{ utilityserifstrong }}: <br> Lorem ipsum dolor sit amet, orci tristique enim condimentum pellentesque amet
         congue. Suspendisse pulvinar. Consectetuer curabitur id, laoreet dolor sapien libero,
@@ -100,17 +100,17 @@
         vestibulum.
       </cdr-text>
     </div>
-    <cdr-text modifier="eyebrow-100">
+    <h2>
       Utility serif in italic
-    </cdr-text>
+    </h2>
     <div data-backstop="varianttest">
       <cdr-text
         v-for="utilityserifstrong in utilities"
         :key="utilityserifstrong"
-        :modifier="`utility-serif-strong-${utilityserifstrong}`"
+        :class="`cdr-text-dev--utility-serif-strong-${utilityserifstrong}`"
       >
         <cdr-text
-          modifier="italic"
+          class="cdr-text-dev--italic"
           tag="em"
         >
           cdr-text--italic wrapping utility-serif-strong-{{ utilityserifstrong }}: <br> Lorem ipsum dolor sit amet, orci tristique enim condimentum pellentesque amet
@@ -121,70 +121,70 @@
         </cdr-text>
       </cdr-text>
 
-      <cdr-text modifier="eyebrow-100">
+      <h2>
         body, strong, & italic
-      </cdr-text>
+      </h2>
       <cdr-text
         v-for="paragraph in paragraphs"
         :key="paragraph"
-        :modifier="`body-${paragraph}`"
+        :class="`cdr-text-dev--body-${paragraph}`"
       >
         example of
         <cdr-text
           tag="strong"
-          :modifier="`body-strong-${paragraph}`"
+          :class="`cdr-text-dev--body-strong-${paragraph}`"
         >
           body-strong-{{ paragraph }},
         </cdr-text>
         <cdr-text
           tag="strong"
-          modifier="strong"
+          class="cdr-text-dev--strong"
         >
           strong,
         </cdr-text>
         <cdr-text
           tag="em"
-          modifier="italic"
+          class="cdr-text-dev--italic"
         >
           & italic
         </cdr-text>
         <cdr-text
-          modifier="strong italic"
+          class="cdr-text-dev--strong cdr-text-dev--italic"
         >
           also a combo
         </cdr-text>
         in body-{{ paragraph }} copy.
       </cdr-text>
 
-      <cdr-text modifier="eyebrow-100">
+      <h2>
         utility, strong, & italic
-      </cdr-text>
+      </h2>
       <cdr-text
         v-for="utility in utilities"
         :key="utility"
-        :modifier="`utility-sans-${utility}`"
+        :class="`cdr-text-dev--utility-sans-${utility}`"
       >
         example of
         <cdr-text
           tag="strong"
-          :modifier="`utility-sans-strong-${utility}`"
+          :class="`cdr-text-dev--utility-sans-strong-${utility}`"
         >
           utility-sans-strong-{{ utility }},
         </cdr-text>
         <cdr-text
           tag="strong"
-          modifier="strong"
+          class="cdr-text-dev--dtrong"
         >
           strong,
         </cdr-text>
         <cdr-text
           tag="em"
-          modifier="italic"
+          class="cdr-text-dev--italic"
         >
           & italic
         </cdr-text>
         <cdr-text
-          modifier="strong italic"
+          class="cdr-text-dev--strong cdr-text-dev--italic"
         >
           also a combo
         </cdr-text>

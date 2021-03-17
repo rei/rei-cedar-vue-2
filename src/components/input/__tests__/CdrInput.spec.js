@@ -253,18 +253,6 @@ describe('CdrInput', () => {
     expect(spy.called).toBeTruthy();
   });
 
-  it('renders deprecated helper-text slot', () => {
-    const wrapper = shallowMount(CdrInput, {
-      propsData: {
-        label: 'test',
-      },
-      slots: {
-        'helper-text': 'very helpful',
-      },
-    });
-    expect(wrapper.find('.cdr-input__helper-text').text()).toBe('very helpful');
-  });
-
   it('renders helper-text-bottom slot', () => {
     const wrapper = shallowMount(CdrInput, {
       propsData: {

@@ -3,7 +3,6 @@ const config = {
   collectCoverage: true,
   collectCoverageFrom: [
     'src/components/**/*.{js,jsx}',
-    'src/directives/**/*.{js,jsx}',
     'src/mixins/**/*.{js,jsx}',
     'src/utils/**/*.{js,jsx}',
     '!src/components/**/examples/**/*.{js,jsx}', // not component examples

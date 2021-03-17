@@ -120,8 +120,7 @@ export default {
     return (<img
           class={clsx(this.style[this.baseClass],
             this.modifierClass,
-            this.radiusClass,
-            this.lazyClass)}
+            this.radiusClass)}
           src={this.src}
           alt={this.alt}
           {...{ attrs: this.$attrs, on: this.$listeners }}

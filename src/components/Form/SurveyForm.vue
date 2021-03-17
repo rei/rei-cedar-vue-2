@@ -1,11 +1,8 @@
 <template>
   <div>
-    <cdr-text
-      tag="h2"
-      modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
-    >
+    <h2>
       Survey Example
-    </cdr-text>
+    </h2>
     <br><br>
 
     <form

@@ -1,25 +1,17 @@
 <template>
   <!-- eslint-disable max-len -->
   <div>
-    <cdr-text
-      tag="h2"
-      modifier="heading-serif-600 heading-serif-700@md heading-serif-700@lg"
-      class="cdr-align-text-center"
-    >
+    <h2>
       Tabs
-    </cdr-text>
+    </h2>
 
     <tabs-default :background-color="backgroundColor" />
 
     <!-- small -->
     <div class="tab-demo-secton">
-      <cdr-text
-        tag="h3"
-        modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
-        class="cdr-align-text-center"
-      >
+      <h3>
         Small Tabs
-      </cdr-text>
+      </h3>
       <cdr-tabs
         height="100px"
         size="small"
@@ -43,13 +35,9 @@
 
     <!-- full-width -->
     <div class="tab-demo-secton">
-      <cdr-text
-        tag="h3"
-        modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
-        class="cdr-align-text-center"
-      >
+      <h3>
         Full-Width Tabs
-      </cdr-text>
+      </h3>
       <cdr-tabs
         height="100px"
         modifier="full-width"
@@ -73,13 +61,9 @@
 
     <!-- No-border -->
     <div class="tab-demo-secton">
-      <cdr-text
-        tag="h3"
-        modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
-        class="cdr-align-text-center"
-      >
+      <h3>
         No Border Tabs
-      </cdr-text>
+      </h3>
       <cdr-tabs
         height="100px"
         modifier="no-border"
@@ -103,13 +87,9 @@
 
     <!-- auto -->
     <div class="tab-demo-secton">
-      <cdr-text
-        tag="h3"
-        modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
-        class="cdr-align-text-center"
-      >
+      <h3>
         Auto Height Tabs
-      </cdr-text>
+      </h3>
       <cdr-tabs
         height="auto"
         :background-color="backgroundColor"
@@ -148,13 +128,9 @@
 
     <!-- Centered -->
     <div class="tab-demo-secton">
-      <cdr-text
-        tag="h3"
-        modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
-        class="cdr-align-text-center"
-      >
+      <h3>
         Centered Tabs
-      </cdr-text>
+      </h3>
       <cdr-tabs
         height="100px"
         modifier="centered"
