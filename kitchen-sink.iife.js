@@ -25045,6 +25045,18 @@ var cedar = (function () {
         return 'cdr-input';
       },
 
+      inputAttrs() {
+        var isNum = this.type === 'number';
+        return _objectSpread$2U({
+          pattern: isNum && '[0-9]*',
+          inputmode: isNum && 'numeric',
+          novalidate: isNum,
+          autocorrect: 'off',
+          spellcheck: 'false',
+          autocapitalize: 'off'
+        }, this.$attrs);
+      },
+
       inputClass() {
         var hasPostIcon = !!this.$slots['post-icon'];
         var hasPostIcons = hasPostIcon && this.$slots['post-icon'].length > 1;
@@ -25107,7 +25119,7 @@ var cedar = (function () {
               "disabled": this.disabled,
               "required": this.required,
               "aria-label": this.hideLabel ? this.label : null
-            }, this.$attrs),
+            }, this.inputAttrs),
             "class": clsx(this.inputClass, this.sizeClass),
             "ref": "input",
             "domProps": {
@@ -25135,7 +25147,7 @@ var cedar = (function () {
             "disabled": this.disabled,
             "required": this.required,
             "aria-label": this.hideLabel ? this.label : null
-          }, this.$attrs),
+          }, this.inputAttrs),
           "class": clsx(this.inputClass, this.sizeClass),
           "ref": "input",
           "domProps": {
