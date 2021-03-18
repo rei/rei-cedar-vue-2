@@ -19,9 +19,46 @@ exports[`CdrInput renders correctly 1`] = `
       class="cdr-input-wrap"
     >
       <input
+        autocapitalize="off"
+        autocorrect="off"
         class="cdr-input cdr-input--primary"
         id="renders"
+        spellcheck="false"
         type="text"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`CdrInput renders number input correctly 1`] = `
+<div>
+  <div
+    class="cdr-label-standalone cdr-label-standalone--spacing"
+  >
+    <label
+      class="cdr-label-standalone__label"
+      for="renders"
+    >
+      Label Test
+    </label>
+  </div>
+  <div
+    class="cdr-input-outer-wrap"
+  >
+    <div
+      class="cdr-input-wrap"
+    >
+      <input
+        autocapitalize="off"
+        autocorrect="off"
+        class="cdr-input cdr-input--primary"
+        id="renders"
+        inputmode="numeric"
+        novalidate="novalidate"
+        pattern="[0-9]*"
+        spellcheck="false"
+        type="number"
       />
     </div>
   </div>
