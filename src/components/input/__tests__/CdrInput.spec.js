@@ -13,6 +13,17 @@ describe('CdrInput', () => {
     expect(wrapper.element).toMatchSnapshot();
   });
 
+  it('renders number input correctly', () => {
+    const wrapper = mount(CdrInput, {
+      propsData: {
+        label: 'Label Test',
+        id: 'renders',
+        type: 'number',
+      },
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
   it('generates an id correctly', () => {
     const wrapper = shallowMount(CdrInput, {
       propsData: {
@@ -73,6 +84,19 @@ describe('CdrInput', () => {
       },
     });
     expect(wrapper.vm.$refs.input.hasAttribute('required')).toBe(true);
+  });
+
+  it('sets attrs for numeric inputt', () => {
+    const wrapper = shallowMount(CdrInput, {
+      propsData: {
+        label: 'test',
+        required: true,
+        type: 'number'
+      },
+    });
+    expect(wrapper.vm.$refs.input.hasAttribute('novalidate')).toBe(true);
+    expect(wrapper.vm.$refs.input.hasAttribute('pattern')).toBe(true);
+    expect(wrapper.vm.$refs.input.hasAttribute('inputmode')).toBe(true);
   });
 
   it('sets input autofocus attribute correctly', () => {

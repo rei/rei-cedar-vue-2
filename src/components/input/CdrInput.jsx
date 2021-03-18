@@ -87,6 +87,18 @@ export default {
     baseClass() {
       return 'cdr-input';
     },
+    inputAttrs() {
+      const isNum = this.type === 'number';
+      return {
+        pattern: isNum && '[0-9]*',
+        inputmode: isNum && 'numeric',
+        novalidate: isNum,
+        autocorrect: 'off',
+        spellcheck: 'false',
+        autocapitalize: 'off',
+        ...this.$attrs,
+      };
+    },
     inputClass() {
       const hasPostIcon = !!this.$slots['post-icon'];
       const hasPostIcons = hasPostIcon && this.$slots['post-icon'].length > 1;
@@ -139,7 +151,7 @@ export default {
             required={this.required}
             aria-label={this.hideLabel ? this.label : null}
             ref="input"
-            {...{ attrs: this.$attrs, on: this.inputListeners }}
+            {...{ attrs: this.inputAttrs, on: this.inputListeners }}
             vModel={this.value}
           />
         );
@@ -156,7 +168,7 @@ export default {
             required={this.required}
             aria-label={this.hideLabel ? this.label : null}
             ref="input"
-            {...{ attrs: this.$attrs, on: this.inputListeners }}
+            {...{ attrs: this.inputAttrs, on: this.inputListeners }}
             vModel={this.value}
           />
       );
