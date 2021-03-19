@@ -29,11 +29,6 @@ export default {
       required: false,
       default: true,
     },
-    ariaDescribedby: {
-      type: String,
-      required: false,
-      default: null,
-    },
     id: {
       type: String,
       required: false,
@@ -64,7 +59,6 @@ export default {
   computed: {
     dialogAttrs() {
       return {
-        'aria-describedby': this.ariaDescribedby,
         'aria-modal': 'true',
         id: this.id,
       };
