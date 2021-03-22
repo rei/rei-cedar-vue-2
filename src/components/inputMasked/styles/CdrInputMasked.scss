@@ -1,0 +1,6 @@
+@import '../../../css/settings/index.scss';
+@import './vars/CdrInputMasked.vars.scss';
+
+.cdr-input-masked {
+  @include cdr-input-masked-base-mixin;
+}

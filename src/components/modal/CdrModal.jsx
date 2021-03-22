@@ -29,7 +29,7 @@ export default {
       required: false,
       default: true,
     },
-    ariaDescribedbBy: {
+    ariaDescribedBy: {
       type: String,
       required: false,
       default: null,

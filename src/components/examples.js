@@ -1,4 +1,5 @@
 import accordion from 'componentsdir/accordion/examples/Accordion';
+import autocomplete from 'componentsdir/autocomplete/examples/Autocomplete';
 import alert from 'componentsdir/alert/examples/Alert';
 import breadcrumb from 'componentsdir/breadcrumb/examples/Breadcrumb';
 import buttons from 'componentsdir/button/examples/Buttons';
@@ -11,6 +12,7 @@ import grid from 'componentsdir/grid/examples/Grid';
 import icon from 'componentsdir/icon/examples/Icons';
 import images from 'componentsdir/image/examples/Images';
 import inputs from 'componentsdir/input/examples/Inputs';
+import inputMasked from 'componentsdir/inputMasked/examples/InputMasked';
 import links from 'componentsdir/link/examples/Links';
 import list from 'componentsdir/list/examples/Lists';
 import modal from 'componentsdir/modal/examples/Modal';
@@ -29,6 +31,7 @@ import forms from 'componentsdir/Form/Form';
 export default {
   alert,
   accordion,
+  autocomplete,
   breadcrumb,
   buttons,
   captions,
@@ -40,6 +43,7 @@ export default {
   icon,
   images,
   inputs,
+  inputMasked,
   links,
   list,
   modal,
