@@ -1,4 +1,4 @@
-import { shallowMount, mount } from '@vue/test-utils';
+import { shallowMount, mount } from '../../../../test/vue-jest-style-workaround.js';
 import sinon from 'sinon';
 import CdrLink from 'componentdir/link/CdrLink';
 
@@ -13,6 +13,11 @@ describe('CdrLink', () => {
       propsData: {
         target: '_self',
       },
+      // global: {
+      //   mocks: {
+      //     $style: {}
+      //   }
+      // }
     });
     expect(wrapper.attributes().target).toBe('_self');
   });

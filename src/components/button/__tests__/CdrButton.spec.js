@@ -1,4 +1,4 @@
-import { shallowMount, mount } from '@vue/test-utils';
+import { shallowMount, mount } from '../../../../test/vue-jest-style-workaround.js';
 import CdrButton from 'componentdir/button/CdrButton';
 import sinon from 'sinon'
 

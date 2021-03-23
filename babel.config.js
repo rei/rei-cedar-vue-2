@@ -1,7 +1,6 @@
 /* eslint-disable */
 
 module.exports = function (api) {
-
   const env = process.env.NODE_ENV;
   const babelEnv = process.env.BABEL_ENV;
 
@@ -36,7 +35,7 @@ module.exports = function (api) {
       "@babel/preset-env",
       presetEnvConfig,
     ],
-    "@vue/babel-preset-jsx"
+    '@babel/preset-typescript',
   ];
 
   const plugins = [
@@ -46,7 +45,8 @@ module.exports = function (api) {
         "corejs": 3,
         "useESModules": babelEnv === 'esm',
       }
-    ]
+    ],
+    // "@vue/babel-plugin-jsx"
   ];
 
   return {

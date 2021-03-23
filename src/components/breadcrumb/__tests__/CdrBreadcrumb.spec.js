@@ -1,4 +1,4 @@
-import { shallowMount, mount } from '@vue/test-utils';
+import { shallowMount, mount } from '../../../../test/vue-jest-style-workaround.js';
 import CdrBreadcrumb from 'componentdir/breadcrumb/CdrBreadcrumb';
 
 const itemsA = [
@@ -91,7 +91,7 @@ describe('CdrBreadcrumb', () => {
   it('breadcrumb should truncate with 3 or more items', async () => {
     const wrapper = shallowMount(CdrBreadcrumb, {
       propsData: {
-        items: itemsA,
+        items: itemsA
       }
     });
 
@@ -105,7 +105,7 @@ describe('CdrBreadcrumb', () => {
   it('breadcrumb should evaluate truncation when items are updated', async () => {
     const wrapper = shallowMount(CdrBreadcrumb, {
       propsData: {
-        items: itemsB,
+        items: itemsB
       }
     });
     expect(wrapper.vm.truncate).toBe(false);
@@ -140,7 +140,7 @@ describe('CdrBreadcrumb', () => {
     }
     const wrapper = mount(CdrBreadcrumb, {
       propsData: {
-        items: itemsA,
+        items: itemsA
       },
       attachTo: elem, // enables focus testing
     });

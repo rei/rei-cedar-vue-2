@@ -1,6 +1,7 @@
-import { mount } from '@vue/test-utils';
+import { mount } from '../../../../test/vue-jest-style-workaround.js';
+import { h } from 'vue';
 import CdrAlert from 'componentdir/alert/CdrAlert';
-import IconCheckFill from 'componentdir/icon/comps/check-fill';
+// import IconCheckFill from 'componentdir/icon/comps/check-fill';
 describe('CdrAlert', () => {
   it('matches snapshot', () => {
     const wrapper = mount(CdrAlert, {
@@ -8,7 +9,7 @@ describe('CdrAlert', () => {
         type: 'info',
       },
       slots: {
-       default: [IconCheckFill, 'hey im an alert'],
+       default: "🤪 hey im an alert",
       }
     });
     expect(wrapper.element).toMatchSnapshot();

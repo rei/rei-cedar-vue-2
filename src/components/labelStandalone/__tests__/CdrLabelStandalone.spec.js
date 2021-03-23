@@ -1,4 +1,4 @@
-import { shallowMount } from '@vue/test-utils';
+import { shallowMount } from '../../../../test/vue-jest-style-workaround.js';
 import CdrLabelStandalone from 'componentdir/labelStandalone/CdrLabelStandalone';
 
 describe('CdrFormLabelStandalone', () => {
@@ -24,7 +24,7 @@ describe('CdrFormLabelStandalone', () => {
         forId: 'test',
       },
     });
-    expect(wrapper.vm.$refs.label.textContent).toBe('Label Test');
+    expect(wrapper.find('label').textContent).toBe('Label Test');
   });
 
   it('does not render label if hideLabel is passed', () => {
@@ -45,7 +45,7 @@ describe('CdrFormLabelStandalone', () => {
         forId: 'test',
       },
     });
-    expect(wrapper.vm.$refs.label.htmlFor).toBe('test');
+    expect(wrapper.find('label').htmlFor).toBe('test');
   });
 
   it('renders required label', () => {
@@ -56,7 +56,7 @@ describe('CdrFormLabelStandalone', () => {
         forId: 'test',
       },
     });
-    expect(wrapper.vm.$refs.label.textContent).toBe('test *');
+    expect(wrapper.find('label').textContent).toBe('test *');
   });
 
   it('does not render both required and optional labels simultaneously', () => {
@@ -68,7 +68,7 @@ describe('CdrFormLabelStandalone', () => {
         forId: 'test',
       },
     });
-    expect(wrapper.vm.$refs.label.textContent).toBe('test *');
+    expect(wrapper.find('label').textContent).toBe('test *');
   });
 
   it('renders optional messaging', () => {
@@ -79,7 +79,7 @@ describe('CdrFormLabelStandalone', () => {
         forId: 'test',
       },
     });
-    expect(wrapper.vm.$refs.label.textContent).toBe('test (optional)');
+    expect(wrapper.find('label').textContent).toBe('test (optional)');
   });
 
   it('renders helper slot', () => {

@@ -35,7 +35,7 @@ module.exports = {
           ['compositionsdir', resolve('src/compositions')],
           ['mixinsdir', resolve('src/mixins')],
         ],
-        extensions: ['.vue', '.json', '.js', '.jsx']
+        extensions: ['.vue', '.json', '.js', '.ts']
       },
     },
   },
@@ -44,8 +44,8 @@ module.exports = {
     // don't require .vue extension when importing
     'import/extensions': ['error', 'always', {
       js: 'never',
-      jsx: 'never',
-      vue: 'never'
+      vue: 'never',
+      ts: 'never',
     }],
     // allow optionalDependencies
     'import/no-extraneous-dependencies': ['error', {
@@ -55,6 +55,7 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
     'vue/require-default-prop': 0,
     'vue/attributes-order': 0,
+    'vue/no-multiple-template-root': 0,
     'max-len': ['error', {
       'code': 100,
       'ignoreComments': true,

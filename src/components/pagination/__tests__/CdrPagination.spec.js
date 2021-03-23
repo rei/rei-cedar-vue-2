@@ -273,7 +273,7 @@ describe('CdrPagination', () => {
         value: 5,
       },
       listeners: {
-        'update-pagination': async (newVal) => { // simulate v-model update
+        'update:modelValue': async (newVal) => { // simulate v-model update
           wrapper.setProps({ value: newVal });
           await wrapper.vm.$nextTick();
         }
@@ -340,7 +340,7 @@ describe('CdrPagination', () => {
         value: 5,
       },
       listeners: {
-        'update-pagination': async (newVal) => { // simulate v-model update
+        'update:modelValue': async (newVal) => { // simulate v-model update
           wrapper.setProps({ value: newVal });
           await wrapper.vm.$nextTick();
         }
@@ -413,7 +413,7 @@ describe('CdrPagination', () => {
         value: 5,
       },
       listeners: {
-        'update-pagination': async (newVal) => { // simulate v-model update
+        'update:modelValue': async (newVal) => { // simulate v-model update
           wrapper.setProps({ value: newVal });
           await wrapper.vm.$nextTick();
         }

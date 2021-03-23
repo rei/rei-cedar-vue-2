@@ -1,4 +1,4 @@
-import App from 'srcdir/App';
+import App from 'srcdir/dev/App';
 import Examples from 'componentsdir/examples';
 
 import KitchenSink from 'srcdir/dev/KitchenSink';
@@ -19,9 +19,9 @@ import SurveyForm from 'componentsdir/Form/SurveyForm';
 
 const routes = [
   { path: '/', name: ' ', component: App },
-  { path: '/kitchen-sink', name: 'KitchenSink', component: KitchenSink },
-  { path: '/utilities', name: 'Utilities', component: Examples.utilities },
-  { path: '/accordion', name: 'Accordion', component: Examples.accordion },
+  // { path: '/kitchen-sink', name: 'KitchenSink', component: KitchenSink },
+  // { path: '/utilities', name: 'Utilities', component: Examples.utilities },
+  // { path: '/accordion', name: 'Accordion', component: Examples.accordion },
   { path: '/alert', name: 'Alert', component: Examples.alert },
   { path: '/breadcrumbs', name: 'Breadcrumb', component: Examples.breadcrumb },
   { path: '/buttons', name: 'Buttons', component: Examples.buttons },

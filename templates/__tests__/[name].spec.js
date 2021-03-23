@@ -1,4 +1,4 @@
-import { shallowMount } from '@vue/test-utils';
+import { shallowMount } from '../../../../test/vue-jest-style-workaround.js';
 import {NAME-FULLNAME} from 'componentdir/{NAME-CAMEL}/{NAME-FULLNAME}';
 
 describe('{NAME-FULLNAME}', () => {

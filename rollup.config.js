@@ -1,8 +1,7 @@
 import process from 'process';
-import renameExtensions from '@betit/rollup-plugin-rename-extensions';
+// import renameExtensions from '@betit/rollup-plugin-rename-extensions';
 import plugins from './build/rollup-plugins';
 import packageJson from './package.json';
-
 const env = process.env.NODE_ENV;
 const babelEnv = process.env.BABEL_ENV;
 const { dependencies = {}, peerDependencies = {} } = packageJson;
@@ -12,11 +11,11 @@ let externals = Object.keys({
   ...peerDependencies,
 });
 
-if (babelEnv === 'cjs') {
-  // don't externalize ES modules in CJS build
-  // TODO: figure out config change needed in @rei/vunit
-  externals = externals.filter((x) => x !== 'lodash-es' && x !== 'clsx' && x !== '@rei/cdr-tokens');
-}
+// if (babelEnv === 'cjs') {
+//   // don't externalize ES modules in CJS build
+//   // TODO: figure out config change needed in @rei/vunit
+//   externals = externals.filter((x) => x !== 'lodash-es' && x !== 'clsx' && x !== '@rei/cdr-tokens');
+// }
 
 const externalFn = (id) => externals.some((dep) => dep === id || id.startsWith(`${dep}/`));
 
@@ -24,7 +23,7 @@ const ext = babelEnv === 'cjs' ? 'js' : 'mjs';
 
 const config = [
   {
-    input: 'src/main.js',
+    input: 'src/main.ts',
     output: [
       {
         file: `dist/cedar.${ext}`,
@@ -40,7 +39,7 @@ const config = [
 if (env === 'prod' && babelEnv === 'esm') {
   config.push(
     {
-      input: 'src/index.js',
+      input: 'src/index.ts',
       output: [
         {
           dir: 'dist/lib',
@@ -50,14 +49,14 @@ if (env === 'prod' && babelEnv === 'esm') {
       ],
       plugins: [
         ...plugins,
-        renameExtensions({
-          include: ['**/*.js', '**/*.jsx', '**/*.scss'],
-          mappings: {
-            '.js': '.mjs',
-            '.jsx': '.mjs',
-            '.scss': '.mjs',
-          },
-        }),
+        // renameExtensions({
+        //   include: ['**/*.js', '**/*.vue', '**/*.scss'],
+        //   mappings: {
+        //     '.js': '.mjs',
+        //     '.vue': '.mjs',
+        //     '.scss': '.mjs',
+        //   },
+        // }),
       ],
       external: env === 'prod' ? externalFn : undefined,
       preserveModules: true,
