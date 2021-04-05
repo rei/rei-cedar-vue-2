@@ -1,7 +1,7 @@
 <template>
   <component
     :is="tag"
-    :class="[$style[baseClass], modifierClass]"
+    :class="$style[baseClass]"
   >
     <slot />
   </component>
@@ -19,19 +19,12 @@ export default defineComponent({
       type: String,
       default: 'p',
     },
-    modifier: {
-      type: String,
-      required: false,
-    },
   },
   setup(props) {
     const baseClass = 'cdr-text';
-    const modifierClass = computed(() => buildClass(baseClass, props.modifier));
 
     return {
       baseClass,
-      modifierClass,
-
     };
   },
 });
