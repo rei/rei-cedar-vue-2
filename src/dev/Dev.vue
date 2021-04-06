@@ -144,7 +144,7 @@ export default {
 }
 
 .background-brand {
-  background-color: $cdr-color-background-brand;
+  background-color: $cdr-color-background-brand-spruce;
 }
 
 // NOTE: type examples in this file are for testing and development purposes only
