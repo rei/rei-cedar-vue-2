@@ -194,10 +194,6 @@
 import {
   CdrColorBackgroundPrimary,
   CdrColorBackgroundSecondary,
-  CdrColorBackgroundSuccess,
-  CdrColorBackgroundInfo,
-  CdrColorBackgroundWarning,
-  CdrColorBackgroundError,
 } from '@rei/cdr-tokens';
 import * as Components from 'srcdir/index';
 import tabsDefault from 'componentsdir/tabs/examples/demo/TabsDefault';
@@ -227,18 +223,6 @@ export default {
           break;
         case 'secondary':
           this.backgroundColor = CdrColorBackgroundSecondary;
-          break;
-        case 'success':
-          this.backgroundColor = CdrColorBackgroundSuccess;
-          break;
-        case 'info':
-          this.backgroundColor = CdrColorBackgroundInfo;
-          break;
-        case 'warning':
-          this.backgroundColor = CdrColorBackgroundWarning;
-          break;
-        case 'error':
-          this.backgroundColor = CdrColorBackgroundError;
           break;
         default:
           this.backgroundColor = CdrColorBackgroundPrimary;
