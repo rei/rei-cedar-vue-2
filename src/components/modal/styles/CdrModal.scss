@@ -98,6 +98,28 @@ $modal-animation-duration: 150ms;
   }
 
   &__text-content {
+    // might also be due to position fixed?
+    // MIGHT have to do with flex?
+
+    // needs webkit-overflow-scrolling????
+    // style="-webkit-overflow-scrolling: touch;" our boy Rick says it might need to be ON the element not a style?
+
+    // may need a wrapper? set maxheeight on container div, leet this div be height 100%
+    // OVERFLOW not good? overflow hidden on tthe parent too?
+
+
+    // -webkit-transform:translate3d(0,0,0);
+    // force GPU acceleration?
+    // If you are styling the element within fixed element, you need to apply the translate3d hack to the nested element in order for it to not flicker/disappear.
+
+    // overflow-x: hidden;
+// overflow-y: scroll;
+// -webkit-overflow-scrolling: touch;
+
+
+// just toggle overflow: scroll????
+
+    // POSSIBLE SAFARI NO NO:
     overflow: auto;
     position: relative;
   }

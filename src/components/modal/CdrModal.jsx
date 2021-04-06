@@ -159,6 +159,7 @@ export default {
           // there is a race condition for measuring overflow when modal defaults to open,
           // this seems to cover that
           this.measureContent();
+          // maybe this just fixes it??????
         });
       });
     },
@@ -288,6 +289,7 @@ export default {
                     ref="header"
                   >
                     <div class={this.style['cdr-modal__title']}>
+                    HI IT WORKS
                       {
                         this.showTitle && this.$slots.title
                       }
@@ -322,6 +324,7 @@ export default {
                       ref="content"
                       tabindex="0"
                     >
+                    HI IT WORKS
                       {this.$slots.default}
                     </div>
                   </div>

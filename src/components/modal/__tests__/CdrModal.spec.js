@@ -5,6 +5,7 @@ import Vue from 'vue';
 import CdrButton from 'componentdir/button/CdrButton';
 
 describe('CdrModal.vue', () => {
+  // TODO: add tests for props -> a11y bindings
   it('default open', async () => {
     const elem = document.createElement('div')
     if (document.body) {
