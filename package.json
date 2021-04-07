@@ -1,6 +1,6 @@
 {
   "name": "@rei/cedar",
-  "version": "8.0.0",
+  "version": "8.0.1",
   "description": "REI Cedar Component Library",
   "homepage": "https://rei.github.io/rei-cedar/",
   "license": "MIT",
@@ -70,7 +70,7 @@
     "babel-plugin-istanbul": "^6.0.0",
     "backstopjs": "^5.1.0",
     "chalk": "^4.1.0",
-    "chromedriver": "^87.0.0",
+    "chromedriver": "^89.0.0",
     "codecov": "^3.7.2",
     "concat": "^1.0.3",
     "cross-env": "^7.0.2",
