@@ -3,6 +3,13 @@
 $modal-animation-duration: 150ms;
 
 .cdr-modal {
+  & * {
+    // Safari iOS hack: force hardware acceleration on all elements inside modal
+    //     otherwise content that is offscreen will flicker/disappear when scrolling
+    // Issue has to do with scrolling inside a position: fixed or relative container
+   -webkit-transform: translate3d(0,0,0);
+  }
+
   bottom: 0;
   height: 100%;
   left: 0;
