@@ -159,8 +159,7 @@ export default {
           // there is a race condition for measuring overflow when modal defaults to open,
           // this seems to cover that
           this.measureContent();
-          // maybe this just fixes it??????
-        });
+        }, 1);
       });
     },
     handleClosed() {

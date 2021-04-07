@@ -3,6 +3,9 @@
 $modal-animation-duration: 150ms;
 
 .cdr-modal {
+  & * {
+  -webkit-transform: translate3d(0,0,0);
+  }
   bottom: 0;
   height: 100%;
   left: 0;
@@ -101,9 +104,6 @@ $modal-animation-duration: 150ms;
     // might also be due to position fixed?
     // MIGHT have to do with flex?
 
-    // needs webkit-overflow-scrolling????
-    // style="-webkit-overflow-scrolling: touch;" our boy Rick says it might need to be ON the element not a style?
-
     // may need a wrapper? set maxheeight on container div, leet this div be height 100%
     // OVERFLOW not good? overflow hidden on tthe parent too?
 
@@ -122,6 +122,10 @@ $modal-animation-duration: 150ms;
     // POSSIBLE SAFARI NO NO:
     overflow: auto;
     position: relative;
+    // transform: translate3d(0, 0, 0);
+    // // -webkit-transform: translate3d(0, 0, 0);
+    // perspective: 1000;
+    // -webkit-perspective: 1000;
   }
 
   @media (min-width: $cdr-breakpoint-sm) {
