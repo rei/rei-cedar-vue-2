@@ -27,7 +27,7 @@ export default {
     role: {
       type: String,
       required: false,
-      default: "dialog",
+      default: 'dialog',
     },
     showTitle: {
       type: Boolean,
