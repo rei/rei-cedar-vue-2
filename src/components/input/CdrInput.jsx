@@ -47,7 +47,7 @@ export default {
     errorRole: {
       type: String,
       required: false,
-      default: "status",
+      default: 'status',
     },
     /**
      * Removes the label element but sets the input `aria-label` to `label` text for a11y.
