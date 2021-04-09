@@ -24,6 +24,11 @@ export default {
       type: String,
       required: true,
     },
+    role: {
+      type: String,
+      required: false,
+      default: "dialog",
+    },
     showTitle: {
       type: Boolean,
       required: false,
@@ -269,7 +274,7 @@ export default {
             ref="modal"
             class={clsx(this.style['cdr-modal__contentWrap'], this.style['cdr-modal__dialog'])}
             tabIndex="-1"
-            role="dialog"
+            role={this.role}
             aria-modal={!!opened}
             aria-label={label}
             {...{ attrs: this.dialogAttrs }}
