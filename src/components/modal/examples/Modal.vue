@@ -11,7 +11,7 @@
       wrapper-class="wrapper-test-class"
       overlay-class="overlay-test-class"
       data-backstop="modal"
-      role="alertdialog"
+      role="dialog"
     >
       <template slot="title">
         <cdr-text
