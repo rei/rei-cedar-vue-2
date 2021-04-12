@@ -13,7 +13,7 @@ export default {
   render() {
     // static/icon-error.svg
     return (
-      <div class={this.style['cdr-form-error']}>
+      <div class={this.style['cdr-form-error']} role="status" tabindex="0">
         <span class={this.style['cdr-form-error__icon']}/> {this.$slots.error || this.error}
       </div>
     );

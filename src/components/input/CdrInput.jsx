@@ -45,6 +45,14 @@ export default {
       required: true,
     },
     /**
+     * Override the error message role, default is `status`.
+     */
+    errorRole: {
+      type: String,
+      required: false,
+      default: 'status',
+    },
+    /**
      * Removes the label element but sets the input `aria-label` to `label` text for a11y.
     */
     hideLabel: Boolean,
@@ -230,7 +238,7 @@ export default {
             </span>
         )}
         {this.error && (
-          <cdr-form-error error={this.error}>
+          <cdr-form-error role={this.errorRole} error={this.error}>
             <template slot="error">
               {this.$slots.error}
             </template>
