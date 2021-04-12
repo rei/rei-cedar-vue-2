@@ -61,7 +61,6 @@
       :error="hasError"
       :required="true"
       aria-describedby="errorStatus"
-      
     >
       <cdr-checkbox
         custom-value="A"
@@ -79,7 +78,7 @@
         @input="validate"
       >C</cdr-checkbox>
       <template slot="error">
-       <span id="errorStatus">You must make a selection!</span>
+        <span id="errorStatus">You must make a selection!</span>
       </template>
     </cdr-form-group>
 
@@ -109,7 +108,6 @@
         <span id="errorAlert">You must make a selection within two minutes!</span>
       </template>
     </cdr-form-group>
-
 
     <cdr-form-group
       label="Disabled example"
@@ -158,7 +156,7 @@ export default {
     validate() {
       this.hasError = !this.errorA.length;
     },
-     validateAlert() {
+    validateAlert() {
       this.hasAlert = !this.errorB.length;
     },
   },
