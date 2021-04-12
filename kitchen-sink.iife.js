@@ -19691,7 +19691,11 @@ var cedar = (function () {
       var h = arguments[0];
       // static/icon-error.svg
       return h("div", {
-        "class": this.style['cdr-form-error']
+        "class": this.style['cdr-form-error'],
+        "attrs": {
+          "role": "status",
+          "tabindex": "0"
+        }
       }, [h("span", {
         "class": this.style['cdr-form-error__icon']
       }), " ", this.$slots.error || this.error]);
@@ -19715,6 +19719,15 @@ var cedar = (function () {
       error: {
         type: [Boolean, String],
         default: false
+      },
+
+      /**
+      * Override the error message role, default is `status`.
+      */
+      errorRole: {
+        type: String,
+        required: false,
+        default: 'status'
       },
       required: Boolean,
       optional: Boolean,
@@ -19761,6 +19774,7 @@ var cedar = (function () {
         "class": clsx(this.style['cdr-form-group__wrapper'], this.errorClass)
       }, [this.$slots.default]), this.error && h("cdr-form-error", {
         "attrs": {
+          "role": this.errorRole,
           "error": this.error
         }
       }, [h("template", {
@@ -24995,6 +25009,15 @@ var cedar = (function () {
       },
 
       /**
+       * Override the error message role, default is `status`.
+       */
+      errorRole: {
+        type: String,
+        required: false,
+        default: 'status'
+      },
+
+      /**
        * Removes the label element but sets the input `aria-label` to `label` text for a11y.
       */
       hideLabel: Boolean,
@@ -25189,6 +25212,7 @@ var cedar = (function () {
         "class": this.style['cdr-input__helper-text']
       }, [this.$slots['helper-text-bottom']]), this.error && h("cdr-form-error", {
         "attrs": {
+          "role": this.errorRole,
           "error": this.error
         }
       }, [h("template", {
@@ -25575,6 +25599,11 @@ var cedar = (function () {
         type: String,
         required: true
       },
+      role: {
+        type: String,
+        required: false,
+        default: 'dialog'
+      },
       showTitle: {
         type: Boolean,
         required: false,
@@ -25842,7 +25871,7 @@ var cedar = (function () {
         "class": clsx(this.style['cdr-modal__contentWrap'], this.style['cdr-modal__dialog']),
         "attrs": _objectSpread$2W({
           "tabIndex": "-1",
-          "role": "dialog",
+          "role": this.role,
           "aria-modal": !!opened,
           "aria-label": label
         }, this.dialogAttrs)
@@ -26942,6 +26971,15 @@ var cedar = (function () {
         type: [Boolean, String],
         default: false
       },
+
+      /**
+      * Override the error message role, default is `status`.
+      */
+      errorRole: {
+        type: String,
+        required: false,
+        default: 'status'
+      },
       value: {
         type: [String, Number, Boolean, Object, Array, symbol$2, Function]
       },
@@ -27123,6 +27161,7 @@ var cedar = (function () {
         "class": this.style['cdr-select__info-action']
       }, [this.$slots['info-action']])]), this.error && h("cdr-form-error", {
         "attrs": {
+          "role": this.errorRole,
           "error": this.error
         }
       }, [h("template", {
@@ -33474,13 +33513,20 @@ var cedar = (function () {
     data() {
       return {
         exGroup: [],
-        hasError: true
+        hasError: true,
+        hasAlert: true,
+        errorA: [],
+        errorB: []
       };
     },
 
     methods: {
       validate() {
-        this.hasError = !this.exGroup.length;
+        this.hasError = !this.errorA.length;
+      },
+
+      validateAlert() {
+        this.hasAlert = !this.errorB.length;
       }
 
     }
@@ -33675,7 +33721,8 @@ var cedar = (function () {
             attrs: {
               label: "What's your favorite required letter?",
               error: _vm.hasError,
-              required: true
+              required: true,
+              "aria-describedby": "errorStatus"
             }
           },
           [
@@ -33685,11 +33732,11 @@ var cedar = (function () {
                 attrs: { "custom-value": "A" },
                 on: { input: _vm.validate },
                 model: {
-                  value: _vm.exGroup,
+                  value: _vm.errorA,
                   callback: function($$v) {
-                    _vm.exGroup = $$v;
+                    _vm.errorA = $$v;
                   },
-                  expression: "exGroup"
+                  expression: "errorA"
                 }
               },
               [_vm._v("A")]
@@ -33701,11 +33748,11 @@ var cedar = (function () {
                 attrs: { "custom-value": "B" },
                 on: { input: _vm.validate },
                 model: {
-                  value: _vm.exGroup,
+                  value: _vm.errorA,
                   callback: function($$v) {
-                    _vm.exGroup = $$v;
+                    _vm.errorA = $$v;
                   },
-                  expression: "exGroup"
+                  expression: "errorA"
                 }
               },
               [_vm._v("B")]
@@ -33717,18 +33764,90 @@ var cedar = (function () {
                 attrs: { "custom-value": "C" },
                 on: { input: _vm.validate },
                 model: {
-                  value: _vm.exGroup,
+                  value: _vm.errorA,
                   callback: function($$v) {
-                    _vm.exGroup = $$v;
+                    _vm.errorA = $$v;
                   },
-                  expression: "exGroup"
+                  expression: "errorA"
                 }
               },
               [_vm._v("C")]
             ),
             _vm._v(" "),
             _c("template", { slot: "error" }, [
-              _vm._v("\n      You must make a selection!\n    ")
+              _c("span", { attrs: { id: "errorStatus" } }, [
+                _vm._v("You must make a selection!")
+              ])
+            ])
+          ],
+          2
+        ),
+        _vm._v(" "),
+        _c(
+          "cdr-form-group",
+          {
+            attrs: {
+              label:
+                "Are you sure you don't have a different favorite required letter?",
+              error: _vm.hasAlert,
+              "error-role": "alert",
+              required: true,
+              "aria-describedby": "errorAlert"
+            }
+          },
+          [
+            _c(
+              "cdr-checkbox",
+              {
+                attrs: { "custom-value": "Q" },
+                on: { input: _vm.validateAlert },
+                model: {
+                  value: _vm.errorB,
+                  callback: function($$v) {
+                    _vm.errorB = $$v;
+                  },
+                  expression: "errorB"
+                }
+              },
+              [_vm._v("A")]
+            ),
+            _vm._v(" "),
+            _c(
+              "cdr-checkbox",
+              {
+                attrs: { "custom-value": "Z" },
+                on: { input: _vm.validateAlert },
+                model: {
+                  value: _vm.errorB,
+                  callback: function($$v) {
+                    _vm.errorB = $$v;
+                  },
+                  expression: "errorB"
+                }
+              },
+              [_vm._v("B")]
+            ),
+            _vm._v(" "),
+            _c(
+              "cdr-checkbox",
+              {
+                attrs: { "custom-value": "X" },
+                on: { input: _vm.validateAlert },
+                model: {
+                  value: _vm.errorB,
+                  callback: function($$v) {
+                    _vm.errorB = $$v;
+                  },
+                  expression: "errorB"
+                }
+              },
+              [_vm._v("C")]
+            ),
+            _vm._v(" "),
+            _c("template", { slot: "error" }, [
+              _c("span", { attrs: { id: "errorAlert" } }, [
+                _vm._v("You must make a selection within two minutes!")
+              ])
             ])
           ],
           2
@@ -33797,7 +33916,7 @@ var cedar = (function () {
     /* style */
     const __vue_inject_styles__$g = function (inject) {
       if (!inject) return
-      inject("data-v-3c2de788_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"Checkboxes.vue"}, media: undefined });
+      inject("data-v-18702133_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"Checkboxes.vue"}, media: undefined });
 
     };
     /* scoped */
@@ -35621,7 +35740,7 @@ var cedar = (function () {
         hiddenModel: '',
         disabledModel: '',
         helperValidationModel: '',
-        helperValidationError: false,
+        helperValidationError: true,
         requiredWithIcons: '',
         multiRowModel: '',
         sizeModel: '',
@@ -36020,10 +36139,11 @@ var cedar = (function () {
           {
             staticClass: "demo-input",
             attrs: {
-              placeholder: "",
+              placeholder: "errors",
               error: _vm.helperValidationError,
-              label: "Top helper with validation",
-              background: _vm.backgroundColor
+              label: "Top helper with status validation",
+              background: _vm.backgroundColor,
+              "aria-describedby": "myHelpText errorMessage"
             },
             on: { blur: _vm.validate },
             model: {
@@ -36036,14 +36156,16 @@ var cedar = (function () {
           },
           [
             _c("template", { slot: "helper-text-top" }, [
-              _vm._v("\n      Must be 4 or less characters\n    ")
+              _c("span", { attrs: { id: "myHelpText" } }, [
+                _vm._v("Must be 4 or less characters")
+              ])
             ]),
             _vm._v(" "),
-            _vm.helperValidationError
-              ? _c("template", { slot: "error" }, [
-                  _vm._v("\n      ERROR ERROR\n    ")
-                ])
-              : _vm._e(),
+            _c("template", { slot: "error" }, [
+              _c("span", { attrs: { id: "errorMessage" } }, [
+                _vm._v("you have added too many characters, remove some")
+              ])
+            ]),
             _vm._v(" "),
             _c(
               "template",
@@ -36068,8 +36190,11 @@ var cedar = (function () {
             attrs: {
               required: true,
               error: _vm.megaErr,
-              label: "Everything at the same time",
-              size: "large"
+              "error-role": "alert",
+              id: "inputWithError",
+              label: "Everything at the same time, alert validation",
+              size: "large",
+              "aria-describedby": "topHelp bottomHelp errorMessage"
             },
             on: {
               blur: function($event) {
@@ -36088,11 +36213,15 @@ var cedar = (function () {
             _c("icon-map", { attrs: { slot: "pre-icon" }, slot: "pre-icon" }),
             _vm._v(" "),
             _c("template", { slot: "helper-text-top" }, [
-              _vm._v("\n      Hey im on top of the input!\n    ")
+              _c("span", { attrs: { id: "topHelp" } }, [
+                _vm._v("Hey im on top of the input!")
+              ])
             ]),
             _vm._v(" "),
             _c("template", { slot: "helper-text-bottom" }, [
-              _vm._v("\n      Hey im below the input!\n    ")
+              _c("span", { attrs: { id: "bottomHelp" } }, [
+                _vm._v("Hey im below the input!")
+              ])
             ]),
             _vm._v(" "),
             _c(
@@ -36101,7 +36230,13 @@ var cedar = (function () {
               [
                 _c(
                   "cdr-link",
-                  { attrs: { href: "#baz", modifier: "standalone" } },
+                  {
+                    attrs: {
+                      href: "#baz",
+                      modifier: "standalone",
+                      "aria-describedby": "inputWithError"
+                    }
+                  },
                   [_vm._v("\n        Hey im also on top of the input!\n      ")]
                 )
               ],
@@ -36150,7 +36285,7 @@ var cedar = (function () {
                         },
                         on: {
                           click: function($event) {
-                            _vm.megaErr = "An error has occurred please fix it";
+                            _vm.megaErr = "you have five minutes to fix this";
                           }
                         },
                         slot: "trigger"
@@ -36312,7 +36447,7 @@ var cedar = (function () {
     /* style */
     const __vue_inject_styles__$q = function (inject) {
       if (!inject) return
-      inject("data-v-6ae9e45e_0", { source: "\n.demo-input {\n  margin: 10px;\n  /*line-height: 1;*/\n}\n", map: {"version":3,"sources":["/home/runner/work/rei-cedar/rei-cedar/src/components/input/examples/Inputs.vue"],"names":[],"mappings":";AAqYA;EACA,YAAA;EACA,kBAAA;AACA","file":"Inputs.vue","sourcesContent":["<template>\n  <div>\n    <h2>\n      Text Inputs\n    </h2>\n    <div data-backstop=\"input-target\">\n      <cdr-input\n        class=\"demo-input\"\n        v-model=\"defaultModel\"\n        label=\"Default\"\n        :background=\"backgroundColor\"\n      />\n\n      <cdr-input\n        class=\"demo-input\"\n        v-model=\"requiredModel\"\n        label=\"Required\"\n        required\n        :background=\"backgroundColor\"\n      />\n\n      <cdr-input\n        class=\"demo-input\"\n        v-model=\"optionalModel\"\n        label=\"Optional\"\n        optional\n        :background=\"backgroundColor\"\n      />\n    </div>\n\n    <cdr-input\n      class=\"demo-input\"\n      v-model=\"hiddenModel\"\n      label=\"This has no label\"\n      hide-label\n      placeholder=\"hidden-label\"\n      :background=\"backgroundColor\"\n    />\n\n    <cdr-input\n      class=\"demo-input\"\n      v-model=\"disabledModel\"\n      label=\"Disabled Input\"\n      placeholder=\"I am disabled\"\n      data-backstop=\"input-disabled\"\n      disabled\n      :background=\"backgroundColor\"\n    />\n\n    <cdr-input\n      class=\"demo-input\"\n      v-model=\"sizeModel\"\n      label=\"Large Input\"\n      placeholder=\"Large Input\"\n      size=\"large\"\n      :background=\"backgroundColor\"\n    />\n    <cdr-input\n      class=\"demo-input\"\n      v-model=\"sizeModel\"\n      label=\"Large@xs Input\"\n      placeholder=\"Large@xs Input\"\n      size=\"large@xs\"\n      :background=\"backgroundColor\"\n    />\n    <cdr-input\n      class=\"demo-input\"\n      v-model=\"sizeModel\"\n      label=\"Large@sm Input\"\n      placeholder=\"Large@sm Input\"\n      size=\"large@sm\"\n      :background=\"backgroundColor\"\n    />\n    <cdr-input\n      class=\"demo-input\"\n      v-model=\"sizeModel\"\n      label=\"Large@md Input\"\n      placeholder=\"Large@md Input\"\n      size=\"large@md\"\n      :background=\"backgroundColor\"\n    />\n    <cdr-input\n      class=\"demo-input\"\n      v-model=\"sizeModel\"\n      label=\"Large@lg Input\"\n      placeholder=\"Large@lg Input\"\n      size=\"large@lg\"\n      :background=\"backgroundColor\"\n    />\n\n    <cdr-input\n      class=\"demo-input\"\n      v-model=\"requiredWithIcons\"\n      id=\"required-with-icon\"\n      placeholder=\"Required with Icon\"\n      label=\"Required with Icon\"\n      required\n      type=\"email\"\n      :background=\"backgroundColor\"\n    >\n      <template slot=\"info-action\">\n        <cdr-link\n          tag=\"button\"\n          type=\"button\"\n        >\n          <icon-information-stroke inherit-color />\n          <span class=\"sr-only\">Information!</span>\n        </cdr-link>\n      </template>\n      <template slot=\"pre-icon\">\n        <cdr-icon\n          use=\"#twitter\"\n        />\n      </template>\n      <template slot=\"post-icon\">\n        <cdr-icon\n          use=\"#check-lg\"\n        />\n      </template>\n      <template slot=\"helper-text\">\n        This is helper text. Input length: {{ requiredWithIcons.length }}\n      </template>\n    </cdr-input>\n\n    <form>\n      <cdr-input\n        class=\"demo-input\"\n        v-model=\"formWithButtons\"\n        id=\"form-example\"\n        placeholder=\"For testing icon/button placement with autofill\"\n        label=\"Form with Two Buttons\"\n        required\n        type=\"email\"\n        autocomplete=\"username\"\n        :background=\"backgroundColor\"\n      >\n        <template slot=\"pre-icon\">\n          <cdr-icon\n            use=\"#twitter\"\n          />\n        </template>\n        <template slot=\"post-icon\">\n          <cdr-tooltip\n            class=\"cdr-input__button\"\n            id=\"input-tooltip\"\n          >\n            <cdr-button\n              :icon-only=\"true\"\n              slot=\"trigger\"\n              aria-label=\"navigate\"\n            >\n              <icon-map />\n            </cdr-button>\n\n            hey where am i?\n          </cdr-tooltip>\n          <cdr-button\n            :icon-only=\"true\"\n            class=\"cdr-input__button\"\n            aria-label=\"close\"\n          >\n            <icon-x-lg />\n          </cdr-button>\n        </template>\n      </cdr-input>\n    </form>\n\n    <cdr-input\n      class=\"demo-input\"\n      v-model=\"helperValidationModel\"\n      placeholder=\"\"\n      :error=\"helperValidationError\"\n      @blur=\"validate\"\n      label=\"Top helper with validation\"\n      :background=\"backgroundColor\"\n    >\n      <template slot=\"helper-text-top\">\n        Must be 4 or less characters\n      </template>\n\n      <template\n        slot=\"error\"\n        v-if=\"helperValidationError\"\n      >\n        ERROR ERROR\n      </template>\n\n      <template slot=\"info\">\n        <cdr-link\n          modifier=\"standalone\"\n          href=\"#/inputs\"\n        >\n          Support link\n        </cdr-link>\n      </template>\n    </cdr-input>\n\n    <cdr-input\n      class=\"demo-input\"\n      :required=\"true\"\n      v-model=\"megaModel\"\n      :error=\"megaErr\"\n      label=\"Everything at the same time\"\n      @blur=\"megaErr = false\"\n      size=\"large\"\n    >\n      <icon-map slot=\"pre-icon\" />\n      <template slot=\"helper-text-top\">\n        Hey im on top of the input!\n      </template>\n      <template slot=\"helper-text-bottom\">\n        Hey im below the input!\n      </template>\n      <template slot=\"info\">\n        <cdr-link\n          href=\"#baz\"\n          modifier=\"standalone\"\n        >\n          Hey im also on top of the input!\n        </cdr-link>\n      </template>\n      <template slot=\"info-action\">\n        <cdr-link\n          tag=\"button\"\n          type=\"button\"\n        >\n          <span class=\"sr-only\">I trigger some sort of action!</span>\n          <icon-check-stroke inherit-color />\n        </cdr-link>\n      </template>\n      <template slot=\"post-icon\">\n        <cdr-tooltip\n          class=\"cdr-input__button\"\n          id=\"mega-tooltip\"\n        >\n          <cdr-button\n            slot=\"trigger\"\n            :icon-only=\"true\"\n            @click=\"megaErr = 'An error has occurred please fix it'\"\n            size=\"large\"\n            aria-label=\"Click me to cause an error\"\n          >\n            <icon-x-stroke />\n          </cdr-button>\n          I put the input into an error state!\n        </cdr-tooltip>\n        <cdr-popover\n          class=\"cdr-input__button\"\n          id=\"mega-popover\"\n        >\n          <cdr-button\n            slot=\"trigger\"\n            :icon-only=\"true\"\n            size=\"large\"\n            aria-label=\"Hello\"\n          >\n            <icon-information-stroke />\n          </cdr-button>\n          Hey What's Up?\n        </cdr-popover>\n      </template>\n    </cdr-input>\n\n    <cdr-input\n      class=\"demo-input \"\n      v-model=\"multiRowModel\"\n      :rows=\"10\"\n      placeholder=\"Multi Line Input/TextArea\"\n      label=\"Multi Line Input/TextArea\"\n      :background=\"backgroundColor\"\n    />\n    <cdr-input\n      class=\"demo-input \"\n      v-model=\"masterModel\"\n      @input=\"onMasterInput\"\n      placeholder=\"What would you like to set all input values to?\"\n      label=\"Master input that overwrites all other inputs on this page\"\n      :background=\"backgroundColor\"\n    />\n\n    <div class=\"demo-input\">\n      Default Input Value = {{ defaultModel }}\n    </div>\n    <div class=\"demo-input\">\n      Required Input Value = {{ requiredModel }}\n    </div>\n    <div class=\"demo-input\">\n      Optional Input Value = {{ optionalModel }}\n    </div>\n    <div class=\"demo-input\">\n      Hidden Input Value = {{ hiddenModel }}\n    </div>\n    <div class=\"demo-input\">\n      Disabled Input Value = {{ disabledModel }}\n    </div>\n    <div class=\"demo-input\">\n      With Icons Input Value = {{ requiredWithIcons }}\n    </div>\n    <div class=\"demo-input\">\n      Form With Buttons Value = {{ formWithButtons }}\n    </div>\n    <div class=\"demo-input\">\n      Helper/Validation Input Value = {{ helperValidationModel }}\n    </div>\n    <div class=\"demo-input\">\n      Multi Row Input Value = {{ multiRowModel }}\n    </div>\n    <div class=\"demo-input\">\n      Size Inputs Value = {{ sizeModel }}\n    </div>\n\n    <div class=\"demo-input\">\n      Mega Input Value = {{ megaModel }}\n    </div>\n    <div class=\"demo-input\">\n      Master Inputs Value = {{ masterModel }}\n    </div>\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\nexport default {\n  name: 'Inputs',\n  components: {\n    ...Components,\n  },\n  data() {\n    return {\n      defaultModel: '',\n      requiredModel: '',\n      optionalModel: '',\n      hiddenModel: '',\n      disabledModel: '',\n      helperValidationModel: '',\n      helperValidationError: false,\n      requiredWithIcons: '',\n      multiRowModel: '',\n      sizeModel: '',\n      formWithButtons: '',\n      masterModel: '',\n      megaModel: '',\n      megaErr: false,\n      backgroundColor: 'primary',\n    };\n  },\n  watch: {\n    $route(to) {\n      this.setBackground(to.query.background);\n    },\n  },\n  mounted() {\n    this.setBackground(this.$router.currentRoute.query.background);\n  },\n  methods: {\n    validate() {\n      this.helperValidationError = this.helperValidationModel.length > 4;\n    },\n    onMasterInput(value, e) {\n      console.log('On Master Input value = ', value, ' e = ', e); // eslint-disable-line\n      this.defaultModel = value;\n      this.requiredModel = value;\n      this.optionalModel = value;\n      this.hiddenModel = value;\n      this.disabledModel = value;\n      this.formWithButtons = value;\n      this.requiredWithIcons = value;\n      this.helperValidationModel = value;\n      this.multiRowModel = value;\n      this.sizeModel = value;\n      this.megaModel = value;\n    },\n    setBackground(background) {\n      switch (background) {\n        case 'primary':\n          this.backgroundColor = 'primary';\n          break;\n        case 'secondary':\n          this.backgroundColor = 'secondary';\n          break;\n        default:\n          this.backgroundColor = 'primary';\n      }\n    },\n  },\n};\n</script>\n<style>\n  .demo-input {\n    margin: 10px;\n    /*line-height: 1;*/\n  }\n</style>\n"]}, media: undefined });
+      inject("data-v-51ce7e1c_0", { source: "\n.demo-input {\n  margin: 10px;\n  /*line-height: 1;*/\n}\n", map: {"version":3,"sources":["/home/runner/work/rei-cedar/rei-cedar/src/components/input/examples/Inputs.vue"],"names":[],"mappings":";AAyYA;EACA,YAAA;EACA,kBAAA;AACA","file":"Inputs.vue","sourcesContent":["<template>\n  <div>\n    <h2>\n      Text Inputs\n    </h2>\n    <div data-backstop=\"input-target\">\n      <cdr-input\n        class=\"demo-input\"\n        v-model=\"defaultModel\"\n        label=\"Default\"\n        :background=\"backgroundColor\"\n      />\n\n      <cdr-input\n        class=\"demo-input\"\n        v-model=\"requiredModel\"\n        label=\"Required\"\n        required\n        :background=\"backgroundColor\"\n      />\n\n      <cdr-input\n        class=\"demo-input\"\n        v-model=\"optionalModel\"\n        label=\"Optional\"\n        optional\n        :background=\"backgroundColor\"\n      />\n    </div>\n\n    <cdr-input\n      class=\"demo-input\"\n      v-model=\"hiddenModel\"\n      label=\"This has no label\"\n      hide-label\n      placeholder=\"hidden-label\"\n      :background=\"backgroundColor\"\n    />\n\n    <cdr-input\n      class=\"demo-input\"\n      v-model=\"disabledModel\"\n      label=\"Disabled Input\"\n      placeholder=\"I am disabled\"\n      data-backstop=\"input-disabled\"\n      disabled\n      :background=\"backgroundColor\"\n    />\n\n    <cdr-input\n      class=\"demo-input\"\n      v-model=\"sizeModel\"\n      label=\"Large Input\"\n      placeholder=\"Large Input\"\n      size=\"large\"\n      :background=\"backgroundColor\"\n    />\n    <cdr-input\n      class=\"demo-input\"\n      v-model=\"sizeModel\"\n      label=\"Large@xs Input\"\n      placeholder=\"Large@xs Input\"\n      size=\"large@xs\"\n      :background=\"backgroundColor\"\n    />\n    <cdr-input\n      class=\"demo-input\"\n      v-model=\"sizeModel\"\n      label=\"Large@sm Input\"\n      placeholder=\"Large@sm Input\"\n      size=\"large@sm\"\n      :background=\"backgroundColor\"\n    />\n    <cdr-input\n      class=\"demo-input\"\n      v-model=\"sizeModel\"\n      label=\"Large@md Input\"\n      placeholder=\"Large@md Input\"\n      size=\"large@md\"\n      :background=\"backgroundColor\"\n    />\n    <cdr-input\n      class=\"demo-input\"\n      v-model=\"sizeModel\"\n      label=\"Large@lg Input\"\n      placeholder=\"Large@lg Input\"\n      size=\"large@lg\"\n      :background=\"backgroundColor\"\n    />\n\n    <cdr-input\n      class=\"demo-input\"\n      v-model=\"requiredWithIcons\"\n      id=\"required-with-icon\"\n      placeholder=\"Required with Icon\"\n      label=\"Required with Icon\"\n      required\n      type=\"email\"\n      :background=\"backgroundColor\"\n    >\n      <template slot=\"info-action\">\n        <cdr-link\n          tag=\"button\"\n          type=\"button\"\n        >\n          <icon-information-stroke inherit-color />\n          <span class=\"sr-only\">Information!</span>\n        </cdr-link>\n      </template>\n      <template slot=\"pre-icon\">\n        <cdr-icon\n          use=\"#twitter\"\n        />\n      </template>\n      <template slot=\"post-icon\">\n        <cdr-icon\n          use=\"#check-lg\"\n        />\n      </template>\n      <template slot=\"helper-text\">\n        This is helper text. Input length: {{ requiredWithIcons.length }}\n      </template>\n    </cdr-input>\n\n    <form>\n      <cdr-input\n        class=\"demo-input\"\n        v-model=\"formWithButtons\"\n        id=\"form-example\"\n        placeholder=\"For testing icon/button placement with autofill\"\n        label=\"Form with Two Buttons\"\n        required\n        type=\"email\"\n        autocomplete=\"username\"\n        :background=\"backgroundColor\"\n      >\n        <template slot=\"pre-icon\">\n          <cdr-icon\n            use=\"#twitter\"\n          />\n        </template>\n        <template slot=\"post-icon\">\n          <cdr-tooltip\n            class=\"cdr-input__button\"\n            id=\"input-tooltip\"\n          >\n            <cdr-button\n              :icon-only=\"true\"\n              slot=\"trigger\"\n              aria-label=\"navigate\"\n            >\n              <icon-map />\n            </cdr-button>\n\n            hey where am i?\n          </cdr-tooltip>\n          <cdr-button\n            :icon-only=\"true\"\n            class=\"cdr-input__button\"\n            aria-label=\"close\"\n          >\n            <icon-x-lg />\n          </cdr-button>\n        </template>\n      </cdr-input>\n    </form>\n\n    <cdr-input\n      class=\"demo-input\"\n      v-model=\"helperValidationModel\"\n      placeholder=\"errors\"\n      :error=\"helperValidationError\"\n      @blur=\"validate\"\n      label=\"Top helper with status validation\"\n      :background=\"backgroundColor\"\n      aria-describedby=\"myHelpText errorMessage\"\n    >\n      <template slot=\"helper-text-top\">\n        <span id=\"myHelpText\">Must be 4 or less characters</span>\n      </template>\n\n      <template\n        slot=\"error\"\n      >\n        <span id=\"errorMessage\">you have added too many characters, remove some</span>\n      </template>\n\n      <template slot=\"info\">\n        <cdr-link\n          modifier=\"standalone\"\n          href=\"#/inputs\"\n        >\n          Support link\n        </cdr-link>\n      </template>\n    </cdr-input>\n\n    <cdr-input\n      class=\"demo-input\"\n      :required=\"true\"\n      v-model=\"megaModel\"\n      :error=\"megaErr\"\n      error-role=\"alert\"\n      id=\"inputWithError\"\n      label=\"Everything at the same time, alert validation\"\n      @blur=\"megaErr = false\"\n      size=\"large\"\n      aria-describedby=\"topHelp bottomHelp errorMessage\"\n    >\n      <icon-map slot=\"pre-icon\" />\n      <template slot=\"helper-text-top\">\n        <span id=\"topHelp\">Hey im on top of the input!</span>\n      </template>\n      <template slot=\"helper-text-bottom\">\n        <span id=\"bottomHelp\">Hey im below the input!</span>\n      </template>\n      <template slot=\"info\">\n        <cdr-link\n          href=\"#baz\"\n          modifier=\"standalone\"\n          aria-describedby=\"inputWithError\"\n        >\n          Hey im also on top of the input!\n        </cdr-link>\n      </template>\n      <template slot=\"info-action\">\n        <cdr-link\n          tag=\"button\"\n          type=\"button\"\n        >\n          <span class=\"sr-only\">I trigger some sort of action!</span>\n          <icon-check-stroke inherit-color />\n        </cdr-link>\n      </template>\n      <template slot=\"post-icon\">\n        <cdr-tooltip\n          class=\"cdr-input__button\"\n          id=\"mega-tooltip\"\n        >\n          <cdr-button\n            slot=\"trigger\"\n            :icon-only=\"true\"\n            @click=\"megaErr = 'you have five minutes to fix this'\"\n            size=\"large\"\n            aria-label=\"Click me to cause an error\"\n          >\n            <icon-x-stroke />\n          </cdr-button>\n          I put the input into an error state!\n        </cdr-tooltip>\n        <cdr-popover\n          class=\"cdr-input__button\"\n          id=\"mega-popover\"\n        >\n          <cdr-button\n            slot=\"trigger\"\n            :icon-only=\"true\"\n            size=\"large\"\n            aria-label=\"Hello\"\n          >\n            <icon-information-stroke />\n          </cdr-button>\n          Hey What's Up?\n        </cdr-popover>\n      </template>\n    </cdr-input>\n\n    <cdr-input\n      class=\"demo-input \"\n      v-model=\"multiRowModel\"\n      :rows=\"10\"\n      placeholder=\"Multi Line Input/TextArea\"\n      label=\"Multi Line Input/TextArea\"\n      :background=\"backgroundColor\"\n    />\n    <cdr-input\n      class=\"demo-input \"\n      v-model=\"masterModel\"\n      @input=\"onMasterInput\"\n      placeholder=\"What would you like to set all input values to?\"\n      label=\"Master input that overwrites all other inputs on this page\"\n      :background=\"backgroundColor\"\n    />\n\n    <div class=\"demo-input\">\n      Default Input Value = {{ defaultModel }}\n    </div>\n    <div class=\"demo-input\">\n      Required Input Value = {{ requiredModel }}\n    </div>\n    <div class=\"demo-input\">\n      Optional Input Value = {{ optionalModel }}\n    </div>\n    <div class=\"demo-input\">\n      Hidden Input Value = {{ hiddenModel }}\n    </div>\n    <div class=\"demo-input\">\n      Disabled Input Value = {{ disabledModel }}\n    </div>\n    <div class=\"demo-input\">\n      With Icons Input Value = {{ requiredWithIcons }}\n    </div>\n    <div class=\"demo-input\">\n      Form With Buttons Value = {{ formWithButtons }}\n    </div>\n    <div class=\"demo-input\">\n      Helper/Validation Input Value = {{ helperValidationModel }}\n    </div>\n    <div class=\"demo-input\">\n      Multi Row Input Value = {{ multiRowModel }}\n    </div>\n    <div class=\"demo-input\">\n      Size Inputs Value = {{ sizeModel }}\n    </div>\n\n    <div class=\"demo-input\">\n      Mega Input Value = {{ megaModel }}\n    </div>\n    <div class=\"demo-input\">\n      Master Inputs Value = {{ masterModel }}\n    </div>\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\nexport default {\n  name: 'Inputs',\n  components: {\n    ...Components,\n  },\n  data() {\n    return {\n      defaultModel: '',\n      requiredModel: '',\n      optionalModel: '',\n      hiddenModel: '',\n      disabledModel: '',\n      helperValidationModel: '',\n      helperValidationError: true,\n      requiredWithIcons: '',\n      multiRowModel: '',\n      sizeModel: '',\n      formWithButtons: '',\n      masterModel: '',\n      megaModel: '',\n      megaErr: false,\n      backgroundColor: 'primary',\n    };\n  },\n  watch: {\n    $route(to) {\n      this.setBackground(to.query.background);\n    },\n  },\n  mounted() {\n    this.setBackground(this.$router.currentRoute.query.background);\n  },\n  methods: {\n    validate() {\n      this.helperValidationError = this.helperValidationModel.length > 4;\n    },\n    onMasterInput(value, e) {\n      console.log('On Master Input value = ', value, ' e = ', e); // eslint-disable-line\n      this.defaultModel = value;\n      this.requiredModel = value;\n      this.optionalModel = value;\n      this.hiddenModel = value;\n      this.disabledModel = value;\n      this.formWithButtons = value;\n      this.requiredWithIcons = value;\n      this.helperValidationModel = value;\n      this.multiRowModel = value;\n      this.sizeModel = value;\n      this.megaModel = value;\n    },\n    setBackground(background) {\n      switch (background) {\n        case 'primary':\n          this.backgroundColor = 'primary';\n          break;\n        case 'secondary':\n          this.backgroundColor = 'secondary';\n          break;\n        default:\n          this.backgroundColor = 'primary';\n      }\n    },\n  },\n};\n</script>\n<style>\n  .demo-input {\n    margin: 10px;\n    /*line-height: 1;*/\n  }\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
@@ -37935,7 +38070,8 @@ var cedar = (function () {
               opened: _vm.opened,
               "wrapper-class": "wrapper-test-class",
               "overlay-class": "overlay-test-class",
-              "data-backstop": "modal"
+              "data-backstop": "modal",
+              role: "dialog"
             },
             on: { closed: _vm.closed }
           },
@@ -38041,7 +38177,7 @@ var cedar = (function () {
     /* style */
     const __vue_inject_styles__$z = function (inject) {
       if (!inject) return
-      inject("data-v-2453c534_0", { source: "\n@media (min-width: 672px) {\n.modal-example {\n    min-height: 80vh; /* fixes a safari display bug */\n}\n}\n", map: {"version":3,"sources":["/home/runner/work/rei-cedar/rei-cedar/src/components/modal/examples/Modal.vue"],"names":[],"mappings":";AAoFA;AACA;IACA,gBAAA,EAAA,+BAAA;AACA;AACA","file":"Modal.vue","sourcesContent":["<template>\n  <div class=\"modal-example\">\n    <h2>\n      Modal\n    </h2>\n\n    <cdr-modal\n      label=\"label text is title or aria\"\n      :opened=\"opened\"\n      @closed=\"closed\"\n      wrapper-class=\"wrapper-test-class\"\n      overlay-class=\"overlay-test-class\"\n      data-backstop=\"modal\"\n    >\n      <template slot=\"title\">\n        <cdr-text\n          tag=\"h2\"\n          class=\"cdr-text-dev--heading-serif-600 modal-title\"\n        >\n          Terms & Conditions\n        </cdr-text>\n      </template>\n\n      <template\n        slot=\"modal\"\n        v-if=\"override\"\n      >\n        Wow i can just take over the whole modal, huh?\n      </template>\n\n      <!-- eslint-disable-next-line -->\n      <cdr-text class=\"cdr-text-dev--body-300\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet dictum ipsum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam non urna sit amet dolor euismod consequat vitae non nunc. Nullam vulputate enim ac pharetra sagittis. Curabitur volutpat, metus eu euismod finibus, neque turpis viverra dolor, at ornare justo libero a arcu. Suspendisse nec lectus id leo aliquam posuere id eu mauris. Aenean fermentum justo ex, vel sagittis nulla efficitur nec. Mauris aliquet urna id felis maximus, et molestie erat bibendum. Donec dolor purus, iaculis vitae tellus at, iaculis facilisis nibh. Pellentesque at ex sit amet eros elementum iaculis quis ut justo. Pellentesque consequat in sapien ac blandit. Donec ullamcorper lacus sed interdum auctor.</cdr-text>\n\n      <!-- eslint-disable-next-line -->\n      <cdr-text class=\"cdr-text-dev--body-300\" v-if=\"overflowContent\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet dictum ipsum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam non urna sit amet dolor euismod consequat vitae non nunc. Nullam vulputate enim ac pharetra sagittis. Curabitur volutpat, metus eu euismod finibus, neque turpis viverra dolor, at ornare justo libero a arcu. Suspendisse nec lectus id leo aliquam posuere id eu mauris. Aenean fermentum justo ex, vel sagittis nulla efficitur nec. Mauris aliquet urna id felis maximus, et molestie erat bibendum. Donec dolor purus, iaculis vitae tellus at, iaculis facilisis nibh. Pellentesque at ex sit amet eros elementum iaculis quis ut justo. Pellentesque consequat in sapien ac blandit. Donec ullamcorper lacus sed interdum auctor.</cdr-text>\n\n      <!-- eslint-disable-next-line -->\n      <cdr-text class=\"cdr-text-dev--body-300\" v-if=\"overflowContent\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet dictum ipsum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam non urna sit amet dolor euismod consequat vitae non nunc. Nullam vulputate enim ac pharetra sagittis. Curabitur volutpat, metus eu euismod finibus, neque turpis viverra dolor, at ornare justo libero a arcu. Suspendisse nec lectus id leo aliquam posuere id eu mauris. Aenean fermentum justo ex, vel sagittis nulla efficitur nec. Mauris aliquet urna id felis maximus, et molestie erat bibendum. Donec dolor purus, iaculis vitae tellus at, iaculis facilisis nibh. Pellentesque at ex sit amet eros elementum iaculis quis ut justo. Pellentesque consequat in sapien ac blandit. Donec ullamcorper lacus sed interdum auctor.</cdr-text>\n    </cdr-modal>\n\n    <cdr-button\n      @click=\"opened = true\"\n      aria-haspopup=\"dialog\"\n    >Launch modal\n    </cdr-button>\n\n    <h3 class=\"stack\">\n      Content Options\n    </h3>\n\n    <cdr-checkbox v-model=\"overflowContent\">\n      Overflow Content\n    </cdr-checkbox>\n\n    <cdr-checkbox v-model=\"override\">\n      Override Content\n    </cdr-checkbox>\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\nexport default {\n  name: 'Modal',\n  components: {\n    ...Components,\n  },\n  data() {\n    return {\n      opened: this.$router.currentRoute.name === 'Modals',\n      overflowContent: false,\n      override: false,\n    };\n  },\n  methods: {\n    closed() {\n      this.opened = false;\n    },\n  },\n};\n</script>\n\n<style>\n@media (min-width: 672px) {\n  .modal-example {\n    min-height: 80vh; /* fixes a safari display bug */\n  }\n}\n</style>\n"]}, media: undefined });
+      inject("data-v-1569091b_0", { source: "\n@media (min-width: 672px) {\n.modal-example {\n    min-height: 80vh; /* fixes a safari display bug */\n}\n}\n", map: {"version":3,"sources":["/home/runner/work/rei-cedar/rei-cedar/src/components/modal/examples/Modal.vue"],"names":[],"mappings":";AAqFA;AACA;IACA,gBAAA,EAAA,+BAAA;AACA;AACA","file":"Modal.vue","sourcesContent":["<template>\n  <div class=\"modal-example\">\n    <h2>\n      Modal\n    </h2>\n\n    <cdr-modal\n      label=\"label text is title or aria\"\n      :opened=\"opened\"\n      @closed=\"closed\"\n      wrapper-class=\"wrapper-test-class\"\n      overlay-class=\"overlay-test-class\"\n      data-backstop=\"modal\"\n      role=\"dialog\"\n    >\n      <template slot=\"title\">\n        <cdr-text\n          tag=\"h2\"\n          class=\"cdr-text-dev--heading-serif-600 modal-title\"\n        >\n          Terms & Conditions\n        </cdr-text>\n      </template>\n\n      <template\n        slot=\"modal\"\n        v-if=\"override\"\n      >\n        Wow i can just take over the whole modal, huh?\n      </template>\n\n      <!-- eslint-disable-next-line -->\n      <cdr-text class=\"cdr-text-dev--body-300\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet dictum ipsum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam non urna sit amet dolor euismod consequat vitae non nunc. Nullam vulputate enim ac pharetra sagittis. Curabitur volutpat, metus eu euismod finibus, neque turpis viverra dolor, at ornare justo libero a arcu. Suspendisse nec lectus id leo aliquam posuere id eu mauris. Aenean fermentum justo ex, vel sagittis nulla efficitur nec. Mauris aliquet urna id felis maximus, et molestie erat bibendum. Donec dolor purus, iaculis vitae tellus at, iaculis facilisis nibh. Pellentesque at ex sit amet eros elementum iaculis quis ut justo. Pellentesque consequat in sapien ac blandit. Donec ullamcorper lacus sed interdum auctor.</cdr-text>\n\n      <!-- eslint-disable-next-line -->\n      <cdr-text class=\"cdr-text-dev--body-300\" v-if=\"overflowContent\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet dictum ipsum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam non urna sit amet dolor euismod consequat vitae non nunc. Nullam vulputate enim ac pharetra sagittis. Curabitur volutpat, metus eu euismod finibus, neque turpis viverra dolor, at ornare justo libero a arcu. Suspendisse nec lectus id leo aliquam posuere id eu mauris. Aenean fermentum justo ex, vel sagittis nulla efficitur nec. Mauris aliquet urna id felis maximus, et molestie erat bibendum. Donec dolor purus, iaculis vitae tellus at, iaculis facilisis nibh. Pellentesque at ex sit amet eros elementum iaculis quis ut justo. Pellentesque consequat in sapien ac blandit. Donec ullamcorper lacus sed interdum auctor.</cdr-text>\n\n      <!-- eslint-disable-next-line -->\n      <cdr-text class=\"cdr-text-dev--body-300\" v-if=\"overflowContent\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet dictum ipsum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam non urna sit amet dolor euismod consequat vitae non nunc. Nullam vulputate enim ac pharetra sagittis. Curabitur volutpat, metus eu euismod finibus, neque turpis viverra dolor, at ornare justo libero a arcu. Suspendisse nec lectus id leo aliquam posuere id eu mauris. Aenean fermentum justo ex, vel sagittis nulla efficitur nec. Mauris aliquet urna id felis maximus, et molestie erat bibendum. Donec dolor purus, iaculis vitae tellus at, iaculis facilisis nibh. Pellentesque at ex sit amet eros elementum iaculis quis ut justo. Pellentesque consequat in sapien ac blandit. Donec ullamcorper lacus sed interdum auctor.</cdr-text>\n    </cdr-modal>\n\n    <cdr-button\n      @click=\"opened = true\"\n      aria-haspopup=\"dialog\"\n    >Launch modal\n    </cdr-button>\n\n    <h3 class=\"stack\">\n      Content Options\n    </h3>\n\n    <cdr-checkbox v-model=\"overflowContent\">\n      Overflow Content\n    </cdr-checkbox>\n\n    <cdr-checkbox v-model=\"override\">\n      Override Content\n    </cdr-checkbox>\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\nexport default {\n  name: 'Modal',\n  components: {\n    ...Components,\n  },\n  data() {\n    return {\n      opened: this.$router.currentRoute.name === 'Modals',\n      overflowContent: false,\n      override: false,\n    };\n  },\n  methods: {\n    closed() {\n      this.opened = false;\n    },\n  },\n};\n</script>\n\n<style>\n@media (min-width: 672px) {\n  .modal-example {\n    min-height: 80vh; /* fixes a safari display bug */\n  }\n}\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
@@ -40313,6 +40449,7 @@ var cedar = (function () {
         infoLinkModel: '',
         infoIconModel: '',
         preIconModel: '',
+        preIconModel2: '',
         multiple: ['1', '2'],
         multiple2: ['-1'],
         multiple2Data: ['a', 'b', 'c', 'd'],
@@ -40743,9 +40880,10 @@ var cedar = (function () {
           "cdr-select",
           {
             attrs: {
-              label: "Example with error",
+              label: "Example with status error",
               background: _vm.backgroundColor,
               options: _vm.dynamicData,
+              "aria-describedby": "statusTest",
               prompt: "Choose One",
               error: true
             },
@@ -40759,7 +40897,41 @@ var cedar = (function () {
           },
           [
             _c("template", { slot: "error" }, [
-              _vm._v("\n      error message goes here\n    ")
+              _c("span", { attrs: { id: "statusTest" } }, [
+                _vm._v("error message goes here")
+              ])
+            ])
+          ],
+          2
+        ),
+        _vm._v(" "),
+        _c("hr", { staticClass: "icon-hr" }),
+        _vm._v(" "),
+        _c(
+          "cdr-select",
+          {
+            attrs: {
+              label: "Example with Alert error",
+              background: _vm.backgroundColor,
+              options: _vm.dynamicData,
+              "error-role": "alert",
+              "aria-describedby": "alertTest",
+              prompt: "Choose One",
+              error: true
+            },
+            model: {
+              value: _vm.preIconModel2,
+              callback: function($$v) {
+                _vm.preIconModel2 = $$v;
+              },
+              expression: "preIconModel2"
+            }
+          },
+          [
+            _c("template", { slot: "error" }, [
+              _c("span", { attrs: { id: "alertTest" } }, [
+                _vm._v("Alert error message goes here")
+              ])
             ])
           ],
           2
@@ -40859,7 +41031,7 @@ var cedar = (function () {
     /* style */
     const __vue_inject_styles__$H = function (inject) {
       if (!inject) return
-      inject("data-v-224db49c_0", { source: "\n.standard-select {\n  width: 25%;\n}\n", map: {"version":3,"sources":["/home/runner/work/rei-cedar/rei-cedar/src/components/select/examples/Selects.vue"],"names":[],"mappings":";AAsWA;EACA,UAAA;AACA","file":"Selects.vue","sourcesContent":["<template>\n  <div>\n    <h2>\n      Selects\n    </h2>\n    <hr class=\"icon-hr\">\n\n    <div data-backstop=\"select-target\">\n      <!-- Default Example -->\n      <cdr-select\n        label=\"Default\"\n        v-model=\"selectedA\"\n        :background=\"backgroundColor\"\n        prompt=\"Choose one\"\n\n        @select-change=\"doExternal\"\n      >\n        <option value=\"1\">\n          1\n        </option>\n        <option value=\"2\">\n          2\n        </option>\n        <option value=\"3\">\n          3\n        </option>\n        <option value=\"4\">\n          4\n        </option>\n      </cdr-select>\n      <cdr-text>Selected Value: {{ selectedA }}</cdr-text>\n\n      <hr class=\"icon-hr\">\n\n      <!-- Required with Prompt Example -->\n      <cdr-select\n        label=\"Required with Prompt\"\n        v-model=\"selectedB\"\n        :background=\"backgroundColor\"\n        prompt=\"Choose one\"\n        required\n      >\n        <option value=\"1\">\n          1\n        </option>\n        <option value=\"2\">\n          2\n        </option>\n        <option value=\"3\">\n          3\n        </option>\n        <option value=\"4\">\n          4\n        </option>\n      </cdr-select>\n      <cdr-text>Selected Value: {{ selectedB }}</cdr-text>\n    </div>\n    <hr class=\"icon-hr\">\n\n    <!-- Disabled Select -->\n    <cdr-select\n      label=\"Disabled select\"\n      v-model=\"selectedDisabled\"\n      :background=\"backgroundColor\"\n      disabled\n    >\n      <option value=\"1\">\n        1\n      </option>\n    </cdr-select>\n    <cdr-text>Selected: {{ selectedDisabled }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <!-- Hidden Label Example -->\n    <cdr-select\n      label=\"Hidden label text\"\n      hide-label\n      v-model=\"selectedC\"\n      :background=\"backgroundColor\"\n      prompt=\"Hidden label\"\n    >\n      <option value=\"1\">\n        1\n      </option>\n      <option value=\"2\">\n        2\n      </option>\n      <option value=\"3\">\n        3\n      </option>\n      <option value=\"4\">\n        4\n      </option>\n    </cdr-select>\n    <cdr-text>Selected Value: {{ selectedC }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <!-- No Prompt Example -->\n    <cdr-select\n      label=\"No Prompt\"\n\n      v-model=\"selectedD\"\n      :background=\"backgroundColor\"\n    >\n      <option value=\"1\">\n        1\n      </option>\n      <option value=\"2\">\n        2\n      </option>\n      <option value=\"3\">\n        3\n      </option>\n      <option value=\"REALLY REALLY LONG VALUE REALLY REALLY LONG VALUE\">\n        REALLY REALLY LONG VALUE REALLY REALLY LONG VALUE\n      </option>\n    </cdr-select>\n    <cdr-text>Selected Value: {{ selectedD }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <!-- Dynamic Data Example -->\n    <cdr-select\n      label=\"Dynamic\"\n      v-model=\"dynamic\"\n      :background=\"backgroundColor\"\n      :options=\"dynamicData\"\n\n      prompt=\"Choose One\"\n    />\n    <cdr-text>Selected: {{ dynamic }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <!-- Helper Text Example -->\n    <cdr-select\n      label=\"Example with Helper Text\"\n      v-model=\"helperTextModel\"\n      :background=\"backgroundColor\"\n      :options=\"dynamicData\"\n\n      prompt=\"Choose One\"\n    >\n      <template slot=\"helper-text\">\n        This is helper text.\n      </template>\n\n      <template slot=\"info\">\n        <cdr-link\n          href=\"#/selects\"\n          modifier=\"standalone\"\n        >\n          Info Link/Icon\n        </cdr-link>\n      </template>\n    </cdr-select>\n    <cdr-text>Selected Value: {{ helperTextModel }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <!-- Info Link Example -->\n    <cdr-select\n      label=\"Example with Info Link\"\n      v-model=\"infoLinkModel\"\n      :background=\"backgroundColor\"\n      :options=\"dynamicData\"\n\n      prompt=\"Choose One\"\n    >\n      <template slot=\"info\">\n        <cdr-link\n          href=\"#/selects\"\n          modifier=\"standalone\"\n        >\n          Info Link/Icon\n        </cdr-link>\n      </template>\n    </cdr-select>\n    <cdr-text>Selected: {{ infoLinkModel }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <!-- Info Icon Example -->\n    <cdr-select\n      label=\"Example with Info Icon\"\n      v-model=\"infoIconModel\"\n      :background=\"backgroundColor\"\n      :options=\"dynamicData\"\n\n      prompt=\"Choose One\"\n    >\n      <template slot=\"info-action\">\n        <cdr-link\n          tag=\"button\"\n          type=\"button\"\n        >\n          <icon-information-stroke inherit-color />\n          <span class=\"sr-only\">Information!</span>\n        </cdr-link>\n      </template>\n    </cdr-select>\n    <cdr-text>Selected Value: {{ infoIconModel }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <!-- Pre Icon Example -->\n    <cdr-select\n      label=\"Example with Pre Icon\"\n      v-model=\"preIconModel\"\n      :background=\"backgroundColor\"\n      :options=\"dynamicData\"\n\n      prompt=\"Choose One\"\n    >\n      <template slot=\"pre-icon\">\n        <icon-lock-locked-stroke />\n      </template>\n    </cdr-select>\n    <cdr-text>Selected Value: {{ preIconModel }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <!-- Error Example -->\n    <cdr-select\n      label=\"Example with error\"\n      v-model=\"preIconModel\"\n      :background=\"backgroundColor\"\n      :options=\"dynamicData\"\n\n      prompt=\"Choose One\"\n      :error=\"true\"\n    >\n      <template slot=\"error\">\n        error message goes here\n      </template>\n    </cdr-select>\n    <hr class=\"icon-hr\">\n\n    <!-- Large Select Example -->\n    <cdr-select\n      label=\"Size = Large\"\n      v-model=\"dynamic\"\n      :background=\"backgroundColor\"\n      size=\"large\"\n      :options=\"dynamicData\"\n\n      prompt=\"Choose One\"\n    />\n    <cdr-text>Selected Value: {{ dynamic }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <h3 class=\"stack\">\n      Multiple Select with size\n    </h3>\n\n    <cdr-select\n      label=\"Multiple Prompt\"\n      v-model=\"multiple\"\n      :background=\"backgroundColor\"\n      :multiple-size=\"6\"\n      multiple\n    >\n      <option\n        value=\"1\"\n      >\n        1\n      </option>\n      <option value=\"2\">\n        2\n      </option>\n      <option\n        value=\"3\"\n      >\n        3\n      </option>\n      <option value=\"4\">\n        4\n      </option>\n      <option value=\"5\">\n        5\n      </option>\n      <option value=\"6\">\n        6\n      </option>\n    </cdr-select>\n    <cdr-text>Selected Values: {{ multiple }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <h3 class=\"stack\">\n      Multiple Select\n    </h3>\n\n    <cdr-select\n      label=\"Multiple Prompt\"\n      v-model=\"multiple2\"\n      :background=\"backgroundColor\"\n      multiple\n      :options=\"multiple2Data\"\n    />\n    <cdr-text>Selected Values: {{ multiple2 }}</cdr-text>\n    <hr class=\"icon-hr\">\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\nexport default {\n  name: 'Selects',\n  components: Components,\n  data() {\n    return {\n      selectedDisabled: '',\n      selectedA: '',\n      selectedB: '2',\n      selectedC: '',\n      selectedD: '',\n      dynamic: '',\n      dynamicData: [{ value: 'a', text: 'a' }, { value: 'b', text: 'b' }],\n      helperTextModel: '',\n      infoLinkModel: '',\n      infoIconModel: '',\n      preIconModel: '',\n      multiple: ['1', '2'],\n      multiple2: ['-1'],\n      multiple2Data: ['a', 'b', 'c', 'd'],\n      backgroundColor: 'primary',\n    };\n  },\n  watch: {\n    $route(to) {\n      this.setBackground(to.query.background);\n    },\n  },\n  mounted() {\n    this.setBackground(this.$router.currentRoute.query.background);\n  },\n  methods: {\n    inputEventHandler(selectedValue, event) {\n      console.log('input Event event = ', event, ' selectedValue = ', selectedValue); // eslint-disable-line\n    },\n    inputChange(selectedValue, event) {\n      console.log('change Event event = ', event, ' selectedValue = ', selectedValue); // eslint-disable-line\n    },\n    doExternal(v, e) {\n      console.log('EXTERNAL', v, e); // eslint-disable-line\n    },\n    setBackground(background) {\n      switch (background) {\n        case 'primary':\n          this.backgroundColor = 'primary';\n          break;\n        case 'secondary':\n          this.backgroundColor = 'secondary';\n          break;\n        default:\n          this.backgroundColor = 'primary';\n      }\n    },\n  },\n};\n</script>\n\n<style>\n  .standard-select {\n    width: 25%;\n  }\n</style>\n"]}, media: undefined });
+      inject("data-v-2f65fe54_0", { source: "\n.standard-select {\n  width: 25%;\n}\n", map: {"version":3,"sources":["/home/runner/work/rei-cedar/rei-cedar/src/components/select/examples/Selects.vue"],"names":[],"mappings":";AA0XA;EACA,UAAA;AACA","file":"Selects.vue","sourcesContent":["<template>\n  <div>\n    <h2>\n      Selects\n    </h2>\n    <hr class=\"icon-hr\">\n\n    <div data-backstop=\"select-target\">\n      <!-- Default Example -->\n      <cdr-select\n        label=\"Default\"\n        v-model=\"selectedA\"\n        :background=\"backgroundColor\"\n        prompt=\"Choose one\"\n\n        @select-change=\"doExternal\"\n      >\n        <option value=\"1\">\n          1\n        </option>\n        <option value=\"2\">\n          2\n        </option>\n        <option value=\"3\">\n          3\n        </option>\n        <option value=\"4\">\n          4\n        </option>\n      </cdr-select>\n      <cdr-text>Selected Value: {{ selectedA }}</cdr-text>\n\n      <hr class=\"icon-hr\">\n\n      <!-- Required with Prompt Example -->\n      <cdr-select\n        label=\"Required with Prompt\"\n        v-model=\"selectedB\"\n        :background=\"backgroundColor\"\n        prompt=\"Choose one\"\n        required\n      >\n        <option value=\"1\">\n          1\n        </option>\n        <option value=\"2\">\n          2\n        </option>\n        <option value=\"3\">\n          3\n        </option>\n        <option value=\"4\">\n          4\n        </option>\n      </cdr-select>\n      <cdr-text>Selected Value: {{ selectedB }}</cdr-text>\n    </div>\n    <hr class=\"icon-hr\">\n\n    <!-- Disabled Select -->\n    <cdr-select\n      label=\"Disabled select\"\n      v-model=\"selectedDisabled\"\n      :background=\"backgroundColor\"\n      disabled\n    >\n      <option value=\"1\">\n        1\n      </option>\n    </cdr-select>\n    <cdr-text>Selected: {{ selectedDisabled }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <!-- Hidden Label Example -->\n    <cdr-select\n      label=\"Hidden label text\"\n      hide-label\n      v-model=\"selectedC\"\n      :background=\"backgroundColor\"\n      prompt=\"Hidden label\"\n    >\n      <option value=\"1\">\n        1\n      </option>\n      <option value=\"2\">\n        2\n      </option>\n      <option value=\"3\">\n        3\n      </option>\n      <option value=\"4\">\n        4\n      </option>\n    </cdr-select>\n    <cdr-text>Selected Value: {{ selectedC }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <!-- No Prompt Example -->\n    <cdr-select\n      label=\"No Prompt\"\n\n      v-model=\"selectedD\"\n      :background=\"backgroundColor\"\n    >\n      <option value=\"1\">\n        1\n      </option>\n      <option value=\"2\">\n        2\n      </option>\n      <option value=\"3\">\n        3\n      </option>\n      <option value=\"REALLY REALLY LONG VALUE REALLY REALLY LONG VALUE\">\n        REALLY REALLY LONG VALUE REALLY REALLY LONG VALUE\n      </option>\n    </cdr-select>\n    <cdr-text>Selected Value: {{ selectedD }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <!-- Dynamic Data Example -->\n    <cdr-select\n      label=\"Dynamic\"\n      v-model=\"dynamic\"\n      :background=\"backgroundColor\"\n      :options=\"dynamicData\"\n\n      prompt=\"Choose One\"\n    />\n    <cdr-text>Selected: {{ dynamic }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <!-- Helper Text Example -->\n    <cdr-select\n      label=\"Example with Helper Text\"\n      v-model=\"helperTextModel\"\n      :background=\"backgroundColor\"\n      :options=\"dynamicData\"\n\n      prompt=\"Choose One\"\n    >\n      <template slot=\"helper-text\">\n        This is helper text.\n      </template>\n\n      <template slot=\"info\">\n        <cdr-link\n          href=\"#/selects\"\n          modifier=\"standalone\"\n        >\n          Info Link/Icon\n        </cdr-link>\n      </template>\n    </cdr-select>\n    <cdr-text>Selected Value: {{ helperTextModel }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <!-- Info Link Example -->\n    <cdr-select\n      label=\"Example with Info Link\"\n      v-model=\"infoLinkModel\"\n      :background=\"backgroundColor\"\n      :options=\"dynamicData\"\n\n      prompt=\"Choose One\"\n    >\n      <template slot=\"info\">\n        <cdr-link\n          href=\"#/selects\"\n          modifier=\"standalone\"\n        >\n          Info Link/Icon\n        </cdr-link>\n      </template>\n    </cdr-select>\n    <cdr-text>Selected: {{ infoLinkModel }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <!-- Info Icon Example -->\n    <cdr-select\n      label=\"Example with Info Icon\"\n      v-model=\"infoIconModel\"\n      :background=\"backgroundColor\"\n      :options=\"dynamicData\"\n\n      prompt=\"Choose One\"\n    >\n      <template slot=\"info-action\">\n        <cdr-link\n          tag=\"button\"\n          type=\"button\"\n        >\n          <icon-information-stroke inherit-color />\n          <span class=\"sr-only\">Information!</span>\n        </cdr-link>\n      </template>\n    </cdr-select>\n    <cdr-text>Selected Value: {{ infoIconModel }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <!-- Pre Icon Example -->\n    <cdr-select\n      label=\"Example with Pre Icon\"\n      v-model=\"preIconModel\"\n      :background=\"backgroundColor\"\n      :options=\"dynamicData\"\n\n      prompt=\"Choose One\"\n    >\n      <template slot=\"pre-icon\">\n        <icon-lock-locked-stroke />\n      </template>\n    </cdr-select>\n    <cdr-text>Selected Value: {{ preIconModel }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <!-- Error Example default -->\n    <cdr-select\n      label=\"Example with status error\"\n      v-model=\"preIconModel\"\n      :background=\"backgroundColor\"\n      :options=\"dynamicData\"\n      aria-describedby=\"statusTest\"\n\n      prompt=\"Choose One\"\n      :error=\"true\"\n    >\n      <template slot=\"error\">\n        <span id=\"statusTest\">error message goes here</span>\n      </template>\n    </cdr-select>\n    <hr class=\"icon-hr\">\n\n    <!-- Error Example alert -->\n    <cdr-select\n      label=\"Example with Alert error\"\n      v-model=\"preIconModel2\"\n      :background=\"backgroundColor\"\n      :options=\"dynamicData\"\n      error-role=\"alert\"\n      aria-describedby=\"alertTest\"\n\n      prompt=\"Choose One\"\n      :error=\"true\"\n    >\n      <template slot=\"error\">\n        <span id=\"alertTest\">Alert error message goes here</span>\n      </template>\n    </cdr-select>\n    <hr class=\"icon-hr\">\n\n    <!-- Large Select Example -->\n    <cdr-select\n      label=\"Size = Large\"\n      v-model=\"dynamic\"\n      :background=\"backgroundColor\"\n      size=\"large\"\n      :options=\"dynamicData\"\n\n      prompt=\"Choose One\"\n    />\n    <cdr-text>Selected Value: {{ dynamic }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <h3 class=\"stack\">\n      Multiple Select with size\n    </h3>\n\n    <cdr-select\n      label=\"Multiple Prompt\"\n      v-model=\"multiple\"\n      :background=\"backgroundColor\"\n      :multiple-size=\"6\"\n      multiple\n    >\n      <option\n        value=\"1\"\n      >\n        1\n      </option>\n      <option value=\"2\">\n        2\n      </option>\n      <option\n        value=\"3\"\n      >\n        3\n      </option>\n      <option value=\"4\">\n        4\n      </option>\n      <option value=\"5\">\n        5\n      </option>\n      <option value=\"6\">\n        6\n      </option>\n    </cdr-select>\n    <cdr-text>Selected Values: {{ multiple }}</cdr-text>\n    <hr class=\"icon-hr\">\n\n    <h3 class=\"stack\">\n      Multiple Select\n    </h3>\n\n    <cdr-select\n      label=\"Multiple Prompt\"\n      v-model=\"multiple2\"\n      :background=\"backgroundColor\"\n      multiple\n      :options=\"multiple2Data\"\n    />\n    <cdr-text>Selected Values: {{ multiple2 }}</cdr-text>\n    <hr class=\"icon-hr\">\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\nexport default {\n  name: 'Selects',\n  components: Components,\n  data() {\n    return {\n      selectedDisabled: '',\n      selectedA: '',\n      selectedB: '2',\n      selectedC: '',\n      selectedD: '',\n      dynamic: '',\n      dynamicData: [{ value: 'a', text: 'a' }, { value: 'b', text: 'b' }],\n      helperTextModel: '',\n      infoLinkModel: '',\n      infoIconModel: '',\n      preIconModel: '',\n      preIconModel2: '',\n      multiple: ['1', '2'],\n      multiple2: ['-1'],\n      multiple2Data: ['a', 'b', 'c', 'd'],\n      backgroundColor: 'primary',\n    };\n  },\n  watch: {\n    $route(to) {\n      this.setBackground(to.query.background);\n    },\n  },\n  mounted() {\n    this.setBackground(this.$router.currentRoute.query.background);\n  },\n  methods: {\n    inputEventHandler(selectedValue, event) {\n      console.log('input Event event = ', event, ' selectedValue = ', selectedValue); // eslint-disable-line\n    },\n    inputChange(selectedValue, event) {\n      console.log('change Event event = ', event, ' selectedValue = ', selectedValue); // eslint-disable-line\n    },\n    doExternal(v, e) {\n      console.log('EXTERNAL', v, e); // eslint-disable-line\n    },\n    setBackground(background) {\n      switch (background) {\n        case 'primary':\n          this.backgroundColor = 'primary';\n          break;\n        case 'secondary':\n          this.backgroundColor = 'secondary';\n          break;\n        default:\n          this.backgroundColor = 'primary';\n      }\n    },\n  },\n};\n</script>\n\n<style>\n  .standard-select {\n    width: 25%;\n  }\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
