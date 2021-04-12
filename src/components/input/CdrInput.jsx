@@ -44,6 +44,9 @@ export default {
       type: String,
       required: true,
     },
+    /**
+     * Override the error message role, default is `status`.
+     */
     errorRole: {
       type: String,
       required: false,

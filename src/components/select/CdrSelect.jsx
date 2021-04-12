@@ -60,6 +60,14 @@ export default {
       type: [Boolean, String],
       default: false,
     },
+    /**
+    * Override the error message role, default is `status`.
+    */
+    errorRole: {
+      type: String,
+      required: false,
+      default: 'status',
+    },
     value: {
       type: [String, Number, Boolean, Object, Array, Symbol, Function],
     },
@@ -221,7 +229,7 @@ export default {
           )}
         </div>
         {this.error && (
-          <cdr-form-error error={this.error}>
+          <cdr-form-error role={this.errorRole} error={this.error} >
             <template slot="error">
               {this.$slots.error}
             </template>
