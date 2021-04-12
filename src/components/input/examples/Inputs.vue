@@ -338,7 +338,7 @@ export default {
       hiddenModel: '',
       disabledModel: '',
       helperValidationModel: '',
-      helperValidationError: false,
+      helperValidationError: true,
       requiredWithIcons: '',
       multiRowModel: '',
       sizeModel: '',
