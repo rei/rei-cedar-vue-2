@@ -200,7 +200,7 @@
       :required="true"
       v-model="megaModel"
       :error="megaErr"
-       error-role="alert"
+      error-role="alert"
       id="inputWithError"
       label="Everything at the same time, alert validation"
       @blur="megaErr = false"
