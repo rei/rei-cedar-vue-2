@@ -231,8 +231,7 @@
     </cdr-select>
     <hr class="icon-hr">
 
-   <!-- Error Example alert -->
-
+    <!-- Error Example alert -->
     <cdr-select
       label="Example with Alert error"
       v-model="preIconModel2"
