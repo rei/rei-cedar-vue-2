@@ -1,47 +1,39 @@
 <template>
-  <div class={clsx(
-    this.style['cdr-popover--wrapper'],
-    this.$slots.trigger ? this.style['cdr-popover--position'] : '',
-  )}>
-    <div ref="trigger">
-      { this.$slots.trigger }
+  <div :class="mapClasses(
+    $style,
+    'cdr-popover--wrapper',
+    hasTrigger && 'cdr-popover--position',
+  )">
+    <div :ref="triggerEl">
+      <slot name="trigger"/>
     </div>
     <cdr-popup
-      class={this.style['cdr-popover']}
       role="dialog"
-      ref="popup"
-      position={ this.position }
-      autoPosition={ this.autoPosition }
-      opened={ this.isOpen }
-      onClosed={ this.closePopover }
-      aria-expanded={ `${this.isOpen}` }
-      id={ this.id }
-      contentClass={ this.contentClass }
+      @closed="closePopover"
+      :class="$style[baseClass]"
+      :ref="popupEl"
+      :position="position"
+      :autoPosition="autoPosition"
+      :opened="isOpen"
+      :ariaExpanded="`${isOpen}`"
+      :id="id"
+      :contentClass="contentClass"
     >
-      <div class={this.style['cdr-popover__container']}>
-        <div class={this.style['cdr-popover__content']}>
-          {
-            (this.$slots.title || this.label) && (
-              <div class={this.style['cdr-popover__title']}>
-                {
-                  this.$slots.title
-                }
-                {
-                  !this.$slots.title && this.label && (
-                    <span>
-                      {this.label}
-                    </span>
-                  )
-                }
-              </div>
-            )
-          }
-          { this.$slots.default }
+      <div :class="$style['cdr-popover__container']">
+        <div :class="$style['cdr-popover__content']">
+          <div v-if="hasTitle" :class="$style['cdr-popover__title']">
+            <slot name="title"/>
+            <!-- TODO: might need a v-if on the slot, v-else on the label? -->
+            <span v-if="hasLabel">
+              {{ label }}
+            </span>
+          </div>
+          <slot />
         </div>
         <cdr-button
-          class={this.style['cdr-popover__close-button']}
+          :class="$style['cdr-popover__close-button']"
           icon-only
-          on-click={this.closePopover}
+          @click="closePopover"
           aria-label="Close"
           size="small"
         >
@@ -56,7 +48,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from 'vue';
+import { defineComponent, computed, ref, watchEffect, onMounted } from 'vue';
 import tabbable from 'tabbable';
 import clsx from 'clsx';
 import IconXSm from '../icon/comps/x-sm';
@@ -64,6 +56,7 @@ import CdrButton from '../button/CdrButton';
 import CdrPopup from '../popup/CdrPopup';
 import propValidator from '../../utils/propValidator';
 import { buildClass } from '../../utils/buildClass';
+import mapClasses from '../../utils/mapClasses';
 
 export default defineComponent({
   name: 'CdrPopover',
@@ -105,60 +98,70 @@ export default defineComponent({
       required: false,
     },
   },
-  data() {
-    return {
-      style,
-      isOpen: false,
-      openHandler: undefined,
-      lastActive: undefined,
-    };
-  },
-  watch: {
-    open() {
-      if (this.open) {
-        this.openPopover();
-      } else {
-        this.closePopover();
-      }
-    },
-  },
-  mounted() {
-    this.addHandlers();
+  setup(props, ctx) {
+    const baseClass = 'cdr-popup';
 
-    const trigger = this.$refs.trigger.children[0];
-    if (trigger) {
-      trigger.setAttribute('aria-controls', this.id);
-      trigger.setAttribute('aria-haspopup', 'dialog');
-    }
-  },
-  methods: {
-    openPopover(e) {
+
+    const isOpen = ref(false);
+    const openHandler = ref(undefined);
+    const lastActive = ref(undefined);
+
+    const triggerEl = ref(null);
+    const popupEl = ref(null);
+
+    const hasTrigger = ctx.slots.trigger;
+    const hasTitle = ctx.slots.title || label;
+    const hasLabel = !ctx.slots.title && label;
+
+    const openPopover = (e) => {
       const { activeElement } = document;
 
-      this.lastActive = activeElement;
-      this.isOpen = true;
-      this.$emit('opened', e);
-      this.$nextTick(() => {
-        const tabbables = tabbable(this.$refs.popup.$el);
+      lastActive = activeElement;
+      isOpen = true;
+      ctx.emit('opened', e);
+      nextTick(() => {
+        const tabbables = tabbable(popupEl);
         if (tabbables[0]) tabbables[0].focus();
       });
-    },
-    closePopover(e) {
-      this.isOpen = false;
-      this.$emit('closed', e);
-      if (this.lastActive) this.lastActive.focus();
-    },
-    addHandlers() {
-      this.openHandler = this.openPopover.bind(this);
-      const triggerElement = this.$refs.trigger.children[0];
+    }
+
+    const closePopover = (e) => {
+      isOpen = false;
+      ctx.emit('closed', e);
+      if (lastActive) lastActive.focus();
+    }
+
+    const addHandlers = ()  =>{
+      const triggerElement = triggerEl.children[0];
       if (triggerElement) {
-        triggerElement.addEventListener('click', this.openHandler);
+        triggerElement.addEventListener('click', openPopover);
       }
-    },
-  },
-  setup(props) {
-    const baseClass = 'cdr-popup';
+    }
+
+    watchEffect((props.open) => {
+      // TODO: if eslint yells about this then eslint must go :)
+      props.open ? openPopover() : closePopover();
+    });
+
+    onMounted(() => {
+      addHandlers();
+
+      const trigger = triggerEl.children[0];
+      if (trigger) {
+        trigger.setAttribute('aria-controls', id);
+        trigger.setAttribute('aria-haspopup', 'dialog');
+      }
+    });
+
     return {
+      mapClasses,
+      baseClass,
+      hasTrigger,
+      triggerEl,
+      hasTitle,
+      hasLabel,
+      closePopover,
+      isOpen,
     };
   },
 });
