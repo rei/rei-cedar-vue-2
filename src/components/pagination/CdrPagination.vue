@@ -1,11 +1,118 @@
 <template>
-  <div :class="[$style[baseClass], $style[typeClass]]">
-    <slot />
-  </div>
+  <nav :ariaLabel="ariaLabel">
+    <ol :class="$style['cdr-pagination']">
+      const LinkTag = linkTag;
+      return innerValue > pages[0].page ? (
+        <li>
+          {$scopedSlots.prevLink
+            ? $scopedSlots.prevLink(prevElAttrs)
+            : (<LinkTag
+              {... { attrs: prevElAttrs.attrs }}
+              href={LinkTag === 'a' && prevElAttrs.href}
+              ref={prevElAttrs.attrs.ref}
+              onClick={prevElAttrs.click}
+            >
+              <prevElAttrs.iconComponent
+                class={prevElAttrs.iconClass}
+              />
+              {prevElAttrs.content}
+            </LinkTag>)
+          }
+        </li>
+      ) : (
+        <li aria-hidden="true">
+          <span
+            aria-disabled="true"
+            class={[
+              prevElAttrs.attrs.class,
+              style['cdr-pagination__link--disabled'],
+            ]}
+          >
+            <prevElAttrs.iconComponent
+              class={prevElAttrs.iconClass}
+              inherit-color
+            />
+            {prevElAttrs.content}
+          </span>
+        </li>
+      );
+
+
+      <li
+        v-for="n in paginationData"
+        key={`${n}-${guid()}`}
+        class={style['cdr-pagination__li--links']}
+      >
+        {n === '&hellip;'
+          && <span
+            class={style['cdr-pagination__ellipse']}
+            domPropsInnerHTML={n}
+          />
+        }
+        {n !== '&hellip;' && renderLinkEl(n) }
+      </li>
+
+      <li class={style['cdr-pagination__li--select']}>
+        <cdr-select
+          vModel={innerValue}
+          label="Navigate to page"
+          hide-label
+          onChange={select}
+          ref={`select-${componentID}`}
+          id={`select-${componentID}`}
+        >
+          {paginationData.map((n) => n !== '&hellip;'
+            && (<option
+              key={`${n}-${guid()}`}
+              value={n.page}
+            >
+              Page { n.page }{ totalPages === null ? '' : ` of ${totalPages}` }
+            </option>))}
+        </cdr-select>
+      </li>
+
+      const LinkTag = linkTag;
+      return innerValue < pages[pages.length - 1].page ? (
+        <li>
+          {$scopedSlots.nextLink
+            ? $scopedSlots.nextLink(nextElAttrs)
+            : (<LinkTag
+              {... { attrs: nextElAttrs.attrs }}
+              href={LinkTag === 'a' && nextElAttrs.href}
+              ref={nextElAttrs.attrs.ref}
+              onClick={nextElAttrs.click}
+            >
+              {nextElAttrs.content}
+              <nextElAttrs.iconComponent
+                class={nextElAttrs.iconClass}
+              />
+            </LinkTag>)
+          }
+
+        </li>
+      ) : (
+        <li aria-hidden="true">
+          <span
+            aria-disabled="true"
+            class={[
+              nextElAttrs.attrs.class,
+              style['cdr-pagination__link--disabled'],
+            ]}
+            >
+            {nextElAttrs.content}
+            <nextElAttrs.iconComponent
+              class={nextElAttrs.iconClass}
+              inherit-color
+            />
+          </span>
+        </li>
+      );
+    </ol>
+  </nav>
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from 'vue';
+import { defineComponent, computed, ref, watchEffect, nextTick } from 'vue';
 import propValidator from '../../utils/propValidator';
 import { buildClass } from '../../utils/buildClass';
 
@@ -15,7 +122,7 @@ import CdrSelect from '../select/CdrSelect';
 import propValidator from '../../utils/propValidator';
 import style from './styles/CdrPagination.scss';
 
-export default {
+export default defineComponent({
   name: 'CdrPagination',
   components: {
     IconCaretLeft,
@@ -23,6 +130,11 @@ export default {
     CdrSelect,
   },
   props: {
+    // NOTE pagination now requires an ID
+    id: {
+      type: String,
+      required: true,
+    },
     /**
      * Total number of pages. Sometimes the total number of pages is different than total page data
      * and this prop allows for that.
@@ -70,277 +182,56 @@ export default {
       type: Number,
     },
   },
-  data() {
-    return {
-      style,
-      componentID: Math.random().toString(36).substr(2, 9),
-      currentIdx: 0,
-    };
-  },
-  computed: {
-    // track value internally (for use with select vmodel) and update external value when internal changes
-    innerValue: {
-      get() {
-        return this.modelValue;
-      },
-      set(newValue) {
-        this.setCurrentIdx(newValue);
-        this.$emit('update:modelValue', newValue);
-      },
-    },
-    currentUrl() {
-      return this.pages[this.currentIdx].url;
-    },
-    totalPageData() {
-      return this.pages.length;
-    },
-    prevPageIdx() {
-      return this.currentIdx - 1;
-    },
-    nextPageIdx() {
-      return this.currentIdx + 1;
-    },
-    ariaLabel() {
-      return this.forLabel || 'Pagination';
-    },
-    /**
-     * Creates an array of the pages that should be shown as links with logic for truncation.
-     *
-     * If total = 20 ([#] indicates current page)
-     * [1] 2 3 4 5 ... 20
-     * 1 2 3 [4] 5 ... 20
-     * 1 ... 4 [5] 6 ... 20
-     * 1 ... 15 [16] 17 ... 20
-     * 1 ... 16 [17] 18 19 20
-     *
-     * If total 5 (or anything <= 7)
-     * [1] 2 3 4 5
-     * 1 2 [3] 4 5
-     * 1 2 3 4 [5]
-     *
-     * Degrades for prev/next only scenario
-     * urls = {"4": "url4", "5": "url5", "6": "url6"} (assuming current page is 5)
-     * 4 [5] 6
-     */
-    paginationData() {
-      const total = this.totalPageData;
-      const current = this.innerValue;
-      const delta = 1;
-      let range = [];
-      let over5 = true;
-      let over5remain = true;
+  // methods: {
 
-      if (total <= 7) {
-        // all pages
-        return this.pages;
-      }
+  //   renderLinkEl(n) {
+  //     const linkData = {
+  //       // things that we want to be able to easily bulk bind to scoped slot (for a11y, styling, etc.)
+  //       attrs: {
+  //         class: clsx(style['cdr-pagination__link'], { current: n.page === innerValue }),
+  //         'aria-label': n.page === innerValue
+  //           ? `Current page, page ${n.page}`
+  //           : `Go to page ${n.page}`,
+  //         'aria-current': n.page === innerValue ? 'page' : null,
+  //         ref: `page-link-${n.page}-${componentID}`,
+  //       },
+  //       // The rest of this is available for binding if needed by user (i.e. optional with vue-router)
+  //       href: n.url,
+  //       click: (e) => navigate(n.page, e),
+  //       page: n.page,
+  //       content: n.page,
+  //     };
+  //
+  //     const LinkTag = linkTag;
+  //     return ($scopedSlots.link ? $scopedSlots.link(linkData)
+  //       : <LinkTag
+  //         {... { attrs: linkData.attrs } }
+  //         href={LinkTag === 'a' && linkData.href}
+  //         onClick={linkData.click}
+  //         ref={linkData.attrs.ref}
+  //       >{ linkData.content }</LinkTag>
+  //     );
+  //   },
+  // },
+  setup() {
 
-      if (current < 5) {
-      // if first 5 pages
-        over5 = false;
-        // [2-5]
-        range = this.pages.slice(1, 5);
-      } else if (total - current < 4) {
-      // if last 5 pages
-        over5remain = false;
-        range = this.pages.slice(-5, -1);
-      } else {
-      // else in between
-        for (
-          let i = Math.max(2, current - delta);
-          i <= Math.min(total - 1, current + delta);
-          i += 1
-        ) {
-          range.push(this.pages[i - 1]);
-        }
-      }
+    const baseClass = 'cdr-pagination';
+    const componentID = ref(Math.random().toString(36).substr(2, 9));
+    const currentIdx = ref(0);
 
-      if ((current - delta > 2) && over5) {
-        range.unshift('&hellip;');
-      }
-      if ((current + delta < total - 1) && over5remain) {
-        range.push('&hellip;');
-      }
-
-      range.unshift(this.pages[0]);
-      range.push(this.pages[total - 1]);
-
-      return range;
-    },
-    prevElAttrs() {
-      const prevPageData = this.pages[this.prevPageIdx];
-      return {
-        // things that we want to be able to easily bulk bind to scoped slot (for a11y, styling, etc.)
-        attrs: {
-          class: clsx(this.style['cdr-pagination__link'], this.style['cdr-pagination__prev']),
-          'aria-label': 'Go to previous Page',
-          ref: `prev-link-${this.componentID}`,
-        },
-        // The rest of this is available for binding if needed by user (i.e. optional with vue-router)
-        href: prevPageData === undefined ? null : prevPageData.url,
-        page: prevPageData === undefined ? null : prevPageData.page,
-        content: 'Prev',
-        iconClass: this.style['cdr-pagination__caret--prev'],
-        iconComponent: 'icon-caret-left',
-        iconPath: '#caret-left',
-        click: (e) => this.navigate(prevPageData.page, e),
-      };
-    },
-    prevEl() {
-      const LinkTag = this.linkTag;
-      return this.innerValue > this.pages[0].page ? (
-        <li>
-          {this.$scopedSlots.prevLink
-            ? this.$scopedSlots.prevLink(this.prevElAttrs)
-            : (<LinkTag
-              {... { attrs: this.prevElAttrs.attrs }}
-              href={LinkTag === 'a' && this.prevElAttrs.href}
-              ref={this.prevElAttrs.attrs.ref}
-              onClick={this.prevElAttrs.click}
-            >
-              <this.prevElAttrs.iconComponent
-                class={this.prevElAttrs.iconClass}
-              />
-              {this.prevElAttrs.content}
-            </LinkTag>)
-          }
-        </li>
-      ) : (
-        <li aria-hidden="true">
-          <span
-            aria-disabled="true"
-            class={[
-              this.prevElAttrs.attrs.class,
-              this.style['cdr-pagination__link--disabled'],
-            ]}
-          >
-            <this.prevElAttrs.iconComponent
-              class={this.prevElAttrs.iconClass}
-              inherit-color
-            />
-            {this.prevElAttrs.content}
-          </span>
-        </li>
-      );
-    },
-    nextElAttrs() {
-      const nextPageData = this.pages[this.nextPageIdx];
-      return {
-        // things that we want to be able to easily bulk bind to scoped slot (for a11y, styling, etc.)
-        attrs: {
-          class: clsx(this.style['cdr-pagination__link'], this.style['cdr-pagination__next']),
-          'aria-label': 'Go to next page',
-          ref: `next-link-${this.componentID}`,
-        },
-        // The rest of this is available for binding if needed by user (i.e. optional with vue-router)
-        href: nextPageData === undefined ? null : nextPageData.url,
-        page: nextPageData === undefined ? null : nextPageData.page,
-        content: 'Next',
-        iconClass: this.style['cdr-pagination__caret--next'],
-        iconComponent: 'icon-caret-right',
-        iconPath: '#caret-right',
-        click: (e) => this.navigate(nextPageData.page, e),
-      };
-    },
-    nextEl() {
-      const LinkTag = this.linkTag;
-      return this.innerValue < this.pages[this.totalPageData - 1].page ? (
-        <li>
-          {this.$scopedSlots.nextLink
-            ? this.$scopedSlots.nextLink(this.nextElAttrs)
-            : (<LinkTag
-              {... { attrs: this.nextElAttrs.attrs }}
-              href={LinkTag === 'a' && this.nextElAttrs.href}
-              ref={this.nextElAttrs.attrs.ref}
-              onClick={this.nextElAttrs.click}
-            >
-              {this.nextElAttrs.content}
-              <this.nextElAttrs.iconComponent
-                class={this.nextElAttrs.iconClass}
-              />
-            </LinkTag>)
-          }
-
-        </li>
-      ) : (
-        <li aria-hidden="true">
-          <span
-            aria-disabled="true"
-            class={[
-              this.nextElAttrs.attrs.class,
-              this.style['cdr-pagination__link--disabled'],
-            ]}
-            >
-            {this.nextElAttrs.content}
-            <this.nextElAttrs.iconComponent
-              class={this.nextElAttrs.iconClass}
-              inherit-color
-            />
-          </span>
-        </li>
-      );
-    },
-    desktopEl() {
-      return this.paginationData.map((n) => (
-          <li
-            key={`${n}-${this.guid()}`}
-            class={this.style['cdr-pagination__li--links']}
-          >
-            {n === '&hellip;'
-              && <span
-                class={this.style['cdr-pagination__ellipse']}
-                domPropsInnerHTML={n}
-              />
-            }
-            {n !== '&hellip;' && this.renderLinkEl(n) }
-          </li>
-      ));
-    },
-    mobileEl() {
-      return (
-        <li class={this.style['cdr-pagination__li--select']}>
-          <cdr-select
-            vModel={this.innerValue}
-            label="Navigate to page"
-            hide-label
-            onChange={this.select}
-            ref={`select-${this.componentID}`}
-            id={`select-${this.componentID}`}
-          >
-            {this.paginationData.map((n) => n !== '&hellip;'
-              && (<option
-                key={`${n}-${this.guid()}`}
-                value={n.page}
-              >
-                Page { n.page }{ this.totalPages === null ? '' : ` of ${this.totalPages}` }
-              </option>))}
-          </cdr-select>
-        </li>
-      );
-    },
-  },
-  watch: {
-    pages() {
-      this.setCurrentIdx(this.innerValue);
-    },
-  },
-  beforeMount() {
-    this.setCurrentIdx(this.innerValue);
-  },
-  methods: {
-    setCurrentIdx(page) {
-      this.currentIdx = this.pages.map((x) => x.page).indexOf(page);
-    },
-    navigate(pageNum, e) {
+    const setCurrentIdx = (page) => {
+      currentIdx = pages.map((x) => x.page).indexOf(page);
+    }
+    const navigate = (pageNum, e) => {
       // Dont do anything if clicking the current active page
-      if (pageNum === this.innerValue) {
+      if (pageNum === innerValue) {
         e.preventDefault();
         return;
       }
-      this.innerValue = pageNum;
-      this.$emit('navigate', pageNum, this.currentUrl, e);
+      innerValue = pageNum;
+      ctx.emit('navigate', pageNum, currentUrl, e);
 
-      this.$nextTick(() => {
+      nextTick(() => {
         // Done in a nextTick() to ensure rendering complete
         try {
           // Emulate native link click page reloading behaviour by blurring the
@@ -352,70 +243,133 @@ export default {
           console.error(err);
         }
       });
-    },
-    select(page, e) {
+    }
+    const select = (page, e) => {
       e.preventDefault();
-      if (this.$scopedSlots.link) {
-        const ref = this.$scopedSlots.link()[0].context.$refs[`page-link-${page}-${this.componentID}`]; // eslint-disable-line max-len
+      // TODO: how to tell if slot is scoped or not??????????
+      // how is this code so weird :( why did we do this :|
+      // can we just drop support for this mess o_o
+      if ($scopedSlots.link) {
+        const ref = $scopedSlots.link()[0].context.$refs[`page-link-${page}-${componentID}`]; // eslint-disable-line max-len
         if (ref.$el) { // it's a component (like vue-router)
           ref.$el.click();
         } else { // it's standard markup
           ref.click();
         }
       } else {
-        this.$refs[`page-link-${page}-${this.componentID}`].click();
+        $refs[`page-link-${page}-${componentID}`].click();
       }
-    },
-    guid() {
-      function s4() {
-        return Math.floor((1 + Math.random()) * 0x10000)
-          .toString(16)
-          .substring(1);
+    }
+
+    const innerValue = computed({
+      get: () => modelValue,
+      set: val => {
+        setCurrentIdx(val);
+        ctx.emit('update:modelValue', val);
       }
-      return `${s4()}${s4()}-${s4()}-${s4()}-${s4()}-${s4()}${s4()}${s4()}`;
-    },
-    renderLinkEl(n) {
-      const linkData = {
+    });
+
+    const currentUrl = computed(() => pages[currentIdx].url);
+    const prevPageIdx = computed(() => currentIdx - 1);
+    const nextPageIdx = computed(() => currentIdx + 1);
+    const ariaLabel = computed(() => forLabel || 'Pagination');
+    const prevElAttrs = computed(() => {
+      const prevPageData = pages[prevPageIdx];
+      return {
         // things that we want to be able to easily bulk bind to scoped slot (for a11y, styling, etc.)
         attrs: {
-          class: clsx(this.style['cdr-pagination__link'], { current: n.page === this.innerValue }),
-          'aria-label': n.page === this.innerValue
-            ? `Current page, page ${n.page}`
-            : `Go to page ${n.page}`,
-          'aria-current': n.page === this.innerValue ? 'page' : null,
-          ref: `page-link-${n.page}-${this.componentID}`,
+          // TODO: how to pass mappedClasses to scoped slot????
+          class: ['cdr-pagination__link', 'cdr-pagination__prev'],
+          'aria-label': 'Go to previous Page',
+          ref: `prev-link-${componentID}`,
         },
         // The rest of this is available for binding if needed by user (i.e. optional with vue-router)
-        href: n.url,
-        click: (e) => this.navigate(n.page, e),
-        page: n.page,
-        content: n.page,
+        href: prevPageData === undefined ? null : prevPageData.url,
+        page: prevPageData === undefined ? null : prevPageData.page,
+        content: 'Prev',
+        iconClass: 'cdr-pagination__caret--prev',
+        iconComponent: 'icon-caret-left',
+        iconPath: '#caret-left',
+        click: (e) => navigate(prevPageData.page, e),
       };
+    });
+    const nextElAttrs = computed(() => {
+      const nextPageData = pages[nextPageIdx];
+      return {
+        // things that we want to be able to easily bulk bind to scoped slot (for a11y, styling, etc.)
+        attrs: {
+          class: ['cdr-pagination__link', 'cdr-pagination__next'],
+          'aria-label': 'Go to next page',
+          ref: `next-link-${componentID}`,
+        },
+        // The rest of this is available for binding if needed by user (i.e. optional with vue-router)
+        href: nextPageData === undefined ? null : nextPageData.url,
+        page: nextPageData === undefined ? null : nextPageData.page,
+        content: 'Next',
+        iconClass: 'cdr-pagination__caret--next',
+        iconComponent: 'icon-caret-right',
+        iconPath: '#caret-right',
+        click: (e) => navigate(nextPageData.page, e),
+      };
+    });
 
-      const LinkTag = this.linkTag;
-      return (this.$scopedSlots.link ? this.$scopedSlots.link(linkData)
-        : <LinkTag
-          {... { attrs: linkData.attrs } }
-          href={LinkTag === 'a' && linkData.href}
-          onClick={linkData.click}
-          ref={linkData.attrs.ref}
-        >{ linkData.content }</LinkTag>
-      );
-    },
+    const paginationData = computed(() => {
+      const total = pages.length;
+      const current = innerValue;
+      const delta = 1;
+      let range = [];
+      let over5 = true;
+      let over5remain = true;
+
+      if (total <= 7) {
+        // all pages
+        return pages;
+      }
+
+      if (current < 5) {
+      // if first 5 pages
+        over5 = false;
+        // [2-5]
+        range = pages.slice(1, 5);
+      } else if (total - current < 4) {
+      // if last 5 pages
+        over5remain = false;
+        range = pages.slice(-5, -1);
+      } else {
+      // else in between
+        for (
+          let i = Math.max(2, current - delta);
+          i <= Math.min(total - 1, current + delta);
+          i += 1
+        ) {
+          range.push(pages[i - 1]);
+        }
+      }
+
+      if ((current - delta > 2) && over5) {
+        range.unshift('&hellip;');
+      }
+      if ((current + delta < total - 1) && over5remain) {
+        range.push('&hellip;');
+      }
+
+      range.unshift(pages[0]);
+      range.push(pages[total - 1]);
+
+      return range;
+    });
+
+    setCurrentIdx(innerValue);
+
+    watchEffect((pages) => setCurrentIdx(innerValue))
+
+    return {
+      baseClass,
+      componentID,
+      currentIdx,
+    };
   },
-  render() {
-    return (
-      <nav aria-label={this.ariaLabel}>
-        <ol class={this.style['cdr-pagination']}>
-          {this.prevEl}
-          {this.desktopEl}
-          {this.mobileEl}
-          {this.nextEl}
-        </ol>
-      </nav>
-    );
-  },
-};
+});
 
 </script>
 
