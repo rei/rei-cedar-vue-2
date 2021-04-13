@@ -1,29 +1,28 @@
 <template>
-  <div class={clsx(
-    this.style['cdr-tooltip--wrapper'],
-    this.$slots.trigger ? this.style['cdr-tooltip--position'] : '',
-  )}>
-    <div ref="trigger">
-      { this.$slots.trigger }
+  <div :class="mapClasses(
+    $style, 'cdr-tooltip--wrapper', hasTrigger && 'cdr-tooltip--position'
+  )">
+    <div :ref="triggerEl">
+      <slot name="trigger" />
     </div>
     <cdr-popup
-      class={this.style['cdr-tooltip']}
-      contentClass={ this.contentClass }
+      :class="$style['cdr-tooltip']"
+      :contentClass="contentClass"
       role="tooltip"
-      ref="popup"
-      position={ this.position }
-      autoPosition={ this.autoPosition }
-      opened={ this.isOpen }
-      id={this.id}
-      onClosed={ this.closeTooltip }
+      :ref="popupEl"
+      :position="position"
+      :autoPosition="autoPosition"
+      :opened="isOpen"
+      :id="id"
+      :onClosed="closeTooltip"
     >
-      { this.$slots.default }
+      <slot />
     </cdr-popup>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from 'vue';
+import { defineComponent, computed, ref, watchEffect, onMounted } from 'vue';
 import CdrPopup from '../popup/CdrPopup';
 import propValidator from '../../utils/propValidator';
 import { buildClass } from '../../utils/buildClass';
@@ -61,61 +60,57 @@ export default defineComponent({
       required: false,
     },
   },
-  data() {
-    return {
-      style,
-      isOpen: false,
-      openHandler: undefined,
-      closeHandler: undefined,
-      timeout: undefined,
-    };
-  },
-  watch: {
-    open() {
-      if (this.open) {
-        this.openTooltip();
-      } else {
-        this.closeTooltip();
-      }
-    },
-  },
-  mounted() {
-    this.addHandlers();
-    const trigger = this.$refs.trigger.children[0];
-    if (trigger) trigger.setAttribute('aria-describedby', this.id);
-  },
-  methods: {
-    openTooltip(e) {
+  setup(props, ctx) {
+    const baseClass = 'cdr-popup';
+
+    const isOpen = ref(false);
+    const openHandler = ref(undefined);
+    const closeHandler = ref(undefined);
+    const timeout = ref(undefined);
+
+    const popupEl = ref(null);
+    const triggerEl = ref(null);
+
+    const hasTrigger = ctx.slots.trigger;
+// https://v3.vuejs.org/guide/migration/emits-option.html#overview
+    const openTooltip = (e) => {
       if (this.timeout) clearTimeout(this.timeout);
       this.isOpen = true;
       this.$emit('opened', e);
-    },
-    closeTooltip(e) {
+    }
+    const closeTooltip = (e) => {
       this.timeout = setTimeout(() => {
         this.isOpen = false;
         this.$emit('closed', e);
       }, 250);
-    },
-    addHandlers() {
-      this.openHandler = this.openTooltip.bind(this);
-      this.closeHandler = this.closeTooltip.bind(this);
+    }
+    const addHandlers = () => {
 
-      const triggerElement = this.$refs.trigger.children[0];
-      const popupElement = this.$refs.popup.$el;
+      const triggerElement = triggerEl.children[0];
+      const popupElement = popupEl;
       if (triggerElement) {
-        triggerElement.addEventListener('mouseover', this.openHandler);
-        triggerElement.addEventListener('focus', this.openHandler);
+        triggerElement.addEventListener('mouseover', openTooltip);
+        triggerElement.addEventListener('focus', openTooltip);
 
-        triggerElement.addEventListener('mouseleave', this.closeHandler);
-        triggerElement.addEventListener('blur', this.closeHandler);
+        triggerElement.addEventListener('mouseleave', closeTooltip);
+        triggerElement.addEventListener('blur', closeTooltip);
 
-        popupElement.addEventListener('mouseover', this.openHandler);
-        popupElement.addEventListener('mouseleave', this.closeHandler);
+        popupElement.addEventListener('mouseover', openTooltip);
+        popupElement.addEventListener('mouseleave', closeTooltip);
       }
-    },
-  },
-  setup(props) {
-    const baseClass = 'cdr-popup';
+    }
+
+    watchEffect((props.open) => {
+      // TODO: if eslint yells about this then eslint must go :)
+      props.open ? openTooltip() : closeTooltip();
+    })
+
+    onMounted(() => {
+      addHandlers();
+      const trigger = triggerEl.children[0];
+      if (trigger) trigger.setAttribute('aria-describedby', props.id);
+    })
+
     return {
     };
   },
