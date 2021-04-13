@@ -168,21 +168,21 @@
     <cdr-input
       class="demo-input"
       v-model="helperValidationModel"
-      placeholder=""
+      placeholder="errors"
       :error="helperValidationError"
       @blur="validate"
-      label="Top helper with validation"
+      label="Top helper with status validation"
       :background="backgroundColor"
+      aria-describedby="myHelpText errorMessage"
     >
       <template slot="helper-text-top">
-        Must be 4 or less characters
+        <span id="myHelpText">Must be 4 or less characters</span>
       </template>
 
       <template
         slot="error"
-        v-if="helperValidationError"
       >
-        ERROR ERROR
+        <span id="errorMessage">you have added too many characters, remove some</span>
       </template>
 
       <template slot="info">
@@ -200,21 +200,25 @@
       :required="true"
       v-model="megaModel"
       :error="megaErr"
-      label="Everything at the same time"
+      error-role="alert"
+      id="inputWithError"
+      label="Everything at the same time, alert validation"
       @blur="megaErr = false"
       size="large"
+      aria-describedby="topHelp bottomHelp errorMessage"
     >
       <icon-map slot="pre-icon" />
       <template slot="helper-text-top">
-        Hey im on top of the input!
+        <span id="topHelp">Hey im on top of the input!</span>
       </template>
       <template slot="helper-text-bottom">
-        Hey im below the input!
+        <span id="bottomHelp">Hey im below the input!</span>
       </template>
       <template slot="info">
         <cdr-link
           href="#baz"
           modifier="standalone"
+          aria-describedby="inputWithError"
         >
           Hey im also on top of the input!
         </cdr-link>
@@ -236,7 +240,7 @@
           <cdr-button
             slot="trigger"
             :icon-only="true"
-            @click="megaErr = 'An error has occurred please fix it'"
+            @click="megaErr = 'you have five minutes to fix this'"
             size="large"
             aria-label="Click me to cause an error"
           >
@@ -334,7 +338,7 @@ export default {
       hiddenModel: '',
       disabledModel: '',
       helperValidationModel: '',
-      helperValidationError: false,
+      helperValidationError: true,
       requiredWithIcons: '',
       multiRowModel: '',
       sizeModel: '',
