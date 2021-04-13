@@ -1,28 +1,30 @@
 <template>
-  <div class={clsx(
-    this.style['cdr-popup'],
-    this.openClass,
-    this.exitingClass,
-    this.positionClass,
-    this.cornerClass,
-    this.closedClass,
-  )}
+  <div
+    :ref="rootEl"
+    :class="mapClasses(
+      $style,
+      baseClass,
+      openClass,
+      exitingClass,
+      positionClass,
+      cornerClass,
+      closedClass,
+    )"
   >
     <div
-      class={clsx(this.style['cdr-popup__content'], this.contentClass)}
-      ref="popup"
-      {... { attrs: this.$attrs } }
+      v-bind="$attrs"
+      :class="mapClasses($style, 'cdr-popup__content', contentClass)"
+      :ref="popupEl"
     >
-      { this.$slots.default }
+      <slot />
     </div>
-    <div class={this.style['cdr-popup__arrow']}/>
+    <div :class="$style['cdr-popup__arrow']"/>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from 'vue';
+import { defineComponent, computed, ref, watchEffect, nextTick, onMounted, onUnmounted } from 'vue';
 import debounce from 'lodash-es/debounce';
-import propValidator from '../../utils/propValidator';
 import propValidator from '../../utils/propValidator';
 import { buildClass } from '../../utils/buildClass';
 
@@ -51,99 +53,69 @@ export default defineComponent({
       type: String,
     },
   },
-  data() {
-    return {
-      style,
-      keyHandler: undefined,
-      clickHandler: undefined,
-      resizeHandler: undefined,
-      pos: this.position,
-      corner: undefined,
-      exiting: false,
-      popupRect: undefined,
-      closed: !this.opened,
-    };
-  },
-  computed: {
-    positionClass() {
-      return this.opened || this.exiting ? this.style[`cdr-popup--${this.pos}`] : undefined;
-    },
-    cornerClass() {
-      return this.corner ? this.style[`cdr-popup--corner-${this.corner}`] : undefined;
-    },
-    openClass() {
-      return this.opened ? this.style['cdr-popup--open'] : undefined;
-    },
-    closedClass() {
-      return this.closed && !this.exiting ? this.style['cdr-popup--closed'] : undefined;
-    },
-    exitingClass() {
-      return this.exiting ? this.style['cdr-popup--exit'] : undefined;
-    },
-  },
-  watch: {
-    position() {
-      this.pos = this.position;
-    },
-    opened(newValue, oldValue) {
-      if (!!newValue === !!oldValue) return;
-      if (newValue) {
-        this.handleOpened();
-      } else {
-        this.handleClosed();
-      }
-    },
-  },
-  mounted() {
-    this.measurePopup();
+  setup(props, ctx) {
+    const baseClass = 'cdr-popup';
 
-    this.resizeHandler = this.handleResize.bind(this);
-    window.addEventListener('resize', this.resizeHandler);
-  },
-  destroyed() {
-    document.removeEventListener('keydown', this.keyHandler);
-    document.removeEventListener('click', this.clickHandler);
-    window.removeEventListener('resize', this.resizeHandler);
-  },
-  methods: {
-    closePopup(e) {
-      this.$emit('closed', e);
-    },
-    handleKeyDown(e) {
+    const keyHandler = ref(undefined);
+    const clickHandler = ref(undefined);
+    const resizeHandler = ref(undefined); // NOT NEEDED?
+    const pos = ref(props.position);
+    const corner = ref(undefined);
+    const exiting = ref(false);
+    const popupRect = ref(undefined);
+    const closed = ref(!props.opened);
+
+    const popupEl = ref(null);
+    const rootEl = ref(null);
+
+    const positionClass = computed(() => props.opened || exiting ? `cdr-popup--${pos}` : undefined);
+    const cornerClass = computed(() => corner ? `cdr-popup--corner-${corner}` : undefined);
+    const openClass = computed(() => props.opened ? 'cdr-popup--open' : undefined);
+    const closedClass = computed(() => closed && !exiting ? 'cdr-popup--closed' : undefined);
+    const exitingClass = computed(() => exiting ? 'cdr-popup--exit' : undefined);
+
+    const closePopup = (e) => {
+      ctx.emit('closed', e);
+    }
+
+    const handleKeyDown = (e) => {
       switch (e.key) {
         case 'Escape':
         case 'Esc':
-          this.closePopup(e);
+          closePopup(e);
           break;
         default: break;
       }
-    },
-    handleClick(e) {
-      this.$nextTick(() => {
-        if (e.target !== this.$refs.popup && !this.$refs.popup.contains(e.target)) {
-          this.closePopup(e);
+    }
+
+    const handleClick = (e) => {
+      nextTick(() => {
+        if (e.target !== popup && !popup.contains(e.target)) {
+          closePopup(e);
         }
       });
-    },
-    handleResize() {
+    }
+
+    const handleResize = () => {
       debounce(() => {
-        this.measurePopup();
+        measurePopup();
       }, 300);
-    },
-    addHandlers() {
-      this.keyHandler = this.handleKeyDown.bind(this);
-      document.addEventListener('keydown', this.keyHandler);
-      this.clickHandler = this.handleClick.bind(this);
-      document.addEventListener('click', this.clickHandler);
-    },
-    measurePopup() {
-      this.closed = false;
-      this.$nextTick(() => {
-        this.popupRect = this.$refs.popup.getBoundingClientRect();
-        this.closed = true;
+    }
+
+    const addHandlers = () => {
+      document.addEventListener('keydown', handleKeyDown);
+      document.addEventListener('click', handleClick);
+    }
+
+    const measurePopup = () => {
+      closed = false;
+      nextTick(() => {
+        popupRect = popup.getBoundingClientRect();
+        closed = true;
       });
-    },
-    calculatePlacement(triggerRect, popupRect, screenWidth, screenHeight) {
+    }
+
+    const calculatePlacement = (triggerRect, popupRect, screenWidth, screenHeight) => {
       const offset = 14; // 10px for arrow 4px for spacing
       const borderSize = 2; // need to include border for corner calculations
       const triggerCenterY = triggerRect.top + (triggerRect.height / 2);
@@ -170,7 +142,7 @@ export default defineComponent({
         right: 'left',
       };
 
-      const inverse = invert[this.position];
+      const inverse = invert[props.position];
       const validDirs = Object.keys(dirs).filter((dir) => dirs[dir] > 0);
       const sortedDirs = Object.keys(dirs).sort((a, b) => {
         if (dirs[a] > dirs[b]) {
@@ -181,62 +153,84 @@ export default defineComponent({
         return 0;
       });
 
-      if (dirs[this.position] > 0) {
+      if (dirs[props.position] > 0) {
         // selected position is valid, or no positions are valid
-        this.pos = this.position;
+        pos = props.position;
       } else if (dirs[inverse] > 0) {
         // inverted position is valid
-        this.pos = inverse;
+        pos = inverse;
       } else if (validDirs.length) {
         // try the angles
-        [this.pos] = validDirs;
+        [pos] = validDirs;
       } else {
         // use whichever direction has the most space
-        [this.pos] = sortedDirs;
+        [pos] = sortedDirs;
       }
 
-      if (this.pos === 'bottom' || this.pos === 'top') {
+      if (pos === 'bottom' || pos === 'top') {
         if (corners.left) {
-          this.corner = 'left';
+          corner = 'left';
         } else if (corners.right) {
-          this.corner = 'right';
+          corner = 'right';
         }
       } else if (corners.top) {
-        this.corner = 'top';
+        corner = 'top';
       } else if (corners.bottom) {
-        this.corner = 'bottom';
+        corner = 'bottom';
       }
-    },
-    handleOpened() {
-      this.closed = false;
-      this.pos = this.position;
-      this.corner = undefined;
+    }
 
-      if (this.autoPosition) {
-        this.$nextTick(() => {
-          const triggerRect = this.$el.parentElement.getBoundingClientRect();
-          const { popupRect } = this;
+    const handleOpened = () => {
+      closed = false;
+      pos = props.position;
+      corner = undefined;
+
+      if (props.autoPosition) {
+        nextTick(() => {
+          // TODO: how to get $el?????
+          const triggerRect = rootEl.parentElement.getBoundingClientRect();
           const { innerHeight, innerWidth } = window;
-          this.calculatePlacement(triggerRect, popupRect, innerWidth, innerHeight);
+          calculatePlacement(triggerRect, popupRect, innerWidth, innerHeight);
         });
       }
 
       setTimeout(() => {
-        this.addHandlers();
+        addHandlers();
       }, 1);
-    },
-    handleClosed() {
-      this.closed = true;
-      document.removeEventListener('keydown', this.keyHandler);
-      document.removeEventListener('click', this.clickHandler);
-      this.exiting = true;
+    }
+
+    const handleClosed = () => {
+      closed = true;
+      document.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('click', handleClick);
+      exiting = true;
       setTimeout(() => {
-        this.exiting = false;
+        exiting = false;
       }, 200); // $cdr-duration-2;
-    },
-  },
-  setup(props) {
-    const baseClass = 'cdr-popup';
+    }
+
+    watchEffect((props.position) => pos = props.position);
+    watchEffect((props.opened) => {
+      // if (!!newValue === !!oldValue) return;
+      // TODO: watchEffect doesnt run unless it changes???? might need to use `watch`
+      if (props.opened) {
+        handleOpened();
+      } else {
+        handleClosed();
+      }
+    });
+
+    onMounted(() => {
+      measurePopup();
+      // resizeHandler = handleResize.bind(this); TODO: bind this?
+      window.addEventListener('resize', handleResize);
+    });
+    onUnmounted(() => {
+      document.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('click', handleClick);
+      window.removeEventListener('resize', handleResize);
+    });
+
     return {
     };
   },
