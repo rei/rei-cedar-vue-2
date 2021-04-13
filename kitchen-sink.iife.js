@@ -25609,7 +25609,7 @@ var cedar = (function () {
         required: false,
         default: true
       },
-      ariaDescribedbBy: {
+      ariaDescribedby: {
         type: String,
         required: false,
         default: null
@@ -25646,7 +25646,7 @@ var cedar = (function () {
     computed: {
       dialogAttrs() {
         return {
-          'aria-describedby': this.ariaDescribedBy,
+          'aria-describedby': this.ariaDescribedby,
           'aria-modal': 'true',
           id: this.id
         };
