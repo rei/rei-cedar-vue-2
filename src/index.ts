@@ -3,9 +3,9 @@
 // export { default as CdrAccordionGroup } from './components/accordion/CdrAccordionGroup';
 export { default as CdrAlert } from './components/alert/CdrAlert';
 // export { default as CdrBreadcrumb } from './components/breadcrumb/CdrBreadcrumb';
-// export { default as CdrButton } from './components/button/CdrButton';
-// export { default as CdrCaption } from './components/caption/CdrCaption';
-// export { default as CdrCard } from './components/card/CdrCard';
+export { default as CdrButton } from './components/button/CdrButton';
+export { default as CdrCaption } from './components/caption/CdrCaption';
+export { default as CdrCard } from './components/card/CdrCard';
 // export { default as CdrCheckbox } from './components/checkbox/CdrCheckbox';
 // export { default as CdrChip } from './components/chip/CdrChip';
 // export { default as CdrChipGroup } from './components/chip/CdrChipGroup';

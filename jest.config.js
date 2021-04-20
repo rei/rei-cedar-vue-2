@@ -34,7 +34,7 @@ const config = {
 
     // '<rootDir>/src/components/caption',
 
-    '<rootDir>/src/components/card',
+    // '<rootDir>/src/components/card',
 
     '<rootDir>/src/components/checkbox',
 
