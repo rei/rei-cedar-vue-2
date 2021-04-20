@@ -1,6 +1,7 @@
 import { mount } from '../../../../test/vue-jest-style-workaround.js';
-import { h } from 'vue';
 import CdrAlert from 'componentdir/alert/CdrAlert';
+// TODO: pass array to h function to test proper usage?
+// import { h } from 'vue';
 // import IconCheckFill from 'componentdir/icon/comps/check-fill';
 describe('CdrAlert', () => {
   it('matches snapshot', () => {
