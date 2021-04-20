@@ -1,38 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CdrIcon accepts full SVG in slot 1`] = `
-<svg
-  aria-hidden="true"
-  class="my-custom-class cdr-icon"
-  data-test="testing"
-  viewBox="0 0 24 24"
-  xmlns="http://www.w3.org/2000/svg"
->
-  <path
-    d="M10 13v1h3.996v2H10v1a4 4 0 11-7.853-1.085l1.795-8.93.093-.442A3 3 0 0110 7v4h3.997V7a3 3 0 015.965-.456l.093.442 1.795 8.93A4.003 4.003 0 0117.998 21a4 4 0 01-4-4v-4H10zm9.296.214l-1.308-6.38a1.01 1.01 0 00-.99-.835 1 1 0 00-1 1v6.536a4.016 4.016 0 013.299-.321zm-14.6 0c.408-.14.844-.215 1.298-.215.73 0 1.413.195 2.002.536V7a1 1 0 00-1-1 1.01 1.01 0 00-.99.836l-1.31 6.38zM18 19a2 2 0 100-4 2 2 0 000 4zM6.011 19a2 2 0 100-4 2 2 0 000 4z"
-  />
-</svg>
-`;
-
 exports[`CdrIcon renders correctly 1`] = `
 <svg
   aria-hidden="true"
-  class="cdr-icon"
+  class="cdr-icon cdr-icon--medium"
   viewBox="0 0 24 24"
   xmlns="http://www.w3.org/2000/svg"
-/>
+>
+  
+  
+  <!-- &lt;use
+      v-if="use"
+      :href="use"
+      :xlinkHref="use"
+    /&gt; -->
+</svg>
 `;
 
 exports[`CdrIcon renders correctly for single icon component 1`] = `
 <svg
   aria-hidden="true"
-  class="cdr-icon"
+  class="cdr-icon cdr-icon--medium"
   viewBox="0 0 24 24"
   xmlns="http://www.w3.org/2000/svg"
 >
+  
+  
+  
   <path
     d="M12 16c.273 0 .521-.11.702-.288l5.005-5.005a1 1 0 00-1.414-1.414L12 13.586 7.705 9.29a1 1 0 00-1.412 1.417l4.98 4.98c.182.193.44.313.727.313z"
     role="presentation"
   />
+  
+  <!-- &lt;use
+      v-if="use"
+      :href="use"
+      :xlinkHref="use"
+    /&gt; -->
 </svg>
 `;

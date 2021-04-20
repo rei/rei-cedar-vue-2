@@ -1,25 +1,25 @@
 <template>
   <svg
     v-bind="dataObj"
-    :class="[$style[baseClass], $style[sizeClass], $style[inheritColorClass]]"
+    :class="mapClasses($style, baseClass, sizeClass, inheritColorClass)"
   >
     <slot />
-    <use
+    <!-- <use
       v-if="use"
       :href="use"
       :xlinkHref="use"
-    />
+    /> -->
   </svg>
 </template>
 <script lang="ts">
 import { defineComponent, computed } from 'vue';
 
 import { buildClass } from '../../utils/buildClass';
+import mapClasses from '../../utils/mapClasses';
 import propValidator from '../../utils/propValidator';
 
 export default defineComponent({
   name: 'CdrIcon',
-  // mixins: [size],
   props: {
     /**
     * The href attribute passed to the use element. Will be prefixed with # automatically
@@ -43,19 +43,22 @@ export default defineComponent({
     const hideSr = !ctx.attrs['aria-label'] && !ctx.attrs['aria-labelledby'];
     const inheritColorClass = computed(() => props.inheritColor
       && buildClass(baseClass, 'inherit-color'));
-    const sizeClass = computed(() => props.size && buildClass('cdr-icon', props.size));
+    const sizeClass = computed(() => buildClass('cdr-icon', props.size));
+    const dataObj = {
+      xmlns: 'http://www.w3.org/2000/svg',
+      viewBox: '0 0 24 24',
+    }
+    if (hideSr) dataObj['aria-hidden'] = true;
     return {
       baseClass,
       inheritColorClass,
       sizeClass,
-
-      dataObj: {
-        xmlns: 'http://www.w3.org/2000/svg',
-        viewBox: '0 0 24 24',
-        'aria-hidden': hideSr,
-      },
+      mapClasses,
+      dataObj,
     };
   },
 });
-</script><style lang="scss" module src="./styles/CdrIcon.scss">
+</script>
+
+<style lang="scss" module src="./styles/CdrIcon.scss">
 </style>
