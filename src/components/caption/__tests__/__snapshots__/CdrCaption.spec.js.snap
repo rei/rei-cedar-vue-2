@@ -9,7 +9,9 @@ exports[`CdrCaption renders correctly 1`] = `
   >
     This is a summary
   </p>
-  <cite>
+  <cite
+    class="cdr-caption__cite"
+  >
     This is a credit
   </cite>
 </div>

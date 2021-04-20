@@ -32,7 +32,7 @@ const config = {
 
     // '<rootDir>/src/components/button',
 
-    '<rootDir>/src/components/caption',
+    // '<rootDir>/src/components/caption',
 
     '<rootDir>/src/components/card',
 
