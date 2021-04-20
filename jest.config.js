@@ -30,7 +30,7 @@ const config = {
 
     '<rootDir>/src/components/breadcrumb',
 
-    '<rootDir>/src/components/button',
+    // '<rootDir>/src/components/button',
 
     '<rootDir>/src/components/caption',
 

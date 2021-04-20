@@ -25,8 +25,8 @@ describe('CdrButton', () => {
   it('click function triggers correctly', () => {
     const spy = sinon.spy();
     const wrapper = shallowMount(CdrButton, {
-      listeners: {
-        click: spy
+      attrs: {
+        onClick: spy
       },
     });
     wrapper.trigger('click');
@@ -50,12 +50,12 @@ describe('CdrButton', () => {
         iconOnly: true,
       },
     });
-    expect(wrapper.vm.buttonSizeClass).toBe('cdr-button--icon-only-large');
+    expect(wrapper.vm.sizeClass).toBe('cdr-button--icon-only-large');
   })
 
   it('does not add icon class when slot is unused', () => {
     const wrapper = shallowMount(CdrButton);
-    expect(wrapper.vm.iconClass).toBe('');
+    expect(wrapper.vm.iconClass).toBe(undefined);
   });
 
   it('adds class for icon only', () => {
@@ -73,7 +73,7 @@ describe('CdrButton', () => {
     const wrapper = shallowMount(CdrButton, {
       slots: {
         default: [ 'default slot for text' ],
-        icon: '<div />',
+        'icon-left': '<div />',
       },
     });
 

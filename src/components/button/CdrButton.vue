@@ -1,18 +1,18 @@
 <template>
   <component
     :is="tag"
-    :class="[
-      $style[baseClass],
-      $style[modifierClass],
-      $style[sizeClass],
-      $style[fullWidthClass],
-      $style[iconOnlyClass],
-      $style[iconLeftClass],
-      $style[iconRightClass],
-      $style[elevatedClass],
-      $style[iconOnlyClass],
-      $style[withBackgroundClass],
-    ]"
+    :class="mapClasses($style,
+      baseClass,
+      modifierClass,
+      sizeClass,
+      fullWidthClass,
+      iconOnlyClass,
+      iconLeftClass,
+      iconRightClass,
+      elevatedClass,
+      iconOnlyClass,
+      withBackgroundClass,
+    )"
     :type="buttonType"
   >
     <slot name="icon-left" />
@@ -25,6 +25,7 @@
 <script lang="ts">
 import { defineComponent, computed } from 'vue';
 
+import mapClasses from '../../utils/mapClasses';
 import { buildClass, buildBooleanClass } from '../../utils/buildClass';
 import propValidator from '../../utils/propValidator';
 
@@ -98,7 +99,6 @@ export default defineComponent({
         && buildClass(baseClass, 'has-icon-left'));
     const iconRightClass = computed(() => ctx.slots['icon-right'] && ctx.slots.default
         && buildClass(baseClass, 'has-icon-right'));
-
     const iconOnlyClass = computed(() => props.iconOnly && buildClass(baseClass, 'icon-only'));
     const withBackgroundClass = computed(() => props.iconOnly
       && props.withBackground && buildClass(baseClass, 'with-background'));
@@ -115,6 +115,7 @@ export default defineComponent({
       iconRightClass,
       elevatedClass,
       withBackgroundClass,
+      mapClasses,
     };
   },
 });

@@ -4,5 +4,12 @@ exports[`CdrButton renders correctly 1`] = `
 <button
   class="cdr-button cdr-button--primary cdr-button--medium"
   type="button"
-/>
+>
+  
+  
+  
+  
+  
+  
+</button>
 `;
