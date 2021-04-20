@@ -3,7 +3,7 @@ import process from 'process';
 import commonjs from 'rollup-plugin-commonjs';
 import alias from '@rollup/plugin-alias';
 import nodeResolve from 'rollup-plugin-node-resolve';
-import typescript from '@rollup/plugin-typescript';
+// import typescript from '@rollup/plugin-typescript';
 import postcss from 'rollup-plugin-postcss';
 import copyPlugin from 'rollup-plugin-copy';
 import vue from 'rollup-plugin-vue';
@@ -110,9 +110,9 @@ const plugins = [
       isProduction: env === 'prod',
     },
   }),
-  typescript({
-    include: 'src/components/**/*.vue'
-  }),
+  // typescript({
+  //   include: 'src/components/**/*.vue'
+  // }),
   postcss({
     config: true,
     plugins: [postcssImport({
