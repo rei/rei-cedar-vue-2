@@ -6,7 +6,7 @@ describe('CdrText', () => {
   test('renders correctly', () => {
     const wrapper = mount(CdrText, {
       slots: {
-        default: h('paragraph')
+        default: 'paragraph'
       }
     });
     expect(wrapper.element).toMatchSnapshot();

@@ -80,7 +80,7 @@ const config = {
     '<rootDir>/src/components/table',
 
     '<rootDir>/src/components/tabs',
-    '<rootDir>/src/components/text',
+    // '<rootDir>/src/components/text',
     '<rootDir>/src/components/tooltip',
 
 

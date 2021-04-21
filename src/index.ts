@@ -30,5 +30,5 @@ export { default as CdrIcon } from './components/icon/CdrIcon';
 // export { default as CdrTable } from './components/table/CdrTable';
 // export { default as CdrTabPanel } from './components/tabs/CdrTabPanel';
 // export { default as CdrTabs } from './components/tabs/CdrTabs';
-// export { default as CdrText } from './components/text/CdrText';
+export { default as CdrText } from './components/text/CdrText';
 // export { default as CdrTooltip } from './components/tooltip/CdrTooltip';
