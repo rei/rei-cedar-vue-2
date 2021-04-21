@@ -11,7 +11,7 @@ export { default as CdrCard } from './components/card/CdrCard';
 // export { default as CdrChipGroup } from './components/chip/CdrChipGroup';
 // export { default as CdrCol } from './components/flex-grid/CdrCol';
 // export { default as CdrFormGroup } from './components/formGroup/CdrFormGroup';
-// export { default as CdrGrid } from './components/grid/CdrGrid';
+export { default as CdrGrid } from './components/grid/CdrGrid';
 // export all single icon components
 export * from './components/icon/index';
 export { default as CdrIcon } from './components/icon/CdrIcon';

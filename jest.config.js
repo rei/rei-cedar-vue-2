@@ -46,7 +46,7 @@ const config = {
 
     '<rootDir>/src/components/formGroup',
 
-    '<rootDir>/src/components/grid',
+    // '<rootDir>/src/components/grid',
 
     // '<rootDir>/src/components/icon',
 

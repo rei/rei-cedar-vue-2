@@ -1,7 +1,7 @@
 <template>
   <component
     :is="tag"
-    :class="[$style[baseClass], $style[gutterClass]]"
+    :class="mapClasses($style, baseClass, gutterClass)"
   >
     <slot />
   </component>
@@ -9,6 +9,7 @@
 
 <script lang="ts">
 import { defineComponent, computed } from 'vue';
+import mapClasses from '../../utils/mapClasses';
 import propValidator from '../../utils/propValidator';
 
 export default defineComponent({
@@ -33,13 +34,13 @@ export default defineComponent({
     },
   },
   setup(props) {
-    const baseClass = 'cdr-grid-two';
+    const baseClass = 'cdr-grid';
     // TODO: buildClass refactor
     const gutterClass = computed(() => props.gutter
-      && props.gutter.split(' ').map((val) => `cdr-grid-two--gutter-${val}`).join(' '));
+      && props.gutter.split(' ').map((val) => `cdr-grid--gutter-${val}`).join(' '));
 
     return {
-
+      mapClasses,
       baseClass,
       gutterClass,
     };
@@ -48,5 +49,5 @@ export default defineComponent({
 
 </script>
 
-<style lang="scss" module src="./styles/CdrGridTwo.scss">
+<style lang="scss" module src="./styles/CdrGrid.scss">
 </style>
