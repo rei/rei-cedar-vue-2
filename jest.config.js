@@ -59,7 +59,7 @@ const config = {
     '<rootDir>/src/components/labelWrapper',
 
 
-    '<rootDir>/src/components/link',
+    // '<rootDir>/src/components/link',
 
     '<rootDir>/src/components/list',
 

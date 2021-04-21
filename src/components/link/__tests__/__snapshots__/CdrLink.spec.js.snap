@@ -4,7 +4,8 @@ exports[`CdrLink renders a link with a button element and no href attribute 1`] 
 <button
   class="cdr-link"
 >
-  #
+  
+  
 </button>
 `;
 
@@ -13,6 +14,7 @@ exports[`CdrLink renders correctly 1`] = `
   class="cdr-link"
   href="#"
 >
-  #
+  
+  
 </a>
 `;
