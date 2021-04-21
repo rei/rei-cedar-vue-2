@@ -6,14 +6,14 @@
   >
     <img
       :style="cropObject"
-      :class="[
-        $style[baseClass],
-        $style[modifierClass],
-        $style[radiusClass],
-        $style[coverWrapperClass],
-        $style[cropClass],
-        $style[coverClass],
-      ]"
+      :class="mapClasses($style, 
+        baseClass,
+        modifierClass,
+        radiusClass,
+        coverWrapperClass,
+        cropClass,
+        coverClass,
+      )"
       :src="src"
       :alt="alt"
       v-bind="$attrs"
@@ -21,18 +21,20 @@
   </div>
   <img
     v-else
-    :class="[
-      $style[baseClass],
-      $style[modifierClass],
-      $style[radiusClass],
-    ]"
+    :class="mapClasses($style,
+      baseClass,
+      modifierClass,
+      radiusClass,
+    )"
     :src="src"
     :alt="alt"
+    v-bind="$attrs"
   >
 </template>
 <script lang="ts">
 import { defineComponent, computed } from 'vue';
 
+import mapClasses from '../../utils/mapClasses';
 import { buildClass } from '../../utils/buildClass';
 import propValidator from '../../utils/propValidator';
 
@@ -101,7 +103,7 @@ export default defineComponent({
   },
 
   setup(props) {
-    const baseClass = 'cdr-img';
+    const baseClass = 'cdr-image';
     const ratioClass = 'cdr-image-ratio';
     const coverWrapperClass = 'cdr-image-ratio__cover';
     const modifierClass = computed(() => buildClass(baseClass, props.modifier));
@@ -132,7 +134,7 @@ export default defineComponent({
       ratioPct,
       cropClass,
       coverClass,
-
+      mapClasses,
     };
   },
 });

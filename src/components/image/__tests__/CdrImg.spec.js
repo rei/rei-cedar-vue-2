@@ -65,9 +65,7 @@ describe('CdrImg', () => {
     const wrapper = shallowMount(CdrImg, {
       propsData: {
         src: 'localhost:8000/nothing-to-see-here.png',
-      },
-      listeners: {
-        error: spy
+        onError: spy,
       }
     });
     wrapper.find('img').trigger('error');
@@ -81,9 +79,7 @@ describe('CdrImg', () => {
       propsData: {
         src: 'localhost:8000/nothing-to-see-here.png',
         ratio: 'square',
-      },
-      listeners: {
-        error: spy
+        onError: spy
       }
     });
     wrapper.find('img').trigger('error');
