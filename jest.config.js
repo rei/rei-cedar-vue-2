@@ -40,8 +40,6 @@ const config = {
 
     '<rootDir>/src/components/chip',
 
-    '<rootDir>/src/components/flex-grid',
-
     '<rootDir>/src/components/formError',
 
     '<rootDir>/src/components/formGroup',
@@ -61,7 +59,7 @@ const config = {
 
     // '<rootDir>/src/components/link',
 
-    '<rootDir>/src/components/list',
+    // '<rootDir>/src/components/list',
 
     '<rootDir>/src/components/modal',
     '<rootDir>/src/components/pagination',
