@@ -69,7 +69,7 @@ const config = {
     '<rootDir>/src/components/popup',
 
 
-    '<rootDir>/src/components/quote',
+    // '<rootDir>/src/components/quote',
 
     '<rootDir>/src/components/radio',
 

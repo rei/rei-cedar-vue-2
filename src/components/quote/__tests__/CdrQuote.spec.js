@@ -12,4 +12,15 @@ describe('CdrQuote', () => {
     });
     expect(wrapper.element).toMatchSnapshot();
   });
+
+  it('renders pullquote correctly', () => {
+    const wrapper = mount(CdrQuote, {
+      propsData: {
+        summary: 'This is the pull summary',
+        citation: 'This is the pull citation',
+        modifier: 'pull'
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
 });

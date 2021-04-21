@@ -1,10 +1,10 @@
 <template>
   <component
     :is="tag"
-    :class="baseClass"
+    :class="mapClasses($style, baseClass, modifierClass)"
   >
     <p
-      :class="summaryClass"
+      :class="$style[summaryClass]"
       v-if="summary"
     >
       {{ summary }}
@@ -12,7 +12,7 @@
     <slot />
     <cite
       v-if="citation"
-      :class="citationClass"
+      :class="$style[citationClass]"
       tag="cite"
     >
       {{ citation }}
@@ -22,7 +22,7 @@
 
 <script lang="ts">
 import { defineComponent, computed } from 'vue';
-
+import mapClasses from '../../utils/mapClasses';
 import { buildClass } from '../../utils/buildClass';
 import propValidator from '../../utils/propValidator';
 
@@ -48,6 +48,7 @@ export default defineComponent({
     const baseClass = 'cdr-quote';
     const modifierClass = computed(() => buildClass(baseClass, props.modifier));
     return {
+      mapClasses,
       baseClass,
       modifierClass,
       summaryClass: 'cdr-quote__summary',

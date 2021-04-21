@@ -9,10 +9,33 @@ exports[`CdrQuote renders correctly 1`] = `
   >
     This is the summary
   </p>
+  
+  
   <cite
-    class="cdr-text"
+    class="cdr-quote__citation"
+    tag="cite"
   >
     This is the citation
   </cite>
 </aside>
+`;
+
+exports[`CdrQuote renders pullquote correctly 1`] = `
+<blockquote
+  class="cdr-quote cdr-quote--pull"
+>
+  <p
+    class="cdr-quote__summary"
+  >
+    This is the pull summary
+  </p>
+  
+  
+  <cite
+    class="cdr-quote__citation"
+    tag="cite"
+  >
+    This is the pull citation
+  </cite>
+</blockquote>
 `;

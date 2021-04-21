@@ -22,7 +22,7 @@ export { default as CdrIcon } from './components/icon/CdrIcon';
 // export { default as CdrModal } from './components/modal/CdrModal';
 // export { default as CdrPagination } from './components/pagination/CdrPagination';
 // export { default as CdrPopover } from './components/popover/CdrPopover';
-// export { default as CdrQuote } from './components/quote/CdrQuote';
+export { default as CdrQuote } from './components/quote/CdrQuote';
 // export { default as CdrRadio } from './components/radio/CdrRadio';
 // export { default as CdrRating } from './components/rating/CdrRating';
 // export { default as CdrRow } from './components/flex-grid/CdrRow';
