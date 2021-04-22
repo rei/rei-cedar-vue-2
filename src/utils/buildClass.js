@@ -57,7 +57,7 @@ const buildBooleanClass = (baseClass, prop, name) => {
     return prop && modifyClassName(baseClass, name);
   }
 
-  return buildClass(baseClass, prop, true);
+  return responsiveModifyClass(baseClass, name, prop);
 };
 
 export {

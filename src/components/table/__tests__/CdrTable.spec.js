@@ -1,35 +1,40 @@
-import { shallowMount } from '../../../../test/vue-jest-style-workaround.js';
+import { mount } from '../../../../test/vue-jest-style-workaround.js';
+import { h } from 'vue';
 import CdrTable from 'componentdir/table/CdrTable';
 
-const basicContent = `<thead>
-  <tr>
-    <th>head 1</th>
-    <th>head 2</th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td>content A1</td>
-    <td>content A2</td>
-  </tr>
-  <tr>
-    <td>content B1</td>
-    <td>content B2</td>
-  </tr>
-</tbody>`
+const basicContent = { template: 
+  `<thead>
+    <tr>
+      <th>head 1</th>
+      <th>head 2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>content A1</td>
+      <td>content A2</td>
+    </tr>
+    <tr>
+      <td>content B1</td>
+      <td>content B2</td>
+    </tr>
+  </tbody>`
+}
+
+console.log(basicContent);
 
 describe('CdrTable.vue', () => {
   it('renders correctly', () => {
-    const wrapper = shallowMount(CdrTable, {
+    const wrapper = mount(CdrTable, {
       slots: {
-        default: basicContent,
+        default: h(basicContent),
       }
     });
     expect(wrapper.element).toMatchSnapshot();
   });
 
   it('places attrs on table element', () => {
-    const wrapper = shallowMount(CdrTable, {
+    const wrapper = mount(CdrTable, {
       slots: {
         default: basicContent,
       },
@@ -42,7 +47,7 @@ describe('CdrTable.vue', () => {
   });
 
   it('is not bordered when striped', () => {
-    const wrapper = shallowMount(CdrTable, {
+    const wrapper = mount(CdrTable, {
       propsData: {
         border: true,
         striped: true,
@@ -57,7 +62,7 @@ describe('CdrTable.vue', () => {
   });
 
   it('has a correct responsive class', () => {
-    const wrapper = shallowMount(CdrTable, {
+    const wrapper = mount(CdrTable, {
       propsData: {
         fullWidth: '@xs',
       },

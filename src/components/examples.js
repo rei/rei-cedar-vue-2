@@ -16,11 +16,11 @@ import list from 'componentsdir/list/examples/Lists';
 // import modal from 'componentsdir/modal/examples/Modal';
 // import pagination from 'componentsdir/pagination/examples/Pagination';
 // import popover from 'componentsdir/popover/examples/Popover';
-// import quote from 'componentsdir/quote/examples/Quote';
+import quote from 'componentsdir/quote/examples/Quote';
 // import radio from 'componentsdir/radio/examples/Radios';
 // import rating from 'componentsdir/rating/examples/Ratings';
 // import selects from 'componentsdir/select/examples/Selects';
-// import tables from 'componentsdir/table/examples/Table';
+import tables from 'componentsdir/table/examples/Table';
 // import tabs from 'componentsdir/tabs/examples/Tabs';
 import texts from 'componentsdir/text/examples/Text';
 // import tooltip from 'componentsdir/tooltip/examples/Tooltip';
@@ -44,11 +44,11 @@ export default {
   // modal,
   // pagination,
   // popover,
-  // quote,
+  quote,
   // radio,
   // rating,
   // selects,
-  // tables,
+  tables,
   // tabs,
   texts,
   // tooltip,

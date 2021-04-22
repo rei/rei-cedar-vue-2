@@ -2,14 +2,14 @@
   <div :class="$style[wrapperClass]">
     <table
       v-bind="$attrs"
-      :class="[
-        $style[baseClass],
-        $style[sizeClass],
-        $style[stripedClass],
-        $style[hoverClass],
-        $style[borderClass],
-        $style[fullWidthClass],
-      ]"
+      :class="mapClasses($style,
+        baseClass,
+        sizeClass,
+        stripedClass,
+        hoverClass,
+        borderClass,
+        fullWidthClass,
+      )"
     >
       <slot />
     </table>
@@ -20,6 +20,7 @@
 <script lang="ts">
 import { defineComponent, computed } from 'vue';
 
+import mapClasses from '../../utils/mapClasses';
 import { buildClass, buildBooleanClass } from '../../utils/buildClass';
 import propValidator from '../../utils/propValidator';
 
@@ -67,7 +68,7 @@ export default defineComponent({
     const wrapperClass = computed(() => props.responsive && buildClass('cdr-table', 'responsive'));
 
     return {
-
+      mapClasses,
       wrapperClass,
       baseClass,
       sizeClass,

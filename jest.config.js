@@ -75,7 +75,7 @@ const config = {
 
     '<rootDir>/src/components/select',
 
-    '<rootDir>/src/components/table',
+    // '<rootDir>/src/components/table',
 
     '<rootDir>/src/components/tabs',
     // '<rootDir>/src/components/text',

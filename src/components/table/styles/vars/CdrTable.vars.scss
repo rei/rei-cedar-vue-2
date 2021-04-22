@@ -115,6 +115,7 @@
   width: 100%;
 }
 
+// TODO: can this be moved onto the table and remove wrapping div???
 @mixin cdr-table-responsive-mixin {
   display: block;
   width: 100%;
