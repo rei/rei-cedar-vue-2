@@ -38,7 +38,7 @@ const config = {
 
     '<rootDir>/src/components/checkbox',
 
-    '<rootDir>/src/components/chip',
+    // '<rootDir>/src/components/chip',
 
     '<rootDir>/src/components/formError',
 

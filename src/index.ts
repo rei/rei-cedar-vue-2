@@ -7,8 +7,8 @@ export { default as CdrButton } from './components/button/CdrButton';
 export { default as CdrCaption } from './components/caption/CdrCaption';
 export { default as CdrCard } from './components/card/CdrCard';
 // export { default as CdrCheckbox } from './components/checkbox/CdrCheckbox';
-// export { default as CdrChip } from './components/chip/CdrChip';
-// export { default as CdrChipGroup } from './components/chip/CdrChipGroup';
+export { default as CdrChip } from './components/chip/CdrChip';
+export { default as CdrChipGroup } from './components/chip/CdrChipGroup';
 // export { default as CdrFormGroup } from './components/formGroup/CdrFormGroup';
 export { default as CdrGrid } from './components/grid/CdrGrid';
 // export all single icon components
