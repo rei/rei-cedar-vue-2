@@ -4,11 +4,11 @@
     :class="mapClasses($style, baseClass, sizeClass, inheritColorClass)"
   >
     <slot />
-    <!-- <use
+    <use
       v-if="use"
       :href="use"
       :xlinkHref="use"
-    /> -->
+    />
   </svg>
 </template>
 <script lang="ts">
