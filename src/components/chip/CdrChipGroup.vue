@@ -1,13 +1,22 @@
 <template>
-  <div :class="[$style[baseClass], $style[typeClass]]">
-    <slot />
-  </div>
+  <fieldset
+    :class="$style[baseClass]"
+    @focusin="focusin"
+    @keydown="handleKeyDown"
+  >
+    <legend :class="$style[legendClass]">
+      <!-- TODO handle only rendering one or other -->
+      {{ label }}
+      <slot name="label"/>
+    </legend>
+    <div ref="chipsEl" :class="$style['cdr-chip-group__content']">
+      <slot />
+    </div>
+  </fieldset>
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from 'vue';
-import propValidator from '../../utils/propValidator';
-import { buildClass } from '../../utils/buildClass';
+import { defineComponent, computed, ref, onMounted } from 'vue';
 
 export default defineComponent({
   name: 'CdrChipGroup',
@@ -23,98 +32,76 @@ export default defineComponent({
   },
   setup(props) {
     const baseClass = 'cdr-chip-group';
-    const typeClass = computed(() => props.type && buildClass(baseClass, props.type));
-    return {
-      baseClass,
-      typeClass,
-    };
-  },
-});
-</script>
 
-<style lang="scss" module src="./styles/CdrAlert.scss">
-</style>
+    const chipsEl = ref(null);
 
-import style from './styles/CdrChipGroup.scss';
+    // TODO: refs here? or fine as is?
+    const chips = [];
+    const currentIdx = 0;
 
-export default {
-  name: 'CdrChipGroup',
-  props: {
-  },
-  data() {
-    return {
-      style,
-      chips: [],
-      currentIdx: 0,
-    };
-  },
-  computed: {
-    nextIdx() {
-      const idx = this.currentIdx + 1;
-      return idx >= this.chips.length ? 0 : idx; // if at last, go to first
-    },
-    prevIdx() {
-      const idx = this.currentIdx - 1;
-      return idx <= -1 ? (this.chips.length - 1) : idx; // if at first, go to last
-    },
-    legendClass() {
-      return this.hideLabel
-        ? this.style['cdr-chip-group__legend--hidden']
-        : this.style['cdr-chip-group__legend'];
-    },
-  },
-  mounted() {
-    // get all of the chips in the group
-    this.chips = Array.prototype.filter.call(this.$refs.chips.children,
-      (chip) => !(chip.getAttribute('disabled') || chip.getAttribute('aria-disabled')));
-    this.currentIdx = Array.prototype.findIndex.call(this.chips,
-      (chip) => chip.getAttribute('aria-checked') === 'true');
-  },
-  methods: {
-    handleKeyDown(e) {
+    const nextIdx = computed(() => {
+      const idx = currentIdx + 1;
+      return idx >= chips.length ? 0 : idx;
+    });
+    const prevIdx = computed(() => {
+      const idx = currentIdx - 1;
+      return idx <= -1 ? (chips.length - 1) : idx;
+    });
+    const legendClass = computed(() => props.hideLabel
+      ? 'cdr-chip-group__legend--hidden'
+      : 'cdr-chip-group__legend'
+    );
+
+    onMounted(() => {
+      // TODO: potentially simplified by new ref system?
+      chips = Array.prototype.filter.call(chipsEl.value.children,
+        (chip) => !(chip.getAttribute('disabled') || chip.getAttribute('aria-disabled')));
+      currentIdx = Array.prototype.findIndex.call(chips,
+        (chip) => chip.getAttribute('aria-checked') === 'true');
+    });
+
+    const handleKeydown = (e) => {
       // something besides the button is focused
-      if (this.currentIdx === -1) return;
+      if (currentIdx === -1) return;
 
       const { key } = e;
       switch (key) {
         case 'Home':
           e.preventDefault();
-          this.chips[0].focus();
+          chips[0].focus();
           break;
         case 'End':
           e.preventDefault();
-          this.chips[this.chips.length - 1].focus();
+          chips[chips.length - 1].focus();
           break;
         case 'ArrowDown':
         case 'Down':
           e.preventDefault();
-          this.chips[this.nextIdx].focus();
+          chips[nextIdx.value].focus();
           break;
         case 'ArrowUp':
         case 'Up':
           e.preventDefault();
-          this.chips[this.prevIdx].focus();
+          chips[prevIdx.value].focus();
           break;
         default: break;
       }
-    },
-    focusin(e) {
+    }
+    const handleFocusin = (e) => {
       // find out which, if any, button is focused
-      this.currentIdx = Array.prototype.indexOf.call(this.chips, e.target);
-    },
+      currentIdx = Array.prototype.indexOf.call(chips, e.target);
+    }
+    return {
+      baseClass,
+      legendClass,
+      handleKeydown,
+      handleFocusin,
+      chipsEl,
+    };
   },
-  render() {
-    return (<fieldset
-      class={this.style['cdr-chip-group']}
-      onFocusin={this.focusin}
-      onKeydown={this.handleKeyDown}
-    >
-      <legend class={this.legendClass}>
-        {this.$slots.label || this.label}
-      </legend>
-      <div ref="chips" class={this.style['cdr-chip-group__content']}>
-        { this.$slots.default }
-      </div>
-    </fieldset>);
-  },
-};
+});
+</script>
+
+<style lang="scss" module src="./styles/CdrChipGroup.scss">
+</style>
+

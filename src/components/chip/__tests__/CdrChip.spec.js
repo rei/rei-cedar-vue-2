@@ -1,9 +1,9 @@
-import { shallowMount } from '@vue/test-utils';
+import { mount } from '../../../../test/vue-jest-style-workaround.js';
 import CdrChip from 'componentdir/chip/CdrChip';
 
 describe('CdrChip', () => {
   it('default matches snapshot', () => {
-    const wrapper = shallowMount(CdrChip, {
+    const wrapper = mount(CdrChip, {
       slots: {
         default: 'tortilla chip'
       }
@@ -12,7 +12,7 @@ describe('CdrChip', () => {
   });
 
   it('renders icon slots', () => {
-    const wrapper = shallowMount(CdrChip, {
+    const wrapper = mount(CdrChip, {
       slots: {
         default: 'tortilla chip',
         'icon-left': '🌮',

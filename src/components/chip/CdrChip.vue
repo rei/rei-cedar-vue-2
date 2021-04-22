@@ -1,6 +1,6 @@
 <template>
   <button
-    :class="$style[this.baseClass]"
+    :class="$style[baseClass]"
   >
     <span v-if="hasIconLeft" :class="$style['cdr-chip__icon-left']">
       <slot name="icon-left" />
@@ -15,9 +15,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from 'vue';
+import { defineComponent } from 'vue';
 import propValidator from '../../utils/propValidator';
-import { buildClass } from '../../utils/buildClass';
 
 export default defineComponent({
   name: 'CdrChip',
