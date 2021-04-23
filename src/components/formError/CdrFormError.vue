@@ -1,6 +1,6 @@
 <template>
   <div :class="$style[baseClass]">
-    <span :class="$style[iconClass]" /> <slot name="error" />
+    <span :class="$style[iconClass]" /> <slot name="error">{{error}}</slot>
   </div>
 </template>
 <script lang="ts">

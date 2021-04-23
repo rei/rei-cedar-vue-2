@@ -40,9 +40,9 @@ const config = {
 
     // '<rootDir>/src/components/chip',
 
-    '<rootDir>/src/components/formError',
+    // '<rootDir>/src/components/formError',
 
-    '<rootDir>/src/components/formGroup',
+    // '<rootDir>/src/components/formGroup',
 
     // '<rootDir>/src/components/grid',
 

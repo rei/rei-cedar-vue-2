@@ -1,24 +1,23 @@
 <template>
   <fieldset
-    :class="[$style[baseClass], $style[disabledClass]]"
+    :class="mapClasses($style, baseClass, disabledClass)"
     :disabled="disabled"
   >
     <legend>
-      <slot name="label" /><span v-if="!hasLabelSlot">{{ label }}</span>
-      <span v-if="required || optional" />
-      <span aria-label="required">*</span>
-      <span :class="$style['cdr-form-group__optional']">
-        (optional)
-      </span>
+      <slot name="label" >
+        {{ label }}
+      </slot>
+      <span v-if="required" aria-label="required"> *</span>
+      <span v-if="optional && !required" :class="$style['cdr-form-group__optional']"> (optional)</span>
     </legend>
-    <div :class="[$style['cdr-form-group__wrapper'], $style[errorClass]]">
+    <div :class="mapClasses($style, 'cdr-form-group__wrapper', errorClass)">
       <slot />
     </div>
     <cdr-form-error
       :error="error"
       v-if="error"
     >
-      <template slot="error">
+      <template v-slot:error>
         <slot name="error" />
       </template>
     </cdr-form-error>
@@ -26,6 +25,7 @@
 </template>
 <script lang="ts">
 import { defineComponent, computed } from 'vue';
+import mapClasses from '../../utils/mapClasses';
 import CdrFormError from '../formError/CdrFormError';
 
 export default defineComponent({
@@ -52,12 +52,11 @@ export default defineComponent({
     const baseClass = 'cdr-form-group';
     const errorClass = computed(() => props.error && 'cdr-form-group--error');
     const disabledClass = computed(() => props.disabled && 'cdr-form-group--disabled');
-    const hasLabelSlot = ctx.slots.label;
     return {
+      mapClasses,
       baseClass,
       errorClass,
       disabledClass,
-      hasLabelSlot,
     };
   },
 });

@@ -7,6 +7,9 @@ exports[`CdrFormError matches snapshot 1`] = `
   <span
     class="cdr-form-error__icon"
   />
-   yahoo!
+   
+  
+  yahoo!
+  
 </div>
 `;

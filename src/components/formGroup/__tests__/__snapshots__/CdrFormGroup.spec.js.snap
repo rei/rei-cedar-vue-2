@@ -5,12 +5,19 @@ exports[`CdrFormGroup renders correctly 1`] = `
   class="cdr-form-group"
 >
   <legend>
+    
     hey
+    
+    <!--v-if-->
+    <!--v-if-->
   </legend>
   <div
     class="cdr-form-group__wrapper"
   >
+    
     form elements!
+    
   </div>
+  <!--v-if-->
 </fieldset>
 `;
