@@ -4,16 +4,17 @@ exports[`CdrBreadcrumb renders correctly 1`] = `
 <nav
   aria-label="breadcrumbs"
   class="cdr-breadcrumb"
+  id="bc-test"
 >
   <ol
     class="cdr-breadcrumb__list"
-    id="exampleList"
+    id="bc-testList"
   >
     <li
       class="cdr-breadcrumb__item"
     >
       <button
-        aria-controls="exampleList"
+        aria-controls="bc-testList"
         aria-expanded="false"
         aria-label="show 1 more navigation level"
         class="cdr-breadcrumb__ellipses"
@@ -22,59 +23,68 @@ exports[`CdrBreadcrumb renders correctly 1`] = `
           aria-hidden="true"
           class="cdr-breadcrumb__ellipses-icon"
         >
-          . . .
+           . . . 
         </span>
       </button>
       <span
         aria-hidden="true"
         class="cdr-breadcrumb__delimiter"
       >
-        /
+         / 
       </span>
     </li>
+    
     <li
       class="cdr-breadcrumb__item"
       style="display: none;"
     >
+      
       <a
         class="cdr-breadcrumb__link"
         href="http://google.com"
       >
         Long Breadcrumb Step 1
       </a>
+      
       <span
         aria-hidden="true"
         class="cdr-breadcrumb__delimiter"
       >
-        /
+         / 
       </span>
     </li>
     <li
       class="cdr-breadcrumb__item"
     >
+      
       <a
         class="cdr-breadcrumb__link"
         href="http://rei.com"
       >
         Long Breadcrumb Step 2
       </a>
+      
       <span
         aria-hidden="true"
         class="cdr-breadcrumb__delimiter"
       >
-        /
+         / 
       </span>
     </li>
     <li
       class="cdr-breadcrumb__item"
     >
+      
       <a
         class="cdr-breadcrumb__link"
         href="http://yahoo.com"
       >
         Long Breadcrumb Step 3
       </a>
+      
+      <!--v-if-->
     </li>
+    
   </ol>
 </nav>
 `;

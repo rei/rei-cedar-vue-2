@@ -28,7 +28,7 @@ const config = {
     '<rootDir>/src/components/accordion',
     // '<rootDir>/src/components/alert',
 
-    '<rootDir>/src/components/breadcrumb',
+    // '<rootDir>/src/components/breadcrumb',
 
     // '<rootDir>/src/components/button',
 

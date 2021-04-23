@@ -39,6 +39,7 @@
         :class="$style['cdr-breadcrumb__item']"
         :key="breadcrumb.item.id || breadcrumb.item.name.replace(/ /g, '-').toLowerCase()"
         v-show="!truncate || (index >= items.length - 2)"
+        ref="itemListEl"
       >
         <slot
           name="link"
@@ -49,7 +50,6 @@
           <a
             :class="$style['cdr-breadcrumb__link']"
             :href="breadcrumb.item.url"
-            :ref="index ? null : firstItem"
           >
             {{ breadcrumb.item.name }}
           </a>
@@ -68,8 +68,7 @@
 </template>
 <script lang="ts">
 import {
-  defineComponent, computed, ref, watchEffect,
-  // nextTick,
+  defineComponent, computed, ref, watch,
 } from 'vue';
 
 export default defineComponent({
@@ -107,20 +106,18 @@ export default defineComponent({
     },
   },
   setup(props) {
-    // TODO: need watcheffect or does this handle it?
     const truncate = ref(props.truncationEnabled && props.items.length > 2);
 
-    watchEffect((items) => {
-      truncate.value = props.truncationEnabled && items.length > 2;
+    watch(() => props.items, () => {
+      truncate.value = props.truncationEnabled && props.items.length > 2;
     });
 
-    const firstItem = ref(null);
+    const itemListEl = ref(null);
     const handleEllipsisClick = () => {
       truncate.value = false;
       setTimeout(() => {
-        // ????? TODO: how to get $el?
-        console.log(firstItem);
-        firstItem.value.focus();
+        // TODO: ref does not seem to update children here?
+        itemListEl.value.children[0].focus();
       }, 1000);
     };
     const ellipsisLabel = computed(() => {
@@ -131,7 +128,7 @@ export default defineComponent({
     return {
       truncate,
       handleEllipsisClick,
-      firstItem,
+      itemListEl,
       ellipsisLabel,
     };
   },
