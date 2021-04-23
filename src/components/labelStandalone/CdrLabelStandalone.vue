@@ -1,24 +1,20 @@
 <template>
-  <div :class="[$style[baseClass], $style[wrapperClass]]">
+  <div :class="mapClasses($style, baseClass, wrapperClass)">
     <label
       v-if="!hideLabel"
-      :class="[$style['cdr-label-standalone__label'], $style[disabledLabelClass]]"
+      :class="mapClasses($style, 'cdr-label-standalone__label', disabledLabelClass)"
       :for="forId"
     >
-      {{ label }}{{ required || optional ? ' ' : '' }}
+      {{ label }}{{ required || optional ? '' : '' }}
       <span
         v-if="required"
         aria-label="required"
-      >
-        *
-      </span>
+      >*</span>
 
       <span
         v-else-if="optional"
         :class="$style['cdr-label-standalone__optional']"
-      >
-        (optional)
-      </span>
+      >(optional)</span>
     </label>
 
     <br v-if="!hideLabel && hasHelper">
@@ -39,6 +35,7 @@
 </template>
 <script lang="ts">
 import { defineComponent, computed } from 'vue';
+import mapClasses from '../../utils/mapClasses';
 
 export default defineComponent({
   name: 'CdrLabelStandalone',
@@ -62,6 +59,7 @@ export default defineComponent({
     const wrapperClass = computed(() => (!props.hideLabel || hasHelper || hasInfo)
       && 'cdr-label-standalone--spacing');
     return {
+      mapClasses,
       hasHelper,
       hasInfo,
       baseClass,

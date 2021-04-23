@@ -2,21 +2,29 @@
 
 exports[`CdrLabelWrapper matches snapshot 1`] = `
 <div
-  class="cdr-label-wrapper__container"
+  class="cdr-label-wrapper__container foo"
+  data-ui="wrapper"
+  name="testName"
 >
   <label
     class="cdr-label-wrapper cdr-label-wrapper--primary cdr-label-wrapper--hide-figure cdr-label-wrapper--medium custom-label-class"
   >
+    
+    
     <input
       type="checkbox"
     />
+    
+    
     <span
       class="cdr-label-wrapper__figure"
     />
     <div
       class="cdr-label-wrapper__content custom-content-class"
     >
+      
       Label Wrapper Test
+      
     </div>
   </label>
 </div>

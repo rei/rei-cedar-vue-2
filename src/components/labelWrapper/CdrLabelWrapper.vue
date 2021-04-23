@@ -1,18 +1,17 @@
 <template>
   <div :class="$style['cdr-label-wrapper__container']">
     <label
-      :class="[
-        $style['cdr-label-wrapper'],
-        $style[`cdr-label-wrapper--${background}`],
-        $style[disabledClass],
-        $style[modifierClass],
-        $style[sizeClass],
-        labelClass, // TODO: not scoped?!?!?!?!
-      ]"
+      :class="mapClasses($style,
+        'cdr-label-wrapper',
+        `cdr-label-wrapper--${background}`,
+        disabledClass,
+        modifierClass,
+        sizeClass,
+      ).concat(` ${labelClass}`)"
     >
       <slot name="input" />
       <span :class="$style['cdr-label-wrapper__figure']" />
-      <div :class="[$style['cdr-label-wrapper__content'], contentClass]">
+      <div :class="mapClasses($style, 'cdr-label-wrapper__content', contentClass)">
         <slot />
       </div>
     </label>
@@ -22,6 +21,7 @@
 import { defineComponent, computed } from 'vue';
 import { buildClass } from '../../utils/buildClass';
 import backgroundProps from '../../props/background';
+import mapClasses from '../../utils/mapClasses';
 
 export default defineComponent({
   name: 'CdrLabelWrapper',
@@ -30,6 +30,8 @@ export default defineComponent({
     contentClass: String,
     background: backgroundProps,
     disabled: Boolean,
+    modifier: String,
+    size: String,
   },
   setup(props) {
     const baseClass = 'cdr-label-wrapper';
@@ -37,6 +39,7 @@ export default defineComponent({
     const sizeClass = computed(() => props.size && buildClass(baseClass, props.size));
     const disabledClass = computed(() => props.disabled && buildClass(baseClass, 'disabled')); // TODO: this works right?
     return {
+      mapClasses,
       baseClass,
       modifierClass,
       sizeClass,

@@ -19,12 +19,16 @@ exports[`CdrFormLabelStandalone matches snapshot 1`] = `
   <span
     class="cdr-label-standalone__helper"
   >
+    
     very helpful
+    
   </span>
   <span
     class="cdr-label-standalone__info"
   >
+    
     very informative
+    
   </span>
 </div>
 `;

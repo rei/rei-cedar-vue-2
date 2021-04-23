@@ -1,9 +1,9 @@
-import { shallowMount } from '../../../../test/vue-jest-style-workaround.js';
+import { mount } from '../../../../test/vue-jest-style-workaround.js';
 import CdrLabelWrapper from 'componentdir/labelWrapper/CdrLabelWrapper';
 
 describe('CdrLabelWrapper', () => {
   it('matches snapshot', () => {
-    const wrapper = shallowMount(CdrLabelWrapper, {
+    const wrapper = mount(CdrLabelWrapper, {
       propsData: {
         labelClass: 'custom-label-class',
         contentClass: 'custom-content-class',

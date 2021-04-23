@@ -52,9 +52,9 @@ const config = {
 
     '<rootDir>/src/components/input',
 
-    '<rootDir>/src/components/labelStandalone',
+    // '<rootDir>/src/components/labelStandalone',
 
-    '<rootDir>/src/components/labelWrapper',
+    // '<rootDir>/src/components/labelWrapper',
 
 
     // '<rootDir>/src/components/link',
