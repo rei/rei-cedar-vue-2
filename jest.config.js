@@ -71,7 +71,7 @@ const config = {
 
     '<rootDir>/src/components/radio',
 
-    '<rootDir>/src/components/rating',
+    // '<rootDir>/src/components/rating',
 
     '<rootDir>/src/components/select',
 

@@ -1,37 +1,34 @@
 <template>
-  <!-- TODO: behavior of falsey attrs changed right?!?!?!?!?! For HREF?!!!!! -->
-  <!-- TODO: does _uid still work? didnt that change?!?!?! -->
   <component
     :is="tag"
     :href="href"
-    :class="[
-      $style[baseClass],
-      $style[sizeClass],
-      $style[linkedClass],
-    ]"
+    :class="mapClasses($style,
+      baseClass,
+      sizeClass,
+      linkedClass,
+    )"
   >
     <div :class="$style['cdr-rating__ratings']">
 
       <span
         v-for="star in Array(whole).keys()"
-        :class="[$style['cdr-rating__icon'], $style['cdr-rating__100']]"
-        :key="`rating-whole-${star}-${id}`"
+        :class="mapClasses($style, 'cdr-rating__icon', 'cdr-rating__100')"
+        :key="`rating-whole-${star}`"
         aria-hidden="true"
       />
-      <!-- TODO does this work? 25 50 75 only right???? -->
       <span
         v-if="remainder"
-        :class="[$style['cdr-rating__icon'], $style[`cdr-rating__${remainder}`]]"
+        :class="mapClasses($style, 'cdr-rating__icon', `cdr-rating__${remainder}`)"
         aria-hidden="true"
       />
 
       <span
         v-for="empty in Array(empties).keys()"
-        :class="[
-          $style['cdr-rating__icon'],
-          $style[emptyClass],
-        ]"
-        :key="`rating-empty-${empty}-${id}`"
+        :class="mapClasses($style,
+          'cdr-rating__icon',
+          emptyClass,
+        )"
+        :key="`rating-empty-${empty}`"
         aria-hidden="true"
       />
     </div>
@@ -66,6 +63,7 @@
 import { defineComponent, computed } from 'vue';
 import { buildClass } from '../../utils/buildClass';
 import propValidator from '../../utils/propValidator';
+import mapClasses from '../../utils/mapClasses';
 
 export default defineComponent({
   name: 'CdrRating',
@@ -159,7 +157,6 @@ export default defineComponent({
     });
 
     return {
-      id: 'TODO FIX ME',
       tag,
       baseClass,
       sizeClass,
@@ -172,6 +169,7 @@ export default defineComponent({
       empties,
       formattedCount,
       srText,
+      mapClasses,
     };
   },
 });

@@ -8,6 +8,7 @@ exports[`CdrRating renders correctly 1`] = `
   <div
     class="cdr-rating__ratings"
   >
+    
     <span
       aria-hidden="true"
       class="cdr-rating__icon cdr-rating__100"
@@ -20,14 +21,17 @@ exports[`CdrRating renders correctly 1`] = `
       aria-hidden="true"
       class="cdr-rating__icon cdr-rating__100"
     />
+    
     <span
       aria-hidden="true"
       class="cdr-rating__icon cdr-rating__25"
     />
+    
     <span
       aria-hidden="true"
       class="cdr-rating__icon cdr-rating__placeholder"
     />
+    
   </div>
   <span
     aria-hidden="true"
@@ -42,7 +46,7 @@ exports[`CdrRating renders correctly 1`] = `
       100
     </span>
     <span>
-       Reviews
+        Reviews 
     </span>
   </span>
   <span

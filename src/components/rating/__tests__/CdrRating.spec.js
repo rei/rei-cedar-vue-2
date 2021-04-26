@@ -20,6 +20,8 @@ describe('CdrRating', () => {
         count: 1,
       }
     });
+
+    
     expect(wrapper.vm.whole).toBe(3);
     expect(wrapper.vm.remainder).toBe('50');
     expect(wrapper.vm.rounded).toBe(3.5);
@@ -80,7 +82,17 @@ describe('CdrRating', () => {
         href: 'rei.com'
       }
     });
-    expect(wrapper.element.tagName).toBe('A');
+    expect(wrapper.find('a.cdr-rating').exists()).toBe(true);
+  });
+
+
+  it('renders a div when no href is present', () => {
+    const wrapper = shallowMount(CdrRating, {
+      propsData: {
+        rating: 5,
+      }
+    });
+    expect(wrapper.find('div.cdr-rating').exists()).toBe(true);
   });
 
   it('has correct screen reader text when linked', async () => {
