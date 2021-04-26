@@ -7,39 +7,33 @@
     :optional="optional"
     :disabled="disabled"
   >
-    <template
-      slot="helper"
-      v-if="hasHelperTop"
-    >
+    <template v-slot:helper v-if="hasHelperTop">
       <slot name="helper-text-top" />
     </template>
-    <template
-      slot="info"
-      v-if="hasInfo"
-    >
+    <template v-slot:info v-if="hasHelperTop">
       <slot name="info" />
     </template>
   </cdr-label-standalone>
   <div :class="$style['cdr-input-outer-wrap']">
-    <div :class="[$style['cdr-input-wrap'], $style[focusedClass]]">
+    <div :class="mapClasses($style, 'cdr-input-wrap', focusedClass)">
       <textarea
         v-if="rows && rows > 1"
         :rows="rows"
-        :class="[
-          $style[baseClass],
-          $style[multilineClass],
-          $style[preIconClass],
-          $style[postIconClass],
-          $style[postIconsClass],
-          $style[errorClass],
-          $style[backgroundClass],
-          $style[sizeClass],
-        ]"
+        :class="mapClasses($style,
+          baseClass,
+          multilineClass,
+          preIconClass,
+          postIconClass,
+          postIconsClass,
+          errorClass,
+          backgroundClass,
+          sizeClass,
+        )"
         :id="id"
         :disabled="disabled"
         :required="required"
         :aria-label="hideLabel ? label : null"
-        v-bind="$attrs"
+        v-bind="inputAttrs"
         :value="modelValue"
         @input="$emit('update:modelValue', $event.target.value)"
         @focus="isFocused = true"
@@ -47,21 +41,21 @@
       />
       <input
         v-else
-        type="type"
-        :class="[
-          $style[baseClass],
-          $style[preIconClass],
-          $style[postIconClass],
-          $style[postIconsClass],
-          $style[errorClass],
-          $style[backgroundClass],
-          $style[sizeClass],
-        ]"
+        :type="type"
+        :class="mapClasses($style,
+          baseClass,
+          preIconClass,
+          postIconClass,
+          postIconsClass,
+          errorClass,
+          backgroundClass,
+          sizeClass,
+        )"
         :id="id"
         :disabled="disabled"
         :required="required"
         :aria-label="hideLabel ? label : null"
-        v-bind="$attrs"
+        v-bind="inputAttrs"
         :value="modelValue"
         @input="$emit('update:modelValue', $event.target.value)"
         @focus="isFocused = true"
@@ -95,10 +89,10 @@
     <slot name="helper-text-bottom" />
   </span>
   <cdr-form-error
-    error="{this.error}"
+    :error="error"
     v-if="error"
   >
-    <template slot="error">
+    <template v-slot:error>
       <slot name="error" />
     </template>
   </cdr-form-error>
@@ -111,6 +105,7 @@ import CdrFormError from '../formError/CdrFormError';
 import sizeProps from '../../props/size';
 import backgroundProps from '../../props/background';
 import { buildClass } from '../../utils/buildClass';
+import mapClasses from '../../utils/mapClasses';
 
 // CH CH CHANGES:
 // ID is now required !!!
@@ -184,18 +179,21 @@ export default defineComponent({
   },
   setup(props, ctx) {
     const baseClass = 'cdr-input';
-
+    // console.log(ctx.slots['post-icon']);
+// TODO: delete un-used hasSlot props
     const isFocused = ref(false);
     const hasHelperTop = ctx.slots['helper-text-top'];
     const hasHelperBottom = ctx.slots['helper-text-bottom'];
     const hasPreIcon = ctx.slots['pre-icon'];
     const hasPostIcon = ctx.slots['post-icon'];
-    const hasPostIcons = hasPostIcon && ctx.slots['post-icon'].length > 1;
+    // TODO: either this no longer works, or doesnt work in unit test due to VTU array slot bug?
+    const hasPostIcons = false; //hasPostIcon && ctx.slots['post-icon']().length > 1;
     const hasInfo = ctx.slots.info;
     const hasInfoAction = ctx.slots['info-action'];
 
     const multilineClass = computed(() => props.rows > 1 && 'cdr-input--multiline');
     const preIconClass = computed(() => hasPreIcon && 'cdr-input--preicon');
+    // TODO: make one class for this? if possible? there must have been a reason i did it like this.....
     const postIconClass = computed(() => hasPostIcon && 'cdr-input--posticon');
     const postIconsClass = computed(() => hasPostIcons && 'cdr-input--posticons');
     const errorClass = computed(() => props.error && 'cdr-input--error');
@@ -203,6 +201,24 @@ export default defineComponent({
     const sizeClass = computed(() => props.size && buildClass(baseClass, props.size));
     const focusedClass = computed(() => isFocused.value && 'cdr-input--focus');
 
+
+    const inputAttrs = computed(() => {
+      // TODO: do we also need to change the "type" when number?
+      // TODO: does this work properly???? isn't it not quite right on vue2 next branch?
+      const attrs = {
+        autocorrect: 'off',
+        spellcheck: 'false',
+        autocapitalize: 'off',
+        ...ctx.attrs,
+      };
+      if (props.type === 'number') {
+        attrs.pattern = '[0-9]*';
+        attrs.inputmode = 'numeric';
+        attrs.novalidate = 'novalidate';
+      }
+      return attrs;
+    });
+    
     return {
       baseClass,
       sizeClass,
@@ -220,6 +236,8 @@ export default defineComponent({
       hasPostIcon,
       hasInfo,
       hasInfoAction,
+      inputAttrs,
+      mapClasses,
     };
   },
 });

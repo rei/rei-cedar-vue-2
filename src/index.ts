@@ -15,7 +15,7 @@ export { default as CdrGrid } from './components/grid/CdrGrid';
 export * from './components/icon/index';
 export { default as CdrIcon } from './components/icon/CdrIcon';
 export { default as CdrImg } from './components/image/CdrImg';
-// export { default as CdrInput } from './components/input/CdrInput';
+export { default as CdrInput } from './components/input/CdrInput';
 export { default as CdrLink } from './components/link/CdrLink';
 export { default as CdrList } from './components/list/CdrList';
 // export { default as CdrModal } from './components/modal/CdrModal';

@@ -50,7 +50,7 @@ const config = {
 
     // '<rootDir>/src/components/image',
 
-    '<rootDir>/src/components/input',
+    // '<rootDir>/src/components/input',
 
     // '<rootDir>/src/components/labelStandalone',
 

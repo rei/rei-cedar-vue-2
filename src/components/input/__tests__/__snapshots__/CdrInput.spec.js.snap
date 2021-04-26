@@ -1,7 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CdrInput renders correctly 1`] = `
-<div>
+<div
+  data-v-app=""
+>
+  
   <div
     class="cdr-label-standalone cdr-label-standalone--spacing"
   >
@@ -9,8 +12,12 @@ exports[`CdrInput renders correctly 1`] = `
       class="cdr-label-standalone__label"
       for="renders"
     >
-      Label Test
+      Label Test 
+      <!--v-if-->
     </label>
+    <!--v-if-->
+    <!--v-if-->
+    <!--v-if-->
   </div>
   <div
     class="cdr-input-outer-wrap"
@@ -21,18 +28,27 @@ exports[`CdrInput renders correctly 1`] = `
       <input
         autocapitalize="off"
         autocorrect="off"
-        class="cdr-input cdr-input--primary"
+        class="cdr-input cdr-input--primary cdr-input--medium"
         id="renders"
         spellcheck="false"
         type="text"
       />
+      <!--v-if-->
+      <!--v-if-->
     </div>
+    <!--v-if-->
   </div>
+  <!--v-if-->
+  <!--v-if-->
+  
 </div>
 `;
 
 exports[`CdrInput renders number input correctly 1`] = `
-<div>
+<div
+  data-v-app=""
+>
+  
   <div
     class="cdr-label-standalone cdr-label-standalone--spacing"
   >
@@ -40,8 +56,12 @@ exports[`CdrInput renders number input correctly 1`] = `
       class="cdr-label-standalone__label"
       for="renders"
     >
-      Label Test
+      Label Test 
+      <!--v-if-->
     </label>
+    <!--v-if-->
+    <!--v-if-->
+    <!--v-if-->
   </div>
   <div
     class="cdr-input-outer-wrap"
@@ -52,15 +72,21 @@ exports[`CdrInput renders number input correctly 1`] = `
       <input
         autocapitalize="off"
         autocorrect="off"
-        class="cdr-input cdr-input--primary"
+        class="cdr-input cdr-input--primary cdr-input--medium"
         id="renders"
         inputmode="numeric"
-        novalidate="novalidate"
+        novalidate=""
         pattern="[0-9]*"
         spellcheck="false"
         type="number"
       />
+      <!--v-if-->
+      <!--v-if-->
     </div>
+    <!--v-if-->
   </div>
+  <!--v-if-->
+  <!--v-if-->
+  
 </div>
 `;
