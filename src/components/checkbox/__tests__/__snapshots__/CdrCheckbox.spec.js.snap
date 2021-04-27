@@ -7,17 +7,26 @@ exports[`CdrCheckbox renders correctly 1`] = `
   <label
     class="cdr-label-wrapper cdr-label-wrapper--primary cdr-label-wrapper--medium custom-label-class"
   >
+    
     <input
       class="cdr-checkbox__input"
+      false-value="false"
+      true-value="true"
       type="checkbox"
+      value="false"
     />
+    
     <span
       class="cdr-label-wrapper__figure"
     />
     <div
       class="cdr-label-wrapper__content"
     >
+      
+      
       Label Test
+      
+      
     </div>
   </label>
 </div>

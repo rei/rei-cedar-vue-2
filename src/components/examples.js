@@ -1,10 +1,10 @@
 // import accordion from 'componentsdir/accordion/examples/Accordion';
 import alert from 'componentsdir/alert/examples/Alert';
-// import breadcrumb from 'componentsdir/breadcrumb/examples/Breadcrumb';
+import breadcrumb from 'componentsdir/breadcrumb/examples/Breadcrumb';
 import buttons from 'componentsdir/button/examples/Buttons';
 import captions from 'componentsdir/caption/examples/Caption';
 import card from 'componentsdir/card/examples/Cards';
-// import checkbox from 'componentsdir/checkbox/examples/checkboxes';
+import checkbox from 'componentsdir/checkbox/examples/checkboxes';
 import chip from 'componentsdir/chip/examples/Chip';
 import formGroup from 'componentsdir/formGroup/examples/FormGroup';
 import grid from 'componentsdir/grid/examples/Grid';
@@ -45,11 +45,11 @@ export default {
   // pagination,
   // popover,
   quote,
-  radio,
+  // radio,
   rating,
-  selects,
+  // selects,
   tables,
-  tabs,
+  // tabs,
   texts,
   // tooltip,
 };
