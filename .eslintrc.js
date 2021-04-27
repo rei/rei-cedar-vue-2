@@ -35,7 +35,7 @@ module.exports = {
           ['compositionsdir', resolve('src/compositions')],
           ['mixinsdir', resolve('src/mixins')],
         ],
-        extensions: ['.vue', '.json', '.js', '.ts']
+        extensions: ['.vue', '.json', '.js']
       },
     },
   },

@@ -99,7 +99,6 @@ const config = {
       "babelConfig": {
           "configFile": "./babel.config.js"
         },
-        // "tsConfig": "./tsconfig.json"
     }
   }
 };

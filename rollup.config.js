@@ -23,7 +23,7 @@ const ext = babelEnv === 'cjs' ? 'js' : 'mjs';
 
 const config = [
   {
-    input: 'src/main.ts',
+    input: 'src/main.js',
     output: [
       {
         file: `dist/cedar.${ext}`,
@@ -39,7 +39,7 @@ const config = [
 if (env === 'prod' && babelEnv === 'esm') {
   config.push(
     {
-      input: 'src/index.ts',
+      input: 'src/index.js',
       output: [
         {
           dir: 'dist/lib',
