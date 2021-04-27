@@ -1,5 +1,6 @@
-import { shallowMount } from '@vue/test-utils';
+import { shallowMount } from '../../../../test/vue-jest-style-workaround.js';
 import CdrPopup from 'componentdir/popup/CdrPopup';
+import calculatePlacement from 'componentdir/popup/calculatePlacement';
 
 describe('CdrPopup', () => {
   it('matches snapshot', () => {
@@ -7,7 +8,7 @@ describe('CdrPopup', () => {
     expect(wrapper.element).toMatchSnapshot();
   });
 
-  describe('autoPosition', () => {
+  describe('events', () => {
     let wrapper;
     beforeEach(() => {
       wrapper = shallowMount(CdrPopup, {
@@ -17,68 +18,9 @@ describe('CdrPopup', () => {
         }
       });
     });
-    it('Uses selected position if it is valid', () => {
-      wrapper.vm.calculatePlacement({
-        top: 90,
-        bottom: 95,
-        left: 45,
-        right: 55,
-        height: 5,
-        width: 10,
-      }, {
-        width: 100,
-        height: 50,
-      }, 100, 100);
-      expect(wrapper.vm.pos).toBe('top');
-    });
-
-    it('Uses inverted position if selected is invalid', () => {
-      wrapper.vm.calculatePlacement({
-        top: 5,
-        bottom: 10,
-        left: 45,
-        right: 55,
-        height: 5,
-        width: 10,
-      }, {
-        width: 200,
-        height: 50,
-      }, 100, 100);
-      expect(wrapper.vm.pos).toBe('bottom');
-    });
-
-    it('Uses angled position if selected and inverted is invalid', () => {
-      wrapper.vm.calculatePlacement({
-        top: 40,
-        bottom: 50,
-        left: 80,
-        right: 90,
-        height: 10,
-        width: 10,
-      }, {
-        width: 55,
-        height: 55,
-      }, 100, 100);
-      expect(wrapper.vm.pos).toBe('left');
-    });
-
-    it('Uses position with most space if all are invalid', () => {
-      wrapper.vm.calculatePlacement({
-        top: 45,
-        bottom: 55,
-        left: 30,
-        right: 40,
-        height: 10,
-        width: 10,
-      }, {
-        width: 45,
-        height: 50,
-      }, 100, 100);
-      expect(wrapper.vm.pos).toBe('right');
-    });
 
     it('emits closed event on esc key press', () => {
-      wrapper.vm.handleKeyDown({ key: 'Esc' });
+      wrapper.trigger('keydown', { key: 'Esc' });
       expect(wrapper.emitted('closed')).toBeTruthy();
     });
 
@@ -92,4 +34,67 @@ describe('CdrPopup', () => {
       })
     });
   });
+
+  describe('calculatePlacement', () => {
+    // TODO: add corner tests here
+    it('Uses selected position if it is valid', () => {
+      const res = calculatePlacement({
+        top: 90,
+        bottom: 95,
+        left: 45,
+        right: 55,
+        height: 5,
+        width: 10,
+      }, {
+        width: 100,
+        height: 50,
+      }, 100, 100, 'top');
+      expect(res.pos).toBe('top');
+    });
+
+    it('Uses inverted position if selected is invalid', () => {
+      const res = calculatePlacement({
+        top: 5,
+        bottom: 10,
+        left: 45,
+        right: 55,
+        height: 5,
+        width: 10,
+      }, {
+        width: 200,
+        height: 50,
+      }, 100, 100, 'top');
+      expect(res.pos).toBe('bottom');
+    });
+
+    it('Uses angled position if selected and inverted is invalid', () => {
+      const res = calculatePlacement({
+        top: 40,
+        bottom: 50,
+        left: 80,
+        right: 90,
+        height: 10,
+        width: 10,
+      }, {
+        width: 55,
+        height: 55,
+      }, 100, 100, 'top');
+      expect(res.pos).toBe('left');
+    });
+
+    it('Uses position with most space if all are invalid', () => {
+      const res = calculatePlacement({
+        top: 45,
+        bottom: 55,
+        left: 30,
+        right: 40,
+        height: 10,
+        width: 10,
+      }, {
+        width: 45,
+        height: 50,
+      }, 100, 100, 'top');
+      expect(res.pos).toBe('right');
+    });
+  })
 });

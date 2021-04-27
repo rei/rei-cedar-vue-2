@@ -37,7 +37,7 @@ Object.keys(iconData).forEach(function (name) {
   ${innerHTML.trim()}
 </cdr-icon>
 </template>
-<script lang="ts">
+<script>
   import { defineComponent } from 'vue';
   import CdrIcon from '../CdrIcon';
   export default defineComponent({

@@ -1,4 +1,4 @@
-import { mount } from '@vue/test-utils';
+import { mount } from '../../../../test/vue-jest-style-workaround.js';
 import CdrTooltip from 'componentdir/tooltip/CdrTooltip';
 
 describe('CdrTooltip', () => {

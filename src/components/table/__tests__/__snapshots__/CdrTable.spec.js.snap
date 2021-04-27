@@ -7,39 +7,38 @@ exports[`CdrTable.vue renders correctly 1`] = `
   <table
     class="cdr-table cdr-table--medium cdr-table--border cdr-table--full-width"
   >
+    
+    
     <thead>
       <tr>
         <th>
           head 1
         </th>
-         
         <th>
           head 2
         </th>
       </tr>
     </thead>
-     
     <tbody>
       <tr>
         <td>
           content A1
         </td>
-         
         <td>
           content A2
         </td>
       </tr>
-       
       <tr>
         <td>
           content B1
         </td>
-         
         <td>
           content B2
         </td>
       </tr>
     </tbody>
+    
+    
   </table>
 </div>
 `;

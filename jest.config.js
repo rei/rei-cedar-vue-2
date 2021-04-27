@@ -36,7 +36,7 @@ const config = {
 
     // '<rootDir>/src/components/card',
 
-    '<rootDir>/src/components/checkbox',
+    // '<rootDir>/src/components/checkbox',
 
     // '<rootDir>/src/components/chip',
 

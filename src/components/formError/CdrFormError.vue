@@ -3,7 +3,7 @@
     <span :class="$style[iconClass]" /> <slot name="error">{{error}}</slot>
   </div>
 </template>
-<script lang="ts">
+<script>
 import { defineComponent } from 'vue';
 
 export default defineComponent({

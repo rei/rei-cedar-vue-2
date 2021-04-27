@@ -9,11 +9,7 @@ exports[`CdrIcon renders correctly 1`] = `
 >
   
   
-  <!-- &lt;use
-      v-if="use"
-      :href="use"
-      :xlinkHref="use"
-    /&gt; -->
+  <!--v-if-->
 </svg>
 `;
 
@@ -32,10 +28,6 @@ exports[`CdrIcon renders correctly for single icon component 1`] = `
     role="presentation"
   />
   
-  <!-- &lt;use
-      v-if="use"
-      :href="use"
-      :xlinkHref="use"
-    /&gt; -->
+  <!--v-if-->
 </svg>
 `;

@@ -15,7 +15,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 
 import { defineComponent } from 'vue';
 
@@ -26,7 +26,6 @@ export default defineComponent({
     credit: String,
   },
   setup() {
-    // TODO: build class for sub items. only really does mods?
     return {
       baseClass: 'cdr-caption',
       summaryClass: 'cdr-caption__summary',

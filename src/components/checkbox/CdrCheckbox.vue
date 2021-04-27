@@ -8,26 +8,27 @@
     :background="background"
     :disabled="$attrs.disabled"
   >
-    <input
-      :class="[$style['cdr-checkbox__input'], inputClass]"
-      type="checkbox"
-      v-bind="$attrs"
-
-      :checked="modelValue"
-      @change="$emit('update:modelValue', $event.target.checked)"
-      :true-value="customValue ? null : trueValue"
-      :false-value="customValue ? null : falseValue"
-      :value="customValue"
-      :indeterminate="indeterminate"
-      slot="input"
-    >
+    <template v-slot:input>
+      <input
+        :class="[$style['cdr-checkbox__input'], inputClass]"
+        type="checkbox"
+        v-bind="$attrs"
+        :checked="modelValue"
+        @change="$emit('update:modelValue', $event.target.checked)"
+        :true-value="customValue ? null : trueValue"
+        :false-value="customValue ? null : falseValue"
+        :value="customValue"
+        :indeterminate="indeterminate" 
+      />
+    </template>
     <slot />
   </cdr-label-wrapper>
 </template>
-<script lang="ts">
+<script>
 import { defineComponent } from 'vue';
 import CdrLabelWrapper from '../labelWrapper/CdrLabelWrapper';
 import sizeProps from '../../props/size';
+import propValidator from '../../utils/propValidator';
 import backgroundProps from '../../props/background';
 
 export default defineComponent({
@@ -77,6 +78,12 @@ export default defineComponent({
     // Set which background type the input renders on
     background: backgroundProps,
     size: sizeProps,
+
+    modifier: {
+      type: String,
+      default: '',
+      validator: (value) => propValidator(value, ['', 'hide-figure']),
+    },
     /** @ignore */
     modelValue: {
       type: [String, Number, Boolean, Object, Array, Symbol, Function],

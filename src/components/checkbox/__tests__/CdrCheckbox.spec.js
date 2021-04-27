@@ -1,4 +1,4 @@
-import { shallowMount, mount } from '../../../../test/vue-jest-style-workaround.js';
+import { mount } from '../../../../test/vue-jest-style-workaround.js';
 import CdrCheckbox from 'componentdir/checkbox/CdrCheckbox';
 
 describe('CdrCheckbox', () => {
@@ -15,8 +15,8 @@ describe('CdrCheckbox', () => {
   });
 
   it('is type checkbox', () => {
-    const wrapper = shallowMount(CdrCheckbox);
-    expect(wrapper.find('input').hasAttribute('type', 'checkbox')).toBe(true);
+    const wrapper = mount(CdrCheckbox);
+    expect(wrapper.find('input').attributes('type')).toBe('checkbox');
   });
 
   it('renders a label element', () => {
@@ -37,7 +37,7 @@ describe('CdrCheckbox', () => {
   });
 
   it('adds a custom input class correctly', () => {
-    const wrapper = shallowMount(CdrCheckbox, {
+    const wrapper = mount(CdrCheckbox, {
       propsData: {
         inputClass: 'custom-input-class',
       },
@@ -45,7 +45,7 @@ describe('CdrCheckbox', () => {
         default: 'Label Test',
       },
     });
-    expect(wrapper.find('input').classList.contains('custom-input-class')).toBe(true);
+    expect(wrapper.find('.custom-input-class').exists()).toBe(true);
   });
 
   it('adds a custom content class correctly', () => {
@@ -61,53 +61,60 @@ describe('CdrCheckbox', () => {
   });
 
   it('watches values correctly', async () => {
-    const wrapper = shallowMount(CdrCheckbox, {
+    const wrapper = mount(CdrCheckbox, {
       propsData: {
-        value: false,
+        modelValue: false,
       },
     });
-    wrapper.setProps({ value: true });
+    wrapper.setProps({ modelValue: true });
     await wrapper.vm.$nextTick();
-    expect(wrapper.vm.value).toBe(true);
-    expect(wrapper.vm.newValue).toBe(true);
+    expect(wrapper.vm.modelValue).toBe(true);
   });
 
-  it('emits change events with correct values for default checkbox', () => {
-    const wrapper = shallowMount(CdrCheckbox, {
+  it('emits change events with correct values for default checkbox', async () => {
+    const wrapper = mount(CdrCheckbox, {
       propsData: {
-        value: false,
+        modelValue: false,
       },
     });
-    const cb = wrapper.findComponent({ ref: 'checkbox'});
+    const cb = wrapper.find('input');
     cb.trigger('click');
+
+    cb.trigger('click');
+    console.log(cb.html())
+
+    await wrapper.vm.$nextTick();
+    console.log('EMISSIONS', wrapper.emitted())
+    
     expect(wrapper.emitted().change[0][0]).toBe(true);
     cb.trigger('click');
     expect(wrapper.emitted().change[1][0]).toBe(false);
   });
 
   it('emits change events with correct values for custom checkbox', () => {
-    const wrapper = shallowMount(CdrCheckbox, {
+    const wrapper = mount(CdrCheckbox, {
       propsData: {
         trueValue: 'checked',
         falseValue: 'unchecked',
-        value: '',
+        modelValue: '',
       },
     });
-    const cb = wrapper.findComponent({ ref: 'checkbox'});
+    const cb = wrapper.find('input');
     cb.trigger('click');
+    console.log('tru', wrapper.emitted().click)
     expect(wrapper.emitted().change[0][0]).toBe('checked');
     cb.trigger('click');
     expect(wrapper.emitted().change[1][0]).toBe('unchecked');
   });
 
   it('emits change events with correct values for group checkbox', () => {
-    const wrapper = shallowMount(CdrCheckbox, {
+    const wrapper = mount(CdrCheckbox, {
       propsData: {
         customValue: 'b',
-        value: ['a'],
+        modelValue: ['a'],
       },
     });
-    const cb = wrapper.findComponent({ ref: 'checkbox'});
+    const cb = wrapper.find('input');
     cb.trigger('click');
     expect(wrapper.emitted().change[0][0]).toEqual(['a', 'b']);
     cb.trigger('click');

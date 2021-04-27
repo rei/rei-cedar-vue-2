@@ -2,29 +2,28 @@
   <div
     :aria-hidden="!active"
     :aria-labelledby="ariaLabelledby"
-    :class="componentClass"
-    :hidden="hidden"
+    :class="mapClasses($style, baseClass, modifierClass, animationDirection && `cdr-tab-panel-${animationDirection}`)"
+    :hidden="hidden" 
     :id="id"
     tabindex="0"
     role="tabpanel"
-    @keydown_up_prevent="handleUpArrowNav"
+    @keydown.up.prevent="handleUpArrowNav"
     @animationend="animationEnd"
     :key="name"
   >
     <slot />
   </div>
 </template>
-<script lang="ts">
+<script>
 import { defineComponent, computed, ref } from 'vue';
 
 
 // TODO: PUT MODIFIER HERE!
-import clsx from 'clsx';
 import { buildClass } from '../../utils/buildClass';
 import propValidator from '../../utils/propValidator';
-import style from './styles/CdrTabPanel.scss';
+import mapClasses from '../../utils/mapClasses';
 
-export default {
+export default defineComponent({
   name: 'CdrTabPanel',
   props: {
     /**
@@ -54,56 +53,49 @@ export default {
   },
 
   setup(props, ctx) {
+    const baseClass = 'cdr-tab-panel';
     const active = ref(false);
     const hidden = ref(true);
     const offsetX = ref(0);
     const animationDirection = ref(null);
+
+    
+    const modifierClass = computed(() => buildClass(baseClass, props.modifier));
+
+    const setActive = (state) => {
+      if (state) hidden = false;
+      active = state;
+      ctx.emit('tab-change', state, props.id);
+    }
+    const setAnimationDirection = (direction) => {
+      animationDirection = direction;
+    }
+    const setOffsetX = (x) => {
+      offsetX = x;
+    }
+    const handleUpArrowNav = () => {
+      // YOU WAHT NOW?!?!?!
+      $parent.setFocusToActiveTabHeader();
+    }
+    const animationEnd = (event) => {
+      if (event.animationName.split('-')[0] === 'exit') {
+        hidden = true;
+        animationDirection = null;
+      }
+    }
     
     return {
-
-
-// <!-- componentClass: clsx(this.style[this.baseClass], this.modifierClass, this.animationClass) -->
-
-
-      // computed: {
-      //   baseClass() {
-      //     return 'cdr-tab-panel';
-      //   },
-      //   animationClass() {
-      //     return this.animationDirection ? style[`cdr-tab-panel-${this.animationDirection}`] : null;
-      //   },
-      // },
-      // methods: {
-      //   setActive(state) {
-      //     if (state) this.hidden = false;
-      //     this.active = state;
-      //     this.$emit('tab-change', state, this.id);
-      //   },
-      //   setAnimationDirection(direction) {
-      //     this.animationDirection = direction;
-      //   },
-      //   setOffsetX(x) {
-      //     this.offsetX = x;
-      //   },
-      //   handleUpArrowNav() {
-      //     this.$parent.setFocusToActiveTabHeader();
-      //   },
-      //   animationEnd(event) {
-      //     if (event.animationName.split('-')[0] === 'exit') {
-      //       this.hidden = true;
-      //       this.animationDirection = null;
-      //     }
-      //   },
-      // },
-
-
-
-
-
-
-
+      modifierClass,
+      animationDirection,
+      baseClass,
+      mapClasses,
+      animationEnd,
+      handleUpArrow,
     };
   },
-};
+});
 
 </script>
+
+<style lang="scss" module src="./styles/CdrTabPanel.scss">
+</style>

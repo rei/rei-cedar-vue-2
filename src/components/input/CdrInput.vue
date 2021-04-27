@@ -97,7 +97,7 @@
     </template>
   </cdr-form-error>
 </template>
-<script lang="ts">
+<script>
 import { defineComponent, computed, ref } from 'vue';
 import propValidator from '../../utils/propValidator';
 import CdrLabelStandalone from '../labelStandalone/CdrLabelStandalone';

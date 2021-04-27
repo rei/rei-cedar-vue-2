@@ -21,7 +21,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import { defineComponent, computed, ref, watchEffect, onMounted } from 'vue';
 import CdrPopup from '../popup/CdrPopup';
 import propValidator from '../../utils/propValidator';

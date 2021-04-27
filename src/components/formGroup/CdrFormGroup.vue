@@ -23,7 +23,7 @@
     </cdr-form-error>
   </fieldset>
 </template>
-<script lang="ts">
+<script>
 import { defineComponent, computed } from 'vue';
 import mapClasses from '../../utils/mapClasses';
 import CdrFormError from '../formError/CdrFormError';

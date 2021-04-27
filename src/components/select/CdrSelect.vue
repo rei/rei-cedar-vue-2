@@ -89,7 +89,7 @@
   </cdr-form-error>
 </template>
 
-<script lang="ts">
+<script>
 import { defineComponent, computed } from 'vue';
 import toArray from 'lodash-es/toArray';
 import IconCaretDown from '../icon/comps/caret-down';

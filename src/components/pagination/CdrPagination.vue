@@ -111,7 +111,7 @@
   </nav>
 </template>
 
-<script lang="ts">
+<script>
 import { defineComponent, computed, ref, watchEffect, nextTick } from 'vue';
 import propValidator from '../../utils/propValidator';
 import { buildClass } from '../../utils/buildClass';

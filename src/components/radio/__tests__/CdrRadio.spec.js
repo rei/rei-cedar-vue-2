@@ -1,4 +1,4 @@
-import { shallowMount, mount } from '../../../../test/vue-jest-style-workaround.js';
+import { mount } from '../../../../test/vue-jest-style-workaround.js';
 import CdrRadio from 'componentdir/radio/CdrRadio';
 
 describe('CdrRadio', () => {
@@ -13,13 +13,13 @@ describe('CdrRadio', () => {
   });
 
   it('is type radio', () => {
-    const wrapper = shallowMount(CdrRadio, {
+    const wrapper = mount(CdrRadio, {
       propsData: {
         customValue: 'A',
         name: 'testName',
       }
     });
-    expect(wrapper.find('radio').hasAttribute('type', 'radio')).toBe(true);
+    expect(wrapper.find('input').hasAttribute('type', 'radio')).toBe(true);
   });
 
   it('adds a custom label class correctly', () => {
@@ -37,7 +37,7 @@ describe('CdrRadio', () => {
   });
 
   it('adds a custom input class correctly', () => {
-    const wrapper = shallowMount(CdrRadio, {
+    const wrapper = mount(CdrRadio, {
       propsData: {
         inputClass: 'custom-input-class',
         customValue: 'A',
@@ -47,7 +47,7 @@ describe('CdrRadio', () => {
         default: 'Label Test',
       },
     });
-    expect(wrapper.find('radio').classList.contains('custom-input-class')).toBe(true);
+    expect(wrapper.find('input').classList.contains('custom-input-class')).toBe(true);
   });
 
   it('adds a custom content class correctly', () => {
@@ -65,61 +65,61 @@ describe('CdrRadio', () => {
   });
 
   it('sets name attribute correctly', () => {
-    const wrapper = shallowMount(CdrRadio, {
+    const wrapper = mount(CdrRadio, {
       propsData: {
         customValue: 'A',
         name: 'testName',
       }
     });
-    expect(wrapper.find('radio').hasAttribute('name', 'testName')).toBe(true);
+    expect(wrapper.find('input').hasAttribute('name', 'testName')).toBe(true);
   });
 
   it('evaluates simple not checked state correctly', () => {
-    const wrapper = shallowMount(CdrRadio, {
+    const wrapper = mount(CdrRadio, {
       propsData: {
         customValue: 'A',
         name: 'testName',
         value: 'AA',
       },
     });
-    expect(wrapper.find('radio').checked).toBe(false);
+    expect(wrapper.find('input').checked).toBe(false);
   });
 
   it('evaluates simple checked state correctly', () => {
-    const wrapper = shallowMount(CdrRadio, {
+    const wrapper = mount(CdrRadio, {
       propsData: {
         customValue: 'A',
         name: 'testName',
         value: 'A',
       },
     });
-    expect(wrapper.find('radio').checked).toBe(true);
+    expect(wrapper.find('input').checked).toBe(true);
   });
 
   it('evaluates complex group not checked state correctly', () => {
-    const wrapper = shallowMount(CdrRadio, {
+    const wrapper = mount(CdrRadio, {
       propsData: {
         customValue: {test: 'B', arr: [1,2,3]},
         name: 'testName',
         value: {test: 'B'},
       },
     });
-    expect(wrapper.find('radio').checked).toBe(false);
+    expect(wrapper.find('input').checked).toBe(false);
   });
 
   it('evaluates complex group checked state correctly', () => {
-    const wrapper = shallowMount(CdrRadio, {
+    const wrapper = mount(CdrRadio, {
       propsData: {
         customValue: {test: 'B', arr: [1,2,3]},
         name: 'testName',
         value: {test: 'B', arr: [1,2,3]},
       },
     });
-    expect(wrapper.find('radio').checked).toBe(true);
+    expect(wrapper.find('input').checked).toBe(true);
   });
 
   it('emits a change event with correct value', () => {
-    const wrapper = shallowMount(CdrRadio, {
+    const wrapper = mount(CdrRadio, {
       propsData: {
         customValue: 'A',
         name: 'testName',
@@ -127,7 +127,7 @@ describe('CdrRadio', () => {
       },
     });
 
-    const rb = wrapper.findComponent({ ref: 'radio'});
+    const rb = wrapper.find('input');
     rb.trigger('click')
     expect(wrapper.emitted().change[0][0]).toBe('A');
   });

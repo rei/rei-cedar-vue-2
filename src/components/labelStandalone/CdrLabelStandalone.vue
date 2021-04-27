@@ -33,7 +33,7 @@
     </span>
   </div>
 </template>
-<script lang="ts">
+<script>
 import { defineComponent, computed } from 'vue';
 import mapClasses from '../../utils/mapClasses';
 

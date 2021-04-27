@@ -1,106 +1,88 @@
 <template>
   <div
-    class={clsx(this.style[this.baseClass], this.modifierClass, this.sizeClass)}
-    ref="cdrTabsContainer"
-    style={{ height: this.height }}
+    :class="mapClasses($style, baseClass, modifierClass, sizeClass)"
+    ref="ccontainerEl"
+    :style="{ height: containerHeight }"
   >
+  <!-- TODO: key event preventDefault???? -->
     <div
-      class={this.style['cdr-tabs__gradient-container']}
-      vOn:keyup_right={this.rightArrowNav}
-      vOn:keyup_left={this.leftArrowNav}
-      vOn:keydown_down_prevent={this.handleDownArrowNav}
+      :class="$style['cdr-tabs__gradient-container']"
+      @keyup.right="rightArrowNav"
+      @keyup.left="leftArrowNav"
+      @keydown.down.prevent="handleDownArrowNav"
     >
-      <div class={clsx(
-        this.style['cdr-tabs__gradient'],
-        this.style['cdr-tabs__gradient--left'],
-        this.overflowLeft ? this.style['cdr-tabs__gradient--active'] : '',
-      )}
-        style={this.gradientLeftStyle}
+      <div :class="mapClasses($style
+       'cdr-tabs__gradient',
+       'cdr-tabs__gradient--left',
+        overflowLeft ?'cdr-tabs__gradient--active' : '',
+      )"
+        :style="gradientLeftStyle"
       ></div>
       <nav
-        class={this.style['cdr-tabs__header-container']}
+        :class="$style['cdr-tabs__header-container']"
       >
         <div
-          class={this.style['cdr-tabs__header']}
+          :class="$style['cdr-tabs__header']"
           role="tablist"
           ref="cdrTabsHeader"
         >
-          {this.tabs.map((tab) => this.getTabEl(tab))}
 
-          <!-- return tab.disabled ? (
-            <button
-              class={clsx(
-                this.style['cdr-tabs__header-item'],
-                this.style['cdr-tabs__header-item--disabled'],
-              )}
-              disabled
-            >
-              {tab.name}
-            </button>
-          ) : (
-            <button
-              role="tab"
-              aria-selected={tab.active}
-              aria-controls={tab.id}
-              id={tab.ariaLabelledby}
-              key={tab.id}
-              class={clsx(
-                tab.active ? this.style['cdr-tabs__header-item-active'] : '',
-                this.style['cdr-tabs__header-item'],
-              )}
-              tabIndex={tab.active ? 0 : -1}
-              vOn:click_prevent={(e) => this.handleClick(tab, e)}
-              js-name={ tab.name }
-            >
-              { tab.name }
-            </button> -->
-
-
-
+          <button
+            v-for="tab in tabs"
+            role="tab"
+            :aria-selected="tab.disabled ? '' : tab.active"
+            :aria-controls="tab.disabled ? '' : tab.id"
+            :id="tab.disabled ? '' : tab.ariaLabelledby"
+            :key="tab.id"
+            :class="mapClasses($style,
+              (tab.active && !tab.disabled) ? 'cdr-tabs__header-item-active' : '',
+              'cdr-tabs__header-item',
+              tab.disabled ? 'cdr-tabs__header-item--disabled' : '',
+            )"
+            :tabIndex="(tab.active && !tab.disabled) ? 0 : -1"
+            @click.prevent="(e) => tab.disabled ? null : handleClick(tab, e)"
+            :js-name="tab.name"
+          >
+            {{ tab.name }}
+          </button> 
         </div>
       </nav>
-      <div class={clsx(
-        this.style['cdr-tabs__gradient'],
-        this.style['cdr-tabs__gradient--right'],
-        this.overflowRight ? this.style['cdr-tabs__gradient--active'] : '',
-      )}
-        style={this.gradientRightStyle}
+      <div :class="mapClasses($style,
+        'cdr-tabs__gradient',
+        'cdr-tabs__gradient--right',
+        overflowRight ? 'cdr-tabs__gradient--active' : '',
+      )"
+        :style="gradientRightStyle"
       ></div>
       <div
-        class={this.style['cdr-tabs__underline']}
-        style={this.underlineStyle}
+        :class="style['cdr-tabs__underline']"
+        :style="underlineStyle"
       />
     </div>
     <div
-      class={this.style['cdr-tabs__content-container']}
+      :class="style['cdr-tabs__content-container']"
       ref="slotWrapper"
     >
-      {this.$slots.default}
+      <slot />
     </div>
   </div>
 </template>
-<script lang="ts">
-import { defineComponent, computed } from 'vue';
+<script>
 import { buildClass } from '../../utils/buildClass'
-import propValidator from '../../utils/propValidator';
-
-const modifierClass = computed(() => buildClass('cdr-radio', props.modifier, style));
-const sizeClass = computed(() => props.size && buildClass('cdr-radio', props.size, style));
 
 
 
+
+import { defineComponent, computed, ref } from 'vue';
 import debounce from 'lodash-es/debounce';
-import clsx from 'clsx';
+import mapClasses $style,from 'mapClasses'$style,;
 import {
   CdrColorBackgroundPrimary, CdrSpaceOneX, CdrSpaceHalfX,
 } from '@rei/cdr-tokens/dist/js/cdr-tokens.esm';
-// import modifier from '../../mixins/modifier';
-// import size from '../../mixins/size';
 import style from './styles/CdrTabs.scss';
 
-export default {
+export default defineComponent({
   name: 'CdrTabs',
-  mixins: [modifier, size],
   props: {
     height: {
       type: String,
@@ -110,42 +92,12 @@ export default {
       type: Number,
       default: 0,
     },
+    modifier: String,
+    size: String,
     backgroundColor: {
       type: String,
       default: CdrColorBackgroundPrimary,
     },
-  },
-  mounted() {
-    // TODO: DO something like accordion group here?
-    // hrmmmm
-    this.tabs = (this.$slots.default || [])
-      .map((vnode) => vnode.componentInstance)
-      .filter((tab) => tab); // get vue component children in the slot
-
-    this.activeTabIndex = this.getNextTab(this.activeTab);
-
-    if (this.tabs[this.activeTabIndex] && this.tabs[this.activeTabIndex].setActive) {
-      this.tabs[this.activeTabIndex].setActive(true);
-    }
-
-    this.$nextTick(() => {
-      this.headerWidth = this.getHeaderWidth();
-      this.calculateOverflow();
-      setTimeout(() => {
-        this.updateUnderline();
-      }, 500);
-    });
-    // Check for header overflow on window resize for gradient behavior.
-    window.addEventListener('resize', debounce(() => {
-      this.headerWidth = this.getHeaderWidth();
-      this.calculateOverflow();
-      this.updateUnderline();
-    }, 500));
-    // Check for header overflow on widow resize for gradient behavior.
-    this.$refs.cdrTabsHeader.parentElement.addEventListener('scroll', debounce(() => {
-      this.calculateOverflow();
-      this.updateUnderline();
-    }, 50));
   },
   methods: {
     getNextTab(startIndex) {
@@ -305,32 +257,65 @@ export default {
     const overflowRight = ref(false);
     const animationInProgress = ref(false);
 
+    const baseClass = 'cdr-tabs';
+    const modifierClass = computed(() => buildClass('cdr-tabs', props.modifier));
+    const sizeClass = computed(() => props.size && buildClass('cdr-tabs', props.size));
 
-    const baseClass = style['cdr-tabs'];
     const underlineStyle = computed(() => {
       return {
-        transform: `translateX(${this.underlineOffsetX}px)`,
-        width: `${this.underlineWidth}px`,
+        transform: `translateX(${underlineOffsetX}px)`,
+        width: `${underlineWidth}px`,
       };
     });
     const gradientLeftStyle = computed(() => {
-      const gradient = `linear-gradient(to left, rgba(255, 255, 255, 0), ${this.backgroundColor})`;
+      const gradient = `linear-gradient(to left, rgba(255, 255, 255, 0), ${backgroundColor})`;
       return {
         background: gradient,
       };
     });
     const gradientRightStyle = computed(() => {
-      const gradient = `linear-gradient(to right, rgba(255, 255, 255, 0), ${this.backgroundColor})`;
+      const gradient = `linear-gradient(to right, rgba(255, 255, 255, 0), ${backgroundColor})`;
       return {
         background: gradient,
       };
     });
 
+    onMounted(() => {
+       // TODO: DO something like accordion group here?
+      // hrmmmm
+      this.tabs = (this.$slots.default || [])
+        .map((vnode) => vnode.componentInstance)
+        .filter((tab) => tab); // get vue component children in the slot
 
+      this.activeTabIndex = this.getNextTab(this.activeTab);
+
+      if (this.tabs[this.activeTabIndex] && this.tabs[this.activeTabIndex].setActive) {
+        this.tabs[this.activeTabIndex].setActive(true);
+      }
+
+      this.$nextTick(() => {
+        this.headerWidth = this.getHeaderWidth();
+        this.calculateOverflow();
+        setTimeout(() => {
+          this.updateUnderline();
+        }, 500);
+      });
+      // Check for header overflow on window resize for gradient behavior.
+      window.addEventListener('resize', debounce(() => {
+        this.headerWidth = this.getHeaderWidth();
+        this.calculateOverflow();
+        this.updateUnderline();
+      }, 500));
+      // Check for header overflow on widow resize for gradient behavior.
+      this.$refs.cdrTabsHeader.parentElement.addEventListener('scroll', debounce(() => {
+        this.calculateOverflow();
+        this.updateUnderline();
+      }, 50));
+    })
 
     return {
 
     };
   },
-};
+});
 </script>

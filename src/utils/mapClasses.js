@@ -4,3 +4,4 @@ export default function mapClasses (style, ...classes) {
     .filter(x => x)
     .join(' ');
 }
+// TODO: make mapClasses available in every template?

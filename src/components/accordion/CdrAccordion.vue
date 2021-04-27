@@ -1,9 +1,9 @@
 <template>
   <div
-    :class="mapClasses($style, baseClass, modifierClass, styleClass, focusedClass)"
+    :class="mapClasses($style, baseClass, modifierClass, focusedClass)"
     :id="`${id}-accordion`"
   >
-    <Heading :class="headingClass">
+    <component :is="headingTag" :class="headingClass">
       <button
         :class="buttonClass"
         :id="id"
@@ -16,15 +16,15 @@
         <span
           :class="labelClass"
           :id="`${id}-label`"
-          >
+        >
           <slot name="label"/>
         </span>
         <icon-caret-down
           :class="mapClasses($style, iconClass, isOpenClass)"
           :size="compact ? 'small' : null"
-          />
+        />
       </button>
-    </Heading>
+    </component>
     <div
       :class="mapClasses($style, containerClass, isOpenClass)"
       :style="{ maxHeight: maxHeight }"
@@ -40,12 +40,10 @@
     </div>
   </div>
 </template>
-<script lang="ts">
-import { defineComponent, computed, watch, onMounted } from 'vue';
-
-import clsx from 'clsx';
+<script>
+import { defineComponent, computed, watchEffect, onMounted, ref } from 'vue';
 import IconCaretDown from '../icon/comps/caret-down';
-import { modifyClassName } from '../../utils/buildClass';
+import { buildClass, modifyClassName } from '../../utils/buildClass';
 import mapClasses from '../../utils/mapClasses';
 
 export default defineComponent({
@@ -94,7 +92,7 @@ export default defineComponent({
     const headingClass = 'cdr-accordion__header';
 
 
-    const buttonClass = clsx('cdr-accordion__button'], 'js-cdr-accordion-button');
+    const buttonClass = 'cdr-accordion__button js-cdr-accordion-button';
 
     const accordionContent = ref(null);
     const focused = ref(false);
@@ -119,6 +117,9 @@ export default defineComponent({
         null
     });
 
+
+    const modifierClass = computed(() => buildClass(baseClass, props.modifier));
+
     const iconClass = 'cdr-accordion__icon';
 
     const containerClass = 'cdr-accordion__content-container';
@@ -137,7 +138,7 @@ export default defineComponent({
        focused.value = false;
      }
 
-     watch(props.opened, (opened) => {
+     watchEffect(() => props.opened, (opened) => {
        maxHeight.value = !opened ? `${accordionContent.value.clientHeight}px` : 0;
        // nextTick is not sufficient here, must wait for CSS to re-paint
        setTimeout(() => {
@@ -154,11 +155,10 @@ export default defineComponent({
        if (props.opened && accordionContent.value) {
          maxHeight.value = 'none';
        }
-     })
+     });
 
 
      return {
-       clsx,
        headingTag,
        headingClass,
        buttonClass,
@@ -174,11 +174,13 @@ export default defineComponent({
        containerClass,
        isOpenClass,
        contentClass,
+       modifierClass,
        onClick,
        onFocus,
        onBlur,
+       mapClasses,
      }
-  },
+  }
 });
 </script>
 

@@ -11,7 +11,7 @@
     />
   </svg>
 </template>
-<script lang="ts">
+<script>
 import { defineComponent, computed } from 'vue';
 
 import { buildClass } from '../../utils/buildClass';

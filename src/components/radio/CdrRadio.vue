@@ -21,7 +21,7 @@
     <slot />
   </cdr-label-wrapper>
 </template>
-<script lang="ts">
+<script>
 import { defineComponent } from 'vue';
 
 import propValidator from '../../utils/propValidator';
@@ -34,7 +34,6 @@ export default defineComponent({
   components: {
     CdrLabelWrapper,
   },
-  // mixins: [modifier, size],
   inheritAttrs: false,
   props: {
     /**

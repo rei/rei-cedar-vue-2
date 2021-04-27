@@ -1,4 +1,4 @@
-import { mount, shallowMount, RouterLinkStub } from '@vue/test-utils';
+import { mount, shallowMount, RouterLinkStub } from '../../../../test/vue-jest-style-workaround.js';
 import CdrPagination from 'componentdir/pagination/CdrPagination';
 import IconCaretLeft from 'componentdir/icon/comps/caret-left';
 import IconCaretRight from 'componentdir/icon/comps/caret-right';

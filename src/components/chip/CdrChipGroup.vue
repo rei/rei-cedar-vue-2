@@ -5,9 +5,9 @@
     @keydown="handleKeyDown"
   >
     <legend :class="$style[legendClass]">
-      <!-- TODO handle only rendering one or other -->
-      {{ label }}
-      <slot name="label"/>
+      <slot name="label">
+        {{ label }}
+      </slot>
     </legend>
     <div ref="chipsEl" :class="$style['cdr-chip-group__content']">
       <slot />
@@ -15,7 +15,7 @@
   </fieldset>
 </template>
 
-<script lang="ts">
+<script>
 import { defineComponent, computed, ref, onMounted } from 'vue';
 
 export default defineComponent({

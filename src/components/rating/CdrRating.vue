@@ -59,7 +59,7 @@
     </span>
   </component>
 </template>
-<script lang="ts">
+<script>
 import { defineComponent, computed } from 'vue';
 import { buildClass } from '../../utils/buildClass';
 import propValidator from '../../utils/propValidator';

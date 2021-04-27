@@ -20,7 +20,7 @@
   </component>
 </template>
 
-<script lang="ts">
+<script>
 import { defineComponent, computed } from 'vue';
 import mapClasses from '../../utils/mapClasses';
 import { buildClass } from '../../utils/buildClass';

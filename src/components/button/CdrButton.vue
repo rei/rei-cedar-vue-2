@@ -22,7 +22,7 @@
 </template>
 
 <!-- NOTE: REMOVED icon slot. use icon-left -->
-<script lang="ts">
+<script>
 import { defineComponent, computed } from 'vue';
 
 import mapClasses from '../../utils/mapClasses';

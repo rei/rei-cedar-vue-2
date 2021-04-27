@@ -17,7 +17,7 @@
 
 </template>
 <!-- TODO: class and style are now part of attrs, which breaks stuff? -->
-<script lang="ts">
+<script>
 import { defineComponent, computed } from 'vue';
 
 import mapClasses from '../../utils/mapClasses';

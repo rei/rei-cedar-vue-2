@@ -1,4 +1,4 @@
-import { mount } from '@vue/test-utils';
+import { mount } from '../../../../test/vue-jest-style-workaround.js';
 import CdrTabs from 'componentdir/tabs/CdrTabs';
 import CdrTabPanel from 'componentdir/tabs/CdrTabPanel';
 import Vue from 'vue';

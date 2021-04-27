@@ -66,7 +66,7 @@
     </ol>
   </nav>
 </template>
-<script lang="ts">
+<script>
 import {
   defineComponent, computed, ref, watch,
 } from 'vue';

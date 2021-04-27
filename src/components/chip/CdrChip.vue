@@ -14,7 +14,7 @@
   </button>
 </template>
 
-<script lang="ts">
+<script>
 import { defineComponent } from 'vue';
 import propValidator from '../../utils/propValidator';
 

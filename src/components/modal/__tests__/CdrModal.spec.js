@@ -1,4 +1,4 @@
-import { shallowMount, mount } from '@vue/test-utils';
+import { shallowMount, mount } from '../../../../test/vue-jest-style-workaround.js';
 import CdrModal from 'componentdir/modal/CdrModal';
 import Vue from 'vue';
 // import packageJson from '../../../../package.json';

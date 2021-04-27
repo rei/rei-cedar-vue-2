@@ -47,7 +47,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import { defineComponent, computed, ref, watchEffect, onMounted } from 'vue';
 import tabbable from 'tabbable';
 import clsx from 'clsx';
