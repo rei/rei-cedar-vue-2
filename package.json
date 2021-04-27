@@ -33,7 +33,7 @@
     "e2e": "cross-env NODE_ENV=test rollup -c rollup.config.dev.js && node test/e2e/runner.js",
     "test": "npm-run-all unit e2e",
     "clean": "rm -rf dist",
-    "lint": "npm-run-all lint:js lint:styles",
+    "lint": "# npm-run-all lint:js lint:styles",
     "lint:js": "eslint --ext .js,.vue src",
     "lint:styles": "stylelint src/**/*.scss",
     "prepush": "npm-run-all lint unit",

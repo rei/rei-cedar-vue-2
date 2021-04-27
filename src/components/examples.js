@@ -17,7 +17,7 @@ import list from 'componentsdir/list/examples/Lists';
 // import pagination from 'componentsdir/pagination/examples/Pagination';
 // import popover from 'componentsdir/popover/examples/Popover';
 import quote from 'componentsdir/quote/examples/Quote';
-// import radio from 'componentsdir/radio/examples/Radios';
+import radio from 'componentsdir/radio/examples/Radios';
 import rating from 'componentsdir/rating/examples/Ratings';
 // import selects from 'componentsdir/select/examples/Selects';
 import tables from 'componentsdir/table/examples/Table';
@@ -45,7 +45,7 @@ export default {
   // pagination,
   // popover,
   quote,
-  // radio,
+  radio,
   rating,
   // selects,
   tables,

@@ -8,16 +8,18 @@
     :background="background"
     :disabled="$attrs.disabled"
   >
-    <input
-      :class="[$style['cdr-radio__input'], inputClass]"
-      type="radio"
-      :name="name"
-      slot="input"
-      :checked="modelValue === customValue"
-      :value="customValue"
-      v-bind="$attrs"
-      @change="$emit('update:modelValue', value)"
-    >
+    <template v-slot:input>
+      <input
+        :class="[$style['cdr-radio__input'], inputClass]"
+        type="radio"
+        :name="name"
+        
+        :checked="modelValue === customValue"
+        :value="customValue"
+        v-bind="$attrs"
+        @change="$emit('update:modelValue', $event.target.checked)"
+      />
+    </template>
     <slot />
   </cdr-label-wrapper>
 </template>

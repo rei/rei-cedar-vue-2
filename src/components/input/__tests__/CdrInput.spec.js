@@ -91,7 +91,6 @@ describe('CdrInput', () => {
         type: 'number'
       },
     });
-    console.log('ATTRS',wrapper.find('.cdr-input').attributes());
     expect(wrapper.find('.cdr-input').attributes('novalidate')).toBe('');
     expect(wrapper.find('.cdr-input').attributes('pattern')).toBe('[0-9]*');
     expect(wrapper.find('.cdr-input').attributes('inputmode')).toBe('numeric');
