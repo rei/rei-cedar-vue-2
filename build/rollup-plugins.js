@@ -121,9 +121,9 @@ const plugins = [
     extract: postcssExtract,
     extensions: ['.scss', '.css'],
     sourceMap: env === 'dev' ? 'inline' : false,
-    // modules: {
-    //   generateScopedName,
-    // },
+    modules: {
+      generateScopedName,
+    },
   }),
   babel({
     exclude: 'node_modules/**',
