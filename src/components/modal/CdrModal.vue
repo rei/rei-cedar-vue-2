@@ -1,63 +1,84 @@
 <template>
   <div
-    class={clsx(
-      this.style['cdr-modal'],
-      {
-        [this.style.closed]: !opened,
-      },
+    class="{clsx("
+    this.style['cdr-modal'],
+    {
+    [this.style.closed]:
+    !opened,
+    },
     )}
     ref="wrapper"
   >
-    <div class={clsx(this.style['cdr-modal__outerWrap'], wrapperClass)}>
+    <div
+      class="{clsx(this.style['cdr-modal__outerWrap'],"
+      wrapperClass)}
+    >
       <div
         aria-hidden="true"
-        onClick={onClick}
-        class={clsx(this.style['cdr-modal__overlay'], overlayClass)}
+        onClick="{onClick}"
+        class="{clsx(this.style['cdr-modal__overlay'],"
+        overlayClass)}
       />
-      <div tabIndex={opened ? '0' : undefined} />
+      <div
+        tabIndex="{opened"
+        ?
+        '0'
+        :
+        undefined}
+      />
       {/*
-        this is the "uncommon case of an element that captures incoming tab traversal
-        for a composite widget" mentioned in the rule docs
+      this is the "uncommon case of an element that captures incoming tab traversal
+      for a composite widget" mentioned in the rule docs
       */}
       <div
         ref="modal"
-        class={clsx(this.style['cdr-modal__contentWrap'], this.style['cdr-modal__dialog'])}
+        class="{clsx(this.style['cdr-modal__contentWrap'],"
+        this.style['cdr-modal__dialog'])}
         tabIndex="-1"
         role="dialog"
-        aria-modal={!!opened}
-        aria-label={label}
-        {...{ attrs: this.dialogAttrs }}
+        aria-modal="{!!opened}"
+        aria-label="{label}"
+        {...{
+        attrs:
+        this.dialogAttrs
+        }}
       >
         {this.$slots.modal || (<div
-          class={clsx(this.style['cdr-modal__innerWrap'], contentClass)}
-          style={reallyClosed
-            ? { display: 'none' }
-            : undefined
+          class="{clsx(this.style['cdr-modal__innerWrap'],"
+          contentClass)}
+          style="{reallyClosed"
+          ?
+          {
+          display:
+          'none'
+          }
+          :
+          undefined
           }
         >
           <section>
-            <div class={this.style['cdr-modal__content']}>
+            <div class="{this.style['cdr-modal__content']}">
               <div
-                class={this.style['cdr-modal__header']}
+                class="{this.style['cdr-modal__header']}"
                 ref="header"
               >
-                <div class={this.style['cdr-modal__title']}>
+                <div class="{this.style['cdr-modal__title']}">
                   {
-                    this.showTitle && this.$slots.title
+                  this.showTitle && this.$slots.title
                   }
                   {
-                    this.showTitle && !this.$slots.title && (
-                      <h1>
-                        {this.label}
-                      </h1>
-                    )
+                  this.showTitle && !this.$slots.title && (
+                  <h1>
+                    {this.label}
+                  </h1>
+                  )
                   }
                 </div>
                 <cdr-button
-                  class={this.style['cdr-modal__close-button']}
+                  class="{this.style['cdr-modal__close-button']}"
                   icon-only
-                  with-background={true}
-                  on-click={onClick}
+                  with-background="{true}"
+                  on-click="{onClick}"
                   aria-label="Close"
                 >
                   <IconXLg
@@ -68,29 +89,40 @@
               </div>
               <div
                 role="document"
-                class={this.style['cdr-modal__text']}
+                class="{this.style['cdr-modal__text']}"
               >
                 <div
-                  class={this.style['cdr-modal__text-content']}
-                  style={ { maxHeight: `${this.scrollMaxHeight}px` } }
+                  class="{this.style['cdr-modal__text-content']}"
+                  style="{"
+                  {
+                  maxHeight:
+                  `${this.scrollMaxHeight}px`
+                  }
+                  }
                   ref="content"
                   tabindex="0"
                 >
                   {this.$slots.default}
                 </div>
                 {
-                  this.scrolling && (
-                    <div
-                    class={this.style['cdr-modal__text-fade']}
-                  />
-                  )
+                this.scrolling && (
+                <div
+                  class="{this.style['cdr-modal__text-fade']}"
+                />
+                )
                 }
               </div>
             </div>
           </section>
         </div>)}
       </div>
-      <div tabIndex={opened ? '0' : undefined} />
+      <div
+        tabIndex="{opened"
+        ?
+        '0'
+        :
+        undefined}
+      />
     </div>
   </div>
 
@@ -98,16 +130,14 @@
 
 <script>
 
-
-
 import debounce from 'lodash-es/debounce';
 import tabbable from 'tabbable';
 import { defineComponent, computed, ref } from 'vue';
-import propValidator from '../../utils/propValidator';
-import { buildClass } from '../../utils/buildClass';
 import {
   CdrBreakpointSm, CdrSpaceOneX, CdrSpaceTwoX,
 } from '@rei/cdr-tokens/dist/js/cdr-tokens.esm';
+import propValidator from '../../utils/propValidator';
+import { buildClass } from '../../utils/buildClass';
 import onTransitionEnd from './onTransitionEnd';
 import CdrButton from '../button/CdrButton';
 import IconXLg from '../icon/comps/x-lg';
@@ -355,7 +385,6 @@ export default defineComponent({
   },
 });
 </script>
-
 
 <style lang="scss" module src="./styles/CdrModal.scss">
 </style>

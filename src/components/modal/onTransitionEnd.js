@@ -15,7 +15,7 @@ if (typeof document !== 'undefined') {
   for (let i = 0, key = keys[i]; i < keys.length; i += 1, key = keys[i]) {
     if (key in style) {
       transitionEvent = transitions[key];
-      console.log(transitionEvent, key)
+      console.log(transitionEvent, key);
       break;
     }
   }

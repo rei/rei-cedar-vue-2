@@ -5,11 +5,13 @@
     @focusin="focusin"
     @keydown="handleKeyDown"
   >
-    <slot/>
+    <slot />
   </ul>
 </template>
 <script>
-import { defineComponent, computed, ref, onMounted } from 'vue';
+import {
+  defineComponent, computed, ref, onMounted,
+} from 'vue';
 
 export default defineComponent({
   name: 'CdrAccordionGroup',
@@ -31,9 +33,9 @@ export default defineComponent({
     });
 
     // TODO: how to handle $el?
-    onMounted(() => accordionButtons.value = accordionGroupEl.value.querySelectorAll('.js-cdr-accordion-button'))
+    onMounted(() => accordionButtons.value = accordionGroupEl.value.querySelectorAll('.js-cdr-accordion-button'));
 
-    const handleKeyDown = (e) =>{
+    const handleKeyDown = (e) => {
       // something besides the button is focused
       if (currentIdx.value === -1) return;
 
@@ -59,11 +61,11 @@ export default defineComponent({
           break;
         default: break;
       }
-    }
+    };
     const focusin = (e) => {
       // find out which, if any, button is focused
       currentIdx.value = Array.prototype.indexOf.call(accordionButtons, e.target);
-    }
+    };
 
     return {
       handleKeyDown,
@@ -74,7 +76,6 @@ export default defineComponent({
   },
 });
 </script>
-
 
 <style lang="scss" module src="./styles/CdrAccordionGroup.scss">
 </style>

@@ -7,10 +7,16 @@
     :optional="optional"
     :disabled="disabled"
   >
-    <template v-slot:helper v-if="hasHelperTop">
+    <template
+      #helper
+      v-if="hasHelperTop"
+    >
       <slot name="helper-text-top" />
     </template>
-    <template v-slot:info v-if="hasHelperTop">
+    <template
+      #info
+      v-if="hasHelperTop"
+    >
       <slot name="info" />
     </template>
   </cdr-label-standalone>
@@ -20,14 +26,14 @@
         v-if="rows && rows > 1"
         :rows="rows"
         :class="mapClasses($style,
-          baseClass,
-          multilineClass,
-          preIconClass,
-          postIconClass,
-          postIconsClass,
-          errorClass,
-          backgroundClass,
-          sizeClass,
+                           baseClass,
+                           multilineClass,
+                           preIconClass,
+                           postIconClass,
+                           postIconsClass,
+                           errorClass,
+                           backgroundClass,
+                           sizeClass,
         )"
         :id="id"
         :disabled="disabled"
@@ -43,13 +49,13 @@
         v-else
         :type="type"
         :class="mapClasses($style,
-          baseClass,
-          preIconClass,
-          postIconClass,
-          postIconsClass,
-          errorClass,
-          backgroundClass,
-          sizeClass,
+                           baseClass,
+                           preIconClass,
+                           postIconClass,
+                           postIconsClass,
+                           errorClass,
+                           backgroundClass,
+                           sizeClass,
         )"
         :id="id"
         :disabled="disabled"
@@ -92,7 +98,7 @@
     :error="error"
     v-if="error"
   >
-    <template v-slot:error>
+    <template #error>
       <slot name="error" />
     </template>
   </cdr-form-error>
@@ -180,14 +186,14 @@ export default defineComponent({
   setup(props, ctx) {
     const baseClass = 'cdr-input';
     // console.log(ctx.slots['post-icon']);
-// TODO: delete un-used hasSlot props
+    // TODO: delete un-used hasSlot props
     const isFocused = ref(false);
     const hasHelperTop = ctx.slots['helper-text-top'];
     const hasHelperBottom = ctx.slots['helper-text-bottom'];
     const hasPreIcon = ctx.slots['pre-icon'];
     const hasPostIcon = ctx.slots['post-icon'];
     // TODO: either this no longer works, or doesnt work in unit test due to VTU array slot bug?
-    const hasPostIcons = false; //hasPostIcon && ctx.slots['post-icon']().length > 1;
+    const hasPostIcons = false; // hasPostIcon && ctx.slots['post-icon']().length > 1;
     const hasInfo = ctx.slots.info;
     const hasInfoAction = ctx.slots['info-action'];
 
@@ -200,7 +206,6 @@ export default defineComponent({
     const backgroundClass = computed(() => `cdr-input--${props.background}`);
     const sizeClass = computed(() => props.size && buildClass(baseClass, props.size));
     const focusedClass = computed(() => isFocused.value && 'cdr-input--focus');
-
 
     const inputAttrs = computed(() => {
       // TODO: do we also need to change the "type" when number?
@@ -218,7 +223,7 @@ export default defineComponent({
       }
       return attrs;
     });
-    
+
     return {
       baseClass,
       sizeClass,

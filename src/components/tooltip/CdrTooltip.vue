@@ -100,10 +100,7 @@ export default defineComponent({
       }
     }
 
-    watchEffect((props.open) => {
-      // TODO: if eslint yells about this then eslint must go :)
-      props.open ? openTooltip() : closeTooltip();
-    })
+    watch(() => props.open, () => (props.open ? openTooltip() : closeTooltip()));
 
     onMounted(() => {
       addHandlers();

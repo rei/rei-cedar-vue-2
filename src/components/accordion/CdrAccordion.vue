@@ -3,7 +3,10 @@
     :class="mapClasses($style, baseClass, modifierClass, focusedClass)"
     :id="`${id}-accordion`"
   >
-    <component :is="headingTag" :class="headingClass">
+    <component
+      :is="headingTag"
+      :class="headingClass"
+    >
       <button
         :class="buttonClass"
         :id="id"
@@ -12,12 +15,12 @@
         @blur="onBlur"
         :aria-expanded="`${opened}`"
         :aria-controls="`${id}-collapsible`"
-        >
+      >
         <span
           :class="labelClass"
           :id="`${id}-label`"
         >
-          <slot name="label"/>
+          <slot name="label" />
         </span>
         <icon-caret-down
           :class="mapClasses($style, iconClass, isOpenClass)"
@@ -41,7 +44,9 @@
   </div>
 </template>
 <script>
-import { defineComponent, computed, watchEffect, onMounted, ref } from 'vue';
+import {
+  defineComponent, computed, watchEffect, onMounted, ref,
+} from 'vue';
 import IconCaretDown from '../icon/comps/caret-down';
 import { buildClass, modifyClassName } from '../../utils/buildClass';
 import mapClasses from '../../utils/mapClasses';
@@ -91,7 +96,6 @@ export default defineComponent({
     const headingTag = `h${props.level}`;
     const headingClass = 'cdr-accordion__header';
 
-
     const buttonClass = 'cdr-accordion__button js-cdr-accordion-button';
 
     const accordionContent = ref(null);
@@ -101,22 +105,15 @@ export default defineComponent({
     const labelClass = 'cdr-accordion__label';
 
     const baseClass = 'cdr-accordion';
-    const compactClass = computed(() => {
-      return props.compact ?
-        modifyClassName('cdr-accordion', 'compact') :
-        '';
-    });
-    const borderAlignedClass = computed(() => {
-      return props.borderAligned ?
-        modifyClassName('cdr-accordion', 'border-aligned') :
-        '';
-    });
-    const focusedClass = computed(() => {
-      return focused.value ?
-        modifyClassName('cdr-accordion', 'focused') :
-        null
-    });
-
+    const compactClass = computed(() => (props.compact
+      ? modifyClassName('cdr-accordion', 'compact')
+      : ''));
+    const borderAlignedClass = computed(() => (props.borderAligned
+      ? modifyClassName('cdr-accordion', 'border-aligned')
+      : ''));
+    const focusedClass = computed(() => (focused.value
+      ? modifyClassName('cdr-accordion', 'focused')
+      : null));
 
     const modifierClass = computed(() => buildClass(baseClass, props.modifier));
 
@@ -125,62 +122,61 @@ export default defineComponent({
     const containerClass = 'cdr-accordion__content-container';
 
     // is this class really not scoped?!?!?!?
-    const isOpenClass = computed(() => props.opened ? 'open' : 'closed');
+    const isOpenClass = computed(() => (props.opened ? 'open' : 'closed'));
     const contentClass = 'cdr-accordion__content';
 
     const onClick = (event) => {
-       ctx.emit('accordion-toggle', event);
-     }
-     const onFocus = () => {
-       focused.value = true;
-     }
-     const onBlur = () => {
-       focused.value = false;
-     }
+      ctx.emit('accordion-toggle', event);
+    };
+    const onFocus = () => {
+      focused.value = true;
+    };
+    const onBlur = () => {
+      focused.value = false;
+    };
 
-     watchEffect(() => props.opened, (opened) => {
-       maxHeight.value = !opened ? `${accordionContent.value.clientHeight}px` : 0;
-       // nextTick is not sufficient here, must wait for CSS to re-paint
-       setTimeout(() => {
-         // on next frame, set maxHeight to new value
-         maxHeight.value = opened ? `${accordionContent.value.clientHeight}px` : 0;
-         setTimeout(() => {
-           // after animation is complete, remove max-height so content can reflow
-           maxHeight.value = opened ? 'none' : 0;
-         }, 350); // cdr-duration-3x + 50ms
-       }, 50);
-     });
+    watchEffect(() => props.opened, (opened) => {
+      maxHeight.value = !opened ? `${accordionContent.value.clientHeight}px` : 0;
+      // nextTick is not sufficient here, must wait for CSS to re-paint
+      setTimeout(() => {
+        // on next frame, set maxHeight to new value
+        maxHeight.value = opened ? `${accordionContent.value.clientHeight}px` : 0;
+        setTimeout(() => {
+          // after animation is complete, remove max-height so content can reflow
+          maxHeight.value = opened ? 'none' : 0;
+        }, 350); // cdr-duration-3x + 50ms
+      }, 50);
+    });
 
-     onMounted(() => {
-       if (props.opened && accordionContent.value) {
-         maxHeight.value = 'none';
-       }
-     });
+    onMounted(() => {
+      if (props.opened && accordionContent.value) {
+        maxHeight.value = 'none';
+      }
+    });
 
-
-     return {
-       headingTag,
-       headingClass,
-       buttonClass,
-       accordionContent,
-       focused,
-       maxHeight,
-       baseClass,
-       labelClass,
-       compactClass,
-       borderAlignedClass,
-       focusedClass,
-       iconClass,
-       containerClass,
-       isOpenClass,
-       contentClass,
-       modifierClass,
-       onClick,
-       onFocus,
-       onBlur,
-       mapClasses,
-     }
-  }
+    return {
+      headingTag,
+      headingClass,
+      buttonClass,
+      accordionContent,
+      focused,
+      maxHeight,
+      baseClass,
+      labelClass,
+      compactClass,
+      borderAlignedClass,
+      focusedClass,
+      iconClass,
+      containerClass,
+      isOpenClass,
+      contentClass,
+      modifierClass,
+      onClick,
+      onFocus,
+      onBlur,
+      mapClasses,
+    };
+  },
 });
 </script>
 

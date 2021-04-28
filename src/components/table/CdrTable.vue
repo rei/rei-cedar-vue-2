@@ -3,12 +3,12 @@
     <table
       v-bind="$attrs"
       :class="mapClasses($style,
-        baseClass,
-        sizeClass,
-        stripedClass,
-        hoverClass,
-        borderClass,
-        fullWidthClass,
+                         baseClass,
+                         sizeClass,
+                         stripedClass,
+                         hoverClass,
+                         borderClass,
+                         fullWidthClass,
       )"
     >
       <slot />

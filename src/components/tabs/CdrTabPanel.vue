@@ -3,7 +3,7 @@
     :aria-hidden="!active"
     :aria-labelledby="ariaLabelledby"
     :class="mapClasses($style, baseClass, modifierClass, animationDirection && `cdr-tab-panel-${animationDirection}`)"
-    :hidden="hidden" 
+    :hidden="hidden"
     :id="id"
     tabindex="0"
     role="tabpanel"
@@ -16,7 +16,6 @@
 </template>
 <script>
 import { defineComponent, computed, ref } from 'vue';
-
 
 // TODO: PUT MODIFIER HERE!
 import { buildClass } from '../../utils/buildClass';
@@ -59,31 +58,30 @@ export default defineComponent({
     const offsetX = ref(0);
     const animationDirection = ref(null);
 
-    
     const modifierClass = computed(() => buildClass(baseClass, props.modifier));
 
     const setActive = (state) => {
       if (state) hidden = false;
       active = state;
       ctx.emit('tab-change', state, props.id);
-    }
+    };
     const setAnimationDirection = (direction) => {
       animationDirection = direction;
-    }
+    };
     const setOffsetX = (x) => {
       offsetX = x;
-    }
+    };
     const handleUpArrowNav = () => {
       // YOU WAHT NOW?!?!?!
       $parent.setFocusToActiveTabHeader();
-    }
+    };
     const animationEnd = (event) => {
       if (event.animationName.split('-')[0] === 'exit') {
         hidden = true;
         animationDirection = null;
       }
-    }
-    
+    };
+
     return {
       modifierClass,
       animationDirection,

@@ -1,16 +1,14 @@
 <template>
   <component
     :is="tag"
-    :class="$style[baseClass]"
+    :class="$style['cdr-text']"
   >
     <slot />
   </component>
 </template>
 
 <script>
-import { defineComponent, computed } from 'vue';
-
-import { buildClass } from '../../utils/buildClass';
+import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'CdrText',
@@ -19,13 +17,6 @@ export default defineComponent({
       type: String,
       default: 'p',
     },
-  },
-  setup(props) {
-    const baseClass = 'cdr-text';
-
-    return {
-      baseClass,
-    };
   },
 });
 </script>

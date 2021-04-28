@@ -4,11 +4,17 @@
     :disabled="disabled"
   >
     <legend>
-      <slot name="label" >
+      <slot name="label">
         {{ label }}
       </slot>
-      <span v-if="required" aria-label="required"> *</span>
-      <span v-if="optional && !required" :class="$style['cdr-form-group__optional']"> (optional)</span>
+      <span
+        v-if="required"
+        aria-label="required"
+      > *</span>
+      <span
+        v-if="optional && !required"
+        :class="$style['cdr-form-group__optional']"
+      > (optional)</span>
     </legend>
     <div :class="mapClasses($style, 'cdr-form-group__wrapper', errorClass)">
       <slot />
@@ -17,7 +23,7 @@
       :error="error"
       v-if="error"
     >
-      <template v-slot:error>
+      <template #error>
         <slot name="error" />
       </template>
     </cdr-form-error>

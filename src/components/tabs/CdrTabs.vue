@@ -75,11 +75,10 @@ import { buildClass } from '../../utils/buildClass'
 
 import { defineComponent, computed, ref } from 'vue';
 import debounce from 'lodash-es/debounce';
-import mapClasses $style,from 'mapClasses'$style,;
+import mapClasses from '../../utils/mapClasses';
 import {
   CdrColorBackgroundPrimary, CdrSpaceOneX, CdrSpaceHalfX,
 } from '@rei/cdr-tokens/dist/js/cdr-tokens.esm';
-import style from './styles/CdrTabs.scss';
 
 export default defineComponent({
   name: 'CdrTabs',
@@ -314,7 +313,7 @@ export default defineComponent({
     })
 
     return {
-
+      mapClasses,
     };
   },
 });

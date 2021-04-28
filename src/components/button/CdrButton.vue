@@ -2,16 +2,16 @@
   <component
     :is="tag"
     :class="mapClasses($style,
-      baseClass,
-      modifierClass,
-      sizeClass,
-      fullWidthClass,
-      iconOnlyClass,
-      iconLeftClass,
-      iconRightClass,
-      elevatedClass,
-      iconOnlyClass,
-      withBackgroundClass,
+                       baseClass,
+                       modifierClass,
+                       sizeClass,
+                       fullWidthClass,
+                       iconOnlyClass,
+                       iconLeftClass,
+                       iconRightClass,
+                       elevatedClass,
+                       iconOnlyClass,
+                       withBackgroundClass,
     )"
     :type="buttonType"
   >

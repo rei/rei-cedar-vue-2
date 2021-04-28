@@ -3,9 +3,9 @@
     :is="tag"
     :href="href"
     :class="mapClasses($style,
-      baseClass,
-      sizeClass,
-      linkedClass,
+                       baseClass,
+                       sizeClass,
+                       linkedClass,
     )"
   >
     <div :class="$style['cdr-rating__ratings']">
@@ -25,8 +25,8 @@
       <span
         v-for="empty in Array(empties).keys()"
         :class="mapClasses($style,
-          'cdr-rating__icon',
-          emptyClass,
+                           'cdr-rating__icon',
+                           emptyClass,
         )"
         :key="`rating-empty-${empty}`"
         aria-hidden="true"

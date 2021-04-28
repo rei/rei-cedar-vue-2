@@ -2,11 +2,11 @@
   <div :class="$style['cdr-label-wrapper__container']">
     <label
       :class="mapClasses($style,
-        'cdr-label-wrapper',
-        `cdr-label-wrapper--${background}`,
-        disabledClass,
-        modifierClass,
-        sizeClass,
+                         'cdr-label-wrapper',
+                         `cdr-label-wrapper--${background}`,
+                         disabledClass,
+                         modifierClass,
+                         sizeClass,
       ).concat(` ${labelClass}`)"
     >
       <slot name="input" />

@@ -2,10 +2,16 @@
   <button
     :class="$style[baseClass]"
   >
-    <span v-if="hasIconLeft" :class="$style['cdr-chip__icon-left']">
+    <span
+      v-if="hasIconLeft"
+      :class="$style['cdr-chip__icon-left']"
+    >
       <slot name="icon-left" />
     </span>
-    <span v-if="hasIconRight" :class="$style['cdr-chip__icon-right']">
+    <span
+      v-if="hasIconRight"
+      :class="$style['cdr-chip__icon-right']"
+    >
       <slot name="icon-right" />
     </span>
     <span :class="$style['cdr-chip__content']">

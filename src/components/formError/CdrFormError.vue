@@ -1,6 +1,8 @@
 <template>
   <div :class="$style[baseClass]">
-    <span :class="$style[iconClass]" /> <slot name="error">{{error}}</slot>
+    <span :class="$style[iconClass]" /> <slot name="error">
+      {{ error }}
+    </slot>
   </div>
 </template>
 <script>

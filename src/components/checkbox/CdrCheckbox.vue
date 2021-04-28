@@ -8,7 +8,7 @@
     :background="background"
     :disabled="$attrs.disabled"
   >
-    <template v-slot:input>
+    <template #input>
       <input
         :class="[$style['cdr-checkbox__input'], inputClass]"
         type="checkbox"
@@ -18,8 +18,8 @@
         :true-value="customValue ? null : trueValue"
         :false-value="customValue ? null : falseValue"
         :value="customValue"
-        :indeterminate="indeterminate" 
-      />
+        :indeterminate="indeterminate"
+      >
     </template>
     <slot />
   </cdr-label-wrapper>

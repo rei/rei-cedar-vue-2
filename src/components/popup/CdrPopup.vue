@@ -18,12 +18,14 @@
     >
       <slot />
     </div>
-    <div :class="$style['cdr-popup__arrow']"/>
+    <div :class="$style['cdr-popup__arrow']" />
   </div>
 </template>
 
 <script>
-import { defineComponent, computed, ref, watch, nextTick, onMounted, onUnmounted } from 'vue';
+import {
+  defineComponent, computed, ref, watch, nextTick, onMounted, onUnmounted,
+} from 'vue';
 import debounce from 'lodash-es/debounce';
 import propValidator from '../../utils/propValidator';
 import calculatePlacement from './calculatePlacement';
@@ -69,15 +71,15 @@ export default defineComponent({
     const popupEl = ref(null);
     const rootEl = ref(null);
 
-    const positionClass = computed(() => props.opened || exiting ? `cdr-popup--${pos.value}` : undefined);
-    const cornerClass = computed(() => corner ? `cdr-popup--corner-${corner.value}` : undefined);
-    const openClass = computed(() => props.opened ? 'cdr-popup--open' : undefined);
-    const closedClass = computed(() => closed && !exiting ? 'cdr-popup--closed' : undefined);
-    const exitingClass = computed(() => exiting ? 'cdr-popup--exit' : undefined);
+    const positionClass = computed(() => (props.opened || exiting ? `cdr-popup--${pos.value}` : undefined));
+    const cornerClass = computed(() => (corner ? `cdr-popup--corner-${corner.value}` : undefined));
+    const openClass = computed(() => (props.opened ? 'cdr-popup--open' : undefined));
+    const closedClass = computed(() => (closed && !exiting ? 'cdr-popup--closed' : undefined));
+    const exitingClass = computed(() => (exiting ? 'cdr-popup--exit' : undefined));
 
     const closePopup = (e) => {
       ctx.emit('closed', e);
-    }
+    };
 
     const handleKeyDown = (e) => {
       switch (e.key) {
@@ -87,7 +89,7 @@ export default defineComponent({
           break;
         default: break;
       }
-    }
+    };
 
     const handleClick = (e) => {
       nextTick(() => {
@@ -95,18 +97,18 @@ export default defineComponent({
           closePopup(e);
         }
       });
-    }
+    };
 
     const handleResize = () => {
       debounce(() => {
         measurePopup();
       }, 300);
-    }
+    };
 
     const addHandlers = () => {
       document.addEventListener('keydown', handleKeyDown);
       document.addEventListener('click', handleClick);
-    }
+    };
 
     const measurePopup = () => {
       closed = false;
@@ -114,7 +116,7 @@ export default defineComponent({
         popupRect.value = popupEl.value.getBoundingClientRect();
         closed.value = true;
       });
-    }
+    };
 
     const handleOpened = () => {
       closed.value = false;
@@ -133,7 +135,7 @@ export default defineComponent({
       setTimeout(() => {
         addHandlers();
       }, 1);
-    }
+    };
 
     const handleClosed = () => {
       closed.value = true;
@@ -143,7 +145,7 @@ export default defineComponent({
       setTimeout(() => {
         exiting.value = false;
       }, 200); // $cdr-duration-2;
-    }
+    };
 
     watch(() => props.position, () => pos.value = props.position);
     watch(() => props.opened, () => {

@@ -6,13 +6,13 @@
   >
     <img
       :style="cropObject"
-      :class="mapClasses($style, 
-        baseClass,
-        modifierClass,
-        radiusClass,
-        coverWrapperClass,
-        cropClass,
-        coverClass,
+      :class="mapClasses($style,
+                         baseClass,
+                         modifierClass,
+                         radiusClass,
+                         coverWrapperClass,
+                         cropClass,
+                         coverClass,
       )"
       :src="src"
       :alt="alt"
@@ -22,9 +22,9 @@
   <img
     v-else
     :class="mapClasses($style,
-      baseClass,
-      modifierClass,
-      radiusClass,
+                       baseClass,
+                       modifierClass,
+                       radiusClass,
     )"
     :src="src"
     :alt="alt"

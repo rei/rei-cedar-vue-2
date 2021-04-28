@@ -9,14 +9,19 @@
         {{ label }}
       </slot>
     </legend>
-    <div ref="chipsEl" :class="$style['cdr-chip-group__content']">
+    <div
+      ref="chipsEl"
+      :class="$style['cdr-chip-group__content']"
+    >
       <slot />
     </div>
   </fieldset>
 </template>
 
 <script>
-import { defineComponent, computed, ref, onMounted } from 'vue';
+import {
+  defineComponent, computed, ref, onMounted,
+} from 'vue';
 
 export default defineComponent({
   name: 'CdrChipGroup',
@@ -36,8 +41,8 @@ export default defineComponent({
     const chipsEl = ref(null);
 
     // TODO: refs here? or fine as is?
-    const chips = [];
-    const currentIdx = 0;
+    let chips = [];
+    let currentIdx = 0;
 
     const nextIdx = computed(() => {
       const idx = currentIdx + 1;
@@ -47,10 +52,9 @@ export default defineComponent({
       const idx = currentIdx - 1;
       return idx <= -1 ? (chips.length - 1) : idx;
     });
-    const legendClass = computed(() => props.hideLabel
+    const legendClass = computed(() => (props.hideLabel
       ? 'cdr-chip-group__legend--hidden'
-      : 'cdr-chip-group__legend'
-    );
+      : 'cdr-chip-group__legend'));
 
     onMounted(() => {
       // TODO: potentially simplified by new ref system?
@@ -86,11 +90,11 @@ export default defineComponent({
           break;
         default: break;
       }
-    }
+    };
     const handleFocusin = (e) => {
       // find out which, if any, button is focused
       currentIdx = Array.prototype.indexOf.call(chips, e.target);
-    }
+    };
     return {
       baseClass,
       legendClass,
@@ -104,4 +108,3 @@ export default defineComponent({
 
 <style lang="scss" module src="./styles/CdrChipGroup.scss">
 </style>
-

@@ -40,8 +40,8 @@
 
       <li
         v-for="n in paginationData"
-        key={`${n}-${guid()}`}
-        class={style['cdr-pagination__li--links']}
+        :key={`${n}-${guid()}`}
+        :class={style['cdr-pagination__li--links']}
       >
         {n === '&hellip;'
           && <span
