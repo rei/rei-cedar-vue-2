@@ -11,7 +11,6 @@ const packageJson = require('../package.json')
 
 const env = process.env.NODE_ENV;
 
-
 buildCss({
   srcPath: './src/css/reset.scss',
   outPath: './dist/style/reset.css',

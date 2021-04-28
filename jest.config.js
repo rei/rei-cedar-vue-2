@@ -25,7 +25,7 @@ const config = {
     '<rootDir>/test/e2e/',
     '<rootDir>/unmigrated/',
     '<rootDir>/templates/__tests__',
-    '<rootDir>/src/components/accordion',
+    // '<rootDir>/src/components/accordion',
     // '<rootDir>/src/components/alert',
 
     // '<rootDir>/src/components/breadcrumb',

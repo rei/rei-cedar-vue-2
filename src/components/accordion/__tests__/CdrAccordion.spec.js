@@ -24,6 +24,25 @@ describe('CdrAccordion', () => {
     expect(wrapper.element).toMatchSnapshot()
   });
 
+  xit('renders correctly unwrapped', () => {
+    const wrapper = mount(CdrAccordion, {
+      propsData: {
+        id: 'test',
+        level: '2',
+      },
+      slots: {
+        default: 'This is some slot text.',
+        label: 'label'
+      },
+      global: {
+        provide: {
+          unwrap: {value: true}
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot()
+  });
+
   // TODO add more checks here
   it('meets a11y requirements', async () => {
     const wrapper = shallowMount(CdrAccordion, {
@@ -37,7 +56,7 @@ describe('CdrAccordion', () => {
       },
     });
     const button = wrapper.find('#test');
-    const contentArea = wrapper.findComponent({ ref: 'accordion-content' });
+    const contentArea = wrapper.find('.cdr-accordion__content');
     expect(button.classes()).toContain('js-cdr-accordion-button');
     // closed state
     expect(button.attributes('aria-expanded')).toBe('false');

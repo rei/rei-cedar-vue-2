@@ -1,7 +1,7 @@
 <template>
   <ul
     :class="$style[baseClass]"
-    :ref="accordionGroupEl"
+    ref="accordionGroupEl"
     @focusin="focusin"
     @keydown="handleKeyDown"
   >
@@ -10,18 +10,35 @@
 </template>
 <script>
 import {
-  defineComponent, computed, ref, onMounted,
+  defineComponent, computed, ref, onMounted, provide,
 } from 'vue';
+import propValidator from '../../utils/propValidator';
+import getCurrentBreakpoint from '../../mixins/breakpoints';
 
 export default defineComponent({
   name: 'CdrAccordionGroup',
-
+  unwrap: {
+    type: [String, Boolean],
+    default: false,
+    validator: (value) => {
+      if (typeof value === 'string') {
+        return propValidator(
+          value,
+          ['@xs', '@sm', '@md', '@lg'],
+          false,
+        );
+      }
+      return typeof value === 'boolean';
+    },
+  },
   setup(props, ctx) {
     const baseClass = 'cdr-accordion-group';
     const currentIdx = ref(0);
     const accordionButtons = ref([]);
     const accordionGroupEl = ref(null);
 
+    const isUnwrapped = ref(!!props.unwrap);
+  //   
     const nextIdx = computed(() => {
       const idx = currentIdx.value + 1;
       return idx >= accordionButtons.value.length ? 0 : idx;
@@ -33,7 +50,17 @@ export default defineComponent({
     });
 
     // TODO: how to handle $el?
-    onMounted(() => accordionButtons.value = accordionGroupEl.value.querySelectorAll('.js-cdr-accordion-button'));
+    onMounted(() => {
+      accordionButtons.value = accordionGroupEl.value.querySelectorAll('.js-cdr-accordion-button')
+      if (typeof unwrap === 'string') {
+        isUnwrapped.value = unwrap.indexOf(getCurrentBreakpoint()) !== -1;
+        window.addEventListener('resize', debounce(() => {
+          isUnwrapped.value = unwrap.indexOf(getCurrentBreakpoint()) !== -1;
+        }, 300));
+      }
+    });
+
+    provide('unwrap', {value: isUnwrapped.value});
 
     const handleKeyDown = (e) => {
       // something besides the button is focused
