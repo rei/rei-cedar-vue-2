@@ -1,8 +1,9 @@
 // // The Vue build version to load with the `import` command
 // import Vue from 'vue';
 // import VueRouter from 'vue-router';
-// import routes from './router';
-// import Dev from './Dev.vue'; //eslint-disable-line
+import { createRouter, createWebHistory } from "vue-router";
+import routes from './router';
+import Dev from './Dev.vue'; //eslint-disable-line
 // // routing
 // Vue.use(VueRouter);
 //
@@ -23,4 +24,10 @@
 import KitchenSink from 'srcdir/dev/KitchenSink';
 import { createApp } from 'vue';
 
-createApp(KitchenSink).mount('#main');
+
+const router = createRouter({
+    routes,
+    history: createWebHistory(),
+});
+
+  createApp(Dev).use(router).mount('#main');

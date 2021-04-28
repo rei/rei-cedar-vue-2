@@ -6,8 +6,7 @@
     <slot />
     <use
       v-if="use"
-      :href="use"
-      :xlinkHref="use"
+      v-bind="useAttrs"
     />
   </svg>
 </template>
@@ -49,12 +48,18 @@ export default defineComponent({
       viewBox: '0 0 24 24',
     };
     if (hideSr) dataObj['aria-hidden'] = true;
+
+    const useAttrs = {
+      href: props.use,
+      'xlink:href': props.use,
+    }
     return {
       baseClass,
       inheritColorClass,
       sizeClass,
       mapClasses,
       dataObj,
+      useAttrs,
     };
   },
 });

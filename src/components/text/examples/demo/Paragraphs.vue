@@ -188,7 +188,7 @@
         >
           also a combo
         </cdr-text>
-        in utility-{{ putility }} copy.
+        in utility-{{ utility }} copy.
       </cdr-text>
     </div>
 
