@@ -24,7 +24,6 @@ describe('CdrFormLabelStandalone', () => {
         forId: 'test',
       },
     });
-    console.log(wrapper.html())
     expect(wrapper.find('.cdr-label-standalone__label').text()).toBe('Label Test');
   });
 

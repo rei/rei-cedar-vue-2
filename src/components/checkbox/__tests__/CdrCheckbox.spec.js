@@ -71,10 +71,8 @@ describe('CdrCheckbox', () => {
     cb.trigger('click');
 
     cb.trigger('click');
-    console.log(cb.html())
 
     await wrapper.vm.$nextTick();
-    console.log('EMISSIONS', wrapper.emitted())
     
     expect(wrapper.emitted().change[0][0]).toBe(true);
     cb.trigger('click');
@@ -91,7 +89,6 @@ describe('CdrCheckbox', () => {
     });
     const cb = wrapper.find('input');
     cb.trigger('click');
-    console.log('tru', wrapper.emitted().click)
     expect(wrapper.emitted().change[0][0]).toBe('checked');
     cb.trigger('click');
     expect(wrapper.emitted().change[1][0]).toBe('unchecked');
@@ -106,7 +103,6 @@ describe('CdrCheckbox', () => {
     });
     const cb = wrapper.find('input');
     cb.trigger('click');
-    console.log('custy', wrapper.emitted())
     expect(wrapper.emitted().change[0][0]).toEqual(['a', 'b']);
     cb.trigger('click');
     expect(wrapper.emitted().change[1][0]).toEqual(['a']);

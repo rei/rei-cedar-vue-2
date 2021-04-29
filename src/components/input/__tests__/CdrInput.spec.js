@@ -88,7 +88,8 @@ describe('CdrInput', () => {
       propsData: {
         label: 'test',
         required: true,
-        type: 'number'
+        type: 'number',
+        id: 'test',
       },
     });
     expect(wrapper.find('.cdr-input').attributes('novalidate')).toBe('');
