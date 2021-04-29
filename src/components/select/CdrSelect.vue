@@ -1,20 +1,20 @@
 <template>
   <cdr-label-standalone
     :for-id="id"
-    :label="label "
-    :hide-label="hideLabel "
-    :required="required "
-    :optional="optional "
-    :disabled="disabled "
+    :label="label"
+    :hide-label="hideLabel"
+    :required="required"
+    :optional="optional"
+    :disabled="disabled"
   >
     <template
-      slot="helper"
+      #helper
       v-if="hasHelper"
     >
       <slot name="helper-text" />
     </template>
     <template
-      slot="info"
+      #info
       v-if="hasInfo"
     >
       <slot name="info" />
@@ -30,16 +30,16 @@
       </span>
 
       <select
-        :class="[
-          $style[baseClass],
-          $style[sizeClass],
-          $style[promptClass],
-          $style[multipleClass],
-          $style[backgroundClass],
-          $style[errorClass],
-          $style[preIconClass],
-        ]"
-        :id="selectId"
+        :class="mapClasses($style,
+          baseClass,
+          sizeClass,
+          promptClass,
+          multipleClass,
+          backgroundClass,
+          errorClass,
+          preIconClass,
+        )"
+        :id="id"
         :multiple="multiple"
         :size="multipleSize"
         :disabled="disabled"
@@ -70,11 +70,11 @@
         <slot />
       </select>
 
-      <icon-caret-down :class="[$style['cdr-select__caret'], $style[caretDisabledClass]]" />
+      <icon-caret-down :class="mapClasses($style, 'cdr-select__caret', caretDisabledClass)" />
     </div>
     <div
       v-if="hasInfoAction"
-      class="$style['cdr-select__info-action']"
+      :class="$style['cdr-select__info-action']"
     >
       <slot name="info-action" />
     </div>
@@ -83,7 +83,7 @@
     :error="error"
     v-if="error"
   >
-    <template slot="error">
+    <template #error>
       <slot name="error" />
     </template>
   </cdr-form-error>
@@ -98,10 +98,8 @@ import CdrFormError from '../formError/CdrFormError';
 import sizeProps from '../../props/size';
 import backgroundProps from '../../props/background';
 import { buildClass } from '../../utils/buildClass';
+import mapClasses from '../../utils/mapClasses';
 
-// CHANGES
-// prompt stylee now gets applied?
-// v-model on change???? yess correct?
 export default defineComponent({
   name: 'CdrSelect',
   components: {
@@ -164,13 +162,16 @@ export default defineComponent({
     const hasInfoAction = ctx.slots['info-action'];
     const hasPreIcon = ctx.slots['pre-icon'];
 
+
+    const multipleClass = computed(() => props.multiple && 'cdr-select--multiple');
+
     const promptClass = computed(() => !props.modelValue && 'cdr-select--preicon');
     const multilineClass = computed(() => props.rows > 1 && 'cdr-select--multiline');
     const preIconClass = computed(() => hasPreIcon && 'cdr-select--preicon');
     const errorClass = computed(() => props.error && 'cdr-select--error');
     const backgroundClass = computed(() => `cdr-select--${props.background}`);
     const sizeClass = computed(() => props.size && buildClass(baseClass, props.size));
-    const caretDisabledClass = computed(() => props.disabled && 'cdr-select--disabled');
+    const caretDisabledClass = computed(() => props.disabled && 'cdr-select__caret--disabled');
 
     // TODO: refactor, would be much clearer as a 1-2 liner
     const computedOpts = computed(() => {
@@ -209,7 +210,7 @@ export default defineComponent({
       hasPreIcon,
 
       processMultiple,
-
+      multipleClass,
       promptClass,
       multilineClass,
       preIconClass,
@@ -217,6 +218,7 @@ export default defineComponent({
       backgroundClass,
       sizeClass,
       caretDisabledClass,
+      mapClasses,
     };
   },
 });

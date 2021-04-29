@@ -73,7 +73,7 @@ const config = {
 
     // '<rootDir>/src/components/rating',
 
-    '<rootDir>/src/components/select',
+    // '<rootDir>/src/components/select',
 
     // '<rootDir>/src/components/table',
 

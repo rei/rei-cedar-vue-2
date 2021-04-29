@@ -24,7 +24,7 @@ export { default as CdrList } from './components/list/CdrList';
 export { default as CdrQuote } from './components/quote/CdrQuote';
 // export { default as CdrRadio } from './components/radio/CdrRadio';
 export { default as CdrRating } from './components/rating/CdrRating';
-// export { default as CdrSelect } from './components/select/CdrSelect';
+export { default as CdrSelect } from './components/select/CdrSelect';
 export { default as CdrTable } from './components/table/CdrTable';
 // export { default as CdrTabPanel } from './components/tabs/CdrTabPanel';
 // export { default as CdrTabs } from './components/tabs/CdrTabs';

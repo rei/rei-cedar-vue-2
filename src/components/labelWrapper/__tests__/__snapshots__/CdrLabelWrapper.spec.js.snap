@@ -10,11 +10,9 @@ exports[`CdrLabelWrapper matches snapshot 1`] = `
     class="cdr-label-wrapper cdr-label-wrapper--primary cdr-label-wrapper--hide-figure cdr-label-wrapper--medium custom-label-class"
   >
     
-    
     <input
       type="checkbox"
     />
-    
     
     <span
       class="cdr-label-wrapper__figure"

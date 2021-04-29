@@ -19,7 +19,7 @@ import list from 'componentsdir/list/examples/Lists';
 import quote from 'componentsdir/quote/examples/Quote';
 import radio from 'componentsdir/radio/examples/Radios';
 import rating from 'componentsdir/rating/examples/Ratings';
-// import selects from 'componentsdir/select/examples/Selects';
+import selects from 'componentsdir/select/examples/Selects';
 import tables from 'componentsdir/table/examples/Table';
 // import tabs from 'componentsdir/tabs/examples/Tabs';
 import texts from 'componentsdir/text/examples/Text';
@@ -47,7 +47,7 @@ export default {
   quote,
   radio,
   rating,
-  // selects,
+  selects,
   tables,
   // tabs,
   texts,
