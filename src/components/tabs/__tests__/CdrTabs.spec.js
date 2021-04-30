@@ -14,20 +14,10 @@ describe('CdrTabs', () => {
 
     it('mounts with cdr-tab-panel children', async (done) => {
 
-      const wrapper = mount(CdrTabs, {
-        stubs: {
-          'cdr-tab-panel': CdrTabPanel,
-        },
-        slots: {
-          default: [
-            '<cdr-tab-panel name="tab1" id="tab-panel-1" aria-labelledby="tab-1" />',
-            '<cdr-tab-panel name="tab2" id="tab-panel-2" aria-labelledby="tab-2" />'
-          ],
-        },
-        propsData: {
-          activeTab: 1,
-        },
-      });
+      const wrapper = mount(h(CdrTabs, { activeTab: 1 }, {default: () => [
+        h(CdrTabPanel, {id: 'tab-panel-1', name: 'tab1', 'aria-labelledby': 'tab-1'}),
+        h(CdrTabPanel, {id: 'tab-panel-2', name: 'tab2', 'aria-labelledby': 'tab-2'}),
+      ]}));
 
       const spyGetHeaderWidth = spyOn(wrapper.vm, 'getHeaderWidth');
       const spyCalculateOverflow = spyOn(wrapper.vm, 'calculateOverflow');
@@ -56,19 +46,11 @@ describe('CdrTabs', () => {
       if (document.body) {
         document.body.appendChild(elem)
       }
-
-      const wrapper = mount(CdrTabs, {
-        stubs: {
-          'cdr-tab-panel': CdrTabPanel,
-        },
-        slots: {
-          default: [
-            '<cdr-tab-panel name="tab1" id="tab-panel-1" aria-labelledby="tab-1" />',
-            '<cdr-tab-panel name="tab2" id="tab-panel-2" aria-labelledby="tab-2" />'
-          ],
-        },
-        attachTo: elem,
-      });
+      
+      const wrapper = mount(h(CdrTabs, {}, {default: () => [
+        h(CdrTabPanel, {id: 'tab-panel-1', name: 'tab1', 'aria-labelledby': 'tab-1'}),
+        h(CdrTabPanel, {id: 'tab-panel-2', name: 'tab2', 'aria-labelledby': 'tab-2'}),
+      ]}), { attachTo: elem });
 
       const spyCalculateOverflow = spyOn(wrapper.vm, 'calculateOverflow');
       const spyUpdateUnderline = spyOn(wrapper.vm, 'updateUnderline');
@@ -90,18 +72,10 @@ describe('CdrTabs', () => {
         document.body.appendChild(elem)
       }
 
-      const wrapper = mount(CdrTabs, {
-        stubs: {
-          'cdr-tab-panel': CdrTabPanel,
-        },
-        slots: {
-          default: [
-            '<cdr-tab-panel name="tab1" id="tab-panel-1" aria-labelledby="tab-1" />',
-            '<cdr-tab-panel name="tab2" id="tab-panel-2" aria-labelledby="tab-2" />'
-          ],
-        },
-        attachTo: elem,
-      });
+      const wrapper = mount(h(CdrTabs, {}, {default: () => [
+        h(CdrTabPanel, {id: 'tab-panel-1', name: 'tab1', 'aria-labelledby': 'tab-1'}),
+        h(CdrTabPanel, {id: 'tab-panel-2', name: 'tab2', 'aria-labelledby': 'tab-2'}),
+      ]}), { attachTo: elem });
 
       const spyCalculateOverflow = spyOn(wrapper.vm, 'calculateOverflow');
       const spyUpdateUnderline = spyOn(wrapper.vm, 'updateUnderline');
@@ -119,18 +93,11 @@ describe('CdrTabs', () => {
   });
 
   it('getNextTab and getPreviousTab', () => {
-    const wrapper = mount(CdrTabs, {
-      stubs: {
-        'cdr-tab-panel': CdrTabPanel,
-      },
-      slots: {
-        default: [
-          '<cdr-tab-panel name="tab1" id="tab-panel-1" aria-labelledby="tab-1" />',
-          '<cdr-tab-panel name="tab2" id="tab-panel-2" aria-labelledby="tab-2" />',
-          '<cdr-tab-panel name="tab3" id="tab-panel-3" :disabled="true" aria-labelledby="tab-3"  />',
-        ]
-      }
-    });
+    const wrapper = mount(h(CdrTabs, {}, {default: () => [
+      h(CdrTabPanel, {id: 'tab-panel-1', name: 'tab1', 'aria-labelledby': 'tab-1'}),
+      h(CdrTabPanel, {id: 'tab-panel-2', name: 'tab2', 'aria-labelledby': 'tab-2'}),
+      h(CdrTabPanel, {id: 'tab-panel-3', name: 'tab3', 'aria-labelledby': 'tab-3', disabled: true}),
+    ]}));
 
     expect(wrapper.vm.getNextTab(0)).toBe(0);
     expect(wrapper.vm.getNextTab(1)).toBe(1);
@@ -143,17 +110,10 @@ describe('CdrTabs', () => {
 
   describe('handleClick', () => {
     it('left to right', async () => {
-      const wrapper = mount(CdrTabs, {
-        stubs: {
-          'cdr-tab-panel': CdrTabPanel,
-        },
-        slots: {
-          default: [
-            '<cdr-tab-panel name="tab1" id="tab-panel-1" aria-labelledby="tab-1" />',
-            '<cdr-tab-panel name="tab2" id="tab-panel-2" aria-labelledby="tab-2" />'
-          ],
-        },
-      });
+      const wrapper = mount(h(CdrTabs, {}, {default: () => [
+        h(CdrTabPanel, {id: 'tab-panel-1', name: 'tab1', 'aria-labelledby': 'tab-1'}),
+        h(CdrTabPanel, {id: 'tab-panel-2', name: 'tab2', 'aria-labelledby': 'tab-2'}),
+      ]}));
 
       await wrapper.vm.$nextTick();
       wrapper.findAll('button').at(1).trigger('click');
@@ -162,21 +122,11 @@ describe('CdrTabs', () => {
     });
 
     it('right to left', async () => {
-      const wrapper = mount(CdrTabs, {
-        stubs: {
-          'cdr-tab-panel': CdrTabPanel,
-        },
-        slots: {
-          default: [
-            '<cdr-tab-panel name="tab1" id="tab-panel-1" aria-labelledby="tab-1" />',
-            '<cdr-tab-panel name="tab2" id="tab-panel-2" aria-labelledby="tab-2" />',
-            '<cdr-tab-panel name="tab2" id="tab-panel-3" aria-labelledby="tab-3" />'
-          ],
-        },
-        propsData: {
-          activeTab: 1,
-        },
-      });
+      const wrapper = mount(h(CdrTabs, { activeTab: 1 }, {default: () => [
+        h(CdrTabPanel, {id: 'tab-panel-1', name: 'tab1', 'aria-labelledby': 'tab-1'}),
+        h(CdrTabPanel, {id: 'tab-panel-2', name: 'tab2', 'aria-labelledby': 'tab-2'}),
+        h(CdrTabPanel, {id: 'tab-panel-3', name: 'tab3', 'aria-labelledby': 'tab-3'}),
+      ]}));
 
       await wrapper.vm.$nextTick();
       expect(wrapper.vm.activeTabIndex).toBe(1);
@@ -189,17 +139,10 @@ describe('CdrTabs', () => {
   });
 
   it('handles right arrow key', async () => {
-    const wrapper = mount(CdrTabs, {
-      stubs: {
-        'cdr-tab-panel': CdrTabPanel,
-      },
-      slots: {
-        default: [
-          '<cdr-tab-panel name="tab1" id="tab-panel-1" aria-labelledby="tab-1" />',
-          '<cdr-tab-panel name="tab2" id="tab-panel-2" aria-labelledby="tab-2" />'
-        ],
-      }
-    });
+    const wrapper = mount(h(CdrTabs, {}, {default: () => [
+      h(CdrTabPanel, {id: 'tab-panel-1', name: 'tab1', 'aria-labelledby': 'tab-1'}),
+      h(CdrTabPanel, {id: 'tab-panel-2', name: 'tab2', 'aria-labelledby': 'tab-2'}),
+    ]}));
 
     await wrapper.vm.$nextTick();
     // Trigger right arrow keyup event
@@ -209,17 +152,10 @@ describe('CdrTabs', () => {
   });
 
   it('handles left arrow key', async () => {
-    const wrapper = mount(CdrTabs, {
-      stubs: {
-        'cdr-tab-panel': CdrTabPanel,
-      },
-      slots: {
-        default: [
-          '<cdr-tab-panel name="tab1" id="tab-panel-1" aria-labelledby="tab-1" />',
-          '<cdr-tab-panel name="tab2" id="tab-panel-2" aria-labelledby="tab-2" />'
-        ],
-      }
-    });
+    const wrapper = mount(h(CdrTabs, {}, {default: () => [
+      h(CdrTabPanel, {id: 'tab-panel-1', name: 'tab1', 'aria-labelledby': 'tab-1'}),
+      h(CdrTabPanel, {id: 'tab-panel-2', name: 'tab2', 'aria-labelledby': 'tab-2'}),
+    ]}));
 
     wrapper.setData({ activeTabIndex: 1 });
     await wrapper.vm.$nextTick();
@@ -235,18 +171,10 @@ describe('CdrTabs', () => {
       if (document.body) {
         document.body.appendChild(elem)
       }
-      const wrapper = mount(CdrTabs, {
-        stubs: {
-          'cdr-tab-panel': CdrTabPanel,
-        },
-        slots: {
-          default: [
-            '<cdr-tab-panel name="tab1" id="tab-panel-1" aria-labelledby="tab-1" />',
-            '<cdr-tab-panel name="tab2" id="tab-panel-2" aria-labelledby="tab-2" />'
-          ],
-        },
-        attachTo: elem,
-      });
+      const wrapper = mount(h(CdrTabs, {}, {default: () => [
+        h(CdrTabPanel, {id: 'tab-panel-1', name: 'tab1', 'aria-labelledby': 'tab-1'}),
+        h(CdrTabPanel, {id: 'tab-panel-2', name: 'tab2', 'aria-labelledby': 'tab-2'}),
+      ]}), { attachTo: elem });
 
       await wrapper.vm.$nextTick();
       wrapper.setData({ overflowLeft: true });
@@ -260,18 +188,10 @@ describe('CdrTabs', () => {
       if (document.body) {
         document.body.appendChild(elem)
       }
-      const wrapper = mount(CdrTabs, {
-        stubs: {
-          'cdr-tab-panel': CdrTabPanel,
-        },
-        slots: {
-          default: [
-            '<cdr-tab-panel name="tab1" id="tab-panel-1" aria-labelledby="tab-1" />',
-            '<cdr-tab-panel name="tab2" id="tab-panel-2" aria-labelledby="tab-2" />'
-          ]
-        },
-        attachTo: elem,
-      });
+      const wrapper = mount(h(CdrTabs, {}, {default: () => [
+        h(CdrTabPanel, {id: 'tab-panel-1', name: 'tab1', 'aria-labelledby': 'tab-1'}),
+        h(CdrTabPanel, {id: 'tab-panel-2', name: 'tab2', 'aria-labelledby': 'tab-2'}),
+      ]}), { attachTo: elem });
 
       await wrapper.vm.$nextTick();
       wrapper.setData({ overflowRight: true });
@@ -282,17 +202,11 @@ describe('CdrTabs', () => {
   });
 
   it('accessibility', async () => {
-    const wrapper = mount(CdrTabs, {
-      stubs: {
-        'cdr-tab-panel': CdrTabPanel,
-      },
-      slots: {
-        default: [
-          '<cdr-tab-panel name="tab1" id="tab-panel-1"  aria-labelledby="tab-1" />',
-          '<cdr-tab-panel name="tab2" id="tab-panel-2" aria-labelledby="tab-2" />',
-          '<cdr-tab-panel name="tab3" :disabled="true" id="tab-panel-3" aria-labelledby="tab-3" />']
-      },
-    });
+    const wrapper = mount(h(CdrTabs, {}, {default: () => [
+      h(CdrTabPanel, {id: 'tab-panel-1', name: 'tab1', 'aria-labelledby': 'tab-1'}),
+      h(CdrTabPanel, {id: 'tab-panel-2', name: 'tab2', 'aria-labelledby': 'tab-2'}),
+      h(CdrTabPanel, {id: 'tab-panel-3', name: 'tab3', 'aria-labelledby': 'tab-3', disabled: true}),
+    ]}));
 
     await wrapper.vm.$nextTick();
 
@@ -310,18 +224,10 @@ describe('CdrTabs', () => {
     if (document.body) {
       document.body.appendChild(elem)
     }
-    const wrapper = mount(CdrTabs, {
-      stubs: {
-        'cdr-tab-panel': CdrTabPanel,
-      },
-      slots: {
-        default: [
-          '<cdr-tab-panel name="tab1" id="tab-panel-1" aria-labelledby="tab-1" />',
-          '<cdr-tab-panel name="tab2" id="tab-panel-2" aria-labelledby="tab-2" />'
-        ],
-      },
-      attachTo: elem,
-    });
+    const wrapper = mount(h(CdrTabs, {}, {default: () => [
+      h(CdrTabPanel, {id: 'tab-panel-1', name: 'tab1', 'aria-labelledby': 'tab-1'}),
+      h(CdrTabPanel, {id: 'tab-panel-2', name: 'tab2', 'aria-labelledby': 'tab-2'}),
+    ]}), { attachTo: elem });
 
     await wrapper.vm.$nextTick();
     wrapper.vm.handleDownArrowNav();
@@ -335,18 +241,10 @@ describe('CdrTabs', () => {
     if (document.body) {
       document.body.appendChild(elem)
     }
-    const wrapper = mount(CdrTabs, {
-      stubs: {
-        'cdr-tab-panel': CdrTabPanel,
-      },
-      slots: {
-        default: [
-          '<cdr-tab-panel name="tab1" id="tab-panel-1" aria-labelledby="tab-1" />',
-          '<cdr-tab-panel name="tab2" id="tab-panel-2" aria-labelledby="tab-2" />'
-        ],
-      },
-      attachTo: elem,
-    });
+    const wrapper = mount(h(CdrTabs, {}, {default: () => [
+      h(CdrTabPanel, {id: 'tab-panel-1', name: 'tab1', 'aria-labelledby': 'tab-1'}),
+      h(CdrTabPanel, {id: 'tab-panel-2', name: 'tab2', 'aria-labelledby': 'tab-2'}),
+    ]}), { attachTo: elem });
 
     await wrapper.vm.$nextTick();
     wrapper.vm.setFocusToActiveTabHeader();
@@ -360,18 +258,10 @@ describe('CdrTabs', () => {
     if (document.body) {
       document.body.appendChild(elem)
     }
-    const wrapper = mount(CdrTabs, {
-      stubs: {
-        'cdr-tab-panel': CdrTabPanel,
-      },
-      slots: {
-        default: [
-          '<cdr-tab-panel name="tab1" id="tab-panel-1" aria-labelledby="tab-1" />',
-          '<cdr-tab-panel name="tab2" id="tab-panel-2" aria-labelledby="tab-2" />'
-        ],
-      },
-      attachTo: elem,
-    });
+    const wrapper = mount(h(CdrTabs, {}, {default: () => [
+      h(CdrTabPanel, {id: 'tab-panel-1', name: 'tab1', 'aria-labelledby': 'tab-1'}),
+      h(CdrTabPanel, {id: 'tab-panel-2', name: 'tab2', 'aria-labelledby': 'tab-2'}),
+    ]}), { attachTo: elem });
 
     wrapper.setData({ widthInitialized: true});
     await wrapper.vm.$nextTick();
@@ -387,17 +277,10 @@ describe('CdrTabs', () => {
   });
 
   it('calculateOverflow', async () => {
-    const wrapper = mount(CdrTabs, {
-      stubs: {
-        'cdr-tab-panel': CdrTabPanel,
-      },
-      slots: {
-        default: [
-          '<cdr-tab-panel name="tab1" id="tab-panel-1" aria-labelledby="tab-1" />',
-          '<cdr-tab-panel name="tab2" id="tab-panel-2" aria-labelledby="tab-2" />'
-        ],
-      }
-    });
+    const wrapper = mount(h(CdrTabs, {}, {default: () => [
+      h(CdrTabPanel, {id: 'tab-panel-1', name: 'tab1', 'aria-labelledby': 'tab-1'}),
+      h(CdrTabPanel, {id: 'tab-panel-2', name: 'tab2', 'aria-labelledby': 'tab-2'}),
+    ]}));
     await wrapper.vm.$nextTick();
     wrapper.setData({ headerWidth: 2000 });
     await wrapper.vm.$nextTick();

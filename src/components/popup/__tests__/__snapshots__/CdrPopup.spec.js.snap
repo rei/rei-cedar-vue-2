@@ -6,7 +6,10 @@ exports[`CdrPopup matches snapshot 1`] = `
 >
   <div
     class="cdr-popup__content"
-  />
+  >
+    
+    
+  </div>
   <div
     class="cdr-popup__arrow"
   />

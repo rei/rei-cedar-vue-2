@@ -21,8 +21,6 @@ const basicContent = { template:
   </tbody>`
 }
 
-console.log(basicContent);
-
 describe('CdrTable.vue', () => {
   it('renders correctly', () => {
     const wrapper = mount(CdrTable, {

@@ -7,7 +7,7 @@
                          disabledClass,
                          modifierClass,
                          sizeClass,
-      ).concat(` ${labelClass}`)"
+      ).concat(` ${labelClass || ''}`)"
     >
       <slot name="input" />
       <span :class="$style['cdr-label-wrapper__figure']" />

@@ -75,7 +75,7 @@ const config = {
     '<rootDir>/src/components/modal',
     '<rootDir>/src/components/pagination',
     '<rootDir>/src/components/popover',
-    '<rootDir>/src/components/popup',
+    // '<rootDir>/src/components/popup',
 
     '<rootDir>/src/components/tabs',
     '<rootDir>/src/components/tooltip',

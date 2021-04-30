@@ -55,24 +55,24 @@ export default defineComponent({
     const baseClass = 'cdr-tab-panel';
     const active = ref(false);
     const hidden = ref(true);
-    const offsetX = ref(0);
     const animationDirection = ref(null);
 
     const modifierClass = computed(() => buildClass(baseClass, props.modifier));
 
     const setActive = (state) => {
-      if (state) hidden = false;
-      active = state;
-      ctx.emit('tab-change', state, props.id);
+      // TODO: inject current active tab index or something?
+      if (state) hidden.value = false;
+      active.value = state;
+      ctx.emit('tab-change', state.value, props.id);
     };
     const setAnimationDirection = (direction) => {
+      // Use Inject here?
       animationDirection = direction;
-    };
-    const setOffsetX = (x) => {
-      offsetX = x;
     };
     const handleUpArrowNav = () => {
       // YOU WAHT NOW?!?!?!
+      // TODO: emit event for tabPanel to deal with????
+      // ctx.emit('tab-arrow-up')
       $parent.setFocusToActiveTabHeader();
     };
     const animationEnd = (event) => {
@@ -89,6 +89,11 @@ export default defineComponent({
       mapClasses,
       animationEnd,
       handleUpArrow,
+      active,
+      hidden,
+      handleUpArrowNav,
+      setAnimationDirection,
+      setActive,
     };
   },
 });

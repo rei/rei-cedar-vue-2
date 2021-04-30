@@ -71,17 +71,17 @@ export default defineComponent({
     const popupEl = ref(null);
     const rootEl = ref(null);
 
-    const positionClass = computed(() => (props.opened || exiting ? `cdr-popup--${pos.value}` : undefined));
-    const cornerClass = computed(() => (corner ? `cdr-popup--corner-${corner.value}` : undefined));
+    const positionClass = computed(() => (props.opened || exiting.value ? `cdr-popup--${pos.value}` : undefined));
+    const cornerClass = computed(() => (corner.value ? `cdr-popup--corner-${corner.value}` : undefined));
     const openClass = computed(() => (props.opened ? 'cdr-popup--open' : undefined));
-    const closedClass = computed(() => (closed && !exiting ? 'cdr-popup--closed' : undefined));
-    const exitingClass = computed(() => (exiting ? 'cdr-popup--exit' : undefined));
+    const closedClass = computed(() => (closed.value && !exiting.value ? 'cdr-popup--closed' : undefined));
+    const exitingClass = computed(() => (exiting.value ? 'cdr-popup--exit' : undefined));
 
     const closePopup = (e) => {
       ctx.emit('closed', e);
     };
 
-    const handleKeyDown = (e) => {
+    const handleKeydown = (e) => {
       switch (e.key) {
         case 'Escape':
         case 'Esc':
@@ -93,7 +93,7 @@ export default defineComponent({
 
     const handleClick = (e) => {
       nextTick(() => {
-        if (e.target !== popupEl && !popupEl.contains(e.target)) {
+        if (e.target !== popupEl.value && !popupEl.value.contains(e.target)) {
           closePopup(e);
         }
       });
@@ -106,12 +106,12 @@ export default defineComponent({
     };
 
     const addHandlers = () => {
-      document.addEventListener('keydown', handleKeyDown);
+      document.addEventListener('keydown', handleKeydown);
       document.addEventListener('click', handleClick);
     };
 
     const measurePopup = () => {
-      closed = false;
+      closed.value = false;
       nextTick(() => {
         popupRect.value = popupEl.value.getBoundingClientRect();
         closed.value = true;
@@ -139,7 +139,7 @@ export default defineComponent({
 
     const handleClosed = () => {
       closed.value = true;
-      document.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('keydown', handleKeydown);
       document.removeEventListener('click', handleClick);
       exiting.value = true;
       setTimeout(() => {
@@ -164,7 +164,7 @@ export default defineComponent({
       window.addEventListener('resize', handleResize);
     });
     onUnmounted(() => {
-      document.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('keydown', handleKeydown);
       document.removeEventListener('click', handleClick);
       window.removeEventListener('resize', handleResize);
     });
@@ -179,6 +179,8 @@ export default defineComponent({
       positionClass,
       cornerClass,
       closedClass,
+      handleClick,
+      handleKeydown,
     };
   },
 });

@@ -1,17 +1,17 @@
-import { shallowMount } from '../../../../test/vue-jest-style-workaround.js';
+import { mount } from '../../../../test/vue-jest-style-workaround.js';
 import CdrPopup from 'componentdir/popup/CdrPopup';
 import calculatePlacement from 'componentdir/popup/calculatePlacement';
 
 describe('CdrPopup', () => {
   it('matches snapshot', () => {
-    const wrapper = shallowMount(CdrPopup);
+    const wrapper = mount(CdrPopup);
     expect(wrapper.element).toMatchSnapshot();
   });
 
   describe('events', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = shallowMount(CdrPopup, {
+      wrapper = mount(CdrPopup, {
         propsData: {
           position: 'top',
           autoPosition: true,
@@ -20,7 +20,10 @@ describe('CdrPopup', () => {
     });
 
     it('emits closed event on esc key press', () => {
-      wrapper.trigger('keydown', { key: 'Esc' });
+      // TODO: convert back to use triggers instead of manually calling functions
+      // wrapper.trigger('keydown', { key: 'Esc' });
+
+      wrapper.vm.handleKeydown({ key: 'Esc' });
       expect(wrapper.emitted('closed')).toBeTruthy();
     });
 

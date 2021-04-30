@@ -5,19 +5,25 @@ exports[`CdrRadio renders an input 1`] = `
   class="cdr-label-wrapper__container cdr-radio"
 >
   <label
-    class="cdr-label-wrapper cdr-label-wrapper--primary cdr-label-wrapper--medium"
+    class="cdr-label-wrapper cdr-label-wrapper--primary cdr-label-wrapper--medium "
   >
+    
     <input
       class="cdr-radio__input"
       name="testName"
       type="radio"
+      value="A"
     />
+    
     <span
       class="cdr-label-wrapper__figure"
     />
     <div
       class="cdr-label-wrapper__content"
-    />
+    >
+      
+      
+    </div>
   </label>
 </div>
 `;

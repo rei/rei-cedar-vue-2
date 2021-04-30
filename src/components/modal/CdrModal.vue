@@ -26,10 +26,6 @@
         :
         undefined}
       />
-      {/*
-      this is the "uncommon case of an element that captures incoming tab traversal
-      for a composite widget" mentioned in the rule docs
-      */}
       <div
         ref="modal"
         class="{clsx(this.style['cdr-modal__contentWrap'],"
