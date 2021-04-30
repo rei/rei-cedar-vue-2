@@ -63,7 +63,7 @@ export default defineComponent({
       // TODO: inject current active tab index or something?
       if (state) hidden.value = false;
       active.value = state;
-      ctx.emit('tab-change', state.value, props.id);
+      ctx.emit('tab-change', state, props.id);
     };
     const setAnimationDirection = (direction) => {
       // Use Inject here?
@@ -72,8 +72,8 @@ export default defineComponent({
     const handleUpArrowNav = () => {
       // YOU WAHT NOW?!?!?!
       // TODO: emit event for tabPanel to deal with????
-      // ctx.emit('tab-arrow-up')
-      $parent.setFocusToActiveTabHeader();
+      ctx.emit('tab-arrow-up')
+      // $parent.setFocusToActiveTabHeader();
     };
     const animationEnd = (event) => {
       if (event.animationName.split('-')[0] === 'exit') {
