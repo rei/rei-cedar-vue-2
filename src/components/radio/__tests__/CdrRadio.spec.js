@@ -79,9 +79,10 @@ describe('CdrRadio', () => {
       propsData: {
         customValue: 'A',
         name: 'testName',
-        value: 'AA',
+        modelValue: 'AA',
       },
     });
+    console.log(wrapper.html(), 'no')
     expect(wrapper.find('input').checked).toBe(false);
   });
 
@@ -90,10 +91,11 @@ describe('CdrRadio', () => {
       propsData: {
         customValue: 'A',
         name: 'testName',
-        value: 'A',
+        modelValue: 'A',
       },
     });
-    expect(wrapper.find('input').checked).toBe(true);
+    console.log(wrapper.html(), 'yes')
+    expect(wrapper.find('input').attributes('checked')).toBe(true);
   });
 
   it('evaluates complex group not checked state correctly', () => {
@@ -101,7 +103,7 @@ describe('CdrRadio', () => {
       propsData: {
         customValue: {test: 'B', arr: [1,2,3]},
         name: 'testName',
-        value: {test: 'B'},
+        modelValue: {test: 'B'},
       },
     });
     expect(wrapper.find('input').checked).toBe(false);
@@ -112,7 +114,7 @@ describe('CdrRadio', () => {
       propsData: {
         customValue: {test: 'B', arr: [1,2,3]},
         name: 'testName',
-        value: {test: 'B', arr: [1,2,3]},
+        modelValue: {test: 'B', arr: [1,2,3]},
       },
     });
     expect(wrapper.find('input').checked).toBe(true);
@@ -123,7 +125,7 @@ describe('CdrRadio', () => {
       propsData: {
         customValue: 'A',
         name: 'testName',
-        value: '',
+        modelValue: '',
       },
     });
 

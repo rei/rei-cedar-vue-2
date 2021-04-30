@@ -36,7 +36,7 @@ const config = {
 
     // '<rootDir>/src/components/card',
 
-    '<rootDir>/src/components/checkbox',
+    // '<rootDir>/src/components/checkbox',
 
     // '<rootDir>/src/components/chip',
 
@@ -61,15 +61,9 @@ const config = {
 
     // '<rootDir>/src/components/list',
 
-    '<rootDir>/src/components/modal',
-    '<rootDir>/src/components/pagination',
-    '<rootDir>/src/components/popover',
-    '<rootDir>/src/components/popup',
-
-
     // '<rootDir>/src/components/quote',
 
-    '<rootDir>/src/components/radio',
+    // '<rootDir>/src/components/radio',
 
     // '<rootDir>/src/components/rating',
 
@@ -77,9 +71,15 @@ const config = {
 
     // '<rootDir>/src/components/table',
 
-    '<rootDir>/src/components/tabs',
     // '<rootDir>/src/components/text',
+    '<rootDir>/src/components/modal',
+    '<rootDir>/src/components/pagination',
+    '<rootDir>/src/components/popover',
+    '<rootDir>/src/components/popup',
+
+    '<rootDir>/src/components/tabs',
     '<rootDir>/src/components/tooltip',
+
 
 
 
