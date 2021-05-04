@@ -126,7 +126,7 @@ export default defineComponent({
       if (props.autoPosition) {
         nextTick(() => {
           // TODO: how to get $el?????
-          const triggerRect = rootEl.parentElement.getBoundingClientRect();
+          const triggerRect = rootEl.value.parentElement.getBoundingClientRect();
           const { innerHeight, innerWidth } = window;
           calculatePlacement(triggerRect, popupRect.value, innerWidth, innerHeight, props.position);
         });

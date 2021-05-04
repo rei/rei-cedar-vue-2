@@ -51,5 +51,5 @@ export default {
   tables,
   // tabs,
   texts,
-  // tooltip,
+  tooltip,
 };

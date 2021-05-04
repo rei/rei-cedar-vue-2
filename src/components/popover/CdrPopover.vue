@@ -11,7 +11,6 @@
       role="dialog"
       ref="popupEl"
       @closed="closePopover"
-      :class="$style[baseClass]"
       :position="position"
       :auto-position="autoPosition"
       :opened="isOpen"
@@ -95,9 +94,6 @@ export default defineComponent({
     },
   },
   setup(props, ctx) {
-    const baseClass = 'cdr-popup';
-
-
     const isOpen = ref(false);
     let lastActive
 
@@ -149,7 +145,6 @@ export default defineComponent({
 
     return {
       mapClasses,
-      baseClass,
       hasTrigger,
       triggerEl,
       hasTitle,

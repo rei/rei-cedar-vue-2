@@ -5,10 +5,14 @@ exports[`CdrTooltip matches snapshot 1`] = `
   class="cdr-tooltip--wrapper cdr-tooltip--position"
 >
   <div>
+    
+    
     <button
       aria-describedby="tooltip-test"
       id="tooltip-trigger"
     />
+    
+    
   </div>
   <div
     class="cdr-popup cdr-popup--closed"
@@ -18,7 +22,11 @@ exports[`CdrTooltip matches snapshot 1`] = `
       id="tooltip-test"
       role="tooltip"
     >
+      
+      
       tooltip content
+      
+      
     </div>
     <div
       class="cdr-popup__arrow"

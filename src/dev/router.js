@@ -46,7 +46,7 @@ const routes = [
   { path: '/tables', name: 'Tables', component: Examples.tables },
   // { path: '/tabs', name: 'Tabs', component: Examples.tabs },
   { path: '/texts', name: 'Texts', component: Examples.texts },
-  // { path: '/tooltip', name: 'Tooltip', component: Examples.tooltip },
+  { path: '/tooltip', name: 'Tooltip', component: Examples.tooltip },
 
   // // Backstop test targets
   // { path: '/default-buttons', component: DefaultButtons },

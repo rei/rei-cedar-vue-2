@@ -20,7 +20,7 @@ exports[`CdrPopover matches snapshot 1`] = `
   >
     <div
       aria-expanded="false"
-      class="cdr-popup cdr-popup__content"
+      class="cdr-popup__content"
       id="popover-test"
       role="dialog"
     >

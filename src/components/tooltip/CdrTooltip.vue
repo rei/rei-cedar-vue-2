@@ -2,19 +2,18 @@
   <div :class="mapClasses(
     $style, 'cdr-tooltip--wrapper', hasTrigger && 'cdr-tooltip--position'
   )">
-    <div :ref="triggerEl">
+    <div ref="triggerEl">
       <slot name="trigger" />
     </div>
     <cdr-popup
-      :class="$style['cdr-tooltip']"
-      :contentClass="contentClass"
+      :content-class="contentClass"
       role="tooltip"
-      :ref="popupEl"
+      ref="popupEl"
       :position="position"
-      :autoPosition="autoPosition"
+      :auto-position="autoPosition"
       :opened="isOpen"
       :id="id"
-      :onClosed="closeTooltip"
+      @closed="closeTooltip"
     >
       <slot />
     </cdr-popup>
@@ -22,10 +21,10 @@
 </template>
 
 <script>
-import { defineComponent, computed, ref, watchEffect, onMounted } from 'vue';
+import { defineComponent, ref, onMounted, watch } from 'vue';
+import mapClasses from '../../utils/mapClasses';
 import CdrPopup from '../popup/CdrPopup';
 import propValidator from '../../utils/propValidator';
-import { buildClass } from '../../utils/buildClass';
 
 export default defineComponent({
   name: 'CdrTooltip',
@@ -61,33 +60,29 @@ export default defineComponent({
     },
   },
   setup(props, ctx) {
-    const baseClass = 'cdr-popup';
 
     const isOpen = ref(false);
-    const openHandler = ref(undefined);
-    const closeHandler = ref(undefined);
-    const timeout = ref(undefined);
+    let timeout;
 
     const popupEl = ref(null);
     const triggerEl = ref(null);
 
     const hasTrigger = ctx.slots.trigger;
-// https://v3.vuejs.org/guide/migration/emits-option.html#overview
+// TODO: https://v3.vuejs.org/guide/migration/emits-option.html#overview
     const openTooltip = (e) => {
-      if (this.timeout) clearTimeout(this.timeout);
-      this.isOpen = true;
-      this.$emit('opened', e);
+      if (timeout) clearTimeout(timeout);
+      isOpen.value = true;
+      ctx.emit('opened', e);
     }
     const closeTooltip = (e) => {
-      this.timeout = setTimeout(() => {
-        this.isOpen = false;
-        this.$emit('closed', e);
+      timeout = setTimeout(() => {
+        isOpen.value = false;
+        ctx.emit('closed', e);
       }, 250);
     }
     const addHandlers = () => {
-
-      const triggerElement = triggerEl.children[0];
-      const popupElement = popupEl;
+      const triggerElement = triggerEl.value.children[0];
+      const popupElement = popupEl.value;
       if (triggerElement) {
         triggerElement.addEventListener('mouseover', openTooltip);
         triggerElement.addEventListener('focus', openTooltip);
@@ -95,8 +90,8 @@ export default defineComponent({
         triggerElement.addEventListener('mouseleave', closeTooltip);
         triggerElement.addEventListener('blur', closeTooltip);
 
-        popupElement.addEventListener('mouseover', openTooltip);
-        popupElement.addEventListener('mouseleave', closeTooltip);
+        // popupElement.addEventListener('mouseover', openTooltip);
+        // popupElement.addEventListener('mouseleave', closeTooltip);
       }
     }
 
@@ -104,11 +99,18 @@ export default defineComponent({
 
     onMounted(() => {
       addHandlers();
-      const trigger = triggerEl.children[0];
+      const trigger = triggerEl.value.children[0];
       if (trigger) trigger.setAttribute('aria-describedby', props.id);
     })
 
     return {
+      hasTrigger,
+      isOpen,
+      mapClasses,
+      closeTooltip,
+      openTooltip,
+      popupEl,
+      triggerEl,
     };
   },
 });
