@@ -72,19 +72,13 @@ const config = {
     // '<rootDir>/src/components/table',
 
     // '<rootDir>/src/components/text',
+    // '<rootDir>/src/components/popup',
     '<rootDir>/src/components/modal',
     '<rootDir>/src/components/pagination',
-    '<rootDir>/src/components/popover',
-    // '<rootDir>/src/components/popup',
+    // '<rootDir>/src/components/popover',
 
     '<rootDir>/src/components/tabs',
     '<rootDir>/src/components/tooltip',
-
-
-
-
-    
-
   ],
   transform: {
   '.+\\.(css|styl|less|sass|scss)$': '<rootDir>/node_modules/jest-css-modules-transform',
