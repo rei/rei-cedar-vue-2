@@ -26,7 +26,7 @@ const config = {
     '<rootDir>/templates/__tests__',
 
     '<rootDir>/src/components/tabs',
-    '<rootDir>/src/components/modal',
+    // '<rootDir>/src/components/modal',
     '<rootDir>/src/components/pagination',
   ],
   transform: {

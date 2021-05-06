@@ -133,7 +133,8 @@ $modal-animation-duration: 150ms;
   }
 }
 
-.closed {
+// TODO: why wasn't this scoped? what???
+.cdr-modal--closed {
   transition: z-index 0s $modal-animation-duration * 2,
   visibility 0s $modal-animation-duration * 2;
   visibility: hidden;
@@ -150,7 +151,7 @@ $modal-animation-duration: 150ms;
   }
 }
 
-.cdr-modal__noscroll {
+:global(.cdr-modal__noscroll) {
   overflow: hidden !important;
   position: fixed !important;
   width: 100%;

@@ -21,6 +21,7 @@ exports[`CdrModal.vue default open 1`] = `
       role="dialog"
       tabindex="-1"
     >
+      
       <div
         class="cdr-modal__innerWrap"
       >
@@ -34,26 +35,39 @@ exports[`CdrModal.vue default open 1`] = `
               <div
                 class="cdr-modal__title"
               >
+                
                 <h1>
                   Label is the modal title
                 </h1>
+                
               </div>
               <button
                 aria-label="Close"
-                class="cdr-button cdr-button--primary cdr-button--icon-only cdr-button--with-background cdr-modal__close-button"
+                class="cdr-button cdr-button--primary cdr-button--icon-only-medium cdr-button--icon-only cdr-button--icon-only cdr-button--with-background cdr-modal__close-button"
                 type="button"
               >
+                
+                
+                
                 <svg
                   aria-hidden="true"
-                  class="cdr-icon cdr-icon--inherit-color"
+                  class="cdr-icon cdr-icon--medium cdr-icon--inherit-color"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
+                  
+                  
+                  
                   <path
                     d="M13.415 12.006l5.295-5.292a1 1 0 00-1.414-1.415L12 10.591 6.71 5.296A1 1 0 005.295 6.71l5.292 5.295-5.295 5.292a1 1 0 101.414 1.414l5.295-5.292 5.292 5.295a1 1 0 001.414-1.414l-5.292-5.294z"
                     role="presentation"
                   />
+                  
+                  <!--v-if-->
                 </svg>
+                
+                
+                
               </button>
             </div>
             <div
@@ -65,12 +79,15 @@ exports[`CdrModal.vue default open 1`] = `
                 style="max-height: -80px;"
                 tabindex="0"
               >
+                
                 Sticky content
+                
               </div>
             </div>
           </div>
         </section>
       </div>
+      
     </div>
     <div
       tabindex="0"
@@ -100,6 +117,7 @@ exports[`CdrModal.vue fullscreen snapshot 1`] = `
       role="dialog"
       tabindex="-1"
     >
+      
       <div
         class="cdr-modal__innerWrap"
       >
@@ -113,26 +131,39 @@ exports[`CdrModal.vue fullscreen snapshot 1`] = `
               <div
                 class="cdr-modal__title"
               >
+                
                 <h1>
                   Label is the modal title
                 </h1>
+                
               </div>
               <button
                 aria-label="Close"
-                class="cdr-button cdr-button--primary cdr-button--icon-only cdr-button--with-background cdr-modal__close-button"
+                class="cdr-button cdr-button--primary cdr-button--icon-only-medium cdr-button--icon-only cdr-button--icon-only cdr-button--with-background cdr-modal__close-button"
                 type="button"
               >
+                
+                
+                
                 <svg
                   aria-hidden="true"
-                  class="cdr-icon cdr-icon--inherit-color"
+                  class="cdr-icon cdr-icon--medium cdr-icon--inherit-color"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
+                  
+                  
+                  
                   <path
                     d="M13.415 12.006l5.295-5.292a1 1 0 00-1.414-1.415L12 10.591 6.71 5.296A1 1 0 005.295 6.71l5.292 5.295-5.295 5.292a1 1 0 101.414 1.414l5.295-5.292 5.292 5.295a1 1 0 001.414-1.414l-5.292-5.294z"
                     role="presentation"
                   />
+                  
+                  <!--v-if-->
                 </svg>
+                
+                
+                
               </button>
             </div>
             <div
@@ -141,13 +172,17 @@ exports[`CdrModal.vue fullscreen snapshot 1`] = `
             >
               <div
                 class="cdr-modal__text-content"
-                style="max-height: -32px;"
+                style="max-height: -80px;"
                 tabindex="0"
-              />
+              >
+                
+                
+              </div>
             </div>
           </div>
         </section>
       </div>
+      
     </div>
     <div
       tabindex="0"
@@ -177,9 +212,9 @@ exports[`CdrModal.vue leaves optional slots empty, handleOpened 1`] = `
       role="dialog"
       tabindex="-1"
     >
+      
       <div
         class="cdr-modal__innerWrap"
-        style=""
       >
         <section>
           <div
@@ -191,26 +226,39 @@ exports[`CdrModal.vue leaves optional slots empty, handleOpened 1`] = `
               <div
                 class="cdr-modal__title"
               >
+                
                 <h1>
                   Label is the modal title
                 </h1>
+                
               </div>
               <button
                 aria-label="Close"
-                class="cdr-button cdr-button--primary cdr-button--icon-only cdr-button--with-background cdr-modal__close-button"
+                class="cdr-button cdr-button--primary cdr-button--icon-only-medium cdr-button--icon-only cdr-button--icon-only cdr-button--with-background cdr-modal__close-button"
                 type="button"
               >
+                
+                
+                
                 <svg
                   aria-hidden="true"
-                  class="cdr-icon cdr-icon--inherit-color"
+                  class="cdr-icon cdr-icon--medium cdr-icon--inherit-color"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
+                  
+                  
+                  
                   <path
                     d="M13.415 12.006l5.295-5.292a1 1 0 00-1.414-1.415L12 10.591 6.71 5.296A1 1 0 005.295 6.71l5.292 5.295-5.295 5.292a1 1 0 101.414 1.414l5.295-5.292 5.292 5.295a1 1 0 001.414-1.414l-5.292-5.294z"
                     role="presentation"
                   />
+                  
+                  <!--v-if-->
                 </svg>
+                
+                
+                
               </button>
             </div>
             <div
@@ -222,12 +270,15 @@ exports[`CdrModal.vue leaves optional slots empty, handleOpened 1`] = `
                 style="max-height: -80px;"
                 tabindex="0"
               >
+                
                 Main content
+                
               </div>
             </div>
           </div>
         </section>
       </div>
+      
     </div>
     <div
       tabindex="0"
