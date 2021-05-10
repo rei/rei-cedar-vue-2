@@ -1,7 +1,5 @@
-import { mount, shallowMount, RouterLinkStub } from '../../../../test/vue-jest-style-workaround.js';
+import { mount } from '../../../../test/vue-jest-style-workaround.js';
 import CdrPagination from 'componentdir/pagination/CdrPagination';
-import IconCaretLeft from 'componentdir/icon/comps/caret-left';
-import IconCaretRight from 'componentdir/icon/comps/caret-right';
 
 function makePages(total, startingAt = 0) {
   const arg = 'page';
@@ -38,7 +36,6 @@ describe('CdrPagination', () => {
         value: 1,
       },
     });
-    wrapper.setData({ componentID: 'test1' });
     await wrapper.vm.$nextTick();
     expect(wrapper.element).toMatchSnapshot();
   });
@@ -51,61 +48,16 @@ describe('CdrPagination', () => {
         linkTag: 'button',
       },
     });
-    wrapper.setData({ componentID: 'test1' });
     await wrapper.vm.$nextTick();
     expect(wrapper.element).toMatchSnapshot();
   });
 
-  it('renders scoped slot correctly', async () => {
-    const wrapper = mount(CdrPagination, {
-      propsData: {
-        pages: makePages(20),
-        value: 4,
-      },
-      stubs: {
-        'icon-caret-left': IconCaretLeft,
-        'icon-caret-right': IconCaretRight,
-      },
-      scopedSlots: {
-        prevLink(prevLink) {
-          return <span
-            {...{ attrs: prevLink.attrs } }
-            vOn:click={prevLink.click}
-          >
-            <prevLink.iconComponent
-              { ...{ class: prevLink.iconClass } }
-            />
-            { prevLink.content }
-          </span>
-        },
-        link(link) {
-          return <span
-            {...{ attrs: link.attrs } }
-            vOn:click={link.click}
-          >
-            { link.page }
-          </span>
-        },
-        nextLink(nextLink) {
-          return <span
-            {...{ attrs: nextLink.attrs }}
-            vOn:click={nextLink.click}
-          >
-            {nextLink.content}
-            <nextLink.iconComponent
-              {...{ class: nextLink.iconClass }}
-            />
-          </span>
-        },
-      }
-    });
-    wrapper.setData({ componentID: 'test2' });
-    await wrapper.vm.$nextTick();
-    expect(wrapper.element).toMatchSnapshot();
-  });
+    // TODO: add test to validate navigation via emits
+  // it('renders scoped slot correctly', async () => {
+  // });
 
   it('has a wrapping nav element for a11y', () => {
-    const wrapper = shallowMount(CdrPagination, {
+    const wrapper = mount(CdrPagination, {
       propsData: {
         pages: makePages(20),
         value: 1,
@@ -115,7 +67,7 @@ describe('CdrPagination', () => {
   });
 
   it('sets default pagination aria-label', () => {
-    const wrapper = shallowMount(CdrPagination, {
+    const wrapper = mount(CdrPagination, {
       propsData: {
         pages: makePages(20),
         value: 1,
@@ -125,7 +77,7 @@ describe('CdrPagination', () => {
   });
 
   it('allows for aria-label override', () => {
-    const wrapper = shallowMount(CdrPagination, {
+    const wrapper = mount(CdrPagination, {
       propsData: {
         pages: makePages(20),
         value: 1,
@@ -136,7 +88,7 @@ describe('CdrPagination', () => {
   });
 
   it('can render buttons instead of links', () => {
-    const wrapper = shallowMount(CdrPagination, {
+    const wrapper = mount(CdrPagination, {
       propsData: {
         pages: makePages(20),
         value: 1,
@@ -148,14 +100,14 @@ describe('CdrPagination', () => {
   });
 
   it('sorts 20 pages correctly', async () => {
-    const wrapper = shallowMount(CdrPagination, {
+    const wrapper = mount(CdrPagination, {
       propsData: {
         pages: makePages(20),
         value: 1,
       },
     });
-    let prev = wrapper.findComponent({ref: `prev-link-${wrapper.vm.componentID}`});
-    let next = wrapper.findComponent({ref: `next-link-${wrapper.vm.componentID}`});
+    let prev = wrapper.find('a .cdr-pagination_caret--prev');
+    let next = wrapper.find('a .cdr-pagination_caret--next');
 
     expect(getPageNumArray(wrapper.vm.paginationData)).toEqual([1,2,3,4,5,'...',20]);
     expect(prev.exists()).toBeFalsy();
@@ -164,37 +116,37 @@ describe('CdrPagination', () => {
     wrapper.setProps({ value: 4 });
     await wrapper.vm.$nextTick();
     expect(getPageNumArray(wrapper.vm.paginationData)).toEqual([1,2,3,4,5,'...',20]);
-    prev = wrapper.findComponent({ ref: `prev-link-${wrapper.vm.componentID}` });
-    next = wrapper.findComponent({ ref: `next-link-${wrapper.vm.componentID}` });
+    prev = wrapper.find('a .cdr-pagination_caret--prev');
+    next = wrapper.find('a .cdr-pagination_caret--next');
     expect(prev.exists()).toBeTruthy();
     expect(next.exists()).toBeTruthy();
 
     wrapper.setProps({ value: 20 });
     await wrapper.vm.$nextTick();
     expect(getPageNumArray(wrapper.vm.paginationData)).toEqual([1,'...',16,17,18,19,20]);
-    prev = wrapper.findComponent({ ref: `prev-link-${wrapper.vm.componentID}` });
-    next = wrapper.findComponent({ ref: `next-link-${wrapper.vm.componentID}` });
+    prev = wrapper.find('a .cdr-pagination_caret--prev');
+    next = wrapper.find('a .cdr-pagination_caret--next');
     expect(prev.exists()).toBeTruthy();
     expect(next.exists()).toBeFalsy();
 
     wrapper.setProps({ value: 17 });
     await wrapper.vm.$nextTick();
     expect(getPageNumArray(wrapper.vm.paginationData)).toEqual([1,'...',16,17,18,19,20]);
-    prev = wrapper.findComponent({ ref: `prev-link-${wrapper.vm.componentID}` });
-    next = wrapper.findComponent({ ref: `next-link-${wrapper.vm.componentID}` });
+    prev = wrapper.find('a .cdr-pagination_caret--prev');
+    next = wrapper.find('a .cdr-pagination_caret--next');
     expect(prev.exists()).toBeTruthy();
     expect(next.exists()).toBeTruthy();
   });
 
   it('sorts 5 pages correctly', async () => {
-    const wrapper = shallowMount(CdrPagination, {
+    const wrapper = mount(CdrPagination, {
       propsData: {
         pages: makePages(5),
         value: 1,
       },
     });
-    let prev = wrapper.findComponent({ref: `prev-link-${wrapper.vm.componentID}`});
-    let next = wrapper.findComponent({ref: `next-link-${wrapper.vm.componentID}`});
+    let prev = wrapper.find('a .cdr-pagination_caret--prev');
+    let next = wrapper.find('a .cdr-pagination_caret--next');
     expect(getPageNumArray(wrapper.vm.paginationData)).toEqual([1,2,3,4,5]);
     expect(prev.exists()).toBeFalsy();
     expect(next.exists()).toBeTruthy();
@@ -202,22 +154,22 @@ describe('CdrPagination', () => {
     wrapper.setProps({ value: 4 });
     await wrapper.vm.$nextTick();
     expect(getPageNumArray(wrapper.vm.paginationData)).toEqual([1,2,3,4,5]);
-    prev = wrapper.findComponent({ ref: `prev-link-${wrapper.vm.componentID}` });
-    next = wrapper.findComponent({ ref: `next-link-${wrapper.vm.componentID}` });
+    prev = wrapper.find('a .cdr-pagination_caret--prev');
+    next = wrapper.find('a .cdr-pagination_caret--next');
     expect(prev.exists()).toBeTruthy();
     expect(next.exists()).toBeTruthy();
 
     wrapper.setProps({ value: 5 });
     await wrapper.vm.$nextTick();
     expect(getPageNumArray(wrapper.vm.paginationData)).toEqual([1,2,3,4,5]);
-    prev = wrapper.findComponent({ ref: `prev-link-${wrapper.vm.componentID}` });
-    next = wrapper.findComponent({ ref: `next-link-${wrapper.vm.componentID}` });
+    prev = wrapper.find('a .cdr-pagination_caret--prev');
+    next = wrapper.find('a .cdr-pagination_caret--next');
     expect(prev.exists()).toBeTruthy();
     expect(next.exists()).toBeFalsy();
   });
 
   it('sorts prev/next only pages correctly', () => {
-    const wrapper = shallowMount(CdrPagination, {
+    const wrapper = mount(CdrPagination, {
       propsData: {
         pages: makePages(getPrevNextPages(5), 3),
         value: 5,
@@ -225,14 +177,14 @@ describe('CdrPagination', () => {
     });
 
     expect(getPageNumArray(wrapper.vm.paginationData)).toEqual([4, 5, 6]);
-    let prev = wrapper.findComponent({ ref: `prev-link-${wrapper.vm.componentID}` });
-    let next = wrapper.findComponent({ ref: `next-link-${wrapper.vm.componentID}` });
+    let prev = wrapper.find('a .cdr-pagination_caret--prev');
+    let next = wrapper.find('a .cdr-pagination_caret--next');
     expect(prev.exists()).toBeTruthy();
     expect(next.exists()).toBeTruthy();
   });
 
   it('shows next and disabled prev when at first page', () => {
-    const wrapper = shallowMount(CdrPagination, {
+    const wrapper = mount(CdrPagination, {
       propsData: {
         pages: makePages(getPrevNextPages(1), -1),
         value: 1,
@@ -240,16 +192,16 @@ describe('CdrPagination', () => {
     });
 
     expect(getPageNumArray(wrapper.vm.paginationData)).toEqual([1, 2]);
-    const prev = wrapper.findComponent({ ref: `prev-link-${wrapper.vm.componentID}` });
-    const next = wrapper.findComponent({ ref: `next-link-${wrapper.vm.componentID}` });
+    const prev = wrapper.find('a .cdr-pagination_caret--prev');
+    const next = wrapper.find('a .cdr-pagination_caret--next');
     const disabledPrev = wrapper.find('li');
-    expect(disabledPrev.text()).toBe('Prev');
+    expect(disabledPrev.attributes('aria-hidden')).toBe(true);
     expect(prev.exists()).toBeFalsy();
     expect(next.exists()).toBeTruthy();
   });
 
   it('shows prev and disabled next link when at last page', () => {
-    const wrapper = shallowMount(CdrPagination, {
+    const wrapper = mount(CdrPagination, {
       propsData: {
         pages: makePages(getPrevNextPages(10), 8),
         value: 10,
@@ -257,11 +209,11 @@ describe('CdrPagination', () => {
     });
 
     expect(getPageNumArray(wrapper.vm.paginationData)).toEqual([9, 10]);
-    const prev = wrapper.findComponent({ ref: `prev-link-${wrapper.vm.componentID}` });
-    const next = wrapper.findComponent({ ref: `next-link-${wrapper.vm.componentID}` });
+    const prev = wrapper.find('a .cdr-pagination_caret--prev');
+    const next = wrapper.find('a .cdr-pagination_caret--next');
     const allLinks = wrapper.findAll('li');
     const disabledNext = allLinks.at(allLinks.length-1);
-    expect(disabledNext.text()).toBe('Next');
+    expect(disabledNext.attributes('aria-hidden')).toBe(true);
     expect(prev.exists()).toBeTruthy();
     expect(next.exists()).toBeFalsy();
   });
@@ -272,6 +224,7 @@ describe('CdrPagination', () => {
         pages: makePages(20),
         value: 5,
       },
+      // TODO: uhhh what?
       listeners: {
         'update:modelValue': async (newVal) => { // simulate v-model update
           wrapper.setProps({ value: newVal });
@@ -279,8 +232,8 @@ describe('CdrPagination', () => {
         }
       }
     });
-    let next = wrapper.findComponent({ ref: `next-link-${wrapper.vm.componentID}` });
-    let prev = wrapper.findComponent({ ref: `prev-link-${wrapper.vm.componentID}` });
+    let next = wrapper.find('a .cdr-pagination_caret--next');
+    let prev = wrapper.find('a .cdr-pagination_caret--prev');
 
     // next clicks
     next.trigger('click'); // 5 -> 6
@@ -325,7 +278,7 @@ describe('CdrPagination', () => {
     expect(wrapper.emitted().navigate[6]).toBeUndefined();
 
     // use select
-    let options = wrapper.findComponent({ ref: `select-${wrapper.vm.componentID}` }).findAll('option')
+    let options = wrapper.find('select').findAll('option')
     options.at(2).setSelected(); // 2 -> 3
     await wrapper.vm.$nextTick();
     expect(wrapper.emitted().navigate[6][0]).toBe(3);
@@ -333,184 +286,20 @@ describe('CdrPagination', () => {
     expect(wrapper.emitted().navigate[6][2] instanceof Event).toBeTruthy();
   });
 
-  it('binds refs and emits events with scoped slots', async () => {
-    const wrapper = mount(CdrPagination, {
-      propsData: {
-        pages: makePages(20),
-        value: 5,
-      },
-      listeners: {
-        'update:modelValue': async (newVal) => { // simulate v-model update
-          wrapper.setProps({ value: newVal });
-          await wrapper.vm.$nextTick();
-        }
-      },
-      scopedSlots: {
-        link: '<p v-bind="props.attrs" @click="props.click">{{props.content}}</p>',
-        nextLink: '<p v-bind="props.attrs" @click="props.click">{{props.content}}</p>',
-        prevLink: '<p v-bind="props.attrs" @click="props.click">{{props.content}}</p>',
-      }
-    });
-
-    let next = wrapper.vm.$scopedSlots.nextLink()[0].context.$refs[`next-link-${wrapper.vm.componentID}`];
-    let prev = wrapper.vm.$scopedSlots.prevLink()[0].context.$refs[`prev-link-${wrapper.vm.componentID}`];
-    // next clicks
-    next.click(); // 5 -> 6
-    await wrapper.vm.$nextTick();
-    expect(wrapper.emitted().navigate[0][0]).toBe(6);
-    expect(wrapper.emitted().navigate[0][1]).toBe('?page=6');
-    expect(wrapper.emitted().navigate[0][2] instanceof Event).toBeTruthy();
-    next.click(); // 6 -> 7
-    await wrapper.vm.$nextTick();
-    expect(wrapper.emitted().navigate[1][0]).toBe(7);
-    expect(wrapper.emitted().navigate[1][1]).toBe('?page=7');
-    expect(wrapper.emitted().navigate[1][2] instanceof Event).toBeTruthy();
-
-    // previous clicks
-    prev.click(); // 7 -> 6
-    await wrapper.vm.$nextTick();
-    expect(wrapper.emitted().navigate[2][0]).toBe(6);
-    expect(wrapper.emitted().navigate[2][1]).toBe('?page=6');
-    expect(wrapper.emitted().navigate[2][2] instanceof Event).toBeTruthy();
-    prev.click(); // 6 -> 5
-    await wrapper.vm.$nextTick();
-    expect(wrapper.emitted().navigate[3][0]).toBe(5);
-    expect(wrapper.emitted().navigate[3][1]).toBe('?page=5');
-    expect(wrapper.emitted().navigate[3][2] instanceof Event).toBeTruthy();
-
-    // click a page link
-    let link = wrapper.vm.$scopedSlots.link()[0].context.$refs[`page-link-1-${wrapper.vm.componentID}`];
-    link.click(); // 5 -> 1
-    await wrapper.vm.$nextTick();
-    expect(wrapper.emitted().navigate[4][0]).toBe(1);
-    expect(wrapper.emitted().navigate[4][1]).toBe('?page=1');
-    expect(wrapper.emitted().navigate[4][2] instanceof Event).toBeTruthy();
-    let link2 = wrapper.vm.$scopedSlots.link()[0].context.$refs[`page-link-2-${wrapper.vm.componentID}`];
-    link2.click(); // 1 -> 2
-    await wrapper.vm.$nextTick();
-    expect(wrapper.emitted().navigate[5][0]).toBe(2);
-    expect(wrapper.emitted().navigate[5][1]).toBe('?page=2');
-    expect(wrapper.emitted().navigate[5][2] instanceof Event).toBeTruthy();
-    // Do nothing when clicking current page link
-    link2.click(); // 2 -> 2
-    await wrapper.vm.$nextTick();
-    expect(wrapper.emitted().navigate[6]).toBeUndefined();
-
-    // use select
-    let select = wrapper.findComponent({ ref: `select-${wrapper.vm.componentID}` })
-    let options = select.findAll('option')
-    options.at(2).setSelected();
-    await wrapper.vm.$nextTick();
-    expect(wrapper.emitted().navigate[6][0]).toBe(3);
-    expect(wrapper.emitted().navigate[6][1]).toBe('?page=3');
-    expect(wrapper.emitted().navigate[6][2] instanceof Event).toBeTruthy();
-  });
-
-  it('pagination works with vue-router', async () => {
-    const wrapper = mount(CdrPagination, {
-      propsData: {
-        pages: makePages(20),
-        value: 5,
-      },
-      listeners: {
-        'update:modelValue': async (newVal) => { // simulate v-model update
-          wrapper.setProps({ value: newVal });
-          await wrapper.vm.$nextTick();
-        }
-      },
-      stubs: {
-        'router-link': RouterLinkStub,
-      },
-      scopedSlots: {
-        link: '<router-link v-bind="props.attrs" @click.native="props.click" to="{ query: { \'router-page\': props.page } }">{{props.content}}</router-link>',
-        nextLink: '<router-link v-bind="props.attrs" @click.native="props.click" to="{ query: { \'router-page\': props.page } }">{{props.content}}</router-link>',
-        prevLink: '<router-link v-bind="props.attrs" @click.native="props.click" to="{ query: { \'router-page\': props.page } }">{{props.content}}</router-link>',
-      }
-    });
-
-    let next = wrapper.vm.$scopedSlots.nextLink()[0].context.$refs[`next-link-${wrapper.vm.componentID}`].$el;
-    let prev = wrapper.vm.$scopedSlots.prevLink()[0].context.$refs[`prev-link-${wrapper.vm.componentID}`].$el;
-
-    // next clicks
-    next.click(); // 5 -> 6
-    await wrapper.vm.$nextTick();
-    expect(wrapper.emitted().navigate[0][0]).toBe(6);
-    expect(wrapper.emitted().navigate[0][1]).toBe('?page=6');
-    expect(wrapper.emitted().navigate[0][2] instanceof Event).toBeTruthy();
-    next.click(); // 6 -> 7
-    await wrapper.vm.$nextTick();
-    expect(wrapper.emitted().navigate[1][0]).toBe(7);
-    expect(wrapper.emitted().navigate[1][1]).toBe('?page=7');
-    expect(wrapper.emitted().navigate[1][2] instanceof Event).toBeTruthy();
-
-    // previous clicks
-    prev.click(); // 7 -> 6
-    await wrapper.vm.$nextTick();
-    expect(wrapper.emitted().navigate[2][0]).toBe(6);
-    expect(wrapper.emitted().navigate[2][1]).toBe('?page=6');
-    expect(wrapper.emitted().navigate[2][2] instanceof Event).toBeTruthy();
-    prev.click(); // 6 -> 5
-    await wrapper.vm.$nextTick();
-    expect(wrapper.emitted().navigate[3][0]).toBe(5);
-    expect(wrapper.emitted().navigate[3][1]).toBe('?page=5');
-    expect(wrapper.emitted().navigate[3][2] instanceof Event).toBeTruthy();
-
-    // click a page link
-    let link = wrapper.vm.$scopedSlots.link()[0].context.$refs[`page-link-1-${wrapper.vm.componentID}`].$el;
-    link.click();
-    await wrapper.vm.$nextTick();
-    expect(wrapper.emitted().navigate[4][0]).toBe(1);
-    expect(wrapper.emitted().navigate[4][1]).toBe('?page=1');
-    expect(wrapper.emitted().navigate[4][2] instanceof Event).toBeTruthy();
-    let link2 = wrapper.vm.$scopedSlots.link()[0].context.$refs[`page-link-2-${wrapper.vm.componentID}`].$el;
-    link2.click(); // 1 -> 2
-    await wrapper.vm.$nextTick();
-    expect(wrapper.emitted().navigate[5][0]).toBe(2);
-    expect(wrapper.emitted().navigate[5][1]).toBe('?page=2');
-    expect(wrapper.emitted().navigate[5][2] instanceof Event).toBeTruthy();
-    // Do nothing when clicking current page link
-    link2.click(); // 2 -> 2
-    await wrapper.vm.$nextTick();
-    expect(wrapper.emitted().navigate[6]).toBeUndefined();
-
-    // use select
-    let options = wrapper.findComponent({ ref: `select-${wrapper.vm.componentID}` }).findAll('option')
-    options.at(2).setSelected();
-    await wrapper.vm.$nextTick();
-    expect(wrapper.emitted().navigate[6][0]).toBe(3);
-    expect(wrapper.emitted().navigate[6][1]).toBe('?page=3');
-    expect(wrapper.emitted().navigate[6][2] instanceof Event).toBeTruthy();
-  });
-
   it('adds "of x" when a total is provided', async () => {
-    const wrapper = shallowMount(CdrPagination, {
+    const wrapper = mount(CdrPagination, {
       propsData: {
         pages: makePages(20),
         value: 1,
       },
     });
 
-    let option = wrapper.findComponent({ ref: `select-${wrapper.vm.componentID}` }).findAll('option').at(0);
+    let option = wrapper.find('select').findAll('option').at(0);
     expect(option.text()).toBe('Page 1');
 
     wrapper.setProps({ totalPages: 20 });
     await wrapper.vm.$nextTick();
-    option = wrapper.findComponent({ ref: `select-${wrapper.vm.componentID}` }).findAll('option').at(0);
+    option = wrapper.find('select').findAll('option').at(0);
     expect(option.text()).toBe('Page 1 of 20');
-  });
-
-  it('alows links to be overriden with scoped slots', () => {
-    const wrapper = shallowMount(CdrPagination, {
-      propsData: {
-        pages: makePages(3),
-        value: 2,
-      },
-      scopedSlots: {
-        link: '<p slot-scope="link">{{link.href}} {{link.content}}</p>',
-        prevLink: '<p slot-scope="link">{{link.href}} {{link.content}}</p>',
-        nextLink: '<p slot-scope="link">{{link.href}} {{link.content}}</p>',
-      }
-    });
-    expect(wrapper.text()).toBe('?page=1 Prev?page=1 1?page=2 2?page=3 3Page 1Page 2Page 3?page=3 Next');
   });
 });
