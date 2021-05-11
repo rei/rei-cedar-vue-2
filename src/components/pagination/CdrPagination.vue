@@ -5,7 +5,8 @@
         <component 
           :is="linkTag"
           aria-label="Go to previous page"
-          :href="linkTag === 'a' && prevPageData && prevPageData.href"
+          :href="(linkTag === 'a' && prevPageData && prevPageData.url) || undefined"
+          :class="mapClasses($style, 'cdr-pagination__link', 'cdr-pagination__prev')"
           @click="(e) => navigate(prevPageData.page, e)"
         >
           <icon-caret-left :class="$style['cdr-pagination_caret--prev']" />
@@ -14,7 +15,7 @@
       <li v-else aria-hidden="true">
         <span
           aria-disabled="true"
-          :class="$style['cdr-pagination__link--disabled']"
+          :class="mapClasses($style, 'cdr-pagination__link', 'cdr-pagination__prev', 'cdr-pagination__link--disabled')"
         >
           <icon-caret-left
             :class="$style['cdr-pagination_caret--prev']"
@@ -29,33 +30,33 @@
         :key="`pagination-${id}-li-${n.page}`"
         :class="$style['cdr-pagination__li--links']"
       >
-        <span v-if="n === '&hellip;'"
-          :class="$style['cdr-pagination__ellipse']"
-          v-html={n}
-        />
+       
         <component 
-          v-else
+          v-if="n.page"
           :is="linkTag"
           :class="mapClasses($style, 'cdr-pagination__link', n.page === innerValue && 'cdr-pagination__link--current')"
           :aria-label="n.page === innerValue ? `Current page, page ${n.page}` : `Go to page ${n.page}`"
           :aria-current="n.page === innerValue ? 'page' : null"
-          :href="linkTag === 'a' && n.url"
+          :href="(linkTag === 'a' && n.url) || undefined"
           @click="(e) => navigate(n.page, e)"
         >
           {{ n.page }}
         </component>
+        <span v-else :class="$style['cdr-pagination__ellipse']">
+          &hellip;
+        </span>
       </li>
 
-<!-- TODO: why is this in a li? weird.... -->
       <li :class="$style['cdr-pagination__li--select']">
         <cdr-select
+          :id="`pagination-select-${id}`"
           v-model="innerValue"
           label="Navigate to page"
           hide-label
           @change="select"
         >
           <option
-            v-for="page in paginationData.filter(n => n !== '&hellip;')"
+            v-for="page in paginationData.filter(n => n.page)"
             :key="`pagination-${id}-select-${page.page}`"
             :value="page.page"
           >
@@ -69,7 +70,8 @@
         <component 
           :is="linkTag"
           aria-label="Go to next page"
-          :href="linkTag === 'a' && nextPageData && nextPageData.href"
+          :href="(linkTag === 'a' && nextPageData && nextPageData.url) || undefined"
+          :class="mapClasses($style, 'cdr-pagination__link', 'cdr-pagination__next')"
           @click="(e) => navigate(nextPageData.page, e)"
         >
           <icon-caret-right :class="$style['cdr-pagination_caret--next']"/>
@@ -78,9 +80,8 @@
       <li v-else aria-hidden="true">
         <span
           aria-disabled="true"
-          :class="$style['cdr-pagination__link--disabled']"
+          :class="mapClasses($style, 'cdr-pagination__link', 'cdr-pagination__next', 'cdr-pagination__link--disabled')"
         >
-        <!-- TODO: why were caret classes duped??? -->
           <icon-caret-right
             :class="$style['cdr-pagination_caret--next']"
             inherit-color
@@ -178,12 +179,12 @@ export default defineComponent({
     const navigate = (pageNum, e) => {
       // TODO: provide option to just emit without navigating to support vue-router?
       // Dont do anything if clicking the current active page
-      if (pageNum === innerValue) {
+      if (pageNum === innerValue.value) {
         e.preventDefault();
         return;
       }
       innerValue.value = pageNum;
-      ctx.emit('navigate', pageNum, currentUrl, e);
+      ctx.emit('navigate', pageNum, currentUrl.value, e);
 
       // TODO: is this still necessary?
       nextTick(() => {
@@ -264,6 +265,7 @@ export default defineComponent({
     watch(() => props.pages, () => setCurrentIdx(innerValue.value))
 
     return {
+      innerValue,
       currentIdx,
       ariaLabel,
       prevPageData,

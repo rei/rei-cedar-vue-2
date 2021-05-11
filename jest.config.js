@@ -24,10 +24,6 @@ const config = {
     'rollup.config.test.js',
     '<rootDir>/test/e2e/',
     '<rootDir>/templates/__tests__',
-
-    '<rootDir>/src/components/tabs',
-    // '<rootDir>/src/components/modal',
-    '<rootDir>/src/components/pagination',
   ],
   transform: {
   '.+\\.(css|styl|less|sass|scss)$': '<rootDir>/node_modules/jest-css-modules-transform',
