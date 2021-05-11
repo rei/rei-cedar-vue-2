@@ -1,7 +1,7 @@
 import { mount } from '../../../../test/vue-jest-style-workaround.js';
 import CdrTabPanel from 'componentdir/tabs/CdrTabPanel';
-import CdrTabs from 'componentdir/tabs/CdrTabs';
-import Vue from 'vue';
+// import CdrTabs from 'componentdir/tabs/CdrTabs';
+// import Vue from 'vue';
 
 
 describe('CdrTabPanel', () => {
@@ -69,7 +69,7 @@ describe('CdrTabPanel', () => {
     wrapper.vm.setAnimationDirection('exit-left');
     await wrapper.vm.$nextTick();
     expect(wrapper.vm.hidden).toBe(false);
-    expect(wrapper.vm.animationDirection).toBe('next-tick');
+    expect(wrapper.vm.animationDirection).toBe('exit-left');
     wrapper.trigger('animationend', {
       animationName: 'exit-left'
     });
@@ -90,5 +90,6 @@ describe('CdrTabPanel', () => {
     wrapper.trigger('keydown', {key: 'up'});
     await wrapper.vm.$nextTick();
     expect(wrapper.emitted('tab-arrow-up')).toBeTruthy();
+    done();
   })
 });

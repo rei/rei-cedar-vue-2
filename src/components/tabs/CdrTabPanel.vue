@@ -36,7 +36,7 @@ export default defineComponent({
       type: Boolean,
       default: false,
     },
-    ariaLabelledBy: {
+    ariaLabelledby: {
       type: String,
       required: true,
     },
@@ -47,7 +47,7 @@ export default defineComponent({
     modifier: {
       type: String,
       default: '',
-      validator: (value) => propValidator(value, ['centered', 'compact', 'full-width', 'no-border']),
+      validator: (value) => propValidator(value, ['centered', 'compact', 'full-width', 'no-border', '']),
     },
   },
 
@@ -60,14 +60,15 @@ export default defineComponent({
     const modifierClass = computed(() => buildClass(baseClass, props.modifier));
 
     const setActive = (state) => {
-      // TODO: inject current active tab index or something?
+      // TODO: provide/inject current active tab index or something?
       if (state) hidden.value = false;
       active.value = state;
       ctx.emit('tab-change', state, props.id);
     };
     const setAnimationDirection = (direction) => {
-      // Use Inject here?
-      animationDirection = direction;
+      // TODO Use provide/inject here?
+      // console.log(direction, 'YOOOOOO')
+      animationDirection.value = direction;
     };
     const handleUpArrowNav = () => {
       // YOU WAHT NOW?!?!?!
@@ -77,10 +78,12 @@ export default defineComponent({
     };
     const animationEnd = (event) => {
       if (event.animationName.split('-')[0] === 'exit') {
-        hidden = true;
-        animationDirection = null;
+        hidden.value = true;
+        animationDirection.value = null;
       }
     };
+
+
 
     return {
       modifierClass,
@@ -88,7 +91,6 @@ export default defineComponent({
       baseClass,
       mapClasses,
       animationEnd,
-      handleUpArrow,
       active,
       hidden,
       handleUpArrowNav,
