@@ -10,12 +10,14 @@
     @keydown.up.prevent="handleUpArrowNav"
     @animationend="animationEnd"
     :key="name"
+    :js-name="name"
+    :js-disabled="disabled"
   >
     <slot />
   </div>
 </template>
 <script>
-import { defineComponent, computed, ref } from 'vue';
+import { defineComponent, computed, ref, inject, onMounted } from 'vue';
 
 // TODO: PUT MODIFIER HERE!
 import { buildClass } from '../../utils/buildClass';
@@ -59,6 +61,7 @@ export default defineComponent({
 
     const modifierClass = computed(() => buildClass(baseClass, props.modifier));
 
+// TODO: use inject to get active index?
     const setActive = (state) => {
       // TODO: provide/inject current active tab index or something?
       if (state) hidden.value = false;
@@ -82,6 +85,10 @@ export default defineComponent({
         animationDirection.value = null;
       }
     };
+
+    // onMounted(() => {
+    //   ctx.emit()
+    // })
 
 
 

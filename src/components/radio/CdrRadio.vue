@@ -13,7 +13,6 @@
         :class="[$style['cdr-radio__input'], inputClass]"
         type="radio"
         :name="name"
-
         :checked="modelValue === customValue"
         :value="customValue"
         v-bind="$attrs"
@@ -24,7 +23,10 @@
   </cdr-label-wrapper>
 </template>
 <script>
-import { defineComponent } from 'vue';
+
+
+// TODO: need to do the like "map modelvalue to internal state and emit events when parent gets update yada yada" dance i think :~(
+import { defineComponent, watch } from 'vue';
 
 import propValidator from '../../utils/propValidator';
 import CdrLabelWrapper from '../labelWrapper/CdrLabelWrapper';
