@@ -15,7 +15,7 @@
   </div>
 </template>
 <script>
-import { defineComponent, computed, ref, inject, onMounted } from 'vue';
+import { defineComponent, computed, ref, inject, onBeforeMount } from 'vue';
 
 // TODO: PUT MODIFIER HERE!
 import { buildClass } from '../../utils/buildClass';
@@ -85,7 +85,7 @@ export default defineComponent({
 
     const tabs = inject('tabs');
 
-    onMounted(() => {
+    onBeforeMount(() => {
       tabs.value.push({
         name: props.name,
         id: props.id,

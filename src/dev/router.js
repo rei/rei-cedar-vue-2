@@ -1,7 +1,7 @@
 import App from 'srcdir/dev/App';
 import Examples from 'componentsdir/examples';
 
-// import KitchenSink from 'srcdir/dev/KitchenSink';
+import KitchenSink from 'srcdir/dev/KitchenSink';
 // import e2e1 from 'srcdir/dev/e2e1';
 // import e2e2 from 'srcdir/dev/e2e2';
 
@@ -19,9 +19,9 @@ import Examples from 'componentsdir/examples';
 
 const routes = [
   { path: '/', name: ' ', component: App },
-  // { path: '/kitchen-sink', name: 'KitchenSink', component: KitchenSink },
+  { path: '/kitchen-sink', name: 'KitchenSink', component: KitchenSink },
   // { path: '/utilities', name: 'Utilities', component: Examples.utilities },
-  // { path: '/accordion', name: 'Accordion', component: Examples.accordion },
+  { path: '/accordion', name: 'Accordion', component: Examples.accordion },
   { path: '/alert', name: 'Alert', component: Examples.alert },
   { path: '/breadcrumbs', name: 'Breadcrumb', component: Examples.breadcrumb },
   { path: '/buttons', name: 'Buttons', component: Examples.buttons },
@@ -36,15 +36,15 @@ const routes = [
   { path: '/inputs', name: 'Input', component: Examples.inputs },
   { path: '/links', name: 'Links', component: Examples.links },
   { path: '/lists', name: 'Lists', component: Examples.list },
-  // { path: '/modals', name: 'Modals', component: Examples.modal },
-  // { path: '/pagination', name: 'Pagination', component: Examples.pagination },
+  { path: '/modals', name: 'Modals', component: Examples.modal },
+  { path: '/pagination', name: 'Pagination', component: Examples.pagination },
   { path: '/popover', name: 'Popover', component: Examples.popover },
   { path: '/quotes', name: 'Quotes', component: Examples.quote },
   { path: '/radios', name: 'Radios', component: Examples.radio },
   { path: '/ratings', name: 'Ratings', component: Examples.rating },
   { path: '/selects', name: 'Selects', component: Examples.selects },
   { path: '/tables', name: 'Tables', component: Examples.tables },
-  // { path: '/tabs', name: 'Tabs', component: Examples.tabs },
+  { path: '/tabs', name: 'Tabs', component: Examples.tabs },
   { path: '/texts', name: 'Texts', component: Examples.texts },
   { path: '/tooltip', name: 'Tooltip', component: Examples.tooltip },
 

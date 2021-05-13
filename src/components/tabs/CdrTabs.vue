@@ -34,11 +34,11 @@
             :id="tab.disabled ? '' : tab.ariaLabelledby"
             :key="tab.id"
             :class="mapClasses($style,
-              (tab.active && !tab.disabled) ? 'cdr-tabs__header-item-active' : '',
+              (activeTabIndex === i && !tab.disabled) ? 'cdr-tabs__header-item-active' : '',
               'cdr-tabs__header-item',
               tab.disabled ? 'cdr-tabs__header-item--disabled' : '',
             )"
-            :tabIndex="(tab.active && !tab.disabled) ? 0 : -1"
+            :tabIndex="(activeTabIndex === i && !tab.disabled) ? 0 : -1"
             @click.prevent="(e) => tab.disabled ? null : handleClick(tab, e)"
           >
             {{ tab.name }}
@@ -71,7 +71,7 @@ import { buildClass } from '../../utils/buildClass'
 
 
 
-import { defineComponent, computed, ref, onMounted, provide } from 'vue';
+import { defineComponent, computed, ref, onMounted, provide, nextTick } from 'vue';
 import debounce from 'lodash-es/debounce';
 import mapClasses from '../../utils/mapClasses';
 import {
@@ -96,18 +96,11 @@ export default defineComponent({
       default: CdrColorBackgroundPrimary,
     },
   },
-
-
-  // TODO: use this pattern
-// https://github.com/Jacobs63/vue3-tabs-component/blob/master/src/components/Tabs.vue
-// https://github.com/Jacobs63/vue3-tabs-component/blob/master/src/components/Tab.vue
-// separate tab name from content? pass array of names, matching children?
-// we can get the name from the ctx.slots.default() but can't setActive and such 
-// provide/inject i guess?
-
   setup(props, ctx) {
-    // TODO: create reactive state objects for data rather than bundle of refs?
-    let tabs = []; // TODO: note tabs NOT reactive! no adding tabs after mount!!!
+
+    const tabs = ref([]);
+    provide('tabs', tabs);
+
     const underlineOffsetX = ref(0);
     const underlineWidth = ref(0);
     // const underlineScrollX = ref(0); // ????
@@ -116,7 +109,7 @@ export default defineComponent({
     const headerOverflow = ref(false);
     const overflowLeft = ref(false);
     const overflowRight = ref(false);
-    const animationInProgress = ref(false);
+    const animationInProgress = false;
 
 
     const containerEl = ref(null);
@@ -148,15 +141,15 @@ export default defineComponent({
 
 // TODO: i feel it in my heart that these 2 function can be 1-liners
     const getNextTab = (startIndex) => {
-      for (let i = startIndex; i < tabs.length; i += 1) {
-        if (!tabs[i].disabled) {
+      for (let i = startIndex; i < tabs.value.length; i += 1) {
+        if (!tabs.value[i].disabled) {
           return i;
         }
       }
 
       if (startIndex !== 0) {
         for (let k = 0; k < startIndex; k += 1) {
-          if (!tabs[k].disabled) {
+          if (!tabs.value[k].disabled) {
             return k;
           }
         }
@@ -167,14 +160,14 @@ export default defineComponent({
 
     const getPreviousTab = (startIndex) => {
       for (let i = startIndex; i > -1; i -= 1) {
-        if (!tabs[i].disabled) {
+        if (!tabs.value[i].disabled) {
           return i;
         }
       }
 
-      if (startIndex !== tabs.length - 1) {
-        for (let k = tabs.length - 1; k > startIndex; k -= 1) {
-          if (!tabs[k].disabled) {
+      if (startIndex !== tabs.value.length - 1) {
+        for (let k = tabs.value.length - 1; k > startIndex; k -= 1) {
+          if (!tabs.value[k].disabled) {
             return k;
           }
         }
@@ -185,42 +178,42 @@ export default defineComponent({
 
     const handleClick = debounce(function handleClickCallback(tabClicked) {
       // TODO: render index in buttons to bind this event, no need to find index????
-      const newIndex = tabs.findIndex((tab) => tabClicked.name === tab.name);
+      const newIndex = tabs.value.findIndex((tab) => tabClicked.name === tab.name);
       changeTab(newIndex);
     }, 500, { leading: true, trailing: false });
 
     const changeTab = (newIndex) => {
-      const oldIndex = activeTabIndex;
+      const oldIndex = activeTabIndex.value;
 
       hideScrollBar();
       if (newIndex > oldIndex) {
-        tabs[oldIndex].setAnimationDirection('exit-left');
-        tabs[oldIndex].setActive(false);
+        tabs.value[oldIndex].setAnimationDirection('exit-left');
+        tabs.value[oldIndex].setActive(false);
         setTimeout(() => {
-          tabs[newIndex].setActive(true);
-          tabs[newIndex].setAnimationDirection('enter-right');
+          tabs.value[newIndex].setActive(true);
+          tabs.value[newIndex].setAnimationDirection('enter-right');
         }, 200);
       } else {
-        tabs[oldIndex].setAnimationDirection('exit-right');
-        tabs[oldIndex].setActive(false);
+        tabs.value[oldIndex].setAnimationDirection('exit-right');
+        tabs.value[oldIndex].setActive(false);
         setTimeout(() => {
-          tabs[newIndex].setActive(true);
-          tabs[newIndex].setAnimationDirection('enter-left');
+          tabs.value[newIndex].setActive(true);
+          tabs.value[newIndex].setAnimationDirection('enter-left');
         }, 200);
       }
-      activeTabIndex = newIndex;
+      activeTabIndex.value = newIndex;
       updateUnderline();
-      cdrTabsHeaderEl.children[activeTabIndex].focus();
+      cdrTabsHeaderEl.value.children[activeTabIndex.value].focus();
     }
     const rightArrowNav = debounce(function handleRightArrow() {
-      const nextTab = getNextTab(activeTabIndex + 1);
+      const nextTab = getNextTab(activeTabIndex.value + 1);
       if (nextTab !== -1) {
         changeTab(nextTab);
       }
     }, 300, { leading: true, trailing: false })
     
     const leftArrowNav = debounce(function handleLeftArrow() {
-      const previousTab = getPreviousTab(activeTabIndex - 1);
+      const previousTab = getPreviousTab(activeTabIndex.value - 1);
       if (previousTab !== -1) {
         changeTab(previousTab);
       }
@@ -228,69 +221,72 @@ export default defineComponent({
     
     const calculateOverflow = () => {
       let containerWidth = 0;
-      if (cdrTabsContainerEl) {
-        containerWidth = cdrTabsContainerEl.offsetWidth;
+      if (containerEl.value) {
+        containerWidth = containerEl.value.offsetWidth;
       }
-      headerOverflow = headerWidth > containerWidth;
-      if (headerOverflow) {
+      headerOverflow.value = headerWidth.value > containerWidth;
+      if (headerOverflow.value) {
         // Get Scroll Position
-        const scrollX = cdrTabsHeaderEl.parentElement.scrollLeft;
-        overflowLeft = scrollX > 1;
-        overflowRight = (scrollX + 1) < (headerWidth - containerWidth);
+        const scrollX = cdrTabsHeaderEl.value.parentElement.scrollLeft;
+        overflowLeft.value = scrollX > 1;
+        overflowRight.value = (scrollX + 1) < (headerWidth.value - containerWidth);
       } else {
-        overflowLeft = false;
-        overflowRight = false;
+        overflowLeft.value = false;
+        overflowRight.value = false;
       }
     }
     const updateUnderline = () => {
-      const elements = Array.from(cdrTabsHeaderEl.children); // TODO: cache this? probably?
+      const elements = Array.from(cdrTabsHeaderEl.value.children); // TODO: cache this? probably?
       if (elements.length > 0) {
-        const activeTab = elements[activeTabIndex];
+        const activeTab = elements[activeTabIndex.value];
         const activeRect = activeTab.getBoundingClientRect();
-        const parentRect = cdrTabsHeaderEl.getBoundingClientRect();
+        const parentRect = cdrTabsHeaderEl.value.getBoundingClientRect();
         const offset = activeRect.x - parentRect.x;
 
-        underlineOffsetX = offset
-          - cdrTabsHeaderEl.parentElement.scrollLeft;
-        underlineWidth = activeRect.width;
+        underlineOffsetX.value = offset
+          - cdrTabsHeaderEl.value.parentElement.scrollLeft;
+        underlineWidth.value = activeRect.width;
 
         // shrink/hide the underline if it scrolls outside the container
-        if (underlineOffsetX + underlineWidth >= parentRect.width) {
-          underlineWidth = Math.max(0, parentRect.width - underlineOffsetX);
-          underlineOffsetX = Math.min(underlineOffsetX, parentRect.width);
-        } else if (underlineOffsetX < 0) {
-          underlineWidth = Math.max(0, underlineWidth + underlineOffsetX);
-          underlineOffsetX = 0;
+        if (underlineOffsetX.value + underlineWidth.value >= parentRect.width) {
+          underlineWidth.value = Math.max(0, parentRect.width - underlineOffsetX.value);
+          underlineOffsetX.value = Math.min(underlineOffsetX.value, parentRect.width);
+        } else if (underlineOffsetX.value < 0) {
+          underlineWidth.value = Math.max(0, underlineWidth.value + underlineOffsetX.value);
+          underlineOffsetX.value = 0;
         }
       }
     }
+    // TODO: what?
     const handleDownArrowNav = () => {
       if (!animationInProgress) {
         // TODO: u wot m8
-        $el.lastElementChild.children[activeTabIndex].focus();
+        // cdrTabsHeaderEl.value.
+        // $el.lastElementChild.children[activeTabIndex].focus();
       }
     }
+    // TODO: listen for events emitted from tabs???
     const setFocusToActiveTabHeader = () => {
-      cdrTabsHeaderEl.children[activeTabIndex].focus();
+      cdrTabsHeaderEl.value.children[activeTabIndex].focus();
     }
     const getHeaderWidth = () => {
       let headerElements = [];
-      if (cdrTabsHeaderEl) {
-        headerElements = Array.from(cdrTabsHeaderEl.children);
+      if (cdrTabsHeaderEl.value) {
+        headerElements = Array.from(cdrTabsHeaderEl.value.children);
       }
       let totalWidth = 0;
       headerElements.forEach((element, i) => {
         // account for margin-left on header elements
         if (i > 0) {
-          totalWidth += size === 'small' ? Number(CdrSpaceHalfX) : Number(CdrSpaceOneX);
+          totalWidth += props.size === 'small' ? Number(CdrSpaceHalfX) : Number(CdrSpaceOneX);
         }
         totalWidth += element.offsetWidth || 0;
       });
       return totalWidth;
     }
     const hideScrollBar = () => {
-      const containerRef = cdrTabsContainerEl.style;
-      const slotRef = slotWrapperEl.style;
+      const containerRef = containerEl.value.style;
+      const slotRef = slotWrapperEl.value.style;
       window.addEventListener('transitionend', () => {
         containerRef.setProperty('overflow-x', 'unset');
         slotRef.setProperty('overflow-y', 'unset');
@@ -300,52 +296,31 @@ export default defineComponent({
     }
 
     onMounted(() => {
-       // TODO: DO something like accordion group here?
-      // hrmmmm
 
-      // console.log()
-      // tabs.value = Array.from(slotWrapperEl.value.children);
-      // const wow = ctx.slots.default();
-      // console.log(wow[0].vm.name)
-      // console.log('yo', tabs.value[0].name);
-      // console.log(tabs.value[0].name)
-      // const wot = slotWrapperEl.value.children;
-      // console.log('yoooo', getCurrentInstance().vnode.children.default()[0].vnode)
-      // console.log('yoonoooooooo', getCurrentInstance().vnode.children.default()[0].vm)
-      // for (var i = 0; i < wot.length; i++) {
-      //   console.log(wot[i].vm)
-      // }
+      activeTabIndex.value = getNextTab(props.activeTab);
 
-      tabs = slotWrapperEl.value.querySelectorAll('div');
-      Array.from(tabs).forEach(tab => console.log(tab.getAttribute('js-name'), tab.getAttribute('js-disabled')))
+      if (tabs.value[activeTabIndex.value] && tabs.value[activeTabIndex.value].setActive) {
+        tabs.value[activeTabIndex.value].setActive(true);
+      }
 
-
-      // console.log(tabs.value.map((t) => t.name));
-
-      // activeTabIndex = getNextTab(activeTab);
-
-      // if (tabs[activeTabIndex] && tabs[activeTabIndex].setActive) {
-      //   tabs[activeTabIndex].setActive(true);
-      // }
-
-      // $nextTick(() => {
-      //   headerWidth = getHeaderWidth();
-      //   calculateOverflow();
-      //   setTimeout(() => {
-      //     updateUnderline();
-      //   }, 500);
-      // });
-      // // Check for header overflow on window resize for gradient behavior.
-      // window.addEventListener('resize', debounce(() => {
-      //   headerWidth = getHeaderWidth();
-      //   calculateOverflow();
-      //   updateUnderline();
-      // }, 500));
-      // // Check for header overflow on widow resize for gradient behavior.
-      // cdrTabsHeaderEl.parentElement.addEventListener('scroll', debounce(() => {
-      //   calculateOverflow();
-      //   updateUnderline();
-      // }, 50));
+      nextTick(() => {
+        headerWidth.value = getHeaderWidth();
+        calculateOverflow();
+        setTimeout(() => {
+          updateUnderline();
+        }, 500);
+      });
+      // Check for header overflow on window resize for gradient behavior.
+      window.addEventListener('resize', debounce(() => {
+        headerWidth.value = getHeaderWidth();
+        calculateOverflow();
+        updateUnderline();
+      }, 500));
+      // Check for header overflow on widow resize for gradient behavior.
+      cdrTabsHeaderEl.value.parentElement.addEventListener('scroll', debounce(() => {
+        calculateOverflow();
+        updateUnderline();
+      }, 50));
     })
 
     return {
@@ -362,6 +337,7 @@ export default defineComponent({
       rightArrowNav,
       leftArrowNav,
       handleDownArrowNav,
+      handleClick,
 
       cdrTabsHeaderEl,
       slotWrapperEl,
@@ -375,6 +351,14 @@ export default defineComponent({
       getHeaderWidth,
       calculateOverflow,
       updateUnderline,
+      hideScrollBar,
+      changeTab,
+      getNextTab,
+      getPreviousTab,
+
+      activeTabIndex,
+      setFocusToActiveTabHeader,
+      headerOverflow,
     };
   },
 });
