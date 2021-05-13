@@ -8,7 +8,7 @@
       :class="headingClass"
     >
       <button
-        :class="buttonClass"
+        :class="[$style['cdr-accordion__button'], 'js-cdr-accordion-button']"
         :id="id"
         @click="onClick"
         @focus="onFocus"
@@ -17,7 +17,7 @@
         :aria-controls="`${id}-collapsible`"
       >
         <span
-          :class="labelClass"
+          :class="$style['cdr-accordion__label']"
           :id="`${id}-label`"
         >
           <slot name="label">
@@ -137,7 +137,7 @@ export default defineComponent({
     const containerClass = 'cdr-accordion__content-container';
 
     // is this class really not scoped?!?!?!?
-    const isOpenClass = computed(() => (props.opened ? 'open' : 'closed'));
+    const isOpenClass = computed(() => (props.opened ? 'cdr-tabs--open' : 'cdr-tabs--closed'));
     const contentClass = 'cdr-accordion__content';
 
     const onClick = (event) => {

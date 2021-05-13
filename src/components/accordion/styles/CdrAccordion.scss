@@ -56,7 +56,7 @@ $accordion-border: 1px solid $cdr-color-border-primary;
     fill: $cdr-color-icon-default;
     transition: transform $cdr-duration-3-x $cdr-timing-function-ease-out;
 
-    &:global(.open) {
+    .cdr-tabs--open {
       transform: rotate(-180deg);
     }
   }
@@ -67,7 +67,7 @@ $accordion-border: 1px solid $cdr-color-border-primary;
     transition-property: max-height;
     transition-timing-function: cubic-bezier(0.15, 0, 0.15, 1); // TODO: possible token?
 
-    &:global(.open) {
+    .cdr-tabs--open {
       transition-duration: $cdr-duration-3-x;
     }
   }
@@ -85,11 +85,11 @@ $accordion-border: 1px solid $cdr-color-border-primary;
       @include cdr-text-body-300;
     }
 
-    &:global(.open) {
+    &.cdr-tabs--open {
       opacity: 1;
     }
 
-    &:global(.closed) {
+    &.cdr-tabs--closed {
       visibility: hidden;
     }
   }

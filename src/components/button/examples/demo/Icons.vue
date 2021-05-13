@@ -12,7 +12,7 @@
       >
         <icon-check-lg
           inherit-color
-          slot="icon-left"
+          v-slot:icon-left
         />
         Large and Icon
       </cdr-button>
@@ -23,7 +23,7 @@
       >
         <icon-check-lg
           inherit-color
-          slot="icon-left"
+          v-slot:icon-left
         />
         Anchor and Icon
       </cdr-button>
@@ -33,7 +33,7 @@
       >
         <icon-check-lg
           inherit-color
-          slot="icon-left"
+          v-slot:icon-left
         />
         Medium and Icon
       </cdr-button>
@@ -42,7 +42,7 @@
       >
         <icon-check-lg
           inherit-color
-          slot="icon-left"
+          v-slot:icon-left
           size="small"
         />
         Small and Icon
@@ -52,7 +52,7 @@
       >
         <icon-check-sm
           inherit-color
-          slot="icon-left"
+          v-slot:icon-left
         />
         Small (different) Icon
       </cdr-button>
@@ -64,7 +64,7 @@
       >
         <icon-check-lg
           inherit-color
-          slot="icon-right"
+          v-slot:icon-right
         />
         Large and Icon
       </cdr-button>
@@ -75,7 +75,7 @@
       >
         <icon-check-lg
           inherit-color
-          slot="icon-right"
+          v-slot:icon-right
         />
         Anchor and Icon
       </cdr-button>
@@ -85,7 +85,7 @@
       >
         <icon-check-lg
           inherit-color
-          slot="icon-right"
+          v-slot:icon-right
         />
         Medium and Icon
       </cdr-button>
@@ -94,7 +94,7 @@
       >
         <icon-check-lg
           inherit-color
-          slot="icon-right"
+          v-slot:icon-right
           size="small"
         />
         Small and Icon
@@ -104,7 +104,7 @@
       >
         <icon-check-sm
           inherit-color
-          slot="icon-right"
+          v-slot:icon-right
         />
         Small (different) Icon
       </cdr-button>
@@ -116,7 +116,7 @@
       >
         <icon-check-lg
           inherit-color
-          slot="icon-left"
+          v-slot:icon-left
         />
         Large and left Icon
       </cdr-button>
@@ -126,7 +126,7 @@
       >
         <icon-check-lg
           inherit-color
-          slot="icon-right"
+          v-slot:icon-right
         />
         Large and right Icon
       </cdr-button>
@@ -142,7 +142,7 @@
       >
         <cdr-icon
           inherit-color
-          slot="icon"
+          v-slot:icon-left
           use="#download"
         />
         Button and Icon
@@ -155,7 +155,7 @@
       >
         <cdr-icon
           inherit-color
-          slot="icon"
+          v-slot:icon-left
           use="#download"
         />
         Button and Icon
@@ -167,7 +167,7 @@
       >
         <cdr-icon
           inherit-color
-          slot="icon"
+          v-slot:icon-left
           use="#twitter"
         />
         Twitter
@@ -178,7 +178,7 @@
       >
         <cdr-icon
           inherit-color
-          slot="icon"
+          v-slot:icon-left
           use="#instagram"
         />
         Instagram
@@ -191,7 +191,7 @@
         <cdr-icon
           use="#clock"
           inherit-color
-          slot="icon-left"
+          v-slot:icon-left
         />
         Responsive Left
       </cdr-button>
@@ -203,7 +203,7 @@
         <cdr-icon
           use="#clock"
           inherit-color
-          slot="icon-right"
+          v-slot:icon-right
         />
       </cdr-button>
     </div>
@@ -215,7 +215,7 @@
         <cdr-icon
           use="#clock"
           inherit-color
-          slot="icon-left"
+          v-slot:icon-left
         />
         Full Width Icon Left
       </cdr-button>
@@ -227,7 +227,7 @@
         <cdr-icon
           use="#clock"
           inherit-color
-          slot="icon-right"
+          v-slot:icon-right
         />
         Full Width Icon Right
       </cdr-button>
@@ -243,7 +243,7 @@
         >
           <cdr-icon
             inherit-color
-            slot="icon-left"
+            v-slot:icon-left
             use="#twitter"
           />
           <!-- eslint-disable-next-line -->
@@ -257,7 +257,7 @@
         >
           <cdr-icon
             inherit-color
-            slot="icon-right"
+            v-slot:icon-right
             use="#twitter"
           />
           <!-- eslint-disable-next-line -->
@@ -279,7 +279,7 @@
         <cdr-icon
           use="#twitter"
           inherit-color
-          slot="icon"
+          v-slot:icon-left
         />
       </cdr-button>
       <cdr-button
@@ -289,7 +289,7 @@
         <cdr-icon
           use="#x-lg"
           inherit-color
-          slot="icon"
+          v-slot:icon-left
         />
       </cdr-button>
       <cdr-button
@@ -301,7 +301,7 @@
         <cdr-icon
           use="#external-link"
           inherit-color
-          slot="icon"
+          v-slot:icon-left
         />
       </cdr-button>
       <cdr-button
@@ -311,7 +311,7 @@
         <cdr-icon
           use="#play"
           inherit-color
-          slot="icon"
+          v-slot:icon-left
         />
       </cdr-button>
       <cdr-button
@@ -322,7 +322,7 @@
         <cdr-icon
           use="#play"
           inherit-color
-          slot="icon"
+          v-slot:icon-left
         />
       </cdr-button>
     </div>
@@ -336,7 +336,7 @@
         <cdr-icon
           use="#twitter"
           inherit-color
-          slot="icon"
+          v-slot:icon-left
         />
       </cdr-button>
       <cdr-button
@@ -347,7 +347,7 @@
         <cdr-icon
           use="#x-lg"
           inherit-color
-          slot="icon"
+          v-slot:icon-left
         />
       </cdr-button>
       <cdr-button
@@ -360,7 +360,7 @@
         <cdr-icon
           use="#external-link"
           inherit-color
-          slot="icon"
+          v-slot:icon-left
         />
       </cdr-button>
       <cdr-button
@@ -371,7 +371,7 @@
         <cdr-icon
           use="#play"
           inherit-color
-          slot="icon"
+          v-slot:icon-left
         />
       </cdr-button>
       <cdr-button
@@ -383,7 +383,7 @@
         <cdr-icon
           use="#play"
           inherit-color
-          slot="icon"
+          v-slot:icon-left
         />
       </cdr-button>
     </div>

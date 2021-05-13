@@ -12,7 +12,7 @@
       overlay-class="overlay-test-class"
       data-backstop="modal"
     >
-      <template slot="title">
+      <template v-slot:title>
         <cdr-text
           tag="h2"
           class="cdr-text-dev--heading-serif-600 modal-title"

@@ -13,7 +13,7 @@
       :opened="accordionDefaultStandalone"
       @accordion-toggle="accordionDefaultStandalone = !accordionDefaultStandalone"
     >
-      <template slot="label">
+      <template v-slot:label>
         A short label
       </template>
       <cdr-text
@@ -49,7 +49,7 @@
           :opened="accordionDefault"
           @accordion-toggle="accordionDefault = !accordionDefault"
         >
-          <template slot="label">
+          <template v-slot:label>
             A short label
           </template>
           <cdr-text
@@ -79,7 +79,7 @@
           :opened="accordionDefault2"
           @accordion-toggle="accordionDefault2 = !accordionDefault2"
         >
-          <template slot="label">
+          <template v-slot:label>
             Label with multiple words, so many words in fact
             that this content may wrap to several lines
           </template>
@@ -109,7 +109,7 @@
           :key="item.id"
           @accordion-toggle="updateGroup(index)"
         >
-          <template slot="label">
+          <template v-slot:label>
             {{ item.label }}
           </template>
           {{ item.content }}
@@ -129,7 +129,7 @@
           :opened="accordionCompact"
           @accordion-toggle="accordionCompact = !accordionCompact"
         >
-          <template slot="label">
+          <template v-slot:label>
             compact
           </template>
           <cdr-list modifier="unordered">
@@ -164,7 +164,7 @@
           @accordion-toggle="accordionCompact2 = !accordionCompact2"
         >
 
-          <template slot="label">
+          <template v-slot:label>
             Label with multiple words, so many words in fact
             that this content may wrap to several lines
           </template>
@@ -188,7 +188,7 @@
         :opened="accordionDefault"
         @accordion-toggle="accordionDefault = !accordionDefault"
       >
-        <template slot="label">
+        <template v-slot:label>
           A short label
         </template>
         <cdr-text
@@ -218,7 +218,7 @@
         :opened="accordionDefault2"
         @accordion-toggle="accordionDefault2 = !accordionDefault2"
       >
-        <template slot="label">
+        <template v-slot:label>
           Label with multiple words, so many words in fact
           that this content may wrap to several lines
         </template>
