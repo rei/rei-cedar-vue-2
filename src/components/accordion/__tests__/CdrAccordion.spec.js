@@ -24,7 +24,7 @@ describe('CdrAccordion', () => {
     expect(wrapper.element).toMatchSnapshot()
   });
 
-  xit('renders correctly unwrapped', () => {
+  it('renders correctly unwrapped', () => {
     const wrapper = mount(CdrAccordion, {
       propsData: {
         id: 'test',

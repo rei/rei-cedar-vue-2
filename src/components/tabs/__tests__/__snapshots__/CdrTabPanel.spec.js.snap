@@ -5,9 +5,12 @@ exports[`CdrTabPanel renders tab 1`] = `
   aria-hidden="true"
   aria-labelledby="tab1"
   class="cdr-tab-panel"
-  hidden="hidden"
+  hidden=""
   id="tab1"
   role="tabpanel"
   tabindex="0"
-/>
+>
+  
+  
+</div>
 `;

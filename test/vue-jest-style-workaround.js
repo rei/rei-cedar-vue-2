@@ -4,25 +4,24 @@ const styleHandler = {get: (target, prop) => prop }
 const styleProxy = new Proxy({}, styleHandler);
 
 
-const shallowMountWithStyle = (comp, options) => {
+const shallowMountWithStyle = (comp, options = {}) => {
+  let opts = options;
+  opts.global = options.global || {};
+  opts.global.mocks = options.global.mocks || {};
+  opts.global.mocks.$style = styleProxy;
   return shallowMount(comp, {
-    ...options,
-    global: {
-      mocks: {
-        $style: styleProxy,
-      }
-    }
+    ...opts,
   });
 }
 
-const mountWithStyle = (comp, options) => {
+const mountWithStyle = (comp, options = {}) => {
+
+  let opts = options;
+  opts.global = options.global || {};
+  opts.global.mocks = options.global.mocks || {};
+  opts.global.mocks.$style = styleProxy;
   return mount(comp, {
-    ...options,
-    global: {
-      mocks: {
-        $style: styleProxy,
-      }
-    }
+    ...opts,
   });
 }
 

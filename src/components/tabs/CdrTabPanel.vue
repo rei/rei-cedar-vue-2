@@ -10,8 +10,6 @@
     @keydown.up.prevent="handleUpArrowNav"
     @animationend="animationEnd"
     :key="name"
-    :js-name="name"
-    :js-disabled="disabled"
   >
     <slot />
   </div>
@@ -61,7 +59,6 @@ export default defineComponent({
 
     const modifierClass = computed(() => buildClass(baseClass, props.modifier));
 
-// TODO: use inject to get active index?
     const setActive = (state) => {
       // TODO: provide/inject current active tab index or something?
       if (state) hidden.value = false;
@@ -86,11 +83,18 @@ export default defineComponent({
       }
     };
 
-    // onMounted(() => {
-    //   ctx.emit()
-    // })
+    const tabs = inject('tabs');
 
-
+    onMounted(() => {
+      tabs.value.push({
+        name: props.name,
+        id: props.id,
+        disabled: props.disabled,
+        ariaLabelledby: props.ariaLabelledby,
+        setActive,
+        setAnimationDirection,
+      })
+    })
 
     return {
       modifierClass,
@@ -101,8 +105,8 @@ export default defineComponent({
       active,
       hidden,
       handleUpArrowNav,
-      setAnimationDirection,
       setActive,
+      setAnimationDirection,
     };
   },
 });

@@ -12,6 +12,11 @@ describe('CdrTabPanel', () => {
         id: 'tab1',
         ariaLabelledby: 'tab1',
       },
+      global: {
+        provide: {
+          tabs: {value: []}
+        }
+      }
     });
     expect(wrapper.element).toMatchSnapshot();
   });
@@ -23,6 +28,11 @@ describe('CdrTabPanel', () => {
         id: 'tab1',
         ariaLabelledby: 'tab1',
       },
+      global: {
+        provide: {
+          tabs: {value: []}
+        }
+      }
     });
     expect(wrapper.vm.active).toBe(false);
   });
@@ -34,6 +44,11 @@ describe('CdrTabPanel', () => {
         id: 'tab1',
         ariaLabelledby: 'tab1',
       },
+      global: {
+        provide: {
+          tabs: {value: []}
+        }
+      }
     });
     wrapper.vm.setActive(true);
     await wrapper.vm.$nextTick();
@@ -48,6 +63,11 @@ describe('CdrTabPanel', () => {
         id: 'tab1',
         ariaLabelledby: 'tab1',
       },
+      global: {
+        provide: {
+          tabs: {value: []}
+        }
+      }
     });
     wrapper.vm.setActive(true);
     await wrapper.vm.$nextTick();
@@ -64,6 +84,11 @@ describe('CdrTabPanel', () => {
         id: 'tab1',
         ariaLabelledby: 'tab1',
       },
+      global: {
+        provide: {
+          tabs: {value: []}
+        }
+      }
     });
     wrapper.vm.setActive(true);
     wrapper.vm.setAnimationDirection('exit-left');
@@ -85,6 +110,11 @@ describe('CdrTabPanel', () => {
         id: 'tab1',
         ariaLabelledby: 'tab1',
       },
+      global: {
+        provide: {
+          tabs: {value: []}
+        }
+      }
     });
 
     wrapper.trigger('keydown', {key: 'up'});

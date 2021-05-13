@@ -63,7 +63,7 @@ exports[`CdrAccordion renders correctly unwrapped 1`] = `
   id="test-accordion"
 >
   <h2
-    class="cdr-accordion__header"
+    class="cdr-accordion__header--unwrapped"
   >
     <button
       aria-controls="test-collapsible"
