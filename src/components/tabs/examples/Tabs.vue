@@ -217,7 +217,8 @@ export default {
     },
   },
   mounted() {
-    this.setBackground(this.$router.currentRoute.query.background);
+    // TODO: why isn't default query showing up? because radio in kitchen sink is disabled?
+    this.setBackground(this.$router.currentRoute?.query?.background || 'primary');
   },
   methods: {
     setBackground(background) {

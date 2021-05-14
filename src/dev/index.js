@@ -1,7 +1,7 @@
 // // The Vue build version to load with the `import` command
 // import Vue from 'vue';
 // import VueRouter from 'vue-router';
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createWebHashHistory } from "vue-router";
 import routes from './router';
 import Dev from './Dev.vue'; //eslint-disable-line
 // // routing
@@ -27,7 +27,7 @@ import { createApp } from 'vue';
 
 const router = createRouter({
     routes,
-    history: createWebHistory(),
+    history: createWebHashHistory(),
 });
 
   createApp(Dev).use(router).mount('#main');
