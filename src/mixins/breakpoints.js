@@ -7,7 +7,7 @@ import {
 export default {
   methods: {
     getCurrentBreakpoint() {
-      const screenWidth = (window && window.outerWidth) || 0;
+      const screenWidth = (window && window.innerWidth) || 0;
       if (screenWidth >= CdrBreakpointSm && screenWidth < CdrBreakpointMd) {
         return 'sm';
       }
