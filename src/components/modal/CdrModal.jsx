@@ -63,6 +63,9 @@ export default {
       offset: null,
       headerHeight: 0,
       totalHeight: 0,
+      scrollHeight: 0,
+      isScrolling: false,
+      hasScrollbar: false,
       fullscreen: false,
     };
   },
@@ -73,6 +76,16 @@ export default {
         'aria-modal': 'true',
         id: this.id,
       };
+    },
+    scrollPadding() {
+      if (this.isScrolling && this.hasScrollbar) {
+        // content is scrolling, scrollbar is always present
+        return 4;
+      } if (this.isScrolling) {
+        // content is scrolling, scrollbar only appears on scroll
+        return 12;
+      }
+      return 0;
     },
     verticalSpace() {
       // contentWrap vertical padding
@@ -120,6 +133,8 @@ export default {
         this.totalHeight = window.innerHeight;
         this.fullscreen = window.innerWidth < CdrBreakpointSm;
         this.headerHeight = this.$refs.header.offsetHeight;
+        this.isScrolling = this.$refs.content.scrollHeight > this.$refs.content.offsetHeight;
+        this.hasScrollbar = (this.$refs.content.offsetWidth - this.$refs.content.clientWidth) > 0;
       });
     },
     handleKeyDown({ key }) {
@@ -323,7 +338,10 @@ export default {
                   >
                     <div
                       class={this.style['cdr-modal__text-content']}
-                      style={ { maxHeight: `${this.scrollMaxHeight}px` } }
+                      style={ {
+                        maxHeight: `${this.scrollMaxHeight}px`,
+                        paddingRight: `${this.scrollPadding}px`,
+                      } }
                       ref="content"
                       tabindex="0"
                     >
