@@ -48,12 +48,12 @@
     "build:icons": "node src/components/icon/build/generate.js"
   },
   "devDependencies": {
-    "@babel/cli": "^7.12.17",
-    "@babel/core": "^7.12.17",
+    "@babel/cli": "^7.14.3",
+    "@babel/core": "^7.14.3",
     "@babel/plugin-syntax-jsx": "^7.12.13",
-    "@babel/plugin-transform-runtime": "^7.12.17",
-    "@babel/preset-env": "^7.12.17",
-    "@babel/register": "^7.12.13",
+    "@babel/plugin-transform-runtime": "^7.14.3",
+    "@babel/preset-env": "^7.14.2",
+    "@babel/register": "^7.13.16",
     "@betit/rollup-plugin-rename-extensions": "^0.1.0",
     "@commitlint/cli": "^9.1.2",
     "@commitlint/config-conventional": "^11.0.0",
@@ -151,8 +151,8 @@
     }
   },
   "dependencies": {
-    "@babel/runtime": "^7.12.18",
-    "@babel/runtime-corejs3": "^7.12.18",
+    "@babel/runtime": "^7.14.0",
+    "@babel/runtime-corejs3": "^7.14.0",
     "@vue/babel-helper-vue-jsx-merge-props": "^1.2.1",
     "clsx": "^1.1.1",
     "lodash-es": "^4.17.20",
