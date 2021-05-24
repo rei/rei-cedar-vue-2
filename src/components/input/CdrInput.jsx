@@ -56,6 +56,11 @@ export default {
      * Removes the label element but sets the input `aria-label` to `label` text for a11y.
     */
     hideLabel: Boolean,
+    // sets default attrs for inputs that should use a numeric keyboard but are not strictly "numbers" (security code, CC number, postal code)
+    numeric: {
+      type: Boolean,
+      default: false,
+    },
     /**
      * Number of rows for input.  Converts component to text-area if rows greater than 1.
     */
@@ -96,7 +101,7 @@ export default {
       return 'cdr-input';
     },
     inputAttrs() {
-      const isNum = this.type === 'number';
+      const isNum = this.numeric || this.type === 'number';
       return {
         pattern: isNum && '[0-9]*',
         inputmode: isNum && 'numeric',

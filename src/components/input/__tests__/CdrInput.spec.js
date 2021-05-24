@@ -86,7 +86,7 @@ describe('CdrInput', () => {
     expect(wrapper.vm.$refs.input.hasAttribute('required')).toBe(true);
   });
 
-  it('sets attrs for numeric inputt', () => {
+  it('sets attrs for number type input', () => {
     const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'test',
@@ -94,9 +94,24 @@ describe('CdrInput', () => {
         type: 'number'
       },
     });
-    expect(wrapper.vm.$refs.input.hasAttribute('novalidate')).toBe(true);
-    expect(wrapper.vm.$refs.input.hasAttribute('pattern')).toBe(true);
-    expect(wrapper.vm.$refs.input.hasAttribute('inputmode')).toBe(true);
+    expect(wrapper.find('input').attributes('novalidate')).toBe('novalidate');
+    expect(wrapper.find('input').attributes('pattern')).toBe('[0-9]*');
+    expect(wrapper.find('input').attributes('inputmode')).toBe('numeric');
+    expect(wrapper.find('input').attributes('type')).toBe('number');
+  });
+
+  it('sets attrs for numeric freeform input', () => {
+    const wrapper = shallowMount(CdrInput, {
+      propsData: {
+        label: 'test',
+        required: true,
+        numeric: true
+      },
+    });
+    expect(wrapper.find('input').attributes('novalidate')).toBe('novalidate');
+    expect(wrapper.find('input').attributes('pattern')).toBe('[0-9]*');
+    expect(wrapper.find('input').attributes('inputmode')).toBe('numeric');
+    expect(wrapper.find('input').attributes('type')).toBe('text');
   });
 
   it('sets input autofocus attribute correctly', () => {
