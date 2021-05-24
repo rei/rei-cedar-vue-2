@@ -63,7 +63,6 @@ export default {
       offset: null,
       headerHeight: 0,
       totalHeight: 0,
-      scrollHeight: 0,
       isScrolling: false,
       hasScrollbar: false,
       fullscreen: false,
