@@ -25644,6 +25644,8 @@ var cedar = (function () {
         offset: null,
         headerHeight: 0,
         totalHeight: 0,
+        isScrolling: false,
+        hasScrollbar: false,
         fullscreen: false
       };
     },
@@ -25655,6 +25657,20 @@ var cedar = (function () {
           'aria-modal': 'true',
           id: this.id
         };
+      },
+
+      scrollPadding() {
+        if (this.isScrolling && this.hasScrollbar) {
+          // content is scrolling, scrollbar is always present
+          return 4;
+        }
+
+        if (this.isScrolling) {
+          // content is scrolling, scrollbar only appears on scroll
+          return 12;
+        }
+
+        return 0;
       },
 
       verticalSpace() {
@@ -25709,6 +25725,8 @@ var cedar = (function () {
           _this2.totalHeight = window.innerHeight;
           _this2.fullscreen = window.innerWidth < CdrBreakpointSm;
           _this2.headerHeight = _this2.$refs.header.offsetHeight;
+          _this2.isScrolling = _this2.$refs.content.scrollHeight > _this2.$refs.content.offsetHeight;
+          _this2.hasScrollbar = _this2.$refs.content.offsetWidth - _this2.$refs.content.clientWidth > 0;
         });
       },
 
@@ -25915,7 +25933,8 @@ var cedar = (function () {
       }, [h("div", {
         "class": this.style['cdr-modal__text-content'],
         "style": {
-          maxHeight: "".concat(this.scrollMaxHeight, "px")
+          maxHeight: "".concat(this.scrollMaxHeight, "px"),
+          paddingRight: "".concat(this.scrollPadding, "px")
         },
         "ref": "content",
         "attrs": {
@@ -38112,6 +38131,25 @@ var cedar = (function () {
             ]),
             _vm._v(" "),
             _vm.overflowContent
+              ? _c(
+                  "div",
+                  {
+                    staticStyle: {
+                      display: "flex",
+                      "justify-content": "space-between",
+                      "align-items": "center"
+                    }
+                  },
+                  [
+                    _c("cdr-link", [_vm._v("Lorem Ipsum Etsum Flotsam Jetsons")]),
+                    _vm._v(" "),
+                    _c("cdr-button", [_vm._v("boop")])
+                  ],
+                  1
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.overflowContent
               ? _c("cdr-text", { staticClass: "cdr-text-dev--body-300" }, [
                   _vm._v(
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet dictum ipsum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam non urna sit amet dolor euismod consequat vitae non nunc. Nullam vulputate enim ac pharetra sagittis. Curabitur volutpat, metus eu euismod finibus, neque turpis viverra dolor, at ornare justo libero a arcu. Suspendisse nec lectus id leo aliquam posuere id eu mauris. Aenean fermentum justo ex, vel sagittis nulla efficitur nec. Mauris aliquet urna id felis maximus, et molestie erat bibendum. Donec dolor purus, iaculis vitae tellus at, iaculis facilisis nibh. Pellentesque at ex sit amet eros elementum iaculis quis ut justo. Pellentesque consequat in sapien ac blandit. Donec ullamcorper lacus sed interdum auctor."
@@ -38182,7 +38220,7 @@ var cedar = (function () {
     /* style */
     const __vue_inject_styles__$z = function (inject) {
       if (!inject) return
-      inject("data-v-1569091b_0", { source: "\n@media (min-width: 672px) {\n.modal-example {\n    min-height: 80vh; /* fixes a safari display bug */\n}\n}\n", map: {"version":3,"sources":["/home/runner/work/rei-cedar/rei-cedar/src/components/modal/examples/Modal.vue"],"names":[],"mappings":";AAqFA;AACA;IACA,gBAAA,EAAA,+BAAA;AACA;AACA","file":"Modal.vue","sourcesContent":["<template>\n  <div class=\"modal-example\">\n    <h2>\n      Modal\n    </h2>\n\n    <cdr-modal\n      label=\"label text is title or aria\"\n      :opened=\"opened\"\n      @closed=\"closed\"\n      wrapper-class=\"wrapper-test-class\"\n      overlay-class=\"overlay-test-class\"\n      data-backstop=\"modal\"\n      role=\"dialog\"\n    >\n      <template slot=\"title\">\n        <cdr-text\n          tag=\"h2\"\n          class=\"cdr-text-dev--heading-serif-600 modal-title\"\n        >\n          Terms & Conditions\n        </cdr-text>\n      </template>\n\n      <template\n        slot=\"modal\"\n        v-if=\"override\"\n      >\n        Wow i can just take over the whole modal, huh?\n      </template>\n\n      <!-- eslint-disable-next-line -->\n      <cdr-text class=\"cdr-text-dev--body-300\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet dictum ipsum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam non urna sit amet dolor euismod consequat vitae non nunc. Nullam vulputate enim ac pharetra sagittis. Curabitur volutpat, metus eu euismod finibus, neque turpis viverra dolor, at ornare justo libero a arcu. Suspendisse nec lectus id leo aliquam posuere id eu mauris. Aenean fermentum justo ex, vel sagittis nulla efficitur nec. Mauris aliquet urna id felis maximus, et molestie erat bibendum. Donec dolor purus, iaculis vitae tellus at, iaculis facilisis nibh. Pellentesque at ex sit amet eros elementum iaculis quis ut justo. Pellentesque consequat in sapien ac blandit. Donec ullamcorper lacus sed interdum auctor.</cdr-text>\n\n      <!-- eslint-disable-next-line -->\n      <cdr-text class=\"cdr-text-dev--body-300\" v-if=\"overflowContent\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet dictum ipsum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam non urna sit amet dolor euismod consequat vitae non nunc. Nullam vulputate enim ac pharetra sagittis. Curabitur volutpat, metus eu euismod finibus, neque turpis viverra dolor, at ornare justo libero a arcu. Suspendisse nec lectus id leo aliquam posuere id eu mauris. Aenean fermentum justo ex, vel sagittis nulla efficitur nec. Mauris aliquet urna id felis maximus, et molestie erat bibendum. Donec dolor purus, iaculis vitae tellus at, iaculis facilisis nibh. Pellentesque at ex sit amet eros elementum iaculis quis ut justo. Pellentesque consequat in sapien ac blandit. Donec ullamcorper lacus sed interdum auctor.</cdr-text>\n\n      <!-- eslint-disable-next-line -->\n      <cdr-text class=\"cdr-text-dev--body-300\" v-if=\"overflowContent\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet dictum ipsum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam non urna sit amet dolor euismod consequat vitae non nunc. Nullam vulputate enim ac pharetra sagittis. Curabitur volutpat, metus eu euismod finibus, neque turpis viverra dolor, at ornare justo libero a arcu. Suspendisse nec lectus id leo aliquam posuere id eu mauris. Aenean fermentum justo ex, vel sagittis nulla efficitur nec. Mauris aliquet urna id felis maximus, et molestie erat bibendum. Donec dolor purus, iaculis vitae tellus at, iaculis facilisis nibh. Pellentesque at ex sit amet eros elementum iaculis quis ut justo. Pellentesque consequat in sapien ac blandit. Donec ullamcorper lacus sed interdum auctor.</cdr-text>\n    </cdr-modal>\n\n    <cdr-button\n      @click=\"opened = true\"\n      aria-haspopup=\"dialog\"\n    >Launch modal\n    </cdr-button>\n\n    <h3 class=\"stack\">\n      Content Options\n    </h3>\n\n    <cdr-checkbox v-model=\"overflowContent\">\n      Overflow Content\n    </cdr-checkbox>\n\n    <cdr-checkbox v-model=\"override\">\n      Override Content\n    </cdr-checkbox>\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\nexport default {\n  name: 'Modal',\n  components: {\n    ...Components,\n  },\n  data() {\n    return {\n      opened: this.$router.currentRoute.name === 'Modals',\n      overflowContent: false,\n      override: false,\n    };\n  },\n  methods: {\n    closed() {\n      this.opened = false;\n    },\n  },\n};\n</script>\n\n<style>\n@media (min-width: 672px) {\n  .modal-example {\n    min-height: 80vh; /* fixes a safari display bug */\n  }\n}\n</style>\n"]}, media: undefined });
+      inject("data-v-2d505907_0", { source: "\n@media (min-width: 672px) {\n.modal-example {\n    min-height: 80vh; /* fixes a safari display bug */\n}\n}\n", map: {"version":3,"sources":["/home/runner/work/rei-cedar/rei-cedar/src/components/modal/examples/Modal.vue"],"names":[],"mappings":";AA2FA;AACA;IACA,gBAAA,EAAA,+BAAA;AACA;AACA","file":"Modal.vue","sourcesContent":["<template>\n  <div class=\"modal-example\">\n    <h2>\n      Modal\n    </h2>\n\n    <cdr-modal\n      label=\"label text is title or aria\"\n      :opened=\"opened\"\n      @closed=\"closed\"\n      wrapper-class=\"wrapper-test-class\"\n      overlay-class=\"overlay-test-class\"\n      data-backstop=\"modal\"\n      role=\"dialog\"\n    >\n      <template slot=\"title\">\n        <cdr-text\n          tag=\"h2\"\n          class=\"cdr-text-dev--heading-serif-600 modal-title\"\n        >\n          Terms & Conditions\n        </cdr-text>\n      </template>\n\n      <template\n        slot=\"modal\"\n        v-if=\"override\"\n      >\n        Wow i can just take over the whole modal, huh?\n      </template>\n\n      <!-- eslint-disable-next-line -->\n      <cdr-text class=\"cdr-text-dev--body-300\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet dictum ipsum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam non urna sit amet dolor euismod consequat vitae non nunc. Nullam vulputate enim ac pharetra sagittis. Curabitur volutpat, metus eu euismod finibus, neque turpis viverra dolor, at ornare justo libero a arcu. Suspendisse nec lectus id leo aliquam posuere id eu mauris. Aenean fermentum justo ex, vel sagittis nulla efficitur nec. Mauris aliquet urna id felis maximus, et molestie erat bibendum. Donec dolor purus, iaculis vitae tellus at, iaculis facilisis nibh. Pellentesque at ex sit amet eros elementum iaculis quis ut justo. Pellentesque consequat in sapien ac blandit. Donec ullamcorper lacus sed interdum auctor.</cdr-text>\n\n      <!-- eslint-disable-next-line -->\n      <div style=\"display: flex; justify-content: space-between; align-items: center;\" v-if=\"overflowContent\">\n        <cdr-link>Lorem Ipsum Etsum Flotsam Jetsons</cdr-link>\n        <cdr-button>boop</cdr-button>\n      </div>\n\n      <!-- eslint-disable-next-line -->\n      <cdr-text class=\"cdr-text-dev--body-300\" v-if=\"overflowContent\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet dictum ipsum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam non urna sit amet dolor euismod consequat vitae non nunc. Nullam vulputate enim ac pharetra sagittis. Curabitur volutpat, metus eu euismod finibus, neque turpis viverra dolor, at ornare justo libero a arcu. Suspendisse nec lectus id leo aliquam posuere id eu mauris. Aenean fermentum justo ex, vel sagittis nulla efficitur nec. Mauris aliquet urna id felis maximus, et molestie erat bibendum. Donec dolor purus, iaculis vitae tellus at, iaculis facilisis nibh. Pellentesque at ex sit amet eros elementum iaculis quis ut justo. Pellentesque consequat in sapien ac blandit. Donec ullamcorper lacus sed interdum auctor.</cdr-text>\n\n      <!-- eslint-disable-next-line -->\n      <cdr-text class=\"cdr-text-dev--body-300\" v-if=\"overflowContent\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet dictum ipsum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam non urna sit amet dolor euismod consequat vitae non nunc. Nullam vulputate enim ac pharetra sagittis. Curabitur volutpat, metus eu euismod finibus, neque turpis viverra dolor, at ornare justo libero a arcu. Suspendisse nec lectus id leo aliquam posuere id eu mauris. Aenean fermentum justo ex, vel sagittis nulla efficitur nec. Mauris aliquet urna id felis maximus, et molestie erat bibendum. Donec dolor purus, iaculis vitae tellus at, iaculis facilisis nibh. Pellentesque at ex sit amet eros elementum iaculis quis ut justo. Pellentesque consequat in sapien ac blandit. Donec ullamcorper lacus sed interdum auctor.</cdr-text>\n    </cdr-modal>\n\n    <cdr-button\n      @click=\"opened = true\"\n      aria-haspopup=\"dialog\"\n    >Launch modal\n    </cdr-button>\n\n    <h3 class=\"stack\">\n      Content Options\n    </h3>\n\n    <cdr-checkbox v-model=\"overflowContent\">\n      Overflow Content\n    </cdr-checkbox>\n\n    <cdr-checkbox v-model=\"override\">\n      Override Content\n    </cdr-checkbox>\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\nexport default {\n  name: 'Modal',\n  components: {\n    ...Components,\n  },\n  data() {\n    return {\n      opened: this.$router.currentRoute.name === 'Modals',\n      overflowContent: false,\n      override: false,\n    };\n  },\n  methods: {\n    closed() {\n      this.opened = false;\n    },\n  },\n};\n</script>\n\n<style>\n@media (min-width: 672px) {\n  .modal-example {\n    min-height: 80vh; /* fixes a safari display bug */\n  }\n}\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
