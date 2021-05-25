@@ -13,17 +13,6 @@ function resolve(dir) {
 
 const TEMPLATE_PATH = resolve('templates');
 
-const CHOICES = [
-  {
-    name: 'Component',
-    value: 'components',
-  },
-  {
-    name: 'Composition',
-    value: 'compositions',
-  },
-];
-
 // User prompts
 const QUESTIONS = [
   {
