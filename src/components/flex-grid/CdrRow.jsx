@@ -6,6 +6,11 @@ import style from './styles/CdrRow.scss';
 export default {
   name: 'CdrRow',
   mixins: [modifier],
+  provide() {
+    return {
+      rowType: this.type,
+    };
+  },
   props: {
     /**
      * Number of equal-width columns in the row. A value of ‘auto’ will size columns as wide as their content.
@@ -108,11 +113,6 @@ export default {
   data() {
     return {
       style,
-    };
-  },
-  provide() {
-    return {
-      rowType: this.type,
     };
   },
   computed: {

@@ -29,6 +29,7 @@ const config = [
       {
         file: `dist/cedar.${ext}`,
         format: babelEnv,
+        assetFileNames: "[name].[ext]"
       },
     ],
     plugins,
