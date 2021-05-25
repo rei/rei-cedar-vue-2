@@ -61,7 +61,7 @@ function buildCss({ srcPath, outPath, scopeClasses }) {
           plugins.push(postcssModules({
             generateScopedName: function (name) {
               // scope classes for components
-              return `${name}_${packageJson.version}`;
+              return `${name}_${packageJson.version.replace(/\./g, '-')}`;
             },
             getJSON: function noop() {}
             // Passing a noop as getJSON makes it so postcss-modules does not output a JSON
