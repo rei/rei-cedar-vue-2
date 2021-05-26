@@ -13,7 +13,7 @@ exports[`CdrInput renders correctly 1`] = `
     </label>
   </div>
   <div
-    class="cdr-input-outer-wrap"
+    class="cdr-label-standalone__input-wrap"
   >
     <div
       class="cdr-input-wrap"
@@ -44,7 +44,7 @@ exports[`CdrInput renders number input correctly 1`] = `
     </label>
   </div>
   <div
-    class="cdr-input-outer-wrap"
+    class="cdr-label-standalone__input-wrap"
   >
     <div
       class="cdr-input-wrap"

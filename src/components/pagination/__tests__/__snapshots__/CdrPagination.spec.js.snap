@@ -112,7 +112,7 @@ exports[`CdrPagination renders button pagination correctly 1`] = `
           class="cdr-label-standalone"
         />
         <div
-          class="cdr-select-outer-wrap"
+          class="cdr-label-standalone__input-wrap"
         >
           <div
             class="cdr-select-wrap"
@@ -310,7 +310,7 @@ exports[`CdrPagination renders correctly 1`] = `
           class="cdr-label-standalone"
         />
         <div
-          class="cdr-select-outer-wrap"
+          class="cdr-label-standalone__input-wrap"
         >
           <div
             class="cdr-select-wrap"
@@ -502,7 +502,7 @@ exports[`CdrPagination renders scoped slot correctly 1`] = `
           class="cdr-label-standalone"
         />
         <div
-          class="cdr-select-outer-wrap"
+          class="cdr-label-standalone__input-wrap"
         >
           <div
             class="cdr-select-wrap"

@@ -60,23 +60,38 @@ export default {
   },
   render() {
     return (
-      <div class={this.wrapperClass}>
-        { this.labelEl }
-        { this.labelEl && this.$slots.helper && (<br/>) }
-        { this.$slots.helper && (
-          <span
-            class={this.style['cdr-label-standalone__helper']}
-          >
-            { this.$slots.helper }
-          </span>
-        )}
-        {this.$slots.info && (
-          <span
-            class={this.style['cdr-label-standalone__info']}
-          >
-            { this.$slots.info }
-          </span>
-        )}
+      <div>
+        <div class={this.wrapperClass}>
+          { this.labelEl }
+          { this.labelEl && this.$slots.helper && (<br/>) }
+          { this.$slots.helper && (
+            <span
+              class={this.style['cdr-label-standalone__helper']}
+            >
+              { this.$slots.helper }
+            </span>
+          )}
+          {this.$slots.info && (
+            <span
+              class={this.style['cdr-label-standalone__info']}
+            >
+              { this.$slots.info }
+            </span>
+          )}
+        </div>
+
+        <div class={this.style['cdr-label-standalone__input-wrap']}>
+          {this.$slots.default}
+          {this.$slots['info-action'] && (
+            <div
+              class={this.style['cdr-label-standalone__info-action']}
+            >
+              {this.$slots['info-action']}
+            </div>
+          )}
+        </div>
+        {this.$slots['helper-text-bottom']}
+        {this.$slots.error}
       </div>
     );
   },

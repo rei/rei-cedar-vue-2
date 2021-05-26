@@ -36,4 +36,16 @@
     right: 0;
     bottom: 0;
   }
+
+  &__info-action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+  }
+
+  &__input-wrap {
+    position: relative;
+    display: flex;
+  }
 }

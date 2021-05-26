@@ -13,7 +13,7 @@ exports[`cdrSelect renders correctly 1`] = `
     </label>
   </div>
   <div
-    class="cdr-select-outer-wrap"
+    class="cdr-label-standalone__input-wrap"
   >
     <div
       class="cdr-select-wrap"
