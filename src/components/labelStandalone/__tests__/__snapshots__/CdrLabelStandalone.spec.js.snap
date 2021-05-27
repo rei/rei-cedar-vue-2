@@ -1,9 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CdrFormLabelStandalone matches snapshot 1`] = `
-<div>
+<div
+  class="cdr-label-standalone"
+>
   <div
-    class="cdr-label-standalone cdr-label-standalone--spacing"
+    class="cdr-label-standalone__label-wrapper"
   >
     <label
       class="cdr-label-standalone__label"
@@ -22,14 +24,17 @@ exports[`CdrFormLabelStandalone matches snapshot 1`] = `
     >
       very helpful
     </span>
-    <span
-      class="cdr-label-standalone__info"
-    >
-      very informative
-    </span>
   </div>
   <div
-    class="cdr-label-standalone__input-wrap"
+    class="cdr-label-standalone__input-wrap cdr-label-standalone__input-spacing"
+  />
+  <span
+    class="cdr-label-standalone__info"
+  >
+    very informative
+  </span>
+  <div
+    class="cdr-label-standalone__post-content"
   />
 </div>
 `;

@@ -91,7 +91,7 @@ export default {
             { this.$slots.info }
           </span>
         )}
-        
+
         <div class={this.style['cdr-label-standalone__post-content']}>
           {this.$slots['helper-text-bottom']}
           {this.$slots.error}

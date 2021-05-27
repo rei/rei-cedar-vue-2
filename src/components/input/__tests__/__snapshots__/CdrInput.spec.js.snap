@@ -1,9 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CdrInput renders correctly 1`] = `
-<div>
+<div
+  class="cdr-label-standalone"
+>
   <div
-    class="cdr-label-standalone cdr-label-standalone--spacing"
+    class="cdr-label-standalone__label-wrapper"
   >
     <label
       class="cdr-label-standalone__label"
@@ -13,7 +15,7 @@ exports[`CdrInput renders correctly 1`] = `
     </label>
   </div>
   <div
-    class="cdr-label-standalone__input-wrap"
+    class="cdr-label-standalone__input-wrap cdr-label-standalone__input-spacing"
   >
     <div
       class="cdr-input-wrap"
@@ -28,13 +30,18 @@ exports[`CdrInput renders correctly 1`] = `
       />
     </div>
   </div>
+  <div
+    class="cdr-label-standalone__post-content"
+  />
 </div>
 `;
 
 exports[`CdrInput renders number input correctly 1`] = `
-<div>
+<div
+  class="cdr-label-standalone"
+>
   <div
-    class="cdr-label-standalone cdr-label-standalone--spacing"
+    class="cdr-label-standalone__label-wrapper"
   >
     <label
       class="cdr-label-standalone__label"
@@ -44,7 +51,7 @@ exports[`CdrInput renders number input correctly 1`] = `
     </label>
   </div>
   <div
-    class="cdr-label-standalone__input-wrap"
+    class="cdr-label-standalone__input-wrap cdr-label-standalone__input-spacing"
   >
     <div
       class="cdr-input-wrap"
@@ -62,5 +69,8 @@ exports[`CdrInput renders number input correctly 1`] = `
       />
     </div>
   </div>
+  <div
+    class="cdr-label-standalone__post-content"
+  />
 </div>
 `;
