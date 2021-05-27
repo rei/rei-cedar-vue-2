@@ -189,67 +189,64 @@ export default {
   },
   render() {
     return (
-      <div>
-        <cdr-label-standalone
-          for-id={ `${this.inputId}` }
-          label={ this.label }
-          hide-label={ this.hideLabel }
-          required={ this.required }
-          optional={ this.optional }
-          disabled={ this.disabled }
-        >
-          { this.$slots['helper-text-top'] && (
-            <template slot="helper">
-              { this.$slots['helper-text-top'] }
-            </template>
-          )}
-          { this.$slots.info && (
-            <template slot="info">
-              {this.$slots.info}
-            </template>
-          )}
-        </cdr-label-standalone>
-        <div class={this.style['cdr-input-outer-wrap']}>
-          <div class={this.wrapperClass}>
-            {this.inputEl}
-            {this.$slots['pre-icon'] && (
-              <span
-                class={this.style['cdr-input__pre-icon']}
-              >
-                {this.$slots['pre-icon']}
-              </span>
-            )}
-
-            {this.$slots['post-icon'] && (
-              <span
-                class={this.style['cdr-input__post-icon']}
-              >
-                {this.$slots['post-icon']}
-              </span>
-            )}
-          </div>
-          {this.$slots['info-action'] && (
-            <div
-              class={this.style['cdr-input__info-action']}
+      <cdr-label-standalone
+        for-id={ `${this.inputId}` }
+        label={ this.label }
+        hide-label={ this.hideLabel }
+        required={ this.required }
+        optional={ this.optional }
+        disabled={ this.disabled }
+      >
+        { this.$slots['helper-text-top'] && (
+          <template slot="helper">
+            { this.$slots['helper-text-top'] }
+          </template>
+        )}
+        { this.$slots.info && (
+          <template slot="info">
+            {this.$slots.info}
+          </template>
+        )}
+        <div class={this.wrapperClass}>
+          {this.inputEl}
+          {this.$slots['pre-icon'] && (
+            <span
+              class={this.style['cdr-input__pre-icon']}
             >
-              {this.$slots['info-action']}
-            </div>
+              {this.$slots['pre-icon']}
+            </span>
+          )}
+
+          {this.$slots['post-icon'] && (
+            <span
+              class={this.style['cdr-input__post-icon']}
+            >
+              {this.$slots['post-icon']}
+            </span>
           )}
         </div>
+
+        {this.$slots['info-action'] && (
+          <template slot="info-action">
+            {this.$slots['info-action']}
+          </template>
+        )}
+
         {(this.$slots['helper-text-bottom'])
           && !this.error && (
-            <span class={this.style['cdr-input__helper-text']}>
+            <span class={this.style['cdr-input__helper-text']} slot="helper-text-bottom">
               {this.$slots['helper-text-bottom']}
             </span>
         )}
+
         {this.error && (
-          <cdr-form-error role={this.errorRole} error={this.error}>
+          <cdr-form-error role={this.errorRole} error={this.error} slot="error">
             <template slot="error">
               {this.$slots.error}
             </template>
           </cdr-form-error>
         )}
-      </div>
+      </cdr-label-standalone>
     );
   },
 };

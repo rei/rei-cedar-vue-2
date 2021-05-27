@@ -107,12 +107,14 @@ exports[`CdrPagination renders button pagination correctly 1`] = `
     <li
       class="cdr-pagination__li--select"
     >
-      <div>
+      <div
+        class="cdr-label-standalone"
+      >
         <div
-          class="cdr-label-standalone"
+          class="cdr-label-standalone__label-wrapper"
         />
         <div
-          class="cdr-select-outer-wrap"
+          class="cdr-label-standalone__input-wrap"
         >
           <div
             class="cdr-select-wrap"
@@ -166,6 +168,9 @@ exports[`CdrPagination renders button pagination correctly 1`] = `
             </svg>
           </div>
         </div>
+        <div
+          class="cdr-label-standalone__post-content"
+        />
       </div>
     </li>
     <li>
@@ -305,12 +310,14 @@ exports[`CdrPagination renders correctly 1`] = `
     <li
       class="cdr-pagination__li--select"
     >
-      <div>
+      <div
+        class="cdr-label-standalone"
+      >
         <div
-          class="cdr-label-standalone"
+          class="cdr-label-standalone__label-wrapper"
         />
         <div
-          class="cdr-select-outer-wrap"
+          class="cdr-label-standalone__input-wrap"
         >
           <div
             class="cdr-select-wrap"
@@ -364,6 +371,9 @@ exports[`CdrPagination renders correctly 1`] = `
             </svg>
           </div>
         </div>
+        <div
+          class="cdr-label-standalone__post-content"
+        />
       </div>
     </li>
     <li>
@@ -497,12 +507,14 @@ exports[`CdrPagination renders scoped slot correctly 1`] = `
     <li
       class="cdr-pagination__li--select"
     >
-      <div>
+      <div
+        class="cdr-label-standalone"
+      >
         <div
-          class="cdr-label-standalone"
+          class="cdr-label-standalone__label-wrapper"
         />
         <div
-          class="cdr-select-outer-wrap"
+          class="cdr-label-standalone__input-wrap"
         >
           <div
             class="cdr-select-wrap"
@@ -556,6 +568,9 @@ exports[`CdrPagination renders scoped slot correctly 1`] = `
             </svg>
           </div>
         </div>
+        <div
+          class="cdr-label-standalone__post-content"
+        />
       </div>
     </li>
     <li>

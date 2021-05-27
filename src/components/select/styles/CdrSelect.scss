@@ -73,17 +73,6 @@
     transform: translateY(-50%);
   }
 
-  &__info-action {
-    position: relative;
-    width: 40px;
-    & > * {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-  }
-
   &--multiple {
     height: auto;
     padding: $cdr-space-half-x;
@@ -147,9 +136,4 @@
 .cdr-select-wrap {
   position: relative;
   flex: 1;
-}
-
-.cdr-select-outer-wrap {
-  position: relative;
-  display: flex;
 }

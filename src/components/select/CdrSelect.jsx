@@ -186,56 +186,50 @@ export default {
   },
   render() {
     return (
-      <div>
-        <cdr-label-standalone
-          for-id={ `${this.selectId}` }
-          label={ this.label }
-          hide-label={ this.hideLabel }
-          required={ this.required }
-          optional={ this.optional }
-          disabled={ this.disabled }
-        >
-          { this.$slots['helper-text'] && (
-            <template slot="helper">
-              { this.$slots['helper-text'] }
-            </template>
-          )}
-          { this.$slots.info && (
-            <template slot="info">
-              {this.$slots.info}
-            </template>
-          )}
-        </cdr-label-standalone>
-        <div class={this.style['cdr-select-outer-wrap']}>
-          <div class={this.style['cdr-select-wrap']}>
-            {this.$slots['pre-icon'] && (
-              <span
-                class={this.style['cdr-select__pre-icon']}
-              >
-                {this.$slots['pre-icon']}
-              </span>
-            )}
-            {this.selectEl}
-            <icon-caret-down
-            class={this.caretClass}
-            />
-          </div>
-          {this.$slots['info-action'] && (
-            <div
-              class={this.style['cdr-select__info-action']}
-            >
-              {this.$slots['info-action']}
-            </div>
-          )}
-        </div>
+      <cdr-label-standalone
+        for-id={ `${this.selectId}` }
+        label={ this.label }
+        hide-label={ this.hideLabel }
+        required={ this.required }
+        optional={ this.optional }
+        disabled={ this.disabled }
+      >
+        { this.$slots['helper-text'] && (
+          <template slot="helper">
+            { this.$slots['helper-text'] }
+          </template>
+        )}
+        { this.$slots.info && (
+          <template slot="info">
+            {this.$slots.info}
+          </template>
+        )}
+        {this.$slots['info-action'] && (
+          <template slot="info-action">
+            {this.$slots['info-action']}
+          </template>
+        )}
         {this.error && (
-          <cdr-form-error role={this.errorRole} error={this.error} >
+          <cdr-form-error role={this.errorRole} error={this.error} slot="error">
             <template slot="error">
               {this.$slots.error}
             </template>
           </cdr-form-error>
         )}
-      </div>
+        <div class={this.style['cdr-select-wrap']}>
+          {this.$slots['pre-icon'] && (
+            <span
+              class={this.style['cdr-select__pre-icon']}
+            >
+              {this.$slots['pre-icon']}
+            </span>
+          )}
+          {this.selectEl}
+          <icon-caret-down
+          class={this.caretClass}
+          />
+        </div>
+      </cdr-label-standalone>
     );
   },
 };

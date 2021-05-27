@@ -354,7 +354,7 @@ describe('CdrInput', () => {
   });
 
   it('renders info action slot', () => {
-    const wrapper = shallowMount(CdrInput, {
+    const wrapper = mount(CdrInput, {
       propsData: {
         label: 'test',
         id: 'info-action'
@@ -363,7 +363,7 @@ describe('CdrInput', () => {
         'info-action': '🤠',
       },
     });
-    expect(wrapper.find('.cdr-input__info-action').text()).toBe('🤠');
+    expect(wrapper.find('.cdr-label-standalone__info-action').text()).toBe('🤠');
   });
 
   it('renders error slot when error state is active', () => {

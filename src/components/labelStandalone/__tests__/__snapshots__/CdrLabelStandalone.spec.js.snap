@@ -2,29 +2,39 @@
 
 exports[`CdrFormLabelStandalone matches snapshot 1`] = `
 <div
-  class="cdr-label-standalone cdr-label-standalone--spacing"
+  class="cdr-label-standalone"
 >
-  <label
-    class="cdr-label-standalone__label"
-    for="test"
+  <div
+    class="cdr-label-standalone__label-wrapper"
   >
-    Label Test 
-    <span
-      aria-label="required"
+    <label
+      class="cdr-label-standalone__label"
+      for="test"
     >
-      *
+      Label Test 
+      <span
+        aria-label="required"
+      >
+        *
+      </span>
+    </label>
+    <br />
+    <span
+      class="cdr-label-standalone__helper"
+    >
+      very helpful
     </span>
-  </label>
-  <br />
-  <span
-    class="cdr-label-standalone__helper"
-  >
-    very helpful
-  </span>
+  </div>
+  <div
+    class="cdr-label-standalone__input-wrap cdr-label-standalone__input-spacing"
+  />
   <span
     class="cdr-label-standalone__info"
   >
     very informative
   </span>
+  <div
+    class="cdr-label-standalone__post-content"
+  />
 </div>
 `;

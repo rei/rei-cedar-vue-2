@@ -174,7 +174,7 @@ describe('cdrSelect', () => {
   });
 
   it('renders info action slot', () => {
-    const wrapper = shallowMount(CdrSelect, {
+    const wrapper = mount(CdrSelect, {
       propsData: {
         label: 'test',
         id: 'info-action'
@@ -183,7 +183,7 @@ describe('cdrSelect', () => {
         'info-action': '🤠',
       },
     });
-    expect(wrapper.find('.cdr-select__info-action').text()).toBe('🤠');
+    expect(wrapper.find('.cdr-label-standalone__info-action').text()).toBe('🤠');
   });
 
   it('renders helper-text slot', () => {
