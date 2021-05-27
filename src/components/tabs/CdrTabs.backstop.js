@@ -10,18 +10,18 @@ module.exports = [
     selectors: [
       '[data-backstop="tab-default"]',
     ],
-    // hoverSelectors: [
-    //   {
-    //     target: '[data-backstop="tab-default"] li:nth-child(2) a',
-    //     capture: '[data-backstop="tab-default"]',
-    //   },
-    // ],
-    // focusSelectors: [
-    //   {
-    //     target: '[data-backstop="tab-default"] li:nth-child(2) a',
-    //     capture: '[data-backstop="tab-default"]',
-    //   },
-    // ],
+    hoverSelectors: [
+      {
+        target: '[data-backstop="tab-default"] button:nth-child(2)',
+        capture: '[data-backstop="tab-default"]',
+      },
+    ],
+    focusSelectors: [
+      {
+        target: '[data-backstop="tab-default"] button:nth-child(2)',
+        capture: '[data-backstop="tab-default"]',
+      },
+    ],
     wait: 1000,
   },
 ];
