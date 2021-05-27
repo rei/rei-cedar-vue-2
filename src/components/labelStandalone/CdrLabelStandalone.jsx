@@ -25,11 +25,11 @@ export default {
         [this.style['cdr-label-standalone__label--disabled']]: this.disabled,
       };
     },
-    wrapperClass() {
-      const hasContent = !this.hideLabel || this.$slots.helper || this.$slots.info;
+    inputClass() {
+      const hasLabelContent = !this.hideLabel || this.$slots.helper || this.$slots.info;
       return {
-        [this.style['cdr-label-standalone']]: true,
-        [this.style['cdr-label-standalone--spacing']]: hasContent,
+        [this.style['cdr-label-standalone__input-wrap']]: true,
+        [this.style['cdr-label-standalone__input-spacing']]: hasLabelContent,
       };
     },
     labelEl() {
@@ -60,8 +60,8 @@ export default {
   },
   render() {
     return (
-      <div>
-        <div class={this.wrapperClass}>
+      <div class={this.style['cdr-label-standalone']}>
+        <div class={this.style['cdr-label-standalone__label-wrapper']}>
           { this.labelEl }
           { this.labelEl && this.$slots.helper && (<br/>) }
           { this.$slots.helper && (
@@ -71,16 +71,9 @@ export default {
               { this.$slots.helper }
             </span>
           )}
-          {this.$slots.info && (
-            <span
-              class={this.style['cdr-label-standalone__info']}
-            >
-              { this.$slots.info }
-            </span>
-          )}
         </div>
 
-        <div class={this.style['cdr-label-standalone__input-wrap']}>
+        <div class={this.inputClass}>
           {this.$slots.default}
           {this.$slots['info-action'] && (
             <div
@@ -90,8 +83,19 @@ export default {
             </div>
           )}
         </div>
-        {this.$slots['helper-text-bottom']}
-        {this.$slots.error}
+
+        {this.$slots.info && (
+          <span
+            class={this.style['cdr-label-standalone__info']}
+          >
+            { this.$slots.info }
+          </span>
+        )}
+        
+        <div class={this.style['cdr-label-standalone__post-content']}>
+          {this.$slots['helper-text-bottom']}
+          {this.$slots.error}
+        </div>
       </div>
     );
   },
