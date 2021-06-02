@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CdrAlert matches snapshot 1`] = `
+exports[`CdrBanner matches snapshot 1`] = `
 <div
-  class="cdr-alert cdr-alert--info"
+  class="cdr-banner cdr-banner--info"
 >
   <svg
     aria-hidden="true"
@@ -15,6 +15,6 @@ exports[`CdrAlert matches snapshot 1`] = `
       role="presentation"
     />
   </svg>
-  hey im an alert
+  hey im a banner
 </div>
 `;

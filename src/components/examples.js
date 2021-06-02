@@ -1,5 +1,5 @@
 import accordion from 'componentsdir/accordion/examples/Accordion';
-import alert from 'componentsdir/alert/examples/Alert';
+import banner from 'componentsdir/banner/examples/Banner';
 import breadcrumb from 'componentsdir/breadcrumb/examples/Breadcrumb';
 import buttons from 'componentsdir/button/examples/Buttons';
 import captions from 'componentsdir/caption/examples/Caption';
@@ -27,7 +27,7 @@ import tooltip from 'componentsdir/tooltip/examples/Tooltip';
 import forms from 'componentsdir/Form/Form';
 
 export default {
-  alert,
+  banner,
   accordion,
   breadcrumb,
   buttons,

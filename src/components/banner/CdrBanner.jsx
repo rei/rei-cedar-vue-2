@@ -1,10 +1,10 @@
 import clsx from 'clsx';
 import propValidator from '../../utils/propValidator';
 import BuildClass from '../../mixins/buildClass';
-import style from './styles/CdrAlert.scss';
+import style from './styles/CdrBanner.scss';
 
 export default {
-  name: 'CdrAlert',
+  name: 'CdrBanner',
   mixins: [BuildClass],
   props: {
     type: {
@@ -23,7 +23,7 @@ export default {
   },
   computed: {
     baseClass() {
-      return 'cdr-alert';
+      return 'cdr-banner';
     },
     iconClass() {
       return this.modifyClassName(this.baseClass, this.type);

@@ -1,0 +1,22 @@
+@import '../../../css/settings/index.scss';
+@import './CdrBanner.vars.scss';
+
+.cdr-banner {
+  @include cdr-banner-base-mixin;
+}
+
+.cdr-banner--info {
+  @include cdr-banner-info-mixin;
+}
+
+.cdr-banner--warning {
+  @include cdr-banner-warning-mixin;
+}
+
+.cdr-banner--success {
+  @include cdr-banner-success-mixin;
+}
+
+.cdr-banner--error {
+  @include cdr-banner-error-mixin;
+}
