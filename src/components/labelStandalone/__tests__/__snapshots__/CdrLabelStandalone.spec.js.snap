@@ -21,6 +21,7 @@ exports[`CdrFormLabelStandalone matches snapshot 1`] = `
     <br />
     <span
       class="cdr-label-standalone__helper"
+      id="test-helper-text-top"
     >
       very helpful
     </span>

@@ -27,7 +27,7 @@ describe('CdrFormLabelStandalone', () => {
     expect(wrapper.vm.$refs.label.textContent).toBe('Label Test');
   });
 
-  it('does not render label if hideLabel is passed', () => {
+  it('renders label as sr-only if hideLabel is passed', () => {
     const wrapper = shallowMount(CdrLabelStandalone, {
       propsData: {
         label: 'Label Test',
@@ -35,7 +35,8 @@ describe('CdrFormLabelStandalone', () => {
         hideLabel: true,
       },
     });
-    expect(wrapper.find('label').exists()).toBe(false);
+
+    expect(wrapper.find('label').classes()).toContain('cdr-label-standalone__label--sr-only');
   });
 
   it('maps input id to label for correctly', () => {

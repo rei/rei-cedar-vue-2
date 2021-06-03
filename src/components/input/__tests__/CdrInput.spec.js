@@ -431,4 +431,45 @@ describe('CdrInput', () => {
     await wrapper.vm.$nextTick();
     expect(input.element.value).toBe('');
   });
+
+  it('helper text slots are linked to input via aria-describedby', () => {
+    const wrapper = mount(CdrInput, {
+      propsData: {
+        label: 'test',
+        id: 'aria-test',
+      },
+      slots: {
+        'helper-text-top': 'extremely helpful',
+        'helper-text-bottom': 'very helpful',
+      },
+    });
+    expect(wrapper.find('input').attributes('aria-describedby')).toBe('aria-test-helper-text-top aria-test-helper-text-bottom');
+  });
+
+  it('dynamic aria-describedby is merged with native attr', () => {
+    const wrapper = mount(CdrInput, {
+      propsData: {
+        label: 'test',
+        id: 'aria-test',
+      },
+      attrs: {
+        'aria-describedby': 'foo',
+      },
+      slots: {
+        'helper-text-top': 'extremely helpful',
+        'helper-text-bottom': 'very helpful',
+      },
+    });
+    expect(wrapper.find('input').attributes('aria-describedby')).toBe('aria-test-helper-text-top aria-test-helper-text-bottom foo');
+  });
+
+  it('does not apply aria-describedby if attr or helper slots are not present', () => {
+    const wrapper = mount(CdrInput, {
+      propsData: {
+        label: 'test',
+        id: 'aria-test',
+      },
+    });
+    expect(wrapper.vm.$refs.input.hasAttribute('aria-describedby')).toBe(false);
+  });
 });

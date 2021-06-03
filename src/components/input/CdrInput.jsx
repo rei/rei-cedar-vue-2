@@ -131,6 +131,13 @@ export default {
         [this.style['cdr-input--focus']]: this.isFocused,
       };
     },
+    describedby() {
+      return [
+        this.$slots['helper-text-top'] ? `${this.inputId}-helper-text-top` : '',
+        this.$slots['helper-text-bottom'] ? `${this.inputId}-helper-text-bottom` : '',
+        this.$attrs['aria-describedby'],
+      ].filter((x) => x).join(' ');
+    },
     inputListeners() {
       // https://vuejs.org/v2/guide/components-custom-events.html#Binding-Native-Events-to-Components
       // handles conflict between v-model and v-on="$listeners"
@@ -162,9 +169,9 @@ export default {
             id={this.inputId}
             disabled={this.disabled}
             required={this.required}
-            aria-label={this.hideLabel ? this.label : null}
             ref="input"
             {...{ attrs: this.inputAttrs, on: this.inputListeners }}
+            aria-describedby={this.describedby || false}
             vModel={this.value}
           />
         );
@@ -179,9 +186,9 @@ export default {
             id={this.inputId}
             disabled={this.disabled}
             required={this.required}
-            aria-label={this.hideLabel ? this.label : null}
             ref="input"
             {...{ attrs: this.inputAttrs, on: this.inputListeners }}
+            aria-describedby={this.describedby || false}
             vModel={this.value}
           />
       );
@@ -234,7 +241,11 @@ export default {
 
         {(this.$slots['helper-text-bottom'])
           && !this.error && (
-            <span class={this.style['cdr-input__helper-text']} slot="helper-text-bottom">
+            <span
+              class={this.style['cdr-input__helper-text']}
+              id={`${this.inputId}-helper-text-bottom`}
+              slot="helper-text-bottom"
+            >
               {this.$slots['helper-text-bottom']}
             </span>
         )}

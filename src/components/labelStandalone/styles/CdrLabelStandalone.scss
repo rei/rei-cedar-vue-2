@@ -16,7 +16,9 @@
 
   &__label {
     @include cdr-label-standalone-label-mixin;
-
+    &--sr-only {
+      @include cdr-display-sr-only;
+    }
     &--disabled {
       @include cdr-label-standalone-disabled-mixin;
 
