@@ -102,6 +102,7 @@ export default {
             : (<a
               class={this.style['cdr-breadcrumb__link']}
               href={breadcrumb.item.url}
+              onClick={(e) => this.$emit('navigate', breadcrumb, e)}
             >
               { breadcrumb.item.name }
             </a>)

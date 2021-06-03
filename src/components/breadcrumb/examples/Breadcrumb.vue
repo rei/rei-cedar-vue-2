@@ -31,6 +31,14 @@
     />
 
     <h3>
+      Breadcrumb handle navigate events
+    </h3>
+    <cdr-breadcrumb
+      :items="shortBreadcrumbItems"
+      data-backstop="breadcrumbs-default"
+      @navigate="handleClick"
+    />
+    <h3>
       Scoped Slot
     </h3>
     <cdr-breadcrumb :items="reiExampleBreadcrumbItems">
@@ -55,6 +63,12 @@ import * as Components from 'srcdir/index';
 export default {
   name: 'Breadcrumb',
   components: { ...Components },
+  methods: {
+    handleClick(bc, e) {
+      e.preventDefault();
+      console.log(bc.item);
+    },
+  },
   data() {
     return {
       averageBreadcrumbItems: [
