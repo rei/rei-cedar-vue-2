@@ -22,7 +22,7 @@ const routes = [
   { path: '/kitchen-sink', name: 'KitchenSink', component: KitchenSink },
   { path: '/utilities', name: 'Utilities', component: Examples.utilities },
   { path: '/accordion', name: 'Accordion', component: Examples.accordion },
-  { path: '/alert', name: 'Alert', component: Examples.alert },
+  { path: '/banner', name: 'Banner', component: Examples.banner },
   { path: '/breadcrumbs', name: 'Breadcrumb', component: Examples.breadcrumb },
   { path: '/buttons', name: 'Buttons', component: Examples.buttons },
   { path: '/captions', name: 'Captions', component: Examples.captions },
