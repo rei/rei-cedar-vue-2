@@ -24,6 +24,17 @@ describe('CdrInput', () => {
     expect(wrapper.element).toMatchSnapshot();
   });
 
+  it('renders error state correctly', () => {
+    const wrapper = mount(CdrInput, {
+      propsData: {
+        label: 'Label Test',
+        id: 'renders',
+        error: 'Something is wrong!'
+      },
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
   it('generates an id correctly', () => {
     const wrapper = shallowMount(CdrInput, {
       propsData: {

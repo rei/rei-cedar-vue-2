@@ -140,6 +140,9 @@ export default {
           disabled={this.disabled}
           required={this.required}
           ref="select"
+
+          aria-invalid={!!this.error}
+          aria-errormessage={!!this.error && `${this.selectId}-error`}
           {...{ attrs: this.$attrs, on: this.inputListeners }}
           aria-describedby={this.describedby || false}
           vModel={this.value}
@@ -216,7 +219,12 @@ export default {
           </template>
         )}
         {this.error && (
-          <cdr-form-error role={this.errorRole} error={this.error} slot="error">
+          <cdr-form-error
+            role={this.errorRole}
+            error={this.error}
+            slot="error"
+            id={`${this.selectId}-error`}
+          >
             <template slot="error">
               {this.$slots.error}
             </template>

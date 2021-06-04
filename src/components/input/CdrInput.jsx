@@ -170,6 +170,8 @@ export default {
             disabled={this.disabled}
             required={this.required}
             ref="input"
+            aria-invalid={!!this.error}
+            aria-errormessage={!!this.error && `${this.inputId}-error`}
             {...{ attrs: this.inputAttrs, on: this.inputListeners }}
             aria-describedby={this.describedby || false}
             vModel={this.value}
@@ -187,6 +189,8 @@ export default {
             disabled={this.disabled}
             required={this.required}
             ref="input"
+            aria-invalid={!!this.error}
+            aria-errormessage={!!this.error && `${this.inputId}-error`}
             {...{ attrs: this.inputAttrs, on: this.inputListeners }}
             aria-describedby={this.describedby || false}
             vModel={this.value}
@@ -251,7 +255,12 @@ export default {
         )}
 
         {this.error && (
-          <cdr-form-error role={this.errorRole} error={this.error} slot="error">
+          <cdr-form-error
+            role={this.errorRole}
+            error={this.error}
+            slot="error"
+            id={`${this.inputId}-error`}
+          >
             <template slot="error">
               {this.$slots.error}
             </template>

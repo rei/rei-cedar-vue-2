@@ -12,6 +12,17 @@ describe('cdrSelect', () => {
     expect(wrapper.element).toMatchSnapshot();
   });
 
+  it('renders error state correctly', () => {
+    const wrapper = mount(CdrSelect, {
+      propsData: {
+        label: 'Label Test',
+        id: 'renders',
+        error: 'What happened?'
+      },
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
   it('hide-label applies sr-only to label element', () => {
     const wrapper = mount(CdrSelect, {
       propsData: {

@@ -14,6 +14,20 @@ describe('CdrFormGroup', () => {
     expect(wrapper.element).toMatchSnapshot();
   });
 
+  test('renders error state correctly', () => {
+    const wrapper = mount(CdrFormGroup, {
+      propsData: {
+        id: 'renders',
+        label: 'hey',
+        error: 'Something is happening?'
+      },
+      slots: {
+        'default': 'form elements!',
+      },
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
   test('renders error slot', () => {
     const wrapper = mount(CdrFormGroup, {
       propsData: {
