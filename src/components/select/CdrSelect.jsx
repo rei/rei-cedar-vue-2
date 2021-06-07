@@ -106,6 +106,12 @@ export default {
         [this.style['cdr-select__caret--disabled']]: this.disabled,
       };
     },
+    describedby() {
+      return [
+        this.$slots['helper-text'] ? `${this.selectId}-helper-text-top` : '',
+        this.$attrs['aria-describedby'],
+      ].filter((x) => x).join(' ');
+    },
     inputListeners() {
       // https://vuejs.org/v2/guide/components-custom-events.html#Binding-Native-Events-to-Components
       // handles conflict between v-model and v-on="$listeners"
@@ -133,9 +139,12 @@ export default {
           size={this.multipleSize}
           disabled={this.disabled}
           required={this.required}
-          aria-label={this.hideLabel ? this.label : null}
           ref="select"
+
+          aria-invalid={!!this.error}
+          aria-errormessage={!!this.error && `${this.selectId}-error`}
           {...{ attrs: this.$attrs, on: this.inputListeners }}
+          aria-describedby={this.describedby || false}
           vModel={this.value}
         >
 
@@ -210,7 +219,12 @@ export default {
           </template>
         )}
         {this.error && (
-          <cdr-form-error role={this.errorRole} error={this.error} slot="error">
+          <cdr-form-error
+            role={this.errorRole}
+            error={this.error}
+            slot="error"
+            id={`${this.selectId}-error`}
+          >
             <template slot="error">
               {this.$slots.error}
             </template>

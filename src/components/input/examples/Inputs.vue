@@ -33,7 +33,6 @@
       v-model="hiddenModel"
       label="This has no label"
       hide-label
-      placeholder="hidden-label"
       :background="backgroundColor"
     />
 
@@ -41,7 +40,6 @@
       class="demo-input"
       v-model="disabledModel"
       label="Disabled Input"
-      placeholder="I am disabled"
       data-backstop="input-disabled"
       disabled
       :background="backgroundColor"
@@ -51,7 +49,6 @@
       class="demo-input"
       v-model="sizeModel"
       label="Large Input"
-      placeholder="Large Input"
       size="large"
       :background="backgroundColor"
     />
@@ -59,7 +56,6 @@
       class="demo-input"
       v-model="sizeModel"
       label="Large@xs Input"
-      placeholder="Large@xs Input"
       size="large@xs"
       :background="backgroundColor"
     />
@@ -67,7 +63,6 @@
       class="demo-input"
       v-model="sizeModel"
       label="Large@sm Input"
-      placeholder="Large@sm Input"
       size="large@sm"
       :background="backgroundColor"
     />
@@ -75,7 +70,6 @@
       class="demo-input"
       v-model="sizeModel"
       label="Large@md Input"
-      placeholder="Large@md Input"
       size="large@md"
       :background="backgroundColor"
     />
@@ -83,7 +77,6 @@
       class="demo-input"
       v-model="sizeModel"
       label="Large@lg Input"
-      placeholder="Large@lg Input"
       size="large@lg"
       :background="backgroundColor"
     />
@@ -92,7 +85,6 @@
       class="demo-input"
       v-model="requiredWithIcons"
       id="required-with-icon"
-      placeholder="Required with Icon"
       label="Required with Icon"
       required
       type="email"
@@ -127,7 +119,6 @@
         class="demo-input"
         v-model="formWithButtons"
         id="form-example"
-        placeholder="For testing icon/button placement with autofill"
         label="Form with Two Buttons"
         required
         type="email"
@@ -168,12 +159,10 @@
     <cdr-input
       class="demo-input"
       v-model="helperValidationModel"
-      placeholder="errors"
       :error="helperValidationError"
       @blur="validate"
       label="Top helper with status validation"
       :background="backgroundColor"
-      aria-describedby="myHelpText errorMessage"
     >
       <template slot="helper-text-top">
         <span id="myHelpText">Must be 4 or less characters</span>
@@ -205,7 +194,6 @@
       label="Everything at the same time, alert validation"
       @blur="megaErr = false"
       size="large"
-      aria-describedby="topHelp bottomHelp errorMessage"
     >
       <icon-map slot="pre-icon" />
       <template slot="helper-text-top">
@@ -218,7 +206,6 @@
         <cdr-link
           href="#baz"
           modifier="standalone"
-          aria-describedby="inputWithError"
         >
           Hey im also on top of the input!
         </cdr-link>
@@ -269,7 +256,6 @@
       class="demo-input "
       v-model="multiRowModel"
       :rows="10"
-      placeholder="Multi Line Input/TextArea"
       label="Multi Line Input/TextArea"
       :background="backgroundColor"
     />
@@ -277,7 +263,6 @@
       class="demo-input "
       v-model="masterModel"
       @input="onMasterInput"
-      placeholder="What would you like to set all input values to?"
       label="Master input that overwrites all other inputs on this page"
       :background="backgroundColor"
     />
