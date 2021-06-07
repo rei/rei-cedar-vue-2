@@ -14,6 +14,10 @@ function runA11yTests(browser, path, target) {
         type: 'tag',
         values: ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'best-practice'],
       },
+      rules: {
+        'aria-allowed-attr': { enabled: false },
+        'aria-valid-attr-value': { enabled: false },
+      }
     })
     .end();
 }
