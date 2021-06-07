@@ -4,6 +4,7 @@ import serve from 'rollup-plugin-serve';
 import jsonPlugin from 'rollup-plugin-json';
 import svg from 'rollup-plugin-svg';
 import plugins from './build/rollup-plugins';
+import defaults from './build/rollup-defaults';
 
 plugins.push(
   replace({
@@ -36,4 +37,5 @@ export default {
   watch: {
     clearScreen: false,
   },
+  ...defaults,
 };
