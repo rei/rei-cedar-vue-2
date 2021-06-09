@@ -94,7 +94,7 @@ describe('CdrInput', () => {
         required: true,
       },
     });
-    expect(wrapper.vm.$refs.input.hasAttribute('required')).toBe(true);
+    expect(wrapper.find('input').attributes('aria-required')).toBe('true');
   });
 
   it('sets attrs for number type input', () => {

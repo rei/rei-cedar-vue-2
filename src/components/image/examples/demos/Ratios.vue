@@ -1,7 +1,7 @@
 <template>
   <cdr-grid style="grid-template-columns: 1fr 1fr 1fr 1fr;">
     <div>
-      <cdr-text modifier="subheading">
+      <cdr-text class="cdr-text-dev--subheading-sans-300">
         Square
       </cdr-text>
       <cdr-img
@@ -12,7 +12,7 @@
       />
     </div>
     <div>
-      <cdr-text modifier="subheading">
+      <cdr-text class="cdr-text-dev--subheading-sans-300">
         1-2
       </cdr-text>
       <cdr-img
@@ -23,7 +23,7 @@
       />
     </div>
     <div>
-      <cdr-text modifier="subheading">
+      <cdr-text class="cdr-text-dev--subheading-sans-300">
         2-3
       </cdr-text>
       <cdr-img
@@ -34,7 +34,7 @@
       />
     </div>
     <div>
-      <cdr-text modifier="subheading">
+      <cdr-text class="cdr-text-dev--subheading-sans-300">
         3-4
       </cdr-text>
       <cdr-img
@@ -45,7 +45,7 @@
       />
     </div>
     <div>
-      <cdr-text modifier="subheading">
+      <cdr-text class="cdr-text-dev--subheading-sans-300">
         9-16
       </cdr-text>
       <cdr-img
@@ -56,7 +56,7 @@
       />
     </div>
     <div>
-      <cdr-text modifier="subheading">
+      <cdr-text class="cdr-text-dev--subheading-sans-300">
         2-1
       </cdr-text>
       <cdr-img
@@ -67,7 +67,7 @@
       />
     </div>
     <div>
-      <cdr-text modifier="subheading">
+      <cdr-text class="cdr-text-dev--subheading-sans-300">
         3-2
       </cdr-text>
       <cdr-img
@@ -78,7 +78,7 @@
       />
     </div>
     <div>
-      <cdr-text modifier="subheading">
+      <cdr-text class="cdr-text-dev--subheading-sans-300">
         4-3
       </cdr-text>
       <cdr-img
@@ -89,7 +89,7 @@
       />
     </div>
     <div>
-      <cdr-text modifier="subheading">
+      <cdr-text class="cdr-text-dev--subheading-sans-300">
         16-9
       </cdr-text>
       <cdr-img

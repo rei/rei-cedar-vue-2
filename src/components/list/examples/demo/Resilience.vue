@@ -28,14 +28,14 @@
     <cdr-text
       v-for="p1 in paragraphs"
       :key="p1"
-      :modifier="`body-${p1}`"
+      :class="`cdr-text-dev--body-${p1}`"
     >
       <cdr-list>
         <li>List item text</li>
         <li>Lorem ipsum dolor
           <cdr-text
             tag="span"
-            :modifier="`body-strong-${p1}`"
+            :class="`cdr-text-dev--body-strong-${p1}`"
           >
             sit amet,
           </cdr-text>
@@ -52,7 +52,7 @@
     <cdr-text
       v-for="utility in utilities"
       :key="utility"
-      :modifier="`utility-sans-${utility}`"
+      :class="`cdr-text-dev--utility-sans-${utility}`"
     >
       <cdr-list
         v-for="l1 in lists"
@@ -81,7 +81,7 @@
       >
         <cdr-text
           tag="span"
-          :modifier="`body-${paragraph}`"
+          :class="`cdr-text-dev--body-${paragraph}`"
         >
           body-{{ paragraph }}
         </cdr-text>
@@ -95,7 +95,7 @@
           >
             <cdr-text
               tag="span"
-              :modifier="`body-${paragraph}`"
+              :class="`cdr-text-dev--body-${paragraph}`"
             >
               body-{{ paragraph }}
             </cdr-text>
@@ -115,7 +115,7 @@
         random text
         <cdr-text
           tag="span"
-          :modifier="`utility-sans-${utility}`"
+          :class="`cdr-text-dev--utility-sans-${utility}`"
         >
           utility-sans-{{ utility }}
         </cdr-text>
@@ -129,7 +129,7 @@
           >
             <cdr-text
               tag="span"
-              :modifier="`utility-sans-${utility}`"
+              :class="`cdr-text-dev--utility-sans-${utility}`"
             >
               utility-sans-{{ utility }}
             </cdr-text>
@@ -147,7 +147,7 @@
         random text
         <cdr-text
           tag="span"
-          :modifier="`utility-sans-${utility}`"
+          :class="`cdr-text-dev--utility-sans-${utility}`"
         >
           utility-sans-{{ utility }}
         </cdr-text>
@@ -162,7 +162,7 @@
             random text
             <cdr-text
               tag="span"
-              :modifier="`utility-sans-${utility}`"
+              :class="`cdr-text-dev--utility-sans-${utility}`"
             >
               utility-sans-{{ utility }}
             </cdr-text>

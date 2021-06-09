@@ -25,7 +25,7 @@
           :aria-labelledby="'tab-small-' + tab"
         >
           <cdr-text
-            modifier="body-300"
+            class="cdr-text-dev--body-300"
           >
             Tab {{ tab }} content
           </cdr-text>
@@ -51,7 +51,7 @@
           :aria-labelledby="'tab-full-width-' + tab"
         >
           <cdr-text
-            modifier="body-300"
+            class="cdr-text-dev--body-300"
           >
             Tab {{ tab }} content
           </cdr-text>
@@ -77,7 +77,7 @@
           :aria-labelledby="'tab-no-border-' + tab"
         >
           <cdr-text
-            modifier="body-300"
+            class="cdr-text-dev--body-300"
           >
             Tab {{ tab }} content
           </cdr-text>
@@ -100,7 +100,7 @@
           aria-labelledby="tab-auto-short"
         >
           <cdr-text
-            modifier="body-300"
+            class="cdr-text-dev--body-300"
           >
             short tab content
           </cdr-text>
@@ -112,7 +112,7 @@
           aria-labelledby="tab-auto-tall"
         >
           <cdr-text
-            modifier="body-300"
+            class="cdr-text-dev--body-300"
           >
             tall tab content. look at it go. wow, so much content.
             letters, punctuation, spaces, all together in one tab.
@@ -144,7 +144,7 @@
           :aria-labelledby="'tab-centered-' + tab"
         >
           <cdr-text
-            modifier="body-300"
+            class="cdr-text-dev--body-300"
           >
             Tab {{ tab }} content
           </cdr-text>
@@ -156,7 +156,7 @@
         >
           <cdr-text
             tag="strong"
-            modifier="subheading"
+            class="cdr-text-dev--subheading-sans-300"
           >
             Tab six Content
           </cdr-text>
@@ -168,7 +168,7 @@
         >
           <cdr-text
             tag="strong"
-            modifier="subheading"
+            class="cdr-text-dev--subheading-sans-300"
           >
             Tab seven Content
           </cdr-text>
@@ -180,7 +180,7 @@
         >
           <cdr-text
             tag="strong"
-            modifier="subheading"
+            class="cdr-text-dev--subheading-sans-300"
           >
             Tab eight Content
           </cdr-text>
