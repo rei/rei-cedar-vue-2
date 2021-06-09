@@ -5,7 +5,7 @@
     </h3>
     <cdr-grid style="grid-template-columns: 1fr 1fr;">
       <div>
-        <cdr-text modifier="subheading">
+        <cdr-text class="cdr-text-dev--subheading-sans-300">
           Responsive
         </cdr-text>
         <cdr-img
@@ -24,7 +24,7 @@
         />
       </div>
       <div>
-        <cdr-text modifier="subheading">
+        <cdr-text class="cdr-text-dev--subheading-sans-300">
           Rounded
         </cdr-text>
         <cdr-img
@@ -48,7 +48,7 @@
         />
       </div>
       <div>
-        <cdr-text modifier="subheading">
+        <cdr-text class="cdr-text-dev--subheading-sans-300">
           circle
         </cdr-text>
         <cdr-img

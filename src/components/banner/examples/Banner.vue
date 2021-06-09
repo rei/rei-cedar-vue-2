@@ -18,7 +18,7 @@
     </cdr-banner>
     <br>
     <cdr-banner type="error">
-      <cdr-text modifier="heading-serif-strong-1200">
+      <cdr-text class="cdr-text-dev--heading-serif-strong-1200">
         <icon-x-fill /> error banner
       </cdr-text>
     </cdr-banner>

@@ -5,7 +5,7 @@
     </h3>
     <cdr-grid style="grid-template-columns: 1fr 1fr 1fr; 1fr">
       <div>
-        <cdr-text modifier="subheading">
+        <cdr-text class="cdr-text-dev--subheading-sans-300">
           Left
         </cdr-text>
         <cdr-img
@@ -17,7 +17,7 @@
         />
       </div>
       <div>
-        <cdr-text modifier="subheading">
+        <cdr-text class="cdr-text-dev--subheading-sans-300">
           Center
         </cdr-text>
         <cdr-img
@@ -29,7 +29,7 @@
         />
       </div>
       <div>
-        <cdr-text modifier="subheading">
+        <cdr-text class="cdr-text-dev--subheading-sans-300">
           Right
         </cdr-text>
         <cdr-img
@@ -49,7 +49,7 @@
     <cdr-grid style="grid-template-columns: 1fr 1fr 1fr; 1fr">
 
       <div>
-        <cdr-text modifier="subheading">
+        <cdr-text class="cdr-text-dev--subheading-sans-300">
           Top
         </cdr-text>
         <cdr-img
@@ -61,7 +61,7 @@
         />
       </div>
       <div>
-        <cdr-text modifier="subheading">
+        <cdr-text class="cdr-text-dev--subheading-sans-300">
           Center
         </cdr-text>
         <cdr-img
@@ -73,7 +73,7 @@
         />
       </div>
       <div>
-        <cdr-text modifier="subheading">
+        <cdr-text class="cdr-text-dev--subheading-sans-300">
           Bottom
         </cdr-text>
         <cdr-img
@@ -91,7 +91,7 @@
     </h3>
     <cdr-grid style="grid-template-columns: 1fr 1fr 1fr; 1fr">
       <div>
-        <cdr-text modifier="subheading">
+        <cdr-text class="cdr-text-dev--subheading-sans-300">
           Reference Image
         </cdr-text>
         <cdr-img
@@ -101,7 +101,7 @@
       </div>
 
       <div>
-        <cdr-text modifier="subheading">
+        <cdr-text class="cdr-text-dev--subheading-sans-300">
           top, left
         </cdr-text>
         <cdr-img
@@ -112,7 +112,7 @@
         />
       </div>
       <div>
-        <cdr-text modifier="subheading">
+        <cdr-text class="cdr-text-dev--subheading-sans-300">
           top, x-center
         </cdr-text>
         <cdr-img
@@ -123,7 +123,7 @@
         />
       </div>
       <div>
-        <cdr-text modifier="subheading">
+        <cdr-text class="cdr-text-dev--subheading-sans-300">
           top, right
         </cdr-text>
         <cdr-img
@@ -134,7 +134,7 @@
         />
       </div>
       <div>
-        <cdr-text modifier="subheading">
+        <cdr-text class="cdr-text-dev--subheading-sans-300">
           y-center, left
         </cdr-text>
         <cdr-img
@@ -145,7 +145,7 @@
         />
       </div>
       <div>
-        <cdr-text modifier="subheading">
+        <cdr-text class="cdr-text-dev--subheading-sans-300">
           y-center, x-center
         </cdr-text>
         <cdr-img
@@ -156,7 +156,7 @@
         />
       </div>
       <div>
-        <cdr-text modifier="subheading">
+        <cdr-text class="cdr-text-dev--subheading-sans-300">
           y-center, right
         </cdr-text>
         <cdr-img
@@ -167,7 +167,7 @@
         />
       </div>
       <div>
-        <cdr-text modifier="subheading">
+        <cdr-text class="cdr-text-dev--subheading-sans-300">
           bottom, left
         </cdr-text>
         <cdr-img
@@ -178,7 +178,7 @@
         />
       </div>
       <div>
-        <cdr-text modifier="subheading">
+        <cdr-text class="cdr-text-dev--subheading-sans-300">
           bottom, x-center
         </cdr-text>
         <cdr-img
@@ -189,7 +189,7 @@
         />
       </div>
       <div>
-        <cdr-text modifier="subheading">
+        <cdr-text class="cdr-text-dev--subheading-sans-300">
           bottom, right
         </cdr-text>
         <cdr-img

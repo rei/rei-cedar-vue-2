@@ -20,7 +20,7 @@
     <cdr-form-group>
 
       <template slot="label">
-        <cdr-text modifier="heading-sans-600">
+        <cdr-text class="cdr-text-dev--heading-sans-600">
           Optional Label Override Example
         </cdr-text>
       </template>

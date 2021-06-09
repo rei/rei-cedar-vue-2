@@ -23,7 +23,7 @@
             count="12"
             size="small"
           />
-          <cdr-text modifier="body-300">
+          <cdr-text class="cdr-text-dev--body-300">
             Card content
           </cdr-text>
         </div>
