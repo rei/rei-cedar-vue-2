@@ -96,7 +96,7 @@ describe('cdrSelect', () => {
         required: true,
       },
     });
-    expect(wrapper.vm.$refs.select.hasAttribute('required', 'required')).toBe(true);
+    expect(wrapper.find('select').attributes('aria-required')).toBe('true');
   });
 
   it('sets select autofocus attribute correctly', () => {
