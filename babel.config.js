@@ -14,13 +14,11 @@ module.exports = function (api) {
     node: 'current',
   } :
   {
-    browsers: [
-      'Chrome >= 79',
-      'Firefox >= 85',
-      'iOS >= 14',
-      'Safari >= 12',
-      'Edge >= 88',
-    ],
+    'chrome': '87',
+    'firefox': '86',
+    'ios': '14',
+    'safari': '12',
+    'edge': '89',
   };
 
   const presetEnvConfig = (env === 'prod') ?

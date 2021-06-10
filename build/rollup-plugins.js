@@ -6,7 +6,7 @@ import nodeResolve from 'rollup-plugin-node-resolve';
 import postcss from 'rollup-plugin-styles';
 import copyPlugin from 'rollup-plugin-copy';
 import vue from 'rollup-plugin-vue';
-import babel from 'rollup-plugin-babel';
+import babel from '@rollup/plugin-babel';
 import postcssImport from 'postcss-import';
 import packageJson from '../package.json';
 
@@ -106,7 +106,6 @@ const plugins = [
   }),
   babel({
     exclude: 'node_modules/**',
-    runtimeHelpers: true, // ????
   }),
   commonjs({
       extensions: ['.js', '.jsx']
