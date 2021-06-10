@@ -1,5 +1,4 @@
 import process from 'process';
-import renameExtensions from '@betit/rollup-plugin-rename-extensions';
 import plugins from './build/rollup-plugins';
 import defaults from './build/rollup-defaults';
 import packageJson from './package.json';
@@ -48,19 +47,11 @@ if (env === 'prod' && babelEnv === 'esm') {
         {
           dir: 'dist/lib',
           format: 'esm',
-          entryFileNames: '[name].js',
+          entryFileNames: '[name].mjs',
         },
       ],
       plugins: [
         ...plugins,
-        renameExtensions({
-          include: ['**/*.js', '**/*.jsx', '**/*.scss'],
-          mappings: {
-            '.js': '.mjs',
-            '.jsx': '.mjs',
-            '.scss': '.mjs',
-          },
-        }),
       ],
       external: env === 'prod' ? externalFn : undefined,
       preserveModules: true,
