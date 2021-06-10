@@ -106,6 +106,7 @@ const plugins = [
   }),
   babel({
     exclude: 'node_modules/**',
+    babelHelpers: 'bundled',
   }),
   commonjs({
       extensions: ['.js', '.jsx']
