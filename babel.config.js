@@ -15,17 +15,20 @@ module.exports = function (api) {
   } :
   {
     browsers: [
-      'Chrome >= 77',
-      'Firefox >= 70',
-      'iOS > 11',
-      'Safari >= 9',
-      'Edge >= 17'
+      'Chrome >= 79',
+      'Firefox >= 85',
+      'iOS >= 14',
+      'Safari >= 12',
+      'Edge >= 88',
     ],
   };
 
   const presetEnvConfig = (env === 'prod') ?
   {
     modules: false, // TODO: cjs settings?
+    targets, // polyfill based on supported browsers
+    corejs: 3, // use corejs@3 for polyfills
+    useBuiltIns: 'usage', // polyfill based on usage in source code.
   } :
   {
     targets
@@ -39,18 +42,7 @@ module.exports = function (api) {
     "@vue/babel-preset-jsx"
   ];
 
-  const plugins = [
-    [
-      "@babel/plugin-transform-runtime",
-      {
-        "corejs": 3,
-        "useESModules": babelEnv === 'esm',
-      }
-    ]
-  ];
-
   return {
     presets,
-    plugins,
   };
 }

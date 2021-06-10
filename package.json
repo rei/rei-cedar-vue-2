@@ -51,7 +51,6 @@
     "@babel/cli": "^7.14.3",
     "@babel/core": "^7.14.3",
     "@babel/plugin-syntax-jsx": "^7.12.13",
-    "@babel/plugin-transform-runtime": "^7.14.3",
     "@babel/preset-env": "^7.14.2",
     "@babel/register": "^7.13.16",
     "@betit/rollup-plugin-rename-extensions": "^0.1.0",
@@ -135,11 +134,11 @@
     "npm": ">= 6.0.0"
   },
   "browserslist": [
-    "Chrome >= 77",
-    "Firefox >= 70",
-    "iOS > 11",
-    "Safari >= 9",
-    "Edge >= 17"
+    "Chrome >= 79",
+    "Firefox >= 85",
+    "iOS >= 14",
+    "Safari >= 12",
+    "Edge >= 88"
   ],
   "config": {
     "commitizen": {
@@ -152,10 +151,9 @@
     }
   },
   "dependencies": {
-    "@babel/runtime": "^7.14.0",
-    "@babel/runtime-corejs3": "^7.14.0",
     "@vue/babel-helper-vue-jsx-merge-props": "^1.2.1",
     "clsx": "^1.1.1",
+    "core-js": "^3.14.0",
     "lodash-es": "^4.17.21",
     "tabbable": "^4.0.0"
   }
