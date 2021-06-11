@@ -63,12 +63,6 @@ import * as Components from 'srcdir/index';
 export default {
   name: 'Breadcrumb',
   components: { ...Components },
-  methods: {
-    handleClick(bc, e) {
-      e.preventDefault();
-      console.log(bc.item);
-    },
-  },
   data() {
     return {
       averageBreadcrumbItems: [
@@ -182,6 +176,12 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    handleClick(bc, e) {
+      e.preventDefault();
+      console.log(bc.item);
+    },
   },
 };
 </script>

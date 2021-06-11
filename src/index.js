@@ -10,6 +10,7 @@ export { default as CdrCheckbox } from './components/checkbox/CdrCheckbox';
 export { default as CdrChip } from './components/chip/CdrChip';
 export { default as CdrChipGroup } from './components/chip/CdrChipGroup';
 export { default as CdrCol } from './components/flex-grid/CdrCol';
+export { default as CdrContainer } from './components/container/CdrContainer';
 export { default as CdrFormGroup } from './components/formGroup/CdrFormGroup';
 export { default as CdrGrid } from './components/grid/CdrGrid';
 // export all single icon components
