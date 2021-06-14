@@ -29,6 +29,7 @@ const routes = [
   { path: '/cards', name: 'Cards', component: Examples.card },
   { path: '/checkboxes', name: 'CheckBoxes', component: Examples.checkbox },
   { path: '/chips', name: 'Chip', component: Examples.chip },
+  { path: '/containers', name: 'Container', component: Examples.container },
   { path: '/formGroups', name: 'Form Groups', component: Examples.formGroup },
   { path: '/form', name: 'Form Patterns', component: Examples.forms },
   { path: '/flex-grid', name: 'Grid flex', component: Examples.gridFlex },

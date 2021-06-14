@@ -6,6 +6,7 @@ import captions from 'componentsdir/caption/examples/Caption';
 import card from 'componentsdir/card/examples/Cards';
 import checkbox from 'componentsdir/checkbox/examples/checkboxes';
 import chip from 'componentsdir/chip/examples/Chip';
+import container from 'componentsdir/container/examples/Container';
 import formGroup from 'componentsdir/formGroup/examples/FormGroup';
 import grid from 'componentsdir/grid/examples/Grid';
 import icon from 'componentsdir/icon/examples/Icons';
@@ -35,6 +36,7 @@ export default {
   card,
   checkbox,
   chip,
+  container,
   formGroup,
   grid,
   icon,
