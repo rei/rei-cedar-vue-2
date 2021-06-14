@@ -13,6 +13,33 @@
     </div>
     <div>
       <cdr-text class="cdr-text-dev--subheading-sans-300">
+        Auto
+      </cdr-text>
+      <cdr-img
+        class="cdr-img-test"
+        ratio="auto"
+        crop="center"
+        alt="ratio auto"
+        src="http://placehold.it/300x100"
+      />
+    </div>
+
+    <div>
+      <cdr-text class="cdr-text-dev--subheading-sans-300">
+        Auto in Container
+      </cdr-text>
+      <div style="width: 250px; height: 350px;">
+        <cdr-img
+          class="cdr-img-test"
+          ratio="auto"
+          crop="center"
+          alt="ratio auto"
+          src="http://placehold.it/300x100"
+        />
+      </div>
+    </div>
+    <div>
+      <cdr-text class="cdr-text-dev--subheading-sans-300">
         1-2
       </cdr-text>
       <cdr-img

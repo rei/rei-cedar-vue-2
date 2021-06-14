@@ -84,22 +84,29 @@ export default {
         objectPosition: this.crop,
       };
     },
-    ratioPct() {
+    ratioObject() {
+      let ratioPct;
       if (this.ratio === 'square') {
-        return '100%';
-      }
-      if (this.ratio) {
+        ratioPct = '100%';
+      } else if (this.ratio === 'auto') {
+        ratioPct = '0';
+      } else {
         const [x, y] = this.ratio.split('-');
-        return `${(y / x) * 100}%`;
+        ratioPct = `${(y / x) * 100}%`;
       }
-      return '0%';
+      const obj = { '--ratio': ratioPct };
+      if (this.ratio === 'auto') {
+        obj.width = '100%';
+        obj.height = '100%';
+      }
+      return obj;
     },
   },
   render() {
     if (this.ratio) {
       return (
         <div
-          style={{ '--ratio': this.ratioPct }}
+          style={this.ratioObject}
           class={this.style['cdr-image-ratio']}
         >
           <img
