@@ -74,6 +74,28 @@ describe('CdrImg', () => {
     expect(spy.calledOnce).toBeTruthy();
   })
 
+
+  it('builds proper ratio object for auto ratio', () => {
+    const wrapper = shallowMount(CdrImg, {
+      propsData: {
+        src: 'localhost:8000/nothing-to-see-here.png',
+        ratio: 'auto'
+      },
+    });
+    expect(wrapper.vm.ratioObject['--ratio']).toBe('0');
+  });
+
+
+  it('builds proper ratio object for mathematical aspect ratio', () => {
+    const wrapper = shallowMount(CdrImg, {
+      propsData: {
+        src: 'localhost:8000/nothing-to-see-here.png',
+        ratio: '3-2'
+      },
+    });
+    expect(wrapper.vm.ratioObject['--ratio']).toBe('66.66666666666666%');
+  });
+
   it('emits error event for ratio image', () => {
     const spy = sinon.spy();
 

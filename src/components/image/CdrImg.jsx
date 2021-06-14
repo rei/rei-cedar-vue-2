@@ -94,12 +94,7 @@ export default {
         const [x, y] = this.ratio.split('-');
         ratioPct = `${(y / x) * 100}%`;
       }
-      const obj = { '--ratio': ratioPct };
-      if (this.ratio === 'auto') {
-        obj.width = '100%';
-        obj.height = '100%';
-      }
-      return obj;
+      return { '--ratio': ratioPct };
     },
   },
   render() {
