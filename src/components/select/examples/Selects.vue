@@ -1,11 +1,8 @@
 <template>
   <div>
-    <cdr-text
-      tag="h2"
-      modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
-    >
+    <h2>
       Selects
-    </cdr-text>
+    </h2>
     <hr class="icon-hr">
 
     <div data-backstop="select-target">
@@ -194,7 +191,7 @@
           type="button"
         >
           <icon-information-stroke inherit-color />
-          <span class="cdr-display-sr-only">Information!</span>
+          <span class="sr-only">Information!</span>
         </cdr-link>
       </template>
     </cdr-select>
@@ -217,18 +214,37 @@
     <cdr-text>Selected Value: {{ preIconModel }}</cdr-text>
     <hr class="icon-hr">
 
-    <!-- Error Example -->
+    <!-- Error Example default -->
     <cdr-select
-      label="Example with error"
+      label="Example with status error"
       v-model="preIconModel"
       :background="backgroundColor"
       :options="dynamicData"
+      aria-describedby="statusTest"
 
       prompt="Choose One"
       :error="true"
     >
       <template slot="error">
-        error message goes here
+        <span id="statusTest">error message goes here</span>
+      </template>
+    </cdr-select>
+    <hr class="icon-hr">
+
+    <!-- Error Example alert -->
+    <cdr-select
+      label="Example with Alert error"
+      v-model="preIconModel2"
+      :background="backgroundColor"
+      :options="dynamicData"
+      error-role="alert"
+      aria-describedby="alertTest"
+
+      prompt="Choose One"
+      :error="true"
+    >
+      <template slot="error">
+        <span id="alertTest">Alert error message goes here</span>
       </template>
     </cdr-select>
     <hr class="icon-hr">
@@ -246,9 +262,9 @@
     <cdr-text>Selected Value: {{ dynamic }}</cdr-text>
     <hr class="icon-hr">
 
-    <cdr-text class="cdr-my-space-two-x">
+    <h3 class="stack">
       Multiple Select with size
-    </cdr-text>
+    </h3>
 
     <cdr-select
       label="Multiple Prompt"
@@ -283,9 +299,9 @@
     <cdr-text>Selected Values: {{ multiple }}</cdr-text>
     <hr class="icon-hr">
 
-    <cdr-text class="cdr-my-space-two-x">
+    <h3 class="stack">
       Multiple Select
-    </cdr-text>
+    </h3>
 
     <cdr-select
       label="Multiple Prompt"
@@ -318,6 +334,7 @@ export default {
       infoLinkModel: '',
       infoIconModel: '',
       preIconModel: '',
+      preIconModel2: '',
       multiple: ['1', '2'],
       multiple2: ['-1'],
       multiple2Data: ['a', 'b', 'c', 'd'],

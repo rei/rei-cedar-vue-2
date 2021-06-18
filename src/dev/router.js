@@ -12,13 +12,6 @@ import FullWidthButtons from 'componentsdir/button/examples/demo/FullWidth';
 import IconButtons from 'componentsdir/button/examples/demo/Icons';
 import SecondaryButtons from 'componentsdir/button/examples/demo/Secondary';
 
-import InsetUtilities from 'componentsdir/Utilities/demos/inset';
-import PaddingSpacingUtilities from 'componentsdir/Utilities/demos/paddingSpacing';
-import MarginSpacingUtilities from 'componentsdir/Utilities/demos/marginSpacing';
-import ContainerUtilities from 'componentsdir/Utilities/demos/container';
-import AlignUtilities from 'componentsdir/Utilities/demos/align';
-import VisibilityUtilities from 'componentsdir/Utilities/demos/visibility';
-
 import AddressForm from 'componentsdir/Form/AddressForm';
 import LoginForm from 'componentsdir/Form/LoginForm';
 import PaymentForm from 'componentsdir/Form/PaymentForm';
@@ -29,13 +22,14 @@ const routes = [
   { path: '/kitchen-sink', name: 'KitchenSink', component: KitchenSink },
   { path: '/utilities', name: 'Utilities', component: Examples.utilities },
   { path: '/accordion', name: 'Accordion', component: Examples.accordion },
-  { path: '/alert', name: 'Alert', component: Examples.alert },
+  { path: '/banner', name: 'Banner', component: Examples.banner },
   { path: '/breadcrumbs', name: 'Breadcrumb', component: Examples.breadcrumb },
   { path: '/buttons', name: 'Buttons', component: Examples.buttons },
   { path: '/captions', name: 'Captions', component: Examples.captions },
   { path: '/cards', name: 'Cards', component: Examples.card },
   { path: '/checkboxes', name: 'CheckBoxes', component: Examples.checkbox },
   { path: '/chips', name: 'Chip', component: Examples.chip },
+  { path: '/containers', name: 'Container', component: Examples.container },
   { path: '/formGroups', name: 'Form Groups', component: Examples.formGroup },
   { path: '/form', name: 'Form Patterns', component: Examples.forms },
   { path: '/flex-grid', name: 'Grid flex', component: Examples.gridFlex },
@@ -62,13 +56,6 @@ const routes = [
   { path: '/secondary-buttons', component: SecondaryButtons },
   { path: '/full-width-buttons', component: FullWidthButtons },
   { path: '/icon-buttons', component: IconButtons },
-  { path: '/padding-spacing-utilities', component: PaddingSpacingUtilities },
-  { path: '/margin-spacing-utilities', component: MarginSpacingUtilities },
-  { path: '/inset-utilities', component: InsetUtilities },
-  { path: '/container-utilities', component: ContainerUtilities },
-  { path: '/align-utilities', component: AlignUtilities },
-  { path: '/visibility-utilities', component: VisibilityUtilities },
-
   // form examples
   { path: '/address-form', component: AddressForm },
   { path: '/login-form', component: LoginForm },

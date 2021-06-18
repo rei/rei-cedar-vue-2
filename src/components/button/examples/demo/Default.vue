@@ -1,17 +1,14 @@
 <template>
   <div data-backstop="buttons">
     <div
-      class="cdr-space-inset-one-x"
+      class="inset"
       v-for="(section, index) in data"
       :key="index"
       :data-backstop="section.backstop ? section.backstop : null"
     >
-      <cdr-text
-        tag="h3"
-        modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
-      >
+      <h3>
         {{ section.title }}
-      </cdr-text>
+      </h3>
       <cdr-text v-if="index === 0">
         Clicks: {{ clickCount }}
       </cdr-text>
@@ -29,15 +26,12 @@
       </cdr-button>
     </div>
     <div
-      class="cdr-space-inset-one-x"
+      class="inset"
       data-backstop="cdr-button--anchor"
     >
-      <cdr-text
-        tag="h3"
-        modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
-      >
+      <h3>
         Primary Anchor
-      </cdr-text>
+      </h3>
       <cdr-button
         tag="a"
         href="https://rei.com"
@@ -55,14 +49,11 @@
       </cdr-button>
     </div>
     <div
-      class="cdr-space-inset-one-x"
+      class="inset"
     >
-      <cdr-text
-        tag="h3"
-        modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
-      >
+      <h3>
         Primary Responsive
-      </cdr-text>
+      </h3>
       <cdr-button
         size="large large@xs medium@sm small@lg"
       >
@@ -92,21 +83,18 @@ export default {
               label: 'Large',
               disabled: false,
               size: 'large',
-              space: 'cdr-mr-space-one-x',
               fullWidth: false,
             },
             {
               label: 'Medium',
               disabled: false,
               size: 'medium',
-              space: 'cdr-mr-space-one-x',
               fullWidth: false,
             },
             {
               label: 'Small',
               disabled: false,
               size: 'small',
-              space: '',
               fullWidth: false,
             },
           ],
@@ -119,21 +107,18 @@ export default {
               label: 'Large',
               disabled: true,
               size: 'large',
-              space: 'cdr-mr-space-one-x',
               fullWidth: false,
             },
             {
               label: 'Medium',
               disabled: true,
               size: 'medium',
-              space: 'cdr-mr-space-one-x',
               fullWidth: false,
             },
             {
               label: 'Small',
               disabled: true,
               size: 'small',
-              space: '',
               fullWidth: false,
             },
           ],

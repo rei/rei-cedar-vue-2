@@ -9,24 +9,21 @@
             modifier="responsive"
           />
         </div>
-        <div class="cdr-space-inset-one-x">
+        <div class="inset">
           <cdr-link
             class="cdr-card__link"
             href="#foo"
           >
-            <cdr-text
-              tag="h2"
-              modifier="heading-serif-500"
-            >
+            <h2>
               Complex Card Title
-            </cdr-text>
+            </h2>
           </cdr-link>
           <cdr-rating
             rating="4.2"
             count="12"
             size="small"
           />
-          <cdr-text modifier="body-300">
+          <cdr-text class="cdr-text-dev--body-300">
             Card content
           </cdr-text>
         </div>

@@ -107,18 +107,26 @@ exports[`CdrPagination renders button pagination correctly 1`] = `
     <li
       class="cdr-pagination__li--select"
     >
-      <div>
+      <div
+        class="cdr-label-standalone"
+      >
         <div
-          class="cdr-label-standalone"
-        />
+          class="cdr-label-standalone__label-wrapper"
+        >
+          <label
+            class="cdr-label-standalone__label cdr-label-standalone__label--sr-only"
+            for="select-test1"
+          >
+            Navigate to page
+          </label>
+        </div>
         <div
-          class="cdr-select-outer-wrap"
+          class="cdr-label-standalone__input-wrap"
         >
           <div
             class="cdr-select-wrap"
           >
             <select
-              aria-label="Navigate to page"
               class="cdr-select cdr-select--primary"
               id="select-test1"
             >
@@ -166,6 +174,9 @@ exports[`CdrPagination renders button pagination correctly 1`] = `
             </svg>
           </div>
         </div>
+        <div
+          class="cdr-label-standalone__post-content"
+        />
       </div>
     </li>
     <li>
@@ -305,18 +316,26 @@ exports[`CdrPagination renders correctly 1`] = `
     <li
       class="cdr-pagination__li--select"
     >
-      <div>
+      <div
+        class="cdr-label-standalone"
+      >
         <div
-          class="cdr-label-standalone"
-        />
+          class="cdr-label-standalone__label-wrapper"
+        >
+          <label
+            class="cdr-label-standalone__label cdr-label-standalone__label--sr-only"
+            for="select-test1"
+          >
+            Navigate to page
+          </label>
+        </div>
         <div
-          class="cdr-select-outer-wrap"
+          class="cdr-label-standalone__input-wrap"
         >
           <div
             class="cdr-select-wrap"
           >
             <select
-              aria-label="Navigate to page"
               class="cdr-select cdr-select--primary"
               id="select-test1"
             >
@@ -364,6 +383,9 @@ exports[`CdrPagination renders correctly 1`] = `
             </svg>
           </div>
         </div>
+        <div
+          class="cdr-label-standalone__post-content"
+        />
       </div>
     </li>
     <li>
@@ -497,18 +519,26 @@ exports[`CdrPagination renders scoped slot correctly 1`] = `
     <li
       class="cdr-pagination__li--select"
     >
-      <div>
+      <div
+        class="cdr-label-standalone"
+      >
         <div
-          class="cdr-label-standalone"
-        />
+          class="cdr-label-standalone__label-wrapper"
+        >
+          <label
+            class="cdr-label-standalone__label cdr-label-standalone__label--sr-only"
+            for="select-test2"
+          >
+            Navigate to page
+          </label>
+        </div>
         <div
-          class="cdr-select-outer-wrap"
+          class="cdr-label-standalone__input-wrap"
         >
           <div
             class="cdr-select-wrap"
           >
             <select
-              aria-label="Navigate to page"
               class="cdr-select cdr-select--primary"
               id="select-test2"
             >
@@ -556,6 +586,9 @@ exports[`CdrPagination renders scoped slot correctly 1`] = `
             </svg>
           </div>
         </div>
+        <div
+          class="cdr-label-standalone__post-content"
+        />
       </div>
     </li>
     <li>

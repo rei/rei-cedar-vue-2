@@ -12,14 +12,25 @@ describe('cdrSelect', () => {
     expect(wrapper.element).toMatchSnapshot();
   });
 
-  it('hide-label sets aria-label correctly', () => {
-    const wrapper = shallowMount(CdrSelect, {
+  it('renders error state correctly', () => {
+    const wrapper = mount(CdrSelect, {
+      propsData: {
+        label: 'Label Test',
+        id: 'renders',
+        error: 'What happened?'
+      },
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it('hide-label applies sr-only to label element', () => {
+    const wrapper = mount(CdrSelect, {
       propsData: {
         label: 'test',
         hideLabel: true,
       },
     });
-    expect(wrapper.vm.$refs.select.hasAttribute('aria-label', 'test')).toBe(true);
+    expect(wrapper.find('label').classes()).toContain('cdr-label-standalone__label--sr-only');
   });
 
   it('renders a prompt', () => {
@@ -85,7 +96,7 @@ describe('cdrSelect', () => {
         required: true,
       },
     });
-    expect(wrapper.vm.$refs.select.hasAttribute('required', 'required')).toBe(true);
+    expect(wrapper.find('select').attributes('aria-required')).toBe('true');
   });
 
   it('sets select autofocus attribute correctly', () => {
@@ -174,7 +185,7 @@ describe('cdrSelect', () => {
   });
 
   it('renders info action slot', () => {
-    const wrapper = shallowMount(CdrSelect, {
+    const wrapper = mount(CdrSelect, {
       propsData: {
         label: 'test',
         id: 'info-action'
@@ -183,7 +194,7 @@ describe('cdrSelect', () => {
         'info-action': '🤠',
       },
     });
-    expect(wrapper.find('.cdr-select__info-action').text()).toBe('🤠');
+    expect(wrapper.find('.cdr-label-standalone__info-action').text()).toBe('🤠');
   });
 
   it('renders helper-text slot', () => {
@@ -258,5 +269,44 @@ describe('cdrSelect', () => {
       },
     });
     expect(wrapper.find('.cdr-form-error').exists()).toBe(false);
+  });
+
+  it('helper text slots are linked to select via aria-describedby', () => {
+    const wrapper = mount(CdrSelect, {
+      propsData: {
+        label: 'test',
+        id: 'aria-test',
+      },
+      slots: {
+        'helper-text': 'extremely helpful'
+      },
+    });
+    expect(wrapper.find('select').attributes('aria-describedby')).toBe('aria-test-helper-text-top');
+  });
+
+  it('dynamic aria-describedby is merged with native attr', () => {
+    const wrapper = mount(CdrSelect, {
+      propsData: {
+        label: 'test',
+        id: 'aria-test',
+      },
+      attrs: {
+        'aria-describedby': 'foo',
+      },
+      slots: {
+        'helper-text': 'extremely helpful'
+      },
+    });
+    expect(wrapper.find('select').attributes('aria-describedby')).toBe('aria-test-helper-text-top foo');
+  });
+
+  it('does not apply aria-describedby if attr or helper slots are not present', () => {
+    const wrapper = mount(CdrSelect, {
+      propsData: {
+        label: 'test',
+        id: 'aria-test',
+      },
+    });
+    expect(wrapper.vm.$refs.select.hasAttribute('aria-describedby')).toBe(false);
   });
 });

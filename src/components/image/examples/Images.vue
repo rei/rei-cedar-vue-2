@@ -1,18 +1,12 @@
 <template>
   <div>
-    <cdr-text
-      tag="h2"
-      modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
-    >
+    <h2>
       Images
-    </cdr-text>
+    </h2>
     <div data-backstop="image-aspect-ratio">
-      <cdr-text
-        tag="h3"
-        modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
-      >
+      <h3>
         Aspect Ratios (with landscape images)
-      </cdr-text>
+      </h3>
 
       <ratios />
     </div>
@@ -26,12 +20,9 @@
     </div>
 
     <div data-backstop="image-error">
-      <cdr-text
-        tag="h3"
-        modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
-      >
+      <h3>
         Image With Error
-      </cdr-text>
+      </h3>
       <cdr-img
         src="localhost:8000/not-here.png"
         @error="handleError"
@@ -41,12 +32,9 @@
     </div>
 
     <div data-backstop="image-standard">
-      <cdr-text
-        tag="h3"
-        modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
-      >
+      <h3>
         Standard image
-      </cdr-text>
+      </h3>
       <cdr-img
         alt="ratio standard"
         src="http://placehold.it/200x200"

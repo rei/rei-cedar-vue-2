@@ -4,19 +4,13 @@
     class="link-examples"
     data-backstop="all-links"
   >
-    <cdr-text
-      tag="h2"
-      modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
-    >
+    <h2>
       Links
-    </cdr-text>
+    </h2>
 
-    <cdr-text
-      tag="h3"
-      modifier="subheading-sans-300"
-    >
+    <h3>
       Default Link, No props
-    </cdr-text>
+    </h3>
     <div class="anchor-example">
       <cdr-link
         href="#baz"
@@ -32,29 +26,20 @@
       />
     </div>
 
-    <cdr-text
-      tag="h3"
-      modifier="subheading-sans-300"
-    >Link, href set, spacing class applied</cdr-text>
+    <h3>Link, href set, spacing class applied</h3>
     <cdr-link
       href="https://www.rei.com/"
     >
       REI.com
     </cdr-link>
 
-    <cdr-text
-      tag="h3"
-      modifier="subheading-sans-300"
-    >Link, href set</cdr-text>
+    <h3>Link, href set</h3>
     <cdr-link
       href="https://www.example.com/"
     >
       example.com
     </cdr-link>
-    <cdr-text
-      tag="h3"
-      modifier="subheading-sans-300"
-    >Standalone Link (No underline)</cdr-text>
+    <h3>Standalone Link (No underline)</h3>
     <cdr-link
       modifier="standalone"
       href="#bar"
@@ -63,10 +48,7 @@
       REI.com
     </cdr-link>
 
-    <cdr-text
-      tag="h3"
-      modifier="subheading-sans-300"
-    >Links, with icon</cdr-text>
+    <h3>Links, with icon</h3>
 
     <cdr-list>
       <li>
@@ -106,10 +88,7 @@
       </li>
     </cdr-list>
 
-    <cdr-text
-      tag="h3"
-      modifier="subheading-sans-300"
-    >Links, with inherited color</cdr-text>
+    <h3>Links, with inherited color</h3>
     <div style="color: darkgreen; fill: darkgreen;">
       <cdr-link
         inherit-color
@@ -131,16 +110,10 @@
       </cdr-link>
     </div>
     <br><br>
-    <cdr-text
-      tag="h3"
-      modifier="subheading-sans-500"
-    >Button Links</cdr-text>
+    <h3>Button Links</h3>
 
-    <cdr-text
-      tag="h4"
-      modifier="subheading-sans-300"
-    >Link using a &lt;button&gt; element inline</cdr-text>
-    <div class="anchor-example cdr-py-space-one-x">
+    <h4>Link using a &lt;button&gt; element inline</h4>
+    <div class="anchor-example stack">
       hey there <cdr-link
         tag="button"
         data-backstop="cdr-link--button"

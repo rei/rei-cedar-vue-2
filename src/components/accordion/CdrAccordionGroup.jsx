@@ -7,6 +7,11 @@ import style from './styles/CdrAccordionGroup.scss';
 export default {
   name: 'CdrAccordionGroup',
   mixins: [breakpoints],
+  provide() {
+    return {
+      unwrap: this.isUnwrapped,
+    };
+  },
   props: {
     unwrap: {
       type: [String, Boolean],
@@ -31,11 +36,6 @@ export default {
       isUnwrapped: {
         value: this.unwrap,
       },
-    };
-  },
-  provide() {
-    return {
-      unwrap: this.isUnwrapped,
     };
   },
   computed: {

@@ -24,12 +24,17 @@ export default {
       type: String,
       required: true,
     },
+    role: {
+      type: String,
+      required: false,
+      default: 'dialog',
+    },
     showTitle: {
       type: Boolean,
       required: false,
       default: true,
     },
-    ariaDescribedbBy: {
+    ariaDescribedby: {
       type: String,
       required: false,
       default: null,
@@ -58,7 +63,6 @@ export default {
       offset: null,
       headerHeight: 0,
       totalHeight: 0,
-      scrollHeight: 0,
       isScrolling: false,
       hasScrollbar: false,
       fullscreen: false,
@@ -67,7 +71,7 @@ export default {
   computed: {
     dialogAttrs() {
       return {
-        'aria-describedby': this.ariaDescribedBy,
+        'aria-describedby': this.ariaDescribedby,
         'aria-modal': 'true',
         id: this.id,
       };
@@ -284,7 +288,7 @@ export default {
             ref="modal"
             class={clsx(this.style['cdr-modal__contentWrap'], this.style['cdr-modal__dialog'])}
             tabIndex="-1"
-            role="dialog"
+            role={this.role}
             aria-modal={!!opened}
             aria-label={label}
             {...{ attrs: this.dialogAttrs }}

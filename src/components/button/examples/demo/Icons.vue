@@ -1,15 +1,12 @@
 <template>
   <div data-backstop="buttons">
     <div
-      class="button-example cdr-space-inset-one-x"
+      class="button-example inset"
       data-backstop="cdr-button--icon"
     >
-      <cdr-text
-        tag="h3"
-        modifier="heading-sans-400"
-      >
+      <h3>
         CdrButton + CdrIcon Comps
-      </cdr-text>
+      </h3>
       <cdr-button
         size="large"
       >
@@ -134,13 +131,10 @@
         Large and right Icon
       </cdr-button>
     </div>
-    <div class="button-example cdr-space-inset-one-x">
-      <cdr-text
-        tag="h3"
-        modifier="heading-sans-400"
-      >
+    <div class="button-example inset">
+      <h3>
         Using a sprite
-      </cdr-text>
+      </h3>
       <cdr-button
         size="large"
 
@@ -190,7 +184,7 @@
         Instagram
       </cdr-button>
     </div>
-    <div class="button-example cdr-space-inset-one-x">
+    <div class="button-example inset">
       <cdr-button
         size="large large@xs medium@sm small@lg"
       >
@@ -213,11 +207,10 @@
         />
       </cdr-button>
     </div>
-    <div class="button-example cdr-space-inset-one-x">
+    <div class="button-example inset">
       <cdr-button
         size="large"
         :full-width="true"
-        class="cdr-mb-space-one-x"
       >
         <cdr-icon
           use="#clock"
@@ -227,6 +220,7 @@
         Full Width Icon Left
       </cdr-button>
       <cdr-button
+        class="stack"
         size="large"
         :full-width="true"
       >
@@ -238,7 +232,7 @@
         Full Width Icon Right
       </cdr-button>
     </div>
-    <div class="button-example cdr-space-inset-one-x">
+    <div class="button-example inset">
       <div
         class="button-text-wrap"
         style="max-width: 300px;"
@@ -246,7 +240,6 @@
         <cdr-button
           size="medium"
           modifier="secondary"
-          class="cdr-mb-space-one-x"
         >
           <cdr-icon
             inherit-color
@@ -260,6 +253,7 @@
         <cdr-button
           size="medium"
           modifier="secondary"
+          class="stack"
         >
           <cdr-icon
             inherit-color
@@ -271,13 +265,10 @@
         </cdr-button>
       </div>
     </div>
-    <div class="button-example cdr-space-inset-one-x">
-      <cdr-text
-        tag="h3"
-        modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
-      >
+    <div class="button-example inset">
+      <h3>
         Icon only button
-      </cdr-text>
+      </h3>
       <cdr-button
         :icon-only="true"
         :full-width="true"
@@ -335,7 +326,7 @@
         />
       </cdr-button>
     </div>
-    <div class="button-example cdr-space-inset-one-x dark">
+    <div class="button-example inset dark">
       <cdr-button
         :icon-only="true"
         :with-background="true"

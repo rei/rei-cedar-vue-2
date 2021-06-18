@@ -10,6 +10,8 @@ export default {
     CdrFormError,
   },
   props: {
+
+    id: String,
     label: {
       type: String,
       default: '',
@@ -19,6 +21,14 @@ export default {
     error: {
       type: [Boolean, String],
       default: false,
+    },
+    /**
+    * Override the error message role, default is `status`.
+    */
+    errorRole: {
+      type: String,
+      required: false,
+      default: 'status',
     },
     required: Boolean,
     optional: Boolean,
@@ -38,6 +48,9 @@ export default {
     },
     disabledClass() {
       return this.disabled ? this.style['cdr-form-group--disabled'] : '';
+    },
+    groupId() {
+      return this.id ? this.id : this._uid; // eslint-disable-line no-underscore-dangle
     },
   },
   render() {
@@ -59,6 +72,8 @@ export default {
       <fieldset
         class={clsx(this.style[this.baseClass], this.disabledClass)}
         disabled={this.disabled}
+        aria-invalid={!!this.error}
+        aria-errormessage={!!this.error && `${this.groupId}-error`}
       >
         <legend>
           {this.$slots.label || this.label}
@@ -69,7 +84,7 @@ export default {
           {this.$slots.default}
         </div>
         {this.error && (
-          <cdr-form-error error={this.error}>
+          <cdr-form-error role={this.errorRole} error={this.error} id={`${this.groupId}-error`}>
             <template slot="error">
               {this.$slots.error}
             </template>

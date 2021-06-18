@@ -1,12 +1,9 @@
 <template>
   <div>
 
-    <cdr-text
-      tag="h3"
-      modifier="heading-serif-600 heading-serif-700@md heading-serif-700@lg"
-    >
+    <h3>
       Bare list
-    </cdr-text>
+    </h3>
 
     <cdr-list>
       <li>List item text</li>
@@ -19,16 +16,13 @@
       <li>List item text</li>
     </cdr-list>
 
-    <cdr-text
-      tag="h4"
-      modifier="eyebrow-100"
-    >
+    <h4>
       Typography validation - text wrapping list
-    </cdr-text>
+    </h4>
 
     <cdr-text
       tag="h4"
-      modifier="body--400"
+      class="cdr-text-dev--body-400"
     >
       <cdr-list>
         <li>List item text</li>
@@ -42,12 +36,9 @@
       </cdr-list>
     </cdr-text>
 
-    <cdr-text
-      tag="h4"
-      modifier="heading-serif-600 heading-serif-700@md heading-serif-700@lg"
-    >
+    <h4>
       Compact bare list
-    </cdr-text>
+    </h4>
 
     <cdr-list
       modifier="compact"
@@ -62,12 +53,9 @@
       <li>List item text</li>
     </cdr-list>
 
-    <cdr-text
-      tag="h4"
-      modifier="heading-serif-600 heading-serif-700@md heading-serif-700@lg"
-    >
+    <h4>
       Inline bare list
-    </cdr-text>
+    </h4>
 
     <cdr-list
       modifier="inline"
@@ -77,12 +65,9 @@
       <li>List item text</li>
     </cdr-list>
 
-    <cdr-text
-      tag="h4"
-      modifier="heading-serif-600 heading-serif-700@md heading-serif-700@lg"
-    >
+    <h4>
       Inline compact bare list
-    </cdr-text>
+    </h4>
 
     <cdr-list
       modifier="inline compact"

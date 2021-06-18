@@ -1,18 +1,12 @@
 <template>
   <div class="accordion-container">
-    <cdr-text
-      tag="h2"
-      modifier="heading-serif-600 heading-serif-700@md heading-serif-700@lg"
-    >
+    <h2>
       Accordion
-    </cdr-text>
+    </h2>
 
-    <cdr-text
-      tag="h3"
-      modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
-    >
+    <h3>
       Default Standalone
-    </cdr-text>
+    </h3>
     <cdr-accordion
       id="default-standalone"
       level="3"
@@ -23,12 +17,12 @@
         A short label
       </template>
       <cdr-text
-        modifier="body-300"
+        class="cdr-text-dev--body-300"
       >
         This is some text. It's in a
         <cdr-text
           tag="strong"
-          modifier="body-strong-300"
+          class="cdr-text-dev--body-strong-300"
         >cdr-text paragraph with a modifier of <code>body-300</code></cdr-text> element as
         thats how you assign the correct font and line-height for text dislpay on REI.
         does not include margin or add space to the container. Lorem ipsum dolor
@@ -45,12 +39,9 @@
     </cdr-accordion>
 
     <div class="accordion-group">
-      <cdr-text
-        tag="h3"
-        modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
-      >
+      <h3>
         Default
-      </cdr-text>
+      </h3>
       <cdr-accordion-group data-backstop="accordion-default">
         <cdr-accordion
           id="default"
@@ -62,12 +53,12 @@
             A short label
           </template>
           <cdr-text
-            modifier="body-300"
+            class="cdr-text-dev--body-300"
           >
             This is some text. It's in a
             <cdr-text
               tag="strong"
-              modifier="body-strong-300"
+              class="cdr-text-dev--body-strong-300"
             >cdr-text paragraph with a modifier of <code>body-300</code></cdr-text> element as
             thats how you assign the correct font and line-height for text dislpay on REI.
             does not include margin or add space to the container. Lorem ipsum dolor
@@ -105,12 +96,9 @@
     </div>
 
     <div class="accordion-group">
-      <cdr-text
-        tag="h3"
-        modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
-      >
+      <h3>
         Border-Aligned and data driven
-      </cdr-text>
+      </h3>
       <cdr-accordion-group data-backstop="accordion-border-aligned">
         <cdr-accordion
           v-for="(item, index) in grouped"
@@ -130,12 +118,9 @@
     </div>
 
     <div class="accordion-group">
-      <cdr-text
-        tag="h3"
-        modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
-      >
+      <h3>
         Compact
-      </cdr-text>
+      </h3>
       <cdr-accordion-group data-backstop="accordion-compact">
         <cdr-accordion
           id="compact"
@@ -192,12 +177,9 @@
       </cdr-accordion-group>
     </div>
 
-    <cdr-text
-      tag="h3"
-      modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
-    >
+    <h3>
       Unwrapped Standalone
-    </cdr-text>
+    </h3>
 
     <cdr-accordion-group unwrap="@md @lg">
       <cdr-accordion
@@ -210,12 +192,12 @@
           A short label
         </template>
         <cdr-text
-          modifier="body-300"
+          class="cdr-text-dev--body-300"
         >
           This is some text. It's in a
           <cdr-text
             tag="strong"
-            modifier="body-strong-300"
+            class="cdr-text-dev--body-strong-300"
           >cdr-text paragraph with a modifier of <code>body-300</code></cdr-text> element as
           thats how you assign the correct font and line-height for text dislpay on REI.
           does not include margin or add space to the container. Lorem ipsum dolor

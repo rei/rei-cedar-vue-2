@@ -1,44 +1,32 @@
 <template>
   <!-- eslint-disable max-len -->
   <div data-backstop="caption">
-    <cdr-text
-      tag="h2"
-      modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
-    >
+    <h2>
       Caption
-    </cdr-text>
+    </h2>
 
     <cdr-caption
       summary="Lorem ipsum dolor sit amet consectetur adipisicing elit. At perferendis reiciendis sapiente delectus commodi eaque sunt aperiam ex aliquam. Temporibus, veritatis laudantium molestiae accusamus asperiores odio fuga reiciendis blanditiis magni?"
       credit="Lorem ipsum dolor sit"
     />
 
-    <cdr-text
-      tag="h3"
-      modifier="subheading-sans-300"
-    >
+    <h3>
       Summary only
-    </cdr-text>
+    </h3>
     <cdr-caption
       summary="Lorem ipsum dolor sit amet consectetur adipisicing elit. At perferendis reiciendis sapiente delectus commodi eaque sunt aperiam ex aliquam. Temporibus, veritatis laudantium molestiae accusamus asperiores odio fuga reiciendis blanditiis magni?"
     />
 
-    <cdr-text
-      tag="h3"
-      modifier="subheading-sans-300"
-    >
+    <h3>
       Caption only
-    </cdr-text>
+    </h3>
     <cdr-caption
       credit="Lorem ipsum dolor sit"
     />
 
-    <cdr-text
-      tag="h3"
-      modifier="subheading-sans-300"
-    >
+    <h3>
       In a figure
-    </cdr-text>
+    </h3>
     <figure class="caption-example__figure">
       <figcaption>
         <cdr-caption

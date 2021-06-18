@@ -3,7 +3,7 @@ import process from 'process';
 import commonjs from 'rollup-plugin-commonjs';
 import alias from '@rollup/plugin-alias';
 import nodeResolve from 'rollup-plugin-node-resolve';
-import postcss from 'rollup-plugin-postcss';
+import postcss from 'rollup-plugin-styles';
 import copyPlugin from 'rollup-plugin-copy';
 import vue from 'rollup-plugin-vue';
 import babel from 'rollup-plugin-babel';
@@ -20,11 +20,11 @@ function generateScopedName(name, filename, css) {
   // don't scope anything in the `css/main.scss` (reset, utils, type, etc.)
   if (filename.match(/main\.scss/) || env === 'test') return name;
   // scope classes for components
-  return `${name}_${packageJson.version}`;
+  return `${name}_${packageJson.version.replace(/\./g, '-')}`;
 }
 
 // plugin configs
-let postcssExtract = false;
+let postcssMode = 'inject';
 let copyOutput = 'public';
 const copyTargets = [
   { src: 'static/star-null.svg', dest: 'dist/svg' },
@@ -38,7 +38,7 @@ const copyTargets = [
 
 // prod only options
 if (env === 'prod') {
-  postcssExtract = 'dist/cedar-compiled.css';
+  postcssMode = ['extract', './cedar-compiled.css'];
   copyOutput = 'dist';
 }
 
@@ -97,7 +97,7 @@ const plugins = [
         return resolve('build/noop.css');
       },
     })],
-    extract: postcssExtract,
+    mode: postcssMode,
     extensions: ['.scss', '.css'],
     sourceMap: env === 'dev' ? 'inline' : false,
     modules: {

@@ -1,11 +1,8 @@
 <template>
   <div>
-    <cdr-text
-      tag="h2"
-      modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
-    >
+    <h2>
       Text Inputs
-    </cdr-text>
+    </h2>
     <div data-backstop="input-target">
       <cdr-input
         class="demo-input"
@@ -36,7 +33,6 @@
       v-model="hiddenModel"
       label="This has no label"
       hide-label
-      placeholder="hidden-label"
       :background="backgroundColor"
     />
 
@@ -44,7 +40,6 @@
       class="demo-input"
       v-model="disabledModel"
       label="Disabled Input"
-      placeholder="I am disabled"
       data-backstop="input-disabled"
       disabled
       :background="backgroundColor"
@@ -54,7 +49,6 @@
       class="demo-input"
       v-model="sizeModel"
       label="Large Input"
-      placeholder="Large Input"
       size="large"
       :background="backgroundColor"
     />
@@ -62,7 +56,6 @@
       class="demo-input"
       v-model="sizeModel"
       label="Large@xs Input"
-      placeholder="Large@xs Input"
       size="large@xs"
       :background="backgroundColor"
     />
@@ -70,7 +63,6 @@
       class="demo-input"
       v-model="sizeModel"
       label="Large@sm Input"
-      placeholder="Large@sm Input"
       size="large@sm"
       :background="backgroundColor"
     />
@@ -78,7 +70,6 @@
       class="demo-input"
       v-model="sizeModel"
       label="Large@md Input"
-      placeholder="Large@md Input"
       size="large@md"
       :background="backgroundColor"
     />
@@ -86,7 +77,6 @@
       class="demo-input"
       v-model="sizeModel"
       label="Large@lg Input"
-      placeholder="Large@lg Input"
       size="large@lg"
       :background="backgroundColor"
     />
@@ -95,7 +85,6 @@
       class="demo-input"
       v-model="requiredWithIcons"
       id="required-with-icon"
-      placeholder="Required with Icon"
       label="Required with Icon"
       required
       type="email"
@@ -107,7 +96,7 @@
           type="button"
         >
           <icon-information-stroke inherit-color />
-          <span class="cdr-display-sr-only">Information!</span>
+          <span class="sr-only">Information!</span>
         </cdr-link>
       </template>
       <template slot="pre-icon">
@@ -130,7 +119,6 @@
         class="demo-input"
         v-model="formWithButtons"
         id="form-example"
-        placeholder="For testing icon/button placement with autofill"
         label="Form with Two Buttons"
         required
         type="email"
@@ -171,21 +159,19 @@
     <cdr-input
       class="demo-input"
       v-model="helperValidationModel"
-      placeholder=""
       :error="helperValidationError"
       @blur="validate"
-      label="Top helper with validation"
+      label="Top helper with status validation"
       :background="backgroundColor"
     >
       <template slot="helper-text-top">
-        Must be 4 or less characters
+        <span id="myHelpText">Must be 4 or less characters</span>
       </template>
 
       <template
         slot="error"
-        v-if="helperValidationError"
       >
-        ERROR ERROR
+        <span id="errorMessage">you have added too many characters, remove some</span>
       </template>
 
       <template slot="info">
@@ -203,16 +189,18 @@
       :required="true"
       v-model="megaModel"
       :error="megaErr"
-      label="Everything at the same time"
+      error-role="alert"
+      id="inputWithError"
+      label="Everything at the same time, alert validation"
       @blur="megaErr = false"
       size="large"
     >
       <icon-map slot="pre-icon" />
       <template slot="helper-text-top">
-        Hey im on top of the input!
+        <span id="topHelp">Hey im on top of the input!</span>
       </template>
       <template slot="helper-text-bottom">
-        Hey im below the input!
+        <span id="bottomHelp">Hey im below the input!</span>
       </template>
       <template slot="info">
         <cdr-link
@@ -227,7 +215,7 @@
           tag="button"
           type="button"
         >
-          <span class="cdr-display-sr-only">I trigger some sort of action!</span>
+          <span class="sr-only">I trigger some sort of action!</span>
           <icon-check-stroke inherit-color />
         </cdr-link>
       </template>
@@ -239,7 +227,7 @@
           <cdr-button
             slot="trigger"
             :icon-only="true"
-            @click="megaErr = 'An error has occurred please fix it'"
+            @click="megaErr = 'you have five minutes to fix this'"
             size="large"
             aria-label="Click me to cause an error"
           >
@@ -268,7 +256,6 @@
       class="demo-input "
       v-model="multiRowModel"
       :rows="10"
-      placeholder="Multi Line Input/TextArea"
       label="Multi Line Input/TextArea"
       :background="backgroundColor"
     />
@@ -276,7 +263,6 @@
       class="demo-input "
       v-model="masterModel"
       @input="onMasterInput"
-      placeholder="What would you like to set all input values to?"
       label="Master input that overwrites all other inputs on this page"
       :background="backgroundColor"
     />
@@ -337,7 +323,7 @@ export default {
       hiddenModel: '',
       disabledModel: '',
       helperValidationModel: '',
-      helperValidationError: false,
+      helperValidationError: true,
       requiredWithIcons: '',
       multiRowModel: '',
       sizeModel: '',

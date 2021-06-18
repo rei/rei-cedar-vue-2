@@ -3,51 +3,44 @@
     class="breadcrumb-demo-container"
     data-backstop="breadcrumbs"
   >
-    <cdr-text
-      tag="h2"
-      modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
-    >
+    <h2>
       Breadcrumb
-    </cdr-text>
+    </h2>
     <cdr-breadcrumb
       :items="averageBreadcrumbItems"
       data-backstop="breadcrumbs-ellipsis"
     />
-    <cdr-text
-      tag="h3"
-      modifier="subheading"
-    >
+    <h3>
       Two-Item Breadcrumb
-    </cdr-text>
+    </h3>
     <cdr-breadcrumb
       :items="shortBreadcrumbItems"
       data-backstop="breadcrumbs-default"
     />
-    <cdr-text
-      tag="h3"
-      modifier="subheading"
-    >
+    <h3>
       Three-Item Breadcrumb
-    </cdr-text>
+    </h3>
     <cdr-breadcrumb
       :items="superLongBreadcrumbItems"
     />
-    <cdr-text
-      tag="h3"
-      modifier="subheading"
-    >
+    <h3>
       REI.com's Longest Breadcrumb
-    </cdr-text>
+    </h3>
     <cdr-breadcrumb
       :items="reiExampleBreadcrumbItems"
     />
 
-    <cdr-text
-      tag="h3"
-      modifier="subheading"
-    >
+    <h3>
+      Breadcrumb handle navigate events
+    </h3>
+    <cdr-breadcrumb
+      :items="shortBreadcrumbItems"
+      data-backstop="breadcrumbs-default"
+      @navigate="handleClick"
+    />
+    <h3>
       Scoped Slot
-    </cdr-text>
+    </h3>
     <cdr-breadcrumb :items="reiExampleBreadcrumbItems">
       <template
         slot="link"
@@ -183,6 +176,12 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    handleClick(bc, e) {
+      e.preventDefault();
+      console.log(bc.item);
+    },
   },
 };
 </script>

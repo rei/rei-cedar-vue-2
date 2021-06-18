@@ -1,25 +1,17 @@
 <template>
   <!-- eslint-disable max-len -->
   <div>
-    <cdr-text
-      tag="h2"
-      modifier="heading-serif-600 heading-serif-700@md heading-serif-700@lg"
-      class="cdr-align-text-center"
-    >
+    <h2>
       Tabs
-    </cdr-text>
+    </h2>
 
     <tabs-default :background-color="backgroundColor" />
 
     <!-- small -->
     <div class="tab-demo-secton">
-      <cdr-text
-        tag="h3"
-        modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
-        class="cdr-align-text-center"
-      >
+      <h3>
         Small Tabs
-      </cdr-text>
+      </h3>
       <cdr-tabs
         height="100px"
         size="small"
@@ -33,7 +25,7 @@
           :aria-labelledby="'tab-small-' + tab"
         >
           <cdr-text
-            modifier="body-300"
+            class="cdr-text-dev--body-300"
           >
             Tab {{ tab }} content
           </cdr-text>
@@ -43,13 +35,9 @@
 
     <!-- full-width -->
     <div class="tab-demo-secton">
-      <cdr-text
-        tag="h3"
-        modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
-        class="cdr-align-text-center"
-      >
+      <h3>
         Full-Width Tabs
-      </cdr-text>
+      </h3>
       <cdr-tabs
         height="100px"
         modifier="full-width"
@@ -63,7 +51,7 @@
           :aria-labelledby="'tab-full-width-' + tab"
         >
           <cdr-text
-            modifier="body-300"
+            class="cdr-text-dev--body-300"
           >
             Tab {{ tab }} content
           </cdr-text>
@@ -73,13 +61,9 @@
 
     <!-- No-border -->
     <div class="tab-demo-secton">
-      <cdr-text
-        tag="h3"
-        modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
-        class="cdr-align-text-center"
-      >
+      <h3>
         No Border Tabs
-      </cdr-text>
+      </h3>
       <cdr-tabs
         height="100px"
         modifier="no-border"
@@ -93,7 +77,7 @@
           :aria-labelledby="'tab-no-border-' + tab"
         >
           <cdr-text
-            modifier="body-300"
+            class="cdr-text-dev--body-300"
           >
             Tab {{ tab }} content
           </cdr-text>
@@ -103,13 +87,9 @@
 
     <!-- auto -->
     <div class="tab-demo-secton">
-      <cdr-text
-        tag="h3"
-        modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
-        class="cdr-align-text-center"
-      >
+      <h3>
         Auto Height Tabs
-      </cdr-text>
+      </h3>
       <cdr-tabs
         height="auto"
         :background-color="backgroundColor"
@@ -120,7 +100,7 @@
           aria-labelledby="tab-auto-short"
         >
           <cdr-text
-            modifier="body-300"
+            class="cdr-text-dev--body-300"
           >
             short tab content
           </cdr-text>
@@ -132,7 +112,7 @@
           aria-labelledby="tab-auto-tall"
         >
           <cdr-text
-            modifier="body-300"
+            class="cdr-text-dev--body-300"
           >
             tall tab content. look at it go. wow, so much content.
             letters, punctuation, spaces, all together in one tab.
@@ -148,13 +128,9 @@
 
     <!-- Centered -->
     <div class="tab-demo-secton">
-      <cdr-text
-        tag="h3"
-        modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
-        class="cdr-align-text-center"
-      >
+      <h3>
         Centered Tabs
-      </cdr-text>
+      </h3>
       <cdr-tabs
         height="100px"
         modifier="centered"
@@ -168,7 +144,7 @@
           :aria-labelledby="'tab-centered-' + tab"
         >
           <cdr-text
-            modifier="body-300"
+            class="cdr-text-dev--body-300"
           >
             Tab {{ tab }} content
           </cdr-text>
@@ -180,7 +156,7 @@
         >
           <cdr-text
             tag="strong"
-            modifier="subheading"
+            class="cdr-text-dev--subheading-sans-300"
           >
             Tab six Content
           </cdr-text>
@@ -192,7 +168,7 @@
         >
           <cdr-text
             tag="strong"
-            modifier="subheading"
+            class="cdr-text-dev--subheading-sans-300"
           >
             Tab seven Content
           </cdr-text>
@@ -204,7 +180,7 @@
         >
           <cdr-text
             tag="strong"
-            modifier="subheading"
+            class="cdr-text-dev--subheading-sans-300"
           >
             Tab eight Content
           </cdr-text>
@@ -218,10 +194,6 @@
 import {
   CdrColorBackgroundPrimary,
   CdrColorBackgroundSecondary,
-  CdrColorBackgroundSuccess,
-  CdrColorBackgroundInfo,
-  CdrColorBackgroundWarning,
-  CdrColorBackgroundError,
 } from '@rei/cdr-tokens';
 import * as Components from 'srcdir/index';
 import tabsDefault from 'componentsdir/tabs/examples/demo/TabsDefault';
@@ -251,18 +223,6 @@ export default {
           break;
         case 'secondary':
           this.backgroundColor = CdrColorBackgroundSecondary;
-          break;
-        case 'success':
-          this.backgroundColor = CdrColorBackgroundSuccess;
-          break;
-        case 'info':
-          this.backgroundColor = CdrColorBackgroundInfo;
-          break;
-        case 'warning':
-          this.backgroundColor = CdrColorBackgroundWarning;
-          break;
-        case 'error':
-          this.backgroundColor = CdrColorBackgroundError;
           break;
         default:
           this.backgroundColor = CdrColorBackgroundPrimary;

@@ -1,11 +1,8 @@
 <template>
   <div>
-    <cdr-text
-      tag="h2"
-      modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
-    >
+    <h2>
       Checkboxes
-    </cdr-text>
+    </h2>
     <cdr-checkbox
       v-model="sizeEx"
       size="small"
@@ -166,12 +163,9 @@
     >Hidden box + custom checked state
     </cdr-checkbox>
 
-    <cdr-text
-      class="cdr-my-space-one-x"
-      tag="h3"
-    >
+    <h3>
       Checkbox group with indeterminate state:
-    </cdr-text>
+    </h3>
 
     <cdr-form-group label="Choose your toppings">
       <cdr-checkbox
@@ -194,7 +188,6 @@
           <cdr-checkbox
             v-model="selected"
             :custom-value="c"
-            class="cdr-ml-space-one-x"
             name="toppings"
             aria-labelledby="toppings"
           >{{ c }}</cdr-checkbox>

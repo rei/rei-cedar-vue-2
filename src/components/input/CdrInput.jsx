@@ -45,9 +45,22 @@ export default {
       required: true,
     },
     /**
+     * Override the error message role, default is `status`.
+     */
+    errorRole: {
+      type: String,
+      required: false,
+      default: 'status',
+    },
+    /**
      * Removes the label element but sets the input `aria-label` to `label` text for a11y.
     */
     hideLabel: Boolean,
+    // sets default attrs for inputs that should use a numeric keyboard but are not strictly "numbers" (security code, CC number, postal code)
+    numeric: {
+      type: Boolean,
+      default: false,
+    },
     /**
      * Number of rows for input.  Converts component to text-area if rows greater than 1.
     */
@@ -87,6 +100,18 @@ export default {
     baseClass() {
       return 'cdr-input';
     },
+    inputAttrs() {
+      const isNum = this.numeric || this.type === 'number';
+      return {
+        pattern: isNum && '[0-9]*',
+        inputmode: isNum && 'numeric',
+        novalidate: isNum,
+        autocorrect: 'off',
+        spellcheck: 'false',
+        autocapitalize: 'off',
+        ...this.$attrs,
+      };
+    },
     inputClass() {
       const hasPostIcon = !!this.$slots['post-icon'];
       const hasPostIcons = hasPostIcon && this.$slots['post-icon'].length > 1;
@@ -105,6 +130,13 @@ export default {
         [this.style['cdr-input-wrap']]: true,
         [this.style['cdr-input--focus']]: this.isFocused,
       };
+    },
+    describedby() {
+      return [
+        this.$slots['helper-text-top'] ? `${this.inputId}-helper-text-top` : '',
+        this.$slots['helper-text-bottom'] ? `${this.inputId}-helper-text-bottom` : '',
+        this.$attrs['aria-describedby'],
+      ].filter((x) => x).join(' ');
     },
     inputListeners() {
       // https://vuejs.org/v2/guide/components-custom-events.html#Binding-Native-Events-to-Components
@@ -136,10 +168,12 @@ export default {
             )}
             id={this.inputId}
             disabled={this.disabled}
-            required={this.required}
-            aria-label={this.hideLabel ? this.label : null}
+            aria-required={this.required}
             ref="input"
-            {...{ attrs: this.$attrs, on: this.inputListeners }}
+            aria-invalid={!!this.error}
+            aria-errormessage={!!this.error && `${this.inputId}-error`}
+            {...{ attrs: this.inputAttrs, on: this.inputListeners }}
+            aria-describedby={this.describedby || false}
             vModel={this.value}
           />
         );
@@ -153,10 +187,12 @@ export default {
             )}
             id={this.inputId}
             disabled={this.disabled}
-            required={this.required}
-            aria-label={this.hideLabel ? this.label : null}
+            aria-required={this.required}
             ref="input"
-            {...{ attrs: this.$attrs, on: this.inputListeners }}
+            aria-invalid={!!this.error}
+            aria-errormessage={!!this.error && `${this.inputId}-error`}
+            {...{ attrs: this.inputAttrs, on: this.inputListeners }}
+            aria-describedby={this.describedby || false}
             vModel={this.value}
           />
       );
@@ -164,67 +200,73 @@ export default {
   },
   render() {
     return (
-      <div>
-        <cdr-label-standalone
-          for-id={ `${this.inputId}` }
-          label={ this.label }
-          hide-label={ this.hideLabel }
-          required={ this.required }
-          optional={ this.optional }
-          disabled={ this.disabled }
-        >
-          { this.$slots['helper-text-top'] && (
-            <template slot="helper">
-              { this.$slots['helper-text-top'] }
-            </template>
-          )}
-          { this.$slots.info && (
-            <template slot="info">
-              {this.$slots.info}
-            </template>
-          )}
-        </cdr-label-standalone>
-        <div class={this.style['cdr-input-outer-wrap']}>
-          <div class={this.wrapperClass}>
-            {this.inputEl}
-            {this.$slots['pre-icon'] && (
-              <span
-                class={this.style['cdr-input__pre-icon']}
-              >
-                {this.$slots['pre-icon']}
-              </span>
-            )}
-
-            {this.$slots['post-icon'] && (
-              <span
-                class={this.style['cdr-input__post-icon']}
-              >
-                {this.$slots['post-icon']}
-              </span>
-            )}
-          </div>
-          {this.$slots['info-action'] && (
-            <div
-              class={this.style['cdr-input__info-action']}
+      <cdr-label-standalone
+        for-id={ `${this.inputId}` }
+        label={ this.label }
+        hide-label={ this.hideLabel }
+        required={ this.required }
+        optional={ this.optional }
+        disabled={ this.disabled }
+      >
+        { this.$slots['helper-text-top'] && (
+          <template slot="helper">
+            { this.$slots['helper-text-top'] }
+          </template>
+        )}
+        { this.$slots.info && (
+          <template slot="info">
+            {this.$slots.info}
+          </template>
+        )}
+        <div class={this.wrapperClass}>
+          {this.inputEl}
+          {this.$slots['pre-icon'] && (
+            <span
+              class={this.style['cdr-input__pre-icon']}
             >
-              {this.$slots['info-action']}
-            </div>
+              {this.$slots['pre-icon']}
+            </span>
+          )}
+
+          {this.$slots['post-icon'] && (
+            <span
+              class={this.style['cdr-input__post-icon']}
+            >
+              {this.$slots['post-icon']}
+            </span>
           )}
         </div>
-        {(this.$slots['helper-text'] || this.$slots['helper-text-bottom'])
+
+        {this.$slots['info-action'] && (
+          <template slot="info-action">
+            {this.$slots['info-action']}
+          </template>
+        )}
+
+        {(this.$slots['helper-text-bottom'])
           && !this.error && (
-            <span class={this.style['cdr-input__helper-text']}>
-              {this.$slots['helper-text'] || this.$slots['helper-text-bottom']}
+            <span
+              class={this.style['cdr-input__helper-text']}
+              id={`${this.inputId}-helper-text-bottom`}
+              slot="helper-text-bottom"
+            >
+              {this.$slots['helper-text-bottom']}
             </span>
         )}
+
         {this.error && (
-          <cdr-form-error error={this.error}>
+          <cdr-form-error
+            role={this.errorRole}
+            error={this.error}
+            slot="error"
+            id={`${this.inputId}-error`}
+          >
             <template slot="error">
               {this.$slots.error}
             </template>
           </cdr-form-error>
         )}
-      </div>
+      </cdr-label-standalone>
     );
   },
 };

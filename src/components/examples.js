@@ -1,14 +1,14 @@
 import accordion from 'componentsdir/accordion/examples/Accordion';
-import alert from 'componentsdir/alert/examples/Alert';
+import banner from 'componentsdir/banner/examples/Banner';
 import breadcrumb from 'componentsdir/breadcrumb/examples/Breadcrumb';
 import buttons from 'componentsdir/button/examples/Buttons';
 import captions from 'componentsdir/caption/examples/Caption';
 import card from 'componentsdir/card/examples/Cards';
 import checkbox from 'componentsdir/checkbox/examples/checkboxes';
 import chip from 'componentsdir/chip/examples/Chip';
+import container from 'componentsdir/container/examples/Container';
 import formGroup from 'componentsdir/formGroup/examples/FormGroup';
 import grid from 'componentsdir/grid/examples/Grid';
-import gridFlex from 'componentsdir/flex-grid/examples/Grid';
 import icon from 'componentsdir/icon/examples/Icons';
 import images from 'componentsdir/image/examples/Images';
 import inputs from 'componentsdir/input/examples/Inputs';
@@ -25,11 +25,10 @@ import tables from 'componentsdir/table/examples/Table';
 import tabs from 'componentsdir/tabs/examples/Tabs';
 import texts from 'componentsdir/text/examples/Text';
 import tooltip from 'componentsdir/tooltip/examples/Tooltip';
-import utilities from 'componentsdir/Utilities/Utilities';
 import forms from 'componentsdir/Form/Form';
 
 export default {
-  alert,
+  banner,
   accordion,
   breadcrumb,
   buttons,
@@ -37,9 +36,9 @@ export default {
   card,
   checkbox,
   chip,
+  container,
   formGroup,
   grid,
-  gridFlex,
   icon,
   images,
   inputs,
@@ -56,6 +55,5 @@ export default {
   tabs,
   texts,
   tooltip,
-  utilities,
   forms,
 };

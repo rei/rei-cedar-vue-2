@@ -31,13 +31,15 @@ export default {
     return {
       background: this.$route.query.background || 'primary',
       backgrounds: [
-        'primary', 'secondary', 'success', 'info', 'warning', 'error',
+        'primary', 'secondary',
+        //  'success', 'info', 'warning', 'error',
+        'brand',
       ],
     };
   },
   computed: {
     backgroundClass() {
-      return `cdr-space-inset-one-x cdr-color-background-${this.background}`;
+      return `background-${this.background}`;
     },
   },
   watch: {

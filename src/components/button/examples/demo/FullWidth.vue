@@ -1,12 +1,9 @@
 <template>
   <div data-backstop="buttons">
-    <div class="button-example cdr-space-inset-one-x">
-      <cdr-text
-        tag="h3"
-        modifier="heading-small"
-      >
+    <div class="button-example inset">
+      <h3>
         Full Width
-      </cdr-text>
+      </h3>
       <cdr-button
         size="small large@xs large@sm"
 
@@ -26,12 +23,11 @@
 </template>
 
 <script>
-import { CdrText, CdrButton } from 'srcdir/index';
+import { CdrButton } from 'srcdir/index';
 
 export default {
   name: 'FullWidth',
   components: {
-    CdrText,
     CdrButton,
   },
   methods: {
