@@ -21,3 +21,31 @@ exports[`CdrFormGroup renders correctly 1`] = `
   <!--v-if-->
 </fieldset>
 `;
+
+exports[`CdrFormGroup renders error state correctly 1`] = `
+<fieldset
+  aria-errormessage="renders-error"
+  aria-invalid="true"
+  class="cdr-form-group"
+>
+  <legend>
+    hey
+  </legend>
+  <div
+    class="cdr-form-group__wrapper cdr-form-group--error"
+  >
+    form elements!
+  </div>
+  <div
+    class="cdr-form-error"
+    id="renders-error"
+    role="status"
+    tabindex="0"
+  >
+    <span
+      class="cdr-form-error__icon"
+    />
+     Something is happening?
+  </div>
+</fieldset>
+`;

@@ -2,6 +2,8 @@
   <fieldset
     :class="mapClasses($style, baseClass, disabledClass)"
     :disabled="disabled"
+    :aria-invalid="!!error"
+    :aria-errormessage="!!error && `${id}-error`"
   >
     <legend>
       <slot name="label">
@@ -22,6 +24,7 @@
     <cdr-form-error
       :error="error"
       v-if="error"
+      :id="`${id}-error`"
     >
       <template #error>
         <slot name="error" />
@@ -40,6 +43,10 @@ export default defineComponent({
     CdrFormError,
   },
   props: {
+    id: {
+      type: String,
+      required: true,
+    },
     label: {
       type: String,
       default: '',
@@ -58,6 +65,11 @@ export default defineComponent({
     const baseClass = 'cdr-form-group';
     const errorClass = computed(() => props.error && 'cdr-form-group--error');
     const disabledClass = computed(() => props.disabled && 'cdr-form-group--disabled');
+
+    // const groupId = computed(() => props.id)
+    // groupId() {
+    //    return this.id ? this.id : this._uid; // eslint-disable-line no-underscore-dangle
+    //  },
     return {
       mapClasses,
       baseClass,

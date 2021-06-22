@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="ratio"
-    :style="{ '--ratio': ratioPct }"
+    :style="ratioObj"
     :class="$style[ratioClass]"
   >
     <img
@@ -110,15 +110,17 @@ export default defineComponent({
     const radiusClass = computed(() => buildClass(baseClass, props.radius));
 
     const cropObject = computed(() => ({ objectPosition: props.crop }));
-    const ratioPct = computed(() => {
+    const ratioObj = computed(() => {
+      let ratioPct;
       if (props.ratio === 'square') {
-        return '100%';
-      }
-      if (props.ratio) {
+        ratioPct = '100%';
+      } else if (props.ratio === 'auto') {
+        ratioPct = '0';
+      } else {
         const [x, y] = props.ratio.split('-');
-        return `${(y / x) * 100}%`;
+        ratioPct = `${(y / x) * 100}%`;
       }
-      return '0%';
+      return { '--ratio': ratioPct };
     });
 
     const cropClass = computed(() => props.crop && buildClass(coverWrapperClass, 'crop'));
@@ -131,7 +133,7 @@ export default defineComponent({
       modifierClass,
       radiusClass,
       cropObject,
-      ratioPct,
+      ratioObj,
       cropClass,
       coverClass,
       mapClasses,

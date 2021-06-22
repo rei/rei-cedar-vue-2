@@ -1,17 +1,16 @@
 <template>
-  <div :class="mapClasses($style, baseClass, typeClass)">
+  <div :class="[$style[baseClass], $style[typeClass]]">
     <slot />
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent, computed } from 'vue';
 import propValidator from '../../utils/propValidator';
-import mapClasses from '../../utils/mapClasses';
 import { buildClass } from '../../utils/buildClass';
 
 export default defineComponent({
-  name: 'CdrAlert',
+  name: 'CdrBanner',
   props: {
     type: {
       type: String,
@@ -23,16 +22,15 @@ export default defineComponent({
     },
   },
   setup(props) {
-    const baseClass = 'cdr-alert';
+    const baseClass = 'cdr-banner';
     const typeClass = computed(() => props.type && buildClass(baseClass, props.type));
     return {
       baseClass,
       typeClass,
-      mapClasses,
     };
   },
 });
 </script>
 
-<style lang="scss" module src="./styles/CdrAlert.scss">
+<style lang="scss" module src="./styles/CdrBanner.scss">
 </style>

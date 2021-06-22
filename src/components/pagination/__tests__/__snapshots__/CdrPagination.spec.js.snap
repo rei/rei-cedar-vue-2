@@ -20,19 +20,19 @@ exports[`CdrPagination renders button pagination correctly 1`] = `
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
         >
-          
-          
-          
+
+
+
           <path
             d="M8 12c0 .273.11.521.288.702l5.005 5.005a1 1 0 001.414-1.414L10.415 12l4.295-4.295a1 1 0 00-1.417-1.412l-4.98 4.98A.997.997 0 008 12z"
             role="presentation"
           />
-          
+
           <!--v-if-->
         </svg>
       </span>
     </li>
-    
+
     <li
       class="cdr-pagination__li--links"
     >
@@ -90,7 +90,7 @@ exports[`CdrPagination renders button pagination correctly 1`] = `
       <span
         class="cdr-pagination__ellipse"
       >
-         … 
+         …
       </span>
     </li>
     <li
@@ -103,24 +103,25 @@ exports[`CdrPagination renders button pagination correctly 1`] = `
         20
       </button>
     </li>
-    
+
     <li
       class="cdr-pagination__li--select"
     >
-      
       <div
         class="cdr-label-standalone"
       >
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-      </div>
-      <div
-        class="cdr-select-outer-wrap"
-      >
         <div
-          class="cdr-select-wrap"
+          class="cdr-label-standalone__label-wrapper"
+        >
+          <label
+            class="cdr-label-standalone__label cdr-label-standalone__label--sr-only"
+            for="select-test1"
+          >
+            Navigate to page
+          </label>
+        </div>
+        <div
+          class="cdr-label-standalone__input-wrap"
         >
           <!--v-if-->
           <select
@@ -128,18 +129,9 @@ exports[`CdrPagination renders button pagination correctly 1`] = `
             class="cdr-select cdr-select--medium cdr-select--primary"
             id="pagination-select-test"
           >
-            <!--v-if-->
-            
-            
-            
-            
-            <option
-              value="1"
-            >
-               Page 1
-            </option>
-            <option
-              value="2"
+            <select
+              class="cdr-select cdr-select--primary"
+              id="select-test1"
             >
                Page 2
             </option>
@@ -163,8 +155,8 @@ exports[`CdrPagination renders button pagination correctly 1`] = `
             >
                Page 20
             </option>
-            
-            
+
+
           </select>
           <svg
             aria-hidden="true"
@@ -172,21 +164,23 @@ exports[`CdrPagination renders button pagination correctly 1`] = `
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
           >
-            
-            
-            
+
+
+
             <path
               d="M12 16c.273 0 .521-.11.702-.288l5.005-5.005a1 1 0 00-1.414-1.414L12 13.586 7.705 9.29a1 1 0 00-1.412 1.417l4.98 4.98c.182.193.44.313.727.313z"
               role="presentation"
             />
-            
+
             <!--v-if-->
           </svg>
         </div>
-        <!--v-if-->
+        <div
+          class="cdr-label-standalone__post-content"
+        />
       </div>
       <!--v-if-->
-      
+
     </li>
     <li>
       <button
@@ -199,14 +193,14 @@ exports[`CdrPagination renders button pagination correctly 1`] = `
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
         >
-          
-          
-          
+
+
+
           <path
             d="M16 12a.997.997 0 00-.288-.702l-5.005-5.005a1 1 0 00-1.414 1.414L13.585 12 9.29 16.295a1 1 0 001.417 1.412l4.98-4.98A.997.997 0 0016 12z"
             role="presentation"
           />
-          
+
           <!--v-if-->
         </svg>
       </button>
@@ -235,19 +229,19 @@ exports[`CdrPagination renders correctly 1`] = `
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
         >
-          
-          
-          
+
+
+
           <path
             d="M8 12c0 .273.11.521.288.702l5.005 5.005a1 1 0 001.414-1.414L10.415 12l4.295-4.295a1 1 0 00-1.417-1.412l-4.98 4.98A.997.997 0 008 12z"
             role="presentation"
           />
-          
+
           <!--v-if-->
         </svg>
       </span>
     </li>
-    
+
     <li
       class="cdr-pagination__li--links"
     >
@@ -310,7 +304,7 @@ exports[`CdrPagination renders correctly 1`] = `
       <span
         class="cdr-pagination__ellipse"
       >
-         … 
+         …
       </span>
     </li>
     <li
@@ -324,24 +318,25 @@ exports[`CdrPagination renders correctly 1`] = `
         20
       </a>
     </li>
-    
+
     <li
       class="cdr-pagination__li--select"
     >
-      
       <div
         class="cdr-label-standalone"
       >
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-      </div>
-      <div
-        class="cdr-select-outer-wrap"
-      >
         <div
-          class="cdr-select-wrap"
+          class="cdr-label-standalone__label-wrapper"
+        >
+          <label
+            class="cdr-label-standalone__label cdr-label-standalone__label--sr-only"
+            for="select-test1"
+          >
+            Navigate to page
+          </label>
+        </div>
+        <div
+          class="cdr-label-standalone__input-wrap"
         >
           <!--v-if-->
           <select
@@ -349,18 +344,9 @@ exports[`CdrPagination renders correctly 1`] = `
             class="cdr-select cdr-select--medium cdr-select--primary"
             id="pagination-select-test"
           >
-            <!--v-if-->
-            
-            
-            
-            
-            <option
-              value="1"
-            >
-               Page 1
-            </option>
-            <option
-              value="2"
+            <select
+              class="cdr-select cdr-select--primary"
+              id="select-test1"
             >
                Page 2
             </option>
@@ -384,8 +370,8 @@ exports[`CdrPagination renders correctly 1`] = `
             >
                Page 20
             </option>
-            
-            
+
+
           </select>
           <svg
             aria-hidden="true"
@@ -393,21 +379,23 @@ exports[`CdrPagination renders correctly 1`] = `
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
           >
-            
-            
-            
+
+
+
             <path
               d="M12 16c.273 0 .521-.11.702-.288l5.005-5.005a1 1 0 00-1.414-1.414L12 13.586 7.705 9.29a1 1 0 00-1.412 1.417l4.98 4.98c.182.193.44.313.727.313z"
               role="presentation"
             />
-            
+
             <!--v-if-->
           </svg>
         </div>
-        <!--v-if-->
+        <div
+          class="cdr-label-standalone__post-content"
+        />
       </div>
       <!--v-if-->
-      
+
     </li>
     <li>
       <a
@@ -421,14 +409,14 @@ exports[`CdrPagination renders correctly 1`] = `
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
         >
-          
-          
-          
+
+
+
           <path
             d="M16 12a.997.997 0 00-.288-.702l-5.005-5.005a1 1 0 00-1.414 1.414L13.585 12 9.29 16.295a1 1 0 001.417 1.412l4.98-4.98A.997.997 0 0016 12z"
             role="presentation"
           />
-          
+
           <!--v-if-->
         </svg>
       </a>

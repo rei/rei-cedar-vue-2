@@ -2,16 +2,23 @@
 @import './vars/CdrLabelStandalone.vars.scss';
 
 .cdr-label-standalone {
-  position: relative;
+  display: grid;
 
-  &--spacing {
-    margin-bottom: $cdr-space-half-x;
+  grid-template-areas:
+    "label label info"
+    "input input input"
+    "post post post";
+
+
+  &__label-wrapper {
+    grid-area: label;
   }
 
   &__label {
     @include cdr-label-standalone-label-mixin;
-    display: inline-block;
-
+    &--sr-only {
+      @include cdr-display-sr-only;
+    }
     &--disabled {
       @include cdr-label-standalone-disabled-mixin;
 
@@ -27,13 +34,35 @@
 
   &__helper {
     @include cdr-label-standalone-helper-mixin;
-    display: inline-block;
   }
 
   &__info {
     @include cdr-label-standalone-info-mixin;
-    position: absolute;
-    right: 0;
-    bottom: 0;
+    grid-area: info;
+    order: 2;
+    align-self: end;
+    justify-self: end;
   }
+
+  &__post-content {
+    grid-area: post;
+  }
+
+  &__info-action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+  }
+
+  &__input-wrap {
+    position: relative;
+    display: flex;
+    grid-area: input;
+  }
+
+  &__input-spacing {
+    margin-top: $cdr-space-half-x;
+  }
+
 }

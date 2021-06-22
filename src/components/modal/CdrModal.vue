@@ -56,7 +56,7 @@
                 >
                   <div
                     :class="$style['cdr-modal__text-content']"
-                    :style="{ maxHeight: `${scrollMaxHeight}px`}"
+                    :style="{ maxHeight: `${scrollMaxHeight}px`, paddingRight: `${scrollPadding}px`}"
                     ref="contentEl"
                     tabindex="0"
                   >
@@ -174,14 +174,14 @@ export default defineComponent({
     const handleFocus = (e) => {
       const { documentElement } = document;
       if (modalEl.value.contains(e.target) || !documentElement) return;
-  
+
       const tabbables = tabbable(documentElement);
       const these = tabbable(modalEl.value);
       const nextIx = tabbables.indexOf(e.target);
       const firstModalIx = tabbables.indexOf(these[0]);
       const nextRef = nextIx < firstModalIx ? these[these.length - 1] : these[0];
       if (nextRef) nextRef.focus();
-  
+
   // ...uhhh???? what?
       // documentElement.scrollTop = this.scrollTop;
       // documentElement.scrollLeft = this.scrollLeft;
@@ -193,17 +193,17 @@ export default defineComponent({
       isOpening.value = true;
       reallyClosed.value = false;
       lastActive = activeElement;
-  
+
       nextTick(() => {
         if (modalEl.value) modalEl.value.focus(); // wrapped in if so testing error isn't thrown
         measureContent();
         addHandlers();
-  
+
         setTimeout(() => {
           // for some reason Safari scrolls the wrapper down a bit?
           // doesn't work without setTimeout for some unknown reason
           if (wrapperEl.value) wrapperEl.value.scrollTop = 0;
-  
+
           // there is a race condition for measuring overflow when modal defaults to open,
           // this seems to cover that
           measureContent();
@@ -216,7 +216,7 @@ export default defineComponent({
       document.removeEventListener('keydown', handleKeyDown);
       document.removeEventListener('focusin', handleFocus, true);
       isOpening.value = false;
-  
+
       unsubscribe = onTransitionEnd(
         wrapperEl.value,
         () => {
@@ -225,13 +225,13 @@ export default defineComponent({
           removeNoScroll();
           unsubscribe = null;
           reallyClosed.value = true;
-  
+
           // handle scroll-behavior: smooth
           if (documentElement) documentElement.style.scrollBehavior = 'auto';
           // restore previous scroll position
           window.scrollTo(offset.value.x, offset.value.y);
           if (documentElement) documentElement.style.scrollBehavior = '';
-  
+
           if (lastActive) lastActive.focus();
         },
         props.animationDuration + 16,
@@ -250,14 +250,14 @@ export default defineComponent({
           || (body || {}).scrollTop
           || 0,
       };
-  
+
       if (documentElement) {
         documentElement.classList.add('cdr-modal__noscroll');
         // keep current scroll position manually
         documentElement.style.top = `-${offset.value.y}px`;
         documentElement.style.left = `-${offset.value.x}px`;
       }
-  
+
       if (body) {
         body.classList.add('cdr-modal__noscroll');
       }
@@ -265,11 +265,11 @@ export default defineComponent({
 
     const removeNoScroll = () => {
       const { documentElement, body } = document;
-  
+
       if (body) {
         body.classList.remove('cdr-modal__noscroll');
       }
-  
+
       if (documentElement) {
         documentElement.classList.remove('cdr-modal__noscroll');
         documentElement.style.top = '';
@@ -299,10 +299,10 @@ export default defineComponent({
       // contentWrap vertical padding
       const fullscreenSpace = Number(CdrSpaceTwoX);
       const windowedSpace = Number(CdrSpaceTwoX) + Number(CdrSpaceOneX);
-  
+
       return fullscreen.value
         ? fullscreenSpace
-        : windowedSpace + fullscreenSpace; 
+        : windowedSpace + fullscreenSpace;
       // fullscreen, here, would account for outerWrap padding, which is the same CdrSpaceTwoX
     });
     const scrollMaxHeight = computed(() => {
@@ -311,7 +311,17 @@ export default defineComponent({
         - verticalSpace.value;
     });
 
-
+    const scrollPadding = computed(() => {
+      const isScrolling = contentEl.value.scrollHeight > contentEl.value.offsetHeight;
+      const hasScrollbar = contentEl.value.offsetWidth - contentEl.value.clientWidth > 0;
+      if (isScrolling && hasScrollbar) {
+        return 4;
+      } else if (isScrolling) {
+        return 12;
+      } else {
+        return 0
+      }
+    });
 
     watch(() => props.opened, (newValue, oldValue) => {
       if (!!newValue === !!oldValue) return;
@@ -322,7 +332,7 @@ export default defineComponent({
       if (props.opened) {
         handleOpened();
       }
-      
+
       window.addEventListener('resize', debounce(() => {
         measureContent();
       }, 300));
@@ -343,6 +353,7 @@ export default defineComponent({
       handleClosed,
       measureContent,
       removeNoScroll,
+      scrollPadding,
     };
   },
 });

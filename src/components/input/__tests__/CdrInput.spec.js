@@ -24,6 +24,17 @@ describe('CdrInput', () => {
     expect(wrapper.element).toMatchSnapshot();
   });
 
+  it('renders error state correctly', () => {
+    const wrapper = mount(CdrInput, {
+      propsData: {
+        label: 'Label Test',
+        id: 'renders',
+        error: 'Something is wrong!'
+      },
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
   it('renders an input element', () => {
     const wrapper = mount(CdrInput, {
       propsData: {
@@ -79,12 +90,11 @@ describe('CdrInput', () => {
         required: true,
       },
     });
-    expect(wrapper.find('.cdr-input').attributes('required')).toBe('');
+    expect(wrapper.find('input').attributes('aria-required')).toBe('true');
   });
 
-  // TODO a better test would be to validate what happens if value is set to foo123bar456 etc.
-  it('sets attrs for numeric input', () => {
-    const wrapper = mount(CdrInput, {
+  it('sets attrs for number type input', () => {
+    const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'test',
         required: true,
@@ -92,9 +102,24 @@ describe('CdrInput', () => {
         id: 'test',
       },
     });
-    expect(wrapper.find('.cdr-input').attributes('novalidate')).toBe('');
-    expect(wrapper.find('.cdr-input').attributes('pattern')).toBe('[0-9]*');
-    expect(wrapper.find('.cdr-input').attributes('inputmode')).toBe('numeric');
+    expect(wrapper.find('input').attributes('novalidate')).toBe('novalidate');
+    expect(wrapper.find('input').attributes('pattern')).toBe('[0-9]*');
+    expect(wrapper.find('input').attributes('inputmode')).toBe('numeric');
+    expect(wrapper.find('input').attributes('type')).toBe('number');
+  });
+
+  it('sets attrs for numeric freeform input', () => {
+    const wrapper = shallowMount(CdrInput, {
+      propsData: {
+        label: 'test',
+        required: true,
+        numeric: true
+      },
+    });
+    expect(wrapper.find('input').attributes('novalidate')).toBe('novalidate');
+    expect(wrapper.find('input').attributes('pattern')).toBe('[0-9]*');
+    expect(wrapper.find('input').attributes('inputmode')).toBe('numeric');
+    expect(wrapper.find('input').attributes('type')).toBe('text');
   });
 
   it('sets input autofocus attribute correctly', () => {
@@ -331,7 +356,7 @@ describe('CdrInput', () => {
     expect(wrapper.find('.cdr-input--posticon').exists()).toBe(true);
   });
 
-// TODO: find way to check slot content in setup (probably a no) 
+// TODO: find way to check slot content in setup (probably a no)
 // OR do something on mount to detect this instead (probably most elegant option?)
 // OR create a prop that user can use to signal number of post-icons (hammer solution)
   xit('adds spacing class when multiple elements are present in post-icon slot', () => {
@@ -357,7 +382,7 @@ describe('CdrInput', () => {
         'info-action': '🤠',
       },
     });
-    expect(wrapper.find('.cdr-input__info-action').text()).toBe('🤠');
+    expect(wrapper.find('.cdr-label-standalone__info-action').text()).toBe('🤠');
   });
 
   it('renders error slot when error state is active', () => {
@@ -428,5 +453,46 @@ describe('CdrInput', () => {
     wrapper.setProps({value: ''});
     await wrapper.vm.$nextTick();
     expect(input.element.value).toBe('');
+  });
+
+  it('helper text slots are linked to input via aria-describedby', () => {
+    const wrapper = mount(CdrInput, {
+      propsData: {
+        label: 'test',
+        id: 'aria-test',
+      },
+      slots: {
+        'helper-text-top': 'extremely helpful',
+        'helper-text-bottom': 'very helpful',
+      },
+    });
+    expect(wrapper.find('input').attributes('aria-describedby')).toBe('aria-test-helper-text-top aria-test-helper-text-bottom');
+  });
+
+  it('dynamic aria-describedby is merged with native attr', () => {
+    const wrapper = mount(CdrInput, {
+      propsData: {
+        label: 'test',
+        id: 'aria-test',
+      },
+      attrs: {
+        'aria-describedby': 'foo',
+      },
+      slots: {
+        'helper-text-top': 'extremely helpful',
+        'helper-text-bottom': 'very helpful',
+      },
+    });
+    expect(wrapper.find('input').attributes('aria-describedby')).toBe('aria-test-helper-text-top aria-test-helper-text-bottom foo');
+  });
+
+  it('does not apply aria-describedby if attr or helper slots are not present', () => {
+    const wrapper = mount(CdrInput, {
+      propsData: {
+        label: 'test',
+        id: 'aria-test',
+      },
+    });
+    expect(wrapper.vm.$refs.input.hasAttribute('aria-describedby')).toBe(false);
   });
 });

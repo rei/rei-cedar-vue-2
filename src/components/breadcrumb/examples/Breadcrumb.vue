@@ -31,6 +31,14 @@
     />
 
     <h3>
+      Breadcrumb handle navigate events
+    </h3>
+    <cdr-breadcrumb
+      :items="shortBreadcrumbItems"
+      data-backstop="breadcrumbs-default"
+      @navigate="handleClick"
+    />
+    <h3>
       Scoped Slot
     </h3>
     <cdr-breadcrumb :items="reiExampleBreadcrumbItems">
@@ -168,6 +176,12 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    handleClick(bc, e) {
+      e.preventDefault();
+      console.log(bc.item);
+    },
   },
 };
 </script>

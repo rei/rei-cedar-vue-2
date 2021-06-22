@@ -2,17 +2,16 @@
 
 exports[`CdrInput renders correctly 1`] = `
 <div
-  data-v-app=""
+  class="cdr-label-standalone"
 >
-  
   <div
-    class="cdr-label-standalone cdr-label-standalone--spacing"
+    class="cdr-label-standalone__label-wrapper"
   >
     <label
       class="cdr-label-standalone__label"
       for="renders"
     >
-      Label Test 
+      Label Test
       <!--v-if-->
     </label>
     <!--v-if-->
@@ -20,7 +19,7 @@ exports[`CdrInput renders correctly 1`] = `
     <!--v-if-->
   </div>
   <div
-    class="cdr-input-outer-wrap"
+    class="cdr-label-standalone__input-wrap cdr-label-standalone__input-spacing"
   >
     <div
       class="cdr-input-wrap"
@@ -38,25 +37,74 @@ exports[`CdrInput renders correctly 1`] = `
     </div>
     <!--v-if-->
   </div>
-  <!--v-if-->
-  <!--v-if-->
-  
+  <div
+    class="cdr-label-standalone__post-content"
+  />
 </div>
 `;
 
-exports[`CdrInput renders number input correctly 1`] = `
+exports[`CdrInput renders error state correctly 1`] = `
 <div
-  data-v-app=""
+  class="cdr-label-standalone"
 >
-  
   <div
-    class="cdr-label-standalone cdr-label-standalone--spacing"
+    class="cdr-label-standalone__label-wrapper"
   >
     <label
       class="cdr-label-standalone__label"
       for="renders"
     >
-      Label Test 
+      Label Test
+    </label>
+  </div>
+  <div
+    class="cdr-label-standalone__input-wrap cdr-label-standalone__input-spacing"
+  >
+    <div
+      class="cdr-input-wrap"
+    >
+      <input
+        aria-errormessage="renders-error"
+        aria-invalid="true"
+        autocapitalize="off"
+        autocorrect="off"
+        class="cdr-input cdr-input--error cdr-input--primary"
+        id="renders"
+        spellcheck="false"
+        type="text"
+      />
+    </div>
+  </div>
+  <div
+    class="cdr-label-standalone__post-content"
+  >
+    <div
+      class="cdr-form-error"
+      id="renders-error"
+      role="status"
+      tabindex="0"
+    >
+      <span
+        class="cdr-form-error__icon"
+      />
+       Something is wrong!
+    </div>
+  </div>
+</div>
+`;
+
+exports[`CdrInput renders number input correctly 1`] = `
+<div
+  class="cdr-label-standalone"
+>
+  <div
+    class="cdr-label-standalone__label-wrapper"
+  >
+    <label
+      class="cdr-label-standalone__label"
+      for="renders"
+    >
+      Label Test
       <!--v-if-->
     </label>
     <!--v-if-->
@@ -64,7 +112,7 @@ exports[`CdrInput renders number input correctly 1`] = `
     <!--v-if-->
   </div>
   <div
-    class="cdr-input-outer-wrap"
+    class="cdr-label-standalone__input-wrap cdr-label-standalone__input-spacing"
   >
     <div
       class="cdr-input-wrap"
@@ -85,8 +133,8 @@ exports[`CdrInput renders number input correctly 1`] = `
     </div>
     <!--v-if-->
   </div>
-  <!--v-if-->
-  <!--v-if-->
-  
+  <div
+    class="cdr-label-standalone__post-content"
+  />
 </div>
 `;

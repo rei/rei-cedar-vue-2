@@ -33,6 +33,7 @@ export default {
       backgrounds: [
         'primary', 'secondary',
         //  'success', 'info', 'warning', 'error',
+        'brand',
       ],
     };
   },

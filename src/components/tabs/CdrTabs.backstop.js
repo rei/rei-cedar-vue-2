@@ -12,13 +12,13 @@ module.exports = [
     ],
     hoverSelectors: [
       {
-        target: '[data-backstop="tab-default"] li:nth-child(2) a',
+        target: '[data-backstop="tab-default"] button:nth-child(2)',
         capture: '[data-backstop="tab-default"]',
       },
     ],
     focusSelectors: [
       {
-        target: '[data-backstop="tab-default"] li:nth-child(2) a',
+        target: '[data-backstop="tab-default"] button:nth-child(2)',
         capture: '[data-backstop="tab-default"]',
       },
     ],

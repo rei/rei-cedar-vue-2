@@ -1,5 +1,5 @@
 <template>
-  <div :class="$style[baseClass]">
+  <div :class="$style[baseClass]" role="status" tabindex="0">
     <span :class="$style[iconClass]" /> <slot name="error">
       {{ error }}
     </slot>

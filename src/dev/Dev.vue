@@ -144,6 +144,10 @@ export default {
   background-color: $cdr-color-background-secondary;
 }
 
+.background-brand {
+  background-color: $cdr-color-background-brand-spruce;
+}
+
 // NOTE: type examples in this file are for testing and development purposes only
 .cdr-text-dev {
   &--italic {

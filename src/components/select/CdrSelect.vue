@@ -19,8 +19,8 @@
     >
       <slot name="info" />
     </template>
-  </cdr-label-standalone>
-  <div :class="$style['cdr-select-outer-wrap']">
+
+    <!-- default slot -->
     <div :class="$style['cdr-select-wrap']">
       <span
         v-if="hasPreIcon"
@@ -43,9 +43,12 @@
         :multiple="multiple"
         :size="multipleSize"
         :disabled="disabled"
-        :required="required"
-        :aria-label="hideLabel ? label : null"
+        :aria-required="required"
+
+        :aria-invalid="!!error"
+        :aria-errormessage="!!error && `${id}-error`"
         v-bind="$attrs"
+        :aria-describedby="describedby || false"
         :value="modelValue"
         @change="$emit('update:modelValue', multiple
           ? processMultiple($event.target.options)
@@ -72,21 +75,26 @@
 
       <icon-caret-down :class="mapClasses($style, 'cdr-select__caret', caretDisabledClass)" />
     </div>
-    <div
-      v-if="hasInfoAction"
-      :class="$style['cdr-select__info-action']"
-    >
+
+    <template #info-action v-if="hasInfoAction">
       <slot name="info-action" />
     </div>
-  </div>
-  <cdr-form-error
-    :error="error"
-    v-if="error"
-  >
-    <template #error>
-      <slot name="error" />
+
+    <template #error v-if="error">
+      <cdr-form-error
+        :error="error"
+        :role="errorRole"
+        :id="`${id}-error`"
+        v-if="error"
+      >
+        <template #error>
+          <slot name="error" />
+        </template>
+      </cdr-form-error>
     </template>
-  </cdr-form-error>
+  </cdr-label-standalone>
+
+
 </template>
 
 <script>
@@ -145,6 +153,14 @@ export default defineComponent({
       type: [Boolean, String],
       default: false,
     },
+    /**
+    * Override the error message role, default is `status`.
+    */
+    errorRole: {
+      type: String,
+      required: false,
+      default: 'status',
+    },
     modelValue: {
       type: [String, Number, Boolean, Object, Array, Symbol, Function],
     },
@@ -172,6 +188,14 @@ export default defineComponent({
     const backgroundClass = computed(() => `cdr-select--${props.background}`);
     const sizeClass = computed(() => props.size && buildClass(baseClass, props.size));
     const caretDisabledClass = computed(() => props.disabled && 'cdr-select__caret--disabled');
+
+
+    const describedby = computed(() => {
+      return [
+        ctx.slots['helper-text'] ? `${props.id}-helper-text-top` : '',
+        ctx.attrs['aria-describedby'],
+      ].filter((x) => x).join(' ');
+    })
 
     // TODO: refactor, would be much clearer as a 1-2 liner
     const computedOpts = computed(() => {
@@ -209,6 +233,7 @@ export default defineComponent({
       hasInfoAction,
       hasPreIcon,
 
+      describedby,
       processMultiple,
       multipleClass,
       promptClass,

@@ -3,6 +3,8 @@
 exports[`CdrFormError matches snapshot 1`] = `
 <div
   class="cdr-form-error"
+  role="status"
+  tabindex="0"
 >
   <span
     class="cdr-form-error__icon"

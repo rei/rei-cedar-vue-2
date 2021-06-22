@@ -15,12 +15,12 @@
     </template>
     <template
       #info
-      v-if="hasHelperTop"
+      v-if="hasInfo"
     >
       <slot name="info" />
     </template>
-  </cdr-label-standalone>
-  <div :class="$style['cdr-input-outer-wrap']">
+
+    <!-- default input slot -->
     <div :class="mapClasses($style, 'cdr-input-wrap', focusedClass)">
       <textarea
         v-if="rows && rows > 1"
@@ -37,10 +37,12 @@
         )"
         :id="id"
         :disabled="disabled"
-        :required="required"
-        :aria-label="hideLabel ? label : null"
+        :aria-required="required"
+        :aria-invalid="!!error"
+        :aria-errormessage="!!error && `${id}-error`"
         v-bind="inputAttrs"
         :value="modelValue"
+        :aria-describedby="describedby || false"
         @input="$emit('update:modelValue', $event.target.value)"
         @focus="isFocused = true"
         @blur="isFocused = false"
@@ -59,9 +61,11 @@
         )"
         :id="id"
         :disabled="disabled"
-        :required="required"
-        :aria-label="hideLabel ? label : null"
+        :aria-required="required"
+        :aria-invalid="!!error"
+        :aria-errormessage="!!error && `${id}-error`"
         v-bind="inputAttrs"
+        :aria-describedby="describedby || false"
         :value="modelValue"
         @input="$emit('update:modelValue', $event.target.value)"
         @focus="isFocused = true"
@@ -81,27 +85,37 @@
         <slot name="post-icon" />
       </span>
     </div>
-    <div
+
+
+    <template
+      #info-action
       v-if="hasInfoAction"
-      :class="$style['cdr-input__info-action']"
     >
       <slot name="info-action" />
-    </div>
-  </div>
-  <span
-    :class="$style['cdr-input__helper-text']"
-    v-if="hasHelperBottom && !error"
-  >
-    <slot name="helper-text-bottom" />
-  </span>
-  <cdr-form-error
-    :error="error"
-    v-if="error"
-  >
-    <template #error>
-      <slot name="error" />
     </template>
-  </cdr-form-error>
+
+    <template #helper-text-bottom v-if="hasHelperBottom && !error">
+      <span
+        :id="`${id}-helper-text-bottom`"
+        :class="$style['cdr-input__helper-text']"
+      >
+        <slot name="helper-text-bottom" />
+      </span>
+    </template>
+
+    <template #error v-if="error">
+      <cdr-form-error
+        :error="error"
+        :role="errorRole"
+        :id="`${id}-error`"
+        v-if="error"
+      >
+        <template #error>
+          <slot name="error" />
+        </template>
+      </cdr-form-error>
+    </template>
+  </cdr-label-standalone>
 </template>
 <script>
 import { defineComponent, computed, ref } from 'vue';
@@ -112,17 +126,6 @@ import sizeProps from '../../props/size';
 import backgroundProps from '../../props/background';
 import { buildClass } from '../../utils/buildClass';
 import mapClasses from '../../utils/mapClasses';
-
-// CH CH CHANGES:
-// ID is now required !!!
-// HELPER-TEXT is now helper-text-bottom
-// VALUE is modeelValue
-// WRAPPER ELEMENT REMOVED! WRAP IF YOU NEED TO!
-
-// CHECK THESE THINGS:
-// does it still calculate postIconSSSSSS correctly?
-// slots passed into sub-components working?
-// do we need to re-emit focus/blur?!?!?!
 
 export default defineComponent({
   name: 'CdrInput',
@@ -160,6 +163,11 @@ export default defineComponent({
       type: String,
       required: true,
     },
+    // sets default attrs for inputs that should use a numeric keyboard but are not strictly "numbers" (security code, CC number, postal code)
+    numeric: {
+      type: Boolean,
+      default: false,
+    },
     /**
      * Removes the label element but sets the input `aria-label` to `label` text for a11y.
     */
@@ -171,6 +179,15 @@ export default defineComponent({
     // Set which background type the input renders on
     background: backgroundProps,
     size: sizeProps,
+
+    /**
+     * Override the error message role, default is `status`.
+     */
+    errorRole: {
+      type: String,
+      required: false,
+      default: 'status',
+    },
     // Set error styling
     error: {
       type: [Boolean, String],
@@ -207,21 +224,26 @@ export default defineComponent({
     const sizeClass = computed(() => props.size && buildClass(baseClass, props.size));
     const focusedClass = computed(() => isFocused.value && 'cdr-input--focus');
 
+    const describedby = computed(() => {
+      return [
+        ctx.slots['helper-text-top'] ? `${props.id}-helper-text-top` : '',
+        ctx.slots['helper-text-bottom'] ? `${props.id}-helper-text-bottom` : '',
+        ctx.attrs['aria-describedby'],
+      ].filter((x) => x).join(' ');
+    })
+
+
     const inputAttrs = computed(() => {
-      // TODO: do we also need to change the "type" when number?
-      // TODO: does this work properly???? isn't it not quite right on vue2 next branch?
-      const attrs = {
+      const isNum = props.numeric || props.type === 'number';
+      return {
         autocorrect: 'off',
         spellcheck: 'false',
         autocapitalize: 'off',
+        pattern: isNum && '[0-9]*',
+        inputmode: isNum && 'numeric',
+        novalidate: isNum,
         ...ctx.attrs,
       };
-      if (props.type === 'number') {
-        attrs.pattern = '[0-9]*';
-        attrs.inputmode = 'numeric';
-        attrs.novalidate = 'novalidate';
-      }
-      return attrs;
     });
 
     return {
@@ -242,6 +264,7 @@ export default defineComponent({
       hasInfo,
       hasInfoAction,
       inputAttrs,
+      describedby,
       mapClasses,
     };
   },

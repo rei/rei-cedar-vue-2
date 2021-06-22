@@ -214,18 +214,37 @@
     <cdr-text>Selected Value: {{ preIconModel }}</cdr-text>
     <hr class="icon-hr">
 
-    <!-- Error Example -->
+    <!-- Error Example default -->
     <cdr-select
-      label="Example with error"
+      label="Example with status error"
       v-model="preIconModel"
       :background="backgroundColor"
       :options="dynamicData"
+      aria-describedby="statusTest"
 
       prompt="Choose One"
       :error="true"
     >
       <template slot="error">
-        error message goes here
+        <span id="statusTest">error message goes here</span>
+      </template>
+    </cdr-select>
+    <hr class="icon-hr">
+
+    <!-- Error Example alert -->
+    <cdr-select
+      label="Example with Alert error"
+      v-model="preIconModel2"
+      :background="backgroundColor"
+      :options="dynamicData"
+      error-role="alert"
+      aria-describedby="alertTest"
+
+      prompt="Choose One"
+      :error="true"
+    >
+      <template slot="error">
+        <span id="alertTest">Alert error message goes here</span>
       </template>
     </cdr-select>
     <hr class="icon-hr">
@@ -315,6 +334,7 @@ export default {
       infoLinkModel: '',
       infoIconModel: '',
       preIconModel: '',
+      preIconModel2: '',
       multiple: ['1', '2'],
       multiple2: ['-1'],
       multiple2Data: ['a', 'b', 'c', 'd'],

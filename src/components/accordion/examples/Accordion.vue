@@ -17,12 +17,12 @@
         A short label
       </template>
       <cdr-text
-        modifier="body-300"
+        class="cdr-text-dev--body-300"
       >
         This is some text. It's in a
         <cdr-text
           tag="strong"
-          modifier="body-strong-300"
+          class="cdr-text-dev--body-strong-300"
         >cdr-text paragraph with a modifier of <code>body-300</code></cdr-text> element as
         thats how you assign the correct font and line-height for text dislpay on REI.
         does not include margin or add space to the container. Lorem ipsum dolor
@@ -53,12 +53,12 @@
             A short label
           </template>
           <cdr-text
-            modifier="body-300"
+            class="cdr-text-dev--body-300"
           >
             This is some text. It's in a
             <cdr-text
               tag="strong"
-              modifier="body-strong-300"
+              class="cdr-text-dev--body-strong-300"
             >cdr-text paragraph with a modifier of <code>body-300</code></cdr-text> element as
             thats how you assign the correct font and line-height for text dislpay on REI.
             does not include margin or add space to the container. Lorem ipsum dolor
@@ -192,12 +192,12 @@
           A short label
         </template>
         <cdr-text
-          modifier="body-300"
+          class="cdr-text-dev--body-300"
         >
           This is some text. It's in a
           <cdr-text
             tag="strong"
-            modifier="body-strong-300"
+            class="cdr-text-dev--body-strong-300"
           >cdr-text paragraph with a modifier of <code>body-300</code></cdr-text> element as
           thats how you assign the correct font and line-height for text dislpay on REI.
           does not include margin or add space to the container. Lorem ipsum dolor

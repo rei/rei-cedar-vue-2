@@ -5,7 +5,7 @@ import {
 } from '@rei/cdr-tokens/dist/js/cdr-tokens.esm';
 
 export default function getCurrentBreakpoint() {
-  const screenWidth = (window && window.outerWidth) || 0;
+  const screenWidth = (window && window.innerWidth) || 0;
   if (screenWidth >= CdrBreakpointSm && screenWidth < CdrBreakpointMd) {
     return 'sm';
   }

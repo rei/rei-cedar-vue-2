@@ -50,6 +50,7 @@
           <a
             :class="$style['cdr-breadcrumb__link']"
             :href="breadcrumb.item.url"
+            @click="$emit('navigate', breadcrumb, e)"
           >
             {{ breadcrumb.item.name }}
           </a>

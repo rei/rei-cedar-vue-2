@@ -1,11 +1,12 @@
 import accordion from 'componentsdir/accordion/examples/Accordion';
-import alert from 'componentsdir/alert/examples/Alert';
+import banner from 'componentsdir/banner/examples/Banner';
 import breadcrumb from 'componentsdir/breadcrumb/examples/Breadcrumb';
 import buttons from 'componentsdir/button/examples/Buttons';
 import captions from 'componentsdir/caption/examples/Caption';
 import card from 'componentsdir/card/examples/Cards';
 import checkbox from 'componentsdir/checkbox/examples/checkboxes';
 import chip from 'componentsdir/chip/examples/Chip';
+import container from 'componentsdir/container/examples/Container';
 import formGroup from 'componentsdir/formGroup/examples/FormGroup';
 import grid from 'componentsdir/grid/examples/Grid';
 import icon from 'componentsdir/icon/examples/Icons';
@@ -26,7 +27,7 @@ import texts from 'componentsdir/text/examples/Text';
 import tooltip from 'componentsdir/tooltip/examples/Tooltip';
 
 export default {
-  alert,
+  banner,
   accordion,
   breadcrumb,
   buttons,
@@ -34,6 +35,7 @@ export default {
   card,
   checkbox,
   chip,
+  container,
   formGroup,
   grid,
   icon,
