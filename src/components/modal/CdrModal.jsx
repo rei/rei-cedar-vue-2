@@ -54,6 +54,7 @@ export default {
       keyHandler: null,
       lastActive: null,
       focusHandler: null,
+      resizeHandler: null,
       isOpening: false,
       offset: null,
       headerHeight: 0,
@@ -112,15 +113,18 @@ export default {
       this.handleOpened();
     }
 
-    window.addEventListener('resize', debounce(() => {
+    this.resizeHandler = debounce(() => {
       this.measureContent();
-    }, 300));
+    }, 300);
+
+    window.addEventListener('resize', this.resizeHandler);
   },
   beforeDestroy() {
     if (this.unsubscribe) this.unsubscribe();
     if (this.opened) this.removeNoScroll();
     document.removeEventListener('focusin', this.focusHandler, true);
     document.removeEventListener('keydown', this.keyHandler);
+    window.removeEventListener('resize', this.resizeHandler);
   },
   methods: {
     measureContent() {
