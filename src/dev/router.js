@@ -7,6 +7,7 @@ import e2e2 from 'srcdir/dev/e2e2';
 
 // Extra paths for backstop.
 //  These are smaller sections of larger demo pages to make screenshotting more reliable
+//  As backstop often throws errors on pages that are too large (i.e, button)
 import DefaultButtons from 'componentsdir/button/examples/demo/Default';
 import FullWidthButtons from 'componentsdir/button/examples/demo/FullWidth';
 import IconButtons from 'componentsdir/button/examples/demo/Icons';
