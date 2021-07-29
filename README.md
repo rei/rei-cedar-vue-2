@@ -84,9 +84,37 @@ Publishes package to npm with a prerelease tag. You must increment the component
 This project is Commitizen friendly.  To install: `npm install -g commitizen`
 When creating a pull request run `git cz` rather than `git commit` and follow the prompts.
 
-This projects Changelogs are generated.
-- Generate the Changelog: `npm run changelog`
-
 ## JSX
 
 Cedar templates are written in JSX rather than as `.vue` SFCs in order to support tree-shaking. See [JSX notes](jsx.md) for more information.
+
+## Creating New Components
+
+You can generate new Cedar components by running `node generator.js`. The new component will be compiled based on the template inside `/templates`. After running the generator it will list out some manual steps that must be taken in order to add that new component to the main entry point and make it available in the dev environment.
+
+## Dist Structure
+
+This project uses Rollup to compile the Cedar components into CJS and ESM format. The `module` paramater in the `package.json` defines a tree-shakeable ESM entry point which is what should be used by consumers of Cedar for their production build. The single file `cedar.js` and `cedar.mjs` outputs are available for ease of setting up test/dev/internal projects but should not be used for customer facing production sites as those files are not tree-shakeable and they contain all of the code in Cedar.
+
+```
+/dist
+  /lib -> Contains individual files matching the directory structure of Cedar. This is generated using the `preserveModules` option in rollup and is necessary for the Cedar distributable to be tree-shakeable
+    /src
+      /index.js -> Main entry point for ESM Cedar. Tree shake-able.
+  /style -> Contains individual CSS files for each Cedar component
+  /svg -> Contains SVG assets used by Cedar
+  cdr-fonts.css -> Contains font definitions that Cedar depends on
+  cedar-compiled.css -> Full compiled CSS for every Cedar component
+  cedar.js -> Single file CJS output. Not tree-shakeable.
+  cedar.mjs -> Single file ESM output. Not tree-shakeable.
+```
+
+## Prod/CSS/Dev/Test Builds
+
+The main rollup build is defined in `rollup.config.js` and `build/rollup-plugins.js`.
+
+The individual CSS files per component that exist in `dist/lib/style` are generated using the `build/extract-css.js` script. CSS class names have the current Cedar version appended to them to reduce the possibility of naming collissions and discourage consumers from overriding Cedar styles, that is done using a `generateScopedName` function which is defined in the rollup config as well as the extract-css utility.
+
+The dev environment "kitchen sink" is compiled by `rollup.config.dev.js` and is defined in `/src/dev`.
+
+The unit tests are run with Jest and are configured in `jest.config.js`. The e2e tests are defined in `/test`.

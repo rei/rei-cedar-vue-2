@@ -14,8 +14,9 @@ let externals = Object.keys({
 });
 
 if (babelEnv === 'cjs') {
-  // don't externalize ES modules in CJS build
-  // TODO: figure out config change needed in @rei/vunit
+  // don't externalize ES modules in CJS build,
+  // these libraries may not have CJS exports and tools like @rei/vunit
+  // may throw an error when trying to consume their ESM output
   externals = externals.filter((x) => x !== 'lodash-es' && x !== 'clsx' && x !== '@rei/cdr-tokens');
 }
 
@@ -53,7 +54,7 @@ if (env === 'prod' && babelEnv === 'esm') {
       ],
       plugins: [
         ...plugins,
-        renameExtensions({
+        renameExtensions({ // This plugin is used to rename compiled files to use the ESM .mjs format. Necessary to get tree shaking working. 
           include: ['**/*.js', '**/*.jsx', '**/*.scss'],
           mappings: {
             '.js': '.mjs',
@@ -63,7 +64,7 @@ if (env === 'prod' && babelEnv === 'esm') {
         }),
       ],
       external: env === 'prod' ? externalFn : undefined,
-      preserveModules: true,
+      preserveModules: true, // preserveModules is necessary for tree shaking to work as it compiles each file in cedar separately rather than building one large file
       ...defaults,
     },
   );

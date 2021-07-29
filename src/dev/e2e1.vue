@@ -1,3 +1,6 @@
+<!-- Cedar E2E tests are split in half because the kitchen sink was getting quite large
+  and the E2E testing tool was throwing errors because it couldn't load/analyze everything in once.
+  In the future as the system grows may need to create e2e3.vue, etc. -->
 <template>
   <section
     data-backstop="kitchen-sink"
