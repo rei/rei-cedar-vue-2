@@ -3,20 +3,110 @@
 
 .cdr-banner {
   @include cdr-banner-base-mixin;
+  display: grid;
+  grid-template-columns: 1fr 32px;
+  grid-template-areas: 
+  "main info-action"
+  "message-body info-action"
+  ;
+}
+
+.cdr-banner__wrapper {
+  border-radius: $cdr-radius-softer;
+  &--prominence {
+    box-shadow: $cdr-prominence-raised;
+  }
+}
+
+.cdr-banner__main {
+  grid-area: main;
+  display: grid;
+  border-top-right-radius: $cdr-radius-softer;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas: "icon-left message icon-right";
+  &--info {
+    @include cdr-banner-info-mixin;
+  }
+  &--warning {
+    @include cdr-banner-warning-mixin;
+  }
+  &--success {
+    @include cdr-banner-success-mixin;
+  }
+  &--error {
+    @include cdr-banner-error-mixin;
+  }
+  &--no-msg {
+    border-bottom-right-radius: $cdr-radius-softer;
+  }
+}
+
+
+.cdr-banner__icon-left {
+  grid-area: icon-left;
+  background-color: #FBEDB5;
+  display: inherit;
+  align-items: center;
+  & svg {
+    stroke: white;
+    stroke-width: 4px;
+    paint-order: stroke fill;
+    margin: $cdr-space-quarter-x;
+
+  }
+  &--info {
+    background-color: #B8C5EC
+  }
+  &--warning {
+    background-color: #FBEDB5;
+  }
+  &--success {
+    background-color: #BEE2C1;
+  }
+  &--error {
+    background-color: #EFC2C4;
+  }
+}
+
+.cdr-banner__message {
+  grid-area: message;
+  padding: $cdr-space-half-x;
+}
+
+.cdr-banner__message-body {
+  grid-area: message-body;
+  border-bottom-right-radius: $cdr-radius-softer;
+  background-color: $cdr-color-background-primary;
+  padding: $cdr-space-half-x;
+
+}
+
+.cdr-banner__icon-right {
+  grid-area: icon-right;
+  & svg {
+    fill: $cdr-color-text-emphasis!important;
+  }
+}
+
+.cdr-banner__info-action {
+  grid-area: info-action;
+  & svg {
+    fill: $cdr-color-text-link-rest!important;
+  }
 }
 
 .cdr-banner--info {
-  @include cdr-banner-info-mixin;
+  border-left-color: $cdr-color-border-info;
 }
 
 .cdr-banner--warning {
-  @include cdr-banner-warning-mixin;
+  border-left-color: $cdr-color-border-warning;
 }
 
 .cdr-banner--success {
-  @include cdr-banner-success-mixin;
+  border-left-color: #4F974E;
 }
 
 .cdr-banner--error {
-  @include cdr-banner-error-mixin;
+  border-left-color: $cdr-color-border-error;
 }
