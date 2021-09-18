@@ -1,0 +1,106 @@
+@import '../../../css/settings/index.scss';
+@import './vars/CdrToast.vars.scss';
+
+.cdr-toast {
+  @include cdr-toast-base-mixin;
+}
+.cdr-toast__inner {
+  display: revert;
+  
+}
+.cdr-toast--toast-enter {
+  opacity: 0;
+  transform: translateX(24px);
+}
+.cdr-toast--toast-enter-active {
+  transition: all $cdr-duration-5-x $timing-function;
+}
+.cdr-toast--toast-leave-to {
+  opacity: 0;
+}
+.cdr-toast--toast-leave-active {
+  transition: opacity $cdr-duration-2-x $timing-function;
+}
+
+.cdr-toast__main {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  border-top-right-radius: $cdr-radius-softer;
+  border-bottom-right-radius: $cdr-radius-softer;
+  grid-template-areas: "icon-left message close-button";
+  &--default {
+    @include cdr-toast-info-mixin;
+  }
+  &--info {
+    @include cdr-toast-info-mixin;
+  }
+  &--warning {
+    @include cdr-toast-warning-mixin;
+  }
+  &--success {
+    @include cdr-toast-success-mixin;
+  }
+  &--error {
+    @include cdr-toast-error-mixin;
+  }
+}
+.cdr-toast__icon-left {
+  grid-area: icon-left;
+  display: inherit;
+  align-items: center;
+  &--default {
+    background-color: #B8C5EC
+  }
+  &--info {
+    background-color: #B8C5EC
+  }
+  &--warning {
+    background-color: #FBEDB5;
+  }
+  &--success {
+    background-color: #BEE2C1;
+  }
+  &--error {
+    background-color: #EFC2C4;
+  }
+  & svg {
+    stroke: white;
+    stroke-width: 4px;
+    paint-order: stroke fill;
+    margin: $cdr-space-quarter-x;
+
+  }
+}
+
+.cdr-toast__message {
+  grid-area: message;
+  padding: $cdr-space-half-x;
+}
+
+.cdr-toast__close-button {
+  grid-area: close-button;
+  height: min-content;
+  & svg {
+    fill: $cdr-color-text-emphasis!important;
+  }
+}
+
+.cdr-toast--default {
+  border-left-color: $cdr-color-border-primary;
+}
+
+.cdr-toast--info {
+  border-left-color: $cdr-color-border-info;
+}
+
+.cdr-toast--warning {
+  border-left-color: $cdr-color-border-warning;
+}
+
+.cdr-toast--success {
+  border-left-color: #4F974E;
+}
+
+.cdr-toast--error {
+  border-left-color: $cdr-color-border-error;
+}
