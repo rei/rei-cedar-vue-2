@@ -1,6 +1,17 @@
 <template>
   <div>
     <h2>banner</h2>
+    <cdr-banner type="warning">
+      <icon-warning-fill inherit-color /> This is the legacy banner API example
+    </cdr-banner>
+    <br>
+    <cdr-banner>
+      <template #icon-left>
+        <icon-question-fill inherit-color />
+      </template>
+      Default banner
+    </cdr-banner>
+    <br>
     <cdr-banner type="info">
       <template #icon-left>
         <icon-information-fill inherit-color />

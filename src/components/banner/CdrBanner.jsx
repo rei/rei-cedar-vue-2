@@ -11,9 +11,9 @@ export default {
       type: String,
       validator: (value) => propValidator(
         value,
-        ['info', 'warning', 'success', 'error'],
+        ['info', 'warning', 'success', 'error', 'default'],
       ),
-      default: 'info',
+      default: 'default',
     },
   },
   data() {
@@ -31,7 +31,7 @@ export default {
     iconClass() {
       return this.modifyClassName(`${this.baseClass}__icon-left`, this.type);
     },
-    mainTheme() {
+    themeClass() {
       return this.modifyClassName(`${this.baseClass}__main`, this.type);
     },
     prominenceClass() {
@@ -49,7 +49,7 @@ export default {
     return (
       <div class={clsx(this.style[this.baseClass], this.borderClass)}>
         <div class={clsx(this.style['cdr-banner__wrapper'], this.prominenceClass)}>
-          <div class={clsx(this.style['cdr-banner__main'], this.mainTheme, this.noMsgBodyClass)}>
+          <div class={clsx(this.style['cdr-banner__main'], this.themeClass, this.noMsgBodyClass)}>
             {this.$slots['icon-left'] && (
               <div class={clsx(this.style['cdr-banner__icon-left'], this.iconClass)}>
                 {this.$slots['icon-left']}
@@ -59,9 +59,9 @@ export default {
               { this.$slots.default }
             </span>
             {this.$slots['icon-right'] && (
-              <div class={this.style['cdr-banner__icon-right']}>
-                {this.$slots['icon-right']}
-              </div>
+                <div class={this.style['cdr-banner__icon-right']}>
+                    {this.$slots['icon-right']}
+                </div>
             )}
           </div>
           {this.$slots['message-body'] && (

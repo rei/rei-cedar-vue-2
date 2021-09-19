@@ -6,56 +6,56 @@
 }
 
 @mixin cdr-banner-default-mixin() {
-  background-color: $cdr-color-background-message-info;
+  background-color: $cdr-color-background-message-default-01;
   border-top: 1px solid;
   border-right: 1px solid;
   border-bottom: 1px solid;
-  border-color: #B8C5EC;
+  border-color: $cdr-color-border-message-default-02;
   svg {
-    fill: $cdr-color-border-info;
+    fill: $cdr-color-icon-message-default;
   }
 }
 
 @mixin cdr-banner-info-mixin() {
-  background-color: $cdr-color-background-message-info;
+  background-color:  $cdr-color-background-message-info-01;
   border-top: 1px solid;
   border-right: 1px solid;
   border-bottom: 1px solid;
-  border-color: #B8C5EC;
+  border-color: $cdr-color-border-message-info-02;
   svg {
-    fill: $cdr-color-border-info;
+    fill: $cdr-color-icon-message-info;
   }
 }
 
 @mixin cdr-banner-success-mixin() {
-  background-color: #EAF9EC;
+  background-color:  $cdr-color-background-message-success-01;
   border-top: 1px solid;
   border-right: 1px solid;
   border-bottom: 1px solid;
-  border-color: #BEE2C1;
+  border-color: $cdr-color-border-message-success-02;
   svg {
-    fill: #4F974E;
+    fill: $cdr-color-icon-message-success;
   }
 }
 
 @mixin cdr-banner-warning-mixin() {
-  background-color: $cdr-color-background-message-warning;
+  background-color:  $cdr-color-background-message-warning-01;
   border-top: 1px solid;
   border-right: 1px solid;
   border-bottom: 1px solid;
-  border-color: $cdr-color-border-warning;
+  border-color: $cdr-color-border-message-warning-02;
   svg {
-    fill: $cdr-color-border-warning;
+    fill: $cdr-color-icon-message-warning;
   }
 }
 
 @mixin cdr-banner-error-mixin() {
-  background-color: $cdr-color-background-message-error;
+  background-color:  $cdr-color-background-message-error-01;
   border-top: 1px solid;
   border-right: 1px solid;
   border-bottom: 1px solid;
-  border-color: $cdr-color-border-error;
+  border-color: $cdr-color-border-message-error-02;
   svg {
-    fill: $cdr-color-border-error;
+    fill: $cdr-color-icon-message-error;
   }
 }
