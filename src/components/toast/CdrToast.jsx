@@ -54,12 +54,6 @@ export default {
     themeClass() {
       return this.modifyClassName(`${this.baseClass}__main`, this.type);
     },
-    openClass() {
-      return this.open ? this.style['cdr-toast--open'] : undefined;
-    },
-    closedClass() {
-      return this.closed ? this.style['cdr-toast--closed'] : undefined;
-    },
   },
   watch: {
     open(newValue, oldValue) {
@@ -75,7 +69,9 @@ export default {
     openToast() {
       this.closed = false;
       this.opened = true;
-      if (this.autoDismiss) setTimeout(this.closeToast, this.delay);
+      if (this.autoDismiss) {
+        setTimeout(this.closeToast, this.dismissDelay);
+      }
     },
     closeToast() {
       this.opened = false;
@@ -97,7 +93,6 @@ export default {
                 this.style[this.baseClass],
                 this.borderClass,
               )}
-              {... { attrs: this.$attrs } }
             >
           <div class={clsx(this.style['cdr-toast__main'], this.themeClass)}>
             { this.$slots['icon-left'] && (

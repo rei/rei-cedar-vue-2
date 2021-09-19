@@ -19,12 +19,13 @@
     <div class="toast-container">
       <cdr-toast
         :open="opened"
+        :auto-dismiss="false"
         type="warning"
       >
         <template #icon-left>
           <icon-information-fill inherit-color />
         </template>
-        I am toast, don't burn me.
+        I am toast, don't burn me. I won't go away until you dismiss me.
       </cdr-toast>
       <cdr-toast
         :open="opened1"
@@ -46,7 +47,7 @@
       </cdr-toast>
       <cdr-toast
         :open="opened3"
-        :delay="15000"
+        :dismiss-delay="15000"
       >
         <template #icon-left>
           <icon-heart-fill inherit-color />
