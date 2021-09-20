@@ -50,6 +50,7 @@ const routes = [
   { path: '/tables', name: 'Tables', component: Examples.tables },
   { path: '/tabs', name: 'Tabs', component: Examples.tabs },
   { path: '/texts', name: 'Texts', component: Examples.texts },
+  { path: '/toast', name: 'Toast', component: Examples.toast },
   { path: '/tooltip', name: 'Tooltip', component: Examples.tooltip },
 
   // Backstop test targets
