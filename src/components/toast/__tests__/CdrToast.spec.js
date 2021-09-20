@@ -1,13 +1,28 @@
-import { shallowMount } from '@vue/test-utils';
+import { mount } from '@vue/test-utils';
 import CdrToast from 'componentdir/toast/CdrToast';
+import IconCheckFill from 'componentdir/icon/comps/check-fill';
 
 describe('CdrToast', () => {
-  it('matches snapshot', () => {
-    const wrapper = shallowMount(CdrToast);
-    expect(wrapper.element).toMatchSnapshot();
+  let wrapper;
+  beforeEach(() => {
+    wrapper = mount(CdrToast, {
+      slots: {
+        default: 'toast content',
+        'icon-left': IconCheckFill,
+      },
+    });
   });
-
-  it('has a failing test by default so you remember to do them', () => {
-    expect(false).toBe(true);
+  it('matches snapshot', async () => {
+    wrapper.setProps({ open: true });
+    wrapper.setData({ opened: true });
+    await wrapper.vm.$nextTick(() => {
+      expect(wrapper.element).toMatchSnapshot();
+    })
+  });
+  it('watches for close triggers', async () => {
+    wrapper.setProps({ open: false });
+    await wrapper.vm.$nextTick(() => {
+      expect(wrapper.vm.closeToast).toBeCalled();
+    });
   });
 });
