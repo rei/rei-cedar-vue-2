@@ -3,20 +3,120 @@
 
 .cdr-banner {
   @include cdr-banner-base-mixin;
+  display: grid;
+  grid-template-columns: 1fr 32px;
+  grid-template-areas: 
+  "main info-action"
+  "message-body info-action"
+  ;
+}
+
+.cdr-banner__wrapper {
+  border-radius: $cdr-radius-softer;
+  &--prominence {
+    box-shadow: $cdr-prominence-raised;
+  }
+}
+
+.cdr-banner__main {
+  grid-area: main;
+  display: grid;
+  border-top-right-radius: $cdr-radius-softer;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas: "icon-left message icon-right";
+  &--info {
+    @include cdr-banner-info-mixin;
+  }
+  &--warning {
+    @include cdr-banner-warning-mixin;
+  }
+  &--success {
+    @include cdr-banner-success-mixin;
+  }
+  &--error {
+    @include cdr-banner-error-mixin;
+  }
+  &--default {
+    @include cdr-banner-default-mixin;
+  }
+  &--no-msg {
+    border-bottom-right-radius: $cdr-radius-softer;
+  }
+}
+
+
+.cdr-banner__icon-left {
+  grid-area: icon-left;
+  display: inherit;
+  align-items: center;
+  justify-items: center;
+  & svg {
+    width: 32px;
+    stroke: white;
+    stroke-width: 4px;
+    paint-order: stroke fill;
+    margin: $cdr-space-quarter-x;
+
+  }
+  &--info {
+    background-color: $cdr-color-background-message-info-02;
+  }
+  &--warning {
+    background-color: $cdr-color-background-message-warning-02;
+  }
+  &--success {
+    background-color: $cdr-color-background-message-success-02;
+  }
+  &--error {
+    background-color: $cdr-color-background-message-error-02;
+  }
+  &--default {
+    background-color: $cdr-color-background-message-default-02;
+  }
+}
+
+.cdr-banner__message {
+  grid-area: message;
+  padding: $cdr-space-half-x;
+}
+
+.cdr-banner__message-body {
+  grid-area: message-body;
+  border-bottom-right-radius: $cdr-radius-softer;
+  background-color: $cdr-color-background-primary;
+  padding: $cdr-space-half-x;
+
+}
+
+.cdr-banner__icon-right {
+  grid-area: icon-right;
+  & svg {
+    fill: $cdr-color-text-emphasis!important;
+  }
+}
+
+.cdr-banner__info-action {
+  grid-area: info-action;
+  & svg {
+    fill: $cdr-color-text-link-rest!important;
+  }
+}
+.cdr-banner--default {
+  border-left-color: $cdr-color-border-message-default-01;
 }
 
 .cdr-banner--info {
-  @include cdr-banner-info-mixin;
+  border-left-color: $cdr-color-border-message-info-01;
 }
 
 .cdr-banner--warning {
-  @include cdr-banner-warning-mixin;
+  border-left-color: $cdr-color-border-message-warning-01;
 }
 
 .cdr-banner--success {
-  @include cdr-banner-success-mixin;
+  border-left-color: $cdr-color-border-message-success-01;
 }
 
 .cdr-banner--error {
-  @include cdr-banner-error-mixin;
+  border-left-color: $cdr-color-border-message-error-01;
 }
