@@ -85,6 +85,7 @@
           <template #trigger>
             <cdr-button
               :icon-only="true"
+              aria-label="More information about banner"
             >
               <template #icon>
                 <icon-information-stroke />
