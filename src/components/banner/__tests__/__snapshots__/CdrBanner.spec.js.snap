@@ -8,10 +8,10 @@ exports[`CdrBanner renders a right-icon 1`] = `
     class="cdr-banner__wrapper"
   >
     <div
-      class="cdr-banner__main cdr-banner__main--warning cdr-banner__main--no-msg"
+      class="cdr-banner__main cdr-banner__main--no-msg"
     >
       <div
-        class="cdr-banner__icon-left cdr-banner__icon-left--warning"
+        class="cdr-banner__icon-left"
       >
         <svg
           aria-hidden="true"
@@ -58,10 +58,10 @@ exports[`CdrBanner renders correctly 1`] = `
     class="cdr-banner__wrapper"
   >
     <div
-      class="cdr-banner__main cdr-banner__main--info cdr-banner__main--no-msg"
+      class="cdr-banner__main cdr-banner__main--no-msg"
     >
       <div
-        class="cdr-banner__icon-left cdr-banner__icon-left--info"
+        class="cdr-banner__icon-left"
       >
         <svg
           aria-hidden="true"
@@ -93,10 +93,10 @@ exports[`CdrBanner renders the info-action slot 1`] = `
     class="cdr-banner__wrapper"
   >
     <div
-      class="cdr-banner__main cdr-banner__main--warning cdr-banner__main--no-msg"
+      class="cdr-banner__main cdr-banner__main--no-msg"
     >
       <div
-        class="cdr-banner__icon-left cdr-banner__icon-left--warning"
+        class="cdr-banner__icon-left"
       >
         <svg
           aria-hidden="true"
@@ -158,10 +158,10 @@ exports[`CdrBanner renders the message-body slot 1`] = `
     class="cdr-banner__wrapper cdr-banner__wrapper--prominence"
   >
     <div
-      class="cdr-banner__main cdr-banner__main--success"
+      class="cdr-banner__main"
     >
       <div
-        class="cdr-banner__icon-left cdr-banner__icon-left--success"
+        class="cdr-banner__icon-left"
       >
         <svg
           aria-hidden="true"
