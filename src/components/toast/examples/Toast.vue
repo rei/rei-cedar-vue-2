@@ -91,6 +91,7 @@
         :open="opened"
         :auto-dismiss="autoDismiss"
         :dismiss-delay="dismissDelay"
+        @closed="opened = false"
       >
         <template #icon-left>
           <component
@@ -118,7 +119,7 @@ export default {
       type: 'default',
       autoDismiss: true,
       dismissDelay: 5000,
-      toastMessage: '',
+      toastMessage: 'I am toast!',
       toastIcon: 'IconCheckFill',
     };
   },

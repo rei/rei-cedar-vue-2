@@ -3,106 +3,106 @@
 
 .cdr-toast {
   @include cdr-toast-base-mixin;
-}
-.cdr-toast__inner {
-  display: revert;
+
+  &__transition {
+    &--toast-enter {
+      opacity: 0;
+      transform: translateX(2.4rem);
+    }
+    &--toast-enter-active {
+      transition: all $cdr-duration-5-x $timing-function;
+    }
+    &--toast-leave-to {
+      opacity: 0;
+    }
+    &--toast-leave-active {
+      transition: opacity $cdr-duration-2-x $timing-function;
+    }
+  }
+
+  &__main {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    border-top-right-radius: $cdr-radius-softer;
+    border-bottom-right-radius: $cdr-radius-softer;
+    grid-template-areas: "icon-left message close-button";
+  }
+
+  &__icon-left {
+    grid-area: icon-left;
+    display: inherit;
+    align-items: center;
+    justify-items: center;
+    & svg {
+      width: 32px;
+      stroke: white;
+      stroke-width: 4px;
+      paint-order: stroke fill;
+      margin: $cdr-space-quarter-x;
   
-}
-.cdr-toast--toast-enter {
-  opacity: 0;
-  transform: translateX(24px);
-}
-.cdr-toast--toast-enter-active {
-  transition: all $cdr-duration-5-x $timing-function;
-}
-.cdr-toast--toast-leave-to {
-  opacity: 0;
-}
-.cdr-toast--toast-leave-active {
-  transition: opacity $cdr-duration-2-x $timing-function;
-}
+    }
+  }
 
-.cdr-toast__main {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  border-top-right-radius: $cdr-radius-softer;
-  border-bottom-right-radius: $cdr-radius-softer;
-  grid-template-areas: "icon-left message close-button";
+  &__message {
+    grid-area: message;
+    padding: $cdr-space-half-x;
+  }
+
+  &__close-button {
+    grid-area: close-button;
+    height: min-content;
+    & svg {
+      fill: $cdr-color-text-emphasis!important;
+    }
+  }
+
   &--default {
-    @include cdr-toast-default-mixin;
+    & > .cdr-toast__main {
+      @include cdr-toast-default-mixin;
+      & > .cdr-toast__icon-left {
+          background-color: $cdr-color-background-message-default-02;
+        }
+      }
+    border-left-color: $cdr-color-border-message-default-01;
   }
+
   &--info {
-    @include cdr-toast-info-mixin;
+    & > .cdr-toast__main {
+      @include cdr-toast-info-mixin;
+      & > .cdr-toast__icon-left {
+        background-color: $cdr-color-background-message-info-02;
+      }
+    }
+    border-left-color: $cdr-color-border-message-info-01;
   }
+
   &--warning {
-    @include cdr-toast-warning-mixin;
+    & > .cdr-toast__main {
+      @include cdr-toast-warning-mixin;
+      & > .cdr-toast__icon-left {
+        background-color: $cdr-color-background-message-warning-02;
+      }
+    }
+    border-left-color: $cdr-color-border-message-warning-01;
   }
+
   &--success {
-    @include cdr-toast-success-mixin;
+    & > .cdr-toast__main {
+      @include cdr-toast-success-mixin;
+      & > .cdr-toast__icon-left {
+        background-color: $cdr-color-background-message-success-02;
+      }
+    }
+    border-left-color: $cdr-color-border-message-success-01;
   }
+
   &--error {
-    @include cdr-toast-error-mixin;
+    & > .cdr-toast__main {
+      @include cdr-toast-error-mixin;
+      & > .cdr-toast__icon-left {
+        background-color: $cdr-color-background-message-error-02;
+      }
+    }
+    border-left-color: $cdr-color-border-message-error-01;
   }
-}
-.cdr-toast__icon-left {
-  grid-area: icon-left;
-  display: inherit;
-  align-items: center;
-  justify-items: center;
-  &--info {
-    background-color: $cdr-color-background-message-info-02;
-  }
-  &--warning {
-    background-color: $cdr-color-background-message-warning-02;
-  }
-  &--success {
-    background-color: $cdr-color-background-message-success-02;
-  }
-  &--error {
-    background-color: $cdr-color-background-message-error-02;
-  }
-  &--default {
-    background-color: $cdr-color-background-message-default-02;
-  }
-  & svg {
-    width: 32px;
-    stroke: white;
-    stroke-width: 4px;
-    paint-order: stroke fill;
-    margin: $cdr-space-quarter-x;
-
-  }
-}
-
-.cdr-toast__message {
-  grid-area: message;
-  padding: $cdr-space-half-x;
-}
-
-.cdr-toast__close-button {
-  grid-area: close-button;
-  height: min-content;
-  & svg {
-    fill: $cdr-color-text-emphasis!important;
-  }
-}
-
-.cdr-toast--default {
-  border-left-color: $cdr-color-border-message-default-01;
-}
-
-.cdr-toast--info {
-  border-left-color: $cdr-color-border-message-info-01;
-}
-
-.cdr-toast--warning {
-  border-left-color: $cdr-color-border-message-warning-01;
-}
-
-.cdr-toast--success {
-  border-left-color: $cdr-color-border-message-success-01;
-}
-
-.cdr-toast--error {
-  border-left-color: $cdr-color-border-message-error-01;
 }

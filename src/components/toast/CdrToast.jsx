@@ -37,66 +37,93 @@ export default {
   data() {
     return {
       style,
-      closed: null,
-      opened: null,
+      opened: undefined,
+      timeout: undefined,
+      openHandler: undefined,
+      closeHandler: undefined,
+      toastElement: undefined,
     };
   },
   computed: {
     baseClass() {
       return 'cdr-toast';
     },
-    borderClass() {
+    typeClass() {
       return this.modifyClassName(this.baseClass, this.type);
-    },
-    iconClass() {
-      return this.modifyClassName(`${this.baseClass}__icon-left`, this.type);
-    },
-    themeClass() {
-      return this.modifyClassName(`${this.baseClass}__main`, this.type);
     },
   },
   watch: {
-    open(newValue, oldValue) {
-      if (!!newValue === !!oldValue) return;
-      if (newValue) {
+    open() {
+      if (this.open) {
         this.openToast();
-      } else {
-        this.closeToast();
       }
     },
   },
+  updated() {
+    this.addHandlers();
+  },
+  beforeDestroy() {
+    this.removeHandlers();
+  },
   methods: {
-    openToast() {
-      this.closed = false;
+    openToast(e) {
+      if (this.timeout) {
+        clearTimeout(this.timeout);
+      } else {
+        this.$emit('open', e);
+      }
       this.opened = true;
-      if (this.autoDismiss) {
-        setTimeout(this.closeToast, this.dismissDelay);
+      if (this.autoDismiss && !e) {
+        this.closeToastWithDelay();
       }
     },
-    closeToast() {
+    closeToast(e) {
+      this.removeHandlers();
       this.opened = false;
-      this.closed = true;
+      this.$emit('closed', e);
     },
-
+    closeToastWithDelay(e) {
+      this.timeout = setTimeout(() => {
+        this.removeHandlers();
+        this.opened = false;
+        this.$emit('closed', e);
+      }, this.dismissDelay);
+    },
+    addHandlers() {
+      this.openHandler = this.openToast.bind(this);
+      this.closeHandler = this.closeToastWithDelay.bind(this);
+      this.toastElement = this.$refs.toastEl;
+      if (this.toastElement) {
+        this.toastElement.addEventListener('mouseover', this.openHandler);
+        this.toastElement.addEventListener('mouseleave', this.closeHandler);
+      }
+    },
+    removeHandlers() {
+      if (this.toastElement) {
+        this.toastElement.removeEventListener('mouseover', this.openHandler);
+        this.toastElement.removeEventListener('mouseleave', this.closeHandler);
+      }
+    },
   },
   render() {
     return (
       <transition
-        enter-class={clsx(this.style['cdr-toast--toast-enter'])}
-        enter-active-class={clsx(this.style['cdr-toast--toast-enter-active'])}
-        leave-to-class={clsx(this.style['cdr-toast--toast-leave-to'])}
-        leave-active-class={clsx(this.style['cdr-toast--toast-leave-active'])}
+        enter-class={clsx(this.style['cdr-toast__transition--toast-enter'])}
+        enter-active-class={clsx(this.style['cdr-toast__transition--toast-enter-active'])}
+        leave-to-class={clsx(this.style['cdr-toast__transition--toast-leave-to'])}
+        leave-active-class={clsx(this.style['cdr-toast__transition--toast-leave-active'])}
       >
         { this.opened
           ? <div
               class={clsx(
                 this.style[this.baseClass],
-                this.borderClass,
+                this.typeClass,
               )}
+              ref="toastEl"
             >
-          <div class={clsx(this.style['cdr-toast__main'], this.themeClass)}>
+          <div class={clsx(this.style['cdr-toast__main'])}>
             { this.$slots['icon-left'] && (
-                  <div class={clsx(this.style['cdr-toast__icon-left'], this.iconClass)}>
+                  <div class={clsx(this.style['cdr-toast__icon-left'])}>
                     {this.$slots['icon-left'] }
                   </div>
             )}
