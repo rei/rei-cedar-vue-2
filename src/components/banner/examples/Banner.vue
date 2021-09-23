@@ -40,107 +40,62 @@
       Success banner
     </cdr-banner>
     <br>
-    <cdr-banner type="error">
-      <template #icon-left>
-        <icon-atv />
-      </template>
-      This is the main messaging content
-    </cdr-banner>
-
-    <br>
 
     <cdr-banner type="warning">
       <template #icon-left>
-        <icon-atv />
+        <icon-warning-fill inherit-color />
       </template>
-      <strong>Warning!</strong> watch for reckless ATV drivers
+      Banner with a message body
       <template #message-body>
-        They ATV's go vrooom vrooom!
+        This is some extra information about the message.
       </template>
     </cdr-banner>
     <br>
-    <cdr-banner type="error">
-      <strong>Oops:</strong> something went wrong
+
+    <cdr-banner type="success">
+      <template #icon-left>
+        <icon-warning-stroke />
+      </template>
+      This is a banner with an icon-right slot, typically used to close the banner.
+      <template #icon-right>
+        <cdr-button
+          :icon-only="true"
+          aria-label="More information about icon"
+        >
+          <template #icon>
+            <icon-x-lg inherit-color />
+          </template>
+        </cdr-button>
+      </template>
       <template #message-body>
-        It was probably your fault.
+        Your parent template should handle the close action.
       </template>
     </cdr-banner>
     <br>
     <cdr-banner type="info">
       <template #icon-left>
-        <icon-warning-stroke />
+        <icon-information-fill inherit-color />
       </template>
-      information banner information banner information banner
-      information banner information banner information banner information banner information banner
-      <template #icon-right>
-        <cdr-button
-          :icon-only="true"
-          aria-label="More information about icon"
-        >
-          <template #icon>
-            <icon-x-lg inherit-color />
-          </template>
-        </cdr-button>
-      </template>
+      Banner with info-action slot
       <template #info-action>
-        <cdr-button
-          :icon-only="true"
-          aria-label="More information about icon"
+        <cdr-tooltip
+          id="tooltip-example"
+          position="top"
         >
-          <template #icon>
-            <icon-information-stroke inherit-color />
+          <template #trigger>
+            <cdr-button
+              :icon-only="true"
+              aria-label="More information about banner"
+            >
+              <template #icon>
+                <icon-information-stroke />
+              </template>
+            </cdr-button>
           </template>
-        </cdr-button>
-      </template>
-      <template #message-body>
-        This is some additional messaging about the status.
-      </template>
-    </cdr-banner>
-    <br>
-    <cdr-banner type="success">
-      <template #icon-left>
-        <icon-check-fill />
-      </template>
-      success banner
-      <template #icon-right>
-        <cdr-button
-          :icon-only="true"
-          aria-label="More information about icon"
-        >
-          <template #icon>
-            <icon-x-lg inherit-color />
-          </template>
-        </cdr-button>
-      </template>
-    </cdr-banner>
-    <br>
-    <cdr-banner type="warning">
-      <template #icon-left>
-        <icon-warning-stroke />
-      </template>
-      warning banner
-      <template #icon-right>
-        <cdr-button
-          :icon-only="true"
-          aria-label="More information about icon"
-        >
-          <template #icon>
-            <icon-brand-rei-ice-axes inherit-color />
-          </template>
-        </cdr-button>
-      </template>
-      <template #info-action>
-        <cdr-button
-          :icon-only="true"
-          aria-label="More information about icon"
-        >
-          <template #icon>
-            <icon-information-stroke inherit-color />
-          </template>
-        </cdr-button>
-      </template>
-      <template #message-body>
-        This is some additional messaging about the status.
+          <div>
+            The info action slot is used to pair an additional action to the banner.
+          </div>
+        </cdr-tooltip>
       </template>
     </cdr-banner>
     <br>

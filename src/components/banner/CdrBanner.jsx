@@ -25,14 +25,8 @@ export default {
     baseClass() {
       return 'cdr-banner';
     },
-    borderClass() {
+    typeClass() {
       return this.modifyClassName(this.baseClass, this.type);
-    },
-    iconClass() {
-      return this.modifyClassName(`${this.baseClass}__icon-left`, this.type);
-    },
-    themeClass() {
-      return this.modifyClassName(`${this.baseClass}__main`, this.type);
     },
     prominenceClass() {
       return this.$slots['message-body']
@@ -47,11 +41,11 @@ export default {
   },
   render() {
     return (
-      <div class={clsx(this.style[this.baseClass], this.borderClass)}>
+      <div class={clsx(this.style[this.baseClass], this.typeClass)}>
         <div class={clsx(this.style['cdr-banner__wrapper'], this.prominenceClass)}>
-          <div class={clsx(this.style['cdr-banner__main'], this.themeClass, this.noMsgBodyClass)}>
+          <div class={clsx(this.style['cdr-banner__main'], this.noMsgBodyClass)}>
             {this.$slots['icon-left'] && (
-              <div class={clsx(this.style['cdr-banner__icon-left'], this.iconClass)}>
+              <div class={clsx(this.style['cdr-banner__icon-left'])}>
                 {this.$slots['icon-left']}
               </div>
             )}

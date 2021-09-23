@@ -2,19 +2,19 @@
 
 exports[`CdrToast matches snapshot 1`] = `
 <transition-stub
-  enteractiveclass="cdr-toast--toast-enter-active"
-  enterclass="cdr-toast--toast-enter"
-  leaveactiveclass="cdr-toast--toast-leave-active"
-  leavetoclass="cdr-toast--toast-leave-to"
+  enteractiveclass="cdr-toast__transition--toast-enter-active"
+  enterclass="cdr-toast__transition--toast-enter"
+  leaveactiveclass="cdr-toast__transition--toast-leave-active"
+  leavetoclass="cdr-toast__transition--toast-leave-to"
 >
   <div
     class="cdr-toast cdr-toast--default"
   >
     <div
-      class="cdr-toast__main cdr-toast__main--default"
+      class="cdr-toast__main"
     >
       <div
-        class="cdr-toast__icon-left cdr-toast__icon-left--default"
+        class="cdr-toast__icon-left"
       >
         <svg
           aria-hidden="true"
