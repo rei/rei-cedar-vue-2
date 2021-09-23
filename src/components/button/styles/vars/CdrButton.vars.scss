@@ -16,15 +16,6 @@
   line-height: 22px;
 }
 
-@mixin cdr-button-base-text-mixin-large() {
-  font-family: $cdr-font-family-sans;
-  font-style: normal;
-  font-weight: 500;
-  letter-spacing: -.08px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
 @mixin cdr-button-base-mixin() {
   @include cdr-button-base-text-mixin-medium;
 
@@ -389,7 +380,7 @@
 }
 
 @mixin cdr-button-large-mixin() {
-  @include cdr-button-base-text-mixin-large;
+  @include cdr-button-base-text-mixin-medium;
   padding: $cdr-space-inset-one-and-a-half-x-squish;
   width: auto;
 
