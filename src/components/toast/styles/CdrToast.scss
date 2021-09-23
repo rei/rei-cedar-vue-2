@@ -57,9 +57,9 @@
   }
 
   &--default {
-    & > .cdr-toast__main {
+    & .cdr-toast__main {
       @include cdr-toast-default-mixin;
-      & > .cdr-toast__icon-left {
+      & .cdr-toast__icon-left {
           background-color: $cdr-color-background-message-default-02;
         }
       }
@@ -67,9 +67,9 @@
   }
 
   &--info {
-    & > .cdr-toast__main {
+    & .cdr-toast__main {
       @include cdr-toast-info-mixin;
-      & > .cdr-toast__icon-left {
+      & .cdr-toast__icon-left {
         background-color: $cdr-color-background-message-info-02;
       }
     }
@@ -77,9 +77,9 @@
   }
 
   &--warning {
-    & > .cdr-toast__main {
+    & .cdr-toast__main {
       @include cdr-toast-warning-mixin;
-      & > .cdr-toast__icon-left {
+      & .cdr-toast__icon-left {
         background-color: $cdr-color-background-message-warning-02;
       }
     }
@@ -87,9 +87,9 @@
   }
 
   &--success {
-    & > .cdr-toast__main {
+    & .cdr-toast__main {
       @include cdr-toast-success-mixin;
-      & > .cdr-toast__icon-left {
+      & .cdr-toast__icon-left {
         background-color: $cdr-color-background-message-success-02;
       }
     }
@@ -97,9 +97,9 @@
   }
 
   &--error {
-    & > .cdr-toast__main {
+    & .cdr-toast__main {
       @include cdr-toast-error-mixin;
-      & > .cdr-toast__icon-left {
+      & .cdr-toast__icon-left {
         background-color: $cdr-color-background-message-error-02;
       }
     }

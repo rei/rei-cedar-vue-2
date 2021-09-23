@@ -62,9 +62,6 @@ export default {
   updated() {
     this.addHandlers();
   },
-  beforeDestroy() {
-    this.removeHandlers();
-  },
   methods: {
     openToast(e) {
       if (this.timeout) {
