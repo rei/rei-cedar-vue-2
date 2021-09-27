@@ -1,15 +1,15 @@
 @mixin cdr-banner-base-mixin() {
   position: relative;
-  border-left: 4px solid;
+  border-left: 0.4rem solid;
   border-radius: $cdr-radius-softer;
   @include cdr-text-default;
 }
 
 @mixin cdr-banner-default-mixin() {
   background-color: $cdr-color-background-message-default-01;
-  border-top: 1px solid;
-  border-right: 1px solid;
-  border-bottom: 1px solid;
+  border-top: 0.1rem solid;
+  border-right: 0.1rem solid;
+  border-bottom: 0.1rem solid;
   border-color: $cdr-color-border-message-default-02;
   svg {
     fill: $cdr-color-icon-message-default;
@@ -18,9 +18,9 @@
 
 @mixin cdr-banner-info-mixin() {
   background-color:  $cdr-color-background-message-info-01;
-  border-top: 1px solid;
-  border-right: 1px solid;
-  border-bottom: 1px solid;
+  border-top: 0.1rem solid;
+  border-right: 0.1rem solid;
+  border-bottom: 0.1rem solid;
   border-color: $cdr-color-border-message-info-02;
   svg {
     fill: $cdr-color-icon-message-info;
@@ -29,9 +29,9 @@
 
 @mixin cdr-banner-success-mixin() {
   background-color:  $cdr-color-background-message-success-01;
-  border-top: 1px solid;
-  border-right: 1px solid;
-  border-bottom: 1px solid;
+  border-top: 0.1rem solid;
+  border-right: 0.1rem solid;
+  border-bottom: 0.1rem solid;
   border-color: $cdr-color-border-message-success-02;
   svg {
     fill: $cdr-color-icon-message-success;
@@ -40,9 +40,9 @@
 
 @mixin cdr-banner-warning-mixin() {
   background-color:  $cdr-color-background-message-warning-01;
-  border-top: 1px solid;
-  border-right: 1px solid;
-  border-bottom: 1px solid;
+  border-top: 0.1rem solid;
+  border-right: 0.1rem solid;
+  border-bottom: 0.1rem solid;
   border-color: $cdr-color-border-message-warning-02;
   svg {
     fill: $cdr-color-icon-message-warning;
@@ -51,9 +51,9 @@
 
 @mixin cdr-banner-error-mixin() {
   background-color:  $cdr-color-background-message-error-01;
-  border-top: 1px solid;
-  border-right: 1px solid;
-  border-bottom: 1px solid;
+  border-top: 0.1rem solid;
+  border-right: 0.1rem solid;
+  border-bottom: 0.1rem solid;
   border-color: $cdr-color-border-message-error-02;
   svg {
     fill: $cdr-color-icon-message-error;

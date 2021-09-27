@@ -4,7 +4,7 @@
 .cdr-banner {
   @include cdr-banner-base-mixin;
   display: grid;
-  grid-template-columns: 1fr 32px;
+  grid-template-columns: 1fr 3.2rem;
   grid-template-areas: 
   "main info-action"
   "message-body info-action"
@@ -31,9 +31,9 @@
     align-items: center;
     justify-items: center;
     & svg {
-      width: 32px;
+      width: 3.2rem;
       stroke: white;
-      stroke-width: 4px;
+      stroke-width: 0.4rem;
       paint-order: stroke fill;
       margin: $cdr-space-quarter-x;
   
