@@ -1,5 +1,15 @@
 <template>
   <div>
+    <div data-backstop="heading-display">
+      <h3>Heading Display</h3>
+      <cdr-text
+        v-for="level in heading.display"
+        :class="`cdr-text-dev--heading-display-${level}`"
+        :key="`heading-display-${level}`"
+      >
+        Heading Display {{ level }}
+      </cdr-text>
+    </div>
     <div data-backstop="heading-serif">
       <h3>Heading Serif</h3>
       <cdr-text
@@ -56,6 +66,7 @@ export default {
   data() {
     return {
       heading: {
+        display: [800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600],
         serif: [200, 300, 400, 500, 600, 700, 800, 900, 1100, 1200],
         serifStrong: [600, 700, 800, 900, 1100, 1200],
         sans: [200, 300, 400, 500, 600],

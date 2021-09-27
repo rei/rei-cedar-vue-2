@@ -230,6 +230,17 @@ export default {
   }
 
   &--heading {
+    &-display {
+      &-800 { @include cdr-text-heading-display-800; }
+      &-900 { @include cdr-text-heading-display-900; }
+      &-1000 { @include cdr-text-heading-display-1000; }
+      &-1100 { @include cdr-text-heading-display-1100; }
+      &-1200 { @include cdr-text-heading-display-1200; }
+      &-1300 { @include cdr-text-heading-display-1300; }
+      &-1400 { @include cdr-text-heading-display-1400; }
+      &-1500 { @include cdr-text-heading-display-1500; }
+      &-1600 { @include cdr-text-heading-display-1600; }
+    }
     &-sans {
       &-200 { @include cdr-text-heading-sans-200; }
       &-300 { @include cdr-text-heading-sans-300; }
