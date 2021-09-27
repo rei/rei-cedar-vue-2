@@ -54,7 +54,7 @@
 
     <cdr-banner type="success">
       <template #icon-left>
-        <icon-warning-stroke />
+        <icon-check-fill />
       </template>
       This is a banner with an icon-right slot, typically used to close the banner.
       <template #icon-right>
