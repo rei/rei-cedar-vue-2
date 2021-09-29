@@ -28,7 +28,6 @@ module.exports = {
     chrome: {
       desiredCapabilities: {
         browserName: 'chrome',
-        browserVersion: 'latest',
         javascriptEnabled: true,
         acceptSslCerts: true,
       },
