@@ -2,7 +2,6 @@ $timing-function: $cdr-timing-function-ease-out;
 
 @mixin cdr-toast-base-mixin() {
   position: relative;
-  border-radius: $cdr-radius-softer;
   border-left: 0.4rem solid;
   box-shadow: $cdr-prominence-floating;
   margin-bottom: $cdr-space-one-x;

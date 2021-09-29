@@ -23,8 +23,6 @@
   &__main {
     display: grid;
     grid-template-columns: auto 1fr auto;
-    border-top-right-radius: $cdr-radius-softer;
-    border-bottom-right-radius: $cdr-radius-softer;
     grid-template-areas: "icon-left message close-button";
   }
 
