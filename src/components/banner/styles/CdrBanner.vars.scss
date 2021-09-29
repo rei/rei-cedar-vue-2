@@ -1,10 +1,9 @@
+$left-border: 0.4rem solid;
+
 @mixin cdr-banner-base-mixin() {
   position: relative;
-  border-left: 0.4rem solid;
-  border-radius: $cdr-radius-softer;
   @include cdr-text-default;
 }
-
 @mixin cdr-banner-default-mixin() {
   background-color: $cdr-color-background-message-default-01;
   border-top: 0.1rem solid;

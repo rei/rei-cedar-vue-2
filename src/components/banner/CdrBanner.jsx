@@ -33,17 +33,12 @@ export default {
         ? this.modifyClassName(`${this.baseClass}__wrapper`, 'prominence')
         : undefined;
     },
-    noMsgBodyClass() {
-      return !this.$slots['message-body']
-        ? this.modifyClassName(`${this.baseClass}__main`, 'no-msg')
-        : undefined;
-    },
   },
   render() {
     return (
       <div class={clsx(this.style[this.baseClass], this.typeClass)}>
         <div class={clsx(this.style['cdr-banner__wrapper'], this.prominenceClass)}>
-          <div class={clsx(this.style['cdr-banner__main'], this.noMsgBodyClass)}>
+          <div class={clsx(this.style['cdr-banner__main'])}>
             {this.$slots['icon-left'] && (
               <div class={clsx(this.style['cdr-banner__icon-left'])}>
                 {this.$slots['icon-left']}
