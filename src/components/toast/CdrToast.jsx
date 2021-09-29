@@ -60,7 +60,7 @@ export default {
     },
   },
   updated() {
-    this.addHandlers();
+    if (this.autoDismiss) this.addHandlers();
   },
   methods: {
     openToast(e) {
