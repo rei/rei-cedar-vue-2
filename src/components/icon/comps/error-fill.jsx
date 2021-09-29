@@ -8,7 +8,7 @@ export default {
   render() {
     return (<cdr-icon {...{props: this.$props, attrs: this.$attrs} }>
       {this.$slots.default}
-      <path role="presentation" d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zm0 13.5a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5zm.22-9.5h-.44a1 1 0 00-.996.913l-.004.116.191 6.5a1 1 0 00.886.965l.114.006h.058a1 1 0 00.99-.857l.01-.114.19-6.5A1 1 0 0012.22 6z"></path>
+      <path role="presentation" fill-rule="evenodd" d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zm3.293-5.293a1 1 0 001.414-1.414L9.121 7.707a1 1 0 10-1.414 1.414l7.586 7.586z" clip-rule="evenodd"></path>
     </cdr-icon>)
   },
 };

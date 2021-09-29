@@ -4,26 +4,22 @@
 .cdr-banner {
   @include cdr-banner-base-mixin;
   display: grid;
-  grid-template-columns: 1fr 3.2rem;
+  grid-template-columns: 1fr auto;
   grid-template-areas: 
   "main info-action"
   "message-body info-action"
   ;
   &__wrapper {
-    border-radius: $cdr-radius-softer;
     &--prominence {
       box-shadow: $cdr-prominence-raised;
+
     }
   }
   &__main {
     grid-area: main;
     display: grid;
-    border-top-right-radius: $cdr-radius-softer;
     grid-template-columns: auto 1fr auto;
     grid-template-areas: "icon-left message icon-right";
-    &--no-msg {
-      border-bottom-right-radius: $cdr-radius-softer;
-    }
   }
   &__icon-left {
     grid-area: icon-left;
@@ -45,7 +41,6 @@
   }
   &__message-body {
     grid-area: message-body;
-    border-bottom-right-radius: $cdr-radius-softer;
     background-color: $cdr-color-background-primary;
     padding: $cdr-space-half-x;
   }
@@ -68,7 +63,10 @@
           background-color: $cdr-color-background-message-default-02;
         }
       }
-    border-left-color: $cdr-color-border-message-default-01;
+      & .cdr-banner__wrapper {
+        border-left: $left-border;
+        border-left-color: $cdr-color-border-message-default-01;
+      }
   }
 
   &--info {
@@ -78,7 +76,10 @@
         background-color: $cdr-color-background-message-info-02;
       }
     }
-    border-left-color: $cdr-color-border-message-info-01;
+    & .cdr-banner__wrapper {
+      border-left: $left-border;
+      border-left-color: $cdr-color-border-message-info-01;
+    }
   }
 
   &--warning {
@@ -88,7 +89,10 @@
         background-color: $cdr-color-background-message-warning-02;
       }
     }
-    border-left-color: $cdr-color-border-message-warning-01;
+    & .cdr-banner__wrapper {
+      border-left: $left-border;
+      border-left-color: $cdr-color-border-message-warning-01;
+    }
   }
 
   &--success {
@@ -98,7 +102,10 @@
         background-color: $cdr-color-background-message-success-02;
       }
     }
-    border-left-color: $cdr-color-border-message-success-01;
+    & .cdr-banner__wrapper {
+      border-left: $left-border;
+      border-left-color: $cdr-color-border-message-success-01;
+    }
   }
 
   &--error {
@@ -108,7 +115,10 @@
         background-color: $cdr-color-background-message-error-02;
       }
     }
-    border-left-color: $cdr-color-border-message-error-01;
+    & .cdr-banner__wrapper {
+      border-left: $left-border;
+      border-left-color: $cdr-color-border-message-error-01;      
+    }
   }
 }
 
