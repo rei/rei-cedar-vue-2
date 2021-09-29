@@ -8,7 +8,7 @@ exports[`CdrBanner renders a right-icon 1`] = `
     class="cdr-banner__wrapper"
   >
     <div
-      class="cdr-banner__main cdr-banner__main--no-msg"
+      class="cdr-banner__main"
     >
       <div
         class="cdr-banner__icon-left"
@@ -58,7 +58,7 @@ exports[`CdrBanner renders correctly 1`] = `
     class="cdr-banner__wrapper"
   >
     <div
-      class="cdr-banner__main cdr-banner__main--no-msg"
+      class="cdr-banner__main"
     >
       <div
         class="cdr-banner__icon-left"
@@ -93,7 +93,7 @@ exports[`CdrBanner renders the info-action slot 1`] = `
     class="cdr-banner__wrapper"
   >
     <div
-      class="cdr-banner__main cdr-banner__main--no-msg"
+      class="cdr-banner__main"
     >
       <div
         class="cdr-banner__icon-left"
