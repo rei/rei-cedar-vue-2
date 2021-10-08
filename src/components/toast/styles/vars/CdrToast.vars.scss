@@ -16,9 +16,6 @@ $timing-function: $cdr-timing-function-ease-out;
   border-right: 0.1rem solid;
   border-bottom: 0.1rem solid;
   border-color: $cdr-color-border-message-default-02;
-  svg {
-    fill: $cdr-color-icon-message-default;
-  }
 }
 
 @mixin cdr-toast-info-mixin() {
@@ -27,9 +24,6 @@ $timing-function: $cdr-timing-function-ease-out;
   border-right: 0.1rem solid;
   border-bottom: 0.1rem solid;
   border-color: $cdr-color-border-message-info-02;
-  svg {
-    fill: $cdr-color-icon-message-info;
-  }
 }
 
 @mixin cdr-toast-success-mixin() {
@@ -38,9 +32,6 @@ $timing-function: $cdr-timing-function-ease-out;
   border-right: 0.1rem solid;
   border-bottom: 0.1rem solid;
   border-color: $cdr-color-border-message-success-02;
-  svg {
-    fill: $cdr-color-icon-message-success;
-  }
 }
 
 @mixin cdr-toast-warning-mixin() {
@@ -49,9 +40,6 @@ $timing-function: $cdr-timing-function-ease-out;
   border-right: 0.1rem solid;
   border-bottom: 0.1rem solid;
   border-color: $cdr-color-border-message-warning-02;
-  svg {
-    fill: $cdr-color-icon-message-warning;
-  }
 }
 
 @mixin cdr-toast-error-mixin() {

@@ -10,9 +10,6 @@ $left-border: 0.4rem solid;
   border-right: 0.1rem solid;
   border-bottom: 0.1rem solid;
   border-color: $cdr-color-border-message-default-02;
-  svg {
-    fill: $cdr-color-icon-message-default;
-  }
 }
 
 @mixin cdr-banner-info-mixin() {
@@ -21,9 +18,6 @@ $left-border: 0.4rem solid;
   border-right: 0.1rem solid;
   border-bottom: 0.1rem solid;
   border-color: $cdr-color-border-message-info-02;
-  svg {
-    fill: $cdr-color-icon-message-info;
-  }
 }
 
 @mixin cdr-banner-success-mixin() {
@@ -32,9 +26,6 @@ $left-border: 0.4rem solid;
   border-right: 0.1rem solid;
   border-bottom: 0.1rem solid;
   border-color: $cdr-color-border-message-success-02;
-  svg {
-    fill: $cdr-color-icon-message-success;
-  }
 }
 
 @mixin cdr-banner-warning-mixin() {
@@ -43,9 +34,6 @@ $left-border: 0.4rem solid;
   border-right: 0.1rem solid;
   border-bottom: 0.1rem solid;
   border-color: $cdr-color-border-message-warning-02;
-  svg {
-    fill: $cdr-color-icon-message-warning;
-  }
 }
 
 @mixin cdr-banner-error-mixin() {
@@ -54,7 +42,4 @@ $left-border: 0.4rem solid;
   border-right: 0.1rem solid;
   border-bottom: 0.1rem solid;
   border-color: $cdr-color-border-message-error-02;
-  svg {
-    fill: $cdr-color-icon-message-error;
-  }
 }
