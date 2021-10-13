@@ -1,5 +1,4 @@
 import process from 'process';
-import renameExtensions from '@betit/rollup-plugin-rename-extensions';
 import plugins from './build/rollup-plugins';
 import defaults from './build/rollup-defaults';
 import packageJson from './package.json';
@@ -49,19 +48,11 @@ if (env === 'prod' && babelEnv === 'esm') {
         {
           dir: 'dist/lib',
           format: 'esm',
-          entryFileNames: '[name].js',
+          entryFileNames: '[name].mjs',
         },
       ],
       plugins: [
         ...plugins,
-        renameExtensions({ // This plugin is used to rename compiled files to use the ESM .mjs format. Necessary to get tree shaking working. 
-          include: ['**/*.js', '**/*.jsx', '**/*.scss'],
-          mappings: {
-            '.js': '.mjs',
-            '.jsx': '.mjs',
-            '.scss': '.mjs',
-          },
-        }),
       ],
       external: env === 'prod' ? externalFn : undefined,
       preserveModules: true, // preserveModules is necessary for tree shaking to work as it compiles each file in cedar separately rather than building one large file
