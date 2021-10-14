@@ -135,9 +135,9 @@ export default {
       this.$nextTick(() => {
         this.totalHeight = window.innerHeight;
         this.fullscreen = window.innerWidth < CdrBreakpointSm;
-        this.headerHeight = this.$refs.header.offsetHeight;
-        this.isScrolling = this.$refs.content.scrollHeight > this.$refs.content.offsetHeight;
-        this.hasScrollbar = (this.$refs.content.offsetWidth - this.$refs.content.clientWidth) > 0;
+        this.headerHeight = this.$refs.header?.offsetHeight;
+        this.isScrolling = this.$refs.content?.scrollHeight > this.$refs.content?.offsetHeight;
+        this.hasScrollbar = (this.$refs.content?.offsetWidth - this.$refs.content?.clientWidth) > 0;
       });
     },
     handleKeyDown({ key }) {
