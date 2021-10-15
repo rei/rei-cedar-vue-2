@@ -33,7 +33,6 @@ const routes = [
   { path: '/containers', name: 'Container', component: Examples.container },
   { path: '/formGroups', name: 'Form Groups', component: Examples.formGroup },
   { path: '/form', name: 'Form Patterns', component: Examples.forms },
-  { path: '/flex-grid', name: 'Grid flex', component: Examples.gridFlex },
   { path: '/grid', name: 'Grid', component: Examples.grid },
   { path: '/icons', name: 'Icons', component: Examples.icon },
   { path: '/images', name: 'Images', component: Examples.images },
