@@ -19,10 +19,21 @@ describe('CdrToast', () => {
       expect(wrapper.element).toMatchSnapshot();
     })
   });
-  it('watches for close triggers', async () => {
-    wrapper.setProps({ open: false });
+  it('handles close triggers', async () => {
+    const spyCloseToast = jest.spyOn(wrapper.vm, 'closeToast');
+    wrapper.setProps({ open: true });
     await wrapper.vm.$nextTick(() => {
-      expect(wrapper.vm.closeToast).toBeCalled();
+      wrapper.find('button').trigger('click');
+      expect(spyCloseToast).toBeCalled();
+    });
+  });
+  it('closes after 5 seconds', async () => {
+    jest.useFakeTimers();
+    const spyCloseToastWithDelay = jest.spyOn(wrapper.vm, 'closeToastWithDelay');
+    wrapper.setProps({ open: true });
+    jest.runTimersToTime(5000),
+    await wrapper.vm.$nextTick(() => {
+      expect(spyCloseToastWithDelay).toBeCalled();
     });
   });
 });
