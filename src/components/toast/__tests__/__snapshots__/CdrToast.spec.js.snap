@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CdrToast matches snapshot 1`] = `
+<transition-stub
+  enteractiveclass="cdr-toast__transition--toast-enter-active"
+  enterclass="cdr-toast__transition--toast-enter"
+  leaveactiveclass="cdr-toast__transition--toast-leave-active"
+  leavetoclass="cdr-toast__transition--toast-leave-to"
+>
+  <div
+    class="cdr-toast cdr-toast--default"
+    role="status"
+  >
+    <div
+      class="cdr-toast__main"
+    >
+      <div
+        class="cdr-toast__icon-left"
+      >
+        <svg
+          aria-hidden="true"
+          class="cdr-icon"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm4.77-13.357a1 1 0 10-1.533-1.286l-5.95 7.083-1.52-1.817a1 1 0 00-1.533 1.285l2.227 2.66a.999.999 0 001.565.1l6.743-8.025z"
+            role="presentation"
+          />
+        </svg>
+      </div>
+      <span
+        class="cdr-toast__message"
+      >
+        toast content
+      </span>
+      <button
+        aria-label="Close"
+        class="cdr-button cdr-button--primary cdr-button--icon-only cdr-toast__close-button"
+        type="button"
+      >
+        <svg
+          aria-hidden="true"
+          class="cdr-icon cdr-icon--inherit-color"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M13.406 12.006l3.297-3.296a1 1 0 10-1.414-1.414l-3.297 3.295-3.285-3.295A1 1 0 107.293 8.71l3.285 3.295-3.285 3.288a1 1 0 001.414 1.415l3.285-3.289 3.297 3.289a1 1 0 001.414-1.415l-3.297-3.287z"
+            role="presentation"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+</transition-stub>
+`;

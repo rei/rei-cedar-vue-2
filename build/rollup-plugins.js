@@ -26,6 +26,8 @@ function generateScopedName(name, filename, css) {
 // plugin configs
 let postcssMode = 'inject';
 let copyOutput = 'public';
+
+// Any SVG assets that are not a CdrIcon must be listed here in order for them to be available in the compiled build
 const copyTargets = [
   { src: 'static/star-null.svg', dest: 'dist/svg' },
   { src: 'static/star-0.svg', dest: 'dist/svg' },
@@ -70,6 +72,7 @@ const plugins = [
     extensions: ['.mjs', '.js', '.jsx', '.json'],
   }),
   env !== 'prod' && vue({
+    // Vue plugin only needs to run for the dev/test builds. Prod build is all JSX and is handled by babel/postcss
     style: {
       postcssModulesOptions: {
         generateScopedName,
@@ -109,7 +112,7 @@ const plugins = [
     babelHelpers: 'bundled',
   }),
   commonjs({
-      extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx']
   }),
   copyPlugin({
     targets: copyTargets,

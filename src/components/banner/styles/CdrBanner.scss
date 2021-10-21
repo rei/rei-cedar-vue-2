@@ -3,20 +3,137 @@
 
 .cdr-banner {
   @include cdr-banner-base-mixin;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas: 
+  "main info-action"
+  "message-body info-action"
+  ;
+  &__wrapper {
+    &--prominence {
+      box-shadow: $cdr-prominence-raised;
+
+    }
+  }
+  &__main {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas: "icon-left message icon-right";
+  }
+  &__icon-left {
+    grid-area: icon-left;
+    display: inherit;
+    align-items: center;
+    justify-items: center;
+    & svg {
+      width: 3.2rem;
+      stroke: white;
+      stroke-width: 0.4rem;
+      paint-order: stroke fill;
+      margin: $cdr-space-quarter-x;
+  
+    }
+  }
+  &__message {
+    grid-area: message;
+    padding: $cdr-space-half-x;
+  }
+  &__message-body {
+    grid-area: message-body;
+    background-color: $cdr-color-background-primary;
+    padding: $cdr-space-half-x;
+  }
+  &__icon-right {
+    grid-area: icon-right;
+    & svg {
+      fill: $cdr-color-text-emphasis!important;
+    }
+  }
+  &__info-action {
+    grid-area: info-action;
+    & svg {
+      fill: $cdr-color-text-link-rest!important;
+    }
+  }
+  &--default {
+    & .cdr-banner__main {
+      @include cdr-banner-default-mixin;
+      & .cdr-banner__icon-left {
+          background-color: $cdr-color-background-message-default-02;
+          svg {
+            fill: $cdr-color-icon-message-default;
+          }
+        }
+      }
+      & .cdr-banner__wrapper {
+        border-left: $left-border;
+        border-left-color: $cdr-color-border-message-default-01;
+      }
+  }
+
+  &--info {
+    & .cdr-banner__main {
+      @include cdr-banner-info-mixin;
+      & .cdr-banner__icon-left {
+        background-color: $cdr-color-background-message-info-02;
+        svg {
+          fill: $cdr-color-icon-message-info;
+        }
+      }
+    }
+    & .cdr-banner__wrapper {
+      border-left: $left-border;
+      border-left-color: $cdr-color-border-message-info-01;
+    }
+  }
+
+  &--warning {
+    & .cdr-banner__main {
+      @include cdr-banner-warning-mixin;
+      & .cdr-banner__icon-left {
+        background-color: $cdr-color-background-message-warning-02;
+        svg {
+          fill: $cdr-color-icon-message-warning;
+        }
+      }
+    }
+    & .cdr-banner__wrapper {
+      border-left: $left-border;
+      border-left-color: $cdr-color-border-message-warning-01;
+    }
+  }
+
+  &--success {
+    & .cdr-banner__main {
+      @include cdr-banner-success-mixin;
+      & .cdr-banner__icon-left {
+        background-color: $cdr-color-background-message-success-02;
+        svg {
+          fill: $cdr-color-icon-message-success;
+        }
+      }
+    }
+    & .cdr-banner__wrapper {
+      border-left: $left-border;
+      border-left-color: $cdr-color-border-message-success-01;
+    }
+  }
+
+  &--error {
+    & .cdr-banner__main {
+      @include cdr-banner-error-mixin;
+      & .cdr-banner__icon-left {
+        background-color: $cdr-color-background-message-error-02;
+        svg {
+          fill: $cdr-color-icon-message-error;
+        }
+      }
+    }
+    & .cdr-banner__wrapper {
+      border-left: $left-border;
+      border-left-color: $cdr-color-border-message-error-01;      
+    }
+  }
 }
 
-.cdr-banner--info {
-  @include cdr-banner-info-mixin;
-}
-
-.cdr-banner--warning {
-  @include cdr-banner-warning-mixin;
-}
-
-.cdr-banner--success {
-  @include cdr-banner-success-mixin;
-}
-
-.cdr-banner--error {
-  @include cdr-banner-error-mixin;
-}

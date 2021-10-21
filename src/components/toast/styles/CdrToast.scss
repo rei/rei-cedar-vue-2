@@ -1,0 +1,121 @@
+@import '../../../css/settings/index.scss';
+@import './vars/CdrToast.vars.scss';
+
+.cdr-toast {
+  @include cdr-toast-base-mixin;
+
+  &__transition {
+    &--toast-enter {
+      opacity: 0;
+      transform: translateX(2.4rem);
+    }
+    &--toast-enter-active {
+      transition: all $cdr-duration-5-x $timing-function;
+    }
+    &--toast-leave-to {
+      opacity: 0;
+    }
+    &--toast-leave-active {
+      transition: opacity $cdr-duration-2-x $timing-function;
+    }
+  }
+
+  &__main {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas: "icon-left message close-button";
+  }
+
+  &__icon-left {
+    grid-area: icon-left;
+    display: inherit;
+    align-items: center;
+    justify-items: center;
+    & svg {
+      width: 3.2rem;
+      stroke: white;
+      stroke-width: 0.4rem;
+      paint-order: stroke fill;
+      margin: $cdr-space-quarter-x;
+  
+    }
+  }
+
+  &__message {
+    grid-area: message;
+    padding: $cdr-space-half-x;
+  }
+
+  &__close-button {
+    grid-area: close-button;
+    height: min-content;
+    & svg {
+      fill: $cdr-color-text-emphasis!important;
+    }
+  }
+
+  &--default {
+    & .cdr-toast__main {
+      @include cdr-toast-default-mixin;
+      & .cdr-toast__icon-left {
+          background-color: $cdr-color-background-message-default-02;
+          svg {
+            fill: $cdr-color-icon-message-default;
+          }
+        }
+      }
+    border-left-color: $cdr-color-border-message-default-01;
+  }
+
+  &--info {
+    & .cdr-toast__main {
+      @include cdr-toast-info-mixin;
+      & .cdr-toast__icon-left {
+        background-color: $cdr-color-background-message-info-02;
+        svg {
+          fill: $cdr-color-icon-message-info;
+        }
+      }
+    }
+    border-left-color: $cdr-color-border-message-info-01;
+  }
+
+  &--warning {
+    & .cdr-toast__main {
+      @include cdr-toast-warning-mixin;
+      & .cdr-toast__icon-left {
+        background-color: $cdr-color-background-message-warning-02;
+        svg {
+          fill: $cdr-color-icon-message-warning;
+        }
+      }
+    }
+    border-left-color: $cdr-color-border-message-warning-01;
+  }
+
+  &--success {
+    & .cdr-toast__main {
+      @include cdr-toast-success-mixin;
+      & .cdr-toast__icon-left {
+        background-color: $cdr-color-background-message-success-02;
+        svg {
+          fill: $cdr-color-icon-message-success;
+        }
+      }
+    }
+    border-left-color: $cdr-color-border-message-success-01;
+  }
+
+  &--error {
+    & .cdr-toast__main {
+      @include cdr-toast-error-mixin;
+      & .cdr-toast__icon-left {
+        background-color: $cdr-color-background-message-error-02;
+        svg {
+          fill: $cdr-color-icon-message-error;
+        }
+      }
+    }
+    border-left-color: $cdr-color-border-message-error-01;
+  }
+}

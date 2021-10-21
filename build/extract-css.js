@@ -37,6 +37,10 @@ const outFile = [{outPath: './dist/style/reset.css'}]
   .map(createImport)
   .join('\n');
 
+// cedar-full.css simply imports every Cedar component CSS file using `@import url()`,
+// exported for convenience so that it can be imported in test/dev/prototype/internal
+// projects rather than manually importing each Cedar CSS file,
+// not intended for production!!
 fs.outputFile('./dist/style/cedar-full.css', outFile, function(err) {
   if (!err) {
     console.log(chalk.green(`success! created cedar-full.css`));
@@ -60,7 +64,7 @@ function buildCss({ srcPath, outPath, scopeClasses }) {
         if (scopeClasses) {
           plugins.push(postcssModules({
             generateScopedName: function (name) {
-              // scope classes for components
+              // scope classes for components. This function is duplicated in `./rollup-plugins.js`
               return `${name}_${packageJson.version.replace(/\./g, '-')}`;
             },
             getJSON: function noop() {}

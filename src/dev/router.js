@@ -7,6 +7,7 @@ import e2e2 from 'srcdir/dev/e2e2';
 
 // Extra paths for backstop.
 //  These are smaller sections of larger demo pages to make screenshotting more reliable
+//  As backstop often throws errors on pages that are too large (i.e, button)
 import DefaultButtons from 'componentsdir/button/examples/demo/Default';
 import FullWidthButtons from 'componentsdir/button/examples/demo/FullWidth';
 import IconButtons from 'componentsdir/button/examples/demo/Icons';
@@ -32,7 +33,6 @@ const routes = [
   { path: '/containers', name: 'Container', component: Examples.container },
   { path: '/formGroups', name: 'Form Groups', component: Examples.formGroup },
   { path: '/form', name: 'Form Patterns', component: Examples.forms },
-  { path: '/flex-grid', name: 'Grid flex', component: Examples.gridFlex },
   { path: '/grid', name: 'Grid', component: Examples.grid },
   { path: '/icons', name: 'Icons', component: Examples.icon },
   { path: '/images', name: 'Images', component: Examples.images },
@@ -49,6 +49,7 @@ const routes = [
   { path: '/tables', name: 'Tables', component: Examples.tables },
   { path: '/tabs', name: 'Tabs', component: Examples.tabs },
   { path: '/texts', name: 'Texts', component: Examples.texts },
+  { path: '/toast', name: 'Toast', component: Examples.toast },
   { path: '/tooltip', name: 'Tooltip', component: Examples.tooltip },
 
   // Backstop test targets

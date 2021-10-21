@@ -1,10 +1,16 @@
-$left-border: 0.4rem solid;
+$timing-function: $cdr-timing-function-ease-out;
 
-@mixin cdr-banner-base-mixin() {
+@mixin cdr-toast-base-mixin() {
   position: relative;
+  border-left: 0.4rem solid;
+  box-shadow: $cdr-prominence-floating;
+  margin-bottom: $cdr-space-one-x;
   @include cdr-text-default;
+  @include cdr-sm-mq-up {
+    width: 39rem;
+  }
 }
-@mixin cdr-banner-default-mixin() {
+@mixin cdr-toast-default-mixin() {
   background-color: $cdr-color-background-message-default-01;
   border-top: 0.1rem solid;
   border-right: 0.1rem solid;
@@ -12,7 +18,7 @@ $left-border: 0.4rem solid;
   border-color: $cdr-color-border-message-default-02;
 }
 
-@mixin cdr-banner-info-mixin() {
+@mixin cdr-toast-info-mixin() {
   background-color:  $cdr-color-background-message-info-01;
   border-top: 0.1rem solid;
   border-right: 0.1rem solid;
@@ -20,7 +26,7 @@ $left-border: 0.4rem solid;
   border-color: $cdr-color-border-message-info-02;
 }
 
-@mixin cdr-banner-success-mixin() {
+@mixin cdr-toast-success-mixin() {
   background-color:  $cdr-color-background-message-success-01;
   border-top: 0.1rem solid;
   border-right: 0.1rem solid;
@@ -28,7 +34,7 @@ $left-border: 0.4rem solid;
   border-color: $cdr-color-border-message-success-02;
 }
 
-@mixin cdr-banner-warning-mixin() {
+@mixin cdr-toast-warning-mixin() {
   background-color:  $cdr-color-background-message-warning-01;
   border-top: 0.1rem solid;
   border-right: 0.1rem solid;
@@ -36,10 +42,13 @@ $left-border: 0.4rem solid;
   border-color: $cdr-color-border-message-warning-02;
 }
 
-@mixin cdr-banner-error-mixin() {
+@mixin cdr-toast-error-mixin() {
   background-color:  $cdr-color-background-message-error-01;
   border-top: 0.1rem solid;
   border-right: 0.1rem solid;
   border-bottom: 0.1rem solid;
   border-color: $cdr-color-border-message-error-02;
+  svg {
+    fill: $cdr-color-icon-message-error;
+  }
 }

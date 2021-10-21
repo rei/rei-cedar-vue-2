@@ -79,8 +79,27 @@ exports[`CdrInput renders error state correctly 1`] = `
     >
       <span
         class="cdr-form-error__icon"
-      />
-       Something is wrong!
+      >
+        <svg
+          aria-hidden="true"
+          class="cdr-icon cdr-icon--small cdr-icon--inherit-color"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g>
+            <path
+              d="M15.293 16.707a1 1 0 001.414-1.414L9.121 7.707a1 1 0 10-1.414 1.414l7.586 7.586z"
+              role="presentation"
+            />
+            <path
+              clip-rule="evenodd"
+              d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2s10 4.477 10 10zm-2 0a8 8 0 11-16 0 8 8 0 0116 0z"
+              fill-rule="evenodd"
+            />
+          </g>
+        </svg>
+      </span>
+      Something is wrong!
     </div>
   </div>
 </div>

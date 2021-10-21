@@ -25,6 +25,7 @@ import tables from 'componentsdir/table/examples/Table';
 import tabs from 'componentsdir/tabs/examples/Tabs';
 import texts from 'componentsdir/text/examples/Text';
 import tooltip from 'componentsdir/tooltip/examples/Tooltip';
+import toast from 'componentsdir/toast/examples/Toast';
 import forms from 'componentsdir/Form/Form';
 
 export default {
@@ -55,5 +56,6 @@ export default {
   tabs,
   texts,
   tooltip,
+  toast,
   forms,
 };
