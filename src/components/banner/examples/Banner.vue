@@ -2,7 +2,7 @@
   <div>
     <h2>banner</h2>
     <cdr-banner type="warning">
-      <icon-warning-fill inherit-color /> This is the legacy banner API example
+      <div><icon-warning-fill inherit-color /> This is the legacy banner API example</div>
     </cdr-banner>
     <br>
     <cdr-banner>
