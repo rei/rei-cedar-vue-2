@@ -5,7 +5,7 @@ $timing-function: $cdr-timing-function-ease-out;
   border-left: 0.4rem solid;
   box-shadow: $cdr-prominence-floating;
   margin-bottom: $cdr-space-one-x;
-  @include cdr-text-default;
+  @include cdr-text-utility-sans-200;
   @include cdr-sm-mq-up {
     width: 39rem;
   }
