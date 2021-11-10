@@ -2,7 +2,7 @@ $left-border: 0.4rem solid;
 
 @mixin cdr-banner-base-mixin() {
   position: relative;
-  @include cdr-text-default;
+  @include cdr-text-utility-sans-200;
 }
 @mixin cdr-banner-default-mixin() {
   background-color: $cdr-color-background-message-default-01;

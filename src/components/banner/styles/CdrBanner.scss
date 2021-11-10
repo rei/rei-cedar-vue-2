@@ -12,7 +12,6 @@
   &__wrapper {
     &--prominence {
       box-shadow: $cdr-prominence-raised;
-
     }
   }
   &__main {
@@ -27,7 +26,8 @@
     align-items: center;
     justify-items: center;
     & svg {
-      width: 3.2rem;
+      max-height: 2.2rem;
+      max-width: 2.2rem;
       stroke: white;
       stroke-width: 0.4rem;
       paint-order: stroke fill;
@@ -36,8 +36,10 @@
     }
   }
   &__message {
+    display: inherit;
     grid-area: message;
-    padding: $cdr-space-half-x;
+    padding: 0 $cdr-space-half-x;
+    align-items: center;
   }
   &__message-body {
     grid-area: message-body;
@@ -45,14 +47,25 @@
     padding: $cdr-space-half-x;
   }
   &__icon-right {
+    display: inherit;
+    align-items: center;
     grid-area: icon-right;
     & svg {
+      max-height: 2rem;
+      max-width: 2rem;
       fill: $cdr-color-text-emphasis!important;
     }
   }
   &__info-action {
+    display: inherit;
     grid-area: info-action;
+    align-content: center;
+    justify-content: center;
+    max-height: 3.2rem;
+    width: 4rem;
     & svg {
+      max-height: 2.2rem;
+      max-width: 2.2rem;
       fill: $cdr-color-text-link-rest!important;
     }
   }

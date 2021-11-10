@@ -27,12 +27,14 @@
   }
 
   &__icon-left {
+    width: 3.2rem;
     grid-area: icon-left;
     display: inherit;
     align-items: center;
     justify-items: center;
     & svg {
-      width: 3.2rem;
+      max-height: 2.2rem;
+      max-width: 2.2rem;
       stroke: white;
       stroke-width: 0.4rem;
       paint-order: stroke fill;
@@ -42,14 +44,20 @@
   }
 
   &__message {
+    display: inherit;
+    align-items: center;
     grid-area: message;
-    padding: $cdr-space-half-x;
+    padding: 0.7rem;
   }
 
   &__close-button {
+    display: inherit;
+    align-content: center;
     grid-area: close-button;
-    height: min-content;
+    max-height: 3.2rem;
     & svg {
+      height: 2.2rem;
+      width: 2.2rem;
       fill: $cdr-color-text-emphasis!important;
     }
   }
