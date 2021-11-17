@@ -89,16 +89,6 @@ describe('cdrSelect', () => {
     expect(caret.classes()).toContain('cdr-select__caret--disabled');
   });
 
-  it('sets select required attribute correctly', () => {
-    const wrapper = shallowMount(CdrSelect, {
-      propsData: {
-        label: 'test',
-        required: true,
-      },
-    });
-    expect(wrapper.find('select').attributes('aria-required')).toBe('true');
-  });
-
   it('sets select autofocus attribute correctly', () => {
     const wrapper = shallowMount(CdrSelect, {
       propsData: {

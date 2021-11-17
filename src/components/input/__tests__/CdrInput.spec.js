@@ -94,17 +94,6 @@ describe('CdrInput', () => {
         required: true,
       },
     });
-    expect(wrapper.find('input').attributes('aria-required')).toBe('true');
-  });
-
-  it('sets attrs for number type input', () => {
-    const wrapper = shallowMount(CdrInput, {
-      propsData: {
-        label: 'test',
-        required: true,
-        type: 'number'
-      },
-    });
     expect(wrapper.find('input').attributes('novalidate')).toBe('novalidate');
     expect(wrapper.find('input').attributes('pattern')).toBe('[0-9]*');
     expect(wrapper.find('input').attributes('inputmode')).toBe('numeric');
