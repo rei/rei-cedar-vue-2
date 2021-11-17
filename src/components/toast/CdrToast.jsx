@@ -60,7 +60,7 @@ export default {
     },
   },
   updated() {
-    this.addHandlers();
+    if (this.autoDismiss) this.addHandlers();
   },
   methods: {
     openToast(e) {
@@ -116,6 +116,7 @@ export default {
                 this.style[this.baseClass],
                 this.typeClass,
               )}
+              role="status"
               ref="toastEl"
             >
           <div class={clsx(this.style['cdr-toast__main'])}>

@@ -9,6 +9,7 @@ exports[`CdrToast matches snapshot 1`] = `
 >
   <div
     class="cdr-toast cdr-toast--default"
+    role="status"
   >
     <div
       class="cdr-toast__main"

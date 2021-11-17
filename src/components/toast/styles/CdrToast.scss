@@ -23,20 +23,20 @@
   &__main {
     display: grid;
     grid-template-columns: auto 1fr auto;
-    border-top-right-radius: $cdr-radius-softer;
-    border-bottom-right-radius: $cdr-radius-softer;
     grid-template-areas: "icon-left message close-button";
   }
 
   &__icon-left {
+    width: 3.2rem;
     grid-area: icon-left;
     display: inherit;
     align-items: center;
     justify-items: center;
     & svg {
-      width: 32px;
+      max-height: 2.2rem;
+      max-width: 2.2rem;
       stroke: white;
-      stroke-width: 4px;
+      stroke-width: 0.4rem;
       paint-order: stroke fill;
       margin: $cdr-space-quarter-x;
   
@@ -44,14 +44,20 @@
   }
 
   &__message {
+    display: inherit;
+    align-items: center;
     grid-area: message;
-    padding: $cdr-space-half-x;
+    padding: 0.7rem;
   }
 
   &__close-button {
+    display: inherit;
+    align-content: center;
     grid-area: close-button;
-    height: min-content;
+    max-height: 3.2rem;
     & svg {
+      height: 2.2rem;
+      width: 2.2rem;
       fill: $cdr-color-text-emphasis!important;
     }
   }
@@ -61,6 +67,9 @@
       @include cdr-toast-default-mixin;
       & .cdr-toast__icon-left {
           background-color: $cdr-color-background-message-default-02;
+          svg {
+            fill: $cdr-color-icon-message-default;
+          }
         }
       }
     border-left-color: $cdr-color-border-message-default-01;
@@ -71,6 +80,9 @@
       @include cdr-toast-info-mixin;
       & .cdr-toast__icon-left {
         background-color: $cdr-color-background-message-info-02;
+        svg {
+          fill: $cdr-color-icon-message-info;
+        }
       }
     }
     border-left-color: $cdr-color-border-message-info-01;
@@ -81,6 +93,9 @@
       @include cdr-toast-warning-mixin;
       & .cdr-toast__icon-left {
         background-color: $cdr-color-background-message-warning-02;
+        svg {
+          fill: $cdr-color-icon-message-warning;
+        }
       }
     }
     border-left-color: $cdr-color-border-message-warning-01;
@@ -91,6 +106,9 @@
       @include cdr-toast-success-mixin;
       & .cdr-toast__icon-left {
         background-color: $cdr-color-background-message-success-02;
+        svg {
+          fill: $cdr-color-icon-message-success;
+        }
       }
     }
     border-left-color: $cdr-color-border-message-success-01;
@@ -101,6 +119,9 @@
       @include cdr-toast-error-mixin;
       & .cdr-toast__icon-left {
         background-color: $cdr-color-background-message-error-02;
+        svg {
+          fill: $cdr-color-icon-message-error;
+        }
       }
     }
     border-left-color: $cdr-color-border-message-error-01;

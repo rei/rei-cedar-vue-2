@@ -4,13 +4,12 @@
 .cdr-banner {
   @include cdr-banner-base-mixin;
   display: grid;
-  grid-template-columns: 1fr 32px;
+  grid-template-columns: 1fr auto;
   grid-template-areas: 
   "main info-action"
   "message-body info-action"
   ;
   &__wrapper {
-    border-radius: $cdr-radius-softer;
     &--prominence {
       box-shadow: $cdr-prominence-raised;
     }
@@ -18,12 +17,8 @@
   &__main {
     grid-area: main;
     display: grid;
-    border-top-right-radius: $cdr-radius-softer;
     grid-template-columns: auto 1fr auto;
     grid-template-areas: "icon-left message icon-right";
-    &--no-msg {
-      border-bottom-right-radius: $cdr-radius-softer;
-    }
   }
   &__icon-left {
     grid-area: icon-left;
@@ -31,33 +26,46 @@
     align-items: center;
     justify-items: center;
     & svg {
-      width: 32px;
+      max-height: 2.2rem;
+      max-width: 2.2rem;
       stroke: white;
-      stroke-width: 4px;
+      stroke-width: 0.4rem;
       paint-order: stroke fill;
       margin: $cdr-space-quarter-x;
   
     }
   }
   &__message {
+    display: inherit;
     grid-area: message;
-    padding: $cdr-space-half-x;
+    padding: 0 $cdr-space-half-x;
+    align-items: center;
   }
   &__message-body {
     grid-area: message-body;
-    border-bottom-right-radius: $cdr-radius-softer;
     background-color: $cdr-color-background-primary;
     padding: $cdr-space-half-x;
   }
   &__icon-right {
+    display: inherit;
+    align-items: center;
     grid-area: icon-right;
     & svg {
+      max-height: 2rem;
+      max-width: 2rem;
       fill: $cdr-color-text-emphasis!important;
     }
   }
   &__info-action {
+    display: inherit;
     grid-area: info-action;
+    align-content: center;
+    justify-content: center;
+    max-height: 3.2rem;
+    width: 4rem;
     & svg {
+      max-height: 2.2rem;
+      max-width: 2.2rem;
       fill: $cdr-color-text-link-rest!important;
     }
   }
@@ -66,9 +74,15 @@
       @include cdr-banner-default-mixin;
       & .cdr-banner__icon-left {
           background-color: $cdr-color-background-message-default-02;
+          svg {
+            fill: $cdr-color-icon-message-default;
+          }
         }
       }
-    border-left-color: $cdr-color-border-message-default-01;
+      & .cdr-banner__wrapper {
+        border-left: $left-border;
+        border-left-color: $cdr-color-border-message-default-01;
+      }
   }
 
   &--info {
@@ -76,9 +90,15 @@
       @include cdr-banner-info-mixin;
       & .cdr-banner__icon-left {
         background-color: $cdr-color-background-message-info-02;
+        svg {
+          fill: $cdr-color-icon-message-info;
+        }
       }
     }
-    border-left-color: $cdr-color-border-message-info-01;
+    & .cdr-banner__wrapper {
+      border-left: $left-border;
+      border-left-color: $cdr-color-border-message-info-01;
+    }
   }
 
   &--warning {
@@ -86,9 +106,15 @@
       @include cdr-banner-warning-mixin;
       & .cdr-banner__icon-left {
         background-color: $cdr-color-background-message-warning-02;
+        svg {
+          fill: $cdr-color-icon-message-warning;
+        }
       }
     }
-    border-left-color: $cdr-color-border-message-warning-01;
+    & .cdr-banner__wrapper {
+      border-left: $left-border;
+      border-left-color: $cdr-color-border-message-warning-01;
+    }
   }
 
   &--success {
@@ -96,9 +122,15 @@
       @include cdr-banner-success-mixin;
       & .cdr-banner__icon-left {
         background-color: $cdr-color-background-message-success-02;
+        svg {
+          fill: $cdr-color-icon-message-success;
+        }
       }
     }
-    border-left-color: $cdr-color-border-message-success-01;
+    & .cdr-banner__wrapper {
+      border-left: $left-border;
+      border-left-color: $cdr-color-border-message-success-01;
+    }
   }
 
   &--error {
@@ -106,9 +138,15 @@
       @include cdr-banner-error-mixin;
       & .cdr-banner__icon-left {
         background-color: $cdr-color-background-message-error-02;
+        svg {
+          fill: $cdr-color-icon-message-error;
+        }
       }
     }
-    border-left-color: $cdr-color-border-message-error-01;
+    & .cdr-banner__wrapper {
+      border-left: $left-border;
+      border-left-color: $cdr-color-border-message-error-01;      
+    }
   }
 }
 

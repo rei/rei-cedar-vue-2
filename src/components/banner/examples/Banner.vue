@@ -2,7 +2,7 @@
   <div>
     <h2>banner</h2>
     <cdr-banner type="warning">
-      <icon-warning-fill inherit-color /> This is the legacy banner API example
+      <div><icon-warning-fill inherit-color /> This is the legacy banner API example</div>
     </cdr-banner>
     <br>
     <cdr-banner>
@@ -54,7 +54,7 @@
 
     <cdr-banner type="success">
       <template #icon-left>
-        <icon-warning-stroke />
+        <icon-check-fill />
       </template>
       This is a banner with an icon-right slot, typically used to close the banner.
       <template #icon-right>
