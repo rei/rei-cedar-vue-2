@@ -96,9 +96,11 @@ $accordion-border: 1px solid $cdr-color-border-primary;
 
   /* Style variants
     ========================================================================== */
-  &--unwrap {
+  &--unwrap,
+  &__content--no-padding {
     padding: 0;
   }
+
   /* Border-Aligned
      ========== */
   &--border-aligned {

@@ -46,6 +46,11 @@ export default {
       type: [String, Number],
       required: true,
     },
+    // Toggles content padding
+    contentPadding: {
+      type: Boolean,
+      default: true,
+    },
   },
   data() {
     return {
@@ -79,6 +84,11 @@ export default {
     },
     isOpenClass() {
       return this.opened || this.unwrap.value ? 'open' : 'closed';
+    },
+    noPaddingClass() {
+      return !this.contentPadding
+        ? this.modifyClassName(`${this.baseClass}__content`, 'no-padding')
+        : null;
     },
     listeners() {
       return this.unwrap.value ? {} : {
@@ -169,7 +179,10 @@ export default {
         style={ { maxHeight: this.unwrap.value ? 'none' : this.maxHeight } }
       >
         <div
-          class={clsx(this.style['cdr-accordion__content'], this.isOpenClass, this.unwrapClass)}
+          class={clsx(
+            this.style['cdr-accordion__content'],
+            this.isOpenClass, this.unwrapClass, this.noPaddingClass,
+          )}
           aria-hidden={!this.unwrap.value && `${!this.opened}`}
           id={`${this.id}-collapsible`}
           ref="accordion-content"

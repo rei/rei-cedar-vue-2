@@ -176,7 +176,40 @@
         </cdr-accordion>
       </cdr-accordion-group>
     </div>
-
+    <h3>
+      No content padding
+    </h3>
+    <cdr-accordion
+      id="default-standalone"
+      level="3"
+      :content-padding="false"
+      :opened="accordionDefaultStandalone"
+      @accordion-toggle="accordionDefaultStandalone = !accordionDefaultStandalone"
+    >
+      <template slot="label">
+        A short label
+      </template>
+      <cdr-text
+        class="cdr-text-dev--body-300"
+      >
+        This is some text. It's in a
+        <cdr-text
+          tag="strong"
+          class="cdr-text-dev--body-strong-300"
+        >cdr-text paragraph with a modifier of <code>body-300</code></cdr-text> element as
+        thats how you assign the correct font and line-height for text dislpay on REI.
+        does not include margin or add space to the container. Lorem ipsum dolor
+        sit amet, consectetur adipiscing elit. Sed dictum fermentum tortor posuere
+        fermentum. Sed interdum vel urna at tempor. Nullam vel sapien odio. Class
+        aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
+        himenaeos. Fusce venenatis ex ut ultricies tincidunt. Suspendisse potenti.
+        Sed ut euismod mi, sit amet porta augue. Proin dictum laoreet blandit. Nulla
+        tempus tellus id ligula sodales ultrices. Proin lacus diam, ornare at libero
+        nec, eleifend vulputate mi. Praesent vestibulum accumsan erat id dapibus.
+        Suspendisse ut laoreet nunc, et tempor eros. Etiam vel commodo velit. Proin
+        egestas fringilla elit et lacinia. Praesent et vehicula massa. Fusce ac purus neque.
+      </cdr-text>
+    </cdr-accordion>
     <h3>
       Unwrapped Standalone
     </h3>
