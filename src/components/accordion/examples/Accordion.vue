@@ -180,11 +180,11 @@
       No content padding
     </h3>
     <cdr-accordion
-      id="default-standalone"
+      id="content-spacing"
       level="3"
       :content-spacing="false"
-      :opened="accordionDefaultStandalone"
-      @accordion-toggle="accordionDefaultStandalone = !accordionDefaultStandalone"
+      :opened="accordionContentSpacing"
+      @accordion-toggle="accordionContentSpacing = !accordionContentSpacing"
     >
       <template slot="label">
         A short label
@@ -283,6 +283,7 @@ export default {
       accordionDefault2: false,
       accordionCompact: false,
       accordionCompact2: false,
+      accordionContentSpacing: false,
       grouped: [
         {
           label: 'These are border-aligned',

@@ -96,8 +96,7 @@ $accordion-border: 1px solid $cdr-color-border-primary;
 
   /* Style variants
     ========================================================================== */
-  &--unwrap,
-  &__content--no-spacing {
+  &--unwrap {
     padding: 0;
   }
 
@@ -113,6 +112,14 @@ $accordion-border: 1px solid $cdr-color-border-primary;
 
     .cdr-accordion__content {
       padding: $cdr-space-half-x 0 $cdr-space-one-x;
+    }
+  }
+
+  /* No content spacing
+     ========== */
+  &--no-spacing {
+    .cdr-accordion__content {
+      padding: 0;
     }
   }
 

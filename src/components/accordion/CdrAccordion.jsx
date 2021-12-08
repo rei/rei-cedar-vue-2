@@ -87,7 +87,7 @@ export default {
     },
     noSpacingClass() {
       return !this.contentSpacing
-        ? this.modifyClassName(`${this.baseClass}__content`, 'no-spacing')
+        ? this.modifyClassName(`${this.baseClass}`, 'no-spacing')
         : null;
     },
     listeners() {
@@ -142,7 +142,8 @@ export default {
       class={!this.unwrap.value && clsx(this.style[this.baseClass],
         this.modifierClass,
         this.styleClass,
-        this.focusedClass)}
+        this.focusedClass,
+        this.noSpacingClass)}
       id={`${this.id}-accordion`}
       ref="accordion-container"
     >
@@ -181,7 +182,7 @@ export default {
         <div
           class={clsx(
             this.style['cdr-accordion__content'],
-            this.isOpenClass, this.unwrapClass, this.noSpacingClass,
+            this.isOpenClass, this.unwrapClass,
           )}
           aria-hidden={!this.unwrap.value && `${!this.opened}`}
           id={`${this.id}-collapsible`}
