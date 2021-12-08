@@ -46,8 +46,8 @@ export default {
       type: [String, Number],
       required: true,
     },
-    // Toggles content padding
-    contentPadding: {
+    // Toggles content spacing (padding)
+    contentSpacing: {
       type: Boolean,
       default: true,
     },
@@ -85,9 +85,9 @@ export default {
     isOpenClass() {
       return this.opened || this.unwrap.value ? 'open' : 'closed';
     },
-    noPaddingClass() {
-      return !this.contentPadding
-        ? this.modifyClassName(`${this.baseClass}__content`, 'no-padding')
+    noSpacingClass() {
+      return !this.contentSpacing
+        ? this.modifyClassName(`${this.baseClass}__content`, 'no-spacing')
         : null;
     },
     listeners() {
@@ -181,7 +181,7 @@ export default {
         <div
           class={clsx(
             this.style['cdr-accordion__content'],
-            this.isOpenClass, this.unwrapClass, this.noPaddingClass,
+            this.isOpenClass, this.unwrapClass, this.noSpacingClass,
           )}
           aria-hidden={!this.unwrap.value && `${!this.opened}`}
           id={`${this.id}-collapsible`}

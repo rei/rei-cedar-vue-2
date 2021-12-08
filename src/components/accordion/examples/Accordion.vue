@@ -182,7 +182,7 @@
     <cdr-accordion
       id="default-standalone"
       level="3"
-      :content-padding="false"
+      :content-spacing="false"
       :opened="accordionDefaultStandalone"
       @accordion-toggle="accordionDefaultStandalone = !accordionDefaultStandalone"
     >
