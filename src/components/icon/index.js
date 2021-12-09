@@ -21,6 +21,7 @@ export { default as IconBrandGithub } from './comps/brand-github';
 export { default as IconBrandLinkedin } from './comps/brand-linkedin';
 export { default as IconBrandReiIceAxes } from './comps/brand-rei-ice-axes';
 export { default as IconBrandSketch } from './comps/brand-sketch';
+export { default as IconBrandTiktok } from './comps/brand-tiktok';
 export { default as IconBuddies } from './comps/buddies';
 export { default as IconBus } from './comps/bus';
 export { default as IconCalendar } from './comps/calendar';

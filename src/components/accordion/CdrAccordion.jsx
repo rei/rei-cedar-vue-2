@@ -46,6 +46,11 @@ export default {
       type: [String, Number],
       required: true,
     },
+    // Toggles content spacing (padding)
+    contentSpacing: {
+      type: Boolean,
+      default: true,
+    },
   },
   data() {
     return {
@@ -79,6 +84,11 @@ export default {
     },
     isOpenClass() {
       return this.opened || this.unwrap.value ? 'open' : 'closed';
+    },
+    noSpacingClass() {
+      return !this.contentSpacing
+        ? this.modifyClassName(`${this.baseClass}`, 'no-spacing')
+        : null;
     },
     listeners() {
       return this.unwrap.value ? {} : {
@@ -132,7 +142,8 @@ export default {
       class={!this.unwrap.value && clsx(this.style[this.baseClass],
         this.modifierClass,
         this.styleClass,
-        this.focusedClass)}
+        this.focusedClass,
+        this.noSpacingClass)}
       id={`${this.id}-accordion`}
       ref="accordion-container"
     >
@@ -169,7 +180,10 @@ export default {
         style={ { maxHeight: this.unwrap.value ? 'none' : this.maxHeight } }
       >
         <div
-          class={clsx(this.style['cdr-accordion__content'], this.isOpenClass, this.unwrapClass)}
+          class={clsx(
+            this.style['cdr-accordion__content'],
+            this.isOpenClass, this.unwrapClass,
+          )}
           aria-hidden={!this.unwrap.value && `${!this.opened}`}
           id={`${this.id}-collapsible`}
           ref="accordion-content"
