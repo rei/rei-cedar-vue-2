@@ -106,6 +106,7 @@ export { default as IconLockUnlockedStroke } from './comps/lock-unlocked-stroke'
 export { default as IconMail } from './comps/mail';
 export { default as IconMap } from './comps/map';
 export { default as IconMemberCard } from './comps/member-card';
+export { default as IconMembership } from './comps/membership';
 export { default as IconMicrophone } from './comps/microphone';
 export { default as IconMinusFill } from './comps/minus-fill';
 export { default as IconMinusLg } from './comps/minus-lg';
@@ -144,6 +145,8 @@ export { default as IconRun } from './comps/run';
 export { default as IconScanBarcode } from './comps/scan-barcode';
 export { default as IconSearch } from './comps/search';
 export { default as IconServiceShop } from './comps/service-shop';
+export { default as IconShippingPrep } from './comps/shipping-prep';
+export { default as IconShippingTruck } from './comps/shipping-truck';
 export { default as IconShipping } from './comps/shipping';
 export { default as IconShoppingBagFill } from './comps/shopping-bag-fill';
 export { default as IconShoppingBag } from './comps/shopping-bag';
