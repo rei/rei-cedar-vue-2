@@ -71,6 +71,7 @@ export { default as IconExperiencesHiking } from './comps/experiences-hiking';
 export { default as IconExperiencesOutdoorBasics } from './comps/experiences-outdoor-basics';
 export { default as IconExperiencesPaddling } from './comps/experiences-paddling';
 export { default as IconExperiencesRentals } from './comps/experiences-rentals';
+export { default as IconExperiencesRunning } from './comps/experiences-running';
 export { default as IconExperiencesSnowsports } from './comps/experiences-snowsports';
 export { default as IconExperiencesTravel } from './comps/experiences-travel';
 export { default as IconExternalLink } from './comps/external-link';
