@@ -340,7 +340,7 @@ export default {
         }
       });
     },
-    select(page, e) {
+    select(page) {
       this.$refs[`page-link-${page}-${this.componentID}`].click();
     },
     guid() {

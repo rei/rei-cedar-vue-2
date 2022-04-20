@@ -74,8 +74,8 @@ export default {
   },
   methods: {
     openPopover(e) {
-      if (isOpen === true) {
-        return
+      if (this.isOpen === true) {
+        return;
       }
       const { activeElement } = document;
 
