@@ -114,25 +114,6 @@ describe('CdrBreadcrumb', () => {
     expect(wrapper.vm.truncate).toBe(true);
   });
 
-  it('breadcrumb link can be overridden with link scopedSlot', () => {
-    const wrapper = shallowMount(CdrBreadcrumb, {
-      propsData: {
-        items: [
-          {
-            item: {
-              url: 'http://rei.com',
-              name: 'Scoped',
-            },
-          },
-        ],
-      },
-      scopedSlots: {
-        link: '<p slot-scope="link">{{link.href}} TEST {{link.content}} {{link.class}}</p>'
-      }
-    });
-    expect(wrapper.text()).toBe('http://rei.com TEST Scoped cdr-breadcrumb__link');
-  });
-
   it('applies focus to first breadcrumb on ellipsis click', async (done) => {
     const elem = document.createElement('div')
     if (document.body) {
