@@ -74,12 +74,15 @@ export default {
   },
   methods: {
     openPopover(e) {
+      if (this.isOpen === true) {
+        return;
+      }
       const { activeElement } = document;
 
       this.lastActive = activeElement;
       this.isOpen = true;
       this.$emit('opened', e);
-      this.$nextTick(() => {
+      setTimeout(() => {
         const tabbables = tabbable(this.$refs.popup.$el);
         if (tabbables[0]) tabbables[0].focus();
       });

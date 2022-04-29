@@ -120,7 +120,7 @@
         content-class="popover-override"
         id="popover-custom-test"
         @opened="popupHandler"
-        @closed="popupHandler"
+        @closed="closedCustomHandler"
       >
         <cdr-text>
           This is an example of a popover where the trigger is not passed into the component
@@ -155,6 +155,10 @@ export default {
   },
   methods: {
     popupHandler(e) {
+      console.log(e);
+    },
+    closedCustomHandler(e) {
+      this.open = false;
       console.log(e);
     },
   },

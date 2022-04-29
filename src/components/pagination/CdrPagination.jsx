@@ -184,20 +184,17 @@ export default {
       const LinkTag = this.linkTag;
       return this.innerValue > this.pages[0].page ? (
         <li>
-          {this.$scopedSlots.prevLink
-            ? this.$scopedSlots.prevLink(this.prevElAttrs)
-            : (<LinkTag
-              {... { attrs: this.prevElAttrs.attrs }}
-              href={LinkTag === 'a' && this.prevElAttrs.href}
-              ref={this.prevElAttrs.attrs.ref}
-              onClick={this.prevElAttrs.click}
-            >
-              <this.prevElAttrs.iconComponent
-                class={this.prevElAttrs.iconClass}
-              />
-              {this.prevElAttrs.content}
-            </LinkTag>)
-          }
+          <LinkTag
+            {... { attrs: this.prevElAttrs.attrs }}
+            href={LinkTag === 'a' && this.prevElAttrs.href}
+            ref={this.prevElAttrs.attrs.ref}
+            onClick={this.prevElAttrs.click}
+          >
+            <this.prevElAttrs.iconComponent
+              class={this.prevElAttrs.iconClass}
+            />
+            {this.prevElAttrs.content}
+          </LinkTag>
         </li>
       ) : (
         <li aria-hidden="true">
@@ -240,9 +237,7 @@ export default {
       const LinkTag = this.linkTag;
       return this.innerValue < this.pages[this.totalPageData - 1].page ? (
         <li>
-          {this.$scopedSlots.nextLink
-            ? this.$scopedSlots.nextLink(this.nextElAttrs)
-            : (<LinkTag
+          <LinkTag
               {... { attrs: this.nextElAttrs.attrs }}
               href={LinkTag === 'a' && this.nextElAttrs.href}
               ref={this.nextElAttrs.attrs.ref}
@@ -252,9 +247,7 @@ export default {
               <this.nextElAttrs.iconComponent
                 class={this.nextElAttrs.iconClass}
               />
-            </LinkTag>)
-          }
-
+            </LinkTag>
         </li>
       ) : (
         <li aria-hidden="true">
@@ -347,18 +340,8 @@ export default {
         }
       });
     },
-    select(page, e) {
-      e.preventDefault();
-      if (this.$scopedSlots.link) {
-        const ref = this.$scopedSlots.link()[0].context.$refs[`page-link-${page}-${this.componentID}`]; // eslint-disable-line max-len
-        if (ref.$el) { // it's a component (like vue-router)
-          ref.$el.click();
-        } else { // it's standard markup
-          ref.click();
-        }
-      } else {
-        this.$refs[`page-link-${page}-${this.componentID}`].click();
-      }
+    select(page) {
+      this.$refs[`page-link-${page}-${this.componentID}`].click();
     },
     guid() {
       function s4() {
@@ -387,8 +370,8 @@ export default {
       };
 
       const LinkTag = this.linkTag;
-      return (this.$scopedSlots.link ? this.$scopedSlots.link(linkData)
-        : <LinkTag
+      return (
+        <LinkTag
           {... { attrs: linkData.attrs } }
           href={LinkTag === 'a' && linkData.href}
           onClick={linkData.click}
