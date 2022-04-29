@@ -93,20 +93,13 @@ export default {
           key={breadcrumb.item.id || breadcrumb.item.name.replace(/ /g, '-').toLowerCase()}
           v-show={!this.truncate || (index >= this.items.length - 2)}
         >
-          {this.$scopedSlots.link
-            ? this.$scopedSlots.link({
-              class: this.style['cdr-breadcrumb__link'],
-              href: breadcrumb.item.url,
-              content: breadcrumb.item.name,
-            })
-            : (<a
-              class={this.style['cdr-breadcrumb__link']}
-              href={breadcrumb.item.url}
-              onClick={(e) => this.$emit('navigate', breadcrumb, e)}
-            >
-              { breadcrumb.item.name }
-            </a>)
-          }
+          <a
+            class={this.style['cdr-breadcrumb__link']}
+            href={breadcrumb.item.url}
+            onClick={(e) => this.$emit('navigate', breadcrumb, e)}
+          >
+            { breadcrumb.item.name }
+          </a>
           {delimiter}
         </li>);
       });

@@ -38,22 +38,6 @@
       data-backstop="breadcrumbs-default"
       @navigate="handleClick"
     />
-    <h3>
-      Scoped Slot
-    </h3>
-    <cdr-breadcrumb :items="reiExampleBreadcrumbItems">
-      <template
-        slot="link"
-        slot-scope="link"
-      >
-        <a
-          :class="link.class"
-          :href="link.href"
-        >
-          {{ link.content }}
-        </a>
-      </template>
-    </cdr-breadcrumb>
   </div>
 </template>
 

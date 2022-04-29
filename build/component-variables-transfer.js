@@ -8,7 +8,6 @@ const SUPPORTED_COMPONENTS = [
   /* global vars */
   'options.vars.scss',
   /* component vars */
-  'CdrBanner.vars.scss',
   'CdrButton.vars.scss',
   'CdrCard.vars.scss',
   'CdrChip.vars.scss',
