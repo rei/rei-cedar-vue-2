@@ -4,6 +4,7 @@ $cdr-warn: false;
 @import "~@rei/cdr-tokens/dist/scss/cdr-tokens.scss";
 
 @font-face {
+  font-display: swap;
   font-family: $cdr-font-family-serif-brand-font;
   font-weight: 1 999;
   src: url("//www.rei.com/satchel/media/font-optimized/Stuart/REIStuart-VF-Web-Subset.woff2") format("woff2-variations"),
@@ -11,6 +12,7 @@ $cdr-warn: false;
 }
 
 @font-face {
+  font-display: swap;
   font-family: $cdr-font-family-serif-brand-font;
   font-weight: 1 999;
   font-style: italic;
@@ -19,6 +21,7 @@ $cdr-warn: false;
 }
 
 @font-face {
+  font-display: swap;
   font-family: $cdr-font-family-sans-brand-font;
   font-weight: 1 999;
   src: url("//www.rei.com/satchel/media/font-optimized/Graphik/Graphik-VF-Web-Subset.woff2") format("woff2-variations"),
@@ -26,6 +29,7 @@ $cdr-warn: false;
 }
 
 @font-face {
+  font-display: swap;
   font-family: $cdr-font-family-sans-brand-font;
   font-weight: 1 999;
   font-style: italic;
