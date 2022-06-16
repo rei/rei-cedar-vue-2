@@ -1,4 +1,5 @@
-// This will be compiled to static/cdr-fonts.css
+// This will be compiled to static/cdr-fonts.css and used in conjuction 
+// with typography mixin tokens from @rei/cdr-tokens to apply brand font styles
 
 $cdr-warn: false;
 @import "~@rei/cdr-tokens/dist/scss/cdr-tokens.scss";
