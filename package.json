@@ -67,7 +67,7 @@
     "babel-plugin-istanbul": "^6.0.0",
     "backstopjs": "^5.3.7",
     "chalk": "^4.1.1",
-    "chromedriver": "^101.0.0",
+    "chromedriver": "^102.0.0",
     "codecov": "^3.8.2",
     "cross-env": "^7.0.3",
     "cross-spawn": "^7.0.3",
