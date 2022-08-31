@@ -12,8 +12,34 @@ function resolve(dir) {
 
 // indexArr builds the 'index' index.js file
 const indexArr = [];
+const svgCss = [`
+@mixin cdr-icon-base-mixin() {
+  position: relative;
+  width: $cdr-icon-size;
+  height: $cdr-icon-size;
+  display: inline-block;
+
+  &::after {
+    content: '';
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+`];
 
 Object.keys(iconData).forEach(function (name) {
+  svgCss.push(`
+@mixin cdr-icon-${name}() {
+  &::after {
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/${name}.svg', fill="#{$cdr-color-icon-default}");
+  }
+}
+`)
+
   const pascalName = _.upperFirst(_.camelCase(name));
   const content = iconData[name];
   const outFile = resolve(`comps/${name}.jsx`);
@@ -58,4 +84,12 @@ fs.outputFileSync(
   `// file created by generate.js
 /* eslint-disable */
 ${indexArr.join('\n')}`,
+);
+
+
+fs.outputFileSync(
+  resolve('/styles/vars/CdrIcon.vars.scss'),
+  `// file created by generate.js
+/* eslint-disable */
+${svgCss.join('\n')}`,
 );
