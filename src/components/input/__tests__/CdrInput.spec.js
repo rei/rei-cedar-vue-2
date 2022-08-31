@@ -87,16 +87,6 @@ describe('CdrInput', () => {
     expect(wrapper.vm.$refs.input.hasAttribute('readonly')).toBe(true);
   });
 
-  it('sets input required attribute correctly', () => {
-    const wrapper = shallowMount(CdrInput, {
-      propsData: {
-        label: 'test',
-        required: true,
-      },
-    });
-    expect(wrapper.find('input').attributes('aria-required')).toBe('true');
-  });
-
   it('sets attrs for number type input', () => {
     const wrapper = shallowMount(CdrInput, {
       propsData: {

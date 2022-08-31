@@ -14,7 +14,7 @@
       <cdr-input
         class="demo-input"
         v-model="requiredModel"
-        label="Required"
+        label="Name"
         required
         :background="backgroundColor"
       />

@@ -138,7 +138,7 @@ export default {
           multiple={this.multiple}
           size={this.multipleSize}
           disabled={this.disabled}
-          aria-required={this.required}
+          required={this.required}
           ref="select"
 
           aria-invalid={!!this.error}

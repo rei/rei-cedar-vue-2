@@ -168,7 +168,7 @@ export default {
             )}
             id={this.inputId}
             disabled={this.disabled}
-            aria-required={this.required}
+            required={this.required}
             ref="input"
             aria-invalid={!!this.error}
             aria-errormessage={!!this.error && `${this.inputId}-error`}
@@ -187,7 +187,7 @@ export default {
             )}
             id={this.inputId}
             disabled={this.disabled}
-            aria-required={this.required}
+            required={this.required}
             ref="input"
             aria-invalid={!!this.error}
             aria-errormessage={!!this.error && `${this.inputId}-error`}
