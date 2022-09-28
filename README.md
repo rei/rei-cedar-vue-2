@@ -3,6 +3,10 @@
 [![codecov](https://codecov.io/gh/rei/rei-cedar/branch/master/graph/badge.svg)](https://codecov.io/gh/rei/rei-cedar)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
+## Deprecated 
+
+Cedar's Vue 2 component library has been deprecated and support will end in Spring 2023. Our forest continues to grow over at [@rei/cedar](https://github.com/rei/rei-cedar) 
+
 Welcome to REI's style framework! The overall goals of this project are to provide a common scaffolding for UI elements,
 and a set of themes that build on this scaffolding. We started this project in 2015 as a fork of
 [Bootstrap](http://getbootstrap.com/).
