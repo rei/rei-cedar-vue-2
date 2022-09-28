@@ -7,15 +7,6 @@
 
 Cedar's Vue 2 component library has been deprecated and support will end in Spring 2023. Our forest continues to grow over at [@rei/cedar](https://github.com/rei/rei-cedar) 
 
-Welcome to REI's style framework! The overall goals of this project are to provide a common scaffolding for UI elements,
-and a set of themes that build on this scaffolding. We started this project in 2015 as a fork of
-[Bootstrap](http://getbootstrap.com/).
-The project has evolved into what it is today, and will continue to grow to fit our expanding needs. Feel free to watch
-the Cedar grow and learn from what we are doing, or jump in and provide some recommendations.
-
-## Using Cedar
-
-See the [Cedar docs](https://rei.github.io/rei-cedar-docs/) for usage instructions.
 
 ## Getting Started
 
